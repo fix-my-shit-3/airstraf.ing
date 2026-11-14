@@ -1,0 +1,1 @@
+var n=new Map;function t(t,e=null){let o=n.get(e);o||n.set(e,o=new Set),o.add(t);const r=()=>{o.delete(t),o.size||n.delete(e)};return t.then(r,r),t}function e(t){const e=(void 0===t?[...n.values()]:[n.get(t),n.get(null)]).flatMap(n=>n?[...n]:[]);return e.length?Promise.allSettled(e).then(()=>{}):Promise.resolve()}export{t as n,e as t};

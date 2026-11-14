@@ -1,0 +1,601 @@
+{
+  "inputJsFiles": 75,
+  "successfullyMapped": 73,
+  "totalIdentifiersRenamed": 263,
+  "files": [
+    {
+      "file": "airstraf.ing/assets/c-0_FeqyJL.js",
+      "status": "mapped",
+      "bytes": 165,
+      "mappings": 76,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-4ZchrfCo.js",
+      "status": "mapped",
+      "bytes": 620,
+      "mappings": 292,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-B0EPN0fS.js",
+      "status": "mapped",
+      "bytes": 38400,
+      "mappings": 19224,
+      "identifiersRenamed": 16,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-B0cRM3KE.js",
+      "status": "mapped",
+      "bytes": 3014,
+      "mappings": 1454,
+      "identifiersRenamed": 1,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-BD7xfdQF.js",
+      "status": "mapped",
+      "bytes": 2043,
+      "mappings": 1010,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-BE9ZXeD7.js",
+      "status": "mapped",
+      "bytes": 1192,
+      "mappings": 463,
+      "identifiersRenamed": 2,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-BGJKc7je.js",
+      "status": "mapped",
+      "bytes": 84,
+      "mappings": 37,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-BHQ9wafF.js",
+      "status": "mapped",
+      "bytes": 3716,
+      "mappings": 693,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-BJ87Xak5.js",
+      "status": "mapped",
+      "bytes": 898,
+      "mappings": 443,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-BK5Oi6qK.js",
+      "status": "mapped",
+      "bytes": 20887,
+      "mappings": 8795,
+      "identifiersRenamed": 3,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-BLzjMcqR.js",
+      "status": "mapped",
+      "bytes": 21914,
+      "mappings": 7922,
+      "identifiersRenamed": 3,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-BOVHeOwB.js",
+      "status": "mapped",
+      "bytes": 1976,
+      "mappings": 886,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-BOtrWAYn.js",
+      "status": "mapped",
+      "bytes": 2820,
+      "mappings": 1085,
+      "identifiersRenamed": 2,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-BSF9mkvK.js",
+      "status": "mapped",
+      "bytes": 1111,
+      "mappings": 491,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-BUv5bABA.js",
+      "status": "mapped",
+      "bytes": 9546,
+      "mappings": 3846,
+      "identifiersRenamed": 3,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-BjGOj7jP.js",
+      "status": "mapped",
+      "bytes": 732,
+      "mappings": 400,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-Bk_hd1Js.js",
+      "status": "mapped",
+      "bytes": 13892,
+      "mappings": 5193,
+      "identifiersRenamed": 3,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-BoMyoPFu.js",
+      "status": "mapped",
+      "bytes": 264,
+      "mappings": 106,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-Br-l5PAG.js",
+      "status": "mapped",
+      "bytes": 2104,
+      "mappings": 1097,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-BvgEF_dl.js",
+      "status": "mapped",
+      "bytes": 1080,
+      "mappings": 453,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-ByodlC33.js",
+      "status": "mapped",
+      "bytes": 3081,
+      "mappings": 1317,
+      "identifiersRenamed": 3,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-C1mpvyXQ.js",
+      "status": "mapped",
+      "bytes": 24823,
+      "mappings": 3619,
+      "identifiersRenamed": 4,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-C4hbbDNp.js",
+      "status": "mapped",
+      "bytes": 337,
+      "mappings": 179,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-CGasCRDy.js",
+      "status": "mapped",
+      "bytes": 1539,
+      "mappings": 630,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-CHK4kGoZ.js",
+      "status": "mapped",
+      "bytes": 2304,
+      "mappings": 1008,
+      "identifiersRenamed": 2,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-CISf5kK1.js",
+      "status": "mapped",
+      "bytes": 18823,
+      "mappings": 1693,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-CN8Wxji6.js",
+      "status": "mapped",
+      "bytes": 3977,
+      "mappings": 1620,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-C_iq9rgQ.js",
+      "status": "mapped",
+      "bytes": 594,
+      "mappings": 282,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-Caw4SzGP.js",
+      "status": "mapped",
+      "bytes": 243740,
+      "mappings": 62946,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-Cc7HakJX.js",
+      "status": "mapped",
+      "bytes": 9479,
+      "mappings": 3638,
+      "identifiersRenamed": 6,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-CfAS2_ra.js",
+      "status": "mapped",
+      "bytes": 1554,
+      "mappings": 625,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-Clm_iQHR.js",
+      "status": "mapped",
+      "bytes": 743,
+      "mappings": 356,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-CmJ6BJHY.js",
+      "status": "mapped",
+      "bytes": 330291,
+      "mappings": 85376,
+      "identifiersRenamed": 36,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-CoUBIDOz.js",
+      "status": "mapped",
+      "bytes": 3978,
+      "mappings": 1187,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-Coxkuiy2.js",
+      "status": "mapped",
+      "bytes": 62,
+      "mappings": 34,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-Cs0N7RUA.js",
+      "status": "mapped",
+      "bytes": 1456,
+      "mappings": 501,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-CvegKie5.js",
+      "status": "mapped",
+      "bytes": 607,
+      "mappings": 332,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-Cw4QBOSY.js",
+      "status": "mapped",
+      "bytes": 55064,
+      "mappings": 21320,
+      "identifiersRenamed": 14,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-CwMHWVDn.js",
+      "status": "mapped",
+      "bytes": 33530,
+      "mappings": 7486,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-D-fVO02v.js",
+      "status": "mapped",
+      "bytes": 1132,
+      "mappings": 480,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-D-iNDOV5.js",
+      "status": "mapped",
+      "bytes": 544,
+      "mappings": 329,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-D6JpfG2D.js",
+      "status": "mapped",
+      "bytes": 5107,
+      "mappings": 2216,
+      "identifiersRenamed": 3,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-D7DrHuA8.js",
+      "status": "mapped",
+      "bytes": 64546,
+      "mappings": 19148,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-D8Hcbz4W.js",
+      "status": "mapped",
+      "bytes": 136,
+      "mappings": 55,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-DCeNXQjt.js",
+      "status": "mapped",
+      "bytes": 19542,
+      "mappings": 8278,
+      "identifiersRenamed": 11,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-DEgsQ2SC.js",
+      "status": "mapped",
+      "bytes": 4065,
+      "mappings": 1777,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-DHGnaUyg.js",
+      "status": "mapped",
+      "bytes": 67982,
+      "mappings": 15739,
+      "identifiersRenamed": 3,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-DLYyjYgG.js",
+      "status": "mapped",
+      "bytes": 1985,
+      "mappings": 881,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-DRieNrHJ.js",
+      "status": "mapped",
+      "bytes": 741511,
+      "mappings": 297678,
+      "identifiersRenamed": 91,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-DSIEVuRr.js",
+      "status": "mapped",
+      "bytes": 28688,
+      "mappings": 10608,
+      "identifiersRenamed": 12,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-DTYKuKMs.js",
+      "status": "mapped",
+      "bytes": 4658,
+      "mappings": 2428,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-DWXBoQqt.js",
+      "status": "mapped",
+      "bytes": 868,
+      "mappings": 426,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-D_UdFaKB.js",
+      "status": "mapped",
+      "bytes": 178,
+      "mappings": 68,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-DeSJF9BH.js",
+      "status": "mapped",
+      "bytes": 3694,
+      "mappings": 1361,
+      "identifiersRenamed": 8,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-Df2L5mYA.js",
+      "status": "mapped",
+      "bytes": 2096,
+      "mappings": 937,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-DkPZj7-z.js",
+      "status": "mapped",
+      "bytes": 6524,
+      "mappings": 2023,
+      "identifiersRenamed": 1,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-DlIhmCer.js",
+      "status": "mapped",
+      "bytes": 11779,
+      "mappings": 2521,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-Dw2xPOlC.js",
+      "status": "mapped",
+      "bytes": 14126,
+      "mappings": 6374,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-DxipjlZ1.js",
+      "status": "mapped",
+      "bytes": 24014,
+      "mappings": 10504,
+      "identifiersRenamed": 6,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-HBMF4bPX.js",
+      "status": "mapped",
+      "bytes": 4406,
+      "mappings": 950,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-I0dO6CkD.js",
+      "status": "mapped",
+      "bytes": 5831,
+      "mappings": 1964,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-PsaaRsFW.js",
+      "status": "mapped",
+      "bytes": 28189,
+      "mappings": 15036,
+      "identifiersRenamed": 15,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-QnkcwdXX.js",
+      "status": "mapped",
+      "bytes": 6577,
+      "mappings": 3326,
+      "identifiersRenamed": 8,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-UMCWckcW.js",
+      "status": "mapped",
+      "bytes": 44040,
+      "mappings": 14094,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-ZeT0pbGP.js",
+      "status": "mapped",
+      "bytes": 16585,
+      "mappings": 6370,
+      "identifiersRenamed": 3,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-e0fQXfDh.js",
+      "status": "mapped",
+      "bytes": 981,
+      "mappings": 519,
+      "identifiersRenamed": 2,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-iTSKxzRq.js",
+      "status": "mapped",
+      "bytes": 1246,
+      "mappings": 639,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-j2W5q53j.js",
+      "status": "mapped",
+      "bytes": 5730,
+      "mappings": 2719,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-qDanEe2E.js",
+      "status": "mapped",
+      "bytes": 592,
+      "mappings": 242,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-xV8SHtXB.js",
+      "status": "mapped",
+      "bytes": 63333,
+      "mappings": 21713,
+      "identifiersRenamed": 1,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-ycaScJyf.js",
+      "status": "mapped",
+      "bytes": 1001,
+      "mappings": 299,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/main-0GITWSWA.js",
+      "status": "skipped",
+      "reason": "Generation failed: TypeError: str.indexOf is not a function\n    at Buffer._append (/home/runner/work/airstraf.ing/airstraf.ing/node_modules/@babel/generator/lib/buffer.js:160:17)\n    at Buffer.append (/home/runner/work/airstraf.ing/airstraf.ing/node_modules/@babel/generator/lib/buffer.js:85:10)\n    at Printer._append (/home/runner/work/airstraf.ing/airstraf.ing/node_modules/@babel/generator/lib/printer.js:286:15)\n    at Printer.word (/home/runner/work/airstraf.ing/airstraf.ing/node_modules/@babel/generator/lib/printer.js:168:10)\n    at Printer.Identifier (/home/runner/work/airstraf.ing/airstraf.ing/node_modules/@babel/generator/lib/generators/types.js:54:8)\n    at Buffer.exactSource (/home/runner/work/airstraf.ing/airstraf.ing/node_modules/@babel/generator/lib/buffer.js:209:5)\n    at Printer.exactSource (/home/runner/work/airstraf.ing/airstraf.ing/node_modules/@babel/generator/lib/printer.js:250:15)\n    at Printer.print (/home/runner/work/airstraf.ing/airstraf.ing/node_modules/@babel/generator/lib/printer.js:440:10)\n    at Printer.VariableDeclarator (/home/runner/work/airstraf.ing/airstraf.ing/node_modules/@babel/generator/lib/generators/statements.js:289:8)\n    at Buffer.exactSource (/home/runner/work/airstraf.ing/airstraf.ing/node_modules/@babel/generator/lib/buffer.js:209:5)"
+    },
+    {
+      "file": "airstraf.ing/assets/network-juVbujc5.js",
+      "status": "mapped",
+      "bytes": 213143,
+      "mappings": 88572,
+      "identifiersRenamed": 0,
+      "dynamicScopeDetected": true
+    },
+    {
+      "file": "airstraf.ing/assets/three-Bi9Yyrpt.js",
+      "status": "skipped",
+      "reason": "Generation failed: TypeError: str.indexOf is not a function\n    at Buffer._append (/home/runner/work/airstraf.ing/airstraf.ing/node_modules/@babel/generator/lib/buffer.js:160:17)\n    at Buffer.append (/home/runner/work/airstraf.ing/airstraf.ing/node_modules/@babel/generator/lib/buffer.js:85:10)\n    at Printer._append (/home/runner/work/airstraf.ing/airstraf.ing/node_modules/@babel/generator/lib/printer.js:286:15)\n    at Printer.word (/home/runner/work/airstraf.ing/airstraf.ing/node_modules/@babel/generator/lib/printer.js:168:10)\n    at Printer.Identifier (/home/runner/work/airstraf.ing/airstraf.ing/node_modules/@babel/generator/lib/generators/types.js:54:8)\n    at Buffer.exactSource (/home/runner/work/airstraf.ing/airstraf.ing/node_modules/@babel/generator/lib/buffer.js:209:5)\n    at Printer.exactSource (/home/runner/work/airstraf.ing/airstraf.ing/node_modules/@babel/generator/lib/printer.js:250:15)\n    at Printer.print (/home/runner/work/airstraf.ing/airstraf.ing/node_modules/@babel/generator/lib/printer.js:440:10)\n    at Printer.VariableDeclarator (/home/runner/work/airstraf.ing/airstraf.ing/node_modules/@babel/generator/lib/generators/statements.js:289:8)\n    at Buffer.exactSource (/home/runner/work/airstraf.ing/airstraf.ing/node_modules/@babel/generator/lib/buffer.js:209:5)"
+    },
+    {
+      "file": "airstraf.ing/boot-guard.js",
+      "status": "mapped",
+      "bytes": 3119,
+      "mappings": 447,
+      "identifiersRenamed": 1,
+      "dynamicScopeDetected": false
+    }
+  ]
+}

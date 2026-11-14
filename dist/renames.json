@@ -1,0 +1,1720 @@
+[
+  {
+    "file": "airstraf.ing/assets/c-B0EPN0fS.js",
+    "renames": [
+      {
+        "oldName": "r",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "t",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "response",
+        "line": 2,
+        "rule": "await fetch()"
+      },
+      {
+        "oldName": "s",
+        "newName": "parsedValue",
+        "line": 2,
+        "rule": "call to .parse()"
+      },
+      {
+        "oldName": "s",
+        "newName": "response",
+        "line": 2,
+        "rule": "await fetch()"
+      },
+      {
+        "oldName": "s",
+        "newName": "parsedValue",
+        "line": 2,
+        "rule": "call to .parse()"
+      },
+      {
+        "oldName": "n",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "n",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "_uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "_uniqueItems2",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "i",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "r",
+        "newName": "_uniqueItems3",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "o",
+        "newName": "_uniqueItems4",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "f",
+        "newName": "_lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      }
+    ]
+  },
+  {
+    "file": "airstraf.ing/assets/c-B0cRM3KE.js",
+    "renames": [
+      {
+        "oldName": "o",
+        "newName": "promise",
+        "line": 1,
+        "rule": "constructor"
+      }
+    ]
+  },
+  {
+    "file": "airstraf.ing/assets/c-BE9ZXeD7.js",
+    "renames": [
+      {
+        "oldName": "o",
+        "newName": "element",
+        "line": 1,
+        "rule": "call to .querySelector()"
+      },
+      {
+        "oldName": "s",
+        "newName": "_element",
+        "line": 1,
+        "rule": "call to .createElement()"
+      }
+    ]
+  },
+  {
+    "file": "airstraf.ing/assets/c-BK5Oi6qK.js",
+    "renames": [
+      {
+        "oldName": "t",
+        "newName": "event",
+        "line": 1,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "t",
+        "newName": "event",
+        "line": 1,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "t",
+        "newName": "event",
+        "line": 1,
+        "rule": "DOM event methods"
+      }
+    ]
+  },
+  {
+    "file": "airstraf.ing/assets/c-BLzjMcqR.js",
+    "renames": [
+      {
+        "oldName": "o",
+        "newName": "uniqueItems",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "t",
+        "newName": "uniqueItems",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "r",
+        "newName": "uniqueItems",
+        "line": 1,
+        "rule": "constructor"
+      }
+    ]
+  },
+  {
+    "file": "airstraf.ing/assets/c-BOtrWAYn.js",
+    "renames": [
+      {
+        "oldName": "n",
+        "newName": "element",
+        "line": 1,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "e",
+        "newName": "element",
+        "line": 1,
+        "rule": "call to .createElement()"
+      }
+    ]
+  },
+  {
+    "file": "airstraf.ing/assets/c-BUv5bABA.js",
+    "renames": [
+      {
+        "oldName": "V",
+        "newName": "promise",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "M",
+        "newName": "uniqueItems",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "W",
+        "newName": "lookupMap",
+        "line": 1,
+        "rule": "constructor"
+      }
+    ]
+  },
+  {
+    "file": "airstraf.ing/assets/c-Bk_hd1Js.js",
+    "renames": [
+      {
+        "oldName": "e",
+        "newName": "element",
+        "line": 1,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "n",
+        "newName": "element",
+        "line": 1,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "o",
+        "newName": "element",
+        "line": 1,
+        "rule": "call to .createElement()"
+      }
+    ]
+  },
+  {
+    "file": "airstraf.ing/assets/c-ByodlC33.js",
+    "renames": [
+      {
+        "oldName": "e",
+        "newName": "eventTarget",
+        "line": 1,
+        "rule": "EventTarget interface"
+      },
+      {
+        "oldName": "n",
+        "newName": "event",
+        "line": 1,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "t",
+        "newName": "eventTarget",
+        "line": 1,
+        "rule": "EventTarget interface"
+      }
+    ]
+  },
+  {
+    "file": "airstraf.ing/assets/c-C1mpvyXQ.js",
+    "renames": [
+      {
+        "oldName": "f",
+        "newName": "lookupMap",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "d",
+        "newName": "url",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "d",
+        "newName": "lookupMap",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "d",
+        "newName": "response",
+        "line": 1,
+        "rule": "await fetch()"
+      }
+    ]
+  },
+  {
+    "file": "airstraf.ing/assets/c-CHK4kGoZ.js",
+    "renames": [
+      {
+        "oldName": "i",
+        "newName": "element",
+        "line": 1,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "n",
+        "newName": "bounds",
+        "line": 1,
+        "rule": "call to .getBoundingClientRect()"
+      }
+    ]
+  },
+  {
+    "file": "airstraf.ing/assets/c-Cc7HakJX.js",
+    "renames": [
+      {
+        "oldName": "c",
+        "newName": "element",
+        "line": 1,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "f",
+        "newName": "drawingContext",
+        "line": 1,
+        "rule": "call to .getContext()"
+      },
+      {
+        "oldName": "c",
+        "newName": "element",
+        "line": 1,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "f",
+        "newName": "drawingContext",
+        "line": 1,
+        "rule": "call to .getContext()"
+      },
+      {
+        "oldName": "f",
+        "newName": "element",
+        "line": 1,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "d",
+        "newName": "drawingContext",
+        "line": 1,
+        "rule": "call to .getContext()"
+      }
+    ]
+  },
+  {
+    "file": "airstraf.ing/assets/c-CmJ6BJHY.js",
+    "renames": [
+      {
+        "oldName": "A",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "t",
+        "newName": "drawingContext",
+        "line": 2,
+        "rule": "call to .getContext()"
+      },
+      {
+        "oldName": "i",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "w",
+        "newName": "_lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "a",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "n",
+        "newName": "serializedValue",
+        "line": 2,
+        "rule": "call to .stringify()"
+      },
+      {
+        "oldName": "t",
+        "newName": "serializedValue",
+        "line": 2,
+        "rule": "call to .stringify()"
+      },
+      {
+        "oldName": "s",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "B",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "r",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "o",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "i",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "o",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "o",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "i",
+        "newName": "_lookupMap2",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "n",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "r",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "C",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "u",
+        "newName": "_lookupMap3",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "d",
+        "newName": "_lookupMap4",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "b",
+        "newName": "_lookupMap5",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "n",
+        "newName": "_lookupMap6",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "_uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "A",
+        "newName": "_lookupMap7",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "t",
+        "newName": "_lookupMap8",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "o",
+        "newName": "_lookupMap9",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "r",
+        "newName": "_lookupMap0",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "t",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "B",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "n",
+        "newName": "drawingContext",
+        "line": 2,
+        "rule": "call to .getContext()"
+      },
+      {
+        "oldName": "n",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      }
+    ]
+  },
+  {
+    "file": "airstraf.ing/assets/c-Cw4QBOSY.js",
+    "renames": [
+      {
+        "oldName": "o",
+        "newName": "uniqueItems",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "lookupMap",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "t",
+        "newName": "abortController",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "n",
+        "newName": "lookupMap",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "lookupMap",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "lookupMap",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "n",
+        "newName": "uniqueItems",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "_lookupMap",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "_lookupMap2",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "t",
+        "newName": "element",
+        "line": 1,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "t",
+        "newName": "element",
+        "line": 1,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "e",
+        "newName": "drawingContext",
+        "line": 1,
+        "rule": "call to .getContext()"
+      },
+      {
+        "oldName": "t",
+        "newName": "drawingContext",
+        "line": 1,
+        "rule": "call to .getContext()"
+      },
+      {
+        "oldName": "o",
+        "newName": "lookupMap",
+        "line": 1,
+        "rule": "constructor"
+      }
+    ]
+  },
+  {
+    "file": "airstraf.ing/assets/c-D6JpfG2D.js",
+    "renames": [
+      {
+        "oldName": "n",
+        "newName": "response",
+        "line": 1,
+        "rule": "await fetch()"
+      },
+      {
+        "oldName": "o",
+        "newName": "element",
+        "line": 1,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "e",
+        "newName": "response",
+        "line": 1,
+        "rule": "await fetch()"
+      }
+    ]
+  },
+  {
+    "file": "airstraf.ing/assets/c-DCeNXQjt.js",
+    "renames": [
+      {
+        "oldName": "s",
+        "newName": "uniqueItems",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "uniqueItems",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "date",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "t",
+        "newName": "eventTarget",
+        "line": 1,
+        "rule": "EventTarget interface"
+      },
+      {
+        "oldName": "a",
+        "newName": "event",
+        "line": 1,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "e",
+        "newName": "element",
+        "line": 1,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "s",
+        "newName": "_element",
+        "line": 1,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "n",
+        "newName": "_element2",
+        "line": 1,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "t",
+        "newName": "event",
+        "line": 1,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "t",
+        "newName": "eventTarget",
+        "line": 1,
+        "rule": "EventTarget interface"
+      },
+      {
+        "oldName": "r",
+        "newName": "event",
+        "line": 1,
+        "rule": "DOM event methods"
+      }
+    ]
+  },
+  {
+    "file": "airstraf.ing/assets/c-DHGnaUyg.js",
+    "renames": [
+      {
+        "oldName": "g",
+        "newName": "lookupMap",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "y",
+        "newName": "_lookupMap",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "a",
+        "newName": "lookupMap",
+        "line": 1,
+        "rule": "constructor"
+      }
+    ]
+  },
+  {
+    "file": "airstraf.ing/assets/c-DRieNrHJ.js",
+    "renames": [
+      {
+        "oldName": "e",
+        "newName": "serializedValue",
+        "line": 2,
+        "rule": "call to .stringify()"
+      },
+      {
+        "oldName": "r",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "l",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "eventTarget",
+        "line": 2,
+        "rule": "EventTarget interface"
+      },
+      {
+        "oldName": "n",
+        "newName": "_eventTarget",
+        "line": 2,
+        "rule": "EventTarget interface"
+      },
+      {
+        "oldName": "n",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "n",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "_lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "i",
+        "newName": "date",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "t",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "i",
+        "newName": "promise",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "t",
+        "newName": "event",
+        "line": 2,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "i",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "o",
+        "newName": "drawingContext",
+        "line": 2,
+        "rule": "call to .getContext()"
+      },
+      {
+        "oldName": "o",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "r",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "t",
+        "newName": "drawingContext",
+        "line": 2,
+        "rule": "call to .getContext()"
+      },
+      {
+        "oldName": "e",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "n",
+        "newName": "drawingContext",
+        "line": 2,
+        "rule": "call to .getContext()"
+      },
+      {
+        "oldName": "i",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "o",
+        "newName": "_lookupMap2",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "i",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "t",
+        "newName": "bounds",
+        "line": 2,
+        "rule": "call to .getBoundingClientRect()"
+      },
+      {
+        "oldName": "s",
+        "newName": "_bounds",
+        "line": 2,
+        "rule": "call to .getBoundingClientRect()"
+      },
+      {
+        "oldName": "l",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "d",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "u",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "A",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "n",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "i",
+        "newName": "_lookupMap3",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "i",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "i",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "i",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "n",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "t",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "n",
+        "newName": "_lookupMap4",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "drawingContext",
+        "line": 2,
+        "rule": "call to .getContext()"
+      },
+      {
+        "oldName": "f",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "l",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .querySelector()"
+      },
+      {
+        "oldName": "e",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "o",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "a",
+        "newName": "responseText",
+        "line": 2,
+        "rule": "call to .text()"
+      },
+      {
+        "oldName": "r",
+        "newName": "drawingContext",
+        "line": 2,
+        "rule": "call to .getContext()"
+      },
+      {
+        "oldName": "e",
+        "newName": "_drawingContext",
+        "line": 2,
+        "rule": "call to .getContext()"
+      },
+      {
+        "oldName": "d",
+        "newName": "responseText",
+        "line": 2,
+        "rule": "call to .text()"
+      },
+      {
+        "oldName": "s",
+        "newName": "drawingContext",
+        "line": 2,
+        "rule": "call to .getContext()"
+      },
+      {
+        "oldName": "r",
+        "newName": "drawingContext",
+        "line": 2,
+        "rule": "call to .getContext()"
+      },
+      {
+        "oldName": "e",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "e",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "t",
+        "newName": "drawingContext",
+        "line": 2,
+        "rule": "call to .getContext()"
+      },
+      {
+        "oldName": "t",
+        "newName": "eventTarget",
+        "line": 2,
+        "rule": "EventTarget interface"
+      },
+      {
+        "oldName": "s",
+        "newName": "drawingContext",
+        "line": 2,
+        "rule": "call to .getContext()"
+      },
+      {
+        "oldName": "s",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "n",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "_uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "a",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "r",
+        "newName": "_lookupMap5",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "h",
+        "newName": "_lookupMap6",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "f",
+        "newName": "_lookupMap7",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "A",
+        "newName": "_uniqueItems2",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "p",
+        "newName": "_uniqueItems3",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "m",
+        "newName": "_lookupMap8",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "g",
+        "newName": "_lookupMap9",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "n",
+        "newName": "_uniqueItems4",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "n",
+        "newName": "_lookupMap0",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "n",
+        "newName": "_lookupMap1",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "n",
+        "newName": "_lookupMap10",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "_lookupMap11",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "o",
+        "newName": "_uniqueItems5",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "n",
+        "newName": "abortController",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "t",
+        "newName": "response",
+        "line": 2,
+        "rule": "await fetch()"
+      },
+      {
+        "oldName": "s",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "parsedValue",
+        "line": 2,
+        "rule": "call to .parse()"
+      },
+      {
+        "oldName": "i",
+        "newName": "_parsedValue",
+        "line": 2,
+        "rule": "call to .parse()"
+      },
+      {
+        "oldName": "o",
+        "newName": "_parsedValue2",
+        "line": 2,
+        "rule": "call to .parse()"
+      },
+      {
+        "oldName": "t",
+        "newName": "parsedValue",
+        "line": 2,
+        "rule": "call to .parse()"
+      },
+      {
+        "oldName": "e",
+        "newName": "response",
+        "line": 2,
+        "rule": "await fetch()"
+      },
+      {
+        "oldName": "e",
+        "newName": "response",
+        "line": 2,
+        "rule": "await fetch()"
+      },
+      {
+        "oldName": "n",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "n",
+        "newName": "abortController",
+        "line": 2,
+        "rule": "constructor"
+      }
+    ]
+  },
+  {
+    "file": "airstraf.ing/assets/c-DSIEVuRr.js",
+    "renames": [
+      {
+        "oldName": "n",
+        "newName": "element",
+        "line": 1,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "n",
+        "newName": "_element",
+        "line": 1,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "t",
+        "newName": "drawingContext",
+        "line": 1,
+        "rule": "call to .getContext()"
+      },
+      {
+        "oldName": "a",
+        "newName": "element",
+        "line": 1,
+        "rule": "call to .querySelector()"
+      },
+      {
+        "oldName": "o",
+        "newName": "_element2",
+        "line": 1,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "a",
+        "newName": "_element3",
+        "line": 1,
+        "rule": "call to .querySelector()"
+      },
+      {
+        "oldName": "n",
+        "newName": "element",
+        "line": 1,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "t",
+        "newName": "_element4",
+        "line": 1,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "e",
+        "newName": "_element5",
+        "line": 1,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "n",
+        "newName": "lookupMap",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "lookupMap",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "n",
+        "newName": "element",
+        "line": 1,
+        "rule": "call to .createElement()"
+      }
+    ]
+  },
+  {
+    "file": "airstraf.ing/assets/c-DeSJF9BH.js",
+    "renames": [
+      {
+        "oldName": "t",
+        "newName": "eventTarget",
+        "line": 1,
+        "rule": "EventTarget interface"
+      },
+      {
+        "oldName": "i",
+        "newName": "element",
+        "line": 1,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "s",
+        "newName": "element",
+        "line": 1,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "n",
+        "newName": "_element",
+        "line": 1,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "o",
+        "newName": "_element2",
+        "line": 1,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "t",
+        "newName": "event",
+        "line": 1,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "o",
+        "newName": "element",
+        "line": 1,
+        "rule": "call to .querySelector()"
+      },
+      {
+        "oldName": "e",
+        "newName": "promise",
+        "line": 1,
+        "rule": "constructor"
+      }
+    ]
+  },
+  {
+    "file": "airstraf.ing/assets/c-DkPZj7-z.js",
+    "renames": [
+      {
+        "oldName": "a",
+        "newName": "uniqueItems",
+        "line": 1,
+        "rule": "constructor"
+      }
+    ]
+  },
+  {
+    "file": "airstraf.ing/assets/c-DxipjlZ1.js",
+    "renames": [
+      {
+        "oldName": "s",
+        "newName": "uniqueItems",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "l",
+        "newName": "lookupMap",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "i",
+        "newName": "lookupMap",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "r",
+        "newName": "_lookupMap",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "eventTarget",
+        "line": 1,
+        "rule": "EventTarget interface"
+      },
+      {
+        "oldName": "e",
+        "newName": "eventTarget",
+        "line": 1,
+        "rule": "EventTarget interface"
+      }
+    ]
+  },
+  {
+    "file": "airstraf.ing/assets/c-PsaaRsFW.js",
+    "renames": [
+      {
+        "oldName": "a",
+        "newName": "lookupMap",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "f",
+        "newName": "uniqueItems",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "lookupMap",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "o",
+        "newName": "_lookupMap",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "lookupMap",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "o",
+        "newName": "_lookupMap2",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "r",
+        "newName": "lookupMap",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "_lookupMap3",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "d",
+        "newName": "lookupMap",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "p",
+        "newName": "_lookupMap4",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "x",
+        "newName": "_lookupMap5",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "lookupMap",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "a",
+        "newName": "uniqueItems",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "lookupMap",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "uniqueItems",
+        "line": 1,
+        "rule": "constructor"
+      }
+    ]
+  },
+  {
+    "file": "airstraf.ing/assets/c-QnkcwdXX.js",
+    "renames": [
+      {
+        "oldName": "r",
+        "newName": "pointerEvent",
+        "line": 1,
+        "rule": "pointer coordinates"
+      },
+      {
+        "oldName": "e",
+        "newName": "bounds",
+        "line": 1,
+        "rule": "call to .getBoundingClientRect()"
+      },
+      {
+        "oldName": "n",
+        "newName": "event",
+        "line": 1,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "t",
+        "newName": "event",
+        "line": 1,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "t",
+        "newName": "pointerEvent",
+        "line": 1,
+        "rule": "pointer coordinates"
+      },
+      {
+        "oldName": "t",
+        "newName": "pointerEvent",
+        "line": 1,
+        "rule": "pointer coordinates"
+      },
+      {
+        "oldName": "o",
+        "newName": "bounds",
+        "line": 1,
+        "rule": "call to .getBoundingClientRect()"
+      },
+      {
+        "oldName": "n",
+        "newName": "event",
+        "line": 1,
+        "rule": "DOM event methods"
+      }
+    ]
+  },
+  {
+    "file": "airstraf.ing/assets/c-ZeT0pbGP.js",
+    "renames": [
+      {
+        "oldName": "f",
+        "newName": "bounds",
+        "line": 1,
+        "rule": "call to .getBoundingClientRect()"
+      },
+      {
+        "oldName": "e",
+        "newName": "element",
+        "line": 1,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "t",
+        "newName": "_bounds",
+        "line": 1,
+        "rule": "call to .getBoundingClientRect()"
+      }
+    ]
+  },
+  {
+    "file": "airstraf.ing/assets/c-e0fQXfDh.js",
+    "renames": [
+      {
+        "oldName": "n",
+        "newName": "lookupMap",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "n",
+        "newName": "_lookupMap",
+        "line": 1,
+        "rule": "constructor"
+      }
+    ]
+  },
+  {
+    "file": "airstraf.ing/assets/c-xV8SHtXB.js",
+    "renames": [
+      {
+        "oldName": "a",
+        "newName": "lookupMap",
+        "line": 1,
+        "rule": "constructor"
+      }
+    ]
+  },
+  {
+    "file": "airstraf.ing/boot-guard.js",
+    "renames": [
+      {
+        "oldName": "el",
+        "newName": "element",
+        "line": 19,
+        "rule": "call to .createElement()"
+      }
+    ]
+  }
+]

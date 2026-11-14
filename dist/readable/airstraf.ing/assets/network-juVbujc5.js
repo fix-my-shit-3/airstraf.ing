@@ -1,0 +1,8807 @@
+import { a as t, t as e } from "./c-BJ87Xak5.js";
+ArrayBuffer.isView || (ArrayBuffer.isView = t => null !== t && "object" == typeof t && t.buffer instanceof ArrayBuffer), "undefined" == typeof globalThis && "undefined" != typeof window && (window.globalThis = window), "undefined" == typeof FormData && (globalThis.FormData = class {});
+var i,
+  s = 1006,
+  n = 4010,
+  r = class extends Error {
+    code;
+    headers;
+    status;
+    response;
+    data;
+    constructor(t, e, i) {
+      super(e), this.name = "ServerError", this.code = t, i && (this.headers = i.headers, this.status = i.status, this.response = i.response, this.data = i.data);
+    }
+  },
+  o = class t extends Error {
+    code;
+    constructor(e, i) {
+      super(e), this.code = i, this.name = "MatchMakeError", Object.setPrototypeOf(this, t.prototype);
+    }
+  };
+function h(t) {
+  Object.defineProperty(t, Symbol.metadata, {
+    value: void 0,
+    writable: !0,
+    configurable: !0,
+    enumerable: !1
+  });
+}
+!function (t) {
+  t[t.ADD = 128] = "ADD", t[t.REPLACE = 0] = "REPLACE", t[t.DELETE = 64] = "DELETE", t[t.DELETE_AND_MOVE = 96] = "DELETE_AND_MOVE", t[t.MOVE_AND_ADD = 160] = "MOVE_AND_ADD", t[t.DELETE_AND_ADD = 192] = "DELETE_AND_ADD", t[t.CLEAR = 10] = "CLEAR", t[t.REVERSE = 15] = "REVERSE", t[t.MOVE = 32] = "MOVE", t[t.DELETE_BY_REFID = 33] = "DELETE_BY_REFID", t[t.ADD_BY_REFID = 129] = "ADD_BY_REFID";
+}(i || (i = {})), Symbol.metadata ??= Symbol.for("Symbol.metadata");
+var c = "undefined" != typeof globalThis ? globalThis : "undefined" != typeof global ? global : "undefined" != typeof self ? self : "undefined" != typeof window ? window : {};
+if ("function" == typeof Symbol && "function" != typeof Symbol.for) {
+  const t = "colyseus.symbolRegistry",
+    e = c[t] || (c[t] = Object.create(null));
+  Symbol.for = function (t) {
+    return e[t] || (e[t] = Symbol(t));
+  }, Symbol.keyFor = function (t) {
+    for (const i in e) if (e[i] === t) return i;
+  };
+}
+var a = Symbol.for("$refId"),
+  l = "~track",
+  u = "~encoder",
+  f = "~decoder",
+  d = "~filter",
+  p = "~getByIndex",
+  v = "~deleteByIndex",
+  w = "~resyncPrune",
+  y = Symbol.for("$changes"),
+  m = Symbol.for("$childType"),
+  b = Symbol.for("$proxyTarget"),
+  g = "~onEncodeEnd",
+  S = "~reset",
+  k = "~onDecodeEnd",
+  E = Symbol.for("$values"),
+  A = "~builder",
+  I = "~descriptors",
+  M = "~__encodeDescriptor",
+  O = "~encoders",
+  _ = "~__numFields",
+  $ = "~__refTypeFieldIndexes",
+  x = "~__viewFieldIndexes",
+  R = "$__fieldIndexesByViewTag",
+  T = "~__unreliableFieldIndexes",
+  j = "~__patchOnlyFieldIndexes",
+  P = "~__fullSyncSkipIndexes",
+  D = "~__fullStateOnlyFieldIndexes",
+  F = "~__streamFieldIndexes",
+  C = "~__streamPriorities";
+try {
+  new TextEncoder();
+} catch (wr) {}
+var N = new ArrayBuffer(8),
+  U = new Int32Array(N),
+  B = new Float32Array(N),
+  L = new Float64Array(N),
+  V = new BigInt64Array(N),
+  q = "undefined" != typeof Buffer && Buffer.byteLength ? Buffer.byteLength : function (t, e) {
+    for (var i = 0, s = 0, n = 0, r = t.length; n < r; n++) (i = t.charCodeAt(n)) < 128 ? s += 1 : i < 2048 ? s += 2 : i < 55296 || i >= 57344 ? s += 3 : (n++, s += 4);
+    return s;
+  };
+function z(t, e, i) {
+  for (var s = 0, n = 0, r = e.length; n < r; n++) (s = e.charCodeAt(n)) < 128 ? t[i.offset++] = s : s < 2048 ? (t[i.offset] = 192 | s >> 6, t[i.offset + 1] = 128 | 63 & s, i.offset += 2) : s < 55296 || s >= 57344 ? (t[i.offset] = 224 | s >> 12, t[i.offset + 1] = 128 | s >> 6 & 63, t[i.offset + 2] = 128 | 63 & s, i.offset += 3) : (n++, s = 65536 + ((1023 & s) << 10 | 1023 & e.charCodeAt(n)), t[i.offset] = 240 | s >> 18, t[i.offset + 1] = 128 | s >> 12 & 63, t[i.offset + 2] = 128 | s >> 6 & 63, t[i.offset + 3] = 128 | 63 & s, i.offset += 4);
+}
+function W(t, e, i) {
+  t[i.offset++] = 255 & e;
+}
+function H(t, e, i) {
+  t[i.offset++] = 255 & e, t[i.offset++] = e >> 8 & 255;
+}
+function J(t, e, i) {
+  t[i.offset++] = 255 & e, t[i.offset++] = e >> 8 & 255;
+}
+function K(t, e, i) {
+  t[i.offset++] = 255 & e, t[i.offset++] = e >> 8 & 255, t[i.offset++] = e >> 16 & 255, t[i.offset++] = e >> 24 & 255;
+}
+function G(t, e, i) {
+  const s = e >> 24,
+    n = e >> 16,
+    r = e >> 8,
+    o = e;
+  t[i.offset++] = 255 & o, t[i.offset++] = 255 & r, t[i.offset++] = 255 & n, t[i.offset++] = 255 & s;
+}
+function Y(t, e, i) {
+  const s = Math.floor(e / Math.pow(2, 32));
+  G(t, e >>> 0, i), G(t, s, i);
+}
+function X(t, e, i) {
+  const s = e / Math.pow(2, 32) | 0;
+  G(t, e >>> 0, i), G(t, s, i);
+}
+function Z(t, e, i) {
+  B[0] = e, K(t, U[0], i);
+}
+function Q(t, e, i) {
+  L[0] = e, K(t, U[0], i), K(t, U[1], i);
+}
+var tt = {
+    int8: W,
+    uint8: function (t, e, i) {
+      t[i.offset++] = 255 & e;
+    },
+    int16: H,
+    uint16: J,
+    int32: K,
+    uint32: G,
+    int64: Y,
+    uint64: X,
+    bigint64: function (t, e, i) {
+      V[0] = BigInt.asIntN(64, e), K(t, U[0], i), K(t, U[1], i);
+    },
+    biguint64: function (t, e, i) {
+      V[0] = BigInt.asIntN(64, e), K(t, U[0], i), K(t, U[1], i);
+    },
+    float32: Z,
+    float64: Q,
+    boolean: function (t, e, i) {
+      t[i.offset++] = e ? 1 : 0;
+    },
+    string: function (t, e, i) {
+      e || (e = "");
+      let s = q(e, "utf8"),
+        n = 0;
+      if (s < 32) t[i.offset++] = 160 | s, n = 1;else if (s < 256) t[i.offset++] = 217, t[i.offset++] = s, n = 2;else if (s < 65536) t[i.offset++] = 218, J(t, s, i), n = 3;else {
+        if (!(s < 4294967296)) throw new Error("String too long");
+        t[i.offset++] = 219, G(t, s, i), n = 5;
+      }
+      return z(t, e, i), n + s;
+    },
+    number: function t(e, i, s) {
+      return isNaN(i) ? t(e, 0, s) : isFinite(i) ? i !== (0 | i) ? Math.abs(i) <= 34028235e31 && (B[0] = i, Math.abs(Math.abs(B[0]) - Math.abs(i)) < 1e-4) ? (e[s.offset++] = 202, Z(e, i, s), 5) : (e[s.offset++] = 203, Q(e, i, s), 9) : i >= 0 ? i < 128 ? (e[s.offset++] = 255 & i, 1) : i < 256 ? (e[s.offset++] = 204, e[s.offset++] = 255 & i, 2) : i < 65536 ? (e[s.offset++] = 205, J(e, i, s), 3) : i < 4294967296 ? (e[s.offset++] = 206, G(e, i, s), 5) : (e[s.offset++] = 207, X(e, i, s), 9) : i >= -32 ? (e[s.offset++] = 224 | i + 32, 1) : i >= -128 ? (e[s.offset++] = 208, W(e, i, s), 2) : i >= -32768 ? (e[s.offset++] = 209, H(e, i, s), 3) : i >= -2147483648 ? (e[s.offset++] = 210, K(e, i, s), 5) : (e[s.offset++] = 211, Y(e, i, s), 9) : t(e, i > 0 ? Number.MAX_SAFE_INTEGER : -Number.MAX_SAFE_INTEGER, s);
+    },
+    utf8Write: z,
+    utf8Length: q
+  },
+  et = new ArrayBuffer(8),
+  it = new Int32Array(et),
+  st = new Float32Array(et),
+  nt = new Float64Array(et),
+  rt = new BigUint64Array(et),
+  ot = new BigInt64Array(et);
+function ht(t, e, i) {
+  i > t.length - e.offset && (i = t.length - e.offset);
+  for (var s = "", n = 0, r = e.offset, o = e.offset + i; r < o; r++) {
+    var h = t[r];
+    if (128 & h) {
+      if (192 != (224 & h)) {
+        if (224 != (240 & h)) {
+          if (240 != (248 & h)) {
+            console.error("decode.utf8Read(): Invalid byte " + h + " at offset " + r + ". Skip to end of string: " + (e.offset + i));
+            break;
+          }
+          (n = (7 & h) << 18 | (63 & t[++r]) << 12 | (63 & t[++r]) << 6 | 63 & t[++r]) >= 65536 ? (n -= 65536, s += String.fromCharCode((n >>> 10) + 55296, 56320 + (1023 & n))) : s += String.fromCharCode(n);
+        } else s += String.fromCharCode((15 & h) << 12 | (63 & t[++r]) << 6 | 63 & t[++r]);
+      } else s += String.fromCharCode((31 & h) << 6 | 63 & t[++r]);
+    } else s += String.fromCharCode(h);
+  }
+  return e.offset += i, s;
+}
+function ct(t, e) {
+  return at(t, e) << 24 >> 24;
+}
+function at(t, e) {
+  return t[e.offset++];
+}
+function lt(t, e) {
+  return ut(t, e) << 16 >> 16;
+}
+function ut(t, e) {
+  return t[e.offset++] | t[e.offset++] << 8;
+}
+function ft(t, e) {
+  return t[e.offset++] | t[e.offset++] << 8 | t[e.offset++] << 16 | t[e.offset++] << 24;
+}
+function dt(t, e) {
+  return ft(t, e) >>> 0;
+}
+function pt(t, e) {
+  return it[0] = ft(t, e), st[0];
+}
+function vt(t, e) {
+  return it[0] = ft(t, e), it[1] = ft(t, e), nt[0];
+}
+function wt(t, e) {
+  const i = dt(t, e);
+  return ft(t, e) * Math.pow(2, 32) + i;
+}
+function yt(t, e) {
+  const i = dt(t, e);
+  return dt(t, e) * Math.pow(2, 32) + i;
+}
+var mt = {
+    utf8Read: ht,
+    int8: ct,
+    uint8: at,
+    int16: lt,
+    uint16: ut,
+    int32: ft,
+    uint32: dt,
+    float32: pt,
+    float64: vt,
+    int64: wt,
+    uint64: yt,
+    bigint64: function (t, e) {
+      return it[0] = ft(t, e), it[1] = ft(t, e), ot[0];
+    },
+    biguint64: function (t, e) {
+      return it[0] = ft(t, e), it[1] = ft(t, e), rt[0];
+    },
+    boolean: function (t, e) {
+      return at(t, e) > 0;
+    },
+    string: function (t, e) {
+      const i = t[e.offset++];
+      let s;
+      return i < 192 ? s = 31 & i : 217 === i ? s = at(t, e) : 218 === i ? s = ut(t, e) : 219 === i && (s = dt(t, e)), ht(t, e, s);
+    },
+    number: function (t, e) {
+      const i = t[e.offset++];
+      return i < 128 ? i : 202 === i ? pt(t, e) : 203 === i ? vt(t, e) : 204 === i ? at(t, e) : 205 === i ? ut(t, e) : 206 === i ? dt(t, e) : 207 === i ? yt(t, e) : 208 === i ? ct(t, e) : 209 === i ? lt(t, e) : 210 === i ? ft(t, e) : 211 === i ? wt(t, e) : i > 223 ? -1 * (255 - i + 1) : void 0;
+    },
+    stringCheck: function (t, e) {
+      const i = t[e.offset];
+      return i < 192 && i > 160 || 217 === i || 218 === i || 219 === i;
+    }
+  },
+  bt = {},
+  gt = new Map();
+function St(t, e) {
+  e.constructor && (Object.prototype.hasOwnProperty.call(e, "constructor") && null == e.constructor[Symbol.metadata] && h(e.constructor), gt.set(e.constructor, t), bt[t] = e), e.encode && (tt[t] = e.encode), e.decode && (mt[t] = e.decode);
+}
+function kt(t) {
+  return bt[t];
+}
+var Et = "ArraySchema does not support streaming — positional ops (splice / unshift / reverse) shift subsequent indexes, so holding ADDs back for a later tick under `maxPerTick` would desync the decoder. Use `t.stream(X)` (stable monotonic positions) or `t.map(X).stream()` (stable keys) instead.";
+function At() {
+  return {
+    pendingByView: new Map(),
+    sentByView: new Map(),
+    broadcastPending: new Set(),
+    sentBroadcast: new Set(),
+    broadcastDeletes: new Set(),
+    maxPerTick: 32
+  };
+}
+function It(t) {
+  return t._stream ??= At();
+}
+function Mt(t, e, i) {
+  0 === e.activeViews.size && It(t).broadcastPending.add(i);
+}
+function Ot(t, e, s, n) {
+  const r = t._stream;
+  if (void 0 === r) return !0;
+  let o = !1;
+  return r.broadcastPending.delete(n) ? o = !0 : r.sentBroadcast.delete(n) && r.broadcastDeletes.add(n), e.forEachActiveView(t => {
+    const e = r.pendingByView.get(t.id);
+    if (e?.has(n)) return e.delete(n), void (o = !0);
+    const h = r.sentByView.get(t.id);
+    if (h?.has(n)) {
+      h.delete(n);
+      let e = t.changes.get(s);
+      void 0 === e && (e = new Map(), t.changes.set(s, e)), e.set(n, i.DELETE);
+    }
+  }), o;
+}
+function _t(t, e, i) {
+  const s = It(t);
+  let n = s.pendingByView.get(e);
+  void 0 === n && (n = new Set(), s.pendingByView.set(e, n)), n.add(i);
+}
+function $t(t, e) {
+  const i = t._stream;
+  void 0 !== i && (i.pendingByView.delete(e), i.sentByView.delete(e), i.priorityByView?.delete(e));
+}
+var xt = {
+  8: "uint8",
+  16: "uint16",
+  32: "uint32"
+};
+function Rt(t) {
+  if (null == t || "object" != typeof t) throw new Error("t.quantized(): options object with { min, max } is required.");
+  const {
+    min: e,
+    max: i
+  } = t;
+  if (!("number" == typeof e && "number" == typeof i && i > e && Number.isFinite(e) && Number.isFinite(i))) throw new Error(`t.quantized(): require finite min < max (got min=${e}, max=${i}).`);
+  const s = t.bits ?? 16;
+  if (8 !== s && 16 !== s && 32 !== s) throw new Error(`t.quantized(): bits must be 8, 16 or 32 (got ${s}).`);
+  const n = t.mode ?? "clamp";
+  if ("clamp" !== n && "wrap" !== n) throw new Error(`t.quantized(): mode must be "clamp" or "wrap" (got ${JSON.stringify(n)}).`);
+  const r = "wrap" === n,
+    o = Math.pow(2, s);
+  return {
+    min: e,
+    max: i,
+    bits: s,
+    wrap: r,
+    wire: xt[s],
+    range: i - e,
+    span: r ? o : e === -i ? o - 2 : o - 1
+  };
+}
+function Tt(t) {
+  return null !== t && "object" == typeof t && void 0 !== t.quantized;
+}
+function jt(t, e) {
+  if (t.wrap) {
+    if (!Number.isFinite(e)) return 0;
+    const i = t.range;
+    let s = (e - t.min) % i;
+    s < 0 && (s += i);
+    const n = t.span;
+    return Math.floor(s / i * n + .5) % n;
+  }
+  if (e != e) return 0;
+  const i = e < t.min ? t.min : e > t.max ? t.max : e;
+  return Math.floor((i - t.min) / t.range * t.span + .5);
+}
+function Pt(t, e) {
+  return t.min + e / t.span * t.range;
+}
+var Dt = class t {
+  types = {};
+  schemas = new Map();
+  hasFilters = !1;
+  static inheritedTypes = new Map();
+  static cachedContexts = new Map();
+  static register(e) {
+    const i = Object.getPrototypeOf(e);
+    if (i !== ii) {
+      let s = t.inheritedTypes.get(i);
+      s || (s = new Set(), t.inheritedTypes.set(i, s)), s.add(e);
+    }
+  }
+  static cache(e) {
+    let i = t.cachedContexts.get(e);
+    return i || (i = new t(e), t.cachedContexts.set(e, i)), i;
+  }
+  constructor(t) {
+    t && this.discoverTypes(t);
+  }
+  has(t) {
+    return this.schemas.has(t);
+  }
+  get(t) {
+    return this.types[t];
+  }
+  add(t, e = this.schemas.size) {
+    return !this.schemas.has(t) && (this.types[e] = t, null == t[Symbol.metadata] && Ut.initialize(t), this.schemas.set(t, e), !0);
+  }
+  getTypeId(t) {
+    return this.schemas.get(t);
+  }
+  discoverTypes(e) {
+    if (!this.add(e)) return;
+    t.inheritedTypes.get(e)?.forEach(t => {
+      this.discoverTypes(t);
+    });
+    let i = e;
+    for (; (i = Object.getPrototypeOf(i)) && i !== ii && i !== Function.prototype;) this.discoverTypes(i);
+    const s = e[Symbol.metadata];
+    (s[x] || s[F]) && (this.hasFilters = !0);
+    for (const t in s) {
+      const e = s[t].type;
+      if ("string" != typeof e && !Tt(e)) if ("function" == typeof e) this.discoverTypes(e);else {
+        const t = Object.values(e)[0];
+        if ("string" == typeof t) continue;
+        this.discoverTypes(t);
+      }
+    }
+  }
+  debug() {
+    return `TypeContext ->\n\tSchema types: ${this.schemas.size}\n\thasFilters: ${this.hasFilters}`;
+  }
+};
+function Ft(t) {
+  if (Array.isArray(t)) return {
+    array: Ft(t[0])
+  };
+  if (Tt(t)) return "string" == typeof t.quantized.wire ? t : {
+    quantized: Rt(t.quantized)
+  };
+  if (void 0 !== t.type) return t.type;
+  if (function (t) {
+    if ("function" == typeof t && t[Symbol.metadata]) return !1;
+    const e = Object.keys(t),
+      i = e.filter(t => /\d+/.test(t));
+    return i.length > 0 && i.length === e.length / 2 && t[t[i[0]]] == i[0] || !!(e.length > 0 && e.every(e => "string" == typeof t[e] && t[e] === e));
+  }(t)) return Object.keys(t).every(e => "string" == typeof t[e]) ? "string" : "number";
+  if ("object" == typeof t && null !== t) {
+    const e = Object.keys(t).find(t => void 0 !== bt[t]);
+    if (e) return t[e] = Ft(t[e]), t;
+  }
+  return t;
+}
+var Ct = [$, T, j, P, D, F, O];
+function Nt(t, e, i) {
+  t[e] || Object.defineProperty(t, e, {
+    value: [],
+    enumerable: !1,
+    configurable: !0,
+    writable: !0
+  }), t[e].push(i);
+}
+var Ut = {
+    addField(t, e, i, s, n) {
+      if (e >= 63) throw new Error(`Can't define field '${i}'.\nSchema instances may only have up to 63 fields.`);
+      t[e] = Object.assign(t[e] || {}, {
+        type: Ft(s),
+        index: e,
+        name: i
+      }), Object.defineProperty(t, I, {
+        value: t[I] || {},
+        enumerable: !1,
+        configurable: !0
+      }), t[I][i] = n || {
+        value: void 0,
+        writable: !0,
+        enumerable: !0,
+        configurable: !0
+      }, Object.defineProperty(t, _, {
+        value: e,
+        enumerable: !1,
+        configurable: !0
+      }), Object.defineProperty(t, i, {
+        value: e,
+        enumerable: !1,
+        configurable: !0
+      }), "string" == typeof t[e].type || Tt(t[e].type) || (void 0 === t[$] && Object.defineProperty(t, $, {
+        value: [],
+        enumerable: !1,
+        configurable: !0
+      }), t[$].push(e));
+      const r = t[e].type;
+      if (r && "object" == typeof r && void 0 !== r.stream) {
+        if (void 0 !== r.array) throw new Error(Et);
+        t[e].stream = !0, t[F] || Object.defineProperty(t, F, {
+          value: [],
+          enumerable: !1,
+          configurable: !0,
+          writable: !0
+        }), t[F].includes(e) || t[F].push(e);
+        const n = s?.priority;
+        "function" == typeof n && Ut.setStreamPriority(t, i, n);
+      }
+    },
+    setTag(t, e, i) {
+      const s = t[e];
+      if (t[s].tag = i, t[x] || (Object.defineProperty(t, x, {
+        value: [],
+        enumerable: !1,
+        configurable: !0
+      }), Object.defineProperty(t, R, {
+        value: {},
+        enumerable: !1,
+        configurable: !0
+      })), t[x].push(s), i < 0) t[R][i] || (t[R][i] = []), t[R][i].push(s);else for (let n = i; n > 0; n &= n - 1) {
+        const e = n & -n;
+        t[R][e] || (t[R][e] = []), t[R][e].push(s);
+      }
+    },
+    setUnreliable(t, e) {
+      const i = t[e];
+      if ("string" != typeof t[i].type) throw new Error(`@unreliable cannot be applied to ref-type field "${e}". For ref-type fields, mark each primitive sub-field with @unreliable instead. See README "Limitations and best practices".`);
+      t[i].unreliable = !0, t[T] || Object.defineProperty(t, T, {
+        value: [],
+        enumerable: !1,
+        configurable: !0,
+        writable: !0
+      }), t[T].push(i);
+    },
+    setPatchOnly(t, e) {
+      const i = t[e];
+      if (t[i].fullStateOnly) throw new Error(`field "${e}" cannot be both patchOnly and fullStateOnly — those are the only two delivery channels, so the field would never reach a client.`);
+      t[i].patchOnly = !0, Nt(t, j, i), Nt(t, P, i);
+    },
+    setDeprecated(t, e) {
+      const i = t[e];
+      t[i].deprecated = !0, Nt(t, P, i), Object.defineProperty(t, i, {
+        value: t[i],
+        enumerable: !1,
+        configurable: !0
+      });
+    },
+    setFullStateOnly(t, e) {
+      const i = t[e];
+      if (t[i].patchOnly) throw new Error(`field "${e}" cannot be both patchOnly and fullStateOnly — those are the only two delivery channels, so the field would never reach a client.`);
+      t[i].fullStateOnly = !0, Nt(t, D, i);
+    },
+    setStream(t, e) {
+      const i = t[e];
+      t[i].stream = !0, t[F] || Object.defineProperty(t, F, {
+        value: [],
+        enumerable: !1,
+        configurable: !0,
+        writable: !0
+      }), t[F].push(i);
+    },
+    setStreamPriority(t, e, i) {
+      const s = t[e];
+      t[C] || Object.defineProperty(t, C, {
+        value: {},
+        enumerable: !1,
+        configurable: !0,
+        writable: !0
+      }), t[C][s] = i;
+    },
+    getStreamPriority: (t, e) => t?.[C]?.[e],
+    defineField(t, e, s, n, r) {
+      const o = Ft(r),
+        {
+          complexTypeKlass: h,
+          childType: c
+        } = function (t) {
+          const e = "string" == typeof Object.keys(t)[0] && kt(Object.keys(t)[0]);
+          return {
+            complexTypeKlass: e,
+            childType: e ? Object.values(t)[0] : t
+          };
+        }(o);
+      Ut.addField(e, s, n, o, function (t, e, s, n) {
+        let r;
+        return r = n ? function (t, e, s, n) {
+          const r = n.constructor === Ce,
+            o = n.constructor === Ue;
+          return function (t) {
+            const n = this[E],
+              h = n[e];
+            if (t !== h) {
+              if (null != t) {
+                if (!r || t instanceof Ce) {
+                  if (!o || t instanceof Ue) t[m] = s;else {
+                    const e = new Ue();
+                    if (e[m] = s, t instanceof Map) t.forEach((t, i) => e.set(i, t));else for (const i in t) e.set(i, t[i]);
+                    t = e;
+                  }
+                } else {
+                  const e = new Ce();
+                  e[m] = s, e.push(...t), t = e;
+                }
+                const n = this[y],
+                  c = this.constructor;
+                null != h && h[y] ? (n.root?.remove(h[y]), c[l](n, e, i.DELETE_AND_ADD)) : c[l](n, e, i.ADD), t[y]?.setParent(this, n.root, e);
+              } else null != h && this[y].delete(e);
+              n[e] = t;
+            }
+          };
+        }(0, e, s, n) : "string" == typeof s ? function (t, e, s) {
+          const n = Qe[s],
+            r = "string" === s,
+            o = "boolean" === s;
+          return function (s) {
+            const h = this[E],
+              c = h[e];
+            if (s !== c) {
+              if (null != s) {
+                if (!(o || void 0 === n || typeof s === n || r && null === s)) {
+                  const e = s && s.constructor ? ` (${s.constructor.name})` : "";
+                  throw new je(`a '${n}' was expected, but '${JSON.stringify(s)}'${e} was provided in ${this.constructor.name}#${t}`);
+                }
+                this.constructor[l](this[y], e, i.ADD);
+              } else null != c && this[y].delete(e);
+              h[e] = s;
+            }
+          };
+        }(t, e, s) : Tt(s) ? function (t, e, s) {
+          return function (n) {
+            const r = this[E],
+              o = r[e];
+            if (null != n) {
+              if ("number" != typeof n) throw new je(`a 'number' was expected, but '${JSON.stringify(n)}' was provided in ${this.constructor.name}#${t}`);
+              if ((n = Pt(s, jt(s, n))) === o) return;
+              this.constructor[l](this[y], e, i.ADD);
+            } else {
+              if (n === o) return;
+              null != o && this[y].delete(e);
+            }
+            r[e] = n;
+          };
+        }(t, e, s.quantized) : function (t, e, s) {
+          return function (n) {
+            const r = this[E],
+              o = r[e];
+            if (n !== o) {
+              if (null != n) {
+                Pe(n, s, this, t);
+                const r = this[y],
+                  h = this.constructor;
+                null != o && o[y] ? (r.root?.remove(o[y]), h[l](r, e, i.DELETE_AND_ADD)) : h[l](r, e, i.ADD), n[y]?.setParent(this, r.root, e);
+              } else null != o && this[y].delete(e);
+              r[e] = n;
+            }
+          };
+        }(t, e, s), {
+          get: function () {
+            return this[E][e];
+          },
+          set: r,
+          enumerable: !0,
+          configurable: !0
+        };
+      }(n, s, c, h)), e[I][n] && Object.defineProperty(t.prototype, n, e[I][n]), ("string" == typeof o || Tt(o)) && (e[O] || Object.defineProperty(e, O, {
+        value: [],
+        enumerable: !1,
+        configurable: !0,
+        writable: !0
+      }), e[O][s] = "string" == typeof o ? tt[o] : function (t) {
+        const e = tt[t.wire];
+        return (i, s, n) => e(i, jt(t, s), n);
+      }(o.quantized));
+    },
+    setFields(t, e) {
+      const i = t.prototype.constructor;
+      Dt.register(i);
+      const s = Object.getPrototypeOf(i),
+        n = s && s[Symbol.metadata],
+        r = Ut.initialize(i);
+      i["~track"] || (i[l] = ii[l]), i["~encoder"] || (i[u] = ii[u]), i["~decoder"] || (i[f] = ii[f]), i.prototype.toJSON || (i.prototype.toJSON = ii.prototype.toJSON);
+      let o = r["~__numFields"] ?? (n && n["~__numFields"]) ?? -1;
+      o++, r[O] || Object.defineProperty(r, O, {
+        value: n?.[O] ? [...n[O]] : [],
+        enumerable: !1,
+        configurable: !0,
+        writable: !0
+      });
+      for (const h in e) {
+        if (void 0 !== r[h]) throw new Error(`@colyseus/schema: Duplicate '${h}' definition on '${i.name || "(anonymous)"}'.`);
+        Ut.defineField(i, r, o, h, e[h]), o++;
+      }
+      return t;
+    },
+    isDeprecated: (t, e) => !0 === t[e].deprecated,
+    initialize(t) {
+      const e = Object.getPrototypeOf(t),
+        i = e[Symbol.metadata];
+      let s = t[Symbol.metadata] ?? Object.create(null);
+      if (e !== ii && s === i && (s = Object.create(null), i)) {
+        Object.setPrototypeOf(s, i), Object.defineProperty(s, _, {
+          value: i[_],
+          enumerable: !1,
+          configurable: !0,
+          writable: !0
+        }), void 0 !== i[x] && (Object.defineProperty(s, x, {
+          value: [...i[x]],
+          enumerable: !1,
+          configurable: !0,
+          writable: !0
+        }), Object.defineProperty(s, R, {
+          value: {
+            ...i[R]
+          },
+          enumerable: !1,
+          configurable: !0,
+          writable: !0
+        }));
+        for (const t of Ct) {
+          const e = i[t];
+          void 0 !== e && Object.defineProperty(s, t, {
+            value: [...e],
+            enumerable: !1,
+            configurable: !0,
+            writable: !0
+          });
+        }
+        Object.defineProperty(s, I, {
+          value: {
+            ...i[I]
+          },
+          enumerable: !1,
+          configurable: !0,
+          writable: !0
+        });
+      }
+      return Object.defineProperty(t, Symbol.metadata, {
+        value: s,
+        writable: !1,
+        configurable: !0
+      }), s;
+    },
+    isValidInstance: t => t.constructor[Symbol.metadata] && Object.prototype.hasOwnProperty.call(t.constructor[Symbol.metadata], "~__numFields"),
+    getFields(t) {
+      const e = t[Symbol.metadata],
+        i = {};
+      for (let s = 0; s <= e[_]; s++) i[e[s].name] = e[s].type;
+      return i;
+    },
+    hasViewTagAtIndex: (t, e) => t?.[x]?.includes(e),
+    hasUnreliableAtIndex: (t, e) => t?.[T]?.includes(e),
+    hasPatchOnlyAtIndex: (t, e) => t?.[j]?.includes(e),
+    hasFullStateOnlyAtIndex: (t, e) => t?.[D]?.includes(e),
+    hasStreamAtIndex: (t, e) => t?.[F]?.includes(e)
+  },
+  Bt = (t, e, i) => t(e, i),
+  Lt = class {
+    dirtyLow = 0;
+    dirtyHigh = 0;
+    ops;
+    constructor(t) {
+      this.ops = new Uint8Array(Math.max(t + 1, 1));
+    }
+    record(t, e) {
+      const s = this.ops[t];
+      0 === s ? this.ops[t] = e : (s === i.DELETE || s === i.ADD && e === i.DELETE_AND_ADD) && (this.ops[t] = i.DELETE_AND_ADD), t < 32 ? this.dirtyLow |= 1 << t : this.dirtyHigh |= 1 << t - 32;
+    }
+    recordDelete(t, e) {
+      this.ops[t] = e, t < 32 ? this.dirtyLow |= 1 << t : this.dirtyHigh |= 1 << t - 32;
+    }
+    recordRaw(t, e) {
+      this.record(t, e);
+    }
+    operationAt(t) {
+      const e = this.ops[t];
+      return 0 === e ? void 0 : e;
+    }
+    setOperationAt(t, e) {
+      this.ops[t] = e;
+    }
+    forEach(t) {
+      this.forEachWithCtx(t, Bt);
+    }
+    forEachWithCtx(t, e) {
+      let i = this.dirtyLow,
+        s = this.dirtyHigh;
+      const n = this.ops;
+      for (; 0 !== i;) {
+        const s = i & -i,
+          r = 31 - Math.clz32(s);
+        i ^= s, e(t, r, n[r]);
+      }
+      for (; 0 !== s;) {
+        const i = s & -s,
+          r = 31 - Math.clz32(i) + 32;
+        s ^= i, e(t, r, n[r]);
+      }
+    }
+    size() {
+      return qt(this.dirtyLow) + qt(this.dirtyHigh);
+    }
+    has() {
+      return 0 !== (this.dirtyLow | this.dirtyHigh);
+    }
+    reset() {
+      this.dirtyLow = 0, this.dirtyHigh = 0, this.ops.fill(0);
+    }
+  },
+  Vt = class {
+    dirty = new Map();
+    pureOps = [];
+    record(t, e) {
+      const s = this.dirty.get(t);
+      void 0 === s ? this.dirty.set(t, e) : (s === i.DELETE || s === i.ADD && e === i.DELETE_AND_ADD) && this.dirty.set(t, i.DELETE_AND_ADD);
+    }
+    recordDelete(t, e) {
+      this.dirty.set(t, e);
+    }
+    recordRaw(t, e) {
+      this.dirty.set(t, e);
+    }
+    recordPure(t) {
+      this.pureOps.push([this.dirty.size, t]);
+    }
+    operationAt(t) {
+      return this.dirty.get(t);
+    }
+    setOperationAt(t, e) {
+      this.dirty.has(t) && this.dirty.set(t, e);
+    }
+    forEach(t) {
+      this.forEachWithCtx(t, Bt);
+    }
+    forEachWithCtx(t, e) {
+      const i = this.pureOps;
+      if (i.length > 0) {
+        let s = 0,
+          n = 0;
+        for (const [r, o] of this.dirty) {
+          for (; s < i.length && i[s][0] <= n;) {
+            const n = i[s++][1];
+            e(t, -n, n);
+          }
+          e(t, r, o), n++;
+        }
+        for (; s < i.length;) {
+          const n = i[s++][1];
+          e(t, -n, n);
+        }
+      } else for (const [s, n] of this.dirty) e(t, s, n);
+    }
+    size() {
+      return this.dirty.size + this.pureOps.length;
+    }
+    has() {
+      return this.dirty.size > 0 || this.pureOps.length > 0;
+    }
+    reset() {
+      this.dirty.clear(), this.pureOps.length = 0;
+    }
+    shift(t) {
+      const e = new Map();
+      for (const [i, s] of this.dirty) e.set(i + t, s);
+      this.dirty = e;
+    }
+  };
+function qt(t) {
+  return 16843009 * ((t = (858993459 & (t -= t >>> 1 & 1431655765)) + (t >>> 2 & 858993459)) + (t >>> 4) & 252645135) >>> 24;
+}
+function zt(t) {
+  if (void 0 === t) return 0;
+  let e = 0;
+  for (let i = 0, s = t.length; i < s; i++) {
+    const s = t[i];
+    s < 32 && (e |= 1 << s);
+  }
+  return e;
+}
+function Wt(t) {
+  const e = t.constructor;
+  if (Object.prototype.hasOwnProperty.call(e, M)) return e[M];
+  const i = e[Symbol.metadata],
+    s = Ut.isValidInstance(t),
+    n = (i?.[x]?.length ?? 0) > 0,
+    r = function (t) {
+      const e = [],
+        i = [],
+        s = [],
+        n = [],
+        r = t?.[_];
+      if (void 0 === r) return {
+        names: e,
+        types: i,
+        tags: s,
+        encoders: n
+      };
+      const o = t[O];
+      for (let h = 0; h <= r; h++) {
+        const r = t[h];
+        void 0 !== r ? (e[h] = r.name, i[h] = r.type, s[h] = r.tag, n[h] = o?.[h]) : (e[h] = void 0, i[h] = void 0, s[h] = void 0, n[h] = void 0);
+      }
+      return {
+        names: e,
+        types: i,
+        tags: s,
+        encoders: n
+      };
+    }(i),
+    o = s && !n ? void 0 : e[d],
+    h = {
+      encoder: e[u],
+      filter: o,
+      metadata: i,
+      isSchema: s,
+      filterBitmask: s ? zt(i?.[x]) : 0,
+      hasAnyFullStateOnly: (i?.[D]?.length ?? 0) > 0,
+      hasAnyUnreliable: (i?.[T]?.length ?? 0) > 0,
+      hasAnyStream: (i?.[F]?.length ?? 0) > 0,
+      hasAnyView: n,
+      fullStateOnlyBitmask: zt(i?.[D]),
+      unreliableBitmask: zt(i?.[T]),
+      streamBitmask: zt(i?.[F]),
+      names: r.names,
+      types: r.types,
+      tags: r.tags,
+      encoders: r.encoders
+    };
+  return Object.defineProperty(e, M, {
+    value: h,
+    enumerable: !1,
+    writable: !0,
+    configurable: !0
+  }), h;
+}
+function Ht(t, e) {
+  if (void 0 !== t.parentRef && e(t.parentRef, t._parentIndex)) return !0;
+  for (let i = t.extraParents; void 0 !== i; i = i.next) if (e(i.ref, i.index)) return !0;
+  return !1;
+}
+var Jt = (t, e) => {
+    t.isFieldUnreliable(e) ? t.ensureUnreliableRecorder().record(e, i.ADD) : t.record(e, i.ADD);
+  },
+  Kt = (t, e) => t(e);
+function Gt(t, e, i) {
+  const s = t.refTarget;
+  if (void 0 !== s[m]) {
+    if (t.isPatchOnly) return;
+    if (Array.isArray(s.items)) {
+      const t = s.items;
+      for (let s = 0, n = t.length; s < n; s++) void 0 !== t[s] && i(e, s);
+    } else if (void 0 !== s.journal) for (const [t, n] of s.journal.keyByIndex) s.$items.has(n) && i(e, t);else if (void 0 !== s.$items) for (const t of s.$items.keys()) i(e, t);
+  } else {
+    const n = t.metadata;
+    if (!n) return;
+    const r = n["~__numFields"] ?? -1,
+      o = n[P],
+      h = t.encDescriptor.names;
+    for (let t = 0; t <= r; t++) {
+      const n = h[t];
+      if (void 0 === n) continue;
+      if (o && o.includes(t)) continue;
+      null != s[n] && i(e, t);
+    }
+  }
+}
+function Yt(t, e, i, s) {
+  !function (t, e, i) {
+    if (!e) return;
+    const s = e[y],
+      n = !s._isSchema;
+    let r;
+    n ? (e = s.parent, i = s.parentIndex, r = e?.[y].metadata) : r = s.metadata;
+    const o = (r?.[j]?.includes(i) ? pe : 0) | (r?.[D]?.includes(i) ? ve : 0),
+      h = s.flags & ye | o,
+      c = t.flags;
+    if (t.flags = c | h, h & ~c & ve && (t.reset(), t.unreliableRecorder?.reset()), !t.root?.types?.hasFilters) return;
+    const a = r?.[x]?.includes(i) ?? !1,
+      l = r?.[F]?.includes(i) ?? !1,
+      u = s.isFiltered || a || l;
+    if (t.isFiltered = u, l && !n) {
+      t.isStreamCollection = !0;
+      const e = It(t.ref);
+      if (void 0 === e.priority) {
+        const t = Ut.getStreamPriority(r, i);
+        void 0 !== t && (e.priority = t);
+      }
+      t.root?.registerStream(t.ref);
+    }
+    if (u) {
+      const e = Zt(t);
+      t.isVisibilitySharedWithParent = s.isFiltered && e && !l && (!a || n && r[i].tag !== Ge);
+    }
+  }(t, e, i), t.isFullStateOnly || (t.has() && t.root?.enqueueChangeTree(t), t.unreliableRecorder?.has() && t.root?.enqueueUnreliable(t), t.has() || t.unreliableRecorder?.has() || t.root?.enqueueChangeTree(t));
+}
+function Xt(t) {
+  const e = t.pendingFilterRefresh;
+  for (let i = 0; i < e.length; i++) {
+    const t = e[i];
+    0 !== (t.flags & we) && Qt(t);
+  }
+  e.length = 0;
+}
+function Zt(t) {
+  return t._isSchema || "string" != typeof t.refTarget[m];
+}
+function Qt(t) {
+  t.flags &= ~we;
+  const e = t.root;
+  if (void 0 === e || void 0 === t.parentRef) return;
+  const i = Zt(t);
+  let s = ne(t, t.parentRef, t._parentIndex, i);
+  for (let r = t.extraParents; void 0 !== r && s !== se; r = r.next) s |= ne(t, r.ref, r.index, i);
+  if (0 === s) return;
+  t.isVisibilitySharedWithParent = 0 !== (s & ie);
+  const n = 0 === (s & ee);
+  n !== t.isFiltered && (t.isFiltered = n, n || t.isFullStateOnly || (t.forEachLiveWithCtx(t, Jt), t.has() && e.enqueueChangeTree(t), t.unreliableRecorder?.has() && e.enqueueUnreliable(t)), t.forEachChildWithCtx(t, re));
+}
+var te = 1,
+  ee = 2,
+  ie = 4,
+  se = 7;
+function ne(t, e, i, s) {
+  const n = e[y];
+  if (n.root !== t.root || !function (t, e, i) {
+    const s = e.refTarget;
+    if (e.isArray) {
+      const e = s.items,
+        n = e[i];
+      if (void 0 !== n && n[y] === t) return !0;
+      for (let i = 0, s = e.length; i < s; i++) {
+        const s = e[i];
+        if (void 0 !== s && s[y] === t) return !0;
+      }
+      return !1;
+    }
+    const n = e.getValue(i);
+    return void 0 !== n && n[y] === t;
+  }(t, n, i)) return 0;
+  n.flags & we && Qt(n);
+  let r = te;
+  if (n._isSchema) void 0 !== n.encDescriptor.tags[i] || n.isFieldStream(i) || (n.isFiltered ? s && (r |= ie) : r |= ee);else if (n.isFiltered) {
+    if (s && !n.isStreamCollection) {
+      const t = n.parent?.[y];
+      (t?._isSchema ? t.encDescriptor.tags[n.parentIndex] : void 0) !== Ge && (r |= ie);
+    }
+  } else r |= ee;
+  return r;
+}
+var re = (t, e, i) => {
+  Qt(e);
+};
+function oe(t, e, i) {
+  t(e, i);
+}
+function he(t, e, i) {
+  const s = t.refTarget;
+  if (s[m]) {
+    if ("string" != typeof s[m]) {
+      const t = s.items;
+      if (void 0 !== t) for (let s = 0, n = t.length; s < n; s++) {
+        const n = t[s];
+        n && i(e, n[y], s);
+      } else {
+        const t = s.$items,
+          n = s._collectionIndexes;
+        for (const s of t.keys()) {
+          const r = t.get(s);
+          r && i(e, r[y], n?.[s] ?? s);
+        }
+      }
+    }
+  } else {
+    const n = t.metadata?.[$];
+    if (!n) return;
+    const r = t.encDescriptor.names;
+    for (let t = 0, o = n.length; t < o; t++) {
+      const o = n[t],
+        h = s[r[o]];
+      h && i(e, h[y], o);
+    }
+  }
+}
+function ce(t, e, i) {
+  e.root !== t ? e.setRoot(t) : t.add(e);
+}
+var ae = [],
+  le = 0;
+function ue(t, e, i) {
+  if (e.root === t.root) return t.root.add(e), void t.root.moveNextToParent(e);
+  e.setParent(t.parentRef, t.root, i);
+}
+function fe(t, e, i) {
+  const s = (3 & i) << 3;
+  return i < 4 ? t >>> s & 255 : e >>> s & 255;
+}
+var de = (t, e, i) => t(e, i),
+  pe = 16,
+  ve = 32,
+  we = 256,
+  ye = 48,
+  me = class {
+    ref;
+    refTarget;
+    get isArray() {
+      return this.refTarget !== this.ref;
+    }
+    metadata;
+    encDescriptor;
+    root;
+    parentRef;
+    _parentIndex;
+    extraParents;
+    flags = 4;
+    _fullSyncGen = 0;
+    _isSchema = !1;
+    dirtyLow = 0;
+    dirtyHigh = 0;
+    opsLow = 0;
+    opsHigh = 0;
+    ops;
+    collDirty;
+    collPureOps;
+    unreliableRecorder;
+    paused = !1;
+    changesNode;
+    unreliableChangesNode;
+    visibleViews;
+    tagViews;
+    subscribedViews;
+    get isFiltered() {
+      return !!(1 & this.flags);
+    }
+    set isFiltered(t) {
+      this.flags = t ? 1 | this.flags : -2 & this.flags;
+    }
+    get isVisibilitySharedWithParent() {
+      return !!(2 & this.flags);
+    }
+    set isVisibilitySharedWithParent(t) {
+      this.flags = t ? 2 | this.flags : -3 & this.flags;
+    }
+    get isNew() {
+      return !!(4 & this.flags);
+    }
+    set isNew(t) {
+      this.flags = t ? 4 | this.flags : -5 & this.flags;
+    }
+    get isUnreliable() {
+      return !!(8 & this.flags);
+    }
+    set isUnreliable(t) {
+      this.flags = t ? 8 | this.flags : -9 & this.flags;
+    }
+    get isPatchOnly() {
+      return 0 !== (this.flags & pe);
+    }
+    set isPatchOnly(t) {
+      this.flags = t ? this.flags | pe : -17 & this.flags;
+    }
+    get isFullStateOnly() {
+      return 0 !== (this.flags & ve);
+    }
+    set isFullStateOnly(t) {
+      this.flags = t ? this.flags | ve : -33 & this.flags;
+    }
+    get isStreamCollection() {
+      return !!(64 & this.flags);
+    }
+    set isStreamCollection(t) {
+      this.flags = t ? 64 | this.flags : -65 & this.flags;
+    }
+    get needsRestage() {
+      return !!(128 & this.flags);
+    }
+    set needsRestage(t) {
+      this.flags = t ? 128 | this.flags : -129 & this.flags;
+    }
+    get hasFilteredFields() {
+      return this.isFiltered || this.encDescriptor.hasAnyView;
+    }
+    ensureUnreliableRecorder() {
+      return void 0 === this.unreliableRecorder && (this.unreliableRecorder = this._isSchema ? new Lt(this.metadata?.["~__numFields"] ?? 0) : new Vt()), this.unreliableRecorder;
+    }
+    isFieldUnreliable(t) {
+      const e = this.encDescriptor;
+      return !!e.hasAnyUnreliable && (t < 32 ? !!(e.unreliableBitmask & 1 << t) : Ut.hasUnreliableAtIndex(this.metadata, t));
+    }
+    isFieldFullStateOnly(t) {
+      if (this.isFullStateOnly) return !0;
+      const e = this.encDescriptor;
+      return !!e.hasAnyFullStateOnly && (t < 32 ? !!(e.fullStateOnlyBitmask & 1 << t) : Ut.hasFullStateOnlyAtIndex(this.metadata, t));
+    }
+    isFieldStream(t) {
+      const e = this.encDescriptor;
+      return !!e.hasAnyStream && (t < 32 ? !!(e.streamBitmask & 1 << t) : Ut.hasStreamAtIndex(this.metadata, t));
+    }
+    constructor(t, e = t) {
+      this.ref = t, this.refTarget = e;
+      const i = Wt(t);
+      this.encDescriptor = i, this.metadata = i.metadata;
+      const s = i.isSchema;
+      if (this._isSchema = s, this.ops = void 0, this.collDirty = void 0, this.collPureOps = void 0, s) {
+        const t = this.metadata?.["~__numFields"] ?? 0;
+        t > 7 && (this.ops = new Uint8Array(t + 1));
+      } else this.collDirty = new Map();
+    }
+    _opAt(t) {
+      const e = this.ops;
+      if (void 0 !== e) return e[t];
+      const i = (3 & t) << 3;
+      return t < 4 ? this.opsLow >>> i & 255 : this.opsHigh >>> i & 255;
+    }
+    _opPut(t, e) {
+      const i = this.ops;
+      if (void 0 !== i) return void (i[t] = e);
+      const s = (3 & t) << 3,
+        n = ~(255 << s);
+      t < 4 ? this.opsLow = this.opsLow & n | e << s : this.opsHigh = this.opsHigh & n | e << s;
+    }
+    _markDirty(t) {
+      t < 32 ? this.dirtyLow |= 1 << t : this.dirtyHigh |= 1 << t - 32;
+    }
+    record(t, e) {
+      if (this._isSchema) {
+        const s = this._opAt(t);
+        0 === s ? this._opPut(t, e) : (s === i.DELETE || s === i.ADD && e === i.DELETE_AND_ADD) && this._opPut(t, i.DELETE_AND_ADD), this._markDirty(t);
+      } else {
+        const s = this.collDirty,
+          n = s.get(t);
+        let r;
+        r = void 0 === n ? e : n === i.DELETE || n === i.ADD && e === i.DELETE_AND_ADD ? i.DELETE_AND_ADD : n, s.set(t, r);
+      }
+    }
+    recordDelete(t, e) {
+      this._isSchema ? (this._opPut(t, e), this._markDirty(t)) : this.collDirty.set(t, e);
+    }
+    recordRaw(t, e) {
+      this._isSchema ? (this._opPut(t, e), this._markDirty(t)) : this.collDirty.set(t, e);
+    }
+    recordPure(t) {
+      if (this._isSchema) throw new Error("ChangeTree (Schema): pure operations are not supported");
+      (this.collPureOps ??= []).push([this.collDirty.size, t]);
+    }
+    operationAt(t) {
+      if (this._isSchema) {
+        const e = this._opAt(t);
+        return 0 === e ? void 0 : e;
+      }
+      return this.collDirty.get(t);
+    }
+    setOperationAt(t, e) {
+      if (this._isSchema) this._opPut(t, e);else {
+        const i = this.collDirty;
+        i.has(t) && i.set(t, e);
+      }
+    }
+    forEach(t) {
+      this.forEachWithCtx(t, de);
+    }
+    forEachWithCtx(t, e) {
+      if (this._isSchema) {
+        let i = this.dirtyLow,
+          s = this.dirtyHigh;
+        const n = this.ops;
+        if (void 0 !== n) {
+          for (; 0 !== i;) {
+            const s = i & -i,
+              r = 31 - Math.clz32(s);
+            i ^= s, e(t, r, n[r]);
+          }
+          for (; 0 !== s;) {
+            const i = s & -s,
+              r = 31 - Math.clz32(i) + 32;
+            s ^= i, e(t, r, n[r]);
+          }
+        } else {
+          const s = this.opsLow,
+            n = this.opsHigh;
+          for (; 0 !== i;) {
+            const r = i & -i,
+              o = 31 - Math.clz32(r);
+            i ^= r, e(t, o, fe(s, n, o));
+          }
+        }
+        return;
+      }
+      const i = this.collDirty,
+        s = this.collPureOps;
+      if (void 0 !== s && s.length > 0) {
+        let n = 0,
+          r = 0;
+        for (const [o, h] of i) {
+          for (; n < s.length && s[n][0] <= r;) {
+            const i = s[n++][1];
+            e(t, -i, i);
+          }
+          e(t, o, h), r++;
+        }
+        for (; n < s.length;) {
+          const i = s[n++][1];
+          e(t, -i, i);
+        }
+      } else for (const [n, r] of i) e(t, n, r);
+    }
+    size() {
+      return this._isSchema ? qt(this.dirtyLow) + qt(this.dirtyHigh) : this.collDirty.size + (this.collPureOps?.length ?? 0);
+    }
+    has() {
+      return this._isSchema ? 0 !== (this.dirtyLow | this.dirtyHigh) : this.collDirty.size > 0 || void 0 !== this.collPureOps && this.collPureOps.length > 0;
+    }
+    reset() {
+      if (this._isSchema) return this.dirtyLow = 0, this.dirtyHigh = 0, void (void 0 !== this.ops ? this.ops.fill(0) : (this.opsLow = 0, this.opsHigh = 0));
+      this.collDirty.clear(), void 0 !== this.collPureOps && (this.collPureOps.length = 0), this.flags &= -513;
+    }
+    recycle() {
+      if (void 0 !== this.root) throw new Error(`@colyseus/schema: cannot recycle an attached ChangeTree (${this.ref?.constructor?.name}). Remove the instance from its parent collection before releasing it to a pool.`);
+      this.reset(), this.unreliableRecorder?.reset(), this.flags = 132, this._fullSyncGen = 0, this.parentRef = void 0, this._parentIndex = void 0, this.extraParents = void 0, this.changesNode = void 0, this.unreliableChangesNode = void 0, this.paused = !1, this.visibleViews = void 0, this.tagViews = void 0, this.subscribedViews = void 0;
+    }
+    insertAt(t, e) {
+      if (this._isSchema) throw new Error("ChangeTree (Schema): insertAt is not supported");
+      const s = this.collDirty,
+        n = new Map(),
+        r = !this.paused && !this.isFullStateOnly;
+      if (t > 0) for (const [i, o] of s) i < t && n.set(i, o);
+      if (r) for (let o = 0; o < e; o++) n.set(t + o, i.ADD);
+      for (const [i, o] of s) i >= t && n.set(i + e, o);
+      this.collDirty = n, r && this.root?.enqueueChangeTree(this);
+    }
+    removeAt(t, e) {
+      if (this._isSchema) throw new Error("ChangeTree (Schema): removeAt is not supported");
+      const i = this.collDirty,
+        s = t + e;
+      let n = !1;
+      for (const o of i.keys()) if (o >= s) {
+        n = !0;
+        break;
+      }
+      if (!n) {
+        for (let e = t; e < s; e++) i.delete(e);
+        return;
+      }
+      const r = new Map();
+      for (const [o, h] of i) o < t ? r.set(o, h) : o >= s && r.set(o - e, h);
+      this.collDirty = r;
+    }
+    unshift(t) {
+      this.insertAt(0, t);
+    }
+    setRoot(t) {
+      !function (t, e) {
+        t.root = e;
+        const i = e.add(t);
+        Yt(t, t.parent, t.parentIndex), i && he(t, e, ce);
+      }(this, t);
+    }
+    setParent(t, e, i) {
+      !function (t, e, i, s) {
+        if (t.addParent(e, s), !i) return;
+        const n = i.add(t);
+        i !== t.root && (t.root = i, Yt(t, e, s));
+        const r = e?.[y];
+        if (void 0 !== r && void 0 !== r.subscribedViews && void 0 !== e[m] && function (t, e, i, s) {
+          const n = t.subscribedViews;
+          if (void 0 === n) return;
+          const r = t.isStreamCollection,
+            o = r ? t.ref : void 0,
+            h = r ? void 0 : i[y];
+          for (let c = 0, a = n.length; c < a; c++) {
+            let t = n[c];
+            for (; 0 !== t;) {
+              const i = t & -t;
+              t ^= i;
+              const a = 32 * c + (31 - Math.clz32(i)),
+                l = s.activeViews.get(a)?.deref();
+              void 0 !== l ? r ? _t(o, a, e) : void 0 !== h && l.markVisible(h) : n[c] &= ~i;
+            }
+          }
+        }(r, s, t.ref, i), n) {
+          let e = ae[le];
+          void 0 === e && (e = {
+            parentRef: void 0,
+            root: void 0
+          }, ae[le] = e), e.parentRef = t.ref, e.root = i, le++, he(t, e, ue), le--;
+        }
+      }(this, t, e, i);
+    }
+    forEachChild(t) {
+      he(this, t, oe);
+    }
+    forEachChildWithCtx(t, e) {
+      he(this, t, e);
+    }
+    forEachLive(t) {
+      Gt(this, t, Kt);
+    }
+    forEachLiveWithCtx(t, e) {
+      Gt(this, t, e);
+    }
+    operation(t) {
+      this.paused || this.isFullStateOnly || (this.recordPure(t), this.root?.enqueueChangeTree(this));
+    }
+    _routeAndRecord(t, e, i) {
+      if (!this.paused && !this.isFieldFullStateOnly(t)) {
+        if (this.isFieldUnreliable(t) && !this.isNew) {
+          const s = this.ensureUnreliableRecorder();
+          return i ? s.recordRaw(t, e) : s.record(t, e), void this.root?.enqueueUnreliable(this);
+        }
+        i ? this.recordRaw(t, e) : this.record(t, e), this.root?.enqueueChangeTree(this);
+      }
+    }
+    change(t, e = i.ADD) {
+      this._routeAndRecord(t, e, !1);
+    }
+    indexedOperation(t, e) {
+      this._routeAndRecord(t, e, !0);
+    }
+    getChange(t) {
+      return this.operationAt(t);
+    }
+    pause() {
+      this.paused = !0;
+    }
+    resume() {
+      this.paused = !1;
+    }
+    untracked(t) {
+      const e = this.paused;
+      this.paused = !0;
+      try {
+        return t();
+      } finally {
+        this.paused = e;
+      }
+    }
+    markDirty(t, e = i.ADD) {
+      const s = this.paused;
+      this.paused = !1;
+      try {
+        this.change(t, e);
+      } finally {
+        this.paused = s;
+      }
+    }
+    getValue(t, e = !1) {
+      return this.refTarget[p](t, e);
+    }
+    delete(t, e) {
+      if (void 0 === t) {
+        try {
+          throw new Error(`@colyseus/schema ${this.ref.constructor.name}: trying to delete non-existing index '${t}'`);
+        } catch (wr) {
+          console.warn(wr);
+        }
+        return;
+      }
+      if (this.paused || this.isFieldFullStateOnly(t)) return this.getValue(t);
+      const s = this.isFieldUnreliable(t) && !this.isNew;
+      s ? this.ensureUnreliableRecorder().recordDelete(t, e ?? i.DELETE) : this.recordDelete(t, e ?? i.DELETE);
+      const n = this.getValue(t);
+      return n && n[y] && this.root?.remove(n[y]), s ? this.root?.enqueueUnreliable(this) : this.root?.enqueueChangeTree(this), n;
+    }
+    endEncode() {
+      this.reset(), this.changesNode = void 0, this._isSchema || this.refTarget[g]?.(), this.isNew = !1;
+    }
+    endEncodeUnreliable() {
+      this.unreliableRecorder?.reset(), this.unreliableChangesNode = void 0, this._isSchema || this.refTarget[g]?.();
+    }
+    discard() {
+      this._isSchema || this.refTarget[g]?.(), this.reset(), this.unreliableRecorder?.reset();
+    }
+    discardAll() {
+      const t = t => {
+        if (t < 0) return;
+        const e = this.getValue(t);
+        e && e[y] && e[y].discardAll();
+      };
+      this.forEach(t), this.unreliableRecorder?.forEach(t), this.discard();
+    }
+    get changed() {
+      return this.has() || (this.unreliableRecorder?.has() ?? !1);
+    }
+    get parent() {
+      return this.parentRef;
+    }
+    get parentIndex() {
+      return this._parentIndex;
+    }
+    addParent(t, e) {
+      !function (t, e, i) {
+        if (t.parentRef) {
+          if (t.parentRef[y] === e[y]) return void (t._parentIndex = i);
+          if (Ht(t, (t, i) => t[y] === e[y])) return void (t._parentIndex = i);
+        }
+        void 0 === t.parentRef ? (t.parentRef = e, t._parentIndex = i) : (t.extraParents = {
+          ref: t.parentRef,
+          index: t._parentIndex,
+          next: t.extraParents
+        }, t.parentRef = e, t._parentIndex = i);
+      }(this, t, e);
+    }
+    setParentIndex(t, e) {
+      !function (t, e, i) {
+        if (void 0 !== t.extraParents) {
+          if (t.parentRef[y] !== e[y]) {
+            for (let s = t.extraParents; void 0 !== s; s = s.next) if (s.ref[y] === e[y]) return void (s.index = i);
+          } else t._parentIndex = i;
+        } else t._parentIndex = i;
+      }(this, t, e);
+    }
+    removeParent(t = this.parent) {
+      return function (t, e) {
+        if (t.parentRef && t.parentRef[y] === e[y]) return t.extraParents ? (t.parentRef = t.extraParents.ref, t._parentIndex = t.extraParents.index, t.extraParents = t.extraParents.next) : (t.parentRef = void 0, t._parentIndex = void 0), !0;
+        let i = t.extraParents,
+          s = null;
+        for (; i;) {
+          if (i.ref[y] === e[y]) return s ? s.next = i.next : t.extraParents = i.next, !0;
+          s = i, i = i.next;
+        }
+        return void 0 === t.parentRef;
+      }(this, t);
+    }
+    findParent(t) {
+      return function (t, e) {
+        if (void 0 !== t.parentRef && e(t.parentRef, t._parentIndex)) return {
+          ref: t.parentRef,
+          index: t._parentIndex
+        };
+        for (let i = t.extraParents; void 0 !== i; i = i.next) if (e(i.ref, i.index)) return {
+          ref: i.ref,
+          index: i.index
+        };
+      }(this, t);
+    }
+    hasParent(t) {
+      return Ht(this, t);
+    }
+    indexInParent(t) {
+      return function (t, e) {
+        if (t.parentRef && t.parentRef[y] === e[y]) return t._parentIndex;
+        for (let i = t.extraParents; void 0 !== i; i = i.next) if (i.ref[y] === e[y]) return i.index;
+      }(this, t);
+    }
+    getAllParents() {
+      return function (t) {
+        const e = [];
+        t.parentRef && e.push({
+          ref: t.parentRef,
+          index: t._parentIndex
+        });
+        let i = t.extraParents;
+        for (; i;) e.push({
+          ref: i.ref,
+          index: i.index
+        }), i = i.next;
+        return e;
+      }(this);
+    }
+  },
+  be = class {
+    ref;
+    root = void 0;
+    parentRef = void 0;
+    paused = !1;
+    isNew = !1;
+    flags = 0;
+    constructor(t) {
+      this.ref = t;
+    }
+    change() {}
+    delete() {}
+    indexedOperation() {}
+    operation() {}
+    setParent() {}
+    addParent() {}
+    setParentIndex() {}
+    removeParent() {
+      return !1;
+    }
+    getChange() {
+      return 0;
+    }
+    discard() {}
+    discardAll() {}
+    pause() {}
+    resume() {}
+    untracked(t) {
+      return t();
+    }
+    markDirty() {}
+    forEachChild(t) {
+      const e = this.ref;
+      if (e[m]) {
+        if ("string" != typeof e[m]) for (const [i, s] of e.entries()) s && t(s[y], e._collectionIndexes?.[i] ?? i);
+        return;
+      }
+      const i = e.constructor?.[Symbol.metadata];
+      if (!i) return;
+      const s = i[$] ?? [];
+      for (let n = 0; n < s.length; n++) {
+        const r = s[n],
+          o = e[i[r].name];
+        o && t(o[y], r);
+      }
+    }
+    forEachChildWithCtx(t, e) {
+      this.forEachChild((i, s) => e(t, i, s));
+    }
+    forEachLive() {}
+    forEachLiveWithCtx() {}
+    forEach() {}
+  };
+function ge(t, e = t) {
+  var i;
+  Object.defineProperty(t, y, {
+    value: (i = e, new be(i)),
+    enumerable: !1,
+    writable: !0
+  });
+}
+function Se(t, e, s, n, r, o, h) {
+  void 0 !== h ? h(e, n, o) : "string" == typeof s ? tt[s]?.(e, n, o) : null != s[Symbol.metadata] ? (tt.number(e, n[a], o), (r & i.ADD) === i.ADD && t.tryEncodeTypeId(e, s, n.constructor, o)) : tt.number(e, n[a], o);
+}
+var ke = function (t, e, s, n, r, o, h, c) {
+    if (e[o.offset++] = 255 & (n | r), r === i.DELETE) return;
+    const a = s.encDescriptor,
+      l = s.ref,
+      u = l[E][n] ?? l[a.names[n]];
+    Se(t, e, a.types[n], u, r, o, a.encoders[n]);
+  },
+  Ee = function (t, e, s, n, r, o) {
+    if (e[o.offset++] = 255 & r, tt.number(e, n, o), r === i.DELETE) return;
+    const h = s.ref;
+    if ((r & i.ADD) === i.ADD) {
+      const t = h.$indexes.get(n);
+      tt.string(e, t, o);
+    }
+    Se(t, e, h[m], h[p](n), r, o);
+  },
+  Ae = function (t, e, s, n, r, o) {
+    if (e[o.offset++] = 255 & r, tt.number(e, n, o), r === i.DELETE) return;
+    const h = s.ref;
+    Se(t, e, h[m], h[p](n), r, o);
+  },
+  Ie = function (t, e, s, n, r, o, h, c) {
+    const l = s.refTarget,
+      u = l[m],
+      f = "string" != typeof u;
+    let d;
+    if (c && s.isFiltered && f) {
+      const t = l.tmpItems[n];
+      if (!t) return;
+      if (d = t[a], r === i.DELETE) r = i.DELETE_BY_REFID;else if ((r & i.ADD) === i.ADD) r = i.ADD_BY_REFID;else if ((r & i.MOVE) === i.MOVE) return;
+    } else if (r === i.DELETE && f) {
+      const t = l.tmpItems[n];
+      if (!t) return;
+      d = t[a], r = i.DELETE_BY_REFID;
+    } else d = n;
+    e[o.offset++] = 255 & r, tt.number(e, d, o), r !== i.DELETE && r !== i.DELETE_BY_REFID && Se(t, e, u, l[p](n, h), r, o);
+  };
+function Me(t, e, s, n, r, o, h) {
+  const c = t.resyncVisited;
+  let l = c.get(t.currentRefId);
+  if (void 0 === l && c.set(t.currentRefId, l = new Set()), l.add(n), void 0 !== r && s === i.ADD && r !== o) {
+    const s = r[a];
+    void 0 !== s && (t.root.removeRef(s), h?.push({
+      ref: e,
+      refId: t.currentRefId,
+      op: i.DELETE,
+      dynamicIndex: n,
+      value: void 0,
+      previousValue: r
+    }));
+  }
+}
+function Oe(t, e, i, s) {
+  const n = e[a];
+  if (void 0 === n || i.has(n)) return;
+  i.add(n);
+  const r = e.constructor[Symbol.metadata],
+    o = r?.[$];
+  if (void 0 === o) return;
+  const h = r[j];
+  for (let c = 0; c < o.length; c++) {
+    const n = o[c];
+    if (void 0 !== h && h.includes(n)) continue;
+    const a = r[n],
+      l = e[a.name];
+    l && (ii.is(a.type) ? Oe(t, l, i, s) : _e(t, l, i, s));
+  }
+}
+function _e(t, e, s, n) {
+  const r = e[b] ?? e,
+    o = r[a];
+  if (void 0 === o || s.has(o)) return;
+  s.add(o);
+  const h = t.resyncVisited.get(o);
+  if (void 0 === h) return;
+  const c = t.root;
+  r[w](h, (t, s) => {
+    n?.push({
+      ref: e,
+      refId: o,
+      op: i.DELETE,
+      dynamicIndex: s,
+      value: void 0,
+      previousValue: t
+    });
+    const r = t?.[a];
+    void 0 !== r && c.removeRef(r);
+  }, e => {
+    ii.isSchema(e) && Oe(t, e, s, n);
+  });
+}
+function $e(t, e, s, n, r, o, h, c, l) {
+  const u = t.root;
+  let f;
+  if ((e & i.DELETE) === i.DELETE) {
+    const t = r?.[a];
+    void 0 !== t && u.removeRef(t), e !== i.DELETE_AND_ADD && s[v](n), f = void 0;
+  }
+  if (e === i.DELETE) ;else if ("string" == typeof o) f = mt[o](h, c);else if (Tt(o)) f = function (t, e, i) {
+    return Pt(t, (0, mt[t.wire])(e, i));
+  }(o.quantized, h, c);else if (ii.is(o)) {
+    const s = mt.number(h, c);
+    if (f = u.refs.get(s), (e & i.ADD) === i.ADD) {
+      const n = t.getInstanceType(h, c, o);
+      f || (f = t.createInstanceOfType(n)), u.addRef(s, f, f !== r || e === i.DELETE_AND_ADD && f === r);
+    }
+  } else {
+    const s = kt(Object.keys(o)[0]),
+      n = mt.number(h, c);
+    null !== t.resyncVisited && function (t, e) {
+      const i = t.resyncVisited;
+      i.has(e) || i.set(e, new Set());
+    }(t, n);
+    const d = u.refs.has(n) ? r || u.refs.get(n) : s.constructor.initializeForDecoder();
+    if (f = d.clone(!0), f[m] = Object.values(o)[0], r) {
+      let t = r[a];
+      if (void 0 !== t && n !== t) {
+        (e & i.DELETE) !== i.DELETE && u.removeRef(t);
+        const s = r.entries();
+        let n;
+        for (; (n = s.next()) && !n.done;) {
+          const [e, s] = n.value;
+          "object" == typeof s && (t = s[a]), l?.push({
+            ref: r,
+            refId: t,
+            op: i.DELETE,
+            field: e,
+            value: void 0,
+            previousValue: s
+          });
+        }
+      }
+    }
+    u.addRef(n, f, d !== r || e === i.DELETE_AND_ADD && d === r);
+  }
+  return f;
+}
+var xe = function (t, e, i, s, n) {
+    const r = e[i.offset++],
+      o = s.constructor[Symbol.metadata],
+      h = r >> 6 << 6,
+      c = r % (h || 255),
+      a = o[c];
+    if (void 0 === a) return console.warn("@colyseus/schema: field not defined at", {
+      index: c,
+      ref: s.constructor.name,
+      metadata: o
+    }), -1;
+    const l = !0 === a.deprecated,
+      u = l ? void 0 : s[p](c),
+      f = $e(t, h, s, c, u, a.type, e, i, n);
+    l || (null != f && (s[a.name] = f), u !== f && n?.push({
+      ref: s,
+      refId: t.currentRefId,
+      op: h,
+      field: a.name,
+      value: f,
+      previousValue: u
+    }));
+  },
+  Re = function (t, e, s, n, r) {
+    const o = n[b] ?? n,
+      h = e[s.offset++];
+    if (h === i.CLEAR) return t.removeChildRefs(o, r), void o.clear();
+    const c = mt.number(e, s),
+      a = o[m],
+      l = o.constructor.COLLECTION_KIND;
+    let u;
+    (h & i.ADD) === i.ADD ? 1 === l ? (u = mt.string(e, s), o.setIndex(c, u)) : u = c : u = o.getIndex(c);
+    const f = o[p](c),
+      d = $e(t, h, n, c, f, a, e, s, r);
+    if (null !== t.resyncVisited && Me(t, n, h, u, f, d, r), null != d) switch (l) {
+      case 1:
+        o.$items.set(u, d);
+        break;
+      case 2:
+        o.$setAt(c, d, null !== t.resyncVisited && h === i.ADD ? i.REPLACE : h);
+        break;
+      case 3:
+      case 4:
+      case 5:
+        o.$items.has(c) || (o.$items.set(c, d), "number" == typeof o.$refId && c >= o.$refId && (o.$refId = c + 1));
+        break;
+      default:
+        console.warn(`@colyseus/schema: missing COLLECTION_KIND on ${o.constructor?.name} — item at index ${c} was not stored.`);
+    }
+    f !== d && r?.push({
+      ref: n,
+      refId: t.currentRefId,
+      op: h,
+      dynamicIndex: u,
+      value: d,
+      previousValue: f
+    });
+  },
+  Te = function (t, e, s, n, r) {
+    const o = n[b] ?? n;
+    let h,
+      c = e[s.offset++];
+    if (c === i.CLEAR) return t.removeChildRefs(o, r), void o.clear();
+    if (c === i.REVERSE) return void o.items.reverse();
+    if (c === i.DELETE_BY_REFID) {
+      const c = mt.number(e, s),
+        a = t.root.refs.get(c);
+      if (void 0 === a) return;
+      if (t.root.removeRef(c), h = o.findIndex(t => t === a), -1 === h) return;
+      return o[v](h), void r?.push({
+        ref: n,
+        refId: t.currentRefId,
+        op: i.DELETE,
+        dynamicIndex: h,
+        value: void 0,
+        previousValue: a
+      });
+    }
+    if (c === i.ADD_BY_REFID) {
+      const i = mt.number(e, s),
+        n = t.root.refs.get(i);
+      n && (h = o.findIndex(t => t === n)), -1 !== h && void 0 !== h || (h = o.length);
+    } else h = mt.number(e, s);
+    const a = o[m];
+    let l = h;
+    const u = o.items[h],
+      f = $e(t, c, n, h, u, a, e, s, r);
+    null !== t.resyncVisited && Me(t, n, c, h, u, f, r), null != f && f !== u && o.$setAt(h, f, null !== t.resyncVisited && c === i.ADD ? i.REPLACE : c), u !== f && r?.push({
+      ref: n,
+      refId: t.currentRefId,
+      op: c,
+      dynamicIndex: l,
+      value: f,
+      previousValue: u
+    });
+  },
+  je = class extends Error {};
+function Pe(t, e, i, s) {
+  if (!(t instanceof e)) throw new je(`a '${e.name}' was expected, but '${t && t.constructor.name}' was provided in ${i.constructor.name}#${s}`);
+}
+var De = (t, e) => {
+    const i = t.toString(),
+      s = e.toString();
+    return i < s ? -1 : i > s ? 1 : 0;
+  },
+  Fe = {
+    get: (t, e) => "symbol" == typeof e || isNaN(e) ? Reflect.get(t, e) : t.items[e],
+    set: (t, e, s) => {
+      if ("symbol" != typeof e && !isNaN(e)) {
+        if (null == s) t.$deleteAt(e);else {
+          let n;
+          if (s[y]) {
+            Pe(s, t[m], t, e);
+            const r = t.items[e];
+            t.isMovingItems ? (n = t.$wireIndex(Number(e)), void 0 !== r ? s[y].isNew ? t[y].indexedOperation(n, i.MOVE_AND_ADD) : (t[y].getChange(n) & i.DELETE) === i.DELETE ? t[y].indexedOperation(n, i.DELETE_AND_MOVE) : t[y].indexedOperation(n, i.MOVE) : s[y].isNew && t[y].indexedOperation(n, i.ADD), s[y].setParent(t, t[y].root, n)) : n = t.$changeAt(Number(e), s), void 0 !== r && r[y].root?.remove(r[y]);
+          } else n = t.$changeAt(Number(e), s);
+          t.items[e] = s, void 0 !== n && (t.tmpItems[n] = s);
+        }
+        return !0;
+      }
+      return Reflect.set(t, e, s);
+    },
+    deleteProperty: (t, e) => ("number" == typeof e ? t.$deleteAt(e) : delete t[e], !0),
+    has: (t, e) => "symbol" == typeof e || isNaN(Number(e)) ? Reflect.has(t, e) : Reflect.has(t.items, e)
+  },
+  Ce = class t {
+    [y];
+    [a];
+    [b];
+    [m];
+    items = [];
+    tmpItems = [];
+    deletedIndexes = [];
+    isMovingItems = !1;
+    _needsCompaction = !1;
+    static [u] = Ie;
+    static [f] = Te;
+    static COLLECTION_KIND = 2;
+    static [d](t, e, i) {
+      if (!i) return !0;
+      const s = t[b] ?? t;
+      return "string" == typeof s[m] || i.isChangeTreeVisible(s.tmpItems[e]?.[y]);
+    }
+    static is(t) {
+      return Array.isArray(t) || void 0 !== t.array;
+    }
+    static from(e) {
+      return new t(...Array.from(e));
+    }
+    constructor(...t) {
+      this[m] = void 0, this[b] = this;
+      const e = new Proxy(this, Fe);
+      return Object.defineProperty(this, y, {
+        value: new me(e, this),
+        enumerable: !1,
+        writable: !0
+      }), t.length > 0 && this.push(...t), e;
+    }
+    static initializeForDecoder() {
+      const e = Object.create(t.prototype);
+      e.items = [], e.isMovingItems = !1, e._needsCompaction = !1, e[m] = void 0, e[b] = e;
+      const i = new Proxy(e, Fe);
+      return ge(e, i), i;
+    }
+    set length(t) {
+      0 === t ? this.clear() : t < this.items.length ? this.splice(t, this.length - t) : console.warn("ArraySchema: can't set .length to a higher value than its length.");
+    }
+    get length() {
+      return this.items.length;
+    }
+    pauseTracking() {
+      this[y].pause();
+    }
+    resumeTracking() {
+      this[y].resume();
+    }
+    untracked(t) {
+      return this[y].untracked(t);
+    }
+    get isTrackingPaused() {
+      return this[y].paused;
+    }
+    push(...t) {
+      const e = this[b],
+        s = e.items,
+        n = e.tmpItems,
+        r = e[y],
+        o = e[m];
+      let h = n.length;
+      for (let c = 0, a = t.length; c < a; c++, h++) {
+        const a = t[c];
+        if (null == a) return;
+        "object" == typeof a && o && Pe(a, o, e, c), r.indexedOperation(h, i.ADD), s.push(a), n.push(a), a[y]?.setParent(this, r.root, h);
+      }
+      return h;
+    }
+    pop() {
+      const t = this[b],
+        e = t.tmpItems,
+        i = t.deletedIndexes;
+      let s = -1;
+      for (let r = e.length - 1; r >= 0; r--) if (!0 !== i[r]) {
+        s = r;
+        break;
+      }
+      if (s < 0) return;
+      const n = t.$isUnsentAdd(s);
+      return t[y].delete(s), n ? t.$cancelAdd(s) : i[s] = !0, t.items.pop();
+    }
+    at(t) {
+      return t < 0 && (t += this.length), this.items[t];
+    }
+    $wireIndex(t) {
+      const e = this.deletedIndexes;
+      if (0 === e.length) return t;
+      const i = this.tmpItems;
+      let s = 0;
+      for (let n = 0; n < i.length; n++) if (!0 !== e[n]) {
+        if (s === t) return n;
+        s++;
+      }
+      return i.length + (t - s);
+    }
+    $isUnsentAdd(t) {
+      const e = this[y];
+      return !(576 & e.flags || e.paused || "string" == typeof this[m] || e.operationAt(t) !== i.ADD);
+    }
+    $cancelAdd(t, e = !0) {
+      const i = this[y],
+        s = this.tmpItems[t];
+      this.tmpItems.splice(t, 1), this.deletedIndexes.length > 0 && this.deletedIndexes.splice(t, 1), i.removeAt(t, 1);
+      const n = s?.[y];
+      void 0 !== n && void 0 === n.root && n.removeParent(this), e && this.$reindexChildren(t);
+    }
+    $reindexChildren(t, e) {
+      if (!this[y].hasFilteredFields) return;
+      if ("string" == typeof this[m]) return;
+      const i = this.tmpItems,
+        s = i.length;
+      if (void 0 !== e) for (; t < s && i[t] === e[t];) t++;
+      for (let n = t; n < s; n++) i[n]?.[y]?.setParentIndex(this, n);
+    }
+    $changeAt(t, e) {
+      if (null == e) return void console.error("ArraySchema items cannot be null nor undefined; Use `splice(index, 1)` instead.");
+      if (this.items[t] === e) return;
+      const s = void 0 !== this.items[t] ? "object" == typeof e ? i.DELETE_AND_ADD : i.REPLACE : i.ADD,
+        n = this.$wireIndex(t),
+        r = this[y];
+      return r.change(n, s), e[y]?.setParent(this, r.root, n), n;
+    }
+    $deleteAt(t, e) {
+      this[y].delete(this.$wireIndex(t), e);
+    }
+    $setAt(t, e, s) {
+      s === i.ADD && void 0 !== this.items[t] ? this.items.splice(t, 0, e) : s === i.DELETE_AND_MOVE ? (this.items.splice(t, 1), this.items[t] = e) : (t > this.items.length && (this._needsCompaction = !0), this.items[t] = e);
+    }
+    clear() {
+      const t = this[b];
+      if (0 === t.items.length) return;
+      const e = t[y];
+      e.forEachChild((t, i) => {
+        e.root?.remove(t);
+      }), e.discard(), e.operation(i.CLEAR), t.items.length = 0, t.tmpItems.length = 0;
+    }
+    [S]() {
+      const t = this[b] ?? this,
+        e = t[y];
+      if (e.isStreamCollection) throw new Error("@colyseus/schema: cannot reset a streamed ArraySchema (pooling not supported).");
+      const i = t.items;
+      for (let s = 0; s < i.length; s++) i[s]?.[S]?.();
+      t.items.length = 0, t.tmpItems.length = 0, t.deletedIndexes.length = 0, e.recycle(), t[a] = void 0;
+    }
+    concat(...e) {
+      return new t(...this.items.concat(...e));
+    }
+    join(t) {
+      return this.items.join(t);
+    }
+    reverse() {
+      const t = this[b],
+        e = t[y];
+      if (e.has() || t.deletedIndexes.length > 0) {
+        const e = t.items.slice().reverse();
+        return this.clear(), this.push(...e), this;
+      }
+      return e.operation(i.REVERSE), t.items.reverse(), t.tmpItems.reverse(), t.$reindexChildren(0), this;
+    }
+    shift() {
+      const t = this[b],
+        e = t.items;
+      if (0 === e.length) return;
+      const s = t[y],
+        n = t.deletedIndexes;
+      let r = 0;
+      for (; !0 === n[r];) r++;
+      const o = t.$isUnsentAdd(r);
+      return s.delete(r, i.DELETE), o ? t.$cancelAdd(r) : n[r] = !0, e.shift();
+    }
+    slice(e, i) {
+      const s = new t();
+      return s.push(...this.items.slice(e, i)), s;
+    }
+    sort(t = De) {
+      const e = this[b];
+      e.isMovingItems = !0;
+      const s = e[y];
+      return e.items.sort(t).forEach((t, e) => s.change(e, i.REPLACE)), e.tmpItems.sort(t), e.$reindexChildren(0), e.isMovingItems = !1, this;
+    }
+    splice(t, e, ...s) {
+      const n = this[b],
+        r = n[y],
+        o = n.items,
+        h = n.tmpItems,
+        c = n.deletedIndexes,
+        a = o.length,
+        l = h.length,
+        u = s.length,
+        f = [];
+      for (let i = 0; i < l; i++) !0 !== c[i] && f.push(i);
+      let d;
+      if (a > t) {
+        void 0 === e && (e = a - t);
+        for (let s = t; s < t + e; s++) {
+          const t = f[s],
+            e = n.$isUnsentAdd(t);
+          r.delete(t, i.DELETE), e ? (d ??= []).push(t) : c[t] = !0;
+        }
+      } else e = 0;
+      if (u > 0) {
+        const o = f[t] ?? a,
+          l = Math.min(u, e);
+        for (let t = 0; t < l; t++) {
+          const e = o + t;
+          let n;
+          const a = void 0 !== d ? d.indexOf(e) : -1;
+          -1 !== a ? (d.splice(a, 1), n = i.ADD) : n = c[e] ? i.DELETE_AND_ADD : i.ADD, r.indexedOperation(e, n), h[e] = s[t], c[e] = !1, s[t][y]?.setParent(this, r.root, e);
+        }
+        const p = u - l;
+        if (p > 0) {
+          const t = o + l;
+          r.insertAt(t, p);
+          for (let e = 0; e < p; e++) s[l + e][y]?.setParent(this, r.root, t + e);
+          c.length > 0 && c.splice(t, 0, ...new Array(p).fill(!1)), h.splice(t, 0, ...s.slice(l)), n.$reindexChildren(t + p);
+        }
+      }
+      if (void 0 !== d && d.length > 0) {
+        for (let t = d.length - 1; t >= 0; t--) n.$cancelAdd(d[t], !1);
+        n.$reindexChildren(d[0]);
+      }
+      return r.root?.enqueueChangeTree(r), o.splice(t, e, ...s);
+    }
+    unshift(...t) {
+      const e = this[b],
+        i = e[y];
+      i.unshift(t.length);
+      for (let n = 0; n < t.length; n++) t[n]?.[y]?.setParent(this, i.root, n);
+      const s = e.deletedIndexes;
+      return s.length > 0 && s.unshift(...new Array(t.length).fill(!1)), e.tmpItems.unshift(...t), e.$reindexChildren(t.length), e.items.unshift(...t);
+    }
+    indexOf(t, e) {
+      return this.items.indexOf(t, e);
+    }
+    lastIndexOf(t, e = this.length - 1) {
+      return this.items.lastIndexOf(t, e);
+    }
+    every(t, e) {
+      return this.items.every(t, e);
+    }
+    some(t, e) {
+      return this.items.some(t, e);
+    }
+    forEach(t, e) {
+      return this.items.forEach(t, e);
+    }
+    map(t, e) {
+      return this.items.map(t, e);
+    }
+    filter(t, e) {
+      return this.items.filter(t, e);
+    }
+    reduce(t, e) {
+      return this.items.reduce(t, e);
+    }
+    reduceRight(t, e) {
+      return this.items.reduceRight(t, e);
+    }
+    find(t, e) {
+      return this.items.find(t, e);
+    }
+    findIndex(t, e) {
+      return this.items.findIndex(t, e);
+    }
+    fill(t, e, i) {
+      throw new Error("ArraySchema#fill() not implemented");
+    }
+    copyWithin(t, e, i) {
+      throw new Error("ArraySchema#copyWithin() not implemented");
+    }
+    toString() {
+      return this.items.toString();
+    }
+    toLocaleString() {
+      return this.items.toLocaleString();
+    }
+    [Symbol.iterator]() {
+      return this.items[Symbol.iterator]();
+    }
+    static get [Symbol.species]() {
+      return t;
+    }
+    [Symbol.unscopables];
+    entries() {
+      return this.items.entries();
+    }
+    keys() {
+      return this.items.keys();
+    }
+    values() {
+      return this.items.values();
+    }
+    includes(t, e) {
+      return this.items.includes(t, e);
+    }
+    flatMap(t, e) {
+      throw new Error("ArraySchema#flatMap() is not supported.");
+    }
+    flat(t) {
+      throw new Error("ArraySchema#flat() is not supported.");
+    }
+    findLast() {
+      return this.items.findLast.apply(this.items, arguments);
+    }
+    findLastIndex(...t) {
+      return this.items.findLastIndex.apply(this.items, arguments);
+    }
+    with(e, i) {
+      const s = this.items.slice();
+      return e < 0 && (e += this.length), s[e] = i, new t(...s);
+    }
+    toReversed() {
+      return this.items.slice().reverse();
+    }
+    toSorted(t) {
+      return this.items.slice().sort(t);
+    }
+    toSpliced(t, e, ...i) {
+      return this.items.toSpliced.apply(copy, arguments);
+    }
+    shuffle() {
+      return this.move(t => {
+        let e = this.items.length;
+        for (; 0 != e;) {
+          let t = Math.floor(Math.random() * e);
+          e--, [this[e], this[t]] = [this[t], this[e]];
+        }
+      });
+    }
+    move(t) {
+      return this.isMovingItems = !0, t(this), this.isMovingItems = !1, this;
+    }
+    [p](t, e = !1) {
+      const i = this[b] ?? this;
+      return e || i.deletedIndexes[t] ? i.items[t] : i.tmpItems[t] || i.items[t];
+    }
+    [v](t) {
+      const e = this[b] ?? this;
+      e.items[t] = void 0, e._needsCompaction = !0;
+    }
+    [g]() {
+      const t = this.tmpItems;
+      this.tmpItems = this.items.slice(), this.deletedIndexes.length > 0 && (this.$reindexChildren(0, t), this.deletedIndexes.length = 0);
+    }
+    [k]() {
+      const t = this[b] ?? this;
+      t._needsCompaction && (t._needsCompaction = !1, t.items = t.items.filter(t => void 0 !== t));
+    }
+    [w](t, e, i) {
+      const s = this[b] ?? this,
+        n = s.items;
+      let r = !1;
+      for (let o = 0; o < n.length; o++) {
+        const h = n[o];
+        t.has(o) ? i(h) : (r = !0, e(h, o), s[v](o));
+      }
+      r && s[k]();
+    }
+    toArray() {
+      return this.items.slice(0);
+    }
+    toJSON() {
+      return this.toArray().map(t => "function" == typeof t.toJSON ? t.toJSON() : t);
+    }
+    clone(e) {
+      let i;
+      return e ? (i = new t(), i.push(...this.items)) : i = new t(...this.map(t => t[y] ? t.clone() : t)), i;
+    }
+  };
+St("array", {
+  constructor: Ce
+});
+var Ne = class {
+    keyByIndex = new Map();
+    indexByKey = {};
+    nextIndex = 0;
+    snapshots;
+    indexOf(t) {
+      const e = this.indexByKey[t];
+      return void 0 === e ? void 0 : e;
+    }
+    assign(t) {
+      const e = this.nextIndex++;
+      return this.indexByKey[t] = e, this.keyByIndex.set(e, t), e;
+    }
+    snapshot(t, e) {
+      (this.snapshots ??= new Map()).set(t, e);
+    }
+    forgetSnapshot(t) {
+      this.snapshots?.delete(t);
+    }
+    snapshotAt(t) {
+      return this.snapshots?.get(t);
+    }
+    setIndex(t, e) {
+      this.keyByIndex.set(t, e), this.indexByKey[e] = t;
+    }
+    keyOf(t) {
+      return this.keyByIndex.get(t);
+    }
+    cleanupAfterEncode() {
+      if (void 0 !== this.snapshots) {
+        for (const [t] of this.snapshots) {
+          const e = this.keyByIndex.get(t);
+          void 0 !== e && (delete this.indexByKey[e], this.keyByIndex.delete(t));
+        }
+        this.snapshots.clear();
+      }
+    }
+    reset() {
+      this.indexByKey = {}, this.keyByIndex.clear(), this.snapshots?.clear(), this.nextIndex = 0;
+    }
+  },
+  Ue = class t {
+    [y];
+    [a];
+    childType;
+    [m];
+    $items = new Map();
+    journal = new Ne();
+    _stream;
+    get maxPerTick() {
+      return this._stream?.maxPerTick ?? 32;
+    }
+    set maxPerTick(t) {
+      (this._stream ??= At()).maxPerTick = t;
+    }
+    get priority() {
+      return this._stream?.priority;
+    }
+    set priority(t) {
+      (this._stream ??= At()).priority = t;
+    }
+    get $indexes() {
+      return this.journal.keyByIndex;
+    }
+    get _collectionIndexes() {
+      return this.journal.indexByKey;
+    }
+    static [u] = Ee;
+    static [f] = Re;
+    static COLLECTION_KIND = 1;
+    static [d](t, e, i) {
+      if (!i || "string" == typeof t[m]) return !0;
+      const s = t["~getByIndex"](e) ?? t.journal.snapshotAt(e);
+      return i.isChangeTreeVisible(s[y]);
+    }
+    static is(t) {
+      return void 0 !== t.map;
+    }
+    constructor(e) {
+      if (Object.defineProperty(this, y, {
+        value: new me(this),
+        enumerable: !1,
+        writable: !0
+      }), this[m] = void 0, e) if (e instanceof Map || e instanceof t) e.forEach((t, e) => this.set(e, t));else for (const t in e) this.set(t, e[t]);
+    }
+    static initializeForDecoder() {
+      const e = Object.create(t.prototype);
+      return e.$items = new Map(), e.journal = new Ne(), e[m] = void 0, ge(e), e;
+    }
+    [Symbol.iterator]() {
+      return this.$items[Symbol.iterator]();
+    }
+    get [Symbol.toStringTag]() {
+      return this.$items[Symbol.toStringTag];
+    }
+    static get [Symbol.species]() {
+      return t;
+    }
+    set(t, e) {
+      if (null == e) throw new Error(`MapSchema#set('${t}', ${e}): trying to set ${e} value on '${t}'.`);
+      "object" == typeof e && this[m] && Pe(e, this[m], this, t), t = t.toString();
+      const s = this[y],
+        n = void 0 !== e[y],
+        r = this.journal;
+      let o,
+        h = r.indexOf(t);
+      if (void 0 !== h) {
+        o = i.REPLACE;
+        const s = this.$items.get(t);
+        if (s === e) return;
+        n && (o = i.DELETE_AND_ADD, void 0 !== s && s[y].root?.remove(s[y])), void 0 !== r.snapshotAt(h) && r.forgetSnapshot(h);
+      } else h = r.assign(t), o = i.ADD;
+      return this.$items.set(t, e), o === i.ADD && s.isStreamCollection ? void 0 !== s.root && Mt(this, s.root, h) : s.change(h, o), n && e[y].setParent(this, s.root, h), this;
+    }
+    get(t) {
+      return this.$items.get(t);
+    }
+    getOrInsert(t, e) {
+      return this.$items.has(t) ? this.$items.get(t) : (this.set(t, e), e);
+    }
+    getOrInsertComputed(t, e) {
+      if (this.$items.has(t)) return this.$items.get(t);
+      const i = e(t);
+      return this.set(t, i), i;
+    }
+    delete(t) {
+      if (!this.$items.has(t)) return !1;
+      const e = this.journal.indexOf(t),
+        i = this.$items.get(t),
+        s = this[y];
+      if (s.isStreamCollection) {
+        const n = s.root;
+        let r = !1;
+        return void 0 !== n && (r = Ot(this, n, this[a], e)), void 0 !== i?.[y] && n?.remove(i[y]), this.$items.delete(t), r || this.journal.snapshot(e, i), !0;
+      }
+      return this.journal.snapshot(e, i), s.delete(e), this.$items.delete(t);
+    }
+    clear() {
+      const t = this[y];
+      t.discard(), t.forEachChild((e, i) => {
+        t.root?.remove(e);
+      }), this.journal.reset(), this.$items.clear(), t.operation(i.CLEAR);
+    }
+    [S]() {
+      const t = this[y];
+      if (t.isStreamCollection) throw new Error("@colyseus/schema: cannot reset a streamed MapSchema (pooling not supported).");
+      this.$items.forEach(t => t?.[S]?.()), this.$items.clear(), this.journal.reset(), t.recycle(), this[a] = void 0;
+    }
+    has(t) {
+      return this.$items.has(t);
+    }
+    forEach(t) {
+      this.$items.forEach(t);
+    }
+    entries() {
+      return this.$items.entries();
+    }
+    keys() {
+      return this.$items.keys();
+    }
+    values() {
+      return this.$items.values();
+    }
+    get size() {
+      return this.$items.size;
+    }
+    pauseTracking() {
+      this[y].pause();
+    }
+    resumeTracking() {
+      this[y].resume();
+    }
+    untracked(t) {
+      return this[y].untracked(t);
+    }
+    get isTrackingPaused() {
+      return this[y].paused;
+    }
+    setIndex(t, e) {
+      this.journal.setIndex(t, e);
+    }
+    getIndex(t) {
+      return this.journal.keyOf(t);
+    }
+    [p](t) {
+      const e = this.journal.keyOf(t);
+      return void 0 !== e ? this.$items.get(e) : void 0;
+    }
+    [v](t) {
+      const e = this.journal.keyOf(t);
+      void 0 !== e && (this.$items.delete(e), this.journal.keyByIndex.delete(t));
+    }
+    [w](t, e, i) {
+      let s = null;
+      if (this.$items.forEach((n, r) => {
+        t.has(r) ? i(n) : ((s ??= new Set()).add(r), e(n, r));
+      }), null !== s) {
+        s.forEach(t => {
+          this.$items.delete(t), delete this.journal.indexByKey[t];
+        });
+        const t = [];
+        this.journal.keyByIndex.forEach((e, i) => {
+          s.has(e) && t.push(i);
+        });
+        for (let e = 0; e < t.length; e++) this.journal.keyByIndex.delete(t[e]);
+      }
+    }
+    [g]() {
+      this.journal.cleanupAfterEncode();
+    }
+    _dropView(t) {
+      $t(this, t);
+    }
+    _unregister() {}
+    toJSON() {
+      const t = {};
+      return this.forEach((e, i) => {
+        t[i] = "function" == typeof e.toJSON ? e.toJSON() : e;
+      }), t;
+    }
+    clone(e) {
+      let i;
+      return e ? i = Object.assign(new t(), this) : (i = new t(), this.forEach((t, e) => {
+        t[y] ? i.set(e, t.clone()) : i.set(e, t);
+      })), i;
+    }
+  };
+St("map", {
+  constructor: Ue
+});
+var Be = class t {
+  [y];
+  [a];
+  [m];
+  $items = new Map();
+  deletedItems = {};
+  $refId = 0;
+  _stream;
+  get maxPerTick() {
+    return this._stream?.maxPerTick ?? 32;
+  }
+  set maxPerTick(t) {
+    (this._stream ??= At()).maxPerTick = t;
+  }
+  get priority() {
+    return this._stream?.priority;
+  }
+  set priority(t) {
+    (this._stream ??= At()).priority = t;
+  }
+  static [u] = Ae;
+  static [f] = Re;
+  static COLLECTION_KIND = 4;
+  static [d](t, e, i) {
+    return !i || "string" == typeof t[m] || i.isChangeTreeVisible((t["~getByIndex"](e) ?? t.deletedItems[e])[y]);
+  }
+  static is(t) {
+    return void 0 !== t.collection;
+  }
+  constructor(t) {
+    Object.defineProperty(this, y, {
+      value: new me(this),
+      enumerable: !1,
+      writable: !0
+    }), this[m] = void 0, t && t.forEach(t => this.add(t));
+  }
+  static initializeForDecoder() {
+    const e = Object.create(t.prototype);
+    return e.$items = new Map(), e.deletedItems = {}, e.$refId = 0, e[m] = void 0, ge(e), e;
+  }
+  add(t) {
+    const e = this.$refId++,
+      i = this[y];
+    return this.$items.set(e, t), i.isStreamCollection ? void 0 !== i.root && Mt(this, i.root, e) : i.change(e), void 0 !== t[y] && t[y].setParent(this, i.root, e), e;
+  }
+  at(t) {
+    const e = Array.from(this.$items.keys())[t];
+    return this.$items.get(e);
+  }
+  entries() {
+    return this.$items.entries();
+  }
+  delete(t) {
+    const e = this.$items.entries();
+    let i, s;
+    for (; (s = e.next()) && !s.done;) if (t === s.value[1]) {
+      i = s.value[0];
+      break;
+    }
+    if (void 0 === i) return !1;
+    const n = this[y];
+    if (n.isStreamCollection) {
+      const t = n.root,
+        e = this.$items.get(i);
+      return void 0 !== t && Ot(this, t, this[a], i), void 0 !== e?.[y] && t?.remove(e[y]), this.deletedItems[i] = e, this.$items.delete(i);
+    }
+    return this.deletedItems[i] = n.delete(i), this.$items.delete(i);
+  }
+  clear() {
+    const t = this[y];
+    t.discard(), t.forEachChild((e, i) => {
+      t.root?.remove(e);
+    }), this.$items.clear(), t.operation(i.CLEAR);
+  }
+  [S]() {
+    const t = this[y];
+    if (t.isStreamCollection) throw new Error("@colyseus/schema: cannot reset a streamed CollectionSchema (pooling not supported).");
+    this.$items.forEach(t => t?.[S]?.()), this.$items.clear(), this.deletedItems = {}, this.$refId = 0, t.recycle(), this[a] = void 0;
+  }
+  has(t) {
+    return Array.from(this.$items.values()).some(e => e === t);
+  }
+  forEach(t) {
+    this.$items.forEach((e, i, s) => t(e, i, this));
+  }
+  values() {
+    return this.$items.values();
+  }
+  get size() {
+    return this.$items.size;
+  }
+  pauseTracking() {
+    this[y].pause();
+  }
+  resumeTracking() {
+    this[y].resume();
+  }
+  untracked(t) {
+    return this[y].untracked(t);
+  }
+  get isTrackingPaused() {
+    return this[y].paused;
+  }
+  [Symbol.iterator]() {
+    return this.$items.values();
+  }
+  setIndex(t, e) {}
+  getIndex(t) {
+    return t;
+  }
+  [p](t) {
+    return this.$items.get(t);
+  }
+  [v](t) {
+    this.$items.delete(t);
+  }
+  [w](t, e, i) {
+    let s = null;
+    if (this.$items.forEach((n, r) => {
+      t.has(r) ? i(n) : ((s ??= []).push(r), e(n, r));
+    }), null !== s) for (let n = 0; n < s.length; n++) this[v](s[n]);
+  }
+  [g]() {
+    for (const t in this.deletedItems) delete this.deletedItems[t];
+  }
+  _dropView(t) {
+    $t(this, t);
+  }
+  _unregister() {}
+  toArray() {
+    return Array.from(this.$items.values());
+  }
+  toJSON() {
+    const t = [];
+    return this.forEach((e, i) => {
+      t.push("function" == typeof e.toJSON ? e.toJSON() : e);
+    }), t;
+  }
+  clone(e) {
+    let i;
+    return e ? i = Object.assign(new t(), this) : (i = new t(), this.forEach(t => {
+      t[y] ? i.add(t.clone()) : i.add(t);
+    })), i;
+  }
+};
+St("collection", {
+  constructor: Be
+});
+var Le = class t {
+  [y];
+  [a];
+  [m];
+  $items = new Map();
+  deletedItems = {};
+  $refId = 0;
+  _stream;
+  get maxPerTick() {
+    return this._stream?.maxPerTick ?? 32;
+  }
+  set maxPerTick(t) {
+    (this._stream ??= At()).maxPerTick = t;
+  }
+  get priority() {
+    return this._stream?.priority;
+  }
+  set priority(t) {
+    (this._stream ??= At()).priority = t;
+  }
+  static [u] = Ae;
+  static [f] = Re;
+  static COLLECTION_KIND = 3;
+  static [d](t, e, i) {
+    return !i || "string" == typeof t[m] || i.isVisible((t["~getByIndex"](e) ?? t.deletedItems[e])[y]);
+  }
+  static is(t) {
+    return void 0 !== t.set;
+  }
+  constructor(t) {
+    Object.defineProperty(this, y, {
+      value: new me(this),
+      enumerable: !1,
+      writable: !0
+    }), this[m] = void 0, t && t.forEach(t => this.add(t));
+  }
+  static initializeForDecoder() {
+    const e = Object.create(t.prototype);
+    return e.$items = new Map(), e.deletedItems = {}, e.$refId = 0, e[m] = void 0, ge(e), e;
+  }
+  add(t) {
+    if (this.has(t)) return !1;
+    const e = this.$refId++,
+      s = this[y];
+    return this.$items.set(e, t), s.isStreamCollection ? void 0 !== s.root && Mt(this, s.root, e) : s.change(e, i.ADD), void 0 !== t[y] && t[y].setParent(this, s.root, e), e;
+  }
+  entries() {
+    return this.$items.entries();
+  }
+  delete(t) {
+    const e = this.$items.entries();
+    let i, s;
+    for (; (s = e.next()) && !s.done;) if (t === s.value[1]) {
+      i = s.value[0];
+      break;
+    }
+    if (void 0 === i) return !1;
+    const n = this[y];
+    if (n.isStreamCollection) {
+      const t = n.root,
+        e = this.$items.get(i);
+      return void 0 !== t && Ot(this, t, this[a], i), void 0 !== e?.[y] && t?.remove(e[y]), this.deletedItems[i] = e, this.$items.delete(i);
+    }
+    return this.deletedItems[i] = n.delete(i), this.$items.delete(i);
+  }
+  clear() {
+    const t = this[y];
+    t.discard(), this.$items.clear(), t.operation(i.CLEAR);
+  }
+  [S]() {
+    const t = this[y];
+    if (t.isStreamCollection) throw new Error("@colyseus/schema: cannot reset a streamed SetSchema (pooling not supported).");
+    this.$items.forEach(t => t?.[S]?.()), this.$items.clear(), this.deletedItems = {}, this.$refId = 0, t.recycle(), this[a] = void 0;
+  }
+  has(t) {
+    const e = this.$items.values();
+    let i,
+      s = !1;
+    for (; (i = e.next()) && !i.done;) if (t === i.value) {
+      s = !0;
+      break;
+    }
+    return s;
+  }
+  forEach(t) {
+    this.$items.forEach((e, i, s) => t(e, i, this));
+  }
+  values() {
+    return this.$items.values();
+  }
+  get size() {
+    return this.$items.size;
+  }
+  pauseTracking() {
+    this[y].pause();
+  }
+  resumeTracking() {
+    this[y].resume();
+  }
+  untracked(t) {
+    return this[y].untracked(t);
+  }
+  get isTrackingPaused() {
+    return this[y].paused;
+  }
+  [Symbol.iterator]() {
+    return this.$items.values();
+  }
+  setIndex(t, e) {}
+  getIndex(t) {
+    return t;
+  }
+  [p](t) {
+    return this.$items.get(t);
+  }
+  [v](t) {
+    this.$items.delete(t);
+  }
+  [w](t, e, i) {
+    let s = null;
+    if (this.$items.forEach((n, r) => {
+      t.has(r) ? i(n) : ((s ??= []).push(r), e(n, r));
+    }), null !== s) for (let n = 0; n < s.length; n++) this[v](s[n]);
+  }
+  [g]() {
+    for (const t in this.deletedItems) delete this.deletedItems[t];
+  }
+  _dropView(t) {
+    $t(this, t);
+  }
+  _unregister() {}
+  toArray() {
+    return Array.from(this.$items.values());
+  }
+  toJSON() {
+    const t = [];
+    return this.forEach((e, i) => {
+      t.push("function" == typeof e.toJSON ? e.toJSON() : e);
+    }), t;
+  }
+  clone(e) {
+    let i;
+    return e ? i = Object.assign(new t(), this) : (i = new t(), this.forEach(t => {
+      t[y] ? i.add(t.clone()) : i.add(t);
+    })), i;
+  }
+};
+St("set", {
+  constructor: Le
+});
+var Ve = class t {
+  [y];
+  [a];
+  [m];
+  $items = new Map();
+  $nextPosition = 0;
+  _itemIndex = new Map();
+  _stream;
+  get maxPerTick() {
+    return this._stream?.maxPerTick ?? 32;
+  }
+  set maxPerTick(t) {
+    (this._stream ??= At()).maxPerTick = t;
+  }
+  get priority() {
+    return this._stream?.priority;
+  }
+  set priority(t) {
+    (this._stream ??= At()).priority = t;
+  }
+  static $isStream = !0;
+  static [u] = Ae;
+  static [f] = Re;
+  static COLLECTION_KIND = 5;
+  static [d](t, e, i) {
+    if (!i) return !0;
+    const s = t[p](e);
+    return void 0 !== s && i.isVisible(s[y]);
+  }
+  static is(t) {
+    return t && void 0 !== t.stream;
+  }
+  constructor() {
+    Object.defineProperty(this, y, {
+      value: new me(this),
+      enumerable: !1,
+      writable: !0
+    }), this[m] = void 0;
+  }
+  static initializeForDecoder() {
+    const e = Object.create(t.prototype);
+    return e.$items = new Map(), e.$nextPosition = 0, e._itemIndex = new Map(), e[m] = void 0, ge(e), e;
+  }
+  add(t) {
+    if (this._itemIndex.has(t)) return -1;
+    const e = this.$nextPosition++;
+    this.$items.set(e, t), this._itemIndex.set(t, e);
+    const i = this[y].root;
+    return void 0 !== t[y] && t[y].setParent(this, i, e), void 0 !== i && Mt(this, i, e), e;
+  }
+  remove(t) {
+    const e = this._itemIndex.get(t);
+    if (void 0 === e) return !1;
+    this._itemIndex.delete(t), this.$items.delete(e);
+    const i = this[y].root;
+    return void 0 !== i && (Ot(this, i, this[a], e), void 0 !== t[y] && i.remove(t[y])), !0;
+  }
+  has(t) {
+    return this._itemIndex.has(t);
+  }
+  clear() {
+    const t = this[y].root;
+    if (void 0 !== t) {
+      !function (t, e, s) {
+        const n = t._stream;
+        if (void 0 !== n) {
+          n.broadcastPending.clear();
+          for (const t of n.sentBroadcast) n.broadcastDeletes.add(t);
+          n.sentBroadcast.clear(), e.forEachActiveView(t => {
+            n.pendingByView.get(t.id)?.clear();
+            const e = n.sentByView.get(t.id);
+            if (void 0 !== e && e.size > 0) {
+              let n = t.changes.get(s);
+              void 0 === n && (n = new Map(), t.changes.set(s, n));
+              for (const t of e) n.set(t, i.DELETE);
+              e.clear();
+            }
+          });
+        }
+      }(this, t, this[a]);
+      for (const e of this.$items.values()) void 0 !== e[y] && t.remove(e[y]);
+    }
+    this.$items.clear(), this._itemIndex.clear();
+  }
+  forEach(t) {
+    for (const [e, i] of this.$items) t(i, e, this);
+  }
+  values() {
+    return this.$items.values();
+  }
+  entries() {
+    return this.$items.entries();
+  }
+  [Symbol.iterator]() {
+    return this.$items.values();
+  }
+  get size() {
+    return this.$items.size;
+  }
+  get length() {
+    return this.$items.size;
+  }
+  setIndex(t, e) {}
+  getIndex(t) {
+    return t;
+  }
+  [p](t) {
+    return this.$items.get(t);
+  }
+  [v](t) {
+    const e = this.$items.get(t);
+    void 0 !== e && (this._itemIndex.delete(e), this.$items.delete(t));
+  }
+  [w]() {}
+  [g]() {}
+  toArray() {
+    return Array.from(this.$items.values());
+  }
+  toJSON() {
+    const t = [];
+    return this.forEach(e => {
+      t.push("function" == typeof e?.toJSON ? e.toJSON() : e);
+    }), t;
+  }
+  clone(e) {
+    if (e) return Object.assign(new t(), this);
+    const i = new t();
+    return i.maxPerTick = this.maxPerTick, this.forEach(t => {
+      i.add("function" == typeof t?.clone ? t.clone() : t);
+    }), i;
+  }
+  _dropView(t) {
+    $t(this, t);
+  }
+  _unregister() {}
+};
+St("stream", {
+  constructor: Ve
+});
+var qe = class {
+  [A] = !0;
+  _type;
+  _default = void 0;
+  _hasDefault = !1;
+  _view = void 0;
+  _unreliable = !1;
+  _patchOnly = !1;
+  _deprecated = !1;
+  _deprecatedThrows = !0;
+  _fullStateOnly = !1;
+  _stream = !1;
+  _optional = !1;
+  _noSync = !1;
+  _streamPriority = void 0;
+  constructor(t) {
+    this._type = t;
+  }
+  default(t) {
+    return this._default = t, this._hasDefault = !0, this;
+  }
+  view(t) {
+    return this._view = t ?? -1, this;
+  }
+  unreliable() {
+    return this._unreliable = !0, this;
+  }
+  patchOnly() {
+    return this._patchOnly = !0, this;
+  }
+  fullStateOnly() {
+    return this._fullStateOnly = !0, this;
+  }
+  noSync() {
+    return this._noSync = !0, this;
+  }
+  stream() {
+    const t = this._type;
+    if (t && "object" == typeof t && void 0 !== t.array) throw new Error(Et);
+    return this._stream = !0, this;
+  }
+  priority(t) {
+    return this._streamPriority = t, this;
+  }
+  deprecated(t = !0) {
+    return this._deprecated = !0, this._deprecatedThrows = t, this;
+  }
+  optional() {
+    return this._optional = !0, this;
+  }
+  toDefinition() {
+    return {
+      type: this._type,
+      default: this._default,
+      hasDefault: this._hasDefault,
+      view: this._view,
+      unreliable: this._unreliable,
+      patchOnly: this._patchOnly,
+      deprecated: this._deprecated,
+      deprecatedThrows: this._deprecatedThrows,
+      fullStateOnly: this._fullStateOnly,
+      stream: this._stream,
+      optional: this._optional,
+      noSync: this._noSync,
+      streamPriority: this._streamPriority
+    };
+  }
+};
+function ze(t) {
+  return null != t && !0 === t[A];
+}
+function We(t) {
+  return () => new qe(t);
+}
+function He(t) {
+  if (ze(t)) {
+    const e = t._type;
+    throw new Error(`t.array/map/set/collection(): a t.* builder is not a valid element type — ${"string" == typeof e ? `use the type name instead: t.array("${e}")` : 'collections accept a Schema class or a primitive type name ("string", "number", …)'}.`);
+  }
+  return t;
+}
+function Je(t) {
+  return new qe({
+    quantized: Rt(t)
+  });
+}
+var Ke = Object.freeze({
+    string: We("string"),
+    number: We("number"),
+    boolean: We("boolean"),
+    int8: We("int8"),
+    uint8: We("uint8"),
+    int16: We("int16"),
+    uint16: We("uint16"),
+    int32: We("int32"),
+    uint32: We("uint32"),
+    int64: We("int64"),
+    uint64: We("uint64"),
+    float32: We("float32"),
+    float64: We("float64"),
+    bigint64: We("bigint64"),
+    biguint64: We("biguint64"),
+    ref: t => new qe(t),
+    array: t => new qe({
+      array: He(t)
+    }),
+    map: t => new qe({
+      map: He(t)
+    }),
+    set: t => new qe({
+      set: He(t)
+    }),
+    collection: t => new qe({
+      collection: He(t)
+    }),
+    stream: t => {
+      const e = new qe({
+        stream: He(t)
+      });
+      return e._stream = !0, e;
+    },
+    quantized: Je,
+    angle: t => Je({
+      min: 0,
+      max: 2 * Math.PI,
+      mode: "wrap",
+      bits: t?.bits ?? 16
+    })
+  }),
+  Ge = -1;
+function Ye(t = Ge) {
+  return function (e, i) {
+    const s = Ut.initialize(e.constructor);
+    Ut.setTag(s, i, t);
+  };
+}
+function Xe(t, e) {
+  const i = Ut.initialize(t.constructor);
+  Ut.setUnreliable(i, e);
+}
+function Ze(t, e) {
+  const i = Ut.initialize(t.constructor);
+  Ut.setPatchOnly(i, e);
+}
+var Qe = {
+  number: "number",
+  int8: "number",
+  uint8: "number",
+  int16: "number",
+  uint16: "number",
+  int32: "number",
+  uint32: "number",
+  int64: "number",
+  uint64: "number",
+  float32: "number",
+  float64: "number",
+  bigint64: "bigint",
+  biguint64: "bigint",
+  string: "string",
+  boolean: "boolean"
+};
+function ti(t = !0) {
+  return function (e, i) {
+    const s = Ut.initialize(e.constructor);
+    Ut.setDeprecated(s, i), t && (s[I] ??= {}, s[I][i] = {
+      get: function () {
+        throw new Error(`${i} is deprecated.`);
+      },
+      set: function (t) {},
+      enumerable: !1,
+      configurable: !0
+    }, Object.defineProperty(e, i, s[I][i]));
+  };
+}
+function ei(t, e, i = ii) {
+  if (null == t || "object" != typeof t) throw new Error(`schema(): first argument must be a fields object (got ${typeof t}).`);
+  const s = {},
+    n = {},
+    r = {},
+    o = {},
+    h = (t, e) => {
+      if (e.hasDefault) ((t, e) => {
+        "function" == typeof e ? o[t] = e : e && "function" == typeof e.clone ? o[t] = () => e.clone() : r[t] = e;
+      })(t, e.default);else if (!e.optional) {
+        const i = function (t) {
+          if (t && "object" == typeof t) {
+            if (void 0 !== t.array) return () => new Ce();
+            if (void 0 !== t.map) return () => new Ue();
+            if (void 0 !== t.set) return () => new Le();
+            if (void 0 !== t.collection) return () => new Be();
+            if (void 0 !== t.stream) return () => new Ve();
+          } else if ("function" == typeof t && ii.is(t) && (!t.prototype.initialize || 0 === t.prototype.initialize.length)) return () => new t();
+        }(e.type);
+        i && (o[t] = i);
+      }
+    },
+    c = {},
+    a = [],
+    l = [],
+    u = {},
+    f = [],
+    d = [],
+    p = {},
+    v = [];
+  for (const S in t) {
+    const i = t[S];
+    if (ze(i)) {
+      const t = i.toDefinition();
+      if (t.noSync) {
+        if (void 0 !== t.view || t.unreliable || t.patchOnly || t.fullStateOnly || t.stream) throw new Error(`schema(${e ? `'${e}'` : ""}): field '${S}' uses .noSync() together with a sync-only modifier (.view/.unreliable/.patchOnly/.fullStateOnly/.stream). A local-only field cannot be synchronized.`);
+        h(S, t);
+        continue;
+      }
+      if (t.patchOnly && t.fullStateOnly) throw new Error(`schema(${e ? `'${e}'` : ""}): field '${S}' uses .patchOnly() together with .fullStateOnly(). Those are the only two delivery channels, so the field would never reach a client — use .noSync() if that is intended.`);
+      const n = Ft(t.type);
+      if ("function" == typeof n && !ii.is(n)) throw new Error(`schema(${e ? `'${e}'` : ""}): field '${S}' is a synced ref to non-Schema class '${n.name || "(anonymous)"}' — use .noSync(), or Metadata.setFields().`);
+      s[S] = n, void 0 !== t.view && (c[S] = t.view), t.unreliable && a.push(S), t.patchOnly && l.push(S), t.deprecated && (u[S] = t.deprecatedThrows), t.fullStateOnly && f.push(S), t.stream && d.push(S), void 0 !== t.streamPriority && (p[S] = t.streamPriority), t.optional && v.push(S), h(S, t);
+    } else {
+      if ("function" != typeof i) throw new Error(`schema(${e ? `'${e}'` : ""}): field '${S}' must be a t.* builder, Schema subclass, or method (got ${typeof i}).`);
+      ii.is(i) ? (s[S] = Ft(i), i.prototype.initialize && 0 !== i.prototype.initialize.length || (o[S] = () => new i())) : n[S] = i;
+    }
+  }
+  const w = t => {
+      for (const e in r) t[e] = r[e];
+      for (const e in o) t[e] = o[e]();
+    },
+    y = () => {
+      const t = {};
+      return w(t), t;
+    },
+    m = "function" == typeof n.initialize,
+    b = n.initialize ?? i._initialize,
+    g = class extends i {
+      constructor(...t) {
+        const e = t[0];
+        void 0 === e ? (super(), w(this)) : super(Object.assign(y(), m ? (t => {
+          const e = Object.keys(s),
+            i = {};
+          for (const s in t) e.includes(s) || (i[s] = t[s]);
+          return i;
+        })(e) : e)), b && new.target === g && b.apply(this, t);
+      }
+    };
+  e && Object.defineProperty(g, "name", {
+    value: e
+  }), Ut.setFields(g, s), g._getDefaultValues = y, g._initialize = b, Object.assign(g.prototype, n);
+  for (const S in c) Ye(c[S])(g.prototype, S);
+  for (const S of a) Xe(g.prototype, S);
+  for (const S of l) Ze(g.prototype, S);
+  for (const S in u) ti(u[S])(g.prototype, S);
+  if (f.length > 0 || d.length > 0) {
+    const t = g[Symbol.metadata];
+    for (const e of f) Ut.setFullStateOnly(t, e);
+    for (const e of d) Ut.setStream(t, e);
+    for (const e in p) Ut.setStreamPriority(t, e, p[e]);
+  }
+  if (v.length > 0) {
+    const t = g[Symbol.metadata];
+    for (const e of v) t[t[e]].optional = !0;
+  }
+  return g.extend = (t, e) => ei(t, e, g), g;
+}
+var ii = class t {
+  static [u] = ke;
+  static [f] = xe;
+  [a];
+  [E];
+  static initialize(t) {
+    Object.defineProperty(t, y, {
+      value: new me(t),
+      enumerable: !1,
+      writable: !0
+    }), t[E] = [];
+  }
+  static initializeForDecoder() {
+    const t = Object.create(this.prototype);
+    return ge(t), t[E] = [], t;
+  }
+  static reset(t) {
+    const e = t?.[y];
+    if (void 0 === e || "function" != typeof e.recycle) throw new Error("@colyseus/schema: Schema.reset() requires a tracked (encoder-side) instance.");
+    if (void 0 !== e.extraParents) throw new Error(`@colyseus/schema: cannot reset a shared instance (${t.constructor.name}) with multiple parents.`);
+    t[S]();
+  }
+  [S]() {
+    const t = this.constructor[Symbol.metadata]?.[$] ?? [],
+      e = this[E];
+    for (let i = 0; i < t.length; i++) e[t[i]]?.[S]?.();
+    this[y].recycle(), this[a] = void 0;
+  }
+  static is(t) {
+    const e = t[Symbol.metadata];
+    return "object" == typeof e && null !== e;
+  }
+  static isSchema(t) {
+    return "function" == typeof t?.assign;
+  }
+  static [l](t, e, s = i.ADD) {
+    t.change(e, s);
+  }
+  static [d](t, e, i) {
+    const s = t.constructor[Symbol.metadata][e]?.tag;
+    return void 0 === i ? void 0 === s : void 0 === s || (s === Ge ? i.isChangeTreeVisible(t[y]) : i.hasTagOnTree(t[y], s));
+  }
+  constructor(e) {
+    t.initialize(this), e && t.assignProps(this, e);
+  }
+  assign(e) {
+    return t.assignProps(this, e), this;
+  }
+  static assignProps(t, e) {
+    const i = t.constructor[Symbol.metadata];
+    if (i && void 0 !== i["~__numFields"]) for (let n = 0; n <= i[_]; n++) {
+      const s = i[n];
+      if (!s) continue;
+      const r = e[s.name];
+      void 0 !== r && (t[s.name] = r);
+    }
+    const s = Object.keys(e);
+    for (let n = 0; n < s.length; n++) {
+      const r = s[n];
+      i && void 0 !== i[r] || (t[r] = e[r]);
+    }
+  }
+  restore(e) {
+    const i = this.constructor[Symbol.metadata];
+    for (const s in i) {
+      const n = i[s],
+        r = n.name,
+        o = n.type,
+        h = e[r];
+      if (null != h) if ("string" == typeof o) this[r] = h;else if (t.is(o)) {
+        const t = new o();
+        t.restore(h), this[r] = t;
+      } else if ("object" == typeof o) {
+        const e = Object.keys(o)[0],
+          i = o[e];
+        if ("map" === e) {
+          const e = this[r];
+          for (const s in h) if (t.is(i)) {
+            const t = new i();
+            t.restore(h[s]), e.set(s, t);
+          } else e.set(s, h[s]);
+        } else if ("array" === e) {
+          const e = this[r];
+          for (let s = 0; s < h.length; s++) if (t.is(i)) {
+            const t = new i();
+            t.restore(h[s]), e.push(t);
+          } else e.push(h[s]);
+        }
+      }
+    }
+    return this;
+  }
+  setDirty(t, e) {
+    const i = this.constructor[Symbol.metadata];
+    this[y].change(i[i[t]].index, e);
+  }
+  pauseTracking() {
+    this[y].pause();
+  }
+  resumeTracking() {
+    this[y].resume();
+  }
+  untracked(t) {
+    return this[y].untracked(t);
+  }
+  get isTrackingPaused() {
+    return this[y].paused;
+  }
+  clone() {
+    const e = Object.create(this.constructor.prototype);
+    t.initialize(e);
+    const i = this.constructor[Symbol.metadata];
+    for (const t in i) {
+      const s = i[t].name;
+      "object" == typeof this[s] && "function" == typeof this[s]?.clone ? e[s] = this[s].clone() : e[s] = this[s];
+    }
+    return e;
+  }
+  toJSON() {
+    const t = {},
+      e = this.constructor[Symbol.metadata];
+    for (const i in e) {
+      const s = e[i],
+        n = s.name;
+      s.deprecated || null === this[n] || void 0 === this[n] || (t[n] = "function" == typeof this[n].toJSON ? this[n].toJSON() : this[n]);
+    }
+    return t;
+  }
+  discardAllChanges() {
+    this[y].discardAll();
+  }
+  [p](t) {
+    return this[this.constructor[Symbol.metadata][t].name];
+  }
+  [v](t) {
+    this[this.constructor[Symbol.metadata][t].name] = void 0;
+  }
+  static debugRefIds(t, e = !1, i = 0, s, n = "") {
+    const r = e ? ` - ${JSON.stringify(t.toJSON())}` : "",
+      o = t[y],
+      h = t[a],
+      c = s ? s.root : o.root,
+      l = c?.refCount?.[h] > 1 ? ` [×${c.refCount[h]}]` : "";
+    let u = `${function (t) {
+      return new Array(t).fill(0).map((e, i) => i === t - 1 ? "└─ " : "   ").join("");
+    }(i)}${n}${t.constructor.name} (refId: ${h})${l}${r}\n`;
+    return o.forEachChild((n, r) => {
+      let o = r;
+      "number" == typeof r && t.$indexes && (o = t.$indexes.get(r) ?? r);
+      const h = void 0 !== t.forEach && void 0 !== o ? `["${o}"]: ` : "";
+      u += this.debugRefIds(n.ref, e, i + 1, s, h);
+    }), u;
+  }
+  static debugRefIdEncodingOrder(t, e = "allChanges") {
+    const i = [],
+      s = t[y];
+    if ("changes" === e) {
+      let t = s.root.changes?.next;
+      for (; t;) t.changeTree && i.push(t.changeTree.ref[a]), t = t.next;
+      return i;
+    }
+    const n = "allFilteredChanges" === e,
+      r = new Set(),
+      o = t => {
+        r.has(t) || (r.add(t), t.isFiltered === n && i.push(t.ref[a]), t.forEachChild((t, e) => o(t)));
+      };
+    return o(s), i;
+  }
+  static debugRefIdsFromDecoder(t) {
+    return this.debugRefIds(t.state, !1, 0, t);
+  }
+  static debugChanges(t, e = !1) {
+    const s = t[y],
+      n = e ? "allChanges" : "changes";
+    let r = `${t.constructor.name} (${t[a]}) -> .${n}:\n`;
+    return e ? s.forEachLive(t => {
+      r += `- [${t}]: ADD (${JSON.stringify(s.getValue(Number(t), !0))})\n`;
+    }) : s.forEach((t, e) => {
+      t < 0 || !e || (r += `- [${t}]: ${i[e]} (${JSON.stringify(s.getValue(Number(t), !1))})\n`);
+    }), r;
+  }
+};
+h(ii);
+var si = {
+    value: 0,
+    enumerable: !1,
+    writable: !0
+  },
+  ni = class {
+    types;
+    nextUniqueId = 0;
+    refCount = {};
+    changeTrees = {};
+    changes = {
+      next: void 0,
+      tail: void 0,
+      nextPosition: 0
+    };
+    unreliableChanges = {
+      next: void 0,
+      tail: void 0,
+      nextPosition: 0
+    };
+    pendingFilterRefresh = [];
+    enqueueFilterRefresh(t) {
+      this.types.hasFilters && (t.flags & we || (t.flags |= we, this.pendingFilterRefresh.push(t)));
+    }
+    _nodePool = [];
+    _nextViewId = 0;
+    _freeViewIds = [];
+    acquireViewId() {
+      return this._freeViewIds.length > 0 ? this._freeViewIds.pop() : this._nextViewId++;
+    }
+    releaseViewId(t) {
+      this._freeViewIds.push(t);
+    }
+    activeViews = new Map();
+    streamTrees = new Set();
+    registerView(t) {
+      this.activeViews.set(t.id, new WeakRef(t));
+    }
+    unregisterView(t) {
+      this.activeViews.delete(t.id);
+      const e = t.id;
+      for (const i of this.streamTrees) i._dropView(e);
+    }
+    forEachActiveView(t) {
+      for (const [e, i] of this.activeViews) {
+        const s = i.deref();
+        if (void 0 !== s) t(s);else {
+          this.activeViews.delete(e);
+          for (const t of this.streamTrees) t._dropView(e);
+        }
+      }
+    }
+    registerStream(t) {
+      this.streamTrees.add(t);
+    }
+    unregisterStream(t) {
+      this.streamTrees.delete(t);
+    }
+    constructor(t, e = 0) {
+      this.types = t, this.nextUniqueId = e;
+    }
+    add(t) {
+      const e = t.ref;
+      void 0 === e[a] && (si.value = this.nextUniqueId++, Object.defineProperty(e, a, si));
+      const i = e[a],
+        s = void 0 === this.changeTrees[i];
+      s && (this.changeTrees[i] = t);
+      const n = this.refCount[i];
+      return (0 === n || t.needsRestage) && (t.needsRestage = !1, t.forEachLiveWithCtx(t, Jt)), this.refCount[i] = (n || 0) + 1, n > 0 && this.enqueueFilterRefresh(t), s;
+    }
+    remove(t) {
+      const e = t.ref[a],
+        i = this.refCount[e] - 1;
+      if (i <= 0) {
+        if (t.root = void 0, delete this.changeTrees[e], t.isStreamCollection) {
+          const e = t.ref;
+          e._unregister?.(), this.unregisterStream(e);
+        }
+        this.removeFromQueue(t), this.removeFromUnreliableQueue(t), this.refCount[e] = 0, t.forEachChild((e, i) => {
+          e.removeParent(t.ref) && (void 0 === e.parentRef || e.parentRef && this.refCount[e.ref[a]] > 0 ? this.remove(e) : e.parentRef && this.moveNextToParent(e));
+        });
+      } else this.refCount[e] = i, this.enqueueFilterRefresh(t), this.recursivelyMoveNextToParent(t);
+      return i;
+    }
+    recursivelyMoveNextToParent(t) {
+      this.moveNextToParent(t), t.forEachChild((t, e) => this.recursivelyMoveNextToParent(t));
+    }
+    moveNextToParent(t) {
+      t.changesNode && this._moveNextToParentInList(this.changes, t, t.changesNode, "changesNode"), t.unreliableChangesNode && this._moveNextToParentInList(this.unreliableChanges, t, t.unreliableChangesNode, "unreliableChangesNode");
+    }
+    _moveNextToParentInList(t, e, i, s) {
+      const n = e.parent;
+      if (!n || !n[y]) return;
+      const r = n[y][s];
+      r && r !== i && (i.position > r.position || (i.prev ? i.prev.next = i.next : t.next = i.next, i.next ? i.next.prev = i.prev : t.tail = i.prev, i.prev = t.tail, i.next = void 0, t.tail.next = i, t.tail = i, i.position = t.nextPosition++));
+    }
+    enqueueChangeTree(t, e = t.changesNode) {
+      e || (t.changesNode = this._appendToList(this.changes, t));
+    }
+    enqueueUnreliable(t, e = t.unreliableChangesNode) {
+      e || (t.unreliableChangesNode = this._appendToList(this.unreliableChanges, t));
+    }
+    _appendToList(t, e) {
+      const i = this._nodePool;
+      let s;
+      return i.length > 0 ? (s = i.pop(), s.changeTree = e, s.next = void 0, s.prev = void 0) : s = {
+        changeTree: e,
+        next: void 0,
+        prev: void 0,
+        position: 0
+      }, t.next ? (s.prev = t.tail, t.tail.next = s, t.tail = s) : (t.nextPosition = 0, t.next = s, t.tail = s), s.position = t.nextPosition++, s;
+    }
+    releaseNode(t) {
+      t.changeTree = void 0, t.prev = void 0, t.next = void 0, this._nodePool.push(t);
+    }
+    removeFromQueue(t) {
+      return this._removeNode(this.changes, t, t.changesNode, "changesNode");
+    }
+    removeFromUnreliableQueue(t) {
+      return this._removeNode(this.unreliableChanges, t, t.unreliableChangesNode, "unreliableChangesNode");
+    }
+    _removeNode(t, e, i, s) {
+      return !(!i || i.changeTree !== e || (i.prev ? i.prev.next = i.next : t.next = i.next, i.next ? i.next.prev = i.prev : t.tail = i.prev, e[s] = void 0, this.releaseNode(i), 0));
+    }
+  };
+function ri(t) {
+  t.structSwitchEmitted || (t.shouldEmitSwitch && (t.buffer[t.it.offset++] = 255, tt.number(t.buffer, t.ref[a], t.it)), t.structSwitchEmitted = !0);
+}
+function oi(t, e) {
+  ai(t, e, i.ADD);
+}
+function hi(t, e) {
+  if (e._fullSyncGen !== t.gen) {
+    if (e._fullSyncGen = t.gen, !t.hasView || t.view.isChangeTreeVisible(e)) {
+      const i = e.encDescriptor;
+      t.changeTree = e, t.ref = e.ref, t.encoder = i.encoder, t.filter = i.filter, t.metadata = i.metadata, t.treeIsFiltered = e.isFiltered, t.isSchema = i.isSchema, t.filterBitmask = i.filterBitmask, t.tags = i.tags, t.structSwitchEmitted = !1, t.shouldEmitSwitch = t.hasView || t.it.offset > t.initialOffset || e !== t.rootChangeTree, e.isArray && e.collDirty.size > 0 && (e.flags |= 512), Gt(e, t, oi);
+    }
+    he(e, t, ci);
+  }
+}
+function ci(t, e, i) {
+  hi(t, e);
+}
+function ai(t, e, s) {
+  if (e < 0) {
+    if (t.treeIsFiltered !== t.emitFiltered) return;
+    return ri(t), void (t.buffer[t.it.offset++] = 255 & Math.abs(e));
+  }
+  if ((t.isSchema ? t.treeIsFiltered || (e < 32 ? !!(t.filterBitmask & 1 << e) : void 0 !== t.tags[e]) : t.treeIsFiltered) !== t.emitFiltered) return;
+  const n = t.isEncodeAll ? i.ADD : s;
+  void 0 !== n && (void 0 === t.filter || t.filter(t.ref, e, t.view)) && (ri(t), t.encoder(t.self, t.buffer, t.changeTree, e, n, t.it, t.isEncodeAll, t.hasView, t.metadata));
+}
+function li(t, e) {
+  const i = new Uint8Array(t.length + e.length);
+  return i.set(t, 0), i.set(e, t.length), i;
+}
+new FinalizationRegistry(({
+  root: t,
+  id: e,
+  slot: i,
+  bit: s
+}) => {
+  !function (t, e, i) {
+    const s = ~i,
+      n = t.changeTrees;
+    for (const r in n) {
+      const t = n[r],
+        i = t.visibleViews;
+      void 0 !== i && e < i.length && (i[e] &= s);
+      const o = t.subscribedViews;
+      void 0 !== o && e < o.length && (o[e] &= s);
+      const h = t.tagViews;
+      void 0 !== h && h.forEach(t => {
+        e < t.length && (t[e] &= s);
+      });
+    }
+  }(t, i, s), t.releaseViewId(e);
+});
+var ui = class t {
+    static BUFFER_SIZE = 16384;
+    sharedBuffer = new Uint8Array(t.BUFFER_SIZE);
+    context;
+    state;
+    root;
+    constructor(t, e) {
+      this.context = Dt.cache(t.constructor), this.root = e ?? new ni(this.context), this.setState(t);
+    }
+    setState(t) {
+      this.state = t, this.state[y].setRoot(this.root);
+    }
+    _encodeCtx = {
+      self: void 0,
+      buffer: void 0,
+      it: void 0,
+      changeTree: void 0,
+      ref: void 0,
+      encoder: void 0,
+      filter: void 0,
+      metadata: void 0,
+      view: void 0,
+      isEncodeAll: !1,
+      hasView: !1,
+      treeIsFiltered: !1,
+      isSchema: !1,
+      emitFiltered: !1,
+      filterBitmask: 0,
+      tags: void 0,
+      structSwitchEmitted: !1,
+      isRootTree: !1,
+      shouldEmitSwitch: !1,
+      gen: 0,
+      initialOffset: 0,
+      rootChangeTree: void 0
+    };
+    _fullSyncGen = 0;
+    encode(t = {
+      offset: 0
+    }, e, i = this.sharedBuffer, s = t.offset) {
+      return this._encodeChannel(t, e, i, s, !1);
+    }
+    encodeUnreliable(t = {
+      offset: 0
+    }, e, i = this.sharedBuffer, s = t.offset) {
+      return this._encodeChannel(t, e, i, s, !0);
+    }
+    _encodeChannel(t, e, i, s, n) {
+      this.root.pendingFilterRefresh.length > 0 && Xt(this.root);
+      const r = void 0 !== e,
+        o = this.state[y],
+        h = this._encodeCtx;
+      h.self = this, h.buffer = i, h.it = t, h.view = e, h.isEncodeAll = !1, h.hasView = r, h.emitFiltered = r;
+      let c = n ? this.root.unreliableChanges : this.root.changes;
+      for (; c = c.next;) {
+        const i = c.changeTree;
+        if (r && !e.isChangeTreeVisible(i)) continue;
+        const a = n ? i.unreliableRecorder : i;
+        if (!a || !a.has()) continue;
+        const l = i.encDescriptor;
+        h.changeTree = i, h.ref = i.ref, h.encoder = l.encoder, h.filter = l.filter, h.metadata = l.metadata, h.treeIsFiltered = i.isFiltered, h.isSchema = l.isSchema, h.filterBitmask = l.filterBitmask, h.tags = l.tags, h.structSwitchEmitted = !1, h.isRootTree = i === o, h.shouldEmitSwitch = r || t.offset > s || !h.isRootTree, a.forEachWithCtx(h, ai);
+      }
+      return !n && !r && 0 === this.root.activeViews.size && this.root.streamTrees.size > 0 && this._emitStreamBroadcast(i, t), t.offset > i.byteLength ? (i = this._resizeBuffer(i, t.offset), t.offset = s, this._encodeChannel(t, e, i, s, n)) : i.subarray(0, t.offset);
+    }
+    encodeFullSync(t, e, i, s, n = t.offset) {
+      this.root.pendingFilterRefresh.length > 0 && Xt(this.root);
+      const r = void 0 !== s,
+        o = this.state[y],
+        h = this._encodeCtx;
+      return h.self = this, h.buffer = e, h.it = t, h.view = s, h.isEncodeAll = !0, h.hasView = r, h.emitFiltered = i, h.gen = ++this._fullSyncGen, h.initialOffset = n, h.rootChangeTree = o, hi(h, o), t.offset > e.byteLength ? (e = this._resizeBuffer(e, t.offset), t.offset = n, this.encodeFullSync(t, e, i, s, n)) : e.subarray(0, t.offset);
+    }
+    _resizeBuffer(e, i) {
+      const s = Math.ceil(i / t.BUFFER_SIZE) * t.BUFFER_SIZE;
+      console.warn(`@colyseus/schema buffer overflow. Encoded state is higher than default BUFFER_SIZE. Use the following to increase default BUFFER_SIZE:\n\n    import { Encoder } from "@colyseus/schema";\n    Encoder.BUFFER_SIZE = ${Math.round(s / 1024)} * 1024; // ${Math.round(s / 1024)} KB\n`);
+      const n = new Uint8Array(s);
+      return n.set(e), e === this.sharedBuffer && (this.sharedBuffer = n), n;
+    }
+    encodeAll(t = {
+      offset: 0
+    }, e = this.sharedBuffer) {
+      return this.encodeFullSync(t, e, !1);
+    }
+    encodeAllView(t, e, i, s = this.sharedBuffer) {
+      const n = i.offset;
+      return li((s = this.encodeFullSync(i, s, !0, t, n)).subarray(0, e), s.subarray(n, i.offset));
+    }
+    ensureCapacity(e, i) {
+      if (i + t.BUFFER_SIZE <= e.byteLength) return e;
+      const s = Math.ceil((i + t.BUFFER_SIZE) / t.BUFFER_SIZE) * t.BUFFER_SIZE,
+        n = new Uint8Array(s);
+      return n.set(e.subarray(0, i)), e === this.sharedBuffer && (this.sharedBuffer = n), n;
+    }
+    encodeView(t, e, s, n = this.sharedBuffer) {
+      const r = s.offset;
+      this._emitStreamPriority(t);
+      for (const o of t.changes.keys()) {
+        const e = t.changes.get(o),
+          r = this.root.changeTrees[o];
+        if (void 0 === r) {
+          t.changes.delete(o);
+          continue;
+        }
+        if (0 === e.size) continue;
+        const h = r.encDescriptor,
+          c = h.encoder,
+          l = h.metadata,
+          u = r.ref,
+          f = r.refTarget;
+        (n = this.ensureCapacity(n, s.offset))[s.offset++] = 255, tt.number(n, u[a], s);
+        for (const [o, d] of e) {
+          let e;
+          if (-1 === o) {
+            const t = f.tmpItems,
+              e = f.deletedIndexes;
+            for (let o = 0; o < t.length; o++) void 0 !== t[o] && !0 !== e[o] && c(this, n, r, o, i.ADD, s, !1, !0, l);
+            continue;
+          }
+          if ("number" == typeof o) e = o;else {
+            const s = o.indexInParent(u);
+            if (void 0 === s) continue;
+            if (e = s, d === i.ADD && r.getChange(e) === i.DELETE) {
+              t.changes.delete(o.ref[a]);
+              continue;
+            }
+          }
+          c(this, n, r, e, void 0 !== f["~getByIndex"](e) && d || i.DELETE, s, !1, !0, l);
+        }
+      }
+      return t.changes.clear(), li((n = this.encode(s, t, n)).subarray(0, e), n.subarray(r, s.offset));
+    }
+    encodeUnreliableView(t, e, i, s = this.sharedBuffer) {
+      const n = i.offset;
+      return li((s = this.encodeUnreliable(i, t, s, n)).subarray(0, e), s.subarray(n, i.offset));
+    }
+    _emitStreamBroadcast(t, e) {
+      const s = this.root.streamTrees;
+      for (const n of s) {
+        const s = n,
+          r = s[y],
+          o = s[a];
+        if (void 0 === o) continue;
+        const h = s._stream,
+          c = h.broadcastDeletes,
+          l = h.broadcastPending,
+          u = h.sentBroadcast,
+          f = c.size > 0,
+          d = l.size > 0,
+          v = r.encDescriptor,
+          w = v.encoder,
+          m = v.metadata;
+        if (f || d) {
+          if (t[e.offset++] = 255, tt.number(t, o, e), f) {
+            for (const s of c) w(this, t, r, s, i.DELETE, e, !1, !1, m);
+            c.clear();
+          }
+          const n = h.maxPerTick,
+            d = [];
+          let v = 0;
+          const b = [];
+          for (const o of l) {
+            if (v >= n) break;
+            const h = s[p](o);
+            void 0 !== h ? (w(this, t, r, o, i.ADD, e, !1, !1, m), u.add(o), d.push(h), b.push(o), v++) : b.push(o);
+          }
+          for (const t of b) l.delete(t);
+          for (const s of d) {
+            const n = s[y];
+            if (void 0 === n) continue;
+            const r = s[a];
+            if (void 0 === r) continue;
+            t[e.offset++] = 255, tt.number(t, r, e);
+            const o = n.encDescriptor,
+              h = o.encoder,
+              c = o.metadata;
+            n.forEachLive(s => {
+              Ut.hasUnreliableAtIndex(c, s) || h(this, t, n, s, i.ADD, e, !1, !1, c);
+            });
+          }
+        }
+        for (const i of u) {
+          const n = s[p](i);
+          if (void 0 === n) continue;
+          const r = n[y];
+          if (void 0 === r || !r.has()) continue;
+          const o = n[a];
+          if (void 0 === o) continue;
+          t[e.offset++] = 255, tt.number(t, o, e);
+          const h = r.encDescriptor,
+            c = h.encoder,
+            l = h.metadata;
+          r.forEach((i, s) => {
+            i < 0 || Ut.hasUnreliableAtIndex(l, i) || c(this, t, r, i, s, e, !1, !1, l);
+          });
+        }
+      }
+    }
+    _emitStreamPriority(t) {
+      const e = this.root.streamTrees;
+      if (0 === e.size) return;
+      const s = t.id;
+      for (const n of e) {
+        const e = n,
+          r = e._stream,
+          o = r.pendingByView.get(s);
+        if (void 0 === o || 0 === o.size) continue;
+        const h = r.priorityByView?.get(s),
+          c = void 0 !== h,
+          l = r.priority,
+          u = r.maxPerTick,
+          f = [],
+          d = [];
+        if (c || void 0 !== l) {
+          const i = [],
+            s = [];
+          let n = 0;
+          for (const r of o) {
+            const o = e[p](r);
+            if (void 0 === o) {
+              d.push(r);
+              continue;
+            }
+            const a = c ? h(o) : l(t, o);
+            if (n < u) {
+              let t = n++;
+              for (; t > 0 && s[t - 1] < a;) s[t] = s[t - 1], i[t] = i[t - 1], t--;
+              s[t] = a, i[t] = r;
+            } else if (a > s[u - 1]) {
+              let t = u - 1;
+              for (; t > 0 && s[t - 1] < a;) s[t] = s[t - 1], i[t] = i[t - 1], t--;
+              s[t] = a, i[t] = r;
+            }
+          }
+          for (let t = 0; t < n; t++) f.push(i[t]);
+        } else for (const t of o) {
+          if (f.length >= u) break;
+          f.push(t);
+        }
+        for (const t of d) o.delete(t);
+        const v = f.length;
+        let w = r.sentByView.get(s);
+        void 0 === w && (w = new Set(), r.sentByView.set(s, w));
+        for (let s = 0; s < v; s++) {
+          const n = f[s],
+            r = e[p](n);
+          if (void 0 === r) {
+            o.delete(n);
+            continue;
+          }
+          t._addImmediate(r);
+          const h = r[y];
+          if (void 0 !== h) {
+            const e = r[a];
+            let s = t.changes.get(e);
+            void 0 === s && (s = new Map(), t.changes.set(e, s));
+            const n = h.metadata;
+            h.forEachLive(t => {
+              Ut.hasUnreliableAtIndex(n, t) || s.set(t, i.ADD);
+            });
+          }
+          o.delete(n), w.add(n);
+        }
+      }
+    }
+    discardChanges() {
+      const t = this.root.changes;
+      let e = t.next;
+      const i = this.root;
+      for (; e;) {
+        const t = e.next;
+        e.changeTree.endEncode(), i.releaseNode(e), e = t;
+      }
+      t.next = void 0, t.tail = void 0;
+    }
+    discardUnreliableChanges() {
+      const t = this.root.unreliableChanges;
+      let e = t.next;
+      const i = this.root;
+      for (; e;) {
+        const t = e.next;
+        e.changeTree.endEncodeUnreliable(), i.releaseNode(e), e = t;
+      }
+      t.next = void 0, t.tail = void 0;
+    }
+    tryEncodeTypeId(t, e, i, s) {
+      const n = this.context.getTypeId(e),
+        r = this.context.getTypeId(i);
+      void 0 !== r ? n !== r && (t[s.offset++] = 213, tt.number(t, r, s)) : console.warn(`@colyseus/schema WARNING: Class "${i.name}" is not registered on TypeRegistry - Please either tag the class with @entity or define a @type() field.`);
+    }
+    get hasChanges() {
+      return void 0 !== this.root.changes.next;
+    }
+    get hasUnreliableChanges() {
+      return void 0 !== this.root.unreliableChanges.next;
+    }
+  },
+  fi = class extends Error {
+    constructor(t) {
+      super(t), this.name = "DecodingWarning";
+    }
+  },
+  di = {
+    value: 0,
+    enumerable: !1,
+    writable: !0
+  },
+  pi = class {
+    refs = new Map();
+    refCount = {};
+    deletedRefs = new Set();
+    callbacks = {};
+    nextUniqueId = 0;
+    getNextUniqueId() {
+      return this.nextUniqueId++;
+    }
+    addRef(t, e, i = !0) {
+      this.refs.set(t, e), void 0 === e[a] ? (di.value = t, Object.defineProperty(e, a, di)) : e[a] !== t && (e[a] = t), i && (this.refCount[t] = (this.refCount[t] || 0) + 1), this.deletedRefs.has(t) && this.deletedRefs.delete(t);
+    }
+    removeRef(t) {
+      const e = this.refCount[t];
+      if (void 0 !== e) {
+        if (0 !== e) (this.refCount[t] = e - 1) <= 0 && this.deletedRefs.add(t);else try {
+          const e = this.refs.get(t);
+          throw new fi(`trying to remove refId '${t}' with 0 refCount (${e.constructor.name}: ${JSON.stringify(e)})`);
+        } catch (wr) {
+          console.warn(wr);
+        }
+      } else try {
+        throw new fi("trying to remove refId that doesn't exist: " + t);
+      } catch (wr) {
+        console.warn(wr);
+      }
+    }
+    clearRefs() {
+      this.refs.clear(), this.deletedRefs.clear(), this.callbacks = {}, this.refCount = {};
+    }
+    garbageCollectDeletedRefs() {
+      this.deletedRefs.forEach(t => {
+        if (this.refCount[t] > 0) return;
+        const e = this.refs.get(t),
+          i = e.constructor[Symbol.metadata];
+        if (null != i) for (const s in i) {
+          const t = e[i[s].name];
+          if ("object" == typeof t && t) {
+            const e = t[a];
+            void 0 === e || this.deletedRefs.has(e) || this.removeRef(e);
+          }
+        } else "function" == typeof e[m] && Array.from(e.values()).forEach(t => {
+          const e = t[a];
+          void 0 === e || this.deletedRefs.has(e) || this.removeRef(e);
+        });
+        this.refs.delete(t), delete this.refCount[t], delete this.callbacks[t];
+      }), this.deletedRefs.clear();
+    }
+    addCallback(t, e, s) {
+      if (void 0 === t) {
+        const t = "number" == typeof e ? i[e] : e;
+        throw new Error(`Can't addCallback on '${t}' (refId is undefined)`);
+      }
+      return this.callbacks[t] || (this.callbacks[t] = {}), this.callbacks[t][e] || (this.callbacks[t][e] = []), this.callbacks[t][e].push(s), () => this.removeCallback(t, e, s);
+    }
+    removeCallback(t, e, i) {
+      const s = this.callbacks?.[t]?.[e]?.indexOf(i);
+      void 0 !== s && -1 !== s && function (t, e) {
+        if (-1 === e || e >= t.length) return !1;
+        const i = t.length - 1;
+        for (let s = e; s < i; s++) t[s] = t[s + 1];
+        t.length = i;
+      }(this.callbacks[t][e], s);
+    }
+  },
+  vi = class {
+    context;
+    state;
+    root;
+    currentRefId = 0;
+    triggerChanges;
+    resyncVisited = null;
+    resyncDamaged = !1;
+    constructor(t, e) {
+      this.setState(t), this.context = e || new Dt(t.constructor);
+    }
+    setState(t) {
+      this.state = t, this.root = new pi(), this.root.addRef(0, t);
+    }
+    decode(t, e = {
+      offset: 0
+    }, i = this.state) {
+      const s = void 0 !== this.triggerChanges ? [] : null,
+        n = this.root,
+        r = t.byteLength;
+      let o = i.constructor[f];
+      for (this.currentRefId = 0; e.offset < r;) {
+        if (255 == t[e.offset]) {
+          e.offset++, i[k]?.();
+          const s = mt.number(t, e),
+            h = n.refs.get(s);
+          h ? (o = (i = h).constructor[f], this.currentRefId = s) : (console.error(`"refId" not found: ${s}`, {
+            previousRef: i,
+            previousRefId: this.currentRefId
+          }), console.warn("Please report this issue to the developers."), this.skipCurrentStructure(t, e, r));
+          continue;
+        }
+        -1 !== o(this, t, e, i, s) || (console.warn("@colyseus/schema: definition mismatch"), this.skipCurrentStructure(t, e, r));
+      }
+      return i[k]?.(), null !== this.resyncVisited && function (t, e) {
+        t.resyncDamaged ? console.warn("@colyseus/schema: resync sweep skipped — parts of the payload could not be decoded. Stale entries may persist until the next resync.") : Oe(t, t.state, new Set(), e);
+      }(this, s), null !== s && this.triggerChanges?.(s), n.garbageCollectDeletedRefs(), s;
+    }
+    decodeResync(t, e = {
+      offset: 0
+    }) {
+      this.resyncVisited = new Map(), this.resyncDamaged = !1;
+      try {
+        return this.decode(t, e);
+      } finally {
+        this.resyncVisited = null;
+      }
+    }
+    skipCurrentStructure(t, e, i) {
+      null !== this.resyncVisited && (this.resyncDamaged = !0);
+      const s = {
+        offset: e.offset
+      };
+      for (; e.offset < i && (255 !== t[e.offset] || (s.offset = e.offset + 1, !this.root.refs.has(mt.number(t, s))));) e.offset++;
+    }
+    getInstanceType(t, e, i) {
+      let s;
+      if (213 === t[e.offset]) {
+        e.offset++;
+        const i = mt.number(t, e);
+        s = this.context.get(i);
+      }
+      return s || i;
+    }
+    createInstanceOfType(t) {
+      return t.initializeForDecoder();
+    }
+    removeChildRefs(t, e) {
+      const s = "string" != typeof t[m],
+        n = t[a];
+      t.forEach((r, o) => {
+        e?.push({
+          ref: t,
+          refId: n,
+          op: i.DELETE,
+          field: o,
+          value: void 0,
+          previousValue: r
+        }), s && this.root.removeRef(r[a]);
+      });
+    }
+  },
+  wi = ei({
+    min: Ke.float64(),
+    max: Ke.float64(),
+    bits: Ke.uint8(),
+    mode: Ke.uint8()
+  }, "QuantizedDescriptor"),
+  yi = ei({
+    name: Ke.string(),
+    type: Ke.string(),
+    referencedType: Ke.number(),
+    childPrimitive: Ke.string(),
+    quantized: Ke.ref(wi).optional()
+  }, "ReflectionField"),
+  mi = ei({
+    id: Ke.number(),
+    extendsId: Ke.number(),
+    fields: Ke.array(yi)
+  }, "ReflectionType"),
+  bi = ei({
+    types: Ke.array(mi),
+    rootType: Ke.number()
+  }, "Reflection");
+function gi(t) {
+  const e = t.root,
+    s = e.callbacks,
+    n = new WeakMap();
+  let r;
+  function o(t, s) {
+    let c = s.instance?.constructor[Symbol.metadata] || t,
+      l = s.instance && "function" == typeof s.instance.forEach || t && !ii.is(t);
+    if (c && !l) {
+      const t = function (t, i, o, h) {
+        return h && void 0 !== s.instance[i] && !n.has(r) && o(s.instance[i], void 0), e.addCallback(t[a], i, o);
+      };
+      return new Proxy({
+        listen: function (e, i, o = !0) {
+          if (s.instance) return t(s.instance, e, i, o);
+          {
+            let h = () => {};
+            return s.onInstanceAvailable((s, c) => {
+              h = t(s, e, i, o && c && !n.has(r));
+            }), () => h();
+          }
+        },
+        onChange: function (t) {
+          return e.addCallback(s.instance[a], i.REPLACE, t);
+        },
+        bindTo: function (t, n) {
+          return n || (n = Object.keys(c).map(t => c[t].name)), e.addCallback(s.instance[a], i.REPLACE, () => {
+            n.forEach(e => t[e] = s.instance[e]);
+          });
+        }
+      }, {
+        get(t, e) {
+          const i = c[c[e]];
+          if (i) {
+            const t = s.instance?.[e],
+              n = i => {
+                const n = h(s.instance).listen(e, (t, e) => {
+                  i(t, !1), n?.();
+                }, !1);
+                void 0 !== t?.[a] && i(t, !0);
+              };
+            return o(i.type, {
+              instance: void 0 !== t?.[a] && t,
+              parentInstance: s.instance,
+              onInstanceAvailable: n
+            });
+          }
+          return t[e];
+        },
+        has: (t, e) => void 0 !== c[e],
+        set(t, e, i) {
+          throw new Error("not allowed");
+        },
+        deleteProperty(t, e) {
+          throw new Error("not allowed");
+        }
+      });
+    }
+    {
+      const t = function (t, s, o) {
+          return o && t.forEach((t, e) => s(t, e)), e.addCallback(t[a], i.ADD, (t, e) => {
+            n.set(s, !0), r = s, s(t, e), n.delete(s), r = void 0;
+          });
+        },
+        o = function (t, s) {
+          return e.addCallback(t[a], i.DELETE, s);
+        },
+        h = function (t, s) {
+          return e.addCallback(t[a], i.REPLACE, s);
+        };
+      return new Proxy({
+        onAdd: function (e, i = !0) {
+          if (s.instance) return t(s.instance, e, i && !n.has(r));
+          if (s.onInstanceAvailable) {
+            let o = () => {};
+            return s.onInstanceAvailable((s, h) => {
+              o = t(s, e, i && h && !n.has(r));
+            }), () => o();
+          }
+        },
+        onRemove: function (t) {
+          if (s.instance) return o(s.instance, t);
+          if (s.onInstanceAvailable) {
+            let e = () => {};
+            return s.onInstanceAvailable(i => {
+              e = o(i, t);
+            }), () => e();
+          }
+        },
+        onChange: function (t) {
+          if (s.instance) return h(s.instance, t);
+          if (s.onInstanceAvailable) {
+            let e = () => {};
+            return s.onInstanceAvailable(i => {
+              e = h(i, t);
+            }), () => e();
+          }
+        }
+      }, {
+        get(t, e) {
+          if (!t[e]) throw new Error(`Can't access '${e}' through callback proxy. access the instance directly.`);
+          return t[e];
+        },
+        has: (t, e) => void 0 !== t[e],
+        set(t, e, i) {
+          throw new Error("not allowed");
+        },
+        deleteProperty(t, e) {
+          throw new Error("not allowed");
+        }
+      });
+    }
+  }
+  function h(t) {
+    return o(void 0, {
+      instance: t
+    });
+  }
+  return t.triggerChanges = function (t) {
+    const e = new Set();
+    for (let n = 0, r = t.length; n < r; n++) {
+      const r = t[n],
+        o = r.refId,
+        h = r.ref,
+        c = s[o];
+      if (c) {
+        if ((r.op & i.DELETE) === i.DELETE && ii.isSchema(r.previousValue)) {
+          const t = s[r.previousValue[a]]?.[i.DELETE];
+          for (let e = t?.length - 1; e >= 0; e--) t[e]();
+        }
+        if (ii.isSchema(h)) {
+          if (!e.has(o)) {
+            const t = c?.[i.REPLACE];
+            for (let e = t?.length - 1; e >= 0; e--) t[e]();
+          }
+          if (c.hasOwnProperty(r.field)) {
+            const t = c[r.field];
+            for (let e = t?.length - 1; e >= 0; e--) t[e](r.value, r.previousValue);
+          }
+        } else {
+          if ((r.op & i.DELETE) === i.DELETE) {
+            if (void 0 !== r.previousValue) {
+              const t = c[i.DELETE];
+              for (let e = t?.length - 1; e >= 0; e--) t[e](r.previousValue, r.dynamicIndex ?? r.field);
+            }
+            if ((r.op & i.ADD) === i.ADD) {
+              const t = c[i.ADD];
+              for (let e = t?.length - 1; e >= 0; e--) t[e](r.value, r.dynamicIndex ?? r.field);
+            }
+          } else if ((r.op & i.ADD) === i.ADD && r.previousValue !== r.value) {
+            const t = c[i.ADD];
+            for (let e = t?.length - 1; e >= 0; e--) t[e](r.value, r.dynamicIndex ?? r.field);
+          }
+          if (r.value !== r.previousValue && (void 0 !== r.value || void 0 !== r.previousValue)) {
+            const t = c[i.REPLACE];
+            for (let e = t?.length - 1; e >= 0; e--) t[e](r.value, r.dynamicIndex ?? r.field);
+          }
+        }
+        e.add(o);
+      }
+    }
+  }, h;
+}
+bi.encode = function (t, e = {
+  offset: 0
+}) {
+  const i = t.context,
+    s = new bi(),
+    n = new ui(s),
+    r = i.schemas.get(t.state.constructor);
+  r > 0 && (s.rootType = r);
+  const o = new Set(),
+    h = {},
+    c = t => {
+      if (void 0 === t.extendsId || o.has(t.extendsId)) {
+        o.add(t.id), s.types.push(t);
+        const e = h[t.id];
+        void 0 !== e && (delete h[t.id], e.forEach(t => c(t)));
+      } else void 0 === h[t.extendsId] && (h[t.extendsId] = []), h[t.extendsId].push(t);
+    };
+  i.schemas.forEach((t, e) => {
+    const s = new mi();
+    s.id = Number(t);
+    const n = Object.getPrototypeOf(e);
+    n !== ii && (s.extendsId = i.schemas.get(n));
+    const r = e[Symbol.metadata];
+    if (r !== n[Symbol.metadata]) {
+      const t = r["~__numFields"] ?? -1;
+      for (let e = 0; e <= t; e++) {
+        const t = r[e];
+        if (void 0 === t) continue;
+        const n = t.name;
+        if (!Object.prototype.hasOwnProperty.call(r, n)) continue;
+        const o = new yi();
+        let h;
+        if (o.name = n, "string" == typeof t.type) h = t.type;else if (Tt(t.type)) {
+          const e = t.type.quantized;
+          h = "quantized";
+          const i = new wi();
+          i.min = e.min, i.max = e.max, i.bits = e.bits, i.mode = e.wrap ? 1 : 0, o.quantized = i;
+        } else {
+          let e;
+          ii.is(t.type) ? (h = "ref", e = t.type) : (h = Object.keys(t.type)[0], "string" == typeof t.type[h] ? o.childPrimitive = t.type[h] : e = t.type[h]), o.referencedType = e ? i.getTypeId(e) : -1;
+        }
+        o.type = h, s.fields.push(o);
+      }
+    }
+    c(s);
+  });
+  for (const a in h) h[a].forEach(t => s.types.push(t));
+  return n.encodeAll(e).slice(0, e.offset);
+}, bi.decode = function (t, e) {
+  const i = new bi();
+  new vi(i).decode(t, e);
+  const s = new Dt();
+  i.types.forEach(t => {
+    const e = s.get(t.extendsId) ?? ii,
+      i = class extends e {};
+    Dt.register(i), s.add(i, t.id);
+  }, {}), i.types.forEach(t => {
+    const e = s.get(t.id),
+      n = Ut.initialize(e),
+      r = [];
+    let o = t;
+    do {
+      r.push(o), o = i.types.find(t => t.id === o.extendsId);
+    } while (o);
+    let h = 0;
+    r.reverse().forEach(t => {
+      ((t, e, i) => {
+        e.fields.forEach((e, n) => {
+          const r = i + n;
+          if (void 0 !== e.quantized) {
+            const i = e.quantized;
+            Ut.addField(t, r, e.name, {
+              quantized: Rt({
+                min: i.min,
+                max: i.max,
+                bits: i.bits,
+                mode: 1 === i.mode ? "wrap" : "clamp"
+              })
+            });
+          } else if (void 0 !== e.referencedType) {
+            const i = e.type,
+              n = s.get(e.referencedType) ?? e.childPrimitive;
+            "ref" === i ? Ut.addField(t, r, e.name, n) : Ut.addField(t, r, e.name, {
+              [i]: n
+            });
+          } else Ut.addField(t, r, e.name, e.type);
+        });
+      })(n, t, h), h += t.fields.length;
+    });
+  });
+  const n = new (s.get(i.rootType || 0))();
+  return new vi(n, s);
+}, bi.makeEncodable = function (t) {
+  const e = t[Symbol.metadata];
+  if (!e) return t;
+  const i = e[_];
+  if (void 0 === i) return t;
+  for (let s = 0; s <= i; s++) {
+    const i = e[s];
+    i && Ut.defineField(t, e, s, i.name, i.type);
+  }
+  return Object.prototype.hasOwnProperty.call(t, M) && delete t[M], t;
+};
+var Si = class {
+    decoder;
+    uniqueRefIds = new Set();
+    isTriggering = !1;
+    constructor(t) {
+      this.decoder = t, this.decoder.triggerChanges = this.triggerChanges.bind(this);
+    }
+    get callbacks() {
+      return this.decoder.root.callbacks;
+    }
+    get state() {
+      return this.decoder.state;
+    }
+    addCallback(t, e, i) {
+      return this.decoder.root.addCallback(t, e, i);
+    }
+    addCallbackOrWaitCollectionAvailable(t, e, s, n, r = !0) {
+      let o = () => {};
+      const h = () => o(),
+        c = t[e];
+      if (c && void 0 !== c[a]) return r = r && !1 === this.isTriggering, s === i.ADD && r && c.forEach((t, e) => {
+        n(t, e);
+      }), this.addCallback(c[a], s, n);
+      {
+        let i;
+        return i = this.addCallback(t[a], e, (t, e) => {
+          null != t && (i(), o = this.addCallback(t[a], s, n));
+        }), o = i, h;
+      }
+    }
+    listen(...t) {
+      return "string" == typeof t[0] ? this.listenInstance(this.state, t[0], t[1], t[2]) : this.listenInstance(t[0], t[1], t[2], t[3]);
+    }
+    listenInstance(t, e, i, s = !0) {
+      s = s && !1 === this.isTriggering;
+      const n = t[e];
+      return s && null != n && i(n, void 0), this.addCallback(t[a], e, i);
+    }
+    onChange(...t) {
+      if (2 === t.length && "string" != typeof t[0]) {
+        const e = t[0],
+          s = t[1];
+        return this.addCallback(e[a], i.REPLACE, s);
+      }
+      return "string" == typeof t[0] ? this.addCallbackOrWaitCollectionAvailable(this.state, t[0], i.REPLACE, t[1]) : this.addCallbackOrWaitCollectionAvailable(t[0], t[1], i.REPLACE, t[2]);
+    }
+    onAdd(...t) {
+      return "string" == typeof t[0] ? this.addCallbackOrWaitCollectionAvailable(this.state, t[0], i.ADD, t[1], !1 !== t[2]) : this.addCallbackOrWaitCollectionAvailable(t[0], t[1], i.ADD, t[2], !1 !== t[3]);
+    }
+    onRemove(...t) {
+      return "string" == typeof t[0] ? this.addCallbackOrWaitCollectionAvailable(this.state, t[0], i.DELETE, t[1]) : this.addCallbackOrWaitCollectionAvailable(t[0], t[1], i.DELETE, t[2]);
+    }
+    bindTo(t, e, s, n = !0) {
+      const r = t.constructor[Symbol.metadata];
+      s || (s = Object.keys(r).filter(t => !isNaN(Number(t))).map(t => r[t].name));
+      const o = () => {
+        for (const i of s) {
+          const s = t[i];
+          void 0 !== s && (e[i] = s);
+        }
+      };
+      return n && o(), this.addCallback(t[a], i.REPLACE, o);
+    }
+    triggerChanges(t) {
+      this.uniqueRefIds.clear(), this.isTriggering = !0;
+      for (let e = 0, s = t.length; e < s; e++) {
+        const s = t[e],
+          n = s.refId,
+          r = s.ref,
+          o = this.callbacks[n];
+        if (o) {
+          if ((s.op & i.DELETE) === i.DELETE && ii.isSchema(s.previousValue)) {
+            const t = s.previousValue[a],
+              e = this.callbacks[t]?.[i.DELETE];
+            if (e) for (let i = e.length - 1; i >= 0; i--) try {
+              e[i]();
+            } catch (wr) {
+              console.error(wr);
+            }
+          }
+          if (ii.isSchema(r)) {
+            if (!this.uniqueRefIds.has(n)) {
+              const t = o[i.REPLACE];
+              if (t) for (let e = t.length - 1; e >= 0; e--) try {
+                t[e]();
+              } catch (wr) {
+                console.error(wr);
+              }
+            }
+            const t = o[s.field];
+            if (t) for (let e = t.length - 1; e >= 0; e--) try {
+              t[e](s.value, s.previousValue);
+            } catch (wr) {
+              console.error(wr);
+            }
+          } else {
+            const t = s.dynamicIndex ?? s.field;
+            if ((s.op & i.DELETE) === i.DELETE) {
+              if (void 0 !== s.previousValue) {
+                const e = o[i.DELETE];
+                if (e) for (let i = e.length - 1; i >= 0; i--) try {
+                  e[i](s.previousValue, t);
+                } catch (wr) {
+                  console.error(wr);
+                }
+              }
+              if ((s.op & i.ADD) === i.ADD) {
+                const e = o[i.ADD];
+                if (e) for (let i = e.length - 1; i >= 0; i--) try {
+                  e[i](s.value, t);
+                } catch (wr) {
+                  console.error(wr);
+                }
+              }
+            } else if ((s.op & i.ADD) === i.ADD && s.previousValue !== s.value) {
+              const e = o[i.ADD];
+              if (e) for (let i = e.length - 1; i >= 0; i--) try {
+                e[i](s.value, t);
+              } catch (wr) {
+                console.error(wr);
+              }
+            }
+            if (s.value !== s.previousValue) {
+              const e = o[i.REPLACE];
+              if (e) for (let i = e.length - 1; i >= 0; i--) try {
+                e[i](t, s.value);
+              } catch (wr) {
+                console.error(wr);
+              }
+            }
+          }
+          this.uniqueRefIds.add(n);
+        }
+      }
+      this.isTriggering = !1;
+    }
+  },
+  ki = {
+    get(t) {
+      if (t instanceof vi) return new Si(t);
+      if ("decoder" in t.serializer) return new Si(t.serializer.decoder);
+      throw new Error("Invalid room or decoder");
+    },
+    getLegacy(t) {
+      if (t instanceof vi) return gi(t);
+      if ("decoder" in t.serializer) return gi(t.serializer.decoder);
+      throw new Error("Invalid room or decoder");
+    },
+    getRawChanges: (t, e) => function (t, e) {
+      t.triggerChanges = e;
+    }(t, e)
+  };
+St("map", {
+  constructor: Ue
+}), St("array", {
+  constructor: Ce
+}), St("set", {
+  constructor: Le
+}), St("collection", {
+  constructor: Be
+});
+var Ei = class t {
+  instance;
+  mode;
+  historySize;
+  _desc;
+  _numFields;
+  _slots;
+  _slotLens;
+  _slotHead = 0;
+  _slotCount = 0;
+  _outBuffer;
+  _seq = 0;
+  _encoder;
+  constructor(t, e = {}) {
+    this.instance = t, this.mode = e.mode ?? "reliable", this.historySize = "unreliable" === this.mode ? Math.max(1, e.historySize ?? 3) : 1, this._desc = Wt(t);
+    const i = this._desc.metadata?.[_];
+    if (void 0 === i) throw new Error(`InputEncoder: '${t.constructor.name}' has no fields`);
+    this._numFields = i;
+    for (let s = 0; s <= i; s++) if (void 0 !== this._desc.names[s] && void 0 === this._desc.encoders[s]) throw new Error(`InputEncoder: non-primitive field '${this._desc.names[s]}' on '${t.constructor.name}' is not supported. Use Encoder for state containing refs/collections.`);
+    if ("unreliable" === this.mode) {
+      this._slots = new Array(this.historySize), this._slotLens = new Array(this.historySize).fill(0);
+      for (let t = 0; t < this.historySize; t++) this._slots[t] = new Uint8Array(256);
+      this._outBuffer = new Uint8Array(261 * this.historySize);
+    }
+    this._encoder = new ui(t);
+  }
+  get seq() {
+    return this._seq;
+  }
+  encode() {
+    const t = this._produceDelta();
+    return "reliable" === this.mode ? t : this._pushAndEmitRing(t);
+  }
+  reset() {
+    this._slotHead = 0, this._slotCount = 0, this._encoder.discardChanges();
+    const t = this.instance[y],
+      e = this.instance[E];
+    for (let i = 0; i <= this._numFields; i++) void 0 !== e[i] && null !== e[i] && t.markDirty(i);
+  }
+  copyInto(t) {
+    const e = this.instance[E],
+      i = t[E];
+    for (let s = 0; s <= this._numFields; s++) i[s] = e[s];
+  }
+  _produceDelta() {
+    const t = this._encoder.encode();
+    return this._encoder.discardChanges(), t;
+  }
+  _pushAndEmitRing(e) {
+    this._seq++;
+    let i = this._slots[this._slotHead];
+    return e.length > i.byteLength && (i = this._slots[this._slotHead] = t._grow(i, e.length, "unreliable ring slot")), i.set(e), this._slotLens[this._slotHead] = e.length, this._slotHead = (this._slotHead + 1) % this.historySize, this._slotCount < this.historySize && this._slotCount++, this._emitRing();
+  }
+  _emitRing() {
+    const e = this._seq - this._slotCount + 1;
+    let i = 5;
+    for (let t = 0; t < this._slotCount; t++) i += this._slotLens[t] + 5;
+    let s = this._outBuffer;
+    i > s.byteLength && (s = this._outBuffer = t._grow(s, i, "unreliable output packet"));
+    const n = {
+      offset: 0
+    };
+    tt.number(s, e, n);
+    const r = (this._slotHead - this._slotCount + this.historySize) % this.historySize;
+    for (let t = 0; t < this._slotCount; t++) {
+      const e = (r + t) % this.historySize,
+        i = this._slotLens[e];
+      tt.number(s, i, n), s.set(this._slots[e].subarray(0, i), n.offset), n.offset += i;
+    }
+    return s.subarray(0, n.offset);
+  }
+  static _warned = !1;
+  static _grow(e, i, s) {
+    const n = Math.max(i, 2 * e.byteLength);
+    return t._warned || (t._warned = !0, console.warn(`@colyseus/schema/input: InputEncoder buffer overflow in ${s}. Growing to ${n} bytes.`)), new Uint8Array(n);
+  }
+};
+function Ai() {
+  return "undefined" != typeof performance ? performance.now() : Date.now();
+}
+var Ii = "undefined" != typeof WeakRef ? t => new WeakRef(t) : t => ({
+  deref: () => t
+});
+function Mi(t, e) {
+  const i = globalThis;
+  let s = i.__colyseusDebug;
+  if (!s) {
+    const t = [];
+    s = i.__colyseusDebug = {
+      __buffer: t,
+      publish(e, i) {
+        t.push([e, Ii(i)]), t.length > 64 && t.shift();
+      }
+    };
+  }
+  s.publish(t, e);
+}
+function Oi() {
+  if ("undefined" == typeof globalThis) return !1;
+  const t = globalThis.__colyseusDebug;
+  return null != t && void 0 === t.__buffer;
+}
+var _i = Symbol.metadata ?? Symbol.for("Symbol.metadata"),
+  $i = E;
+function xi(t) {
+  return t[a];
+}
+function Ri(t) {
+  return t.constructor[_i];
+}
+function Ti(t, e) {
+  const i = Ri(t)?.[e];
+  return "number" == typeof i ? i : -1;
+}
+var ji = {
+  string: !0,
+  boolean: !0,
+  bigint64: !0,
+  biguint64: !0
+};
+function Pi(t) {
+  const e = Ri(t),
+    i = [],
+    s = [];
+  if (e) for (let n = 0;; n++) {
+    const t = e[n];
+    if (!t || "string" != typeof t.name) break;
+    "string" == typeof t.type && (i.push(t.name), void 0 === ji[t.type] && s.push(t.name));
+  }
+  return {
+    fields: i,
+    numeric: s
+  };
+}
+var Di = t => t;
+function Fi(t) {
+  if (Number.isNaN(t)) return 0;
+  if (!Number.isFinite(t)) return t > 0 ? Number.MAX_SAFE_INTEGER : -Number.MAX_SAFE_INTEGER;
+  if (t !== (0 | t) && Math.abs(t) <= 34028235e31) {
+    const e = Math.fround(t);
+    if (Math.abs(Math.abs(e) - Math.abs(t)) < 1e-4) return e;
+  }
+  return t;
+}
+function Ci(t, e) {
+  const i = Ri(t),
+    s = i?.[e];
+  switch (("number" == typeof s ? i[s] : void 0)?.type) {
+    case "float32":
+      return Math.fround;
+    case "number":
+      return Fi;
+    default:
+      return Di;
+  }
+}
+var Ni,
+  Ui,
+  Bi,
+  Li = class t {
+    data;
+    _host;
+    _encoder;
+    _scratch = new Uint8Array(2048);
+    _framed = null;
+    _sentCount = 0;
+    _lastProcessed = 0;
+    _epoch = 0;
+    _sendTimes;
+    static BUFFER_FLOOR = 64;
+    static BUFFER_RTT_BUDGET_MS = 1e3;
+    static BUFFER_HEADROOM = 1.5;
+    _inputBufferSize;
+    _inputBuffer = null;
+    _reckonTimes = null;
+    _pendingReckon = 0;
+    _lastStamp = 0;
+    _stampRing = null;
+    _renderDeltaRing = null;
+    _ringSlots = 0;
+    static _warnedBufferOverflow = !1;
+    static _warnedAllowRewindIgnored = !1;
+    _warnedUnknownKeys = null;
+    _stampRender = !1;
+    _stampReckon = !1;
+    _allowRewind;
+    _sendListeners = null;
+    _renderDelay = 0;
+    _renderDelayExplicit = !1;
+    _renderDelayProvider;
+    _tickRate;
+    _patchRate;
+    _subSteps = 1;
+    constructor(e, i, s, n) {
+      this._host = e, this.data = i, this._encoder = s, this._stampRender = n?.stampRender ?? !1, this._stampReckon = n?.stampReckon ?? !1, this._allowRewind = n?.allowRewind, void 0 === this._allowRewind || "unreliable" !== s.mode || t._warnedAllowRewindIgnored || (t._warnedAllowRewindIgnored = !0, console.warn('@colyseus/sdk: `allowRewind` is ignored on `mode:"unreliable"` — a packet stamps its whole redundancy ring or none of it, so excluding one input would cost bandwidth rather than save it. Use `mode:"reliable"` to gate the lag-comp stamp per input.')), this._renderDelay = n?.renderDelay ?? 0, this._renderDelayExplicit = void 0 !== n?.renderDelay, this._tickRate = n?.tickRate, this._patchRate = n?.patchRate, this._subSteps = n?.subSteps ?? 1;
+      const r = this._tickRate ? 1e3 / this._tickRate : 1e3 / 60,
+        o = t.BUFFER_RTT_BUDGET_MS + (this._patchRate ?? 0);
+      this._inputBufferSize = Math.max(t.BUFFER_FLOOR, Math.ceil(o / r * t.BUFFER_HEADROOM)), this._sendTimes = new Float64Array(this._inputBufferSize);
+    }
+    get mode() {
+      return this._encoder.mode;
+    }
+    get tickRate() {
+      return this._tickRate;
+    }
+    get stepSeconds() {
+      return this._tickRate ? 1 / this._tickRate : void 0;
+    }
+    get stepMs() {
+      return this._tickRate ? 1e3 / this._tickRate : void 0;
+    }
+    get patchRate() {
+      return this._patchRate;
+    }
+    get subSteps() {
+      return this._subSteps;
+    }
+    get subStepSeconds() {
+      return this._tickRate ? 1 / this._tickRate / this._subSteps : void 0;
+    }
+    get subStepMs() {
+      return this._tickRate ? 1e3 / this._tickRate / this._subSteps : void 0;
+    }
+    get lastProcessed() {
+      return this._lastProcessed;
+    }
+    get sentCount() {
+      return this._sentCount;
+    }
+    get pendingCount() {
+      return this._sentCount - this._lastProcessed;
+    }
+    get replayBufferSize() {
+      return this._inputBufferSize;
+    }
+    get epoch() {
+      return this._epoch;
+    }
+    at(e) {
+      if (null !== this._inputBuffer && !(e <= this._lastProcessed || e > this._sentCount)) {
+        if (!(this._sentCount - e >= this._inputBufferSize)) return this._inputBuffer[e % this._inputBufferSize];
+        t._warnedBufferOverflow || (t._warnedBufferOverflow = !0, console.warn(`@colyseus/sdk: input replay buffer (${this._inputBufferSize}) overflowed — RTT exceeds its budget at this input rate; reconciliation may drift.`));
+      }
+    }
+    reckonTimeAt(t) {
+      return null === this._reckonTimes || t <= this._lastProcessed || t > this._sentCount || this._sentCount - t >= this._inputBufferSize ? 0 : this._reckonTimes[t % this._inputBufferSize];
+    }
+    reset() {
+      this._encoder.reset(), this._sentCount = this._lastProcessed = this._encoder.seq, this._framed = null, this._lastStamp = 0, this._ringSlots = 0, this._sendTimes.fill(0), this._epoch++;
+    }
+    bindRenderDelay(t) {
+      this._renderDelayExplicit || (this._renderDelayProvider = t);
+    }
+    _resolveRenderDelay() {
+      return this._renderDelayProvider ? this._renderDelayProvider() : this._renderDelay;
+    }
+    _warnUnknownFields() {
+      const t = Ri(this.data);
+      if (t) for (const e of Object.keys(this.data)) void 0 !== t[e] || this._warnedUnknownKeys?.has(e) || ((this._warnedUnknownKeys ??= new Set()).add(e), console.warn(`@colyseus/sdk input: "${e}" is not a declared field on ${this.data.constructor.name} — the write is never encoded or sent. Declare it with @type(...) on the input schema, or remove the write.`));
+    }
+    send() {
+      const t = this._host.connection;
+      if (!t?.isOpen) return 0;
+      Oi() && this._warnUnknownFields();
+      const e = this._encoder.encode(),
+        i = "reliable" === this._encoder.mode,
+        s = this._stampReckon || this._stampRender,
+        n = s && i && (void 0 === this._allowRewind || this._allowRewind(this.data)),
+        r = s && !i,
+        o = this._stampReckon && this._stampRender,
+        h = 1 + (n ? 9 + (o ? 2 : 0) : r ? ((t, e) => (e ? 2 : 1) * (13 + 9 * t))(this._encoder.historySize, o) : 0) + e.length;
+      h > this._scratch.byteLength && (this._scratch = new Uint8Array(Math.max(h, 2 * this._scratch.byteLength)), this._framed = null), this._scratch[0] = (i ? 19 : 20) | (n || r ? 128 : 0);
+      const c = {
+        offset: 1
+      };
+      if (r) this._writeRingStamps(c);else if (n) {
+        const {
+          stamp: t,
+          renderDelta: e
+        } = this._sampleStamp();
+        tt.number(this._scratch, t - this._lastStamp, c), this._lastStamp = t, o && tt.uint16(this._scratch, e, c);
+      } else this._pendingReckon = 0;
+      this._scratch.set(e, c.offset);
+      const a = c.offset + e.length;
+      null !== this._framed && this._framed.byteLength === a || (this._framed = this._scratch.subarray(0, a));
+      const l = this._framed;
+      let u;
+      return i ? (t.send(l), u = ++this._sentCount) : (t.sendUnreliable(l), u = this._sentCount = this._encoder.seq), this._recordSent(u), u;
+    }
+    _writeRingStamps(t) {
+      const {
+          stamp: e,
+          renderDelta: i
+        } = this._sampleStamp(),
+        s = this._encoder.historySize,
+        n = this._encoder.seq,
+        r = this._ringSlots = Math.min(this._ringSlots + 1, s),
+        o = this._stampRing ??= new Float64Array(s);
+      if (o[n % s] = e, tt.number(this._scratch, r, t), tt.uint32(this._scratch, e, t), this._writeSeriesDeltas(o, n, r, t), this._stampReckon && this._stampRender) {
+        const e = this._renderDeltaRing ??= new Uint16Array(s);
+        e[n % s] = i, tt.uint16(this._scratch, i, t), this._writeSeriesDeltas(e, n, r, t);
+      }
+    }
+    _writeSeriesDeltas(t, e, i, s) {
+      const n = t.length;
+      for (let r = 1; r < i; r++) tt.number(this._scratch, t[(e - r + 1) % n] - t[(e - r) % n], s);
+    }
+    _sampleStamp() {
+      const t = this._host.clock,
+        e = (t?.lastServerTime?.() ?? 0) > 0,
+        i = e ? Math.max(0, Math.round(t.serverNow())) >>> 0 : 0,
+        s = e ? Math.min(65535, Math.max(0, Math.round(this._resolveRenderDelay() + (t.smoothedRtt?.() ?? 0) / 2))) : 0;
+      return this._pendingReckon = i, {
+        stamp: this._stampReckon ? i : i > s ? i - s : 0,
+        renderDelta: s
+      };
+    }
+    _recordSent(t) {
+      if (null === this._inputBuffer) {
+        const t = this.data.constructor;
+        this._inputBuffer = Array.from({
+          length: this._inputBufferSize
+        }, () => new t());
+      }
+      this._encoder.copyInto(this._inputBuffer[t % this._inputBufferSize]), this._sendTimes[t % this._inputBufferSize] = Ai(), this._stampReckon && ((this._reckonTimes ??= new Float64Array(this._inputBufferSize))[t % this._inputBufferSize] = this._pendingReckon);
+      const e = this._sendListeners;
+      if (null !== e) for (let i = 0; i < e.length; i++) e[i](t);
+    }
+    onSend(t) {
+      const e = this._sendListeners;
+      return this._sendListeners = null !== e ? [...e, t] : [t], () => {
+        const e = this._sendListeners;
+        if (null === e) return;
+        const i = e.indexOf(t);
+        if (i < 0) return;
+        const s = e.slice();
+        s.splice(i, 1), this._sendListeners = s.length > 0 ? s : null;
+      };
+    }
+    ackInput(t) {
+      if (t <= this._lastProcessed) return -1;
+      const e = this._sentCount - t >= this._inputBufferSize;
+      if (this._lastProcessed = t, e) return -1;
+      const i = this._sendTimes[t % this._inputBufferSize];
+      return i > 0 ? Ai() - i : -1;
+    }
+  },
+  Vi = Object.freeze({
+    now: () => Ai(),
+    serverNow: () => Ai(),
+    renderNow: () => Ai(),
+    rtt: () => 0,
+    smoothedRtt: () => 0,
+    jitter: () => 0,
+    lastServerTime: () => 0,
+    patchInterval: () => 0,
+    setPatchInterval: t => {},
+    sample: (t, e) => {}
+  }),
+  qi = class t {
+    static EMA_ALPHA = .1;
+    static RENDER_TAU = 250;
+    static RENDER_SNAP = 250;
+    static RTT_OUTLIER_X = 4;
+    static JITTER_GAIN = 1 / 16;
+    static JITTER_STALL_X = 4;
+    static RTT_GATE_FACTOR = 1.2;
+    static RTT_GATE_WINDOW = 1e4;
+    static RTT_GATE_WARMUP = 30;
+    _clockOffset = 0;
+    _clockHasSample = !1;
+    _offsetCount = 0;
+    _rttFloorT = [];
+    _rttFloorV = [];
+    _rtt = 0;
+    _smoothedRtt = 0;
+    _rttHasSample = !1;
+    _jitter = 0;
+    _lastRecvTime = -1;
+    _lastServerTime = 0;
+    _patchInterval = 0;
+    _renderTau = t.RENDER_TAU;
+    _renderSn = 0;
+    _renderSnAt = 0;
+    serverNow() {
+      return Ai() + this._clockOffset;
+    }
+    renderNow() {
+      const e = this.serverNow();
+      if (this._renderTau <= 0) return e;
+      const i = Ai();
+      if (0 === this._renderSn) return this._renderSn = e, this._renderSnAt = i, this._renderSn;
+      const s = Math.min(i - this._renderSnAt, 100);
+      return s < .5 ? this._renderSn : (this._renderSnAt = i, this._renderSn += s, Math.abs(e - this._renderSn) > t.RENDER_SNAP ? (this._renderSn = e, this._renderSn) : (this._renderSn += (e - this._renderSn) * (1 - Math.exp(-s / this._renderTau)), this._renderSn));
+    }
+    setRenderTau(t) {
+      this._renderTau = t > 0 ? t : 0;
+    }
+    now() {
+      return Ai();
+    }
+    rtt() {
+      return this._rtt;
+    }
+    smoothedRtt() {
+      return this._smoothedRtt;
+    }
+    jitter() {
+      return this._jitter;
+    }
+    lastServerTime() {
+      return this._lastServerTime;
+    }
+    patchInterval() {
+      return this._patchInterval;
+    }
+    setPatchInterval(t) {
+      this._patchInterval = t > 0 ? t : 0;
+    }
+    sample(e, i) {
+      const s = Ai(),
+        n = t.EMA_ALPHA,
+        r = this._patchInterval;
+      if (this._lastRecvTime >= 0 && r > 0) {
+        const e = s - this._lastRecvTime,
+          i = Math.round(e / r);
+        i >= 1 && i <= t.JITTER_STALL_X && (this._jitter += (Math.abs(e - i * r) - this._jitter) * t.JITTER_GAIN);
+      }
+      this._lastRecvTime = s, this._lastServerTime = e, (i < 0 || this._smoothedRtt > 0 && i > this._smoothedRtt * t.RTT_OUTLIER_X) && (i = -1);
+      const o = i >= 0 ? e + i / 2 - s : e - s;
+      if (this._clockHasSample) {
+        if (i >= 0) {
+          const e = this.pushRttFloor(i, s),
+            r = this._offsetCount < t.RTT_GATE_WARMUP;
+          this._offsetCount++, (r || i <= e * t.RTT_GATE_FACTOR) && (this._clockOffset = this._clockOffset * (1 - n) + o * n);
+        }
+      } else this._clockOffset = o, this._clockHasSample = !0, i >= 0 && (this.pushRttFloor(i, s), this._offsetCount = 1);
+      i >= 0 && (this._rtt = i, this._rttHasSample ? this._smoothedRtt = this._smoothedRtt * (1 - n) + i * n : (this._smoothedRtt = i, this._rttHasSample = !0));
+    }
+    pushRttFloor(e, i) {
+      const s = this._rttFloorT,
+        n = this._rttFloorV;
+      for (; n.length > 0 && n[n.length - 1] >= e;) n.pop(), s.pop();
+      n.push(e), s.push(i);
+      const r = i - t.RTT_GATE_WINDOW;
+      for (; s.length > 0 && s[0] < r;) s.shift(), n.shift();
+      return n[0];
+    }
+    reset() {
+      this._clockOffset = 0, this._clockHasSample = !1, this._offsetCount = 0, this._rtt = 0, this._smoothedRtt = 0, this._rttHasSample = !1, this._jitter = 0, this._lastRecvTime = -1, this._lastServerTime = 0, this._rttFloorT.length = 0, this._rttFloorV.length = 0, this._renderSn = 0, this._renderSnAt = 0;
+    }
+  },
+  zi = class {
+    #t;
+    #e;
+    #i;
+    #s;
+    #n = !1;
+    #r;
+    #o = !1;
+    #h = !1;
+    #c;
+    #a;
+    #l;
+    constructor(t) {
+      this.#t = t;
+    }
+    get patchRate() {
+      return this.#a;
+    }
+    applyReflection(t, e, i) {
+      const s = bi.decode(t.subarray(0, i), e);
+      bi.makeEncodable(s.state.constructor), this.#r = s.state.constructor, this.#t.clock === Vi && (this.#t.clock = new qi());
+    }
+    applyOptions(t, e) {
+      const i = t[e.offset++];
+      this.#o = !!(1 & i), this.#h = !!(16 & i), 2 & i && (this.#c = mt.number(t, e)), 4 & i && (this.#a = mt.number(t, e)), 8 & i && (this.#l = mt.number(t, e));
+    }
+    ackInput(t) {
+      return this.#e ? this.#e.ackInput(t) : -1;
+    }
+    reset() {
+      this.#e?.reset();
+    }
+    handle(t) {
+      if (this.#e) return void 0 !== t && this.#u(t), this.#e;
+      const e = t?.type ?? this.#r;
+      if (!e) throw new Error("room.input(): no input schema available. The server room must call `defineInput(YourInput)`, or you can pass `{ type: YourInput }` explicitly.");
+      const i = new e(),
+        s = new Ei(i, t);
+      return this.#e = new Li(this.#t, i, s, {
+        stampRender: this.#o,
+        stampReckon: this.#h,
+        renderDelay: t?.renderDelay,
+        allowRewind: t?.allowRewind,
+        tickRate: this.#c,
+        patchRate: this.#a,
+        subSteps: this.#l
+      }), this.#i = t, this.#s = s, this.#e;
+    }
+    #u(t) {
+      if (this.#n) return;
+      const e = this.#e,
+        i = [];
+      void 0 !== t.type && t.type !== e.data?.constructor && i.push("type"), void 0 !== t.mode && t.mode !== e.mode && i.push("mode"), void 0 !== t.historySize && "unreliable" === e.mode && t.historySize !== this.#s.historySize && i.push("historySize"), void 0 !== t.renderDelay && t.renderDelay !== this.#i?.renderDelay && i.push("renderDelay"), void 0 !== t.allowRewind != (void 0 !== this.#i?.allowRewind) && i.push("allowRewind"), 0 !== i.length && (this.#n = !0, console.warn(`@colyseus/sdk: room.input() options ignored — the input handle was already created by an earlier call (first call wins). Differing: ${i.join(", ")}.`));
+    }
+  };
+try {
+  Ni = new TextDecoder();
+} catch (yr) {}
+var Wi,
+  Hi,
+  Ji,
+  Ki,
+  Gi,
+  Yi = 0,
+  Xi = [],
+  Zi = Xi,
+  Qi = 0,
+  ts = {},
+  es = 0,
+  is = 0,
+  ss = [],
+  ns = {
+    useRecords: !1,
+    mapsAsObjects: !0
+  },
+  rs = class {},
+  os = new rs();
+os.name = "MessagePack 0xC1";
+var hs = !1,
+  cs = 2,
+  as = class t {
+    constructor(t) {
+      t && (!1 === t.useRecords && void 0 === t.mapsAsObjects && (t.mapsAsObjects = !0), t.sequential && !1 !== t.trusted && (t.trusted = !0, t.structures || 0 == t.useRecords || (t.structures = [], t.maxSharedStructures || (t.maxSharedStructures = 0))), t.structures ? t.structures.sharedLength = t.structures.length : t.getStructures && ((t.structures = []).uninitialized = !0, t.structures.sharedLength = 0), t.int64AsNumber && (t.int64AsType = "number")), Object.assign(this, t);
+    }
+    unpack(e, i) {
+      if (Ui) return Us(() => (Bs(), this ? this.unpack(e, i) : t.prototype.unpack.call(ns, e, i)));
+      e.buffer || e.constructor !== ArrayBuffer || (e = "undefined" != typeof Buffer ? Buffer.from(e) : new Uint8Array(e)), "object" == typeof i ? (Bi = i.end || e.length, Yi = i.start || 0) : (Yi = 0, Bi = i > -1 ? i : e.length), Qi = 0, is = 0, Hi = null, Zi = Xi, Ji = null, Ui = e;
+      try {
+        Gi = e.dataView || (e.dataView = new DataView(e.buffer, e.byteOffset, e.byteLength));
+      } catch (yr) {
+        if (Ui = null, e instanceof Uint8Array) throw yr;
+        throw new Error("Source must be a Uint8Array or Buffer but was a " + (e && "object" == typeof e ? e.constructor.name : typeof e));
+      }
+      if (this instanceof t) {
+        if (ts = this, this.structures) return Wi = this.structures, ls(i);
+        (!Wi || Wi.length > 0) && (Wi = []);
+      } else ts = ns, (!Wi || Wi.length > 0) && (Wi = []);
+      return ls(i);
+    }
+    unpackMultiple(t, e) {
+      let i,
+        s = 0;
+      try {
+        hs = !0;
+        let n = t.length,
+          r = this ? this.unpack(t, n) : Ws.unpack(t, n);
+        if (!e) {
+          for (i = [r]; Yi < n;) s = Yi, i.push(ls());
+          return i;
+        }
+        if (!1 === e(r, s, Yi)) return;
+        for (; Yi < n;) if (s = Yi, !1 === e(ls(), s, Yi)) return;
+      } catch (yr) {
+        throw yr.lastPosition = s, yr.values = i, yr;
+      } finally {
+        hs = !1, Bs();
+      }
+    }
+    _mergeStructures(t, e) {
+      this._onLoadedStructures && (t = this._onLoadedStructures(t)), t = t || [], Object.isFrozen(t) && (t = t.map(t => t.slice(0)));
+      for (let i = 0, s = t.length; i < s; i++) {
+        let e = t[i];
+        e && (e.isShared = !0, i >= 32 && (e.highByte = i - 32 >> 5));
+      }
+      t.sharedLength = t.length;
+      for (let i in e || []) if (i >= 0) {
+        let s = t[i],
+          n = e[i];
+        n && (s && ((t.restoreStructures || (t.restoreStructures = []))[i] = s), t[i] = n);
+      }
+      return this.structures = t;
+    }
+    decode(t, e) {
+      return this.unpack(t, e);
+    }
+  };
+function ls(t) {
+  try {
+    if (!ts.trusted && !hs) {
+      let t = Wi.sharedLength || 0;
+      t < Wi.length && (Wi.length = t);
+    }
+    let e;
+    if (ts._readStruct && Ui[Yi] < 64 && Ui[Yi] >= 32 ? (e = ts._readStruct(Ui, Yi, Bi), Ui = null, t && t.lazy || !e || (e = e.toJSON()), Yi = Bi) : e = fs(), Ji && (Yi = Ji.postBundlePosition, Ji = null), hs && (Wi.restoreStructures = null), Yi == Bi) Wi && Wi.restoreStructures && us(), Wi = null, Ui = null, Ki && (Ki = null);else {
+      if (Yi > Bi) throw new Error("Unexpected end of MessagePack data");
+      if (!hs) {
+        let t;
+        try {
+          t = JSON.stringify(e, (t, e) => "bigint" == typeof e ? `${e}n` : e).slice(0, 100);
+        } catch (yr) {
+          t = "(JSON view not available " + yr + ")";
+        }
+        throw new Error("Data read, but end of buffer not reached " + t);
+      }
+    }
+    return e;
+  } catch (yr) {
+    throw Wi && Wi.restoreStructures && us(), Bs(), (yr instanceof RangeError || yr.message.startsWith("Unexpected end of buffer") || Yi > Bi) && (yr.incomplete = !0), yr;
+  }
+}
+function us() {
+  for (let t in Wi.restoreStructures) Wi[t] = Wi.restoreStructures[t];
+  Wi.restoreStructures = null;
+}
+function fs() {
+  let t = Ui[Yi++];
+  if (t < 160) {
+    if (t < 128) {
+      if (t < 64) return t;
+      {
+        let e = Wi[63 & t] || ts.getStructures && ws()[63 & t];
+        return e ? (e.read || (e.read = ps(e, 63 & t)), e.read()) : t;
+      }
+    }
+    if (t < 144) {
+      if (t -= 128, ts.mapsAsObjects) {
+        let e = {};
+        for (let i = 0; i < t; i++) {
+          let t = Ts();
+          "__proto__" === t && (t = "__proto_"), e[t] = fs();
+        }
+        return e;
+      }
+      {
+        let e = new Map();
+        for (let i = 0; i < t; i++) e.set(fs(), fs());
+        return e;
+      }
+    }
+    {
+      t -= 144;
+      let e = new Array(t);
+      for (let i = 0; i < t; i++) e[i] = fs();
+      return ts.freezeData ? Object.freeze(e) : e;
+    }
+  }
+  if (t < 192) {
+    let e = t - 160;
+    if (is >= Yi) return Hi.slice(Yi - es, (Yi += e) - es);
+    if (0 == is && Bi < 140) {
+      let t = e < 16 ? Os(e) : Ms(e);
+      if (null != t) return t;
+    }
+    return ys(e);
+  }
+  {
+    let e;
+    switch (t) {
+      case 192:
+        return null;
+      case 193:
+        return Ji ? (e = fs(), e > 0 ? Ji[1].slice(Ji.position1, Ji.position1 += e) : Ji[0].slice(Ji.position0, Ji.position0 -= e)) : os;
+      case 194:
+        return !1;
+      case 195:
+        return !0;
+      case 196:
+        if (e = Ui[Yi++], void 0 === e) throw new Error("Unexpected end of buffer");
+        return $s(e);
+      case 197:
+        return e = Gi.getUint16(Yi), Yi += 2, $s(e);
+      case 198:
+        return e = Gi.getUint32(Yi), Yi += 4, $s(e);
+      case 199:
+        return xs(Ui[Yi++]);
+      case 200:
+        return e = Gi.getUint16(Yi), Yi += 2, xs(e);
+      case 201:
+        return e = Gi.getUint32(Yi), Yi += 4, xs(e);
+      case 202:
+        if (e = Gi.getFloat32(Yi), ts.useFloat32 > 2) {
+          let t = Ls[(127 & Ui[Yi]) << 1 | Ui[Yi + 1] >> 7];
+          return Yi += 4, (t * e + (e > 0 ? .5 : -.5) | 0) / t;
+        }
+        return Yi += 4, e;
+      case 203:
+        return e = Gi.getFloat64(Yi), Yi += 8, e;
+      case 204:
+        return Ui[Yi++];
+      case 205:
+        return e = Gi.getUint16(Yi), Yi += 2, e;
+      case 206:
+        return e = Gi.getUint32(Yi), Yi += 4, e;
+      case 207:
+        return "number" === ts.int64AsType ? (e = 4294967296 * Gi.getUint32(Yi), e += Gi.getUint32(Yi + 4)) : "string" === ts.int64AsType ? e = Gi.getBigUint64(Yi).toString() : "auto" === ts.int64AsType ? (e = Gi.getBigUint64(Yi), e <= BigInt(2) << BigInt(52) && (e = Number(e))) : e = Gi.getBigUint64(Yi), Yi += 8, e;
+      case 208:
+        return Gi.getInt8(Yi++);
+      case 209:
+        return e = Gi.getInt16(Yi), Yi += 2, e;
+      case 210:
+        return e = Gi.getInt32(Yi), Yi += 4, e;
+      case 211:
+        return "number" === ts.int64AsType ? (e = 4294967296 * Gi.getInt32(Yi), e += Gi.getUint32(Yi + 4)) : "string" === ts.int64AsType ? e = Gi.getBigInt64(Yi).toString() : "auto" === ts.int64AsType ? (e = Gi.getBigInt64(Yi), e >= BigInt(-2) << BigInt(52) && e <= BigInt(2) << BigInt(52) && (e = Number(e))) : e = Gi.getBigInt64(Yi), Yi += 8, e;
+      case 212:
+        if (e = Ui[Yi++], 114 == e) return Ps(63 & Ui[Yi++]);
+        {
+          let t = ss[e];
+          if (t) return t.read ? (Yi++, t.read(fs())) : t.noBuffer ? (Yi++, t()) : t(Ui.subarray(Yi, ++Yi));
+          throw new Error("Unknown extension " + e);
+        }
+      case 213:
+        return e = Ui[Yi], 114 == e ? (Yi++, Ps(63 & Ui[Yi++], Ui[Yi++])) : xs(2);
+      case 214:
+        return xs(4);
+      case 215:
+        return xs(8);
+      case 216:
+        return xs(16);
+      case 217:
+        return e = Ui[Yi++], is >= Yi ? Hi.slice(Yi - es, (Yi += e) - es) : ms(e);
+      case 218:
+        return e = Gi.getUint16(Yi), is >= (Yi += 2) ? Hi.slice(Yi - es, (Yi += e) - es) : bs(e);
+      case 219:
+        return e = Gi.getUint32(Yi), is >= (Yi += 4) ? Hi.slice(Yi - es, (Yi += e) - es) : gs(e);
+      case 220:
+        return e = Gi.getUint16(Yi), Yi += 2, Es(e);
+      case 221:
+        return e = Gi.getUint32(Yi), Yi += 4, Es(e);
+      case 222:
+        return e = Gi.getUint16(Yi), Yi += 2, As(e);
+      case 223:
+        return e = Gi.getUint32(Yi), Yi += 4, As(e);
+      default:
+        if (t >= 224) return t - 256;
+        if (void 0 === t) throw ks();
+        throw new Error("Unknown MessagePack token " + t);
+    }
+  }
+}
+var ds = /^[a-zA-Z_$][a-zA-Z\d_$]*$/;
+function ps(t, e) {
+  function i() {
+    if (i.count++ > cs) {
+      let s;
+      try {
+        s = t.read = new Function("r", "return function(){return " + (ts.freezeData ? "Object.freeze" : "") + "({" + t.map(t => "__proto__" === t ? "__proto_:r()" : ds.test(t) ? t + ":r()" : "[" + JSON.stringify(t) + "]:r()").join(",") + "})}")(fs);
+      } catch (yr) {
+        return cs = 1 / 0, i();
+      }
+      return t.read0 = s, 0 === t.highByte && (t.read = vs(e, t.read)), s();
+    }
+    let s = {};
+    for (let e = 0, i = t.length; e < i; e++) {
+      let i = t[e];
+      "__proto__" === i && (i = "__proto_"), s[i] = fs();
+    }
+    return ts.freezeData ? Object.freeze(s) : s;
+  }
+  return i.count = 0, t.read0 = i, 0 === t.highByte ? vs(e, i) : i;
+}
+var vs = (t, e) => function () {
+  let i = Ui[Yi++];
+  if (0 === i) return e();
+  let s = t < 32 ? -(t + (i << 5)) : t + (i << 5),
+    n = Wi[s] || ws()[s];
+  if (!n) throw new Error("Record id is not defined for " + s);
+  return n.read || (n.read = ps(n, t)), n.read();
+};
+function ws() {
+  let t = Us(() => (Ui = null, ts.getStructures()));
+  return Wi = ts._mergeStructures(t, Wi);
+}
+var ys = Ss,
+  ms = Ss,
+  bs = Ss,
+  gs = Ss;
+function Ss(t) {
+  let e;
+  if (t < 16 && (e = Os(t))) return e;
+  if (t > 64 && Ni) return Ni.decode(Ui.subarray(Yi, Yi += t));
+  const i = Yi + t,
+    s = [];
+  for (e = ""; Yi < i;) {
+    const t = Ui[Yi++];
+    if (128 & t) {
+      if (192 == (224 & t)) {
+        if (t < 194 || Yi >= i || 128 != (192 & Ui[Yi])) s.push(65533);else {
+          const e = 63 & Ui[Yi++];
+          s.push((31 & t) << 6 | e);
+        }
+      } else if (224 == (240 & t)) {
+        const e = Yi < i ? Ui[Yi] : 0;
+        if (Yi >= i || 128 != (192 & e) || 224 === t && e < 160 || 237 === t && e >= 160) s.push(65533);else if (++Yi >= i || 128 != (192 & Ui[Yi])) s.push(65533);else {
+          const i = 63 & Ui[Yi++];
+          s.push((31 & t) << 12 | (63 & e) << 6 | i);
+        }
+      } else if (240 == (248 & t)) {
+        const e = Yi < i ? Ui[Yi] : 0;
+        if (t > 244 || Yi >= i || 128 != (192 & e) || 240 === t && e < 144 || 244 === t && e >= 144) s.push(65533);else if (++Yi >= i || 128 != (192 & Ui[Yi])) s.push(65533);else {
+          const n = 63 & Ui[Yi++];
+          if (Yi >= i || 128 != (192 & Ui[Yi])) s.push(65533);else {
+            let i = (7 & t) << 18 | (63 & e) << 12 | n << 6 | 63 & Ui[Yi++];
+            i -= 65536, s.push(i >>> 10 & 1023 | 55296), s.push(56320 | 1023 & i);
+          }
+        }
+      } else s.push(65533);
+    } else s.push(t);
+    s.length >= 4096 && (e += Is.apply(String, s), s.length = 0);
+  }
+  return s.length > 0 && (e += Is.apply(String, s)), e;
+}
+function ks() {
+  let t = new Error("Unexpected end of MessagePack data");
+  return t.incomplete = !0, t;
+}
+function Es(t) {
+  if (t > Bi - Yi) throw ks();
+  let e = new Array(t);
+  for (let i = 0; i < t; i++) e[i] = fs();
+  return ts.freezeData ? Object.freeze(e) : e;
+}
+function As(t) {
+  if (t > (Bi - Yi) / 2) throw ks();
+  if (ts.mapsAsObjects) {
+    let e = {};
+    for (let i = 0; i < t; i++) {
+      let t = Ts();
+      "__proto__" === t && (t = "__proto_"), e[t] = fs();
+    }
+    return e;
+  }
+  {
+    let e = new Map();
+    for (let i = 0; i < t; i++) e.set(fs(), fs());
+    return e;
+  }
+}
+var Is = String.fromCharCode;
+function Ms(t) {
+  let e = Yi,
+    i = new Array(t);
+  for (let s = 0; s < t; s++) {
+    const t = Ui[Yi++];
+    if ((128 & t) > 0) return void (Yi = e);
+    i[s] = t;
+  }
+  return Is.apply(String, i);
+}
+function Os(t) {
+  if (t < 4) {
+    if (t < 2) {
+      if (0 === t) return "";
+      {
+        let t = Ui[Yi++];
+        return (128 & t) > 1 ? void (Yi -= 1) : Is(t);
+      }
+    }
+    {
+      let e = Ui[Yi++],
+        i = Ui[Yi++];
+      if ((128 & e) > 0 || (128 & i) > 0) return void (Yi -= 2);
+      if (t < 3) return Is(e, i);
+      let s = Ui[Yi++];
+      return (128 & s) > 0 ? void (Yi -= 3) : Is(e, i, s);
+    }
+  }
+  {
+    let e = Ui[Yi++],
+      i = Ui[Yi++],
+      s = Ui[Yi++],
+      n = Ui[Yi++];
+    if ((128 & e) > 0 || (128 & i) > 0 || (128 & s) > 0 || (128 & n) > 0) return void (Yi -= 4);
+    if (t < 6) {
+      if (4 === t) return Is(e, i, s, n);
+      {
+        let t = Ui[Yi++];
+        return (128 & t) > 0 ? void (Yi -= 5) : Is(e, i, s, n, t);
+      }
+    }
+    if (t < 8) {
+      let r = Ui[Yi++],
+        o = Ui[Yi++];
+      if ((128 & r) > 0 || (128 & o) > 0) return void (Yi -= 6);
+      if (t < 7) return Is(e, i, s, n, r, o);
+      let h = Ui[Yi++];
+      return (128 & h) > 0 ? void (Yi -= 7) : Is(e, i, s, n, r, o, h);
+    }
+    {
+      let r = Ui[Yi++],
+        o = Ui[Yi++],
+        h = Ui[Yi++],
+        c = Ui[Yi++];
+      if ((128 & r) > 0 || (128 & o) > 0 || (128 & h) > 0 || (128 & c) > 0) return void (Yi -= 8);
+      if (t < 10) {
+        if (8 === t) return Is(e, i, s, n, r, o, h, c);
+        {
+          let t = Ui[Yi++];
+          return (128 & t) > 0 ? void (Yi -= 9) : Is(e, i, s, n, r, o, h, c, t);
+        }
+      }
+      if (t < 12) {
+        let a = Ui[Yi++],
+          l = Ui[Yi++];
+        if ((128 & a) > 0 || (128 & l) > 0) return void (Yi -= 10);
+        if (t < 11) return Is(e, i, s, n, r, o, h, c, a, l);
+        let u = Ui[Yi++];
+        return (128 & u) > 0 ? void (Yi -= 11) : Is(e, i, s, n, r, o, h, c, a, l, u);
+      }
+      {
+        let a = Ui[Yi++],
+          l = Ui[Yi++],
+          u = Ui[Yi++],
+          f = Ui[Yi++];
+        if ((128 & a) > 0 || (128 & l) > 0 || (128 & u) > 0 || (128 & f) > 0) return void (Yi -= 12);
+        if (t < 14) {
+          if (12 === t) return Is(e, i, s, n, r, o, h, c, a, l, u, f);
+          {
+            let t = Ui[Yi++];
+            return (128 & t) > 0 ? void (Yi -= 13) : Is(e, i, s, n, r, o, h, c, a, l, u, f, t);
+          }
+        }
+        {
+          let d = Ui[Yi++],
+            p = Ui[Yi++];
+          if ((128 & d) > 0 || (128 & p) > 0) return void (Yi -= 14);
+          if (t < 15) return Is(e, i, s, n, r, o, h, c, a, l, u, f, d, p);
+          let v = Ui[Yi++];
+          return (128 & v) > 0 ? void (Yi -= 15) : Is(e, i, s, n, r, o, h, c, a, l, u, f, d, p, v);
+        }
+      }
+    }
+  }
+}
+function _s() {
+  let t,
+    e = Ui[Yi++];
+  if (e < 192) t = e - 160;else switch (e) {
+    case 217:
+      t = Ui[Yi++];
+      break;
+    case 218:
+      t = Gi.getUint16(Yi), Yi += 2;
+      break;
+    case 219:
+      t = Gi.getUint32(Yi), Yi += 4;
+      break;
+    default:
+      throw new Error("Expected string");
+  }
+  return Ss(t);
+}
+function $s(t) {
+  return ts.copyBuffers ? Uint8Array.prototype.slice.call(Ui, Yi, Yi += t) : Ui.subarray(Yi, Yi += t);
+}
+function xs(t) {
+  let e = Ui[Yi++];
+  if (ss[e]) {
+    let i;
+    return ss[e](Ui.subarray(Yi, i = Yi += t), t => {
+      Yi = t;
+      try {
+        return fs();
+      } finally {
+        Yi = i;
+      }
+    });
+  }
+  throw new Error("Unknown extension type " + e);
+}
+var Rs = new Array(4096);
+function Ts() {
+  let t = Ui[Yi++];
+  if (!(t >= 160 && t < 192)) return Yi--, js(fs());
+  if (t -= 160, is >= Yi) return Hi.slice(Yi - es, (Yi += t) - es);
+  if (!(0 == is && Bi < 180)) return ys(t);
+  let e,
+    i = 4095 & (t << 5 ^ (t > 1 ? Gi.getUint16(Yi) : t > 0 ? Ui[Yi] : 0)),
+    s = Rs[i],
+    n = Yi,
+    r = Yi + t - 3,
+    o = 0;
+  if (s && s.bytes == t) {
+    for (; n < r;) {
+      if (e = Gi.getUint32(n), e != s[o++]) {
+        n = 1879048192;
+        break;
+      }
+      n += 4;
+    }
+    for (r += 3; n < r;) if (e = Ui[n++], e != s[o++]) {
+      n = 1879048192;
+      break;
+    }
+    if (n === r) return Yi = n, s.string;
+    r -= 3, n = Yi;
+  }
+  for (s = [], Rs[i] = s, s.bytes = t; n < r;) e = Gi.getUint32(n), s.push(e), n += 4;
+  for (r += 3; n < r;) e = Ui[n++], s.push(e);
+  let h = t < 16 ? Os(t) : Ms(t);
+  return s.string = null != h ? h : ys(t);
+}
+function js(t) {
+  if ("string" == typeof t) return t;
+  if ("number" == typeof t || "boolean" == typeof t || "bigint" == typeof t) return t.toString();
+  if (null == t) return t + "";
+  if (ts.allowArraysInMapKeys && Array.isArray(t) && t.flat().every(t => ["string", "number", "boolean", "bigint"].includes(typeof t))) return t.flat().toString();
+  throw new Error("Invalid property type for record: " + typeof t);
+}
+var Ps = (t, e) => {
+  let i = fs().map(js),
+    s = t;
+  void 0 !== e && (t = t < 32 ? -((e << 5) + t) : (e << 5) + t, i.highByte = e);
+  let n = Wi[t];
+  return n && (n.isShared || hs) && ((Wi.restoreStructures || (Wi.restoreStructures = []))[t] = n), Wi[t] = i, i.read = ps(i, s), (i.read0 || i.read)();
+};
+ss[0] = () => {}, ss[0].noBuffer = !0, ss[66] = t => {
+  let e = t.byteLength % 8 || 8,
+    i = BigInt(128 & t[0] ? t[0] - 256 : t[0]);
+  for (let s = 1; s < e; s++) i <<= BigInt(8), i += BigInt(t[s]);
+  if (t.byteLength !== e) {
+    let s = new DataView(t.buffer, t.byteOffset, t.byteLength),
+      n = (t, e) => {
+        let i = e - t;
+        if (i <= 40) {
+          let i = s.getBigUint64(t);
+          for (let n = t + 8; n < e; n += 8) i <<= BigInt(64), i |= s.getBigUint64(n);
+          return i;
+        }
+        let r = t + (i >> 4 << 3),
+          o = n(t, r),
+          h = n(r, e);
+        return o << BigInt(8 * (e - r)) | h;
+      };
+    i = i << BigInt(8 * (s.byteLength - e)) | n(e, s.byteLength);
+  }
+  return i;
+};
+var Ds = {
+  Error: Error,
+  EvalError: EvalError,
+  RangeError: RangeError,
+  ReferenceError: ReferenceError,
+  SyntaxError: SyntaxError,
+  TypeError: TypeError,
+  URIError: URIError,
+  AggregateError: "function" == typeof AggregateError ? AggregateError : null
+};
+ss[101] = () => {
+  let t = fs();
+  if (!Ds[t[0]]) {
+    let e = Error(t[1], {
+      cause: t[2]
+    });
+    return e.name = t[0], e;
+  }
+  return Ds[t[0]](t[1], {
+    cause: t[2]
+  });
+}, ss[105] = t => {
+  if (!1 === ts.structuredClone) throw new Error("Structured clone extension is disabled");
+  let e = Gi.getUint32(Yi - 4);
+  Ki || (Ki = new Map());
+  let i,
+    s = Ui[Yi];
+  i = s >= 144 && s < 160 || 220 == s || 221 == s ? [] : s >= 128 && s < 144 || 222 == s || 223 == s ? new Map() : (s >= 199 && s <= 201 || s >= 212 && s <= 216) && 115 === Ui[Yi + 1] ? new Set() : {};
+  let n = {
+    target: i
+  };
+  Ki.set(e, n);
+  let r = fs();
+  if (!n.used) return n.target = r;
+  if (Object.assign(i, r), i instanceof Map) for (let [o, h] of r.entries()) i.set(o, h);
+  if (i instanceof Set) for (let o of Array.from(r)) i.add(o);
+  return i;
+}, ss[112] = t => {
+  if (!1 === ts.structuredClone) throw new Error("Structured clone extension is disabled");
+  let e = Gi.getUint32(Yi - 4),
+    i = Ki.get(e);
+  return i.used = !0, i.target;
+}, ss[115] = () => new Set(fs());
+var Fs = ["Int8", "Uint8", "Uint8Clamped", "Int16", "Uint16", "Int32", "Uint32", "Float32", "Float64", "BigInt64", "BigUint64"].map(t => t + "Array"),
+  Cs = "object" == typeof globalThis ? globalThis : window;
+ss[116] = t => {
+  let e = t[0],
+    i = Uint8Array.prototype.slice.call(t, 1).buffer,
+    s = Fs[e];
+  if (!s) {
+    if (16 === e) return i;
+    if (17 === e) return new DataView(i);
+    throw new Error("Could not find typed array for code " + e);
+  }
+  return new Cs[s](i);
+}, ss[120] = () => {
+  let t = fs();
+  return new RegExp(t[0], t[1]);
+};
+var Ns = [];
+function Us(t) {
+  ts && ts._onSaveState && ts._onSaveState();
+  let e = Bi,
+    i = Yi,
+    s = Qi,
+    n = es,
+    r = is,
+    o = Hi,
+    h = Zi,
+    c = Ki,
+    a = Ji,
+    l = new Uint8Array(Ui.slice(0, Bi)),
+    u = Wi,
+    f = Wi.slice(0, Wi.length),
+    d = ts,
+    p = hs,
+    v = t();
+  return Bi = e, Yi = i, Qi = s, es = n, is = r, Hi = o, Zi = h, Ki = c, Ji = a, Ui = l, hs = p, (Wi = u).splice(0, Wi.length, ...f), ts = d, Gi = new DataView(Ui.buffer, Ui.byteOffset, Ui.byteLength), v;
+}
+function Bs() {
+  Ui = null, Ki = null, Wi = null;
+}
+ss[98] = t => {
+  let e = (t[0] << 24) + (t[1] << 16) + (t[2] << 8) + t[3],
+    i = Yi;
+  return Yi += e - t.length, Ji = Ns, (Ji = [_s(), _s()]).position0 = 0, Ji.position1 = 0, Ji.postBundlePosition = Yi, Yi = i, fs();
+}, ss[255] = t => 4 == t.length ? new Date(1e3 * (16777216 * t[0] + (t[1] << 16) + (t[2] << 8) + t[3])) : 8 == t.length ? new Date(((t[0] << 22) + (t[1] << 14) + (t[2] << 6) + (t[3] >> 2)) / 1e6 + 1e3 * (4294967296 * (3 & t[3]) + 16777216 * t[4] + (t[5] << 16) + (t[6] << 8) + t[7])) : 12 == t.length ? new Date(((t[0] << 24) + (t[1] << 16) + (t[2] << 8) + t[3]) / 1e6 + 1e3 * ((128 & t[4] ? -281474976710656 : 0) + 1099511627776 * t[6] + 4294967296 * t[7] + 16777216 * t[8] + (t[9] << 16) + (t[10] << 8) + t[11])) : new Date("invalid");
+var Ls = new Array(147);
+for (let mr = 0; mr < 256; mr++) Ls[mr] = +("1e" + Math.floor(45.15 - .30103 * mr));
+var Vs,
+  qs,
+  zs,
+  Ws = new as({
+    useRecords: !1
+  }),
+  Hs = Ws.unpack;
+Ws.unpackMultiple, Ws.unpack, new Uint8Array(new Float32Array(1).buffer, 0, 4), as.SUPPORTS_STRUCT_HOOKS = !0;
+try {
+  Vs = new TextEncoder();
+} catch (yr) {}
+var Js,
+  Ks,
+  Gs,
+  Ys,
+  Xs = "undefined" != typeof Buffer,
+  Zs = Xs ? function (t) {
+    return Buffer.allocUnsafeSlow(t);
+  } : Uint8Array,
+  Qs = Xs ? Buffer : Uint8Array,
+  tn = Xs ? 4294967296 : 2144337920,
+  en = 0,
+  sn = null,
+  nn = /[\u0080-\uFFFF]/,
+  rn = Symbol("record-id"),
+  on = class extends as {
+    constructor(t) {
+      let e, i, s, n;
+      super(t), this.offset = 0;
+      let r = Qs.prototype.utf8Write ? function (t, e) {
+          return Js.utf8Write(t, e, Js.byteLength - e);
+        } : !(!Vs || !Vs.encodeInto) && function (t, e) {
+          return Vs.encodeInto(t, Js.subarray(e)).written;
+        },
+        o = this;
+      t || (t = {});
+      let h = t && t.sequential,
+        c = t.structures || t.saveStructures,
+        a = t.maxSharedStructures;
+      if (null == a && (a = c ? 32 : 0), a > 8160) throw new Error("Maximum maxSharedStructure is 8160");
+      t.structuredClone && null == t.moreTypes && (this.moreTypes = !0);
+      let l = t.maxOwnStructures;
+      null == l && (l = c ? 32 : 64), this.structures || 0 == t.useRecords || (this.structures = []);
+      let u = a > 32 || l + a > 64,
+        f = a + 64,
+        d = a + l + 64;
+      if (d > 8256) throw new Error("Maximum maxSharedStructure + maxOwnStructure is 8192");
+      let p = [],
+        v = 0,
+        w = 0;
+      this.pack = this.encode = function (t, r) {
+        if (Js || (Js = new Zs(8192), Gs = Js.dataView || (Js.dataView = new DataView(Js.buffer, 0, 8192)), en = 0), (Ys = Js.length - 10) - en < 2048 ? (Js = new Zs(Js.length), Gs = Js.dataView || (Js.dataView = new DataView(Js.buffer, 0, Js.length)), Ys = Js.length - 10, en = 0) : en = en + 7 & 2147483640, e = en, 2048 & r && (en += 255 & r), n = o.structuredClone ? new Map() : null, o.bundleStrings && "string" != typeof t ? (sn = []).size = 1 / 0 : sn = null, s = o.structures, s) {
+          s.uninitialized && (s = o._mergeStructures(o.getStructures()));
+          let t = s.sharedLength || 0;
+          if (t > a) throw new Error("Shared structures is larger than maximum shared structures, try increasing maxSharedStructures to " + s.sharedLength);
+          if (!s.transitions) {
+            s.transitions = Object.create(null);
+            for (let e = 0; e < t; e++) {
+              let t = s[e];
+              if (!t) continue;
+              let i,
+                n = s.transitions;
+              for (let e = 0, s = t.length; e < s; e++) {
+                let s = t[e];
+                i = n[s], i || (i = n[s] = Object.create(null)), n = i;
+              }
+              n[rn] = e + 64;
+            }
+            this.lastNamedStructuresLength = t;
+          }
+          h || (s.nextId = t + 64);
+        }
+        let c;
+        i && (i = !1);
+        try {
+          o._writeStruct && t && "object" == typeof t ? t.constructor === Object ? A(t) : t.constructor === Map || Array.isArray(t) || zs.some(e => t instanceof e) ? b(t) : A(!1 !== o.useToJSON && t.toJSON ? t.toJSON() : t) : b(t);
+          let i = sn;
+          if (sn && ln(e, b, 0), n && n.idsToInsert) {
+            let t = n.idsToInsert.sort((t, e) => t.offset > e.offset ? 1 : -1),
+              s = t.length,
+              r = -1;
+            for (; i && s > 0;) {
+              let n = t[--s].offset + e;
+              n < i.stringsPosition + e && -1 === r && (r = 0), n > i.position + e ? r >= 0 && (r += 6) : (r >= 0 && (Gs.setUint32(i.position + e, Gs.getUint32(i.position + e) + r), r = -1), i = i.previous, s++);
+            }
+            r >= 0 && i && Gs.setUint32(i.position + e, Gs.getUint32(i.position + e) + r), (en += 6 * t.length) > Ys && I(en), o.offset = en;
+            let h = function (t, e) {
+              let i,
+                s = 6 * e.length,
+                n = t.length - s;
+              for (; i = e.pop();) {
+                let e = i.offset,
+                  r = i.id;
+                t.copyWithin(e + s, e, n), s -= 6;
+                let o = e + s;
+                t[o++] = 214, t[o++] = 105, t[o++] = r >> 24, t[o++] = r >> 16 & 255, t[o++] = r >> 8 & 255, t[o++] = 255 & r, n = e;
+              }
+              return t;
+            }(Js.subarray(e, en), t);
+            return n = null, h;
+          }
+          return o.offset = en, 512 & r ? (Js.start = e, Js.end = en, Js) : Js.subarray(e, en);
+        } catch (yr) {
+          throw c = yr, yr;
+        } finally {
+          if (s && (y(), i && o.saveStructures)) {
+            let i = s.sharedLength || 0,
+              n = Js.subarray(e, en),
+              h = (o._prepareStructures || un)(s, o);
+            if (!c) return !1 === o.saveStructures(h, h.isCompatible) ? (s.uninitialized = !0, o.pack(t, r)) : (o.lastNamedStructuresLength = i, Js.length > 1073741824 && (Js = null), n);
+          }
+          Js.length > 1073741824 && (Js = null), 1024 & r && (en = e);
+        }
+      };
+      const y = () => {
+          w < 10 && w++;
+          let t = s.sharedLength || 0;
+          if (s.length > t && !h && (s.length = t), v > 1e4) s.transitions = null, w = 0, v = 0, p.length > 0 && (p = []);else if (p.length > 0 && !h) {
+            for (let t = 0, e = p.length; t < e; t++) p[t][rn] = 0;
+            p = [];
+          }
+        },
+        m = t => {
+          var e = t.length;
+          e < 16 ? Js[en++] = 144 | e : e < 65536 ? (Js[en++] = 220, Js[en++] = e >> 8, Js[en++] = 255 & e) : (Js[en++] = 221, Gs.setUint32(en, e), en += 4);
+          for (let i = 0; i < e; i++) b(t[i]);
+        },
+        b = t => {
+          en > Ys && (Js = I(en));
+          var i,
+            s = typeof t;
+          if ("string" === s) {
+            let s,
+              n = t.length;
+            if (sn && n >= 4 && n < 4096) {
+              if ((sn.size += n) > 21760) {
+                let t,
+                  i,
+                  s = (sn[0] ? 3 * sn[0].length + sn[1].length : 0) + 10;
+                en + s > Ys && (Js = I(en + s)), sn.position ? (i = sn, Js[en] = 200, en += 3, Js[en++] = 98, t = en - e, en += 4, ln(e, b, 0), Gs.setUint16(t + e - 3, en - e - t)) : (Js[en++] = 214, Js[en++] = 98, t = en - e, en += 4), (sn = ["", ""]).previous = i, sn.size = 0, sn.position = t;
+              }
+              let i = nn.test(t);
+              return sn[i ? 0 : 1] += t, Js[en++] = 193, void b(i ? -n : n);
+            }
+            s = n < 32 ? 1 : n < 256 ? 2 : n < 65536 ? 3 : 5;
+            let o = 3 * n;
+            if (en + o > Ys && (Js = I(en + o)), n < 64 || !r) {
+              let e,
+                r,
+                o,
+                h = en + s;
+              for (e = 0; e < n; e++) r = t.charCodeAt(e), r < 128 ? Js[h++] = r : r < 2048 ? (Js[h++] = r >> 6 | 192, Js[h++] = 63 & r | 128) : 55296 == (64512 & r) && 56320 == (64512 & (o = t.charCodeAt(e + 1))) ? (r = 65536 + ((1023 & r) << 10) + (1023 & o), e++, Js[h++] = r >> 18 | 240, Js[h++] = r >> 12 & 63 | 128, Js[h++] = r >> 6 & 63 | 128, Js[h++] = 63 & r | 128) : (Js[h++] = r >> 12 | 224, Js[h++] = r >> 6 & 63 | 128, Js[h++] = 63 & r | 128);
+              i = h - en - s;
+            } else i = r(t, en + s);
+            i < 32 ? Js[en++] = 160 | i : i < 256 ? (s < 2 && Js.copyWithin(en + 2, en + 1, en + 1 + i), Js[en++] = 217, Js[en++] = i) : i < 65536 ? (s < 3 && Js.copyWithin(en + 3, en + 2, en + 2 + i), Js[en++] = 218, Js[en++] = i >> 8, Js[en++] = 255 & i) : (s < 5 && Js.copyWithin(en + 5, en + 3, en + 3 + i), Js[en++] = 219, Gs.setUint32(en, i), en += 4), en += i;
+          } else if ("number" === s) {
+            if (t >>> 0 === t) t < 32 || t < 128 && !1 === this.useRecords || t < 64 && !this._writeStruct ? Js[en++] = t : t < 256 ? (Js[en++] = 204, Js[en++] = t) : t < 65536 ? (Js[en++] = 205, Js[en++] = t >> 8, Js[en++] = 255 & t) : (Js[en++] = 206, Gs.setUint32(en, t), en += 4);else if ((0 | t) === t) t >= -32 ? Js[en++] = 256 + t : t >= -128 ? (Js[en++] = 208, Js[en++] = t + 256) : t >= -32768 ? (Js[en++] = 209, Gs.setInt16(en, t), en += 2) : (Js[en++] = 210, Gs.setInt32(en, t), en += 4);else {
+              let e;
+              if ((e = this.useFloat32) > 0 && t < 4294967296 && t >= -2147483648) {
+                let i;
+                if (Js[en++] = 202, Gs.setFloat32(en, t), e < 4 || (0 | (i = t * Ls[(127 & Js[en]) << 1 | Js[en + 1] >> 7])) === i) return void (en += 4);
+                en--;
+              }
+              Js[en++] = 203, Gs.setFloat64(en, t), en += 8;
+            }
+          } else if ("object" === s || "function" === s) {
+            if (t) {
+              if (n) {
+                let i = n.get(t);
+                if (i) return i.id || (i.id = (n.idsToInsert || (n.idsToInsert = [])).push(i)), Js[en++] = 214, Js[en++] = 112, Gs.setUint32(en, i.id), void (en += 4);
+                n.set(t, {
+                  offset: en - e
+                });
+              }
+              let r = t.constructor;
+              if (r === Object) E(t);else if (r === Array) m(t);else if (r === Map) {
+                if (this.mapAsEmptyObject) Js[en++] = 128;else {
+                  (i = t.size) < 16 ? Js[en++] = 128 | i : i < 65536 ? (Js[en++] = 222, Js[en++] = i >> 8, Js[en++] = 255 & i) : (Js[en++] = 223, Gs.setUint32(en, i), en += 4);
+                  for (let [e, i] of t) b(e), b(i);
+                }
+              } else {
+                for (let e = 0, i = qs.length; e < i; e++) if (t instanceof zs[e]) {
+                  let i = qs[e];
+                  if (i.write) {
+                    i.type && (Js[en++] = 212, Js[en++] = i.type, Js[en++] = 0);
+                    let e = i.write.call(this, t);
+                    return void (e === t ? Array.isArray(t) ? m(t) : E(t) : b(e));
+                  }
+                  let s,
+                    n = Js,
+                    r = Gs,
+                    o = en;
+                  Js = null;
+                  try {
+                    s = i.pack.call(this, t, t => (Js = n, n = null, (en += t) > Ys && I(en), {
+                      target: Js,
+                      targetView: Gs,
+                      position: en - t
+                    }), b);
+                  } finally {
+                    n && (Gs = r, en = o, Ys = (Js = n).length - 10);
+                  }
+                  return void (s && (s.length + en > Ys && I(s.length + en), en = an(s, Js, en, i.type)));
+                }
+                if (Array.isArray(t)) m(t);else {
+                  if (!1 !== o.useToJSON && t.toJSON) {
+                    const e = t.toJSON();
+                    if (e !== t) return b(e);
+                  }
+                  if ("function" === s) return b(this.writeFunction && this.writeFunction(t));
+                  E(t);
+                }
+              }
+            } else Js[en++] = 192;
+          } else if ("boolean" === s) Js[en++] = t ? 195 : 194;else if ("bigint" === s) {
+            if (t < 0x8000000000000000 && t >= -0x8000000000000000) Js[en++] = 211, Gs.setBigInt64(en, t);else if (t < 0x10000000000000000 && t > 0) Js[en++] = 207, Gs.setBigUint64(en, t);else {
+              if (!this.largeBigIntToFloat) {
+                if (this.largeBigIntToString) return b(t.toString());
+                if (this.useBigIntExtension || this.moreTypes) {
+                  let e,
+                    i = t < 0 ? BigInt(-1) : BigInt(0);
+                  if (t >> BigInt(65536) === i) {
+                    let s = BigInt(0x10000000000000000) - BigInt(1),
+                      n = [];
+                    for (; n.push(t & s), t >> BigInt(63) !== i;) t >>= BigInt(64);
+                    e = new Uint8Array(new BigUint64Array(n).buffer), e.reverse();
+                  } else {
+                    let i = t < 0,
+                      s = (i ? ~t : t).toString(16);
+                    if (s.length % 2 ? s = "0" + s : parseInt(s.charAt(0), 16) >= 8 && (s = "00" + s), Xs) e = Buffer.from(s, "hex");else {
+                      e = new Uint8Array(s.length / 2);
+                      for (let t = 0; t < e.length; t++) e[t] = parseInt(s.slice(2 * t, 2 * t + 2), 16);
+                    }
+                    if (i) for (let t = 0; t < e.length; t++) e[t] = ~e[t];
+                  }
+                  return e.length + en > Ys && I(e.length + en), void (en = an(e, Js, en, 66));
+                }
+                throw new RangeError(t + " was too large to fit in MessagePack 64-bit integer format, use useBigIntExtension, or set largeBigIntToFloat to convert to float-64, or set largeBigIntToString to convert to string");
+              }
+              Js[en++] = 203, Gs.setFloat64(en, Number(t));
+            }
+            en += 8;
+          } else {
+            if ("undefined" !== s) throw new Error("Unknown type: " + s);
+            this.encodeUndefinedAsNil ? Js[en++] = 192 : (Js[en++] = 212, Js[en++] = 0, Js[en++] = 0);
+          }
+        },
+        g = this.variableMapSize || this.coercibleKeyAsNumber || this.skipValues ? t => {
+          let e;
+          if (this.skipValues) {
+            e = [];
+            for (let i in t) "function" == typeof t.hasOwnProperty && !t.hasOwnProperty(i) || this.skipValues.includes(t[i]) || e.push(i);
+          } else e = Object.keys(t);
+          let i,
+            s = e.length;
+          if (s < 16 ? Js[en++] = 128 | s : s < 65536 ? (Js[en++] = 222, Js[en++] = s >> 8, Js[en++] = 255 & s) : (Js[en++] = 223, Gs.setUint32(en, s), en += 4), this.coercibleKeyAsNumber) for (let n = 0; n < s; n++) {
+            i = e[n];
+            let s = Number(i);
+            b(isNaN(s) ? i : s), b(t[i]);
+          } else for (let n = 0; n < s; n++) b(i = e[n]), b(t[i]);
+        } : t => {
+          Js[en++] = 222;
+          let i = en - e;
+          en += 2;
+          let s = 0;
+          for (let e in t) ("function" != typeof t.hasOwnProperty || t.hasOwnProperty(e)) && (b(e), b(t[e]), s++);
+          if (s > 65535) throw new Error('Object is too large to serialize with fast 16-bit map size, use the "variableMapSize" option to serialize this object');
+          Js[i++ + e] = s >> 8, Js[i + e] = 255 & s;
+        },
+        S = !1 === this.useRecords ? g : t.progressiveRecords && !u ? t => {
+          let i,
+            n,
+            r = s.transitions || (s.transitions = Object.create(null)),
+            o = en++ - e;
+          for (let h in t) if ("function" != typeof t.hasOwnProperty || t.hasOwnProperty(h)) {
+            if (i = r[h], i) r = i;else {
+              let c = Object.keys(t),
+                a = r;
+              r = s.transitions;
+              let l = 0;
+              for (let t = 0, e = c.length; t < e; t++) {
+                let e = c[t];
+                i = r[e], i || (i = r[e] = Object.create(null), l++), r = i;
+              }
+              o + e + 1 == en ? (en--, M(r, c, l)) : O(r, c, o, l), n = !0, r = a[h];
+            }
+            b(t[h]);
+          }
+          if (!n) {
+            let i = r[rn];
+            i ? Js[o + e] = i : O(r, Object.keys(t), o, 0);
+          }
+        } : t => {
+          let e,
+            i = s.transitions || (s.transitions = Object.create(null)),
+            n = 0;
+          for (let s in t) ("function" != typeof t.hasOwnProperty || t.hasOwnProperty(s)) && (e = i[s], e || (e = i[s] = Object.create(null), n++), i = e);
+          let r = i[rn];
+          r ? r >= 96 && u ? (Js[en++] = 96 + (31 & (r -= 96)), Js[en++] = r >> 5) : Js[en++] = r : M(i, i.__keys__ || Object.keys(t), n);
+          for (let s in t) ("function" != typeof t.hasOwnProperty || t.hasOwnProperty(s)) && b(t[s]);
+        },
+        k = "function" == typeof this.useRecords && this.useRecords,
+        E = k ? t => {
+          k(t) ? S(t) : g(t);
+        } : S,
+        A = t => {
+          let n = o._writeStruct(t, Js, e, en, s, I, (t, e, s) => {
+            if (s) return i = !0;
+            en = e;
+            let n = Js;
+            return b(t), y(), n !== Js ? {
+              position: en,
+              targetView: Gs,
+              target: Js
+            } : en;
+          });
+          if (0 === n) return E(t);
+          en = n;
+        },
+        I = t => {
+          let i;
+          if (t > 16777216) {
+            if (t - e > tn) throw new Error("Packed buffer would be larger than maximum buffer size");
+            i = Math.min(tn, 4096 * Math.round(Math.max((t - e) * (t > 67108864 ? 1.25 : 2), 4194304) / 4096));
+          } else i = 1 + (Math.max(t - e << 2, Js.length - 1) >> 12) << 12;
+          let s = new Zs(i);
+          return Gs = s.dataView || (s.dataView = new DataView(s.buffer, 0, i)), t = Math.min(t, Js.length), Js.copy ? Js.copy(s, 0, e, t) : s.set(Js.slice(e, t)), en -= e, e = 0, Ys = s.length - 10, Js = s;
+        },
+        M = (t, e, n) => {
+          let r = s.nextId;
+          r || (r = 64), r < f && this.shouldShareStructure && !this.shouldShareStructure(e) ? (r = s.nextOwnId, r < d || (r = f), s.nextOwnId = r + 1) : (r >= d && (r = f), s.nextId = r + 1);
+          let o = e.highByte = r >= 96 && u ? r - 96 >> 5 : -1;
+          t[rn] = r, t.__keys__ = e, s[r - 64] = e, r < f ? (e.isShared = !0, s.sharedLength = r - 63, i = !0, o >= 0 ? (Js[en++] = 96 + (31 & r), Js[en++] = o) : Js[en++] = r) : (o >= 0 ? (Js[en++] = 213, Js[en++] = 114, Js[en++] = 96 + (31 & r), Js[en++] = o) : (Js[en++] = 212, Js[en++] = 114, Js[en++] = r), n && (v += w * n), p.length >= l && (p.shift()[rn] = 0), p.push(t), b(e));
+        },
+        O = (t, i, s, n) => {
+          let r = Js,
+            o = en,
+            h = Ys,
+            c = e;
+          en = 0, e = 0, (Js = Ks) || (Ks = Js = new Zs(8192)), Ys = Js.length - 10, M(t, i, n), Ks = Js;
+          let a = en;
+          if (Js = r, en = o, Ys = h, e = c, a > 1) {
+            let t = en + a - 1;
+            t > Ys && I(t);
+            let i = s + e;
+            Js.copyWithin(i + a, i + 1, en), Js.set(Ks.slice(0, a), i), en = t;
+          } else Js[s + e] = Ks[0];
+        };
+    }
+    useBuffer(t) {
+      (Js = t).dataView || (Js.dataView = new DataView(Js.buffer, Js.byteOffset, Js.byteLength)), Gs = Js.dataView, en = 0;
+    }
+    set position(t) {
+      en = t;
+    }
+    get position() {
+      return en;
+    }
+    clearSharedData() {
+      this.structures && (this.structures = []), this.typedStructs && (this.typedStructs = []);
+    }
+  };
+function hn(t, e, i, s) {
+  let n = t.byteLength;
+  if (n + 1 < 256) {
+    var {
+      target: r,
+      position: o
+    } = i(4 + n);
+    r[o++] = 199, r[o++] = n + 1;
+  } else if (n + 1 < 65536) {
+    var {
+      target: r,
+      position: o
+    } = i(5 + n);
+    r[o++] = 200, r[o++] = n + 1 >> 8, r[o++] = n + 1 & 255;
+  } else {
+    var {
+      target: r,
+      position: o,
+      targetView: h
+    } = i(7 + n);
+    r[o++] = 201, h.setUint32(o, n + 1), o += 4;
+  }
+  r[o++] = 116, r[o++] = e, t.buffer || (t = new Uint8Array(t)), r.set(new Uint8Array(t.buffer, t.byteOffset, t.byteLength), o);
+}
+function cn(t, e) {
+  let i = t.byteLength;
+  var s, n;
+  if (i < 256) {
+    var {
+      target: s,
+      position: n
+    } = e(i + 2);
+    s[n++] = 196, s[n++] = i;
+  } else if (i < 65536) {
+    var {
+      target: s,
+      position: n
+    } = e(i + 3);
+    s[n++] = 197, s[n++] = i >> 8, s[n++] = 255 & i;
+  } else {
+    var {
+      target: s,
+      position: n,
+      targetView: r
+    } = e(i + 5);
+    s[n++] = 198, r.setUint32(n, i), n += 4;
+  }
+  s.set(t, n);
+}
+function an(t, e, i, s) {
+  let n = t.length;
+  switch (n) {
+    case 1:
+      e[i++] = 212;
+      break;
+    case 2:
+      e[i++] = 213;
+      break;
+    case 4:
+      e[i++] = 214;
+      break;
+    case 8:
+      e[i++] = 215;
+      break;
+    case 16:
+      e[i++] = 216;
+      break;
+    default:
+      n < 256 ? (e[i++] = 199, e[i++] = n) : n < 65536 ? (e[i++] = 200, e[i++] = n >> 8, e[i++] = 255 & n) : (e[i++] = 201, e[i++] = n >> 24, e[i++] = n >> 16 & 255, e[i++] = n >> 8 & 255, e[i++] = 255 & n);
+  }
+  return e[i++] = s, e.set(t, i), i + n;
+}
+function ln(t, e, i) {
+  if (sn.length > 0) {
+    Gs.setUint32(sn.position + t, en + i - sn.position - t), sn.stringsPosition = en - t;
+    let s = sn;
+    sn = null, e(s[0]), e(s[1]);
+  }
+}
+function un(t, e) {
+  return t.isCompatible = t => {
+    let i = !t || (e.lastNamedStructuresLength || 0) === t.length;
+    return i || e._mergeStructures(t), i;
+  }, t;
+}
+zs = [Date, Set, Error, RegExp, ArrayBuffer, Object.getPrototypeOf(Uint8Array.prototype).constructor, DataView, rs], qs = [{
+  pack(t, e, i) {
+    let s = t.getTime() / 1e3;
+    if ((this.useTimestamp32 || 0 === t.getMilliseconds()) && s >= 0 && s < 4294967296) {
+      let {
+        target: t,
+        targetView: i,
+        position: n
+      } = e(6);
+      t[n++] = 214, t[n++] = 255, i.setUint32(n, s);
+    } else if (s > 0 && s < 4294967296) {
+      let {
+        target: i,
+        targetView: n,
+        position: r
+      } = e(10);
+      i[r++] = 215, i[r++] = 255, n.setUint32(r, 4e6 * t.getMilliseconds() + (s / 1e3 / 4294967296 | 0)), n.setUint32(r + 4, s);
+    } else if (isNaN(s)) {
+      if (this.onInvalidDate) return e(0), i(this.onInvalidDate());
+      let {
+        target: t,
+        targetView: s,
+        position: n
+      } = e(3);
+      t[n++] = 212, t[n++] = 255, t[n++] = 255;
+    } else {
+      let {
+        target: i,
+        targetView: n,
+        position: r
+      } = e(15);
+      i[r++] = 199, i[r++] = 12, i[r++] = 255, n.setUint32(r, 1e6 * t.getMilliseconds()), n.setBigInt64(r + 4, BigInt(Math.floor(s)));
+    }
+  }
+}, {
+  pack(t, e, i) {
+    if (this.setAsEmptyObject) return e(0), i({});
+    let s = Array.from(t),
+      {
+        target: n,
+        position: r
+      } = e(this.moreTypes ? 3 : 0);
+    this.moreTypes && (n[r++] = 212, n[r++] = 115, n[r++] = 0), i(s);
+  }
+}, {
+  pack(t, e, i) {
+    let {
+      target: s,
+      position: n
+    } = e(this.moreTypes ? 3 : 0);
+    this.moreTypes && (s[n++] = 212, s[n++] = 101, s[n++] = 0), i([t.name, t.message, t.cause]);
+  }
+}, {
+  pack(t, e, i) {
+    let {
+      target: s,
+      position: n
+    } = e(this.moreTypes ? 3 : 0);
+    this.moreTypes && (s[n++] = 212, s[n++] = 120, s[n++] = 0), i([t.source, t.flags]);
+  }
+}, {
+  pack(t, e) {
+    this.moreTypes ? hn(t, 16, e) : cn(Xs ? Buffer.from(t) : new Uint8Array(t), e);
+  }
+}, {
+  pack(t, e) {
+    let i = t.constructor;
+    i !== Qs && this.moreTypes ? hn(t, Fs.indexOf(i.name), e) : cn(t, e);
+  }
+}, {
+  pack(t, e) {
+    this.moreTypes ? hn(t, 17, e) : cn(Xs ? Buffer.from(t) : new Uint8Array(t), e);
+  }
+}, {
+  pack(t, e) {
+    let {
+      target: i,
+      position: s
+    } = e(1);
+    i[s] = 193;
+  }
+}], on.SUPPORTS_STRUCT_HOOKS = !0;
+var fn = new on({
+    useRecords: !1
+  }),
+  {
+    NEVER: dn,
+    ALWAYS: pn,
+    DECIMAL_ROUND: vn,
+    DECIMAL_FIT: wn
+  } = (fn.pack, fn.pack, {
+    NEVER: 0,
+    ALWAYS: 1,
+    DECIMAL_ROUND: 3,
+    DECIMAL_FIT: 4
+  }),
+  yn = 2048,
+  mn = class {
+    pending = new Uint8Array(0);
+    push(t) {
+      if (!t || 0 === t.byteLength) return [];
+      const e = 0 === this.pending.byteLength ? t : function (t, e) {
+          const i = new Uint8Array(t.byteLength + e.byteLength);
+          return i.set(t, 0), i.set(e, t.byteLength), i;
+        }(this.pending, t),
+        i = [];
+      let s = 0;
+      for (; s < e.byteLength;) {
+        const t = {
+          offset: s
+        };
+        let n;
+        try {
+          n = mt.number(e, t);
+        } catch (wr) {
+          if (e.byteLength - s <= 9) break;
+          throw wr;
+        }
+        const r = t.offset + n;
+        if (r > e.byteLength) break;
+        i.push(e.subarray(t.offset, r)), s = r;
+      }
+      return this.pending = s < e.byteLength ? e.slice(s) : new Uint8Array(0), i;
+    }
+  },
+  bn = class {
+    wt;
+    url;
+    isOpen = !1;
+    events;
+    reader;
+    writer;
+    unreliableReader;
+    unreliableWriter;
+    lengthPrefixBuffer = new Uint8Array(9);
+    reliableReassembler = new mn();
+    unreliableReassembler = new mn();
+    constructor(t) {
+      this.events = t;
+    }
+    connect(t, e = {}) {
+      this.url = t;
+      const i = e.fingerprint && {
+        serverCertificateHashes: [{
+          algorithm: "sha-256",
+          value: new Uint8Array(e.fingerprint)
+        }]
+      } || void 0;
+      this.wt = new WebTransport(t, i), this.wt.ready.then(t => {
+        this.isOpen = !0, this.unreliableReader = this.wt.datagrams.readable.getReader();
+        const i = this.wt.datagrams;
+        this.unreliableWriter = (i.createWritable ? i.createWritable() : i.writable).getWriter(), this.wt.incomingBidirectionalStreams.getReader().read().then(t => {
+          this.reader = t.value.readable.getReader(), this.writer = t.value.writable.getWriter(), this.sendSeatReservation(e.roomId, e.sessionId, e.reconnectionToken, e.skipHandshake), this.readIncomingData(), this.readIncomingUnreliableData();
+        }).catch(t => {
+          console.error("failed to read incoming stream", t), console.error("TODO: close the connection");
+        });
+      }).catch(t => {
+        this._close();
+      }), this.wt.closed.then(t => {
+        this.events.onclose({
+          code: t.closeCode,
+          reason: t.reason
+        });
+      }).catch(t => {
+        this.events.onerror(t), this.events.onclose({
+          code: t.closeCode,
+          reason: t.reason
+        });
+      }).finally(() => {
+        this._close();
+      });
+    }
+    send(t) {
+      this.writer.write(this.frame(t));
+    }
+    sendUnreliable(t) {
+      this.unreliableWriter.write(this.frame(t));
+    }
+    frame(t) {
+      const e = t instanceof Uint8Array ? t : new Uint8Array(t),
+        i = tt.number(this.lengthPrefixBuffer, e.length, {
+          offset: 0
+        }),
+        s = new Uint8Array(i + e.length);
+      return s.set(this.lengthPrefixBuffer.subarray(0, i), 0), s.set(e, i), s;
+    }
+    close(t, e) {
+      this.isOpen = !1;
+      try {
+        const i = this.wt?.close({
+          closeCode: t,
+          reason: e
+        });
+        i && "function" == typeof i.catch && i.catch(() => {});
+      } catch (wr) {}
+    }
+    readIncomingData() {
+      return this.readLoop(this.reader, this.reliableReassembler, "reliable");
+    }
+    readIncomingUnreliableData() {
+      return this.readLoop(this.unreliableReader, this.unreliableReassembler, "unreliable");
+    }
+    async readLoop(t, e, i) {
+      for (; this.isOpen;) {
+        let s;
+        try {
+          s = await t.read();
+        } catch (wr) {
+          return void (await this.onChannelFailure(i, wr));
+        }
+        if (s.done || !s.value) return;
+        for (const t of e.push(s.value)) this.events.onmessage({
+          data: t
+        });
+      }
+    }
+    async onChannelFailure(t, e) {
+      await new Promise(t => setTimeout(t, 0)), this.isOpen && (console.error(`H3Transport: stopped reading the ${t} channel while the session was open`, e), this.close(s, `h3 ${t} channel failed`));
+    }
+    sendSeatReservation(t, e, i, s) {
+      const n = {
+          offset: 0
+        },
+        r = [];
+      tt.string(r, t, n), tt.string(r, e, n), i && tt.string(r, i, n), s && tt.boolean(r, 1, n), this.writer.write(new Uint8Array(r).buffer);
+    }
+    _close() {
+      this.isOpen = !1;
+    }
+  },
+  gn = t(e((t, e) => {
+    e.exports = function () {
+      throw new Error("ws does not work in the browser. Browser clients must use the native WebSocket object");
+    };
+  })(), 1),
+  Sn = globalThis.WebSocket || gn.default,
+  kn = !1,
+  En = class {
+    ws;
+    protocols;
+    events;
+    constructor(t) {
+      this.events = t;
+    }
+    send(t) {
+      this.ws.send(t);
+    }
+    sendUnreliable(t) {
+      kn || (kn = !0, console.warn('@colyseus/sdk: the WebSocket transport has no unreliable channel — sending `mode:"unreliable"` traffic reliably instead. Use @colyseus/h3-transport (WebTransport) for datagram delivery.')), this.send(t);
+    }
+    connect(t, e) {
+      try {
+        this.ws = new Sn(t, {
+          headers: e,
+          protocols: this.protocols
+        });
+      } catch (wr) {
+        this.ws = new Sn(t, this.protocols);
+      }
+      this.ws.binaryType = "arraybuffer", this.ws.onopen = t => this.events.onopen?.(t), this.ws.onmessage = t => this.events.onmessage?.(t), this.ws.onclose = t => this.events.onclose?.(t), this.ws.onerror = t => this.events.onerror?.(t);
+    }
+    close(t, e) {
+      t === n && this.events.onclose && (this.ws.onclose = null, this.events.onclose({
+        code: t,
+        reason: e
+      })), this.ws.close(t, e);
+    }
+    get isOpen() {
+      return this.ws.readyState === Sn.OPEN;
+    }
+  },
+  An = [],
+  In = "function" == typeof addEventListener && "function" == typeof removeEventListener;
+In && addEventListener("offline", () => {
+  console.warn(`@colyseus/sdk: 🛑 Network offline. Closing ${An.length} connection(s)`), An.forEach(t => t());
+}, !1);
+var Mn = class {
+    transport;
+    events = {};
+    url;
+    options;
+    #f = In ? () => this.close(n) : null;
+    constructor(t) {
+      this.transport = "h3" === t ? new bn(this.events) : new En(this.events);
+    }
+    connect(t, e) {
+      if (In) {
+        const t = this.events.onopen;
+        this.events.onopen = e => {
+          An.push(this.#f), t?.(e);
+        };
+        const e = this.events.onclose;
+        this.events.onclose = t => {
+          An.splice(An.indexOf(this.#f), 1), e?.(t);
+        };
+      }
+      this.url = t, this.options = e, this.transport.connect(t, e);
+    }
+    send(t) {
+      this.transport.send(t);
+    }
+    sendUnreliable(t) {
+      this.transport.sendUnreliable(t);
+    }
+    reconnect(t) {
+      if (this.transport instanceof bn) return void this.transport.connect(this.url, {
+        ...this.options,
+        ...t
+      });
+      const e = new URL(this.url);
+      for (const i in t) e.searchParams.set(i, t[i]);
+      this.transport.connect(e.toString(), this.options);
+    }
+    close(t, e) {
+      this.transport.close(t, e);
+    }
+    get isOpen() {
+      return this.transport.isOpen;
+    }
+  },
+  On = {};
+function _n(t, e) {
+  On[t] = e;
+}
+function $n(t) {
+  const e = On[t];
+  if (!e) throw new Error("missing serializer: " + t);
+  return e;
+}
+var xn = () => ({
+    emit(t, ...e) {
+      let i = this.events[t] || [];
+      for (let s = 0, n = i.length; s < n; s++) i[s](...e);
+    },
+    events: {},
+    on(t, e) {
+      return this.events[t]?.push(e) || (this.events[t] = [e]), () => {
+        this.events[t] = this.events[t]?.filter(t => e !== t);
+      };
+    }
+  }),
+  Rn = class {
+    handlers = [];
+    register(t, e = !1) {
+      return this.handlers.push(t), this;
+    }
+    invoke(...t) {
+      this.handlers.forEach(e => e.apply(this, t));
+    }
+    invokeAsync(...t) {
+      return Promise.all(this.handlers.map(e => e.apply(this, t)));
+    }
+    remove(t) {
+      const e = this.handlers.indexOf(t);
+      this.handlers[e] = this.handlers[this.handlers.length - 1], this.handlers.pop();
+    }
+    clear() {
+      this.handlers = [];
+    }
+  };
+function Tn() {
+  const t = new Rn();
+  function e(e) {
+    return t.register(e, null === this);
+  }
+  return e.once = e => {
+    const i = function (...s) {
+      e.apply(this, s), t.remove(i);
+    };
+    t.register(i);
+  }, e.remove = e => t.remove(e), e.invoke = (...e) => t.invoke(...e), e.invokeAsync = (...e) => t.invokeAsync(...e), e.clear = () => t.clear(), e;
+}
+var jn = class {
+    state;
+    decoder;
+    setState(t, e) {
+      this.decoder.root.refs.size > 1 && "function" == typeof this.decoder.decodeResync ? this.decoder.decodeResync(t, e) : this.decoder.decode(t, e);
+    }
+    getState() {
+      return this.state;
+    }
+    patch(t, e) {
+      return this.decoder.decode(t, e);
+    }
+    teardown() {
+      this.decoder.root.clearRefs();
+    }
+    handshake(t, e) {
+      this.state ? (bi.decode(t, e), this.decoder = new vi(this.state)) : (this.decoder = bi.decode(t, e), this.state = this.decoder.state);
+    }
+  },
+  Pn = (t, e) => Math.floor(Math.pow(2, t) * e);
+function Dn(t, e) {
+  t.reconnection.enqueuedMessages.push({
+    data: e
+  }), t.reconnection.enqueuedMessages.length > t.reconnection.maxEnqueuedMessages && t.reconnection.enqueuedMessages.shift();
+}
+var Fn = class t {
+  roomId;
+  sessionId;
+  reconnectionToken;
+  name;
+  connection;
+  onStateChange = Tn();
+  onError = Tn();
+  onLeave = Tn();
+  onReconnect = Tn();
+  onDrop = Tn();
+  onJoin = Tn();
+  serializerId;
+  serializer;
+  reconnection = function () {
+    return {
+      enabled: !0,
+      retryCount: 0,
+      maxRetries: 15,
+      delay: 100,
+      minDelay: 100,
+      maxDelay: 5e3,
+      minUptime: 5e3,
+      backoff: Pn,
+      maxEnqueuedMessages: 10,
+      enqueuedMessages: [],
+      isReconnecting: !1
+    };
+  }();
+  joinedAtTime = 0;
+  clock = Vi;
+  onMessageHandlers = xn();
+  packr;
+  sharedBuffer;
+  #d = 0;
+  #p = void 0;
+  static defaultRequestTimeout = 1e4;
+  #v = 0;
+  #w = new Map();
+  #y;
+  #m = 0;
+  constructor(t, e) {
+    if (this.name = t, this.packr = new on(), this.sharedBuffer = new Uint8Array(8192), e) {
+      const t = new ($n("schema"))();
+      this.serializer = t;
+      const i = new e();
+      t.state = i, t.decoder = new vi(i);
+    }
+    this.onLeave(() => {
+      this.removeAllListeners(), this.destroy();
+    });
+  }
+  connect(t, e, i) {
+    this.connection = new Mn(e.protocol), this.connection.events.onmessage = this.onMessageCallback.bind(this), this.connection.events.onclose = t => {
+      if (this.#b("connection closed before a response was received."), 0 === this.joinedAtTime) return console.warn?.(`Room connection was closed unexpectedly (${t.code}): ${t.reason}`), void this.onError.invoke(t.code, t.reason);
+      1005 === t.code || t.code === s || 1001 === t.code || t.code === n ? (this.onDrop.invoke(t.code, t.reason), this.handleReconnection(t.code, t.reason)) : this.onLeave.invoke(t.code, t.reason);
+    }, this.connection.events.onerror = t => {
+      this.onError.invoke(t.code, t.reason);
+    };
+    const r = void 0 !== this.serializer?.getState();
+    if ("h3" === e.protocol) {
+      const i = new URL(t);
+      this.connection.connect(i.origin, {
+        ...e,
+        skipHandshake: r
+      });
+    } else this.connection.connect(`${t}${r ? "&skipHandshake=1" : ""}`, i);
+  }
+  leave(t = !0) {
+    return new Promise(e => {
+      this.onLeave(t => e(t)), this.connection ? t ? (this.sharedBuffer[0] = 12, this.connection.send(this.sharedBuffer.subarray(0, 1))) : this.connection.close() : this.onLeave.invoke(4e3);
+    });
+  }
+  onMessage(t, e) {
+    return this.onMessageHandlers.on(this.getMessageHandlerKey(t), e);
+  }
+  ping(t) {
+    this.connection?.isOpen && (this.#d = Ai(), this.#p = t, this.sharedBuffer[0] = 18, this.connection.send(this.sharedBuffer.subarray(0, 1)));
+  }
+  send(t, e, i) {
+    if (void 0 !== i) return void this.request(t, e).then(t => i(t, void 0), t => i(void 0, t));
+    const s = {
+      offset: 1
+    };
+    this.sharedBuffer[0] = 13, "string" == typeof t ? tt.string(this.sharedBuffer, t, s) : tt.number(this.sharedBuffer, t, s);
+    const n = s.offset;
+    let r;
+    void 0 !== e ? (r = this.packr.pack(e, yn | n), r.set(this.sharedBuffer.subarray(0, n), 0)) : r = this.sharedBuffer.subarray(0, n), this.connection.isOpen ? this.connection.send(r) : Dn(this, new Uint8Array(r));
+  }
+  request(e, i, s) {
+    if (!this.connection.isOpen) return Promise.reject(new Error(`cannot send request "${e}": connection is not open.`));
+    const n = s?.timeout ?? t.defaultRequestTimeout;
+    return new Promise((t, r) => {
+      let o;
+      const h = this.sendRequest(e, i, {
+        mode: s?.mode
+      }, (e, i, s) => {
+        clearTimeout(o), e ? t(i) : r(function (t, e) {
+          if (!e) {
+            const e = new Error("request rejected");
+            return e.name = "rejected", e.reason = t, e;
+          }
+          const i = new Error(t?.message ?? "request failed");
+          return t?.name && (i.name = t.name), void 0 !== t?.code && (i.code = t.code), i;
+        }(i, s));
+      }, t => {
+        clearTimeout(o), r(new Error(t));
+      });
+      o = setTimeout(() => {
+        this.cancelRequest(h), r(new Error(`request "${e}" timed out after ${n}ms.`));
+      }, n);
+    });
+  }
+  #g() {
+    const t = this.#v;
+    return this.#v = this.#v + 1 >>> 0, t;
+  }
+  #S(t, e, i) {
+    const s = {
+      offset: 1
+    };
+    this.sharedBuffer[0] = 21, tt.number(this.sharedBuffer, t, s), "string" == typeof e ? tt.string(this.sharedBuffer, e, s) : tt.number(this.sharedBuffer, e, s);
+    const n = s.offset;
+    if (void 0 !== i) {
+      const t = this.packr.pack(i, yn | n);
+      return t.set(this.sharedBuffer.subarray(0, n), 0), t;
+    }
+    return this.sharedBuffer.subarray(0, n);
+  }
+  sendRequest(t, e, i, s, n) {
+    const r = this.#g(),
+      o = this.#S(r, t, e);
+    if ("unreliable" === i.mode) {
+      if (!this.connection.isOpen) return -1;
+      this.connection.sendUnreliable(o);
+    } else this.connection.isOpen ? this.connection.send(o) : Dn(this, new Uint8Array(o));
+    return this.#w.set(r, {
+      onReply: s,
+      onClose: n
+    }), r;
+  }
+  cancelRequest(t) {
+    this.#w.delete(t);
+  }
+  #b(t) {
+    if (0 !== this.#w.size) {
+      for (const e of this.#w.values()) e.onClose?.(t);
+      this.#w.clear();
+    }
+  }
+  sendUnreliable(t, e) {
+    if (!this.connection.isOpen) return;
+    const i = {
+      offset: 1
+    };
+    this.sharedBuffer[0] = 13, "string" == typeof t ? tt.string(this.sharedBuffer, t, i) : tt.number(this.sharedBuffer, t, i);
+    const s = i.offset;
+    let n;
+    void 0 !== e ? (n = this.packr.pack(e, yn | s), n.set(this.sharedBuffer.subarray(0, s), 0)) : n = this.sharedBuffer.subarray(0, s), this.connection.sendUnreliable(n);
+  }
+  sendBytes(t, e) {
+    const i = {
+      offset: 1
+    };
+    this.sharedBuffer[0] = 17, "string" == typeof t ? tt.string(this.sharedBuffer, t, i) : tt.number(this.sharedBuffer, t, i);
+    const s = i.offset;
+    if (s + e.byteLength > this.sharedBuffer.byteLength) {
+      const t = new Uint8Array(s + e.byteLength);
+      t.set(this.sharedBuffer.subarray(0, s)), this.sharedBuffer = t;
+    }
+    this.sharedBuffer.set(e, s), this.connection.isOpen ? this.connection.send(this.sharedBuffer.subarray(0, s + e.byteLength)) : Dn(this, this.sharedBuffer.subarray(0, s + e.byteLength));
+  }
+  input(t) {
+    return (this.#y ??= new zi(this)).handle(t);
+  }
+  get state() {
+    return this.serializer.getState();
+  }
+  removeAllListeners() {
+    this.onJoin.clear(), this.onStateChange.clear(), this.onError.clear(), this.onLeave.clear(), this.onReconnect.clear(), this.onDrop.clear(), this.onMessageHandlers.events = {}, this.serializer instanceof jn && (this.serializer.decoder.root.callbacks = {});
+  }
+  onMessageCallback(t) {
+    this.#k(new Uint8Array(t.data));
+  }
+  #k(t) {
+    const e = {
+        offset: 1
+      },
+      i = t[0],
+      s = 31 & i;
+    if (128 & i) {
+      const i = mt.uint32(t, e),
+        s = mt.uint32(t, e),
+        n = this.#y ? this.#y.ackInput(s) : -1;
+      this.clock.sample(i, n);
+    }
+    if (10 === s) {
+      const i = mt.utf8Read(t, e, t[e.offset++]);
+      if (this.serializerId = mt.utf8Read(t, e, t[e.offset++]), !this.serializer) {
+        const t = $n(this.serializerId);
+        this.serializer = new t();
+      }
+      const s = mt.number(t, e);
+      if (s > 0 && this.serializer.handshake) {
+        const i = e.offset + s;
+        this.serializer.handshake(t.subarray(0, i), e), e.offset = i;
+      }
+      for (; e.offset < t.byteLength;) {
+        const i = t[e.offset++],
+          s = mt.number(t, e),
+          n = e.offset + s;
+        1 === i ? (this.#y ??= new zi(this)).applyReflection(t, e, n) : 2 === i && (this.#y ??= new zi(this)).applyOptions(t, e), e.offset = n;
+      }
+      const n = this.#y?.patchRate;
+      if (void 0 !== n && this.clock.setPatchInterval?.(n), 0 === this.joinedAtTime ? (this.joinedAtTime = Date.now(), this.onJoin.invoke()) : (String.fromCodePoint(9989), this.reconnection.isReconnecting = !1, this.onReconnect.invoke()), this.reconnectionToken = `${this.roomId}:${i}`, this.sharedBuffer[0] = 10, this.connection.send(this.sharedBuffer.subarray(0, 1)), this.reconnection.enqueuedMessages.length > 0) {
+        for (const t of this.reconnection.enqueuedMessages) this.connection.send(t.data);
+        this.reconnection.enqueuedMessages = [];
+      }
+    } else if (11 === s) {
+      const i = mt.number(t, e),
+        s = mt.string(t, e);
+      this.onError.invoke(i, s);
+    } else if (12 === s) this.leave();else if (14 === s) this.#m = 0, this.serializer.setState(t, e), this.onStateChange.invoke(this.serializer.getState());else if (15 === s) {
+      if (64 & i) {
+        const i = mt.uint16(t, e);
+        if (i - this.#m << 16 >> 16 <= 0) return;
+        this.#m = i;
+      }
+      this.serializer.patch(t, e), this.onStateChange.invoke(this.serializer.getState());
+    } else if (13 === s) {
+      const i = mt.stringCheck(t, e) ? mt.string(t, e) : mt.number(t, e),
+        s = t.byteLength > e.offset ? Hs(t, {
+          start: e.offset
+        }) : void 0;
+      this.dispatchMessage(i, s);
+    } else if (17 === s) {
+      const i = mt.stringCheck(t, e) ? mt.string(t, e) : mt.number(t, e);
+      this.dispatchMessage(i, t.subarray(e.offset));
+    } else if (22 === s) {
+      const i = mt.number(t, e),
+        s = t[e.offset++],
+        n = t.byteLength > e.offset ? Hs(t, {
+          start: e.offset
+        }) : void 0,
+        r = this.#w.get(i);
+      void 0 !== r && (this.#w.delete(i), r.onReply(0 === s, n, 2 === s));
+    } else 18 === s && (this.#p?.(Math.round(Ai() - this.#d)), this.#p = void 0);
+  }
+  dispatchMessage(t, e) {
+    const i = this.getMessageHandlerKey(t);
+    this.onMessageHandlers.events[i] ? this.onMessageHandlers.emit(i, e) : this.onMessageHandlers.events["*"] ? this.onMessageHandlers.emit("*", t, e) : i.startsWith("__") || console.warn?.(`@colyseus/sdk: onMessage() not registered for type '${t}'.`);
+  }
+  destroy() {
+    this.serializer && this.serializer.teardown();
+  }
+  getMessageHandlerKey(t) {
+    switch (typeof t) {
+      case "string":
+        return t;
+      case "number":
+        return `i${t}`;
+      default:
+        throw new Error("invalid message type.");
+    }
+  }
+  handleReconnection(t, e) {
+    if (this.reconnection.enabled) {
+      if (Date.now() - this.joinedAtTime < this.reconnection.minUptime) return String.fromCodePoint(10060), this.reconnection.minUptime, void this.onLeave.invoke(s, "Room uptime too short for reconnection.");
+      this.reconnection.isReconnecting || (this.reconnection.retryCount = 0, this.reconnection.isReconnecting = !0, this.#y?.reset()), this.retryReconnection();
+    } else this.onLeave.invoke(t, e);
+  }
+  retryReconnection() {
+    if (this.reconnection.retryCount >= this.reconnection.maxRetries) return String.fromCodePoint(10060), this.reconnection.maxRetries, this.reconnection.isReconnecting = !1, void this.onLeave.invoke(4003, "No more retries. Reconnection failed.");
+    this.reconnection.retryCount++;
+    const t = Math.min(this.reconnection.maxDelay, Math.max(this.reconnection.minDelay, this.reconnection.backoff(this.reconnection.retryCount, this.reconnection.delay)));
+    String.fromCodePoint(9203), (t / 1e3).toFixed(1), setTimeout(() => {
+      try {
+        String.fromCodePoint(128260), this.sessionId, this.roomId, this.reconnection.retryCount, this.reconnection.maxRetries, this.connection.reconnect({
+          reconnectionToken: this.reconnectionToken.split(":")[1],
+          skipHandshake: !0
+        });
+      } catch (wr) {
+        this.retryReconnection();
+      }
+    }, t);
+  }
+};
+function Cn(t, e) {
+  return new Promise((i, s) => {
+    const n = new XMLHttpRequest(),
+      r = e?.method || "GET";
+    n.open(r, t.toString()), n.withCredentials = "include" === e?.credentials, e?.headers && (e.headers instanceof Headers ? e.headers : new Headers(e.headers)).forEach((t, e) => {
+      n.setRequestHeader(e, t);
+    }), n.onload = () => {
+      const t = new Headers(),
+        e = n.getAllResponseHeaders().trim();
+      if (e) for (const i of e.split(/[\r\n]+/)) {
+        const e = i.indexOf(": ");
+        e > 0 && t.append(i.substring(0, e), i.substring(e + 2));
+      }
+      const s = n.response ?? n.responseText;
+      i(new Un(s, {
+        status: n.status,
+        statusText: n.statusText,
+        headers: t
+      }));
+    }, n.onerror = () => s(new TypeError("Network request failed")), n.ontimeout = () => s(new TypeError("Network request timed out")), n.send(e?.body ?? null);
+  });
+}
+var Nn,
+  Un = class {
+    status;
+    statusText;
+    headers;
+    ok;
+    body;
+    constructor(t, e) {
+      this.body = t, this.status = e.status, this.statusText = e.statusText, this.headers = e.headers, this.ok = e.status >= 200 && e.status < 300;
+    }
+    async json() {
+      return "string" == typeof this.body ? JSON.parse(this.body) : this.body;
+    }
+    async text() {
+      return "string" == typeof this.body ? this.body : JSON.stringify(this.body);
+    }
+    async blob() {
+      return new Blob([this.body]);
+    }
+  },
+  Bn = class {
+    authToken;
+    options;
+    sdk;
+    _fetchFn;
+    del = this.delete;
+    constructor(t, e, i) {
+      this.sdk = t, this.options = e, this._fetchFn = i;
+    }
+    get fetchFn() {
+      return this._fetchFn || (this._fetchFn = void 0 !== globalThis.fetch ? globalThis.fetch.bind(globalThis) : Cn), this._fetchFn;
+    }
+    async request(t, e, i) {
+      return this.executeRequest(t, e, i);
+    }
+    get(t, e) {
+      return this.request("GET", t, e);
+    }
+    post(t, e) {
+      return this.request("POST", t, e);
+    }
+    delete(t, e) {
+      return this.request("DELETE", t, e);
+    }
+    patch(t, e) {
+      return this.request("PATCH", t, e);
+    }
+    put(t, e) {
+      return this.request("PUT", t, e);
+    }
+    async executeRequest(t, e, i) {
+      let s = this.options.body ? {
+        ...this.options.body,
+        ...(i?.body || {})
+      } : i?.body;
+      const n = this.options.query ? {
+          ...this.options.query,
+          ...(i?.query || {})
+        } : i?.query,
+        o = this.options.params ? {
+          ...this.options.params,
+          ...(i?.params || {})
+        } : i?.params,
+        h = new Headers(this.options.headers ? {
+          ...this.options.headers,
+          ...(i?.headers || {})
+        } : i?.headers);
+      if (this.authToken && !h.has("authorization") && h.set("authorization", `Bearer ${this.authToken}`), function (t) {
+        if (void 0 === t) return !1;
+        const e = typeof t;
+        return "string" === e || "number" === e || "boolean" === e || null === e || "object" === e && (!!Array.isArray(t) || !t.buffer && (t.constructor && "Object" === t.constructor.name || "function" == typeof t.toJSON));
+      }(s) && "object" == typeof s && null !== s) {
+        h.has("content-type") || h.set("content-type", "application/json");
+        for (const [t, e] of Object.entries(s)) e instanceof Date && (s[t] = e.toISOString());
+        s = JSON.stringify(s);
+      }
+      const c = {
+          credentials: i?.credentials || "include",
+          ...this.options,
+          ...i,
+          query: n,
+          params: o,
+          headers: h,
+          body: s,
+          method: t
+        },
+        a = function (t, e) {
+          const {
+              params: i,
+              query: s
+            } = e || {},
+            [n, r] = t.split("?");
+          let o = n;
+          if (i) if (Array.isArray(i)) {
+            const t = o.split("/").filter(t => t.startsWith(":"));
+            for (const [e, s] of t.entries()) {
+              const t = i[e];
+              o = o.replace(s, t);
+            }
+          } else for (const [a, l] of Object.entries(i)) o = o.replace(`:${a}`, String(l));
+          const h = new URLSearchParams(r);
+          if (s) for (const [a, l] of Object.entries(s)) null != l && h.set(a, String(l));
+          let c = h.toString();
+          return c = c.length > 0 ? `?${c}`.replace(/\+/g, "%20") : "", `${o}${c}`;
+        }(this.sdk.getHttpEndpoint(e.toString()), c);
+      let l;
+      try {
+        l = await this.fetchFn(a, c);
+      } catch (d) {
+        if ("AbortError" === d.name) throw d;
+        const t = new r(d.cause?.code || d.code, d.message);
+        throw t.response = l, t.cause = d.cause, t;
+      }
+      const u = l.headers.get("content-type");
+      let f;
+      if (f = u?.includes("json") ? await l.json() : u?.includes("text") ? await l.text() : await l.blob(), !l.ok) throw new r(l.status, f.message ?? f.error ?? l.statusText, {
+        headers: l.headers,
+        status: l.status,
+        response: l,
+        data: f
+      });
+      return {
+        raw: l,
+        data: f,
+        headers: l.headers,
+        status: l.status,
+        statusText: l.statusText
+      };
+    }
+  };
+function Ln() {
+  if (!Nn) try {
+    Nn = "undefined" != typeof cc && cc.sys && cc.sys.localStorage ? cc.sys.localStorage : window.localStorage;
+  } catch (wr) {}
+  return Nn || void 0 === globalThis.indexedDB || (Nn = new Vn()), Nn || (Nn = {
+    cache: {},
+    setItem: function (t, e) {
+      this.cache[t] = e;
+    },
+    getItem: function (t) {
+      return this.cache[t];
+    },
+    removeItem: function (t) {
+      delete this.cache[t];
+    }
+  }), Nn;
+}
+var Vn = class {
+    dbPromise = new Promise(t => {
+      const e = indexedDB.open("_colyseus_storage", 1);
+      e.onupgradeneeded = () => e.result.createObjectStore("store"), e.onsuccess = () => t(e.result);
+    });
+    async tx(t, e) {
+      return e((await this.dbPromise).transaction("store", t).objectStore("store"));
+    }
+    setItem(t, e) {
+      return this.tx("readwrite", i => i.put(e, t)).then();
+    }
+    async getItem(t) {
+      const e = await this.tx("readonly", e => e.get(t));
+      return new Promise(t => {
+        e.onsuccess = () => t(e.result);
+      });
+    }
+    removeItem(t) {
+      return this.tx("readwrite", e => e.delete(t)).then();
+    }
+  },
+  qn = class {
+    settings = {
+      path: "/auth",
+      key: "colyseus-auth-token"
+    };
+    #E = !1;
+    #A = null;
+    #I = xn();
+    http;
+    constructor(t) {
+      this.http = t, function (t, e) {
+        const i = Ln().getItem(t);
+        "undefined" != typeof Promise && i instanceof Promise ? i.then(t => e(t)) : e(i);
+      }(this.settings.key, t => this.token = t);
+    }
+    set token(t) {
+      this.http.authToken = t;
+    }
+    get token() {
+      return this.http.authToken;
+    }
+    onChange(t) {
+      const e = this.#I.on("change", t);
+      return this.#E || this.getUserData().then(t => {
+        this.emitChange({
+          ...t,
+          token: this.token
+        });
+      }).catch(t => {
+        this.emitChange({
+          user: null,
+          token: void 0
+        });
+      }), this.#E = !0, e;
+    }
+    async getUserData() {
+      if (this.token) return (await this.http.get(`${this.settings.path}/userdata`)).data;
+      throw new Error("missing auth.token");
+    }
+    async registerWithEmailAndPassword(t, e, i) {
+      const s = (await this.http.post(`${this.settings.path}/register`, {
+        body: {
+          email: t,
+          password: e,
+          options: i
+        }
+      })).data;
+      return this.emitChange(s), s;
+    }
+    async signInWithEmailAndPassword(t, e) {
+      const i = (await this.http.post(`${this.settings.path}/login`, {
+        body: {
+          email: t,
+          password: e
+        }
+      })).data;
+      return this.emitChange(i), i;
+    }
+    async signInAnonymously(t) {
+      const e = (await this.http.post(`${this.settings.path}/anonymous`, {
+        body: {
+          options: t
+        }
+      })).data;
+      return this.emitChange(e), e;
+    }
+    async sendPasswordResetEmail(t) {
+      return (await this.http.post(`${this.settings.path}/forgot-password`, {
+        body: {
+          email: t
+        }
+      })).data;
+    }
+    async signInWithProvider(t, e = {}) {
+      return new Promise((i, s) => {
+        const n = e.width || 480,
+          r = e.height || 768,
+          o = this.token ? `?token=${this.token}` : "",
+          h = `Login with ${t[0].toUpperCase() + t.substring(1)}`,
+          c = this.http.sdk.getHttpEndpoint(`${e.prefix || `${this.settings.path}/provider`}/${t}${o}`),
+          a = screen.width / 2 - n / 2,
+          l = screen.height / 2 - r / 2;
+        this.#A = window.open(c, h, "toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=" + n + ", height=" + r + ", top=" + l + ", left=" + a);
+        const u = t => {
+            if (void 0 !== t.data.user || void 0 !== t.data.token) if (clearInterval(f), this.#A?.close(), this.#A = null, window.removeEventListener("message", u), void 0 !== t.data.error) {
+              const e = new Error(String(t.data.error));
+              e.code = t.data.error, void 0 !== t.data.reason && (e.reason = t.data.reason), void 0 !== t.data.until && (e.until = t.data.until), s(e);
+            } else i(t.data), this.emitChange(t.data);
+          },
+          f = setInterval(() => {
+            this.#A && !this.#A.closed || (this.#A = null, s("cancelled"), window.removeEventListener("message", u));
+          }, 200);
+        window.addEventListener("message", u);
+      });
+    }
+    async signOut() {
+      this.emitChange({
+        user: null,
+        token: null
+      });
+    }
+    emitChange(t) {
+      var e;
+      void 0 !== t.token && (this.token = t.token, null === t.token ? (e = this.settings.key, Ln().removeItem(e)) : function (t, e) {
+        Ln().setItem(t, e);
+      }(this.settings.key, t.token)), this.#I.emit("change", t);
+    }
+  };
+function zn(t) {
+  const e = window?.location?.hostname || "localhost",
+    i = t.hostname.split("."),
+    s = !t.hostname.includes("trycloudflare.com") && !t.hostname.includes("discordsays.com") && i.length > 2 ? `/${i[0]}` : "";
+  return t.pathname.startsWith("/.proxy") ? `${t.protocol}//${e}${s}${t.pathname}${t.search}` : `${t.protocol}//${e}/.proxy/colyseus${s}${t.pathname}${t.search}`;
+}
+var Wn = "undefined" != typeof window && void 0 !== window?.location?.hostname ? `${window.location.protocol.replace("http", "ws")}//${window.location.hostname}${window.location.port && `:${window.location.port}`}` : "ws://127.0.0.1:2567",
+  Hn = class t {
+    static VERSION = "0.18";
+    http;
+    auth;
+    settings;
+    urlBuilder;
+    constructor(t = Wn, e) {
+      if ("string" == typeof t) {
+        const e = t.startsWith("/") ? new URL(t, Wn) : new URL(t),
+          i = "https:" === e.protocol || "wss:" === e.protocol,
+          s = Number(e.port || (i ? 443 : 80));
+        this.settings = {
+          hostname: e.hostname,
+          pathname: e.pathname,
+          port: s,
+          secure: i,
+          searchParams: e.searchParams.toString() || void 0
+        };
+      } else void 0 === t.port && (t.port = t.secure ? 443 : 80), void 0 === t.pathname && (t.pathname = ""), this.settings = t;
+      this.settings.pathname.endsWith("/") && (this.settings.pathname = this.settings.pathname.slice(0, -1)), e?.protocol && (this.settings.protocol = e.protocol), this.http = new Bn(this, {
+        headers: e?.headers || {}
+      }, e?.fetchFn), this.auth = new qn(this.http), this.urlBuilder = e?.urlBuilder, !this.urlBuilder && "undefined" != typeof window && window?.location?.hostname?.includes("discordsays.com") && (this.urlBuilder = zn);
+    }
+    static async selectByLatency(e, i, s = {}) {
+      const n = e.map(e => new t(e, i)),
+        r = (await Promise.allSettled(n.map((t, e) => t.getLatency(s).then(t => {
+          const i = n[e].settings;
+          return i.hostname, i.port, i.pathname, [e, t];
+        })))).filter(t => "fulfilled" === t.status).map(t => t.value);
+      if (0 === r.length) throw new Error("All endpoints failed to respond");
+      return n[r.sort((t, e) => t[1] - e[1])[0][0]];
+    }
+    async joinOrCreate(t, e = {}, i) {
+      return await this.createMatchMakeRequest("joinOrCreate", t, e, i);
+    }
+    async create(t, e = {}, i) {
+      return await this.createMatchMakeRequest("create", t, e, i);
+    }
+    async join(t, e = {}, i) {
+      return await this.createMatchMakeRequest("join", t, e, i);
+    }
+    async joinById(t, e = {}, i) {
+      return await this.createMatchMakeRequest("joinById", t, e, i);
+    }
+    async reconnect(t, e) {
+      if ("string" == typeof t && "string" == typeof e) throw new Error("DEPRECATED: .reconnect() now only accepts 'reconnectionToken' as argument.\nYou can get this token from previously connected `room.reconnectionToken`");
+      const [i, s] = t.split(":");
+      if (!i || !s) throw new Error("Invalid reconnection token format.\nThe format should be roomId:reconnectionToken");
+      return await this.createMatchMakeRequest("reconnect", i, {
+        reconnectionToken: s
+      }, e);
+    }
+    async consumeSeatReservation(t, e) {
+      const i = this.createRoom(t.name, e);
+      i.roomId = t.roomId, i.sessionId = t.sessionId;
+      const s = {
+        sessionId: i.sessionId
+      };
+      return t.reconnectionToken && (s.reconnectionToken = t.reconnectionToken), i.connect(this.buildEndpoint(t, s), {
+        ...t,
+        protocol: this.settings.protocol
+      }, this.http.options.headers), new Promise((t, e) => {
+        const s = (t, i) => e(new r(t, i));
+        i.onError.once(s), i.onJoin.once(() => {
+          i.onError.remove(s), Mi("room", i), t(i);
+        });
+      });
+    }
+    getLatency(t = {}) {
+      const e = t.protocol ?? "ws",
+        i = t.pingCount ?? 1,
+        n = t.timeout ?? 1500;
+      return new Promise((t, o) => {
+        const h = new Mn(e),
+          c = [];
+        let a,
+          l = 0,
+          u = !1;
+        const f = t => {
+            if (!u) {
+              u = !0, clearTimeout(a);
+              try {
+                h.close();
+              } catch (wr) {}
+              t();
+            }
+          },
+          d = t => f(() => o(new r(s, `Failed to get latency: ${t}`)));
+        a = setTimeout(() => d(`timed out after ${n}ms`), n), h.events.onopen = () => {
+          l = Date.now(), h.send(new Uint8Array([18]));
+        }, h.events.onmessage = e => {
+          if (c.push(Date.now() - l), c.length < i) l = Date.now(), h.send(new Uint8Array([18]));else {
+            const e = c.reduce((t, e) => t + e, 0) / c.length;
+            f(() => t(e));
+          }
+        }, h.events.onclose = t => d(`connection closed${t?.code ? ` (${t.code})` : ""}${t?.reason ? `: ${t.reason}` : ""}`), h.events.onerror = t => d(t.message);
+        try {
+          h.connect(this.getHttpEndpoint());
+        } catch (wr) {
+          d(wr?.message ?? "failed to connect");
+        }
+      });
+    }
+    async createMatchMakeRequest(t, e, i = {}, s) {
+      try {
+        if (!e) throw new Error("Must provide a room name");
+        const n = (await this.http.post(`/matchmake/${t}/${e}`, {
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json"
+          },
+          body: i
+        })).data;
+        return "reconnect" === t && (n.reconnectionToken = i.reconnectionToken), await this.consumeSeatReservation(n, s);
+      } catch (yr) {
+        if (yr instanceof r) throw new o(yr.message, yr.code);
+        throw yr;
+      }
+    }
+    createRoom(t, e) {
+      return new Fn(t, e);
+    }
+    buildEndpoint(t, e = {}) {
+      let i = this.settings.protocol || "ws",
+        s = this.settings.searchParams || "";
+      this.http.authToken && (e._authToken = this.http.authToken);
+      for (const o in e) e.hasOwnProperty(o) && (s += (s ? "&" : "") + `${o}=${e[o]}`);
+      "h3" === i && (i = "http");
+      let n = this.settings.secure ? `${i}s://` : `${i}://`;
+      t.publicAddress ? n += `${t.publicAddress}` : n += `${this.settings.hostname}${this.getEndpointPort()}${this.settings.pathname}`;
+      const r = `${n}/${t.processId}/${t.roomId}?${s}`;
+      return this.urlBuilder ? this.urlBuilder(new URL(r)) : r;
+    }
+    getHttpEndpoint(t = "") {
+      const e = t.startsWith("/") ? t : `/${t}`;
+      let i = `${this.settings.secure ? "https" : "http"}://${this.settings.hostname}${this.getEndpointPort()}${this.settings.pathname}${e}`;
+      return this.settings.searchParams && (i += `?${this.settings.searchParams}`), this.urlBuilder ? this.urlBuilder(new URL(i)) : i;
+    }
+    getEndpointPort() {
+      return 80 !== this.settings.port && 443 !== this.settings.port ? `:${this.settings.port}` : "";
+    }
+  },
+  Jn = t => Math.max(2 * t, 600),
+  Kn = class t {
+    static get(e, i = {}) {
+      const s = new t();
+      var n, r;
+      return s.configure((n = e.clock ?? null, {
+        now: () => n?.serverNow() ?? performance.now(),
+        ttlMs: "function" == typeof (r = i.ttlMs ?? Jn) ? () => r(n?.smoothedRtt() ?? 0) : r
+      })), i.onReject && s.configure({
+        onReject: i.onReject
+      }), s;
+    }
+    entries = new Map();
+    accepted = new Set();
+    cfg = {};
+    configure(t) {
+      this.cfg = {
+        ...this.cfg,
+        ...t
+      };
+    }
+    predict(t, e) {
+      return this.entries.set(t, e ?? this.cfg.now?.() ?? performance.now()), {
+        key: t,
+        cancel: () => {
+          this.entries.delete(t), this.accepted.delete(t);
+        },
+        accept: () => {
+          this.entries.has(t) && this.accepted.add(t);
+        }
+      };
+    }
+    has(t) {
+      return this.entries.has(t);
+    }
+    confirm(t) {
+      this.entries.delete(t), this.accepted.delete(t);
+    }
+    reject(t) {
+      this.entries.delete(t) && (this.accepted.delete(t), this.cfg.onReject?.(t));
+    }
+    prune(t, e) {
+      const i = t ?? this.cfg.now?.() ?? performance.now(),
+        s = this.cfg.ttlMs,
+        n = e ?? ("function" == typeof s ? s() : s) ?? 1 / 0;
+      for (const [r, o] of this.entries) this.accepted.has(r) || i - o > n && (this.entries.delete(r), this.cfg.onReject?.(r));
+    }
+    clear() {
+      this.entries.clear(), this.accepted.clear();
+    }
+    get size() {
+      return this.entries.size;
+    }
+    dead = !1;
+    dispose() {
+      this.dead = !0, this.entries.clear(), this.accepted.clear();
+    }
+  };
+function Gn(t, e) {
+  t.ema += .1 * (e - t.ema), t.peak = Math.max(e, .9 * t.peak);
+}
+function Yn(t, e) {
+  const i = void 0 !== e && e > .001 ? e : .001;
+  return t.ema >= i ? "diverging" : t.peak >= i ? "jitter" : "matched";
+}
+function Xn() {
+  return Oi();
+}
+var Zn = -1 / 0,
+  Qn = class {
+    byTick = new Map();
+    diagTick = -1;
+    diagKeys = new Set();
+    warnedKeys = new Set();
+    run(t, e, i, s) {
+      if (e) return this.byTick.get(t)?.get(i);
+      Xn() && (t !== this.diagTick ? (this.diagTick = t, this.diagKeys.clear()) : this.diagKeys.has(i) && !this.warnedKeys.has(i) && (this.warnedKeys.add(i), function (t, e) {
+        console.warn("" === e ? `@colyseus/sdk predict: two key-less ctx.memo calls ran in one step (input seq ${t}) — the key-less form is ONE shared slot per step, so replay returns one frozen value for both (silent re-simulation corruption). Pass distinct keys: ctx.memo("a", …) / ctx.memo("b", …).` : `@colyseus/sdk predict: ctx.memo("${e}") ran twice in one step (input seq ${t}) — both calls share one slot on replay. Give each call site its own key (include the loop index for a per-iteration memo).`);
+      }(t, i)), this.diagKeys.add(i));
+      const n = s();
+      if (void 0 !== n) {
+        let e = this.byTick.get(t);
+        void 0 === e && (e = new Map(), this.byTick.set(t, e)), e.set(i, n);
+      }
+      return n;
+    }
+    prune(t) {
+      for (const e of this.byTick.keys()) e <= t && this.byTick.delete(e);
+    }
+    clear() {
+      this.byTick.clear(), this.diagTick = -1, this.diagKeys.clear();
+    }
+  },
+  tr = 0,
+  er = class {
+    lastCorrection = {};
+    lastCorrectionMag = 0;
+    reconcileSeq = 0;
+    drift = {
+      ema: 0,
+      peak: 0
+    };
+    error = {};
+    prev = {};
+    renderedBefore = {};
+    lastTick = -1;
+    lastAcked = 0;
+    lastEpoch;
+    replayFrom = 0;
+    predictedSeq = 0;
+    catching = !1;
+    unsubscribeSend = () => {};
+    renderAcc = 0;
+    tickSeq = 0;
+    clampedReadTick = -1;
+    warnedStaleRead = !1;
+    stepCtx;
+    ackWatermark = () => this.input_.lastProcessed;
+    memos = new Qn();
+    smoothMs;
+    snapThreshold;
+    stepMs;
+    input_;
+    onReconcile;
+    warnTolerance;
+    clock;
+    constructor(t) {
+      this.input_ = t.input, this.clock = t.clock, this.smoothMs = t.smoothMs ?? (this.input_.patchRate ? this.input_.patchRate : 50), this.snapThreshold = t.snap ?? 0;
+      const e = t.stepMs ?? this.input_.stepMs ?? (void 0 !== t.stepSeconds ? 1e3 * t.stepSeconds : void 0);
+      if (void 0 === e) throw new Error("@colyseus/sdk reconciler: fixed simulation step is unknown. The server room must call setFixedTimestep() (or setTimestep()) so the input handle advertises a tick rate, or pass stepMs/stepSeconds explicitly — a wrong dt silently diverges rollback-replay.");
+      this.stepMs = e;
+      const i = t.stepSeconds ?? this.input_.stepSeconds ?? e / 1e3,
+        s = t.subSteps ?? this.input_.subSteps ?? 1;
+      this.stepCtx = {
+        dt: i,
+        dtMs: e,
+        tick: 0,
+        isReplay: !1,
+        reckonTime: 0,
+        lagCompActive: !1,
+        subSteps: s,
+        subDt: i / s,
+        subDtMs: e / s,
+        memo: (t, e) => "string" == typeof t ? this.memos.run(this.stepCtx.tick, this.stepCtx.isReplay, t, e) : this.memos.run(this.stepCtx.tick, this.stepCtx.isReplay, "", t),
+        predict: (t, e) => {
+          this.stepCtx.isReplay || t._predictFromSim(this.stepCtx.tick, e, this.ackWatermark);
+        }
+      }, this.onReconcile = t.onReconcile, this.warnTolerance = t.warnOnDivergence, this.lastAcked = this.input_.lastProcessed, this.lastEpoch = this.input_.epoch, this.predictedSeq = this.input_.sentCount, this.unsubscribeSend = this.input_.onSend(() => this.catchUp());
+    }
+    tick(t) {
+      this.tickSeq++;
+      const e = this.lastTick < 0 ? 0 : t - this.lastTick;
+      this.lastTick = t, e > 0 && this.stepMs > 0 && (this.renderAcc += e);
+      const i = this.input_.epoch;
+      i !== this.lastEpoch && (this.lastEpoch = i, this.reset());
+      const s = this.input_.lastProcessed;
+      if (s > this.lastAcked && (this.lastAcked = s, this.reconcile(s)), this.markDirty(), e <= 0) return;
+      const n = this.smoothMs <= 0 ? 1 : 1 - Math.exp(-e / this.smoothMs);
+      for (const r of this.smoothedFields()) this.error[r] -= this.error[r] * n;
+    }
+    renderAlpha() {
+      if (this.stepMs <= 0) return 1;
+      const t = this.renderAcc / this.stepMs;
+      return t < 0 ? 0 : t > 1 ? 1 : t;
+    }
+    noteRenderRead() {
+      this.catching || this.stepMs <= 0 || this.renderAcc < this.stepMs || (this.clampedReadTick = this.tickSeq);
+    }
+    catchUp() {
+      const t = this.input_.sentCount;
+      if (!(this.predictedSeq >= t || this.catching)) {
+        this.clampedReadTick !== this.tickSeq || this.warnedStaleRead || (this.warnedStaleRead = !0, console.warn("@colyseus/sdk predict: a predicted value was read BEFORE this frame's input.send() calls. Reads between predict.tick() and the frame's sends are one fixed step stale and stutter on late frames. Send the frame's due inputs right after predict.tick(now) — tick and pump in your earliest per-frame callback, before anything reads value()/pose(). For game logic (zone checks, hit-reg) read .state/.world instead. See PREDICTION.md §4 (frame order).")), this.catching = !0, this.stepCtx.isReplay = !1;
+        for (let e = this.predictedSeq + 1; e <= t; e++) {
+          const t = this.input_.at(e);
+          void 0 !== t && (this.snapshotPrev(), this.runStep(e, t), this.refreshRender(), this.renderAcc -= this.stepMs, this.renderAcc < 0 ? this.renderAcc = 0 : this.renderAcc >= this.stepMs && (this.renderAcc %= this.stepMs)), this.predictedSeq = e;
+        }
+        this.catching = !1;
+      }
+    }
+    runStep(t, e) {
+      this.stepCtx.tick = t;
+      const i = this.input_.reckonTimeAt(t);
+      this.stepCtx.lagCompActive = i > 0, this.stepCtx.reckonTime = i > 0 ? i : void 0 !== this.clock ? this.clock.serverNow() : 0, this.applyStep(e);
+    }
+    reconcile(t) {
+      const e = void 0 !== this.warnTolerance || Xn();
+      if (this.truthMatchesAt(t)) {
+        if (e) {
+          for (const t of this.smoothedFields()) this.lastCorrection[t] = 0;
+          this.lastCorrectionMag = 0, Gn(this.drift, 0);
+        }
+        return this.reconcileSeq++, this.memos.prune(t), void this.onReconcile?.(t);
+      }
+      const i = this.renderedBefore;
+      for (const c of this.smoothedFields()) i[c] = this.readCurrent(c) + this.error[c];
+      this.adoptTruth();
+      const s = Math.max(t, this.replayFrom);
+      this.stepCtx.isReplay = !0, this.catching = !0, tr++;
+      try {
+        for (let t = s + 1; t <= this.input_.sentCount; t++) {
+          const e = this.input_.at(t);
+          void 0 !== e && this.runStep(t, e);
+        }
+      } finally {
+        tr--;
+      }
+      this.catching = !1, this.refreshRender(), this.predictedSeq = this.input_.sentCount;
+      const n = this.smoothMs <= 0,
+        r = e || this.snapThreshold > 0;
+      let o = 0;
+      for (const c of this.smoothedFields()) {
+        const t = i[c] - this.readCurrent(c);
+        if (this.error[c] = n ? 0 : t, r) {
+          const e = t < 0 ? -t : t;
+          e > o && (o = e);
+        }
+        e && (this.lastCorrection[c] = t);
+      }
+      const h = this.snapThreshold > 0 && o > this.snapThreshold;
+      if (h) for (const c of this.smoothedFields()) this.error[c] = 0, this.prev[c] = this.readCurrent(c);
+      this.reconcileSeq++, e && (this.lastCorrectionMag = o, h || (Gn(this.drift, o), void 0 !== this.warnTolerance && "diverging" === Yn(this.drift, this.warnTolerance) && function (t, e, i, s) {
+        const n = Ai();
+        if (n - Zn < 1e3) return;
+        Zn = n;
+        let r = "",
+          o = -1;
+        for (const c in e) {
+          const t = e[c],
+            i = t < 0 ? -t : t;
+          i > o && (o = i, r = c);
+        }
+        const h = r ? e[r] : i;
+        console.warn(`@colyseus/sdk predict: prediction is diverging at input seq ${t} — rolling drift ${i.toFixed(3)} ≥ tolerance ${s}; "${r}" currently off by ${h.toFixed(3)}. Most likely the client and server simulations disagree: a different fixed dt, mismatched constants, a step function that isn't shared, or an input the server skipped. See PREDICTION.md §5 (Determinism).`);
+      }(t, this.lastCorrection, this.drift.ema, this.warnTolerance))), this.memos.prune(t), this.onReconcile?.(t);
+    }
+    get pendingCount() {
+      return this.input_.pendingCount;
+    }
+    reset() {
+      var t;
+      this.reseedState(), (t = this.drift).ema = 0, t.peak = 0, this.replayFrom = this.input_.sentCount, this.predictedSeq = this.input_.sentCount, this.lastAcked = this.input_.lastProcessed, this.renderAcc = 0, this.memos.clear(), this.markDirty();
+    }
+    dead = !1;
+    disposedHooks = [];
+    onDisposed(t) {
+      this.disposedHooks.push(t);
+    }
+    dispose() {
+      this.dead = !0, this.unsubscribeSend();
+      for (const t of this.disposedHooks.splice(0)) t();
+    }
+    truthMatchesAt(t) {
+      return !1;
+    }
+    refreshRender() {}
+    markDirty() {}
+  },
+  ir = class {
+    opts;
+    store;
+    entries = new Map();
+    now;
+    cooldownUntil = -1 / 0;
+    warnedReplayPredict = !1;
+    constructor(t, e) {
+      this.opts = t, this.now = () => e?.serverNow() ?? performance.now(), this.store = Kn.get({
+        clock: e
+      }, {
+        ttlMs: t.ttlMs ?? Jn,
+        onReject: t => {
+          const e = this.entries.get(t);
+          this.entries.delete(t), e && this.opts.onReject?.(e.payload);
+        }
+      });
+    }
+    _predictFromSim(t, e, i) {
+      this.add(t, e, i);
+    }
+    predict(t) {
+      tr > 0 ? this.warnedReplayPredict || (this.warnedReplayPredict = !0, console.warn(`@colyseus/sdk: PredictedEventChannel${this.opts.label ? ` "${this.opts.label}"` : ""}.predict() was called during a rollback replay and ignored. Inside a reconciler step, use ctx.predict(channel, payload).`)) : this.add(-1, t);
+    }
+    add(t, e, i) {
+      const s = void 0 !== this.opts.uniqueBy ? this.opts.uniqueBy(e) : "string" == typeof e || "number" == typeof e ? e : 0;
+      if (this.entries.has(s)) return;
+      const n = this.now();
+      if (void 0 !== this.opts.cooldownMs) {
+        if (n < this.cooldownUntil) return;
+        this.cooldownUntil = n + this.opts.cooldownMs;
+      }
+      const r = this.store.predict(s, n);
+      void 0 !== i && r.accept(), this.entries.set(s, {
+        payload: e,
+        seq: t,
+        acked: i
+      }), this.opts.onPredict?.(e);
+    }
+    has(t) {
+      return void 0 === t ? this.entries.size > 0 : this.entries.has(t);
+    }
+    get pendingCount() {
+      return this.entries.size;
+    }
+    confirm(t) {
+      let e = 0;
+      for (const i of this.settleKeys(t)) {
+        const t = this.entries.get(i);
+        void 0 !== t && (this.entries.delete(i), this.store.confirm(i), this.opts.onConfirm?.(t.payload), e++);
+      }
+      return 0 === e && this.opts.onUnpredicted?.(t), e;
+    }
+    reject(t) {
+      let e = 0;
+      for (const i of this.settleKeys(t)) this.entries.has(i) && (this.store.reject(i), e++);
+      return e;
+    }
+    settleKeys(t) {
+      return void 0 !== t ? [t] : [...this.entries.keys()];
+    }
+    clear() {
+      this.entries.clear(), this.store.clear();
+    }
+    prune() {
+      if (this.entries.size > 0) {
+        const t = this.opts.graceTicks ?? 10;
+        for (const [e, i] of [...this.entries]) void 0 !== i.acked && i.acked() >= i.seq + t && this.store.reject(e);
+      }
+      this.store.prune();
+    }
+    dead = !1;
+    teardowns = [];
+    _addTeardown(t) {
+      this.teardowns.push(t);
+    }
+    dispose() {
+      for (const t of this.teardowns.splice(0)) t();
+      this.dead = !0, this.clear(), this.store.dispose();
+    }
+  },
+  sr = class {
+    opts;
+    clock;
+    correlate;
+    ttl;
+    byId = new Map();
+    byServer = new Map();
+    nextId = 1;
+    lastTickAt;
+    detach;
+    dead = !1;
+    constructor(t = {}, e = null) {
+      this.opts = t, this.clock = e, this.correlate = t.correlate ?? "fifo", this.ttl = t.ttl ?? Jn;
+    }
+    attach(t) {
+      this.detach?.(), this.detach = t(this.handleAdd, this.handleRemove);
+    }
+    spawn(t) {
+      const e = this.nextId++,
+        i = this.makeData(),
+        s = {
+          id: e,
+          server: void 0,
+          local: t,
+          state: "pending",
+          at: this.now(),
+          leadMs: 0,
+          accepted: !1,
+          data: i
+        };
+      return this.byId.set(e, s), {
+        id: e,
+        local: t,
+        data: i,
+        cancel: () => {
+          const t = this.byId.get(e);
+          t && "pending" === t.state && this.byId.delete(e);
+        },
+        accept: () => {
+          const t = this.byId.get(e);
+          t && (t.accepted = !0);
+        }
+      };
+    }
+    handleAdd = (t, e) => {
+      if (this.byServer.has(t)) return;
+      const i = this.isOwned(t) ? this.takeMatch(t) : void 0;
+      if (i) this.confirmEntry(i, t);else {
+        const e = {
+          id: this.nextId++,
+          server: t,
+          local: void 0,
+          state: "confirmed",
+          at: void 0,
+          leadMs: 0,
+          accepted: !1,
+          data: this.makeData()
+        };
+        this.byId.set(e.id, e), this.byServer.set(t, e);
+      }
+    };
+    confirmEntry(t, e) {
+      t.server = e, t.state = "confirmed";
+      const i = this.opts.spawnTime;
+      void 0 !== i && void 0 !== t.at && (t.leadMs = i(e) - t.at), this.byServer.set(e, t);
+    }
+    handleRemove = (t, e) => {
+      const i = this.byServer.get(t);
+      i && (this.byServer.delete(t), this.byId.delete(i.id));
+    };
+    takeMatch(t) {
+      const e = this.correlate;
+      if ("function" == typeof e) {
+        for (const i of this.byId.values()) if ("pending" === i.state && e(i.local, t)) return i;
+      } else for (const i of this.byId.values()) if ("pending" === i.state) return i;
+    }
+    isOwned(t) {
+      return !this.opts.owned || this.opts.owned(t);
+    }
+    makeData() {
+      return this.opts.data ? this.opts.data() : void 0;
+    }
+    tick(t = performance.now()) {
+      const e = this.opts.step,
+        i = null !== this.clock ? this.clock.serverNow() : t;
+      if (void 0 !== e && void 0 !== this.lastTickAt) {
+        const t = Math.max(0, (i - this.lastTickAt) / 1e3);
+        if (t > 0) for (const i of this.byId.values()) "pending" === i.state && e(i.local, t);
+      }
+      this.lastTickAt = i;
+    }
+    prune() {
+      if (0 === this.byId.size) return;
+      const t = this.now(),
+        e = this.ttl(this.clock?.smoothedRtt() ?? 0);
+      for (const i of this.byId.values()) "pending" === i.state && !i.accepted && void 0 !== i.at && t - i.at > e && (this.byId.delete(i.id), this.opts.onReject?.(i.local, i.id));
+    }
+    entries() {
+      return this.byId.values();
+    }
+    entryFor(t) {
+      return this.byServer.get(t);
+    }
+    value(t, e) {
+      return void 0 !== t.server ? this.readServer(t.server, e) : t.local[e];
+    }
+    bindReader(t) {
+      this.readServer = t;
+    }
+    readServer = (t, e) => t[e];
+    alive(t) {
+      return this.byId.has(t);
+    }
+    get size() {
+      return this.byId.size;
+    }
+    clear() {
+      this.byId.clear(), this.byServer.clear();
+    }
+    dispose() {
+      this.dead = !0, this.detach?.(), this.detach = void 0, this.clear();
+    }
+    now() {
+      return this.clock?.serverNow() ?? performance.now();
+    }
+  },
+  nr = t => "number" == typeof t ? t : "boolean" == typeof t ? t ? 1 : 0 : NaN,
+  rr = class extends er {
+    local = {};
+    fields;
+    numericFields = [];
+    step;
+    instance;
+    wireRound = [];
+    history;
+    historySeq;
+    historySize;
+    historyOn;
+    undeclared = null;
+    devView = null;
+    constructor(t, e) {
+      super(e), this.instance = t;
+      const i = e.fields,
+        s = i ?? Pi(t).fields;
+      if (void 0 === i && 0 === s.length) throw new Error("predict.reconciler(): no `fields` given and none derivable — the instance has no schema metadata (a plain object, or a schema with no scalar fields). Pass the decoded instance from room.state, or list `fields` explicitly.");
+      this.fields = s, this.step = e.step;
+      let n = this.fields.length > 0;
+      for (const r of this.fields) {
+        const e = t[r];
+        this.local[r] = e, "number" == typeof e ? (this.numericFields.push(r), this.prev[r] = e, this.error[r] = 0) : "boolean" != typeof e && (n = !1), this.wireRound.push(Ci(t, r));
+      }
+      if (this.historyOn = n, this.historySize = this.input_.replayBufferSize ?? 64, this.history = new Float64Array(this.historyOn ? this.historySize * this.fields.length : 0), this.historySeq = new Float64Array(this.historyOn ? this.historySize : 0).fill(-1), void 0 !== i) {
+        const e = new Set(this.fields),
+          i = Pi(t).fields.filter(t => !e.has(t));
+        i.length > 0 && (this.undeclared = new Set(i));
+      }
+    }
+    get state() {
+      return this.local;
+    }
+    get boundRegistrations() {
+      return [{
+        source: this.instance,
+        fields: this.numericFields,
+        poseKeys: this.numericFields
+      }];
+    }
+    value(t) {
+      this.noteRenderRead();
+      const e = this.local[t];
+      if ("number" != typeof e) return e;
+      const i = e + (this.error[t] ?? 0),
+        s = this.prev[t] ?? i;
+      return s + (i - s) * this.renderAlpha();
+    }
+    smoothedFields() {
+      return this.numericFields;
+    }
+    readCurrent(t) {
+      return this.local[t];
+    }
+    applyStep(t) {
+      const e = null !== this.undeclared && Xn() ? this.stepView() : this.local;
+      if (this.step(this.stepCtx, e, t), this.historyOn) {
+        const t = this.stepCtx.tick,
+          e = t % this.historySize,
+          i = e * this.fields.length;
+        for (let s = 0; s < this.fields.length; s++) this.history[i + s] = nr(this.local[this.fields[s]]);
+        this.historySeq[e] = t;
+      }
+    }
+    stepView() {
+      if (null !== this.devView) return this.devView;
+      const t = this.undeclared,
+        e = new Set(),
+        i = (i, s) => {
+          "string" == typeof s && t.has(s) && !e.has(s) && (e.add(s), console.warn(`@colyseus/sdk predict: step ${i} "${s}" — a schema field NOT in this reconciler's \`fields\` list, so it is never mirrored or replayed: prediction integrates on top of a stale value and rubber-bands under latency. Add "${s}" to \`fields\`, or omit \`fields\` to mirror every scalar field. Read adopt-only fields off the raw instance instead of the predicted state.`));
+        };
+      return this.devView = new Proxy(this.local, {
+        get: (t, e, s) => (i("read", e), Reflect.get(t, e, s)),
+        set: (t, e, s, n) => (i("wrote", e), Reflect.set(t, e, s, n))
+      }), this.devView;
+    }
+    truthMatchesAt(t) {
+      if (!this.historyOn) return !1;
+      const e = t % this.historySize;
+      if (this.historySeq[e] !== t) return !1;
+      const i = e * this.fields.length,
+        s = this.instance;
+      for (let n = 0; n < this.fields.length; n++) if (this.wireRound[n](this.history[i + n]) !== nr(s[this.fields[n]])) return !1;
+      return !0;
+    }
+    snapshotPrev() {
+      for (const t of this.numericFields) this.prev[t] = this.local[t] + this.error[t];
+    }
+    adoptTruth() {
+      const t = this.instance;
+      for (const e of this.fields) this.local[e] = t[e];
+    }
+    reseedState() {
+      const t = this.instance;
+      for (const e of this.fields) this.local[e] = t[e];
+      for (const e of this.numericFields) this.prev[e] = this.local[e], this.error[e] = 0;
+      this.historySeq.fill(-1);
+    }
+  },
+  or = class extends er {
+    worldHandle;
+    bindings = [];
+    curPose = {};
+    poseFields = [];
+    customFields = [];
+    fieldsReady = !1;
+    poseA = {};
+    poseB = {};
+    renderPose = {};
+    poseDirty = !0;
+    step;
+    adopt;
+    readPose;
+    interpolate;
+    constructor(t) {
+      super(t);
+      const e = t.world;
+      for (const i of Object.keys(e)) {
+        const t = e[i];
+        if (null === t || "object" != typeof t) continue;
+        if (void 0 === xi(t)) {
+          if (void 0 !== Ri(t)) throw new Error(`predict.sim(): world.${i} is a schema instance that hasn't been decoded (no refId). Pass the decoded instance from room.state (e.g. inside onAdd), or a plain object for opaque scratch.`);
+          continue;
+        }
+        const {
+          fields: s,
+          numeric: n
+        } = Pi(t);
+        if (0 === s.length) throw new Error(`predict.sim(): world.${i} is a decoded ref with no scalar fields to bind. Binding a whole COLLECTION isn't supported (yet) — spread its children into world parts (one entry per entity, fixed at construction). Nest a scalar-less instance below a plain wrapper if you meant it as an opaque handle.`);
+        const r = {};
+        for (const e of s) r[e] = t[e];
+        e[i] = r;
+        const o = n.map(t => `${i}.${t}`);
+        this.bindings.push({
+          source: t,
+          mirror: r,
+          fields: s,
+          numeric: n,
+          poseKeys: o
+        });
+      }
+      if (0 === this.bindings.length && void 0 === t.adopt) throw new Error("predict.sim(): no restore point — world has no schema-bound entries and no adopt() was provided. Put decoded schema instances in world (auto-bound), or provide adopt().");
+      this.worldHandle = t.world, this.step = t.step, this.adopt = t.adopt, this.readPose = t.pose, this.interpolate = t.interpolate, this.refreshPose();
+      for (const i of this.poseFields) this.prev[i] = this.curPose[i], this.error[i] = 0;
+    }
+    refreshPose() {
+      const t = this.curPose;
+      for (const e of this.bindings) {
+        const {
+          mirror: i,
+          numeric: s,
+          poseKeys: n
+        } = e;
+        for (let e = 0; e < s.length; e++) t[n[e]] = i[s[e]];
+      }
+      if (void 0 !== this.readPose) {
+        const e = this.readPose(this.worldHandle);
+        this.fieldsReady || (this.customFields = Object.keys(e));
+        for (const i of this.customFields) t[i] = e[i];
+      }
+      if (!this.fieldsReady) {
+        const t = [];
+        for (const e of this.bindings) for (const i of e.poseKeys) t.push(i);
+        for (const e of this.customFields) t.includes(e) || t.push(e);
+        this.poseFields = t, this.fieldsReady = !0;
+      }
+      this.poseDirty = !0;
+    }
+    get world() {
+      return this.worldHandle;
+    }
+    get boundRegistrations() {
+      return this.bindings.map(t => ({
+        source: t.source,
+        fields: t.numeric,
+        poseKeys: t.poseKeys
+      }));
+    }
+    value(t) {
+      if (this.noteRenderRead(), this.interpolate) return this.pose()[t];
+      const e = this.curPose[t] + (this.error[t] ?? 0),
+        i = this.prev[t] ?? e;
+      return i + (e - i) * this.renderAlpha();
+    }
+    pose() {
+      if (this.noteRenderRead(), !this.poseDirty) return this.renderPose;
+      const t = this.renderAlpha(),
+        e = this.poseA,
+        i = this.poseB;
+      for (const s of this.poseFields) e[s] = this.prev[s] ?? this.curPose[s], i[s] = this.curPose[s] + (this.error[s] ?? 0);
+      if (this.interpolate) {
+        const s = this.interpolate(e, i, t);
+        for (const t of this.poseFields) this.renderPose[t] = s[t];
+      } else for (const s of this.poseFields) this.renderPose[s] = e[s] + (i[s] - e[s]) * t;
+      return this.poseDirty = !1, this.renderPose;
+    }
+    smoothedFields() {
+      return this.poseFields;
+    }
+    readCurrent(t) {
+      return this.curPose[t];
+    }
+    applyStep(t) {
+      this.step(this.stepCtx, this.worldHandle, t);
+    }
+    adoptTruth() {
+      for (const t of this.bindings) {
+        const {
+          source: e,
+          mirror: i,
+          fields: s
+        } = t;
+        for (let t = 0; t < s.length; t++) i[s[t]] = e[s[t]];
+      }
+      this.adopt?.(this.worldHandle);
+    }
+    refreshRender() {
+      this.refreshPose();
+    }
+    markDirty() {
+      this.poseDirty = !0;
+    }
+    snapshotPrev() {
+      for (const t of this.poseFields) this.prev[t] = this.curPose[t] + this.error[t];
+    }
+    reseedState() {
+      this.adoptTruth(), this.refreshPose();
+      for (const t of this.poseFields) this.prev[t] = this.curPose[t], this.error[t] = 0;
+    }
+  },
+  hr = 16,
+  cr = 41,
+  ar = {
+    lerp: 0,
+    extrapolate: 1,
+    damped: 2,
+    reckon: 3,
+    raw: 4
+  },
+  lr = {
+    mode: "lerp",
+    delay: 100,
+    smoothMs: 50,
+    maxExtrapolate: 200,
+    tickInterval: 0,
+    snap: 0,
+    angle: !1
+  },
+  ur = {
+    step: void 0,
+    smoothMs: 50,
+    substep: 16,
+    snap: 0
+  };
+function fr(t) {
+  return null !== t && "object" == typeof t && Array.isArray(t.fields);
+}
+var dr = 0,
+  pr = !1,
+  vr = class t {
+    static get(e, i = {}) {
+      return new t(e, i);
+    }
+    callbacks;
+    sessionSource;
+    slotBuf = new Float64Array(2624);
+    slotCount = 0;
+    slotDetach = [];
+    slotAngle = [];
+    freeSlots = [];
+    slotByRef = new Map();
+    simByRef = new Map();
+    boundBySlot = new Map();
+    boundProfileIdx = -1;
+    renderTime = 0;
+    defaultMode;
+    reckonDefaults;
+    clock;
+    useRenderClock = !1;
+    fixedStepMs;
+    stepAcc = 0;
+    lastFrameNow = -1;
+    static MAX_STEPS_PER_FRAME = 5;
+    profileBuf = new Float64Array(56);
+    profileCount = 0;
+    profileKeys = new Map();
+    profileLabels = [];
+    profileComputers = [];
+    trackListeners = [];
+    name;
+    disposeListeners = [];
+    driven = [];
+    constructor(t, e) {
+      this.callbacks = ki.get(t), this.sessionSource = t;
+      const {
+        clock: i,
+        ...s
+      } = e;
+      this.defaultMode = s.mode ?? "lerp";
+      const n = "reckon" !== this.defaultMode && "raw" !== this.defaultMode,
+        r = n ? (() => {
+          const t = s;
+          return {
+            mode: t.mode ?? lr.mode,
+            delay: t.delay ?? lr.delay,
+            smoothMs: t.smoothMs ?? lr.smoothMs,
+            maxExtrapolate: t.maxExtrapolate ?? lr.maxExtrapolate,
+            tickInterval: t.tickInterval ?? lr.tickInterval,
+            snap: t.snap ?? lr.snap,
+            angle: t.angle ?? lr.angle
+          };
+        })() : {
+          ...lr
+        },
+        o = n ? s.smoothMs ?? 0 : 0;
+      if (0 !== this.allocProfile(this.defaultMode, r.delay, r.smoothMs, o, r.maxExtrapolate, r.tickInterval, r.snap, !1)) throw new Error("Predict: defaults profile must be at index 0");
+      if ("reckon" === this.defaultMode) {
+        const t = s;
+        this.reckonDefaults = {
+          step: t.step,
+          smoothMs: t.smoothMs ?? ur.smoothMs,
+          substep: t.substep ?? ur.substep,
+          snap: t.snap ?? ur.snap
+        };
+      } else this.reckonDefaults = {
+        ...ur
+      };
+      this.clock = i ?? t.clock ?? void 0, this.useRenderClock = !1 !== s.renderPresent, this.clock === Vi && (pr || (pr = !0, console.warn("@colyseus/sdk Predict: room.clock isn't server-synced because the server room didn't call defineInput(). Server-time interpolation and lag compensation fall back to local time. Add defineInput() on the server room to enable them — or ignore this if you only need local smoothing."))), this.name = s.name ?? "predict#" + ++dr, Mi("predict", this.makeCoreHandle());
+    }
+    get mode() {
+      return this.defaultMode;
+    }
+    presentFn() {
+      const t = this.clock;
+      if (t) return this.useRenderClock && t.renderNow ? t.renderNow.bind(t) : t.serverNow.bind(t);
+    }
+    makeCoreHandle() {
+      return {
+        name: this.name,
+        mode: () => this.defaultMode,
+        smoothingDefaults: () => this.readSmoothingDefaults(),
+        reckonDefaults: () => ({
+          ...this.reckonDefaults
+        }),
+        reconcilers: () => this.snapshotReconcilers(),
+        attachedCount: () => this.slotByRef.size,
+        setDefaults: t => this.setDefaults(t),
+        profiles: () => this.snapshotProfiles(),
+        setProfile: (t, e) => this.setProfile(t, e),
+        onTrack: t => (this.trackListeners.push(t), () => {
+          const e = this.trackListeners.indexOf(t);
+          e >= 0 && this.trackListeners.splice(e, 1);
+        }),
+        onDispose: t => (this.disposeListeners.push(t), () => {
+          const e = this.disposeListeners.indexOf(t);
+          e >= 0 && this.disposeListeners.splice(e, 1);
+        })
+      };
+    }
+    snapshotReconcilers() {
+      const t = [];
+      let e = 0;
+      for (const i of this.driven) {
+        const s = i;
+        if (!s.drift) continue;
+        const n = s.warnTolerance;
+        t.push({
+          label: "reconciler #" + e++,
+          status: Yn(s.drift, n),
+          severity: void 0 !== n && n > 0 ? s.drift.ema / n : void 0,
+          ema: s.drift.ema,
+          peak: s.drift.peak,
+          lastCorrectionMag: s.lastCorrectionMag ?? 0,
+          reconcileSeq: s.reconcileSeq ?? 0
+        });
+      }
+      return t;
+    }
+    readSmoothingDefaults() {
+      const t = this.profileBuf,
+        e = 0 | t[0];
+      return {
+        mode: 0 === e ? "lerp" : 1 === e ? "extrapolate" : 2 === e ? "damped" : 3 === e ? "reckon" : "raw",
+        delay: t[1],
+        smoothMs: t[2],
+        lerpSmoothMs: t[6],
+        maxExtrapolate: t[3],
+        tickInterval: t[4],
+        snap: t[5]
+      };
+    }
+    allocProfile(t, e, i, s, n, r, o, h, c) {
+      const a = "number" == typeof t ? t : ar[t];
+      let l = "";
+      if (h) {
+        l = `${c ?? ""}|${a}|${e}|${i}|${s}|${n}|${r}|${o}`;
+        const t = this.profileKeys.get(l);
+        if (void 0 !== t) return t;
+      }
+      const u = this.profileCount++;
+      if (7 * (u + 1) > this.profileBuf.length) {
+        const t = new Float64Array(2 * this.profileBuf.length);
+        t.set(this.profileBuf), this.profileBuf = t;
+      }
+      const f = 7 * u;
+      return this.profileBuf[f + 0] = a, this.profileBuf[f + 1] = e, this.profileBuf[f + 2] = i, this.profileBuf[f + 6] = s, this.profileBuf[f + 3] = n, this.profileBuf[f + 4] = r, this.profileBuf[f + 5] = o, this.profileLabels[u] = c, this.profileComputers[u] = this.computerForMode(a), h && this.profileKeys.set(l, u), u;
+    }
+    computerForMode(t) {
+      return 0 === t ? this.computeLerp : 1 === t ? this.computeExtrapolate : 2 === t ? this.computeDamped : 3 === t ? this.computeReckon : 5 === t ? this.computeBound : this.computeRaw;
+    }
+    profileFromOpts(t) {
+      if (void 0 === t.mode && void 0 === t.delay && void 0 === t.smoothMs && void 0 === t.maxExtrapolate && void 0 === t.tickInterval && void 0 === t.snap) return 0;
+      const e = this.readSmoothingDefaults(),
+        i = t.mode ?? e.mode,
+        s = t.delay ?? e.delay,
+        n = t.smoothMs ?? e.smoothMs,
+        r = t.smoothMs ?? e.lerpSmoothMs,
+        o = t.maxExtrapolate ?? e.maxExtrapolate,
+        h = t.tickInterval ?? e.tickInterval,
+        c = t.snap ?? e.snap;
+      return i === e.mode && s === e.delay && n === e.smoothMs && r === e.lerpSmoothMs && o === e.maxExtrapolate && h === e.tickInterval && c === e.snap ? 0 : this.allocProfile(i, s, n, r, o, h, c, !0);
+    }
+    groupProfile(t, e) {
+      const i = this.readSmoothingDefaults(),
+        s = t.mode ?? this.defaultMode;
+      return this.allocProfile(s, t.delay ?? i.delay, t.smoothMs ?? i.smoothMs, t.smoothMs ?? i.lerpSmoothMs, t.maxExtrapolate ?? i.maxExtrapolate, t.tickInterval ?? i.tickInterval, t.snap ?? i.snap, !0, e);
+    }
+    setDefaults(t) {
+      const e = t.mode;
+      if (void 0 !== e) {
+        this.defaultMode = e;
+        const t = ar[e];
+        this.profileBuf[0] = t, this.profileComputers[0] = this.computerForMode(t);
+      }
+      const i = t,
+        s = this.profileBuf;
+      void 0 !== i.delay && (s[1] = i.delay), void 0 !== i.smoothMs && (s[2] = i.smoothMs, s[6] = i.smoothMs), void 0 !== i.maxExtrapolate && (s[3] = i.maxExtrapolate), void 0 !== i.tickInterval && (s[4] = i.tickInterval), void 0 !== i.snap && (s[5] = i.snap, this.reckonDefaults.snap = i.snap);
+      const n = t;
+      void 0 !== n.step && (this.reckonDefaults.step = n.step), void 0 !== n.smoothMs && (this.reckonDefaults.smoothMs = n.smoothMs), void 0 !== n.substep && (this.reckonDefaults.substep = n.substep);
+    }
+    snapshotProfiles() {
+      const t = [];
+      for (let e = 0; e < this.profileCount; e++) {
+        const i = 7 * e,
+          s = 0 | this.profileBuf[i + 0];
+        if (5 === s) continue;
+        const n = 0 === s ? "lerp" : 1 === s ? "extrapolate" : 2 === s ? "damped" : 3 === s ? "reckon" : "raw";
+        t.push({
+          id: e,
+          isDefault: 0 === e,
+          label: this.profileLabels[e],
+          mode: n,
+          delay: this.profileBuf[i + 1],
+          smoothMs: this.profileBuf[i + (0 === s ? 6 : 2)],
+          maxExtrapolate: this.profileBuf[i + 3],
+          tickInterval: this.profileBuf[i + 4],
+          snap: this.profileBuf[i + 5]
+        });
+      }
+      return t;
+    }
+    setProfile(t, e) {
+      if (t < 0 || t >= this.profileCount) return;
+      const i = 7 * t,
+        s = this.profileBuf;
+      if (5 != (0 | s[i + 0])) {
+        if (void 0 !== e.mode) {
+          const n = ar[e.mode];
+          s[i + 0] = n, this.profileComputers[t] = this.computerForMode(n), 0 === t && (this.defaultMode = e.mode);
+        }
+        void 0 !== e.delay && (s[i + 1] = e.delay), void 0 !== e.smoothMs && (s[i + 2] = e.smoothMs, s[i + 6] = e.smoothMs), void 0 !== e.maxExtrapolate && (s[i + 3] = e.maxExtrapolate), void 0 !== e.tickInterval && (s[i + 4] = e.tickInterval), void 0 !== e.snap && (s[i + 5] = e.snap);
+      }
+    }
+    dispose() {
+      for (const t of new Set([...this.slotByRef.keys(), ...this.simByRef.keys()])) this.detachByRef(t);
+      this.trackListeners.length = 0;
+      for (const t of this.driven.splice(0)) t.dispose?.();
+      for (const t of this.disposeListeners.splice(0)) t();
+    }
+    track(t, e, i = {}) {
+      return this.trackWithProfile(t, e, this.profileFromOpts(i), i.angle ?? !1);
+    }
+    trackWithProfile(t, e, i, s = !1) {
+      const n = xi(t);
+      if (void 0 === n) throw new Error("Predict.track(): instance has no refId — track/attach must run AFTER the decoder delivers the instance (e.g. inside onAdd).");
+      const r = Ti(t, e),
+        o = t[e] ?? 0;
+      let h;
+      const c = this.slotByRef.get(n)?.get(e);
+      void 0 !== c && (h = this.boundBySlot.get(c), void 0 !== h ? this.freeStash(h) : this.untrackSlot(n, e));
+      const a = this.allocSlot(),
+        l = this.slotBuf,
+        u = a * cr;
+      if (l[u + 0] = o, l[u + 1] = o, l[u + 2] = performance.now(), l[u + 8] = o, l[u + 3] = i, l[u + 4] = n, l[u + 5] = r, l[u + 6] = 0, l[u + 7] = 0, this.slotAngle[a] = s, void 0 !== h) h.stash = a;else {
+        let t = this.slotByRef.get(n);
+        void 0 === t && (t = new Map(), this.slotByRef.set(n, t)), t.set(e, a);
+      }
+      for (let d = 0; d < this.trackListeners.length; d++) this.trackListeners[d](i, e);
+      const f = this.callbacks.listen(t, e, t => {
+        const e = this.clock && this.clock.lastServerTime() > 0 ? this.clock.lastServerTime() : performance.now(),
+          i = this.slotBuf,
+          n = a * cr;
+        if (s) {
+          const e = i[n + 0];
+          t = e + Math.atan2(Math.sin(t - e), Math.cos(t - e));
+        }
+        const r = 7 * (0 | i[n + 3]),
+          o = this.profileBuf[r + 4];
+        let h = 0 | i[n + 6],
+          c = 0 | i[n + 7];
+        const l = this.profileBuf[r + 5];
+        l > 0 && c > 0 && Math.abs(t - i[n + 0]) > l && (h = 0, c = 0, i[n + 1] = t, i[n + 8] = t);
+        const u = 0 === c ? Number.NEGATIVE_INFINITY : i[n + 9 + 2 * (0 === h ? 15 : h - 1)];
+        let f = e;
+        if (o > 0 && isFinite(u)) {
+          const t = e - u;
+          f = u + (t > 0 ? Math.max(1, Math.round(t / o)) : 1) * o;
+          const i = e + o;
+          f > i && (f = i);
+        }
+        i[n + 0] = t;
+        const d = n + 9;
+        if (c >= 2 && isFinite(u)) {
+          const t = 0 === h ? 15 : h - 1,
+            e = u - i[d + 2 * (0 === t ? 15 : t - 1)],
+            s = this.clock?.patchInterval ? this.clock.patchInterval() : 0,
+            n = s > 0 ? s : e;
+          if (n > 0 && f - u > (s > 0 ? 1.5 * s : 3 * e)) {
+            const e = n < 250 ? n : 250,
+              s = d + 2 * h;
+            i[s] = f - e, i[s + 1] = i[d + 2 * t + 1], h = h + 1 >= hr ? 0 : h + 1, c < hr && c++;
+          }
+        }
+        const p = d + 2 * h;
+        i[p] = f, i[p + 1] = t, i[n + 6] = h + 1 >= hr ? 0 : h + 1, c < hr && (i[n + 7] = c + 1);
+      }, !0);
+      return this.slotDetach[a] = f, () => this.untrackSlot(n, e);
+    }
+    untrack(t, e) {
+      const i = xi(t);
+      void 0 !== i && this.untrackSlot(i, e);
+    }
+    untrackSlot(t, e) {
+      const i = this.slotByRef.get(t),
+        s = i?.get(e);
+      if (void 0 === s) return;
+      const n = this.boundBySlot.get(s);
+      void 0 === n ? (this.slotDetach[s]?.(), this.slotDetach[s] = void 0, this.freeSlots.push(s), i.delete(e), 0 === i.size && this.slotByRef.delete(t)) : this.freeStash(n);
+    }
+    freeStash(t) {
+      t.stash < 0 || (this.slotDetach[t.stash]?.(), this.slotDetach[t.stash] = void 0, this.freeSlots.push(t.stash), t.stash = -1);
+    }
+    allocSlot() {
+      if (this.freeSlots.length > 0) return this.freeSlots.pop();
+      const t = this.slotCount++;
+      if ((t + 1) * cr > this.slotBuf.length) {
+        const t = new Float64Array(2 * this.slotBuf.length);
+        t.set(this.slotBuf), this.slotBuf = t;
+      }
+      return t;
+    }
+    registerBound(t, e, i, s, n) {
+      const r = xi(e);
+      let o = this.slotByRef.get(r);
+      void 0 === o && (o = new Map(), this.slotByRef.set(r, o));
+      const h = [];
+      for (let c = 0; c < i.length; c++) {
+        const a = i[c],
+          l = o.get(a);
+        let u = -1;
+        if (void 0 !== l) {
+          const t = this.boundBySlot.get(l);
+          void 0 !== t ? (console.warn(`@colyseus/sdk Predict: "${a}" (refId ${r}) is already bound to a controller — the newer registration wins.`), u = t.stash, this.boundBySlot.delete(l), this.freeSlots.push(l)) : u = l;
+        }
+        const f = this.allocSlot(),
+          d = this.slotBuf,
+          p = f * cr,
+          v = e[a] ?? 0;
+        d[p + 0] = v, d[p + 1] = v, d[p + 2] = 0, d[p + 8] = v, d[p + 3] = n, d[p + 4] = r, d[p + 5] = Ti(e, a), d[p + 6] = 0, d[p + 7] = 0, this.slotAngle[f] = !1, this.boundBySlot.set(f, {
+          ctrl: t,
+          key: s[c],
+          stash: u
+        }), o.set(a, f), h.push(f);
+        for (let t = 0; t < this.trackListeners.length; t++) this.trackListeners[t](n, a);
+      }
+      return () => {
+        for (let e = 0; e < h.length; e++) {
+          const s = h[e],
+            n = this.boundBySlot.get(s);
+          if (void 0 === n || n.ctrl !== t) continue;
+          this.boundBySlot.delete(s), this.freeSlots.push(s);
+          const o = this.slotByRef.get(r);
+          o?.get(i[e]) === s && (n.stash >= 0 ? o.set(i[e], n.stash) : (o.delete(i[e]), 0 === o.size && this.slotByRef.delete(r)));
+        }
+      };
+    }
+    installBoundOverlay(t) {
+      const e = [];
+      for (const i of t.boundRegistrations) 0 !== i.fields.length && void 0 !== xi(i.source) && (this.boundProfileIdx < 0 && (this.boundProfileIdx = this.allocProfile(5, 0, 0, 0, 0, 0, 0, !1, "bound")), e.push(this.registerBound(t, i.source, i.fields, i.poseKeys, this.boundProfileIdx)));
+      e.length > 0 && t.onDisposed(() => {
+        for (const t of e) t();
+      });
+    }
+    trackStepped(t, e) {
+      const i = e.substep ?? 16,
+        s = e.fields,
+        n = s.map(e => Ti(t, e)),
+        r = e.step,
+        o = this.clock,
+        h = this.presentFn(),
+        c = e.forwardMs ?? (h ? () => {
+          const t = o.lastServerTime();
+          return t > 0 ? Math.max(0, h() - t) : 0;
+        } : () => 0),
+        a = e.elapsedMs ?? h ?? (() => performance.now()),
+        l = t[$i];
+      let u;
+      if (void 0 === e.snapshot && Array.isArray(l) && n.every(t => t >= 0 && t < l.length)) {
+        const e = new t.constructor(),
+          s = e[$i];
+        u = (t, o, h, c) => {
+          const a = t[$i];
+          for (let e = 0; e < a.length; e++) s[e] = a[e];
+          let l = o,
+            u = c - o;
+          for (; l > 0;) {
+            const t = l < i ? l : i;
+            u += t, r(e, t / 1e3, u), l -= t;
+          }
+          for (let e = 0; e < n.length; e++) h[e] = s[n[e]];
+        };
+      } else {
+        const n = function (t) {
+            const e = Ri(t);
+            if (!e) return [];
+            const i = [];
+            for (let s = 0;; s++) {
+              const t = e[s];
+              if (!t || "string" != typeof t.name) break;
+              "string" == typeof t.type && i.push(t.name);
+            }
+            return i;
+          }(t),
+          o = e.snapshot ?? (n.length > 0 ? function (t) {
+            if (t.length > 16) {
+              const e = t;
+              return t => {
+                const i = {};
+                for (let s = 0; s < e.length; s++) i[e[s]] = t[e[s]];
+                return i;
+              };
+            }
+            const e = t[0],
+              i = t[1],
+              s = t[2],
+              n = t[3],
+              r = t[4],
+              o = t[5],
+              h = t[6],
+              c = t[7],
+              a = t[8],
+              l = t[9],
+              u = t[10],
+              f = t[11],
+              d = t[12],
+              p = t[13],
+              v = t[14],
+              w = t[15];
+            return t => {
+              const y = {};
+              return void 0 !== e && (y[e] = t[e]), void 0 !== i && (y[i] = t[i]), void 0 !== s && (y[s] = t[s]), void 0 !== n && (y[n] = t[n]), void 0 !== r && (y[r] = t[r]), void 0 !== o && (y[o] = t[o]), void 0 !== h && (y[h] = t[h]), void 0 !== c && (y[c] = t[c]), void 0 !== a && (y[a] = t[a]), void 0 !== l && (y[l] = t[l]), void 0 !== u && (y[u] = t[u]), void 0 !== f && (y[f] = t[f]), void 0 !== d && (y[d] = t[d]), void 0 !== p && (y[p] = t[p]), void 0 !== v && (y[v] = t[v]), void 0 !== w && (y[w] = t[w]), y;
+            };
+          }(n) : t => ({
+            ...t
+          })),
+          h = [...s];
+        u = (t, e, s, n) => {
+          const c = o(t);
+          let a = e,
+            l = n - e;
+          for (; a > 0;) {
+            const t = a < i ? a : i;
+            l += t, r(c, t / 1e3, l), a -= t;
+          }
+          for (let i = 0; i < h.length; i++) s[i] = c[h[i]];
+        };
+      }
+      return this.trackSimulated(t, {
+        fields: s,
+        forwardMs: c,
+        elapsedMs: a,
+        smoothMs: e.smoothMs,
+        snap: e.snap,
+        advance: u
+      });
+    }
+    trackSimulated(t, e) {
+      const i = xi(t);
+      if (void 0 === i) throw new Error("Predict.trackStepped(): instance has no refId — must run AFTER the decoder delivers the instance (e.g. inside onAdd).");
+      const s = e.fields,
+        n = s.length,
+        r = s.map(e => Ti(t, e));
+      let o = 0;
+      for (const f of r) f > o && (o = f);
+      const h = new Int8Array(o + 1).fill(-1);
+      for (let f = 0; f < n; f++) r[f] >= 0 && (h[r[f]] = f);
+      const c = new Float64Array(n);
+      for (let f = 0; f < n; f++) c[f] = t[s[f]] ?? 0;
+      const a = this.presentFn(),
+        l = e.elapsedMs ?? a ?? (() => performance.now()),
+        u = {
+          instance: t,
+          fieldIds: r,
+          posOf: h,
+          forwardMs: e.forwardMs,
+          elapsedMs: l,
+          advance: e.advance,
+          smoothMs: e.smoothMs ?? 50,
+          snap: e.snap ?? 0,
+          smoothed: c,
+          out: new Float64Array(n),
+          valueOut: new Float64Array(n),
+          offset: new Float64Array(n),
+          outPrev: new Float64Array(n),
+          frameVel: new Float64Array(n),
+          lastBaseT: NaN,
+          lastApplyTime: -1 / 0
+        };
+      return this.simByRef.set(i, u), () => this.untrackSimulated(i);
+    }
+    untrackSimulated(t) {
+      this.simByRef.delete(t);
+    }
+    attach(t, e) {
+      const i = this.makeGroup("(attach)", e);
+      return this.attachWithPlan(t, this.planFor(i, t));
+    }
+    makeGroup(t, e) {
+      return {
+        label: t,
+        config: e,
+        basePlan: this.buildGroupPlan(e, t),
+        planByCtor: new Map()
+      };
+    }
+    planFor(t, e) {
+      const i = e.constructor;
+      let s = t.planByCtor.get(i);
+      return void 0 === s && (s = this.resolveCtorPlan(t, e), t.planByCtor.set(i, s)), s;
+    }
+    resolveCtorPlan(t, e) {
+      const i = Ri(e),
+        s = e.constructor?.name || "?",
+        n = t.config;
+      if (!fr(n)) {
+        if (void 0 === i) return t.basePlan;
+        const e = Object.keys(n).filter(t => void 0 !== n[t]);
+        if (e.every(t => "number" == typeof i[t])) return t.basePlan;
+        const r = {};
+        for (const t of e) "number" == typeof i[t] && (r[t] = n[t]);
+        return this.buildGroupPlan(r, `${t.label}:${s}`);
+      }
+      const r = n;
+      let o = r.fields;
+      if (void 0 !== i) {
+        const t = o.filter(t => "number" == typeof i[t]);
+        t.length !== o.length && (o = t);
+      }
+      return o === r.fields ? t.basePlan : this.buildGroupPlan({
+        ...r,
+        fields: o
+      }, `${t.label}:${s}`);
+    }
+    buildGroupPlan(t, e) {
+      const i = [];
+      if (fr(t)) {
+        const s = t;
+        if (!Array.isArray(s.fields)) throw new Error("Predict.attach(): `fields` must be a numeric-key array.");
+        const n = s.mode ?? this.defaultMode,
+          r = s.step ?? this.reckonDefaults.step,
+          o = "reckon" === n;
+        if (o && "function" != typeof r) throw new Error("Predict.attach(): reckon mode requires a 'step' function. Either pass `step` in the attach config OR construct the Predict with `Predict.get(room, { mode: 'reckon', step: yourStepFn })` so it can be inherited.");
+        const h = this.groupProfile({
+          mode: n,
+          snap: s.snap,
+          smoothMs: s.smoothMs
+        }, e);
+        for (const t of s.fields) i.push({
+          field: t,
+          profileIdx: h,
+          angle: s.angle
+        });
+        return {
+          label: e,
+          isReckon: o,
+          reckonFields: o ? s.fields : void 0,
+          reckonStep: o ? r : void 0,
+          reckonSmoothMs: s.smoothMs ?? this.reckonDefaults.smoothMs,
+          reckonSubstep: s.substep ?? this.reckonDefaults.substep,
+          reckonSnap: s.snap ?? this.reckonDefaults.snap,
+          reckonSnapshot: s.snapshot,
+          fieldProfiles: i
+        };
+      }
+      const s = t;
+      for (const n of Object.keys(s)) {
+        const t = s[n];
+        if (void 0 === t) continue;
+        const r = "string" == typeof t ? {
+          mode: t
+        } : t;
+        i.push({
+          field: n,
+          profileIdx: this.groupProfile(r, e),
+          angle: r.angle
+        });
+      }
+      return {
+        label: e,
+        isReckon: !1,
+        fieldProfiles: i
+      };
+    }
+    attachToGroup(t, e, i) {
+      const s = [];
+      e.isReckon && s.push(this.trackStepped(t, {
+        fields: e.reckonFields,
+        step: e.reckonStep,
+        smoothMs: e.reckonSmoothMs,
+        substep: e.reckonSubstep,
+        snap: e.reckonSnap,
+        snapshot: e.reckonSnapshot,
+        forwardMs: i
+      }));
+      for (const {
+        field: n,
+        profileIdx: r,
+        angle: o
+      } of e.fieldProfiles) s.push(this.trackWithProfile(t, n, r, !!o));
+      return () => {
+        for (const t of s) t();
+      };
+    }
+    attachWithPlan(t, e) {
+      const i = xi(t);
+      if (void 0 === i) throw new Error("Predict.attach(): instance has no refId — attach must run AFTER the decoder delivers the instance (e.g. inside onAdd).");
+      return this.attachToGroup(t, e), () => this.detachByRef(i);
+    }
+    detach(t) {
+      const e = xi(t);
+      void 0 !== e && this.detachByRef(e);
+    }
+    detachByRef(t) {
+      const e = this.slotByRef.get(t);
+      if (e) {
+        for (const i of [...e.keys()]) {
+          const s = e.get(i);
+          if (void 0 === s) continue;
+          const n = this.boundBySlot.get(s);
+          void 0 !== n ? (this.freeStash(n), this.boundBySlot.delete(s), this.freeSlots.push(s), e.delete(i)) : this.untrackSlot(t, i);
+        }
+        0 === e.size && this.slotByRef.delete(t);
+      }
+      this.simByRef.delete(t);
+    }
+    attachAll(...t) {
+      const e = "string" == typeof t[0],
+        i = e ? void 0 : t[0],
+        s = e ? t[0] : t[1],
+        n = e ? t[1] : t[2],
+        r = this.makeGroup(s, n),
+        o = new Set(),
+        h = t => {
+          this.attachWithPlan(t, this.planFor(r, t)), o.add(t);
+        },
+        c = t => {
+          o.delete(t), this.detach(t);
+        },
+        a = e ? this.callbacks.onAdd(s, h) : this.callbacks.onAdd(i, s, h),
+        l = e ? this.callbacks.onRemove(s, c) : this.callbacks.onRemove(i, s, c);
+      return () => {
+        a?.(), l?.();
+        for (const t of o) this.detach(t);
+        o.clear();
+      };
+    }
+    tick(e = performance.now()) {
+      this.renderTime = e;
+      let i = 0;
+      const s = this.fixedStepMs;
+      if (void 0 !== s && s > 0) {
+        const n = this.lastFrameNow < 0 ? 0 : e - this.lastFrameNow;
+        this.stepAcc += n, i = Math.floor(this.stepAcc / s), i > t.MAX_STEPS_PER_FRAME ? (this.stepAcc = 0, i = t.MAX_STEPS_PER_FRAME) : this.stepAcc -= i * s;
+      }
+      this.lastFrameNow = e;
+      const n = this.driven;
+      let r = 0;
+      for (let t = 0; t < n.length; t++) {
+        const i = n[t];
+        i.dead || (i.tick?.(e), i.prune?.(), r !== t && (n[r] = i), r++);
+      }
+      return r !== n.length && (n.length = r), i;
+    }
+    defineEvent(t) {
+      const {
+          confirmOn: e,
+          ...i
+        } = t,
+        s = new ir(i, this.clock ?? null);
+      if (void 0 !== e) {
+        if (void 0 !== e.mine && "string" != typeof this.sessionSource.sessionId) throw new Error(`Predict.defineEvent: confirmOn.mine ("${e.mine}") requires a Predict built from a Room (it compares against room.sessionId); confirm manually instead.`);
+        s._addTeardown(function (t, e, i, s) {
+          const n = [];
+          if (void 0 !== i.field) {
+            const s = new Map();
+            n.push(t.onAdd(i.collection, (n, r) => {
+              s.has(n) || s.set(n, t.listen(n, i.field, t => {
+                t === i.equals && e.confirm(r);
+              }, !1));
+            })), n.push(t.onRemove(i.collection, t => {
+              s.get(t)?.(), s.delete(t);
+            })), n.push(() => {
+              for (const t of s.values()) t();
+              s.clear();
+            });
+          } else "remove" === i.event ? n.push(t.onRemove(i.collection, (t, i) => {
+            e.confirm(i);
+          })) : n.push(t.onAdd(i.collection, t => {
+            void 0 !== i.mine && t[i.mine] !== s?.() || e.confirm();
+          }, !1));
+          return () => {
+            for (const t of n.splice(0)) t?.();
+          };
+        }(this.callbacks, s, e, () => this.sessionSource.sessionId));
+      }
+      return this.driven.push(s), s;
+    }
+    spawns(t, e = {}) {
+      const i = new sr(e, this.clock ?? null),
+        s = e.fields,
+        n = e.step,
+        r = void 0 !== s && void 0 !== n ? this.makeGroup(String(t), {
+          mode: "reckon",
+          fields: s,
+          step: n,
+          smoothMs: e.smoothMs ?? 0,
+          substep: e.substep
+        }) : void 0,
+        o = void 0 !== r ? new Map() : void 0,
+        h = this.clock;
+      return i.attach((e, s) => {
+        const n = this.callbacks.onAdd(t, (t, s) => {
+            if (e(t, s), void 0 === r || o.has(t)) return;
+            const n = i.entryFor(t)?.leadMs ?? 0,
+              c = h ? () => {
+                const t = h.lastServerTime(),
+                  e = t > 0 ? Math.max(0, h.serverNow() - t) : 0;
+                return Math.max(0, e + n);
+              } : () => Math.max(0, n);
+            o.set(t, this.attachToGroup(t, this.planFor(r, t), c));
+          }),
+          c = this.callbacks.onRemove(t, (t, e) => {
+            o?.get(t)?.(), o?.delete(t), s(t, e);
+          });
+        return () => {
+          if (n?.(), c?.(), void 0 !== o) {
+            for (const t of o.values()) t();
+            o.clear();
+          }
+        };
+      }), void 0 !== r && i.bindReader((t, e) => this.value(t, e)), this.driven.push(i), i;
+    }
+    canonicalDelay() {
+      return this.profileBuf[1];
+    }
+    bindInputRenderDelay(t) {
+      t instanceof Li && t.bindRenderDelay(() => this.canonicalDelay());
+    }
+    reconciler(t, e) {
+      const i = new rr(t, {
+        ...e,
+        clock: e.clock ?? this.clock
+      });
+      return this.adoptFixedStep(i.stepMs), this.bindInputRenderDelay(e.input), this.installBoundOverlay(i), this.driven.push(i), i;
+    }
+    sim(t) {
+      const e = new or({
+        ...t,
+        clock: t.clock ?? this.clock
+      });
+      return this.adoptFixedStep(e.stepMs), this.bindInputRenderDelay(t.input), this.installBoundOverlay(e), this.driven.push(e), e;
+    }
+    adoptFixedStep(t) {
+      if (void 0 === this.fixedStepMs) return this.fixedStepMs = t, this.stepAcc = 0, void (this.lastFrameNow = -1);
+      Math.abs(this.fixedStepMs - t) > 1e-6 && console.warn(`@colyseus/sdk Predict: a reconciler's fixed step (${t}ms) differs from this Predict's (${this.fixedStepMs}ms). tick() paces one rate for the whole room; use a separate Predict per rate.`);
+    }
+    value(t, e) {
+      const i = xi(t),
+        s = void 0 === i ? void 0 : this.slotByRef.get(i)?.get(e);
+      if (void 0 === s) return t[e];
+      const n = 0 | this.slotBuf[s * cr + 3];
+      return this.profileComputers[n](s);
+    }
+    valueAt(t, e, i) {
+      const s = xi(t),
+        n = void 0 === s ? void 0 : this.slotByRef.get(s)?.get(e);
+      if (void 0 === n) return t[e];
+      const r = n * cr,
+        o = 0 | this.slotBuf[r + 3];
+      if (this.profileComputers[o] !== this.computeReckon) return this.profileComputers[o](n);
+      const h = this.simByRef.get(this.slotBuf[r + 4]);
+      if (void 0 !== h) {
+        const t = 0 | this.slotBuf[r + 5],
+          e = t < h.posOf.length ? h.posOf[t] : -1;
+        if (e >= 0) {
+          const t = this.clock?.lastServerTime?.() ?? NaN,
+            s = Number.isNaN(t) ? 0 : Math.max(0, i - t);
+          return h.advance(h.instance, s, h.valueOut, i), h.valueOut[e];
+        }
+      }
+      return this.slotBuf[r + 0];
+    }
+    read(t, e, i) {
+      const s = i ?? {},
+        n = xi(t),
+        r = void 0 === n ? void 0 : this.slotByRef.get(n);
+      for (let o = 0; o < e.length; o++) {
+        const i = e[o],
+          n = r?.get(i);
+        s[i] = void 0 === n ? t[i] : this.profileComputers[0 | this.slotBuf[n * cr + 3]](n);
+      }
+      return s;
+    }
+    readAt(t, e, i, s) {
+      const n = s ?? {},
+        r = xi(t),
+        o = void 0 === r ? void 0 : this.slotByRef.get(r);
+      let h,
+        c = !1;
+      for (let a = 0; a < e.length; a++) {
+        const s = e[a],
+          r = o?.get(s);
+        if (void 0 === r) {
+          n[s] = t[s];
+          continue;
+        }
+        const l = r * cr,
+          u = 0 | this.slotBuf[l + 3];
+        if (this.profileComputers[u] === this.computeReckon) {
+          if (!c && (c = !0, h = this.simByRef.get(this.slotBuf[l + 4]), void 0 !== h)) {
+            const t = this.clock?.lastServerTime?.() ?? NaN,
+              e = Number.isNaN(t) ? 0 : Math.max(0, i - t);
+            h.advance(h.instance, e, h.valueOut, i);
+          }
+          if (void 0 !== h) {
+            const t = 0 | this.slotBuf[l + 5],
+              e = t < h.posOf.length ? h.posOf[t] : -1;
+            if (e >= 0) {
+              n[s] = h.valueOut[e];
+              continue;
+            }
+          }
+          n[s] = this.slotBuf[l + 0];
+        } else n[s] = this.profileComputers[u](r);
+      }
+      return n;
+    }
+    computeDamped = t => {
+      const e = this.slotBuf,
+        i = t * cr,
+        s = this.profileBuf,
+        n = 7 * (0 | e[i + 3]),
+        r = this.renderTime,
+        o = e[i + 0],
+        h = r - e[i + 2];
+      e[i + 2] = r;
+      let c = e[i + 1];
+      if (h > 0) {
+        const t = s[n + 2];
+        c += (o - c) * (t > 0 ? 1 - Math.exp(-h / t) : 1), e[i + 1] = c;
+      }
+      return c;
+    };
+    computeLerp = t => {
+      const e = this.computeLerpRaw(t),
+        i = this.slotBuf,
+        s = t * cr,
+        n = this.profileBuf[7 * (0 | i[s + 3]) + 6],
+        r = this.renderTime;
+      if (n <= 0) return i[s + 1] = e, i[s + 8] = e, i[s + 2] = r, e;
+      const o = r - i[s + 2];
+      if (o <= 0) return i[s + 1];
+      const h = i[s + 8],
+        c = o / n,
+        a = (e - h) / c,
+        l = e - a + (i[s + 1] - h + a) * Math.exp(-c);
+      return i[s + 1] = l, i[s + 8] = e, i[s + 2] = r, l;
+    };
+    computeLerpRaw(t) {
+      const e = this.slotBuf,
+        i = t * cr,
+        s = this.profileBuf,
+        n = 7 * (0 | e[i + 3]),
+        r = this.renderTime,
+        o = 0 | e[i + 7];
+      if (0 === o) return e[i + 0];
+      const h = i + 9,
+        c = ((0 | e[i + 6]) - o + hr) % hr,
+        a = h + (c + o - 1) % hr * 2;
+      if (1 === o) return e[a + 1];
+      const l = s[n + 1],
+        u = this.clock && this.clock.lastServerTime() > 0 ? this.clock.serverNow() - l - this.clock.smoothedRtt() / 2 : r - l,
+        f = h + 2 * c;
+      if (u <= e[f]) return e[f + 1];
+      if (u >= e[a]) return e[a + 1];
+      let d = o - 2,
+        p = (c + d) % hr;
+      for (; d > 0 && !(e[h + 2 * p] <= u);) d--, p = 0 === p ? 15 : p - 1;
+      const v = h + 2 * p,
+        w = h + 2 * (p + 1 >= hr ? 0 : p + 1),
+        y = e[v],
+        m = e[w] - y;
+      if (m <= 0) return e[w + 1];
+      const b = (u - y) / m,
+        g = e[v + 1];
+      return g + (e[w + 1] - g) * b;
+    }
+    computeExtrapolate = t => {
+      const e = this.slotBuf,
+        i = t * cr,
+        s = this.profileBuf,
+        n = 7 * (0 | e[i + 3]),
+        r = this.renderTime,
+        o = 0 | e[i + 7];
+      if (0 === o) return e[i + 0];
+      const h = i + 9,
+        c = ((0 | e[i + 6]) - o + hr) % hr,
+        a = h + (c + o - 1) % hr * 2,
+        l = e[a],
+        u = e[a + 1];
+      let f;
+      if (1 === o) f = u;else {
+        const t = h + (c + o - 1 - (o >= 3 ? 2 : 1) + hr) % hr * 2,
+          i = e[t],
+          a = e[t + 1],
+          d = l - i;
+        if (d <= 0) f = u;else {
+          const t = (u - a) / d,
+            e = s[n + 3];
+          let i = r - l;
+          i < 0 ? i = 0 : i > e && (i = e), f = u + t * i;
+        }
+      }
+      const d = e[i + 2];
+      e[i + 2] = r;
+      const p = s[n + 2];
+      if (p <= 0) return e[i + 1] = f, f;
+      const v = r - d;
+      let w = e[i + 1];
+      return v > 0 && (w += (f - w) * (1 - Math.exp(-v / p)), e[i + 1] = w), w;
+    };
+    computeReckon = t => {
+      const e = this.slotBuf,
+        i = t * cr,
+        s = e[i + 4],
+        n = 0 | e[i + 5],
+        r = this.simByRef.get(s);
+      if (void 0 !== r) {
+        const t = n < r.posOf.length ? r.posOf[n] : -1;
+        if (t >= 0) return this.applySimulation(r, t);
+      }
+      return e[i + 0];
+    };
+    computeRaw = t => this.slotBuf[t * cr + 0];
+    computeBound = t => {
+      const e = this.boundBySlot.get(t);
+      return void 0 !== e ? e.ctrl.value(e.key) : this.slotBuf[t * cr + 0];
+    };
+    applySimulation(t, e) {
+      const i = this.renderTime;
+      if (t.lastApplyTime !== i) {
+        const e = t.out,
+          s = t.smoothed,
+          n = t.offset,
+          r = s.length,
+          o = this.clock?.lastServerTime?.() ?? NaN;
+        if (t.advance(t.instance, t.forwardMs(), e, t.elapsedMs()), t.lastApplyTime === -1 / 0 || t.smoothMs <= 0) for (let t = 0; t < r; t++) n[t] = 0, s[t] = e[t];else if (Number.isNaN(o)) {
+          const n = Math.max(0, Math.min(i - t.lastApplyTime, 100)),
+            o = 1 - Math.exp(-n / t.smoothMs);
+          for (let t = 0; t < r; t++) s[t] += (e[t] - s[t]) * o;
+        } else {
+          const h = Math.max(0, Math.min(i - t.lastApplyTime, 100));
+          if (o === t.lastBaseT || Number.isNaN(t.lastBaseT)) {
+            if (h > 0) {
+              const i = t.outPrev,
+                s = t.frameVel;
+              for (let t = 0; t < r; t++) s[t] = (e[t] - i[t]) / h;
+            }
+          } else {
+            const i = t.snap,
+              o = t.frameVel;
+            for (let t = 0; t < r; t++) {
+              const r = s[t] + o[t] * h - e[t];
+              n[t] = i > 0 && Math.abs(r) > i ? 0 : r;
+            }
+          }
+          const c = Math.exp(-h / t.smoothMs);
+          for (let t = 0; t < r; t++) n[t] *= c, s[t] = e[t] + n[t];
+        }
+        const h = t.outPrev;
+        for (let t = 0; t < r; t++) h[t] = e[t];
+        t.lastBaseT = o, t.lastApplyTime = i;
+      }
+      return t.smoothed[e];
+    }
+  };
+_n("schema", jn), _n("none", class {
+  setState(t) {}
+  getState() {
+    return null;
+  }
+  patch(t) {}
+  teardown() {}
+  handshake(t) {}
+});
+export { Ke as i, Hn as n, ei as r, vr as t };

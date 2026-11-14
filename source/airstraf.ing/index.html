@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <style id="boot-style">#boot {
+  --u: var(--kour-u, min(calc(100vw / 1920), calc(100vh / 1080)));
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  contain: strict;
+  background: radial-gradient(
+      ellipse at 50% 0%,
+      var(--kour-surface-bar, #262626) 0%,
+      var(--kour-bg, #111111) 62%
+    )
+    var(--kour-bg, #111111);
+  color: var(--kour-text, #ffffff);
+  font-family: var(--kour-font, 'Poppins', Arial, sans-serif);
+  font-weight: var(--kour-weight, 700);
+  -webkit-user-select: none;
+  user-select: none;
+  opacity: 1;
+  transition: opacity 450ms ease;
+}
+.kour-embed > #boot {
+  position: absolute;
+}
+#boot.boot--out {
+  opacity: 0;
+  pointer-events: none;
+}
+/* the picture of this boot (FB27: tools/build-loading-screens.py, picked by loading-screen.ts):
+   darkened towards the middle so that logo and bar stay readable, a slow drift */
+.boot__art {
+  position: absolute;
+  inset: calc(var(--u) * -40);
+  background: center / cover no-repeat;
+  opacity: 0;
+  transition: opacity 600ms ease;
+  will-change: transform, opacity;
+  animation: boot-drift 18s ease-in-out infinite alternate;
+}
+.boot__art::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse at 50% 46%,
+      rgb(0 0 0 / 0.78) 0%,
+      rgb(0 0 0 / 0.5) 46%,
+      rgb(0 0 0 / 0.28) 100%
+    ),
+    linear-gradient(to top, rgb(0 0 0 / 0.55), transparent 32%);
+}
+#boot.boot--art .boot__art {
+  opacity: 1;
+}
+.boot__credit {
+  position: absolute;
+  left: calc(var(--u) * 40);
+  bottom: calc(var(--u) * 40);
+  font-size: calc(var(--u) * 22);
+  color: var(--kour-text-2, #c5c5c5);
+  text-shadow: var(--kour-text-shadow, 0.0427em 0.0651em 0.0066em rgb(0 0 0 / 0.537));
+  opacity: 0;
+  transition: opacity 600ms ease;
+}
+#boot.boot--art.boot--text .boot__credit {
+  opacity: 0.75;
+}
+.boot__glow {
+  position: absolute;
+  left: 50%;
+  top: 44%;
+  width: calc(var(--u) * 1100);
+  height: calc(var(--u) * 640);
+  margin: calc(var(--u) * -320) 0 0 calc(var(--u) * -550);
+  border-radius: 50%;
+  background: radial-gradient(
+    closest-side,
+    color-mix(in srgb, var(--kour-kp, #ffd021) 16%, transparent),
+    transparent
+  );
+  opacity: 0.6;
+  will-change: transform, opacity;
+  animation: boot-glow 3.4s ease-in-out infinite alternate;
+}
+.boot__center {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 450ms ease;
+}
+#boot.boot--out .boot__center {
+  transform: scale(1.04);
+}
+.boot__logo {
+  position: relative;
+  width: calc(var(--u) * 820);
+  /* the Airstrafing wordmark (1770 x 239, FB27) */
+  aspect-ratio: 1770 / 239;
+  will-change: transform;
+  animation: boot-float 3.4s ease-in-out infinite alternate;
+}
+.boot__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  -webkit-user-drag: none;
+  animation: boot-in 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.boot__bar {
+  position: relative;
+  width: calc(var(--u) * 560);
+  height: max(2px, calc(var(--u) * 6));
+  margin-top: calc(var(--u) * 54);
+  border-radius: calc(var(--u) * 3);
+  overflow: hidden;
+  background: #4d4d4d;
+  animation: boot-in 700ms 150ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.boot__fill {
+  position: absolute;
+  inset: 0;
+  background: #0381df;
+  transform-origin: 0 50%;
+  transform: scaleX(0.02);
+  will-change: transform;
+  animation: boot-creep 9s cubic-bezier(0.1, 0.6, 0.3, 1) forwards;
+}
+#boot.boot--live .boot__fill {
+  animation: none;
+  transition: transform 420ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.boot__fill::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.35), transparent);
+  transform: translateX(-100%);
+  animation: boot-sheen 1.8s ease-in-out infinite;
+}
+.boot__status {
+  height: calc(var(--u) * 40);
+  margin-top: calc(var(--u) * 16);
+  font-size: calc(var(--u) * 26);
+  line-height: calc(var(--u) * 40);
+  white-space: nowrap;
+  text-shadow: var(--kour-text-shadow, 0.0427em 0.0651em 0.0066em rgb(0 0 0 / 0.537));
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+#boot.boot--text .boot__status {
+  opacity: 1;
+}
+.boot__pct {
+  margin-left: 0.5em;
+  color: var(--kour-text-2, #c5c5c5);
+}
+.boot__pct:empty {
+  margin: 0;
+}
+.boot__mark {
+  position: absolute;
+  bottom: calc(var(--u) * 44);
+  font-weight: var(--kour-weight-bold, 800);
+  font-size: calc(var(--u) * 30);
+  letter-spacing: 0.02em;
+  text-shadow: var(--kour-text-shadow, 0.0427em 0.0651em 0.0066em rgb(0 0 0 / 0.537));
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+#boot.boot--text .boot__mark {
+  opacity: 0.55;
+}
+.boot__mark span {
+  color: var(--kour-kp, #ffd021);
+}
+@keyframes boot-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes boot-float {
+  from {
+    transform: translateY(calc(var(--u) * 5));
+  }
+  to {
+    transform: translateY(calc(var(--u) * -5)) scale(1.012);
+  }
+}
+@keyframes boot-glow {
+  from {
+    opacity: 0.35;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 0.8;
+    transform: scale(1.06);
+  }
+}
+@keyframes boot-drift {
+  from {
+    transform: scale(1) translate(0, 0);
+  }
+  to {
+    transform: scale(1.05) translate(calc(var(--u) * -18), calc(var(--u) * -8));
+  }
+}
+@keyframes boot-creep {
+  from {
+    transform: scaleX(0.02);
+  }
+  to {
+    transform: scaleX(0.12);
+  }
+}
+@keyframes boot-sheen {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .boot__art,
+  .boot__glow,
+  .boot__logo,
+  .boot__img,
+  .boot__bar,
+  .boot__fill::after {
+    animation: none;
+  }
+}
+</style>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#111111" />
+    <title>Airstraf.ing</title>
+    <link rel="icon" href="/favicon.ico?v=fb23" sizes="16x16 32x32 48x48" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/icons/favicon-48.png?v=fb23" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png?v=fb23" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png?v=fb23" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png?v=fb23" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <script type="module" crossorigin src="/assets/main-0GITWSWA.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/c-BJ87Xak5.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-BjGOj7jP.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-Cw4QBOSY.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-D7DrHuA8.js">
+    <link rel="modulepreload" crossorigin href="/assets/three-Bi9Yyrpt.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-D-fVO02v.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-HBMF4bPX.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-PsaaRsFW.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-CwMHWVDn.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-Coxkuiy2.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-Caw4SzGP.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-Dw2xPOlC.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-e0fQXfDh.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-C_iq9rgQ.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-DTYKuKMs.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-Br-l5PAG.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-BE9ZXeD7.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-C1mpvyXQ.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-qDanEe2E.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-j2W5q53j.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-DHGnaUyg.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-D6JpfG2D.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-B0EPN0fS.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-CmJ6BJHY.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-CN8Wxji6.js">
+    <link rel="modulepreload" crossorigin href="/assets/network-juVbujc5.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-DkPZj7-z.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-CGasCRDy.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-DEgsQ2SC.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-Cc7HakJX.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-D-iNDOV5.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-DlIhmCer.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-BOVHeOwB.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-BOtrWAYn.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-ZeT0pbGP.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-DRieNrHJ.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-ycaScJyf.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-C4hbbDNp.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-B0cRM3KE.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-BLzjMcqR.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-D_UdFaKB.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-DWXBoQqt.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-ByodlC33.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-DxipjlZ1.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-QnkcwdXX.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-CvegKie5.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-UMCWckcW.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-iTSKxzRq.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-BK5Oi6qK.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-CISf5kK1.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-D8Hcbz4W.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-Clm_iQHR.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-DeSJF9BH.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-DSIEVuRr.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-4ZchrfCo.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-Bk_hd1Js.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-xV8SHtXB.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-BoMyoPFu.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-Cs0N7RUA.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-Df2L5mYA.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-0_FeqyJL.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-DCeNXQjt.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-I0dO6CkD.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-CHK4kGoZ.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-BvgEF_dl.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-BHQ9wafF.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-BUv5bABA.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-CoUBIDOz.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-BSF9mkvK.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-BD7xfdQF.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-BGJKc7je.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-CfAS2_ra.js">
+    <link rel="modulepreload" crossorigin href="/assets/c-DLYyjYgG.js">
+    <link rel="stylesheet" crossorigin href="/assets/a-hKw0vLf0.css">
+    <link rel="stylesheet" crossorigin href="/assets/a-Cwxf9BjG.css">
+    <link rel="stylesheet" crossorigin href="/assets/a-BPwRzimq.css">
+    <link rel="stylesheet" crossorigin href="/assets/a-CM9gLCeJ.css">
+  </head>
+  <body>
+    <div id="boot" class="boot" role="progressbar" aria-label="Loading" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="boot__art"></div><div class="boot__glow"></div><div class="boot__center"><div class="boot__logo"><img class="boot__img" src="/loading/airstrafing-wordmark.webp" alt="Airstraf.ing" draggable="false" /></div><div class="boot__bar"><div class="boot__fill"></div></div><div class="boot__status"><span class="boot__task"></span><span class="boot__pct"></span></div></div><div class="boot__mark"></div><div class="boot__credit"></div></div>
+    <div id="app"></div>
+    <script src="/boot-guard.js"></script>
+  </body>
+</html>

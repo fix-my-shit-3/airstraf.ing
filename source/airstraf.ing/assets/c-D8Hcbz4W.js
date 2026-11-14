@@ -1,0 +1,1 @@
+import{v as t}from"./c-CN8Wxji6.js";function o(o,a){o.wrap=t.NoWrap,o.autoSize=!1,o.fitLine=Math.round(o.size*a*100)/100}export{o as t};
