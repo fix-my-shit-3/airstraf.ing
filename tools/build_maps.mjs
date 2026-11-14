@@ -214,7 +214,7 @@ function main() {
     try { return buildOne(file); }
     catch (err) { return {
       file: slash(path.relative(SRC, file)), status: "skipped",
-      reason: "Generation failed: " + err.message
+      reason: "Generation failed: " + (err.stack || err.message)
     }; }
   });
   fs.writeFileSync(path.join(OUT, "report.json"),
