@@ -31,7 +31,7 @@ npm run build:extension
 npm run test:extension
 ```
 
-GitHub Actions does this on relevant pushes to main and manual runs, publishes the extension artifact, and commits generated readable files and the downloadable replacement set. GitHub rejected automatic Pages deletion with HTTP 403 (Resource not accessible by integration). To unpublish it, open repository Settings → Pages → Unpublish site. No Pages deployment workflow is included.
+GitHub Actions does this on relevant pushes to main and manual runs, publishes the extension artifact, and commits generated readable files and the downloadable replacement set. GitHub repository metadata confirms `has_pages: false`: no GitHub Pages site is active. No Pages deployment workflow is included.
 
 - `source/`: unchanged extracted archive.
 - `dist/readable/`: readable executable JavaScript.
