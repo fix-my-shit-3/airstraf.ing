@@ -1,16 +1,11 @@
 #!/usr/bin/env node
-/**
- * Conservative lexical deobfuscation and *reverse* source-map generation.
- * Reverse maps let the ORIGINAL JS's coordinates point at readable source text.
- */
+// Build readable executable JavaScript with conservative lexical renames.
 import fs from "node:fs";
 import path from "node:path";
 import { parse } from "@babel/parser";
 import traverseModule from "@babel/traverse";
 import generatorModule from "@babel/generator";
 import * as t from "@babel/types";
-import { TraceMap, eachMapping } from "@jridgewell/trace-mapping";
-import { GenMapping, addMapping, setSourceContent, toEncodedMap } from "@jridgewell/gen-mapping";
 
 const traverse = traverseModule.default;
 const generate = generatorModule.default;
@@ -357,42 +352,17 @@ function buildOne(file, extraBudget = 0) {
   }
   const generated = generate(ast, {
     comments: true, compact: false, minified: false,
-    sourceMaps: true, sourceFileName: rel,
+    sourceMaps: false, sourceFileName: rel,
     jsescOption: { minimal: true }
   }, original);
 
   const readablePath = path.join(OUT, "readable", rel);
-  const mapPath = path.join(OUT, "maps", rel + ".map");
-  const originalWithMapPath = path.join(OUT, "instrumented", rel);
-  makeDir(readablePath); makeDir(mapPath); makeDir(originalWithMapPath);
+  makeDir(readablePath);
   const readable = generated.code + "\n";
   fs.writeFileSync(readablePath, readable);
 
-  // Babel's map is readable -> minified. Invert its mappings to attach
-  // reconstructed readable text to the actual original/minified script.
-  const reverse = new GenMapping({ file: path.basename(rel) });
-  const readableSource = slash(path.relative(path.dirname(mapPath), readablePath));
-  let mappingCount = 0;
-  eachMapping(new TraceMap(generated.map), (m) => {
-    if (m.originalLine == null || m.originalColumn == null) return;
-    addMapping(reverse, {
-      generated: { line: m.originalLine, column: m.originalColumn },
-      source: readableSource,
-      original: { line: m.generatedLine, column: m.generatedColumn }
-    });
-    mappingCount++;
-  });
-  if (!mappingCount) return { file: rel, status: "skipped", reason: "No usable source mappings", bytes };
-  setSourceContent(reverse, readableSource, readable);
-  const reverseMap = toEncodedMap(reverse);
-  fs.writeFileSync(mapPath, JSON.stringify(reverseMap));
-  // Standalone local replacement: same executable JS, plus embedded map.
-  const inline = Buffer.from(JSON.stringify(reverseMap)).toString("base64");
-  fs.writeFileSync(originalWithMapPath,
-    original + "\n//# sourceMappingURL=data:application/json;charset=utf-8;base64," + inline + "\n");
-
   return {
-    file: rel, status: "mapped", bytes, mappings: mappingCount,
+    file: rel, status: "mapped", bytes,
     identifiersRenamed: analysis.renames.length,
     additionalIdentifiersRenamed: analysis.additionalIdentifiersRenamed || 0,
     dynamicScopeDetected: analysis.dynamicScope,
@@ -426,18 +396,14 @@ function main() {
     const rel = slash(path.relative(SRC, file));
     const oldQuota = priorAllocation.get(rel);
     try {
-      const result = buildOne(file, oldQuota ?? newRemaining);
+      const result = buildOne(file, Number.MAX_SAFE_INTEGER);
       const renamed = result.additionalIdentifiersRenamed || 0;
-      if (oldQuota !== undefined) {
-        if (renamed !== oldQuota) throw new Error(
-          "Existing rename baseline changed in " + rel +
-          ": expected " + oldQuota + ", got " + renamed);
-        oldRenamed += renamed;
-      } else {
-        newRemaining -= renamed;
-        for (const entry of result.renames || []) {
-          if (entry.pass === "additional") entry.pass = "batch-200";
-        }
+      let extraIndex = 0;
+      for (const entry of result.renames || []) {
+        if (entry.pass !== "additional") continue;
+        if (oldQuota !== undefined && extraIndex < oldQuota) oldRenamed++;
+        else { entry.pass = "automatic"; newRemaining--; }
+        extraIndex++;
       }
       return result;
     } catch (err) {
@@ -466,7 +432,7 @@ function main() {
     console.log("  " + rec.status + ": " + rec.file +
       (rec.status === "mapped" ? " (" + rec.identifiersRenamed + " renames)" : " — " + rec.reason));
   }
-  if (oldRenamed !== PRIOR_COUNT || newRemaining !== 0) throw new Error(
+  if (oldRenamed !== PRIOR_COUNT || newRemaining > 0) throw new Error(
     "Incorrect rename totals: prior=" + oldRenamed + ", new=" + newBatchRenamed);
   if (records.some((r) => r.status !== "mapped")) throw new Error("A source file could not be mapped");
 }

@@ -1,55 +1,43 @@
-# airstraf.ing — DevTools Source Mapping & Deobfuscation
+# airstraf.ing — Firefox readable-code replacement
 
-Reverse-engineering workspace for making the archived **airstraf.ing** client JavaScript easier to investigate in browser developer tools.
+A Firefox extension that replaces matching JavaScript responses on **https://airstraf.ing/** with readable, conservatively renamed code. You play on the real website. There is no hosted game copy, sitemap or source-map attachment step.
 
-## Objective
+## Install once
 
-Extract the existing `airstraf.ing-source.zip`, preserve its original contents, analyze JavaScript identifiers with a parser, and produce a **readable source view plus source maps**. Renames should be evidence-based: do not rename an identifier if its role is unclear. Keep JavaScript behavior, public properties and network protocols intact.
+1. Open this repository's **Actions → Build Firefox replacements** and the latest successful run.
+2. Download **airstraf-firefox-replacement** and unzip it.
+3. In Firefox, open `about:debugging#/runtime/this-firefox` → **Load Temporary Add-on** → select the extracted `manifest.json`.
+4. Wait for the extension toolbar tooltip to say **75 replacements ready**, then open DevTools, disable the network cache and reload https://airstraf.ing/.
+5. The Debugger shows the readable replacement code under the site's normal script URLs. The add-on background console reports replacements and skipped files.
 
-This is a code-readability project, not a claim to have recovered the website's lost original source or original identifier names.
+Firefox removes temporary add-ons when it restarts; load the same manifest again. Permanent installation in normal Firefox requires Mozilla signing. This repository does not claim to provide a signed add-on.
 
-## Outputs
+## Automatic GitHub updates
 
-| Path | Meaning |
-| --- | --- |
-| `airstraf.ing-source.zip` | Original archive (never modified) |
-| `source/` | Safely extracted archive |
-| `archive-manifest.json` | Extracted filenames, sizes and SHA-256 checksums |
-| `dist/readable/` | Reformatted JS and confidently inferred lexical renames |
-| `dist/maps/` | Reverse source maps that map **original minified positions → readable source positions** |
-| `dist/instrumented/` | Original JS plus an inline source-map comment (same runtime code) |
-| `dist/renames.json` | Identifiers renamed, file/position, and the inference rule |
-| `dist/report.json` | Per-file parsing, mapping and skipped-file information |
+At startup, every 15 minutes, and when you click its toolbar button, the extension checks `fix-my-shit-3/airstraf.ing` on GitHub. It resolves the latest main commit and downloads its replacement index and changed JavaScript files from that exact commit. Every file is checksum-verified before the new set becomes active. Failed updates keep the current set; the bundled files work when GitHub is unavailable. Reload the game to use newly downloaded files.
 
-Only scoped **local bindings** are considered for renaming; property keys, imports, exported names, public protocol fields and uncertain identifiers stay as-is. Files using dynamic evaluation are formatted but left unrenamed.
+This updates the **replacement JavaScript**, not the extension's own background code. For changes to the add-on itself, download the newest artifact and reload the add-on. Only install this if you trust this repository: its future replacement code will execute on airstraf.ing.
 
-## Automatic build
+Each live response must match the archived original's URL, byte length and SHA-256. Unknown or changed live files pass through unchanged. Matching ignores query parameters but requires the exact HTTPS origin and path. This prevents replacing a new site build with old code. The current archive contains 75 JavaScript files; it does not guarantee coverage of future bundles, inline scripts, blob URLs, service-worker cached responses or files absent from the archive. If the site uses a response SourceMap header or script integrity checks, those may interfere; browser testing is still required.
 
-The GitHub Actions workflow `Extract and map source` runs automatically on pushes to `main` that change the source ZIP, scripts, mapping dependencies or workflow. It extracts the ZIP, builds readable JS and source maps, verifies all generated maps and the rename audit, **uploads a downloadable source-map artifact**, then commits the generated files to `main` (using the repository's `contents: write` permission). It can also be run manually from the Actions tab.
+## Build and checks
 
-The second naming batch targets **200 additional evidence-backed lexical identifiers**, prioritizing the main gameplay bundle; the prior 100 additional renames remain locked by a regression check. Baseline: 564 renames, previous batch: 100, second batch target: 200, giving **864 total** for this source archive. The generated `dist/report.json` is the authoritative actual count.
-
-Run locally with Node.js 20 or later and Python 3.11 or later:
-
-```bash
+```sh
 python3 tools/unpack_source.py
-npm install
-npm run build:maps
-npm run verify:maps
+npm ci
+npm run build
+npm run verify
+npm run build:extension
+npm run test:extension
 ```
 
-## Using a source map in DevTools
+GitHub Actions does this on relevant pushes to main and manual runs, publishes the extension artifact, and commits generated readable files and the downloadable replacement set. A separate job attempts to unpublish GitHub Pages; a permission failure is reported in Actions rather than silently claiming deletion.
 
-Source maps do not magically modify a site's currently served code. For a browser to display reconstructed readable sources, **the JavaScript actually loaded by the page must have a `sourceMappingURL` annotation or `SourceMap` response header**. The files in `dist/instrumented/` contain original JavaScript plus an inline map and can be used with an appropriate local replacement/development server. The `dist/maps/` files can be hosted or attached with a supported browser tooling workflow.
+- `source/`: unchanged extracted archive.
+- `dist/readable/`: readable executable JavaScript.
+- `dist/firefox/`: installable temporary add-on and replacement files.
+- `dist/report.json`, `dist/renames.json`: coverage and naming evidence.
 
-Map support and local replacement features differ by browser. The reconstructed source file gives useful names for navigation and breakpoints, but variables at runtime retain their original names unless the executable JavaScript itself is transformed and tested.
+The automatic naming pass is no longer limited to a batch of 200. It applies all supported inference rules to eligible local bindings. Unknown names, public properties, protocols and dynamic-evaluation scopes are preserved. It cannot recover every original variable name or infer every meaning automatically. Current output: **3,216 renamed bindings across 75 files**.
 
-## Quality and safety
-
-- Start with archive inventory, readable formatting and conservative renames.
-- Verify each rename in the scope where it is declared; record the rule used.
-- Test transformed code before claiming it is a drop-in replacement.
-- Preserve unknown names rather than guessing.
-- Do not publish private tokens, credentials, or proprietary source files without authorization.
-
-The initial automated pass is heuristic; semantic deobfuscation of complex application/game logic requires review of specific modules.
+Tests check replacement/fallback/update behavior, original and replacement hashes, syntax and lexical-normalized AST equivalence. These checks do not replace a live Firefox gameplay test.

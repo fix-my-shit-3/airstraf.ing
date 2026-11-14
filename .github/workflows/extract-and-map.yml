@@ -1,4 +1,4 @@
-name: Extract and map source
+name: Build Firefox replacements
 
 on:
   push:
@@ -6,6 +6,8 @@ on:
     paths:
       - 'airstraf.ing-source.zip'
       - 'tools/**'
+      - 'extension/**'
+      - 'tests/**'
       - 'package.json'
       - 'package-lock.json'
       - '.github/workflows/extract-and-map.yml'
@@ -13,9 +15,10 @@ on:
 
 permissions:
   contents: write
+  pages: write
 
 concurrency:
-  group: source-maps-${{ github.ref }}
+  group: firefox-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -33,21 +36,19 @@ jobs:
           node-version: '22'
       - name: Extract checked-in ZIP safely
         run: python3 tools/unpack_source.py
-      - name: Install mapping dependencies
-        run: npm install --no-audit --no-fund
-      - name: Build readable code and reverse maps
-        run: npm run build:maps
-      - name: Verify 200 new renames, previous work, and every source map
-        run: npm run verify:maps
-      - name: Upload source maps and audit report
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Build readable replacement code
+        run: npm run build
+      - name: Verify readable code and preserved renames
+        run: npm run verify
+      - name: Package live-site Firefox add-on
+        run: npm run build:extension && npm run test:extension
+      - name: Upload Firefox add-on
         uses: actions/upload-artifact@v4
         with:
-          name: airstraf-devtools-source-maps
-          path: |
-            dist/maps/
-            dist/renames.json
-            dist/report.json
-          retention-days: 14
+          name: airstraf-firefox-replacement
+          path: dist/firefox/
           if-no-files-found: error
       - name: Commit generated files
         run: |
@@ -55,8 +56,25 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A source dist archive-manifest.json package-lock.json
           if ! git diff --cached --quiet; then
-            git commit -m "Generate extracted source and DevTools source maps"
+            git commit -m "Build readable Firefox replacement files"
             git fetch origin main
             git rebase origin/main
             git push origin HEAD:main
           fi
+
+  remove-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Unpublish GitHub Pages (keep repository)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          status=$(curl -sS -o /tmp/pages-result -w '%{http_code}' -X DELETE \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/pages")
+          case "$status" in
+            204) echo "GitHub Pages unpublished" ;;
+            404) echo "No accessible GitHub Pages site found" ;;
+            *) cat /tmp/pages-result; exit 1 ;;
+          esac

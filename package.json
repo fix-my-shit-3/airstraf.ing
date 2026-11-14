@@ -1,12 +1,14 @@
 {
-  "name": "airstraf-devtools-source-maps",
+  "name": "airstraf-firefox-replacement",
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Conservative JavaScript deobfuscation and reverse source maps for airstraf.ing",
+  "description": "Readable JavaScript replacements for live airstraf.ing in Firefox",
   "scripts": {
-    "build:maps": "node tools/build_maps.mjs",
-    "verify:maps": "node tools/verify_maps.mjs"
+    "build:extension": "node tools/build_extension.mjs",
+    "test:extension": "node --test tests/extension.test.mjs",
+    "build": "node tools/build_readable.mjs",
+    "verify": "node tools/verify_readable.mjs && node tools/verify_equivalence.mjs"
   },
   "dependencies": {
     "@babel/generator": "^7.26.9",
