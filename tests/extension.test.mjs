@@ -27,7 +27,7 @@ async function setup(remoteFailure=false){
  webRequest:{onBeforeRequest:{addListener:fn=>callback=fn},filterResponseData:()=>filter={
  write:bytes=>output.push(Buffer.from(bytes)),close:()=>finish()}}}};
  await vm.runInNewContext(script,context);await new Promise(setImmediate);
- return {requests,async update(){remoteEnabled=true;click();for(let i=0;i<20;i++)await new Promise(setImmediate);},
+ return {requests,async update(){remoteEnabled=true;await click();},
  async intercept(input,url=entry.url){
   output.length=0;filter=null;closed=new Promise(r=>finish=r);callback({url,requestId:'1'});
   if(!filter)return null;

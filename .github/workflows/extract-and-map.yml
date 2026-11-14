@@ -15,7 +15,6 @@ on:
 
 permissions:
   contents: write
-  pages: write
 
 concurrency:
   group: firefox-${{ github.ref }}
@@ -61,20 +60,3 @@ jobs:
             git rebase origin/main
             git push origin HEAD:main
           fi
-
-  remove-pages:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Unpublish GitHub Pages (keep repository)
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          status=$(curl -sS -o /tmp/pages-result -w '%{http_code}' -X DELETE \
-            -H "Authorization: Bearer $GH_TOKEN" \
-            -H "Accept: application/vnd.github+json" \
-            "https://api.github.com/repos/${{ github.repository }}/pages")
-          case "$status" in
-            204) echo "GitHub Pages unpublished" ;;
-            404) echo "No accessible GitHub Pages site found" ;;
-            *) cat /tmp/pages-result; exit 1 ;;
-          esac

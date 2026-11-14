@@ -72,8 +72,8 @@
     finally{updating=false;}
   }
   browser.alarms.onAlarm.addListener(alarm=>{if(alarm.name==='github-update')void update();});
-  browser.browserAction.onClicked.addListener(()=>void update());
+  browser.browserAction.onClicked.addListener(update);
   try{await loadSet(browser.runtime.getURL(''));}catch(error){console.warn(error);}
   browser.alarms.create('github-update',{periodInMinutes:15});
-  void update();
+  await update();
 })();
