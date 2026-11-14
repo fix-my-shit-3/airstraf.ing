@@ -26,7 +26,7 @@ var e = Object.create,
     }), l;
   },
   c = (e, a, o, n) => {
-    if (a && "object" == typeof a || "function" == typeof a) for (var b, c = l(a), f = 0, s = c.length; f < s; f++) b = c[f], u.call(e, b) || b === o || t(e, b, {
+    if (a && "object" == typeof a || "function" == typeof a) for (var b, c = l(a), index = 0, s = c.length; index < s; index++) b = c[index], u.call(e, b) || b === o || t(e, b, {
       get: (e => a[e]).bind(null, b),
       enumerable: !(n = r(a, b)) || n.enumerable
     });

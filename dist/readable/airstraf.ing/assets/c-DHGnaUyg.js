@@ -3,9 +3,9 @@ import { f as $ } from "./c-Caw4SzGP.js";
 import { c as C } from "./c-C_iq9rgQ.js";
 import { h as T, m as _, x as P } from "./c-j2W5q53j.js";
 var z = "kourBoxPos",
-  F = new Set($.filter(n => "box" === n.mapping).map(n => n.skinName)),
+  F = new Set($.filter(item => "box" === item.mapping).map(item => item.skinName)),
   A = n => !!n && F.has(n),
-  G = new Set($.filter(n => "frame" === n.mapping).map(n => n.skinName)),
+  G = new Set($.filter(item => "frame" === item.mapping).map(item => item.skinName)),
   E = n => !!n && G.has(n);
 function R(n, e) {
   const t = n.getAttribute("position");
@@ -41,8 +41,8 @@ function W(n, e, t) {
     for (let n = 0; n < a; n++) for (let o = 0; o < e.itemSize; o++) t[n * e.itemSize + o] = e.getComponent(i(n), o);
     s.setAttribute(k, new v(t, e.itemSize, e.normalized));
   }
-  const l = new Float32Array(2 * a),
-    c = new Float32Array(3 * a),
+  const float32Values = new Float32Array(2 * a),
+    _float32Values = new Float32Array(3 * a),
     [u, f, h] = t.axes,
     d = [new M(), new M(), new M()],
     m = new M(),
@@ -55,12 +55,12 @@ function W(n, e, t) {
       a = Math.abs(n.getComponent(u)),
       [s, x] = o >= r && o >= a ? [u, f] : r >= a ? [u, h] : [h, f];
     for (let e = 0; e < 3; e++) {
-      l[2 * (v + e)] = (d[e].getComponent(s) - t.min[s]) * t.scale, l[2 * (v + e) + 1] = (d[e].getComponent(x) - t.min[x]) * t.scale;
+      float32Values[2 * (v + e)] = (d[e].getComponent(s) - t.min[s]) * t.scale, float32Values[2 * (v + e) + 1] = (d[e].getComponent(x) - t.min[x]) * t.scale;
       const n = 3 * (v + e);
-      c[n] = (d[e].getComponent(f) - t.min[f]) * t.scale, c[n + 1] = (d[e].getComponent(u) - t.min[u]) * t.scale, c[n + 2] = (d[e].getComponent(h) - t.min[h]) * t.scale;
+      _float32Values[n] = (d[e].getComponent(f) - t.min[f]) * t.scale, _float32Values[n + 1] = (d[e].getComponent(u) - t.min[u]) * t.scale, _float32Values[n + 2] = (d[e].getComponent(h) - t.min[h]) * t.scale;
     }
   }
-  s.setAttribute("uv", new v(l, 2)), s.setAttribute(z, new v(c, 3)), s.setIndex(new v(a < 65536 ? new Uint16Array(a) : new Uint32Array(a), 1));
+  s.setAttribute("uv", new v(float32Values, 2)), s.setAttribute(z, new v(_float32Values, 3)), s.setIndex(new v(a < 65536 ? new Uint16Array(a) : new Uint32Array(a), 1));
   const x = s.index.array;
   for (let v = 0; v < a; v++) x[v] = v;
   for (const v of n.groups) s.addGroup(v.start, v.count, v.materialIndex);
@@ -78,45 +78,45 @@ function H(n, e, t) {
     for (let e = 0; e < a; e++) for (let t = 0; t < M.itemSize; t++) n[e * M.itemSize + t] = M.getComponent(i(e), t);
     s.setAttribute(S, new v(n, M.itemSize, M.normalized));
   }
-  const l = Math.floor(a / 3),
-    c = new Float32Array(3 * a),
+  const flooredValue = Math.floor(a / 3),
+    float32Values = new Float32Array(3 * a),
     [u, f, h] = t.axes,
-    d = new Float32Array(3 * a),
-    m = new Float32Array(3 * l),
+    _float32Values2 = new Float32Array(3 * a),
+    _float32Values3 = new Float32Array(3 * flooredValue),
     p = new M(),
     x = new M(),
     k = new M();
-  for (let v = 0; v < 3 * l; v++) e(i(v), p), d[3 * v] = p.x, d[3 * v + 1] = p.y, d[3 * v + 2] = p.z, c[3 * v] = (p.getComponent(f) - t.min[f]) * t.scale, c[3 * v + 1] = (p.getComponent(u) - t.min[u]) * t.scale, c[3 * v + 2] = (p.getComponent(h) - t.min[h]) * t.scale;
+  for (let v = 0; v < 3 * flooredValue; v++) e(i(v), p), _float32Values2[3 * v] = p.x, _float32Values2[3 * v + 1] = p.y, _float32Values2[3 * v + 2] = p.z, float32Values[3 * v] = (p.getComponent(f) - t.min[f]) * t.scale, float32Values[3 * v + 1] = (p.getComponent(u) - t.min[u]) * t.scale, float32Values[3 * v + 2] = (p.getComponent(h) - t.min[h]) * t.scale;
   const w = 2e4 * t.scale / 2,
     lookupMap = new Map(),
-    b = new Int32Array(3 * l);
-  for (let v = 0; v < 3 * l; v++) {
-    const n = `${Math.round(d[3 * v] * w)},${Math.round(d[3 * v + 1] * w)},${Math.round(d[3 * v + 2] * w)}`;
+    int32Values = new Int32Array(3 * flooredValue);
+  for (let v = 0; v < 3 * flooredValue; v++) {
+    const n = `${Math.round(_float32Values2[3 * v] * w)},${Math.round(_float32Values2[3 * v + 1] * w)},${Math.round(_float32Values2[3 * v + 2] * w)}`;
     let e = lookupMap.get(n);
-    void 0 === e && lookupMap.set(n, e = lookupMap.size), b[v] = e;
+    void 0 === e && lookupMap.set(n, e = lookupMap.size), int32Values[v] = e;
   }
   const _lookupMap = new Map(),
     $ = (n, e) => n < e ? `${n}|${e}` : `${e}|${n}`;
-  for (let v = 0; v < l; v++) {
+  for (let v = 0; v < flooredValue; v++) {
     const n = 3 * v;
-    x.set(d[3 * n + 3] - d[3 * n], d[3 * n + 4] - d[3 * n + 1], d[3 * n + 5] - d[3 * n + 2]), k.set(d[3 * n + 6] - d[3 * n], d[3 * n + 7] - d[3 * n + 1], d[3 * n + 8] - d[3 * n + 2]), x.cross(k).normalize(), m[3 * v] = x.x, m[3 * v + 1] = x.y, m[3 * v + 2] = x.z;
+    x.set(_float32Values2[3 * n + 3] - _float32Values2[3 * n], _float32Values2[3 * n + 4] - _float32Values2[3 * n + 1], _float32Values2[3 * n + 5] - _float32Values2[3 * n + 2]), k.set(_float32Values2[3 * n + 6] - _float32Values2[3 * n], _float32Values2[3 * n + 7] - _float32Values2[3 * n + 1], _float32Values2[3 * n + 8] - _float32Values2[3 * n + 2]), x.cross(k).normalize(), _float32Values3[3 * v] = x.x, _float32Values3[3 * v + 1] = x.y, _float32Values3[3 * v + 2] = x.z;
     for (let e = 0; e < 3; e++) {
-      const t = $(b[n + (e + 1) % 3], b[n + (e + 2) % 3]),
+      const t = $(int32Values[n + (e + 1) % 3], int32Values[n + (e + 2) % 3]),
         o = _lookupMap.get(t);
       o ? o.push(v) : _lookupMap.set(t, [v]);
     }
   }
-  const C = new Float32Array(3 * a);
-  for (let v = 0; v < l; v++) {
+  const _float32Values4 = new Float32Array(3 * a);
+  for (let v = 0; v < flooredValue; v++) {
     const n = 3 * v;
     for (let e = 0; e < 3; e++) {
-      const t = _lookupMap.get($(b[n + (e + 1) % 3], b[n + (e + 2) % 3]));
+      const t = _lookupMap.get($(int32Values[n + (e + 1) % 3], int32Values[n + (e + 2) % 3]));
       let o = !1;
-      for (const n of t) n !== v && m[3 * v] * m[3 * n] + m[3 * v + 1] * m[3 * n + 1] + m[3 * v + 2] * m[3 * n + 2] >= .9995 && (o = !0);
-      for (let r = 0; r < 3; r++) C[3 * (n + r) + e] = o || r === e ? 1 : 0;
+      for (const n of t) n !== v && _float32Values3[3 * v] * _float32Values3[3 * n] + _float32Values3[3 * v + 1] * _float32Values3[3 * n + 1] + _float32Values3[3 * v + 2] * _float32Values3[3 * n + 2] >= .9995 && (o = !0);
+      for (let r = 0; r < 3; r++) _float32Values4[3 * (n + r) + e] = o || r === e ? 1 : 0;
     }
   }
-  s.setAttribute(z, new v(c, 3)), s.setAttribute("kourWire", new v(C, 3)), s.setIndex(new v(a < 65536 ? new Uint16Array(a) : new Uint32Array(a), 1));
+  s.setAttribute(z, new v(float32Values, 3)), s.setAttribute("kourWire", new v(_float32Values4, 3)), s.setIndex(new v(a < 65536 ? new Uint16Array(a) : new Uint32Array(a), 1));
   const T = s.index.array;
   for (let v = 0; v < a; v++) T[v] = v;
   for (const v of n.groups) s.addGroup(v.start, v.count, v.materialIndex);
@@ -130,8 +130,8 @@ function I(n, e = 2) {
     for (let e = 0; e < n; e++) t.expandByPoint(r.at(e, o));
   }
   return function (n, e = 2) {
-    const t = n.getSize(new M()).toArray().map(n => Math.max(n, 1e-9)),
-      o = [0, 1, 2].sort((n, e) => t[e] - t[n] || n - e);
+    const t = n.getSize(new M()).toArray().map(item => Math.max(item, 1e-9)),
+      o = [0, 1, 2].sort((leftItem, rightItem) => t[rightItem] - t[leftItem] || leftItem - rightItem);
     return {
       min: n.min.toArray(),
       axes: o,
@@ -157,44 +157,44 @@ function O(n, e) {
   return t;
 }
 function K(n) {
-  const e = n.behaviours.find(n => 0 === n.node && n.data && Array.isArray(n.data.weaponRenderers)),
-    t = (e?.data?.weaponRenderers ?? []).map(n => n?.node).filter(n => "number" == typeof n),
+  const e = n.behaviours.find(item => 0 === item.node && item.data && Array.isArray(item.data.weaponRenderers)),
+    t = (e?.data?.weaponRenderers ?? []).map(item => item?.node).filter(item => "number" == typeof item),
     o = e?.data?.handsModel?.node;
-  return n.renderers.flatMap((e, r) => t.includes(e.node) || "number" != typeof o || !((e, t) => {
+  return n.renderers.flatMap((item, index) => t.includes(item.node) || "number" != typeof o || !((e, t) => {
     for (let o = e; o >= 0; o = n.nodes[o].parent) if (o === t) return !0;
     return !1;
-  })(e.node, o) ? [r] : []);
+  })(item.node, o) ? [index] : []);
 }
 var B = new WeakMap(),
   D = new WeakMap();
 function q(n, e) {
   const t = n.data;
-  return e.flatMap(e => {
-    const o = n.meshes[e];
+  return e.flatMap(item => {
+    const o = n.meshes[item];
     if (!o) return [];
     const r = o,
-      a = t.renderers[e];
+      a = t.renderers[item];
     if (r.isSkinnedMesh) {
-      const n = a.bones.map((n, e) => n >= 0 && r.skeleton.boneInverses[e] ? O(t, n).multiply(r.skeleton.boneInverses[e]) : null);
+      const n = a.bones.map((bone, index) => bone >= 0 && r.skeleton.boneInverses[index] ? O(t, bone).multiply(r.skeleton.boneInverses[index]) : null);
       return [{
-        i: e,
+        i: item,
         geometry: o.geometry,
         at: L(o.geometry, n)
       }];
     }
     return [{
-      i: e,
+      i: item,
       geometry: o.geometry,
       at: R(o.geometry, O(t, a.node))
     }];
   });
 }
 function j(n, e) {
-  const t = K(n.data).filter(e => n.meshes[e]);
+  const t = K(n.data).filter(item => n.meshes[item]);
   if (!t.length) return !1;
   const o = function (n, e) {
     let t = D.get(n.data);
-    if (t && e.every(e => t.has(e) || !n.meshes[e])) return t;
+    if (t && e.every(item => t.has(item) || !n.meshes[item])) return t;
     t || D.set(n.data, t = new Map());
     const o = q(n, e),
       r = I(o);
@@ -221,14 +221,14 @@ function X(n) {
 }
 var Y = n => n.transparent;
 function Q(n, e) {
-  return Array.isArray(n) ? n.some(Y) ? n.map(n => Y(n) ? n : e) : e : Y(n) ? n : e;
+  return Array.isArray(n) ? n.some(Y) ? n.map(item => Y(item) ? item : e) : e : Y(n) ? n : e;
 }
 function Z(n, e) {
-  const t = K(n.data).filter(e => n.meshes[e]);
+  const t = K(n.data).filter(item => n.meshes[item]);
   if (!t.length) return !1;
   const o = function (n, e) {
     let t = B.get(n.data);
-    if (t && e.every(e => t.has(e) || !n.meshes[e])) return t;
+    if (t && e.every(item => t.has(item) || !n.meshes[item])) return t;
     t || B.set(n.data, t = new Map());
     const o = q(n, e),
       r = I(o);
@@ -252,19 +252,19 @@ function nn(n, e = n => n.geometry) {
     n.isMesh && t.push(n);
   });
   if (!t.length) return new Map();
-  if (t.filter(n => !J.has(e(n))).length) {
+  if (t.filter(item => !J.has(e(item))).length) {
     const o = n[0];
     o.updateWorldMatrix(!0, !0);
     const r = o.matrixWorld.clone().invert(),
-      a = t.map(n => ({
-        mesh: n,
-        geometry: e(n),
-        at: R(e(n), r.clone().multiply(n.matrixWorld))
+      a = t.map(item => ({
+        mesh: item,
+        geometry: e(item),
+        at: R(e(item), r.clone().multiply(item.matrixWorld))
       })),
       i = I(a);
     for (const n of a) J.has(n.geometry) || J.set(n.geometry, H(n.geometry, n.at, i));
   }
-  return new Map(t.map(n => [n, J.get(e(n))]));
+  return new Map(t.map(item => [item, J.get(e(item))]));
 }
 var en = new WeakMap();
 function tn(n) {
@@ -273,19 +273,19 @@ function tn(n) {
     n.isMesh && e.push(n);
   });
   if (!e.length) return new Map();
-  if (e.filter(n => !en.has(n.geometry)).length) {
+  if (e.filter(item => !en.has(item.geometry)).length) {
     const t = n[0];
     t.updateWorldMatrix(!0, !0);
     const o = t.matrixWorld.clone().invert(),
-      r = e.map(n => ({
-        mesh: n,
-        geometry: n.geometry,
-        at: R(n.geometry, o.clone().multiply(n.matrixWorld))
+      r = e.map(item => ({
+        mesh: item,
+        geometry: item.geometry,
+        at: R(item.geometry, o.clone().multiply(item.matrixWorld))
       })),
       a = I(r);
     for (const n of r) en.has(n.geometry) || en.set(n.geometry, W(n.geometry, n.at, a));
   }
-  return new Map(e.map(n => [n, en.get(n.geometry)]));
+  return new Map(e.map(item => [item, en.get(item.geometry)]));
 }
 var on = {
     cells: 1.45,
@@ -320,7 +320,7 @@ function ln(n, e, t) {
 var cn = ln(on.strength, on.cells, on.band),
   un = ln(rn.strength, rn.cells, rn.band),
   fn = an,
-  hn = `\nuniform vec4 uGlitter;\nvarying vec3 vGlitterPos;\nvec3 kourGlitter(vec3 p, vec3 n, vec3 v) {\n  float t = uGlitter.x;\n  vec3 gp = p * uGlitter.z;\n  vec3 cell = floor(gp);\n  float h = fract(sin(dot(cell, vec3(12.9898, 78.233, 37.719))) * 43758.5453);\n  float phase = fract(h * 7.13 + t * (0.35 + 0.65 * h));\n  float twinkle = smoothstep(0.0, 0.05, phase) * (1.0 - smoothstep(0.05, 0.18, phase));\n  vec3 f = abs(fract(gp) - 0.5);\n  float star = max(0.0, 1.0 - (f.x + f.y + f.z) * 2.2);\n  float sparkle = twinkle * star * step(${(1 - on.share).toFixed(3)}, h);\n  float nv = clamp(dot(n, v), 0.0, 1.0);\n  float band = pow(max(sin(p.y * uGlitter.w - t * ${on.speed.toFixed(2)} + nv * 2.0), 0.0), 10.0);\n  float rim = pow(1.0 - nv, 3.0);\n  // the polish (GLITTER_POLISH): a studio's pale sky over a dark ground, reflected\n  vec3 rd = reflect(-v, n);\n  float sky = smoothstep(${fn.from.toFixed(3)}, ${fn.to.toFixed(3)}, rd.y);\n  float fres = ${fn.base.toFixed(3)} + ${(1 - fn.base).toFixed(3)} * pow(1.0 - nv, 2.0);\n  return uGlitter.y * (vec3(1.0, 0.82, 0.38) * (band * 0.32 + rim * 0.18)\n    + vec3(1.0, 0.96, 0.82) * sparkle * 1.8\n    + vec3(${fn.color.map(n => n.toFixed(3)).join(", ")}) * (sky * fres * ${fn.strength.toFixed(3)}));\n}`;
+  hn = `\nuniform vec4 uGlitter;\nvarying vec3 vGlitterPos;\nvec3 kourGlitter(vec3 p, vec3 n, vec3 v) {\n  float t = uGlitter.x;\n  vec3 gp = p * uGlitter.z;\n  vec3 cell = floor(gp);\n  float h = fract(sin(dot(cell, vec3(12.9898, 78.233, 37.719))) * 43758.5453);\n  float phase = fract(h * 7.13 + t * (0.35 + 0.65 * h));\n  float twinkle = smoothstep(0.0, 0.05, phase) * (1.0 - smoothstep(0.05, 0.18, phase));\n  vec3 f = abs(fract(gp) - 0.5);\n  float star = max(0.0, 1.0 - (f.x + f.y + f.z) * 2.2);\n  float sparkle = twinkle * star * step(${(1 - on.share).toFixed(3)}, h);\n  float nv = clamp(dot(n, v), 0.0, 1.0);\n  float band = pow(max(sin(p.y * uGlitter.w - t * ${on.speed.toFixed(2)} + nv * 2.0), 0.0), 10.0);\n  float rim = pow(1.0 - nv, 3.0);\n  // the polish (GLITTER_POLISH): a studio's pale sky over a dark ground, reflected\n  vec3 rd = reflect(-v, n);\n  float sky = smoothstep(${fn.from.toFixed(3)}, ${fn.to.toFixed(3)}, rd.y);\n  float fres = ${fn.base.toFixed(3)} + ${(1 - fn.base).toFixed(3)} * pow(1.0 - nv, 2.0);\n  return uGlitter.y * (vec3(1.0, 0.82, 0.38) * (band * 0.32 + rim * 0.18)\n    + vec3(1.0, 0.96, 0.82) * sparkle * 1.8\n    + vec3(${fn.color.map(item => item.toFixed(3)).join(", ")}) * (sky * fres * ${fn.strength.toFixed(3)}));\n}`;
 function vn(n, e) {
   const t = n;
   t.uniforms?.uColor && t.defines && e !== "USE_GLITTER" in t.defines && (e ? (t.defines.USE_GLITTER = "", t.uniforms.uGlitter = cn) : (delete t.defines.USE_GLITTER, delete t.uniforms.uGlitter), t.needsUpdate = !0);
@@ -514,7 +514,7 @@ var yn = {
   Tn = $n,
   _n = Cn,
   Pn = Sn,
-  zn = new Map($.flatMap(n => n.fx ? [[n.skinName, n.fx]] : [])),
+  zn = new Map($.flatMap(item => item.fx ? [[item.skinName, item.fx]] : [])),
   Fn = n => n && zn.get(n) || null,
   An = {
     value: 0
@@ -687,10 +687,10 @@ function Le(n, e, t, o, r) {
       if (!t || !o) return null;
       const r = t.image.width,
         a = r * r * 4,
-        i = new Float32Array(2 * a);
-      i.set(o.subarray(0, a)), i.copyWithin(a, 0, a);
-      const s = new c(i, r, 2 * r, w, h);
-      if (s.needsUpdate = !0, n.boneMatrices = i.subarray(0, a), n.boneTexture = s, t.dispose(), Pe) {
+        float32Values = new Float32Array(2 * a);
+      float32Values.set(o.subarray(0, a)), float32Values.copyWithin(a, 0, a);
+      const s = new c(float32Values, r, 2 * r, w, h);
+      if (s.needsUpdate = !0, n.boneMatrices = float32Values.subarray(0, a), n.boneTexture = s, t.dispose(), Pe) {
         P(!0);
         try {
           Pe.initTexture(s);
@@ -700,7 +700,7 @@ function Le(n, e, t, o, r) {
       }
       const l = {
         frame: -10,
-        data: i,
+        data: float32Values,
         half: a
       };
       return Te.set(n, l), l;
@@ -844,7 +844,7 @@ function ot(n) {
     } : n.premultipliedAlpha ? 1 === e ? t(o, 205, o, 205) : 2 === e ? t(o, o) : 3 === e ? t(r, 203, r, o) : t(208, 205, r, o) : 1 === e ? t(204, 205, o, 205) : t(204, o, o, o);
   }(n);
   if (!e) return "none";
-  for (const [t, o] of Object.entries(Je)) if (tt.every(n => [0, 1, 2, 3].every(t => Math.abs(et(e, o, n, t) - n[t]) < 1e-6))) return t;
+  for (const [t, o] of Object.entries(Je)) if (tt.every(item => [0, 1, 2, 3].every(_item => Math.abs(et(e, o, item, _item) - item[_item]) < 1e-6))) return t;
   return "zero";
 }
 var rt = /\bvoid\s+main\s*\(\s*(?:void\s*)?\)/,
@@ -939,7 +939,7 @@ function mt(e, t) {
     }
     r = r.replace(rt, "void kour_main()");
     const i = o ? `\n  ${Ye} = vec4(${(-1024).toFixed(1)}, 0.0, 0.0, ${a}.a);` : "";
-    return `layout(location = 1) out highp vec4 ${Ye};\n` + r + `\nvoid main() {\n  ${Ye} = ${s = e, `vec4(${("none" === s ? [0, 0, 0, 0] : Je[s]).map(n => n.toFixed(1)).join(", ")})`};\n  kour_main();${i}\n}\n`;
+    return `layout(location = 1) out highp vec4 ${Ye};\n` + r + `\nvoid main() {\n  ${Ye} = ${s = e, `vec4(${("none" === s ? [0, 0, 0, 0] : Je[s]).map(item => item.toFixed(1)).join(", ")})`};\n  kour_main();${i}\n}\n`;
     var s;
   }(a, ot(this), o, it(this));
   i ? e.fragmentShader = i : r && (e.fragmentShader = a);
@@ -962,7 +962,7 @@ function gt(n, e, t) {
   return [.282095, .488603 * e, .488603 * t, .488603 * n, 1.092548 * n * e, 1.092548 * e * t, .315392 * (3 * t * t - 1), 1.092548 * n * t, .546274 * (n * n - e * e)];
 }
 function bt(n) {
-  const e = Array.from({
+  const arrayValues = Array.from({
     length: 9
   }, () => [0, 0, 0]);
   let t = 0;
@@ -979,15 +979,15 @@ function bt(n) {
       v = gt(l, c, u);
     for (let n = 0; n < 9; n++) {
       const t = v[n] * f;
-      e[n][0] += h[0] * t, e[n][1] += h[1] * t, e[n][2] += h[2] * t;
+      arrayValues[n][0] += h[0] * t, arrayValues[n][1] += h[1] * t, arrayValues[n][2] += h[2] * t;
     }
   }
   const o = 4 * Math.PI / t,
     r = [1, 2 / 3, 2 / 3, 2 / 3, 1 / 4, 1 / 4, 1 / 4, 1 / 4, 1 / 4];
-  return e.forEach((n, e) => {
-    const t = o * r[e];
-    n[0] *= t, n[1] *= t, n[2] *= t;
-  }), e;
+  return arrayValues.forEach((item, index) => {
+    const t = o * r[index];
+    item[0] *= t, item[1] *= t, item[2] *= t;
+  }), arrayValues;
 }
 var yt = (n, e, t) => [n[0] + (e[0] - n[0]) * t, n[1] + (e[1] - n[1]) * t, n[2] + (e[2] - n[2]) * t],
   St = {
@@ -1105,7 +1105,7 @@ var Tt = [1, .86, .66],
   Pt = .004,
   zt = 1080;
 function Ft(n, e, t, o = 1e-4) {
-  const r = new Float32Array(3 * t),
+  const float32Values = new Float32Array(3 * t),
     lookupMap = new Map(),
     i = n => Math.round(n / o);
   for (let l = 0; l < t; l++) {
@@ -1124,7 +1124,7 @@ function Ft(n, e, t, o = 1e-4) {
     const n = [];
     for (const r of l) {
       const e = s(r);
-      n.some(n => n[0] * e[0] + n[1] * e[1] + n[2] * e[2] > .9999) || n.push(e);
+      n.some(item => item[0] * e[0] + item[1] * e[1] + item[2] * e[2] > .9999) || n.push(e);
     }
     let e = 0,
       t = 0,
@@ -1140,10 +1140,10 @@ function Ft(n, e, t, o = 1e-4) {
         const s = Math.min(2.5, 1 / Math.max(i, .4));
         l = [r[0] * s, r[1] * s, r[2] * s];
       }
-      r[3 * i] = l[0], r[3 * i + 1] = l[1], r[3 * i + 2] = l[2];
+      float32Values[3 * i] = l[0], float32Values[3 * i + 1] = l[1], float32Values[3 * i + 2] = l[2];
     }
   }
-  return r;
+  return float32Values;
 }
 a.enabled = !1, function () {
   if (kt) return;
@@ -1211,7 +1211,7 @@ function Wt() {
   return {
     lightDir: Et.uLightDir.value.clone(),
     lightColor: Et.uLightColor.value.clone(),
-    sh: Et.uSH.value.map(n => n.clone()),
+    sh: Et.uSH.value.map(item => item.clone()),
     fogColor: Et.uFogColor.value.clone(),
     fog: Et.uFog.value.clone(),
     skyTop: Et.uSkyTop.value.clone(),
@@ -1244,7 +1244,7 @@ function Ut(n, e, t, o, r = 1) {
       return bt((t, o) => o >= 0 ? yt(e, n, o) : yt(e, l, Math.min(1, -o)));
     }
     return bt((n, e) => e >= 0 ? yt(s, i, e) : yt(s, l, Math.min(1, -e)));
-  }(n, e, t, o, r), a.forEach((n, e) => Et.uSH.value[e].set(n[0], n[1], n[2]));
+  }(n, e, t, o, r), a.forEach((item, index) => Et.uSH.value[index].set(item[0], item[1], item[2]));
 }
 Ke = Et;
 var Nt = `\n#include <common>\n#include <skinning_pars_vertex>\nvarying vec3 vWorldPos;\nvarying vec3 vNormalW;\nvarying vec2 vUv;\nvarying float vFogDepth;\n#ifdef USE_VCOLOR\nattribute vec4 color;\nvarying vec4 vColor;\n#endif\n#ifdef KOUR_MAT_TABLE\n// merged map batches (render/material-merge.ts, FB20PERFDRAW): the _MainTex_ST of up to\n// KOUR_MAT_TABLE materials, the vertex's material in kourMat\nattribute float kourMat;\nuniform vec4 kourMatST[KOUR_MAT_TABLE];\nflat varying int vKourMat;\n#define uMainST kourMatST[int(kourMat)]\n#else\nuniform vec4 uMainST;\n#endif\n#ifdef KOUR_MOTION\n${ye}\n#endif\n#if defined(USE_GLITTER) || defined(USE_GALAXY)\nvarying vec3 vGlitterPos;\n#endif\n#if defined(GLITTER_BOX) || defined(SKIN_FRAME)\nattribute vec3 kourBoxPos;\n#endif\n#ifdef SKIN_SPACE\n// the animated skins placed on the surface (render/skin-fx.ts, FB34): its place - the weapon's\n// frame on a frame geometry (checker-skin.ts frameGeometry), else the mesh's own space - and\n// the wire weights of its triangle\nvarying vec3 vSkinPos;\nvarying vec3 vSkinWire;\n#ifdef SKIN_FRAME\nattribute vec3 kourWire;\n#endif\n#endif\n#ifdef SKIN_WOBBLE\nuniform float uSkinTime;\n// x the amplitude, y the waves per unit of the mesh, z rad/s, w the handle's UV corner\nuniform vec4 uSkinWobble;\n#endif\n#ifdef KOUR_OUTLINE\n\nuniform vec2 uOutlineWidth; // x: width as a share of the image height, y: least width in metres\n\n#endif\nvoid main() {\n  #include <beginnormal_vertex>\n  #include <skinbase_vertex>\n  #include <skinnormal_vertex>\n  #include <begin_vertex>\n  #ifdef SKIN_WOBBLE\n  \n  // Karambit Antique (skin-fx.ts ANTIQUE, antiqueWobble): every blade vertex moves in a wobble\n  // by its own place (corners at one place move alike: no seam opens); the handle's palette\n  // texels stay\n  if (uv.x > uSkinWobble.w || uv.y > uSkinWobble.w) {\n    vec3 wq = position * uSkinWobble.y;\n    float wt = uSkinTime * uSkinWobble.z;\n    transformed += uSkinWobble.x * vec3(\n      sin(wq.y * 1.3 + wq.z * 0.7 + wt),\n      sin(wq.z * 1.7 + wq.x * 0.9 + wt * 1.31 + 1.7),\n      sin(wq.x * 1.1 + wq.y * 1.9 + wt * 0.83 + 3.1));\n  }\n\n  #endif\n  #include <skinning_vertex>\n  #ifdef KOUR_OUTLINE\n  \n  {\n    vec4 kourMv = modelViewMatrix * vec4(transformed, 1.0);\n    float kourW = projectionMatrix[2][3] * kourMv.z + projectionMatrix[3][3];\n    float kourWidth = max(uOutlineWidth.x * 2.0 * kourW / projectionMatrix[1][1], uOutlineWidth.y);\n    vec3 kourDir = normalize(objectNormal) * length(normal);\n    transformed += kourDir * (kourWidth / max(length(modelMatrix[0].xyz), 1e-6));\n  }\n\n  #endif\n  vec4 worldPos = modelMatrix * vec4(transformed, 1.0);\n  vWorldPos = worldPos.xyz;\n  vNormalW = normalize(inverse(transpose(mat3(modelMatrix))) * objectNormal);\n  #ifdef FLIP_NORMAL\n  vNormalW = -vNormalW;\n  #endif\n  vUv = uv * uMainST.xy + uMainST.zw;\n  #ifdef KOUR_MAT_TABLE\n  vKourMat = int(kourMat);\n  #endif\n  #if defined(USE_GLITTER) || defined(USE_GALAXY)\n  // (glitter.ts / galaxy.ts: the mesh's own space, before skinning - the sparkles stick to the\n  // figure; a box-skinned weapon: the frame of its box projection, one space for all its parts)\n  #ifdef GLITTER_BOX\n  vGlitterPos = kourBoxPos;\n  #else\n  vGlitterPos = position;\n  #endif\n  #endif\n  #ifdef USE_VCOLOR\n  vColor = color;\n  #endif\n  #ifdef SKIN_SPACE\n  #ifdef SKIN_FRAME\n  vSkinPos = kourBoxPos;\n  vSkinWire = kourWire;\n  #else\n  vSkinPos = position;\n  vSkinWire = vec3(1.0);\n  #endif\n  #endif\n  vec4 mvPosition = viewMatrix * worldPos;\n  vFogDepth = -mvPosition.z;\n  gl_Position = projectionMatrix * mvPosition;\n  #ifdef KOUR_MOTION\n  ${Se}\n  #endif\n}`;

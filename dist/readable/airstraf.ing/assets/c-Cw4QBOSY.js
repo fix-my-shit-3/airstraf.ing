@@ -33,11 +33,11 @@ function h(t, e) {
   }
   n.length || n.push("");
   const r = n.length;
-  return n.map((e, n) => ({
+  return n.map((item, index) => ({
     sha: t,
-    i: n,
+    i: index,
     n: r,
-    text: e
+    text: item
   }));
 }
 function p(t) {
@@ -144,7 +144,7 @@ function j(t) {
   for (const [r, i] of [["Map", ["get", "set", "has", "delete", "forEach"]], ["Set", ["add", "has", "forEach"]], ["WeakMap", ["get", "set"]], ["Array", ["push", "forEach", "map", "filter", "find", "indexOf", "includes"]]]) for (const t of i) n(`${r}.prototype.${t}`, e => k($(e, r), t));
   for (const r of ["defineProperties", "assign", "keys", "values", "entries", "getOwnPropertyNames", "getOwnPropertyDescriptor", "getPrototypeOf", "setPrototypeOf", "preventExtensions", "seal"]) n(`Object.${r}`, t => k(t.Object, r));
   for (const r of ["get", "set", "defineProperty", "ownKeys", "construct"]) n(`Reflect.${r}`, t => k(t.Reflect, r));
-  return n("Object.defineProperty", t => t.Object?.defineProperty), n("Function.prototype.call", t => k($(t, "Function"), "call")), n("Function.prototype.apply", t => k($(t, "Function"), "apply")), n("Function.prototype.bind", t => k($(t, "Function"), "bind")), n("Proxy", t => t.Proxy), n("Error.captureStackTrace", t => t.Error?.captureStackTrace), e.filter(e => void 0 !== e.resolve(t));
+  return n("Object.defineProperty", t => t.Object?.defineProperty), n("Function.prototype.call", t => k($(t, "Function"), "call")), n("Function.prototype.apply", t => k($(t, "Function"), "apply")), n("Function.prototype.bind", t => k($(t, "Function"), "bind")), n("Proxy", t => t.Proxy), n("Error.captureStackTrace", t => t.Error?.captureStackTrace), e.filter(item => void 0 !== item.resolve(t));
 }
 function S(t, e) {
   if ("function" != typeof e) return null;
@@ -562,7 +562,7 @@ function Z(t, e, n, o, r = 40) {
       } catch {
         l = void 0;
       }
-      "function" == typeof l && !o.some(t => t.fn === l) && o.length < 6 && o.push({
+      "function" == typeof l && !o.some(item => item.fn === l) && o.length < 6 && o.push({
         frame: f,
         fn: l
       });
@@ -646,7 +646,7 @@ var ot = class {
       }, this.P = t.Proxy ?? Proxy, this.construct = t.construct ?? Reflect.construct;
     }
     get tapped() {
-      return this.installed.map(t => t.api);
+      return this.installed.map(item => item.api);
     }
     install() {
       if (this.installed.length) return;
@@ -718,7 +718,7 @@ var ot = class {
       }
     }
     $_7ij(t) {
-      const e = this.installed.find(e => e.api === t);
+      const e = this.installed.find(item => item.api === t);
       return !!e && this.$_6vj(e);
     }
     $_31l(t, e, n, o, r) {
@@ -828,7 +828,7 @@ var ot = class {
           label: r().slice(0, 100),
           source: i,
           frames: s.frames,
-          functions: s.functions.map(t => t.fn)
+          functions: s.functions.map(item => item.fn)
         });
       } catch {}
     }
@@ -855,7 +855,7 @@ var ot = class {
           label: `Proxy trap '${t}' around ${i}`.slice(0, 100),
           source: e,
           frames: r.frames,
-          functions: r.functions.map(t => t.fn)
+          functions: r.functions.map(item => item.fn)
         });
       } catch {}
     }
@@ -913,7 +913,7 @@ async function ct(t) {
   if (e) try {
     const n = new TextEncoder().encode(t),
       o = await e.digest("SHA-256", n);
-    return [...new Uint8Array(o)].map(t => t.toString(16).padStart(2, "0")).join("");
+    return [...new Uint8Array(o)].map(item => item.toString(16).padStart(2, "0")).join("");
   } catch {}
   return at(t);
 }
@@ -1166,7 +1166,7 @@ function Et(t, e) {
     } catch {
       t = null;
     }
-    return t && Ct.some(e => t.href.startsWith(e)) || t && t.origin === e.origin ? null : {
+    return t && Ct.some(item => t.href.startsWith(item)) || t && t.origin === e.origin ? null : {
       subject: n.slice(0, 256),
       evidence: n
     };
@@ -1345,7 +1345,7 @@ var Rt = class {
       this.last.set(t, r);
       try {
         const t = Z(this.clean, n, o, "");
-        i = t.frames, s = t.functions.map(t => t.fn);
+        i = t.frames, s = t.functions.map(item => item.fn);
       } catch {
         return;
       }
@@ -1547,7 +1547,7 @@ var Ft = class {
   $_5u2(t) {
     for (const e of t) {
       const t = this.$_1lo.get(e);
-      void 0 === t || this.$_6wo.some(t => t.sha === e) || this.$_6wo.push(...h(e, t));
+      void 0 === t || this.$_6wo.some(item => item.sha === e) || this.$_6wo.push(...h(e, t));
     }
     this.$_4ri();
   }
@@ -1636,7 +1636,7 @@ var Ft = class {
             parts: [],
             frames: []
           }), i.extensionId && !s.extensionId && (s.extensionId = i.extensionId), n && s.hooked.add(n);
-          for (const e of o) s.parts.some(t => t.source === e.source) || s.parts.push(e);
+          for (const e of o) s.parts.some(item => item.source === e.source) || s.parts.push(e);
           for (const e of r) s.frames.includes(e) || s.frames.push(e);
         }
       };
@@ -1862,16 +1862,16 @@ var Ft = class {
         } catch {}
         return [..._lookupMap2.values()];
       }(this.root)) await this.$_3cr(e.manager, "", e.extensionId, [], [], e.markers);
-      for (const n of lookupMap.values()) for (const t of await this.$_4aw(n.frames)) n.parts.some(e => e.source === t.source) || n.parts.push(t);
+      for (const n of lookupMap.values()) for (const t of await this.$_4aw(n.frames)) n.parts.some(item => item.source === t.source) || n.parts.push(t);
       for (const n of lookupMap.values()) await this.$_3cr(n.manager, n.name, n.extensionId, [...n.hooked], n.parts, n.frames);
     } catch {}
     await this.flush(), await this.$_5qs();
   }
   async $_4aw(t) {
-    return (await this.$_2ce.texts(t)).map(t => ({
+    return (await this.$_2ce.texts(t)).map(item => ({
       kind: "injected",
-      label: `extension file ${t.url}`.slice(0, 100),
-      source: t.text
+      label: `extension file ${item.url}`.slice(0, 100),
+      source: item.text
     }));
   }
   $_7f6(t, e) {
@@ -1894,7 +1894,7 @@ var Ft = class {
     return n;
   }
   async $_3cr(t, e, n, o, r, i) {
-    const s = r.find(t => "whole" === t.kind);
+    const s = r.find(item => "whole" === item.kind);
     !e && s && (e = Dt(s.source)?.name ?? "");
     const c = Gt(t, e);
     let u = this.$_6pe.get(c);
@@ -1910,7 +1910,7 @@ var Ft = class {
     }
     n && (u.extensionId = n);
     const f = [],
-      h = [...r].sort((t, e) => "whole" === t.kind ? -1 : "whole" === e.kind ? 1 : 0);
+      h = [...r].sort((leftItem, rightItem) => "whole" === leftItem.kind ? -1 : "whole" === rightItem.kind ? 1 : 0);
     let p = !1;
     for (const l of h) {
       const t = "whole" === l.kind ? l.source.slice(0, a) : l.source;
@@ -1935,7 +1935,7 @@ var Ft = class {
       const t = a.trim().slice(0, 240);
       t && !u.frames.has(t) && (u.frames.add(t), m.length < 8 && m.push(t));
     }
-    const g = o.filter(t => !u.hooked.has(t));
+    const g = o.filter(item => !u.hooked.has(item));
     for (const a of g) u.hooked.add(a);
     if (!d.length && !m.length && !g.length) return;
     const b = [];
@@ -1959,7 +1959,7 @@ var Ft = class {
         }
         o.frames && !o.frames.length && delete o.frames;
       }
-      o.fingerprint = await ct(`userscript|${t}|${e}|${r.join(",")}|${n.map(t => t.sha).join(",")}|${(o.frames ?? []).join("\n")}|${u.version ?? ""}`), this.$_6v5.has(o.fingerprint) || this.$_6v5.set(o.fingerprint, o);
+      o.fingerprint = await ct(`userscript|${t}|${e}|${r.join(",")}|${n.map(item => item.sha).join(",")}|${(o.frames ?? []).join("\n")}|${u.version ?? ""}`), this.$_6v5.has(o.fingerprint) || this.$_6v5.set(o.fingerprint, o);
     }
   }
   add(t) {
@@ -2054,18 +2054,18 @@ async function Kt(t) {
   const e = globalThis.crypto?.subtle;
   if (e) try {
     const n = await e.digest("SHA-256", new TextEncoder().encode(t));
-    return [...new Uint8Array(n)].map(t => t.toString(16).padStart(2, "0")).join("");
+    return [...new Uint8Array(n)].map(item => item.toString(16).padStart(2, "0")).join("");
   } catch {}
   return at(`a|${t}`) + at(`b|${t}`) + at(`c|${t}`) + at(`d|${t}`);
 }
 function Yt(t) {
-  const e = new Uint8Array(t);
+  const uint8Values = new Uint8Array(t);
   try {
-    globalThis.crypto.getRandomValues(e);
+    globalThis.crypto.getRandomValues(uint8Values);
   } catch {
-    for (let n = 0; n < t; n++) e[n] = Math.floor(256 * Math.random());
+    for (let n = 0; n < t; n++) uint8Values[n] = Math.floor(256 * Math.random());
   }
-  return [...e].map(t => t.toString(16).padStart(2, "0")).join("");
+  return [...uint8Values].map(item => item.toString(16).padStart(2, "0")).join("");
 }
 var Qt = {
     name: "localStorage",
@@ -2180,7 +2180,7 @@ async function ae() {
     r = [];
   for (let i = 0; i < ce.length; i += 6) {
     i && (await new Promise(t => setTimeout(t, 0)));
-    for (const t of ce.slice(i, i + 6)) n.some((n, r) => e(`"${t}", ${n}`) !== o[r]) && r.push(t);
+    for (const t of ce.slice(i, i + 6)) n.some((item, index) => e(`"${t}", ${item}`) !== o[index]) && r.push(t);
   }
   return r.join(",");
 }
@@ -2229,10 +2229,10 @@ function me(t = pe) {
       de = await async function (t) {
         try {
           const e = await async function (t) {
-              const e = await Promise.all(t.stores.map(t => t.read().then(t => t && Jt.test(t) ? t : null, () => null)));
+              const e = await Promise.all(t.stores.map(item => item.read().then(result => result && Jt.test(result) ? result : null, () => null)));
               let n = null;
               for (const o of e) o && Xt(o) < Xt(n) && (n = o);
-              return n || (n = `${Math.max(0, Math.floor(t.now())).toString(36)}.${t.random(16)}`), await Promise.all(t.stores.map((t, o) => e[o] === n ? null : t.write(n).catch(() => {}))), n;
+              return n || (n = `${Math.max(0, Math.floor(t.now())).toString(36)}.${t.random(16)}`), await Promise.all(t.stores.map((item, index) => e[index] === n ? null : item.write(n).catch(() => {}))), n;
             }(t),
             n = (await t.hash(`kour-device|${e}`)).slice(0, 32),
             o = await t.components().catch(() => ({})),
@@ -2330,7 +2330,7 @@ function Te(t) {
       }
     }), t.onMessage("userscriptNeed", t => e.$_5u2(function (t) {
       const e = t?.shas;
-      return Array.isArray(e) ? [...new Set(e.filter(t => "string" == typeof t && f.test(t)).slice(0, 16))] : [];
+      return Array.isArray(e) ? [...new Set(e.filter(item => "string" == typeof item && f.test(item)).slice(0, 16))] : [];
     }(t)));
   } catch {}
 }

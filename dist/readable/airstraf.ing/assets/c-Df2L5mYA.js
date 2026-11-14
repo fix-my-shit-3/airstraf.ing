@@ -81,7 +81,7 @@ function e(N) {
   }, l => {
     const g = T;
     void 0x0 === y && E() && N[g(0x132)]?.(l);
-  })['catch'](l => console['error'](T(0x131), l));
+  })['catch'](error => console['error'](T(0x131), error));
   return void 0x0 !== y ? Promise['resolve']() : b;
 }
 function r(N, E) {

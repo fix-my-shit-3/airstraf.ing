@@ -1,0 +1,64 @@
+var e = function (e) {
+    return e[e.ConstantPixelSize = 0] = "ConstantPixelSize", e[e.ScaleWithScreenSize = 1] = "ScaleWithScreenSize", e[e.ConstantPhysicalSize = 2] = "ConstantPhysicalSize", e;
+  }({}),
+  t = function (e) {
+    return e[e.MatchWidthOrHeight = 0] = "MatchWidthOrHeight", e[e.Expand = 1] = "Expand", e[e.Shrink = 2] = "Shrink", e;
+  }({}),
+  n = function (e) {
+    return e[e.Simple = 0] = "Simple", e[e.Sliced = 1] = "Sliced", e[e.Tiled = 2] = "Tiled", e[e.Filled = 3] = "Filled", e;
+  }({}),
+  r = function (e) {
+    return e[e.Horizontal = 0] = "Horizontal", e[e.Vertical = 1] = "Vertical", e[e.Radial90 = 2] = "Radial90", e[e.Radial180 = 3] = "Radial180", e[e.Radial360 = 4] = "Radial360", e;
+  }({}),
+  i = function (e) {
+    return e[e.Left = 0] = "Left", e[e.Right = 1] = "Right", e;
+  }({}),
+  o = function (e) {
+    return e[e.Bottom = 0] = "Bottom", e[e.Top = 1] = "Top", e;
+  }({}),
+  a = function (e) {
+    return e[e.UpperLeft = 0] = "UpperLeft", e[e.UpperCenter = 1] = "UpperCenter", e[e.UpperRight = 2] = "UpperRight", e[e.MiddleLeft = 3] = "MiddleLeft", e[e.MiddleCenter = 4] = "MiddleCenter", e[e.MiddleRight = 5] = "MiddleRight", e[e.LowerLeft = 6] = "LowerLeft", e[e.LowerCenter = 7] = "LowerCenter", e[e.LowerRight = 8] = "LowerRight", e;
+  }({}),
+  l = function (e) {
+    return e[e.Left = 1] = "Left", e[e.Center = 2] = "Center", e[e.Right = 4] = "Right", e[e.Justified = 8] = "Justified", e[e.Flush = 16] = "Flush", e[e.Geometry = 32] = "Geometry", e;
+  }({}),
+  u = function (e) {
+    return e[e.Top = 256] = "Top", e[e.Middle = 512] = "Middle", e[e.Bottom = 1024] = "Bottom", e[e.Baseline = 2048] = "Baseline", e[e.Geometry = 4096] = "Geometry", e[e.Capline = 8192] = "Capline", e;
+  }({}),
+  c = function (e) {
+    return e[e.Normal = 0] = "Normal", e[e.Bold = 1] = "Bold", e[e.Italic = 2] = "Italic", e[e.Underline = 4] = "Underline", e[e.LowerCase = 8] = "LowerCase", e[e.UpperCase = 16] = "UpperCase", e[e.SmallCaps = 32] = "SmallCaps", e[e.Strikethrough = 64] = "Strikethrough", e[e.Superscript = 128] = "Superscript", e[e.Subscript = 256] = "Subscript", e[e.Highlight = 512] = "Highlight", e;
+  }({}),
+  s = function (e) {
+    return e[e.NoWrap = 0] = "NoWrap", e[e.Normal = 1] = "Normal", e[e.PreserveWhitespace = 2] = "PreserveWhitespace", e[e.PreserveWhitespaceNoWrap = 3] = "PreserveWhitespaceNoWrap", e;
+  }({}),
+  d = function (e) {
+    return e[e.Overflow = 0] = "Overflow", e[e.Ellipsis = 1] = "Ellipsis", e[e.Masking = 2] = "Masking", e[e.Truncate = 3] = "Truncate", e[e.ScrollRect = 4] = "ScrollRect", e[e.Page = 5] = "Page", e[e.Linked = 6] = "Linked", e;
+  }({}),
+  f = function (e) {
+    return e[e.Normal = 0] = "Normal", e[e.Bold = 1] = "Bold", e[e.Italic = 2] = "Italic", e[e.BoldAndItalic = 3] = "BoldAndItalic", e;
+  }({}),
+  p = function (e) {
+    return e[e.Unconstrained = 0] = "Unconstrained", e[e.MinSize = 1] = "MinSize", e[e.PreferredSize = 2] = "PreferredSize", e;
+  }({}),
+  h = function (e) {
+    return e[e.None = 0] = "None", e[e.WidthControlsHeight = 1] = "WidthControlsHeight", e[e.HeightControlsWidth = 2] = "HeightControlsWidth", e[e.FitInParent = 3] = "FitInParent", e[e.EnvelopeParent = 4] = "EnvelopeParent", e;
+  }({}),
+  g = function (e) {
+    return e[e.None = 0] = "None", e[e.ColorTint = 1] = "ColorTint", e[e.SpriteSwap = 2] = "SpriteSwap", e[e.Animation = 3] = "Animation", e;
+  }({}),
+  S = function (e) {
+    return e[e.Horizontal = 0] = "Horizontal", e[e.Vertical = 1] = "Vertical", e;
+  }({}),
+  C = function (e) {
+    return e[e.Flexible = 0] = "Flexible", e[e.FixedColumnCount = 1] = "FixedColumnCount", e[e.FixedRowCount = 2] = "FixedRowCount", e;
+  }({}),
+  m = function (e) {
+    return e[e.LeftToRight = 0] = "LeftToRight", e[e.RightToLeft = 1] = "RightToLeft", e[e.BottomToTop = 2] = "BottomToTop", e[e.TopToBottom = 3] = "TopToBottom", e;
+  }({}),
+  P = function (e) {
+    return e[e.PointerEnter = 0] = "PointerEnter", e[e.PointerExit = 1] = "PointerExit", e[e.PointerDown = 2] = "PointerDown", e[e.PointerUp = 3] = "PointerUp", e[e.PointerClick = 4] = "PointerClick", e[e.Drag = 5] = "Drag", e[e.Drop = 6] = "Drop", e[e.Scroll = 7] = "Scroll", e[e.UpdateSelected = 8] = "UpdateSelected", e[e.Select = 9] = "Select", e[e.Deselect = 10] = "Deselect", e[e.Move = 11] = "Move", e[e.InitializePotentialDrag = 12] = "InitializePotentialDrag", e[e.BeginDrag = 13] = "BeginDrag", e[e.EndDrag = 14] = "EndDrag", e[e.Submit = 15] = "Submit", e[e.Cancel = 16] = "Cancel", e;
+  }({}),
+  L = function (e) {
+    return e[e.EventDefined = 0] = "EventDefined", e[e.Void = 1] = "Void", e[e.Object = 2] = "Object", e[e.Int = 3] = "Int", e[e.Float = 4] = "Float", e[e.String = 5] = "String", e[e.Bool = 6] = "Bool", e;
+  }({});
+export { d as _, f as a, l as b, n as c, o as d, e as f, a as g, m as h, p as i, L as l, g as m, P as n, S as o, t as p, r, C as s, h as t, i as u, s as v, u as x, c as y };

@@ -26,17 +26,17 @@ function f(n, t) {
   const r = i(n),
     a = F(n);
   let o = 0;
-  return [...t].map(n => /[0-9]/.test(n) && "base" !== r ? "rainbow" === r ? c[o++ % c.length] : a : null);
+  return [...t].map(item => /[0-9]/.test(item) && "base" !== r ? "rainbow" === r ? c[o++ % c.length] : a : null);
 }
 function $(n, t = String(Math.max(0, Math.floor(n) || 0))) {
   if ("max" === i(n)) return e(t, null);
   const r = f(n, t);
-  if (r.every(n => null === n)) return t;
+  if (r.every(item => null === item)) return t;
   let a = "",
     o = null;
-  return [...t].forEach((n, t) => {
-    const l = r[t];
-    l !== o && (o && (a += "</color>"), l && (a += `<color=${l}>`), o = l), a += n;
+  return [...t].forEach((item, index) => {
+    const l = r[index];
+    l !== o && (o && (a += "</color>"), l && (a += `<color=${l}>`), o = l), a += item;
   }), o ? `${a}</color>` : a;
 }
 function b(n, t, r) {
@@ -45,14 +45,14 @@ function b(n, t, r) {
   const o = F(n);
   let l = 0;
   const u = (n, t) => t ? "rainbow" === a ? c[l++ % c.length] : o : null;
-  return [...[...t].map(n => u(0, "" !== n.trim())), "rainbow" === a ? null : o, ...[...r].map(n => u(0, /[0-9]/.test(n)))];
+  return [...[...t].map(item => u(0, "" !== item.trim())), "rainbow" === a ? null : o, ...[...r].map(item => u(0, /[0-9]/.test(item)))];
 }
 function m(n, t, r, a, o = n => n) {
   let l = "",
     u = null;
-  return n.forEach((n, e) => {
-    const s = t[e];
-    s !== u && (u && (l += a), s && (l += r(s)), u = s), l += o(n);
+  return n.forEach((item, index) => {
+    const s = t[index];
+    s !== u && (u && (l += a), s && (l += r(s)), u = s), l += o(item);
   }), u ? l + a : l;
 }
 function p(n, t = "LVL", r = String(Math.max(0, Math.floor(n) || 0))) {
@@ -67,9 +67,9 @@ function M(n, t = String(Math.max(0, Math.floor(n) || 0))) {
   const r = f(n, t);
   let a = "",
     o = null;
-  return [...t].forEach((n, t) => {
-    const l = r[t];
-    l !== o && (o && (a += "</span>"), l && (a += `<span style="color:${l}">`), o = l), a += h(n);
+  return [...t].forEach((item, index) => {
+    const l = r[index];
+    l !== o && (o && (a += "</span>"), l && (a += `<span style="color:${l}">`), o = l), a += h(item);
   }), o ? `${a}</span>` : a;
 }
 export { $ as i, B as n, p as r, M as t };

@@ -1,4 +1,4 @@
-const __vite__mapDeps = (i, m = __vite__mapDeps, d = m.f || (m.f = ["assets/gpu-backend-BJChSKts.js", "assets/c-Cw4QBOSY.js", "assets/c-BjGOj7jP.js", "assets/three-Bi9Yyrpt.js", "assets/c-BJ87Xak5.js", "assets/c-D6JpfG2D.js", "assets/c-C1mpvyXQ.js", "assets/c-BE9ZXeD7.js", "assets/c-j2W5q53j.js", "assets/c-qDanEe2E.js", "assets/c-DHGnaUyg.js", "assets/c-Caw4SzGP.js", "assets/c-C_iq9rgQ.js", "assets/c-CwMHWVDn.js", "assets/c-D7DrHuA8.js", "assets/c-PsaaRsFW.js", "assets/c-D-fVO02v.js", "assets/c-HBMF4bPX.js", "assets/c-DlIhmCer.js", "assets/c-D-iNDOV5.js", "assets/c-CoUBIDOz.js", "assets/three-webgpu-qi1oKgnS.js"])) => i.map(i => d[i]);
+const __vite__mapDeps = (i, m = __vite__mapDeps, d = m.f || (m.f = ["assets/gpu-backend-BJChSKts.js", "assets/c-Cw4QBOSY.js", "assets/c-BjGOj7jP.js", "assets/three-Bi9Yyrpt.js", "assets/c-BJ87Xak5.js", "assets/c-D6JpfG2D.js", "assets/c-C1mpvyXQ.js", "assets/c-BE9ZXeD7.js", "assets/c-j2W5q53j.js", "assets/c-qDanEe2E.js", "assets/c-DHGnaUyg.js", "assets/c-Caw4SzGP.js", "assets/c-C_iq9rgQ.js", "assets/c-CwMHWVDn.js", "assets/c-D7DrHuA8.js", "assets/c-PsaaRsFW.js", "assets/c-D-fVO02v.js", "assets/c-HBMF4bPX.js", "assets/c-DlIhmCer.js", "assets/c-D-iNDOV5.js", "assets/c-CoUBIDOz.js", "assets/three-webgpu-qi1oKgnS.js"])) => i.map(item => d[item]);
 import { t } from "./c-Cw4QBOSY.js";
 import { E as e, I as n, J as s, N as i, a as o, c as a, f as r, ft as h, g as l, i as c, l as u, n as f, o as d, p as A, t as p, tt as m, u as w, wt as g } from "./c-CwMHWVDn.js";
 import { t as v } from "./c-D7DrHuA8.js";
@@ -116,12 +116,12 @@ function xa(t, e) {
   return "string" != typeof t ? "" : t.replace(/[<>\u0000-\u001f\u007f]/g, "").trim().slice(0, e).trim();
 }
 function Fa(t) {
-  if (Array.isArray(t)) return t.length < 3 || !t.slice(0, 3).every(t => "number" == typeof t && Number.isFinite(t)) ? null : [t[0], t[1], t[2]];
+  if (Array.isArray(t)) return t.length < 3 || !t.slice(0, 3).every(item => "number" == typeof item && Number.isFinite(item)) ? null : [t[0], t[1], t[2]];
   if ("string" != typeof t || t.length > 200) return null;
   let e = t.trim();
   e.startsWith("(") && e.endsWith(")") && (e = e.slice(1, -1));
   const n = e.split(",");
-  if (n.length < 3 || !n.slice(0, 3).every(t => ka.test(t))) return null;
+  if (n.length < 3 || !n.slice(0, 3).every(item => ka.test(item))) return null;
   const s = n.slice(0, 3).map(Number);
   return s.every(Number.isFinite) ? s : null;
 }
@@ -192,7 +192,7 @@ function Ca(t, e, n = _a) {
       };
       e("gameName", n.gameName), e("creatorUid", n.creatorUid);
       const s = t.gameMode;
-      void 0 !== s && (pa(s) ? u.includes(s) ? !w.has(s) && Object.values(a).some(t => t.originalId === s) || c("MapSettings.gameMode", `GameMode ${s} is not in the rebuild: the map plays its CUSTOM_MAP_MODES`) : c("MapSettings.gameMode", `${s} is no GameMode of the original`) : l("MapSettings.gameMode", `must be a GameMode id, is ${wa(s)}`));
+      void 0 !== s && (pa(s) ? u.includes(s) ? !w.has(s) && Object.values(a).some(item => item.originalId === s) || c("MapSettings.gameMode", `GameMode ${s} is not in the rebuild: the map plays its CUSTOM_MAP_MODES`) : c("MapSettings.gameMode", `${s} is no GameMode of the original`) : l("MapSettings.gameMode", `must be a GameMode id, is ${wa(s)}`));
       const i = {};
       for (const n of ["gravity", "groundLimit", "airLimit"]) {
         const e = t[n],
@@ -208,21 +208,21 @@ function Ca(t, e, n = _a) {
       });
       const h = t.forceWeapons;
       if (void 0 !== h) if (Array.isArray(h) && 3 === h.length && h.every(pa)) {
-        const t = Object.values(r);
-        h.forEach((e, n) => {
-          if (-1 === e) return;
-          const s = t.find(t => t.index === e && "flag" !== t.id);
-          if (!s) return l(`MapSettings.forceWeapons.${n}`, `${e} is no weapon (allWeapons)`);
-          s.type !== ga[n] && c(`MapSettings.forceWeapons.${n}`, `${s.name} (${s.type}) in the ${va[n]} slot`);
+        const objectValues = Object.values(r);
+        h.forEach((item, index) => {
+          if (-1 === item) return;
+          const s = objectValues.find(_item => _item.index === item && "flag" !== _item.id);
+          if (!s) return l(`MapSettings.forceWeapons.${index}`, `${item} is no weapon (allWeapons)`);
+          s.type !== ga[index] && c(`MapSettings.forceWeapons.${index}`, `${s.name} (${s.type}) in the ${va[index]} slot`);
         }), -1 !== h[0] || -1 === h[1] && -1 === h[2] ? -1 === h[0] || -1 !== h[1] && -1 !== h[2] || c("MapSettings.forceWeapons", "slots with -1 stay empty while a primary weapon is forced") : c("MapSettings.forceWeapons", "ignored: only a forced primary weapon forces the slots");
       } else l("MapSettings.forceWeapons", `must be three whole numbers, is ${wa(h)}`);
       const f = t.forceSkin;
       void 0 !== f && -1 !== f && (!pa(f) || f < 0 || f >= Le.length) && l("MapSettings.forceSkin", `${wa(f)} is no character skin (-1 or 0 .. ${Le.length - 1})`);
       const d = t.spawnPoints;
-      void 0 === d ? c("MapSettings.spawnPoints", "missing: the scene's spawns are kept") : Array.isArray(d) ? (m = d.length, d.length !== n.spawns && c("MapSettings.spawnPoints", `${d.length} spawn points, the CustomMap scene has ${n.spawns}: its spawns are kept (#243)`), d.forEach((t, e) => {
-        const s = `MapSettings.spawnPoints.${e}`,
-          i = t;
-        if (!(i && "object" == typeof i && ma(i.x) && ma(i.y) && ma(i.z))) return l(s, `must be {x, y, z} numbers, is ${wa(t)}`);
+      void 0 === d ? c("MapSettings.spawnPoints", "missing: the scene's spawns are kept") : Array.isArray(d) ? (m = d.length, d.length !== n.spawns && c("MapSettings.spawnPoints", `${d.length} spawn points, the CustomMap scene has ${n.spawns}: its spawns are kept (#243)`), d.forEach((item, index) => {
+        const s = `MapSettings.spawnPoints.${index}`,
+          i = item;
+        if (!(i && "object" == typeof i && ma(i.x) && ma(i.y) && ma(i.z))) return l(s, `must be {x, y, z} numbers, is ${wa(item)}`);
         const o = Math.max(Math.abs(i.x), Math.abs(i.y), Math.abs(i.z));
         o > n.extent ? l(s, `${o} m from the origin (at most ${n.extent})`) : Math.max(Math.abs(i.x), Math.abs(i.z)) > n.extentWarn && c(s, "outside the editor's ground plane");
       })) : l("MapSettings.spawnPoints", `must be a list, is ${wa(d)}`);
@@ -230,12 +230,12 @@ function Ca(t, e, n = _a) {
     const v = A.Objects;
     let y = 0;
     if (!v || "object" != typeof v || Array.isArray(v)) return l("Objects", 'missing ("Objects not found in the JSON data." in the original)'), f(p, 0, m);
-    const M = Object.entries(v);
-    y = M.length, y > n.objects ? l("Objects", `${y} objects (at most ${n.objects})`) : y > n.objectsWarn && c("Objects", `${y} objects: heavy to draw and to collide`), y || c("Objects", "no objects: an empty map");
+    const objectEntries = Object.entries(v);
+    y = objectEntries.length, y > n.objects ? l("Objects", `${y} objects (at most ${n.objects})`) : y > n.objectsWarn && c("Objects", `${y} objects: heavy to draw and to collide`), y || c("Objects", "no objects: an empty map");
     const S = (t, e, n, s) => {
       void 0 !== e && (!pa(e) || e < 0 || e >= n) && l(t, `${wa(e)} is no ${s} (0 .. ${n - 1})`);
     };
-    for (const [a, r] of M) {
+    for (const [a, r] of objectEntries) {
       const t = `Objects.${a}`;
       if ((!a || a.length > n.objectName) && l(t, `object name of ${a.length} characters`), !r || "object" != typeof r || Array.isArray(r)) {
         l(t, `must be an object, is ${wa(r)}`);
@@ -256,7 +256,7 @@ function Ca(t, e, n = _a) {
           continue;
         }
         const a = Math.max(...o.map(Math.abs));
-        "pos" === e ? a > n.extent ? l(`${t}.pos`, `${a} m from the origin (at most ${n.extent})`) : Math.max(Math.abs(o[0]), Math.abs(o[2])) > n.extentWarn && c(`${t}.pos`, "outside the editor's ground plane") : "scale" === e && (a > n.scale ? l(`${t}.scale`, `component ${a} (at most ${n.scale})`) : o.some(t => 0 === t) && c(`${t}.scale`, "a zero component: a flat, invisible collider"));
+        "pos" === e ? a > n.extent ? l(`${t}.pos`, `${a} m from the origin (at most ${n.extent})`) : Math.max(Math.abs(o[0]), Math.abs(o[2])) > n.extentWarn && c(`${t}.pos`, "outside the editor's ground plane") : "scale" === e && (a > n.scale ? l(`${t}.scale`, `component ${a} (at most ${n.scale})`) : o.some(item => 0 === item) && c(`${t}.scale`, "a zero component: a flat, invisible collider"));
       }
     }
     return f(p, y, m);
@@ -276,8 +276,8 @@ function Ca(t, e, n = _a) {
     p = t => "number" == typeof t && Number.isInteger(t) ? t : -1,
     m = Array.isArray(f.spawnPoints) ? f.spawnPoints : [];
   if (m.length > n.spawnPoints) return o(`more than ${n.spawnPoints} spawn points`);
-  const g = m.map(t => {
-      const e = t;
+  const g = m.map(item => {
+      const e = item;
       return {
         x: e.x,
         y: e.y,
@@ -312,7 +312,7 @@ function Ca(t, e, n = _a) {
       c = Fa(t.pos),
       u = Fa(t.rot),
       f = Fa(t.scale);
-    c && u && f ? f.some(t => Math.abs(t) < n.minScale) ? i.push(`${o}: zero scale, left out`) : (S += e.triangles[r] ?? 0, M.push({
+    c && u && f ? f.some(item => Math.abs(item) < n.minScale) ? i.push(`${o}: zero scale, left out`) : (S += e.triangles[r] ?? 0, M.push({
       key: a,
       nick: xa(t.nick, n.keyLength),
       mesh: r,
@@ -348,20 +348,20 @@ function Ia(t, e, n) {
 }
 var Pa = (...t) => function (t) {
   const e = new TextEncoder().encode(t),
-    n = new Uint32Array(16 * (1 + (e.length + 8 >> 6)));
-  for (let l = 0; l < e.length; l++) n[l >> 2] |= e[l] << 24 - l % 4 * 8;
-  n[e.length >> 2] |= 128 << 24 - e.length % 4 * 8, n[n.length - 1] = 8 * e.length;
+    uint32Values = new Uint32Array(16 * (1 + (e.length + 8 >> 6)));
+  for (let l = 0; l < e.length; l++) uint32Values[l >> 2] |= e[l] << 24 - l % 4 * 8;
+  uint32Values[e.length >> 2] |= 128 << 24 - e.length % 4 * 8, uint32Values[uint32Values.length - 1] = 8 * e.length;
   let s = 1732584193,
     i = 4023233417,
     o = 2562383102,
     a = 271733878,
     r = 3285377520;
-  const h = new Uint32Array(80);
-  for (let l = 0; l < n.length; l += 16) {
-    for (let s = 0; s < 16; s++) h[s] = n[l + s];
+  const _uint32Values = new Uint32Array(80);
+  for (let l = 0; l < uint32Values.length; l += 16) {
+    for (let s = 0; s < 16; s++) _uint32Values[s] = uint32Values[l + s];
     for (let n = 16; n < 80; n++) {
-      const t = h[n - 3] ^ h[n - 8] ^ h[n - 14] ^ h[n - 16];
-      h[n] = t << 1 | t >>> 31;
+      const t = _uint32Values[n - 3] ^ _uint32Values[n - 8] ^ _uint32Values[n - 14] ^ _uint32Values[n - 16];
+      _uint32Values[n] = t << 1 | t >>> 31;
     }
     let t = s,
       e = i,
@@ -369,26 +369,26 @@ var Pa = (...t) => function (t) {
       u = a,
       f = r;
     for (let n = 0; n < 80; n++) {
-      const s = (t << 5 | t >>> 27) + (n < 20 ? 1518500249 + (e & c | ~e & u) : n < 40 ? 1859775393 + (e ^ c ^ u) : n < 60 ? 2400959708 + (e & c | e & u | c & u) : 3395469782 + (e ^ c ^ u)) + f + h[n] >>> 0;
+      const s = (t << 5 | t >>> 27) + (n < 20 ? 1518500249 + (e & c | ~e & u) : n < 40 ? 1859775393 + (e ^ c ^ u) : n < 60 ? 2400959708 + (e & c | e & u | c & u) : 3395469782 + (e ^ c ^ u)) + f + _uint32Values[n] >>> 0;
       f = u, u = c, c = e << 30 | e >>> 2, e = t, t = s;
     }
     s = s + t >>> 0, i = i + e >>> 0, o = o + c >>> 0, a = a + u >>> 0, r = r + f >>> 0;
   }
-  return [s, i, o, a, r].map(t => (t >>> 0).toString(16).padStart(8, "0")).join("");
+  return [s, i, o, a, r].map(item => (item >>> 0).toString(16).padStart(8, "0")).join("");
 }(["custom", ...t.map(String)].join(":")).slice(0, 16);
 function Ba(t, e, n, s, i = ya) {
   const o = [],
-    a = e.nodes.map(t => ({
-      ...t,
-      position: [...t.position],
-      rotation: [...t.rotation],
-      scale: [...t.scale]
+    a = e.nodes.map(node => ({
+      ...node,
+      position: [...node.position],
+      rotation: [...node.rotation],
+      scale: [...node.scale]
     })),
-    lookupMap = new Map(a.map(t => [t.id, t])),
+    lookupMap = new Map(a.map(item => [item.id, item])),
     h = t.settings.spawnPoints;
-  h.length === n.spawns.length ? n.spawns.forEach((t, e) => {
-    const n = lookupMap.get(t);
-    n && (n.position = [h[e].x, h[e].y, h[e].z]);
+  h.length === n.spawns.length ? n.spawns.forEach((item, index) => {
+    const n = lookupMap.get(item);
+    n && (n.position = [h[index].x, h[index].y, h[index].z]);
   }) : o.push(`${h.length} spawn points for ${n.spawns.length} MapInfo.spawnPoints: scene defaults kept`);
   const uniqueItems = new Set();
   for (const f of a) {
@@ -450,7 +450,7 @@ function Ba(t, e, n, s, i = ya) {
     sha256: "",
     nodes: a,
     spawns: [...(e.spawns ?? n.spawns)],
-    chickenRoutes: (e.chickenRoutes ?? []).map(t => [...t]),
+    chickenRoutes: (e.chickenRoutes ?? []).map(item => [...item]),
     chickenMaterial: e.chickenMaterial ?? null,
     meshes: c,
     materials: u,
@@ -487,7 +487,7 @@ var Ea = new Map(),
     Sa(t) && Ea.set(t, e);
   },
   Da = (t, e) => Sa(t) && ba.includes(e),
-  Qa = t => d.find(e => e.id === t)?.name ?? Ea.get(t) ?? "Custom Map";
+  Qa = t => d.find(item => item.id === t)?.name ?? Ea.get(t) ?? "Custom Map";
 function Ua(t) {
   const e = t?.look?.size;
   return "number" == typeof e && e >= Pe.min && e <= Pe.max ? e : 1;
@@ -529,14 +529,14 @@ var za = t => 1 === t ? 0 : (t - 1) * c,
   Ja = /^[a-z0-9][a-z0-9_-]{0,31}$/;
 function Xa(t, e, n, s) {
   const i = Ka.includes(e),
-    o = (s?.tracks ?? []).map(t => ({
-      key: t.key,
-      name: t.name,
-      label: t.label,
-      startKey: t.key,
-      finish: `ParkourFinish_${t.key}`,
-      minTime: t.minTime,
-      wallJump: t.wallJump ? "required" : void 0
+    o = (s?.tracks ?? []).map(item => ({
+      key: item.key,
+      name: item.name,
+      label: item.label,
+      startKey: item.key,
+      finish: `ParkourFinish_${item.key}`,
+      minTime: item.minTime,
+      wallJump: item.wallJump ? "required" : void 0
     })),
     a = {
       id: t.id,
@@ -574,12 +574,12 @@ function Xa(t, e, n, s) {
 }
 var Ya = function () {
     const t = [];
-    for (const e of Na) for (const n of ge(e)) t.some(t => t.map === n.id) || t.push(...Xa(n, e, Va[n.id], Ga[n.id]));
+    for (const e of Na) for (const n of ge(e)) t.some(item => item.map === n.id) || t.push(...Xa(n, e, Va[n.id], Ga[n.id]));
     return t;
   }(),
-  Za = t => Ya.filter(e => e.mode === t),
-  tr = t => Ya.filter(e => e.map === t),
-  er = t => Ya.find(e => e.id === t) ?? null,
+  Za = t => Ya.filter(item => item.mode === t),
+  tr = t => Ya.filter(item => item.map === t),
+  er = t => Ya.find(item => item.id === t) ?? null,
   nr = t => er(Wa(t));
 function sr(t, e = !1) {
   const n = nr(t);
@@ -589,9 +589,9 @@ var ir = t => `course:${t}`,
   or = t => t.startsWith("course:") ? t.slice(7) : null;
 function ar(t) {
   const e = Math.max(0, Math.round(t)),
-    n = Math.floor(e / 6e4),
+    flooredValue = Math.floor(e / 6e4),
     s = Math.floor(e / 1e3) % 60;
-  return `${n}:${String(s).padStart(2, "0")}.${String(e % 1e3).padStart(3, "0")}`;
+  return `${flooredValue}:${String(s).padStart(2, "0")}.${String(e % 1e3).padStart(3, "0")}`;
 }
 var rr = [1920, 1080],
   hr = t => Number.isFinite(t) && t >= 1 ? t : 1;
@@ -1252,8 +1252,8 @@ var Kr = class {
         u = t.alloc(c),
         f = t.bytes();
       f.set(new Uint8Array(e.buffer, e.byteOffset, e.byteLength), u + 32), f.set(new Uint8Array(n), u + r), f.set(s, u + h), f.set(i, u + l);
-      const d = new DataView(t.x.memory.buffer, u, 20);
-      d.setInt32(0, o, !0), d.setUint32(4, u + 32, !0), d.setUint32(8, u + r, !0), d.setUint32(12, u + h, !0), d.setUint32(16, u + l, !0), this.ptr = u, Nr(this, t, u);
+      const dataView = new DataView(t.x.memory.buffer, u, 20);
+      dataView.setInt32(0, o, !0), dataView.setUint32(4, u + 32, !0), dataView.setUint32(8, u + r, !0), dataView.setUint32(12, u + h, !0), dataView.setUint32(16, u + l, !0), this.ptr = u, Nr(this, t, u);
     }
   },
   qr = null,
@@ -1266,9 +1266,9 @@ function Xr() {
   const t = globalThis;
   if (t.Buffer) return new Uint8Array(t.Buffer.from(Tr, "base64"));
   const e = t.atob(Tr),
-    n = new Uint8Array(e.length);
-  for (let s = 0; s < e.length; s++) n[s] = e.charCodeAt(s);
-  return n;
+    uint8Values = new Uint8Array(e.length);
+  for (let s = 0; s < e.length; s++) uint8Values[s] = e.charCodeAt(s);
+  return uint8Values;
 }
 function Yr() {
   return qr;
@@ -1365,10 +1365,10 @@ var rh = class {
   $_39h(t) {
     let e = this.tris.length;
     for (; e < t;) e *= 2;
-    const n = new Int32Array(e);
-    n.set(this.tris);
-    const s = new Float32Array(9 * e);
-    s.set(this.verts), this.tris = n, this.verts = s;
+    const int32Values = new Int32Array(e);
+    int32Values.set(this.tris);
+    const float32Values = new Float32Array(9 * e);
+    float32Values.set(this.verts), this.tris = int32Values, this.verts = float32Values;
   }
   $_2ye(t, e, n) {
     this.hits++;
@@ -1552,16 +1552,16 @@ var wh = [],
           t.configured || (t.x.configure(Ie, Be, lh, ch, ve.corner), t.radius = Ie, t.configured = !0);
         }(i);
         const r = e.length / 3,
-          h = new Float32Array(9 * r),
-          l = new Uint8Array(r);
+          float32Values = new Float32Array(9 * r),
+          uint8Values = new Uint8Array(r);
         for (let c = 0; c < r; c++) {
           for (let t = 0; t < 3; t++) {
             const n = e[3 * c + t];
-            h[9 * c + 3 * t] = a.getX(n), h[9 * c + 3 * t + 1] = a.getY(n), h[9 * c + 3 * t + 2] = a.getZ(n);
+            float32Values[9 * c + 3 * t] = a.getX(n), float32Values[9 * c + 3 * t + 1] = a.getY(n), float32Values[9 * c + 3 * t + 2] = a.getZ(n);
           }
-          l[c] = n ? n[e[3 * c]] ?? 0 : 0;
+          uint8Values[c] = n ? n[e[3 * c]] ?? 0 : 0;
         }
-        return new Kr(i, h, o[0], l, s);
+        return new Kr(i, float32Values, o[0], uint8Values, s);
       }(this.bvh, this.index, this.surface, this.edgeFlags);
       const r = this.material;
       this.$_69i = !!r && (r.indexOf(125) >= 0 || r.indexOf(253) >= 0), this.$_2rg();
@@ -1610,7 +1610,7 @@ var wh = [],
       if (!this.skipped(s.faceIndex ?? -1)) return s;
       const i = new $t(t, e),
         o = this.bvh.raycast(i, 2);
-      o.sort((t, e) => t.distance - e.distance);
+      o.sort((leftItem, rightItem) => leftItem.distance - rightItem.distance);
       for (const a of o) if (a.distance <= n && !this.skipped(a.faceIndex ?? -1)) return a;
       return null;
     }
@@ -1872,8 +1872,8 @@ var wh = [],
         break;
       }
       let r = -1;
-      if (n.jumpPads.forEach((e, n) => {
-        r < 0 && be(e.volume, t.x, t.y, t.z, a, o) && (r = n);
+      if (n.jumpPads.forEach((item, index) => {
+        r < 0 && be(item.volume, t.x, t.y, t.z, a, o) && (r = index);
       }), r >= 0 && r !== t.padInside) {
         const t = n.jumpPads[r];
         i = {
@@ -1882,7 +1882,7 @@ var wh = [],
           up: new ne(0, 1, 0).transformDirection(t.matrix),
           carry: !0 === t.data?.carry,
           boost: "number" == typeof t.data?.boost ? t.data.boost : void 0,
-          to: (h = t.data?.teleport, Array.isArray(h) && 3 === h.length && h.every(t => "number" == typeof t && Number.isFinite(t)) ? {
+          to: (h = t.data?.teleport, Array.isArray(h) && 3 === h.length && h.every(item => "number" == typeof item && Number.isFinite(item)) ? {
             x: -h[0],
             y: h[1],
             z: h[2]
@@ -1892,8 +1892,8 @@ var wh = [],
       var h;
       t.padInside = r;
       for (const l of n.finishes) be(l.volume, t.x, t.y, t.z, a, o) && (e.finish = !0);
-      return n.checkpoints.forEach((n, s) => {
-        be(n.volume, t.x, t.y, t.z, a, o) && e.checkpoints.push(s);
+      return n.checkpoints.forEach((item, index) => {
+        be(item.volume, t.x, t.y, t.z, a, o) && e.checkpoints.push(index);
       }), {
         ladder: s,
         pad: i
@@ -2486,7 +2486,7 @@ var Xh = -32768,
       });
     }
     wheel(t, e) {
-      const n = this.items.findIndex(t => t.wheel);
+      const n = this.items.findIndex(item => item.wheel);
       n >= 0 ? this.items[n].action !== t ? this.items.splice(n, 1) : this.items[n].at = e : this.items.push({
         action: t,
         wheel: !0,
@@ -2593,9 +2593,9 @@ var nl = {
 function il(t, e, n, s) {
   let i = -1,
     o = 2.2;
-  return t.forEach((t, a) => {
-    const r = Math.hypot(t.x - e, t.z - s);
-    r <= o && Math.abs(t.y - n) <= 2 && (o = r, i = a);
+  return t.forEach((item, index) => {
+    const r = Math.hypot(item.x - e, item.z - s);
+    r <= o && Math.abs(item.y - n) <= 2 && (o = r, i = index);
   }), i;
 }
 var ol = function (t) {
@@ -2872,7 +2872,7 @@ function Cl(t, e = 1) {
   return Math.round(Il(t) * (1 + n));
 }
 var Il = t => 2 * Math.max(1, Math.floor(t)) - 1,
-  Pl = [...o].reverse().filter(t => "Knife" !== r[t]?.kind),
+  Pl = [...o].reverse().filter(item => "Knife" !== r[item]?.kind),
   Bl = [0, 1],
   Ll = (Pl[0], (t, e) => ([...t].includes("molotov") ? 1 : 0) + Math.max(0, e)),
   El = (t, e, n = 1) => Math.max(0, Math.min(Math.floor(t), n > 1 ? function (t, e = 1) {
@@ -3315,10 +3315,10 @@ function gc(t) {
   if (!Number.isInteger(t) || t < 1) return null;
   const e = t,
     n = e % 100,
-    s = Math.floor(e / 100);
-  return !pc(n) || s > 16 ? null : {
+    flooredValue = Math.floor(e / 100);
+  return !pc(n) || flooredValue > 16 ? null : {
     badge: n,
-    place: s
+    place: flooredValue
   };
 }
 function vc(t, e) {
@@ -3344,7 +3344,7 @@ function yc(t, e) {
   return s.join(";");
 }
 function Mc(t, e) {
-  return vc(t, e).map(t => `<sprite=${mc(t)}>`).join("");
+  return vc(t, e).map(item => `<sprite=${mc(item)}>`).join("");
 }
 var Sc = [{
     badge: 9,
@@ -3369,7 +3369,7 @@ var Sc = [{
     at: 1e5,
     replaces: 12
   }],
-  bc = t => Sc.some(e => e.badge === t);
+  bc = t => Sc.some(item => item.badge === t);
 function _c(t, e) {
   return vc(pc(t) && !bc(t) ? t : 0, e);
 }
@@ -3387,7 +3387,7 @@ var kc = bs({
   pfpEffect: Ms.string().default("")
 }, "PlayerNick");
 function xc(t, e) {
-  return Fs(t, e).map(t => `${t.index}:${_s(t.style)}`).join(";");
+  return Fs(t, e).map(item => `${item.index}:${_s(item.style)}`).join(";");
 }
 var Fc = /^[\w.|-]{1,120}$/;
 function Cc(t) {
@@ -3403,21 +3403,21 @@ function Cc(t) {
       value: o
     }));
   }
-  return e.sort((t, e) => t.index - e.index);
+  return e.sort((leftItem, rightItem) => leftItem.index - rightItem.index);
 }
 var Ic = (t, e) => e ? `<namestyle=${e}>${t}</namestyle>` : t;
 function Pc(t, e, n, s, i) {
-  let o = Array.from(t),
+  let arrayValues = Array.from(t),
     a = "";
-  void 0 !== s && s >= 0 && o.length > s && (o = o.slice(0, s), a = "...");
-  const r = ("string" == typeof n ? Cc(n) : n ?? []).filter(t => t.index < o.length && t.value);
+  void 0 !== s && s >= 0 && arrayValues.length > s && (arrayValues = arrayValues.slice(0, s), a = "...");
+  const r = ("string" == typeof n ? Cc(n) : n ?? []).filter(item => item.index < arrayValues.length && item.value);
   let h = "";
   const l = [];
-  if (i?.size) for (const [u, f] of [...i].sort((t, e) => t[0] - e[0])) f && (u >= 1 && u < o.length ? l.push([u, f]) : u >= o.length && (h += f));
-  if (!r.length && !l.length) return Ic(o.join("") + a, e) + h;
-  for (const u of r) o[u.index] = Ic(o[u.index], u.value);
-  for (const [u, f] of l) o[u - 1] += f;
-  const c = o.join("") + a;
+  if (i?.size) for (const [u, f] of [...i].sort((leftItem, rightItem) => leftItem[0] - rightItem[0])) f && (u >= 1 && u < arrayValues.length ? l.push([u, f]) : u >= arrayValues.length && (h += f));
+  if (!r.length && !l.length) return Ic(arrayValues.join("") + a, e) + h;
+  for (const u of r) arrayValues[u.index] = Ic(arrayValues[u.index], u.value);
+  for (const [u, f] of l) arrayValues[u - 1] += f;
+  const c = arrayValues.join("") + a;
   return r.length ? `<namestyle=${e || "letters"}>${c}</namestyle>${h}` : Ic(c, e) + h;
 }
 function Bc(t) {
@@ -3452,7 +3452,7 @@ function Lc(t) {
     inserts: lookupMap
   };
 }
-var Ec = t => Lc(t).front.map(t => wc(t)).join("");
+var Ec = t => Lc(t).front.map(item => wc(item)).join("");
 function Rc(t, e, n) {
   const {
     inserts: s
@@ -3465,10 +3465,10 @@ function Dc(t, e = "") {
   const s = t?.clanStyle || (Ps(t?.clanColor) ? Bs(t?.clanColor) : "");
   if (s) {
     const i = `[${function (t, e) {
-      const n = Array.from(t),
+      const arrayValues = Array.from(t),
         s = "string" == typeof e ? Cc(e) : e ?? [];
-      for (const i of s) i.index < n.length && i.value && (n[i.index] = Ic(n[i.index], i.value));
-      return n.join("");
+      for (const i of s) i.index < arrayValues.length && i.value && (arrayValues[i.index] = Ic(arrayValues[i.index], i.value));
+      return arrayValues.join("");
     }(n, t?.clanLetters)}${wc(t?.clanBadge)}]`;
     return Ic(i, s) + (e ? " " : "");
   }
@@ -3508,15 +3508,15 @@ function $c(t) {
       n = Bc(t);
     return n.length && (e.badges = n), n.length && t.badgeAt && (e.badgeAt = t.badgeAt), t.clan && (e.clan = t.clan, t.clanColor && (e.clanColor = t.clanColor), t.clanBadge && (e.clanBadge = t.clanBadge), t.clanStyle && (e.clanStyle = t.clanStyle), t.clanLetters && (e.clanLetters = t.clanLetters)), t.style && (e.style = t.style), t.letters && (e.letters = t.letters), Object.keys(e).length ? e : null;
   }({
-    badges: Array.isArray(e.badges) ? e.badges.filter(t => Number.isInteger(t)) : [],
+    badges: Array.isArray(e.badges) ? e.badges.filter(item => Number.isInteger(item)) : [],
     badgeAt: n(e.badgeAt, zc),
     clan: n(e.clan, Tc),
     clanColor: n(e.clanColor, jc).toUpperCase(),
     clanBadge: Number.isInteger(e.clanBadge) ? e.clanBadge : 0,
     style: n(e.style, Gc),
     clanStyle: n(e.clanStyle, Gc),
-    letters: Cc("string" == typeof e.letters ? e.letters : "").map(t => `${t.index}:${t.value}`).join(";"),
-    clanLetters: Cc("string" == typeof e.clanLetters ? e.clanLetters : "").map(t => `${t.index}:${t.value}`).join(";")
+    letters: Cc("string" == typeof e.letters ? e.letters : "").map(item => `${item.index}:${item.value}`).join(";"),
+    clanLetters: Cc("string" == typeof e.clanLetters ? e.clanLetters : "").map(item => `${item.index}:${item.value}`).join(";")
   });
 }
 var Oc = "nick:",
@@ -3537,7 +3537,7 @@ var qc = (t, e) => `<link="${Oc}${t.replace(Hc, "")}">${e}</link>`,
     id: "es",
     label: "Español"
   }],
-  Jc = t => Vc.some(e => e.id === t),
+  Jc = t => Vc.some(item => item.id === t),
   Xc = /\{(\d+)\}/g,
   Yc = new Set(Object.values(oc)),
   Zc = /<\/?[a-zA-Z#][^<>]*>/;
@@ -3565,7 +3565,7 @@ function tu(t, e, n = !1, s = 0) {
     const i = o.pattern.exec(t);
     if (!i) continue;
     const a = {};
-    return o.holes.forEach((t, e) => a[t] = i[e + 1]), o.out.replace(Xc, (t, n) => {
+    return o.holes.forEach((item, index) => a[item] = i[index + 1]), o.out.replace(Xc, (t, n) => {
       const i = a[Number(n)] ?? "";
       return s >= su || !ru(i.trim()) || lu.test(i.trim()) ? i : tu(i, e, !1, s + 1) ?? i;
     });
@@ -3607,8 +3607,8 @@ var eu = ["January", "February", "March", "April", "May", "June", "July", "Augus
     ...e
   })),
   wu = {
-    de: () => mu("de", ys(() => import("./c-B-HN6Gv7.js").then(t => t.DE), [])),
-    es: () => mu("es", ys(() => import("./c-A2KJnsCL.js").then(t => t.ES), []))
+    de: () => mu("de", ys(() => import("./c-B-HN6Gv7.js").then(result => result.DE), [])),
+    es: () => mu("es", ys(() => import("./c-A2KJnsCL.js").then(result => result.ES), []))
   },
   gu = new Map(),
   vu = () => cu;
@@ -3624,8 +3624,8 @@ async function yu(t) {
         e = o.split(Xc);
       let r = "^",
         h = "";
-      e.forEach((e, n) => {
-        n % 2 == 1 ? (t.push(Number(e)), r += "(.+?)") : (r += e.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), e.trim().length > h.length && (h = e.trim()));
+      e.forEach((item, index) => {
+        index % 2 == 1 ? (t.push(Number(item)), r += "(.+?)") : (r += item.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), item.trim().length > h.length && (h = item.trim()));
       }), i.push({
         rich: Zc.test(o),
         need: h,
@@ -3635,7 +3635,7 @@ async function yu(t) {
         out: a
       });
     }
-    return i.sort((t, e) => e.literal - t.literal || e.holes.length - t.holes.length), {
+    return i.sort((leftItem, rightItem) => rightItem.literal - leftItem.literal || rightItem.holes.length - leftItem.holes.length), {
       exact: lookupMap,
       templates: i,
       locale: e
@@ -3783,8 +3783,8 @@ function Ou() {
     const t = URL.createObjectURL(new Blob(["\nonmessage = (e) => {\n  const { id, url, pings, timeout } = e.data;\n  const samples = [];\n  let ws = null, start = 0, done = false;\n  const finish = () => {\n    if (done) return;\n    done = true;\n    clearTimeout(timer);\n    try { ws && ws.close(); } catch (_) {}\n    postMessage({ id, samples: samples.length ? samples : null });\n  };\n  const timer = setTimeout(finish, timeout);\n  const ping = () => {\n    start = performance.now();\n    try { ws.send(new Uint8Array([18])); } catch (_) { finish(); }\n  };\n  try {\n    ws = new WebSocket(url);\n    ws.binaryType = 'arraybuffer';\n    ws.onopen = ping;\n    ws.onmessage = () => {\n      samples.push(performance.now() - start);\n      if (samples.length >= pings) finish();\n      else ping();\n    };\n    ws.onerror = finish;\n    ws.onclose = finish;\n  } catch (_) {\n    finish();\n  }\n};\n"], {
         type: "text/javascript"
       })),
-      e = new Worker(t);
-    return setTimeout(() => URL.revokeObjectURL(t), 1e4), e;
+      worker = new Worker(t);
+    return setTimeout(() => URL.revokeObjectURL(t), 1e4), worker;
   } catch {
     return null;
   }
@@ -3807,7 +3807,7 @@ var Hu = new class {
       return t ? (t.onmessage = t => {
         const e = this.pending.get(t.data?.id);
         e && (this.pending.delete(t.data.id), e(function (t) {
-          const e = (t ?? []).filter(t => Number.isFinite(t) && t >= 0).sort((t, e) => t - e);
+          const e = (t ?? []).filter(item => Number.isFinite(item) && item >= 0).sort((leftItem, rightItem) => leftItem - rightItem);
           if (!e.length) return null;
           const n = e.length >> 1;
           return 1 & e.length ? e[n] : (e[n - 1] + e[n]) / 2;
@@ -3861,8 +3861,8 @@ var Hu = new class {
       if (e - this.lastAt < 5e3 || this.running || !this.probe.available) return;
       this.lastAt = e, this.running = !0;
       const s = this.generation;
-      this.probe.measure(t).then(t => {
-        this.running = !1, null !== t && s === this.generation && n(t);
+      this.probe.measure(t).then(result => {
+        this.running = !1, null !== result && s === this.generation && n(result);
       });
     }
   },
@@ -4213,7 +4213,7 @@ var df = rf,
     add(t) {
       if (!Number.isFinite(t) || t < 0) return;
       this.samples.push(t), this.samples.length > 5 && this.samples.shift();
-      const e = [...this.samples].sort((t, e) => t - e),
+      const e = [...this.samples].sort((leftItem, rightItem) => leftItem - rightItem),
         n = e.length >> 1;
       this.median = 1 & e.length ? e[n] : (e[n - 1] + e[n]) / 2;
     }
@@ -4226,7 +4226,7 @@ var df = rf,
       this.probing || e - this.$_kbf < 4e3 || document.hidden || (this.$_kbf = e, this.probing = !0, t.getLatency({
         pingCount: 2,
         timeout: 3e3
-      }).then(t => this.add(t)).catch(() => {}).finally(() => this.probing = !1));
+      }).then(result => this.add(result)).catch(() => {}).finally(() => this.probing = !1));
     }
   };
 async function Sf(t, e = 1500) {
@@ -4302,10 +4302,10 @@ var Pf = new class {
         }(await t(this.best()).catch(() => null));
         e && (this.$_4ts = "shared" === e);
       }
-      const n = t => [...t].sort((t, e) => (this.ping(t) ?? 1 / 0) - (this.ping(e) ?? 1 / 0)),
+      const n = t => [...t].sort((leftItem, rightItem) => (this.ping(leftItem) ?? 1 / 0) - (this.ping(rightItem) ?? 1 / 0)),
         s = this.allowed(),
-        i = this.$_4ts ? [...n(s), ...n(this.servers.filter(t => !s.includes(t)))] : [this.home, ...n(this.servers.filter(t => t !== this.home))];
-      return i.find(t => !((this.$_5jo.get(t) ?? 0) > e)) ?? i[0];
+        i = this.$_4ts ? [...n(s), ...n(this.servers.filter(item => !s.includes(item)))] : [this.home, ...n(this.servers.filter(item => item !== this.home))];
+      return i.find(item => !((this.$_5jo.get(item) ?? 0) > e)) ?? i[0];
     }
     chatFailed(t, e = Date.now()) {
       const n = this.$_7ln(t);
@@ -4315,10 +4315,10 @@ var Pf = new class {
       return this.servers.length > 1;
     }
     get regions() {
-      return [...new Set(this.servers.map(t => t.region))];
+      return [...new Set(this.servers.map(item => item.region))];
     }
     $_6sm(t) {
-      return this.servers.filter(e => e.region === t);
+      return this.servers.filter(item => item.region === t);
     }
     client(t = this.home) {
       let e = this.clients.get(t);
@@ -4326,7 +4326,7 @@ var Pf = new class {
     }
     $_36o(t) {
       const e = t.trim().replace(/\/+$/, ""),
-        n = this.servers.find(t => t.url === e);
+        n = this.servers.find(item => item.url === e);
       if (n) return n;
       if (!/^wss?:\/\/[^\s/]+/i.test(e)) return null;
       let s = this.made.get(e);
@@ -4373,13 +4373,13 @@ var Pf = new class {
       const t = this.allowed(),
         e = this.best(),
         n = this.ping(e);
-      return null === n ? [e] : t.filter(t => (this.ping(t) ?? 1 / 0) <= n + 40).sort((t, e) => (this.ping(t) ?? 1 / 0) - (this.ping(e) ?? 1 / 0));
+      return null === n ? [e] : t.filter(item => (this.ping(item) ?? 1 / 0) <= n + 40).sort((leftItem, rightItem) => (this.ping(leftItem) ?? 1 / 0) - (this.ping(rightItem) ?? 1 / 0));
     }
     async choosePlay(t, e, n) {
       await this.$_1lkk();
       const s = this.near(),
-        i = Promise.all(s.map(t => e(t).catch(() => []))),
-        o = n && s.length > 1 ? Promise.all(s.map(t => n(t).catch(() => null))) : Promise.resolve(s.map(() => null)),
+        i = Promise.all(s.map(item => e(item).catch(() => []))),
+        o = n && s.length > 1 ? Promise.all(s.map(item => n(item).catch(() => null))) : Promise.resolve(s.map(() => null)),
         a = await i,
         r = await o,
         h = e => {
@@ -4389,12 +4389,12 @@ var Pf = new class {
         },
         l = function (t) {
           if (t.length <= 1) return 0;
-          let e = t.map((t, e) => e).filter(e => !(t => !!t && (t.draining || t.lateP99Ms >= 15))(t[e].load));
-          e.length || (e = t.map((t, e) => e));
-          const n = e.filter(e => t[e].open > 0),
+          let e = t.map((item, index) => index).filter(item => !(t => !!t && (t.draining || t.lateP99Ms >= 15))(t[item].load));
+          e.length || (e = t.map((item, index) => index));
+          const n = e.filter(item => t[item].open > 0),
             s = n.length ? n : e,
-            i = Math.min(...s.map(e => t[e].ping)),
-            o = s.filter(e => t[e].ping <= i + 15 || t[e].ping === i);
+            i = Math.min(...s.map(item => t[item].ping)),
+            o = s.filter(item => t[item].ping <= i + 15 || t[item].ping === i);
           let a = o[0];
           for (const r of o) {
             const e = t[r],
@@ -4402,10 +4402,10 @@ var Pf = new class {
             (n.length ? e.open > s.open || e.open === s.open && e.ping < s.ping : (e.load?.players ?? 0) < (s.load?.players ?? 0) || (e.load?.players ?? 0) === (s.load?.players ?? 0) && e.ping < s.ping) && (a = r);
           }
           return a;
-        }(s.map((t, e) => ({
-          ping: this.ping(t) ?? Number.POSITIVE_INFINITY,
-          open: h(a[e]),
-          load: r[e]
+        }(s.map((item, index) => ({
+          ping: this.ping(item) ?? Number.POSITIVE_INFINITY,
+          open: h(a[index]),
+          load: r[index]
         })));
       return {
         server: s[l] ?? this.best(),
@@ -4414,10 +4414,10 @@ var Pf = new class {
     }
     async $_1lkk(t = 1500) {
       if (!this.multi) return;
-      const e = this.allowed().filter(t => null === this.ping(t));
+      const e = this.allowed().filter(item => null === this.ping(item));
       if (!e.length) return;
       const n = "undefined" != typeof performance ? performance.now() : Date.now();
-      await Promise.all(e.map(e => (this.$_6ky.set(e, n), this.roundTrip(e, t).then(t => this.latency(e).add(t)).catch(() => {}))));
+      await Promise.all(e.map(item => (this.$_6ky.set(item, n), this.roundTrip(item, t).then(result => this.latency(item).add(result)).catch(() => {}))));
     }
     probe(t, e = "undefined" != typeof document && document.hidden) {
       if (this.probing || e) return;
@@ -4430,7 +4430,7 @@ var Pf = new class {
       }
       if (!s) return;
       const o = s;
-      this.$_6ky.set(o, t), this.probing = !0, this.roundTrip(o, 3e3).then(t => this.latency(o).add(t)).catch(() => {}).finally(() => this.probing = !1);
+      this.$_6ky.set(o, t), this.probing = !0, this.roundTrip(o, 3e3).then(result => this.latency(o).add(result)).catch(() => {}).finally(() => this.probing = !1);
     }
     async roundTrip(t, e) {
       const n = await this.$_566(t.url, e);
@@ -4446,7 +4446,7 @@ var Pf = new class {
       const t = s.indexOf("="),
         e = (t > 0 ? s.slice(0, t) : "local").trim().toLowerCase();
       let i = (t > 0 ? s.slice(t + 1) : s).trim().replace(/\/+$/, "");
-      i = i.replace(/^http(s?):\/\//i, "ws$1://"), /^[a-z0-9_-]{1,16}$/.test(e) && /^wss?:\/\/[^\s/]+/i.test(i) && (n.some(t => t.url === i) || n.push({
+      i = i.replace(/^http(s?):\/\//i, "ws$1://"), /^[a-z0-9_-]{1,16}$/.test(e) && /^wss?:\/\/[^\s/]+/i.test(i) && (n.some(item => item.url === i) || n.push({
         region: e,
         url: i,
         http: Cf(i)
@@ -4496,7 +4496,7 @@ function Kf(t, e, n, s, i, o, a) {
   const l = t.bvh.raycast(Gf, 2, Math.max(0, s - Qf), h),
     c = [];
   for (const y of l) y.distance <= h && 0 !== Tf(t, y, n) && !t.removed(y.faceIndex ?? -1) && !$f(t, y) && c.push(y);
-  c.sort((t, e) => t.distance - e.distance);
+  c.sort((leftItem, rightItem) => leftItem.distance - rightItem.distance);
   let u = o,
     f = Uf(o);
   const d = e => {
@@ -4688,13 +4688,13 @@ var Zf = class {
   }
 };
 function td(t, e) {
-  const n = t.data.components.find(t => "TMP" === t.type && t.node === e);
+  const n = t.data.components.find(component => "TMP" === component.type && component.node === e);
   return n ? new Zf(t, n) : null;
 }
 var ed = new Map();
 async function nd(t, e, n = () => !0) {
   const s = await Rn(),
-    i = (t.data.behaviours.find(t => "FPSArms" === t.script)?.data?.handsMeshRenderers ?? []).map(t => t?.node),
+    i = (t.data.behaviours.find(item => "FPSArms" === item.script)?.data?.handsMeshRenderers ?? []).map(item => item?.node),
     o = s.skins.data[e] ?? s.skins.data[0],
     a = s.materials[s.skins.transparentMaterial],
     r = o?.useTransparentMaterial && a ? {
@@ -4707,22 +4707,22 @@ async function nd(t, e, n = () => !0) {
   if (await Vi(h), !n()) return i;
   const c = Ln(e),
     u = o?.meshIndex ?? 0;
-  return i.forEach((e, n) => {
-    "number" == typeof e && t.setActive(e, n === u);
-  }), t.data.renderers.forEach((n, s) => {
-    const o = t.meshes[s];
-    if (!o || !i.includes(n.node)) return;
+  return i.forEach((item, index) => {
+    "number" == typeof item && t.setActive(item, index === u);
+  }), t.data.renderers.forEach((item, index) => {
+    const o = t.meshes[index];
+    if (!o || !i.includes(item.node)) return;
     o.material = function (t, e, n, s) {
       const i = `${e}|${s ? s.alpha : 1}|${function (t) {
         const e = t.uniforms,
           n = e.uColor?.value;
-        return [n ? [n.x, n.y, n.z].map(t => t.toFixed(4)).join(",") : "", Number(e.uMetallic?.value ?? 0).toFixed(3), Number(e.uSmoothness?.value ?? 0).toFixed(3), Object.keys(t.defines ?? {}).filter(t => "USE_MAP" !== t).sort().join("+")].join("|");
+        return [n ? [n.x, n.y, n.z].map(_item2 => _item2.toFixed(4)).join(",") : "", Number(e.uMetallic?.value ?? 0).toFixed(3), Number(e.uSmoothness?.value ?? 0).toFixed(3), Object.keys(t.defines ?? {}).filter(_item3 => "USE_MAP" !== _item3).sort().join("+")].join("|");
       }(t)}`;
       let o = ed.get(i);
       return o || (o = qi(Oi(t)), o.name = `fp-arms:${e}`, n && to(o, n), o.transparent = !!s, o.depthWrite = !s, o.uniforms.uColor && (o.uniforms.uColor.value.w = s ? s.alpha : 1), an([o], e), ed.set(i, o)), o;
     }(o.userData.armSource ??= o.material, e, h, r);
     const a = o.userData.armGeometry ??= o.geometry,
-      f = l && n.node === i[u] ? l : a;
+      f = l && item.node === i[u] ? l : a;
     o.geometry !== f && (o.geometry = f), function (t, e) {
       const n = wn(t),
         s = e ? Pn(e) : null,
@@ -4738,11 +4738,11 @@ var sd = new WeakMap();
 function id(t) {
   let e = sd.get(t);
   if (e) return e;
-  const n = (t.data.behaviours.find(t => "FPSArms" === t.script)?.data?.handsMeshRenderers ?? []).map(t => t?.node),
+  const n = (t.data.behaviours.find(item => "FPSArms" === item.script)?.data?.handsMeshRenderers ?? []).map(item => item?.node),
     uniqueItems = new Set();
-  return t.data.renderers.forEach((e, i) => {
-    const o = t.meshes[i];
-    o && n.includes(e.node) && uniqueItems.add(o);
+  return t.data.renderers.forEach((item, index) => {
+    const o = t.meshes[index];
+    o && n.includes(item.node) && uniqueItems.add(o);
   }), sd.set(t, e = uniqueItems), e;
 }
 var od = t => {
@@ -4838,23 +4838,23 @@ var Ad = new R(),
       this.blade = t, this.tip = e, this.base = n, this.radius = s, this.samples = i, this.ring = new Float32Array(4 * i), this.ages = new Float32Array(i), this.hues = new Float32Array(i), this.cuts = new Uint8Array(i);
       const o = new Vt();
       this.position = new At(new Float32Array(6 * i), 3), this.position.setUsage(Q), this.color = new At(new Float32Array(8 * i), 4), this.color.setUsage(Q);
-      const a = new Float32Array(4 * i);
-      for (let h = 0; h < i; h++) a.set([.5, 0, .5, 1], 4 * h);
-      o.setAttribute("position", this.position), o.setAttribute("color", this.color), o.setAttribute("uv", new At(a, 2));
-      const r = new Uint16Array(6 * (i - 1));
+      const float32Values = new Float32Array(4 * i);
+      for (let h = 0; h < i; h++) float32Values.set([.5, 0, .5, 1], 4 * h);
+      o.setAttribute("position", this.position), o.setAttribute("color", this.color), o.setAttribute("uv", new At(float32Values, 2));
+      const uint16Values = new Uint16Array(6 * (i - 1));
       for (let h = 0; h < i - 1; h++) {
         const t = 2 * h,
           e = t + 2;
-        r.set([t, t + 1, e, t + 1, e + 1, e], 6 * h);
+        uint16Values.set([t, t + 1, e, t + 1, e + 1, e], 6 * h);
       }
-      o.setIndex(new At(r, 1)), o.setDrawRange(0, 0), this.mesh = new j(o, function () {
+      o.setIndex(new At(uint16Values, 1)), o.setDrawRange(0, 0), this.mesh = new j(o, function () {
         if (fd) return fd;
-        const t = new Uint8Array(64);
+        const uint8Values = new Uint8Array(64);
         for (let n = 0; n < 16; n++) {
-          const e = Math.round(255 * ud(n));
-          t.set([e, e, e, 255], 4 * n);
+          const roundedValue = Math.round(255 * ud(n));
+          uint8Values.set([roundedValue, roundedValue, roundedValue, 255], 4 * n);
         }
-        const e = new K(t, 1, 16, Tt);
+        const e = new K(uint8Values, 1, 16, Tt);
         return e.magFilter = F, e.minFilter = F, e.needsUpdate = !0, fd = new $({
           name: "blade-trail",
           vertexColors: !0,
@@ -5020,7 +5020,7 @@ var Sd = class {
   },
   bd = JSON.parse('{"ak47":{"index":0,"rig":"weapon-00.json","controller":"Ak47","states":{"Load":{"clip":"AK-47_Load","length":0.6333,"speed":1,"loop":false},"Reload":{"clip":"Ak47Reload","length":1.4167,"speed":1,"loop":false},"Shoot":{"clip":"AK-47_Shoot","length":0.2833,"speed":1,"loop":false},"Inspect":{"clip":"AK-47_Inspect","length":2.75,"speed":1,"loop":false},"Shoot_Aim":{"clip":"AK-47_ShootAim","length":0.2833,"speed":1,"loop":false}}},"deagle":{"index":1,"rig":"weapon-01.json","controller":"Deagle","states":{"Idle":{"clip":"Deagle_Load","length":0.6167,"speed":1,"loop":false},"Shoot":{"clip":"Deagle_Shoot","length":1,"speed":1,"loop":false},"Reload":{"clip":"Deagle_Reload","length":1.5,"speed":1,"loop":false},"Inspect":{"clip":"Deagle_Inspect","length":1.6667,"speed":1,"loop":false}}},"awp":{"index":2,"rig":"weapon-02.json","controller":"Awp","states":{"Idle":{"clip":"Awp_Load","length":0.85,"speed":1,"loop":false},"Shoot":{"clip":"Awp_Shoot","length":1.8333,"speed":1,"loop":false},"Reload":{"clip":"Awp_Reload","length":3,"speed":1,"loop":false},"Inspect":{"clip":"Awp_Inspect","length":3.45,"speed":1,"loop":false}}},"bayonet":{"index":3,"rig":"weapon-03.json","controller":"Bayonet","states":{"Idle":{"clip":"Bayonet_Load","length":0.6667,"speed":1,"loop":false},"Stab0":{"clip":"Knife_Stab","length":0.5833,"speed":1,"loop":false},"Stab1":{"clip":"Knife_Stab 1","length":0.4833,"speed":1,"loop":false},"Inspect":{"clip":"Bayonet_Inspect","length":1.25,"speed":1,"loop":false}}},"uzi":{"index":4,"rig":"weapon-04.json","controller":"Uzi","states":{"AK-47_Load":{"clip":"Uzi_Load","length":0.5833,"speed":1,"loop":false},"Reload":{"clip":"Uzi_Reload","length":1.3333,"speed":1,"loop":false},"Shoot":{"clip":"Uzi-Shoot","length":0.1,"speed":1,"loop":false},"Inspect":{"clip":"Uzi_Inspect","length":1.6667,"speed":1,"loop":false}}},"pkm":{"index":5,"rig":"weapon-05.json","controller":"PKM","states":{"AK-47_Load":{"clip":"PKM_Load","length":0.9167,"speed":1,"loop":false},"Reload":{"clip":"PKM_Reload","length":3.6333,"speed":1,"loop":false},"Shoot":{"clip":"PKM_Shoot","length":0.1667,"speed":1,"loop":false},"Inspect":{"clip":"PKM_Inspect","length":2.75,"speed":1,"loop":false}}},"revolver":{"index":6,"rig":"weapon-06.json","controller":"Revolver","states":{"Idle":{"clip":"Revolver_Load","length":1,"speed":1,"loop":false},"Shoot":{"clip":"Revolver_Shoot","length":1,"speed":1,"loop":false},"Reload":{"clip":"Revolver_Reload","length":2.55,"speed":1,"loop":false},"Inspect":{"clip":"Revolver_Inspect","length":1.6667,"speed":1,"loop":false}}},"rpg":{"index":7,"rig":"weapon-07.json","controller":"RPG","states":{"Idle":{"clip":"RPG_Load","length":0.5,"speed":1,"loop":false},"Shoot":{"clip":"RPG_Shoot","length":0.8167,"speed":1,"loop":false},"Reload":{"clip":"RPG_Reload","length":2,"speed":1,"loop":false},"Inspect":{"clip":"RPG_Inspect","length":3.45,"speed":1,"loop":false}}},"usps":{"index":8,"rig":"weapon-08.json","controller":"USPS","states":{"Idle":{"clip":"USPS_Load","length":0.6667,"speed":1,"loop":false},"Shoot":{"clip":"USPS_Shoot","length":0.25,"speed":1,"loop":false},"Reload":{"clip":"USPS_Reload","length":1.5,"speed":1,"loop":false},"Inspect":{"clip":"USPS_Inspect","length":4.4167,"speed":1,"loop":false}}},"mp5":{"index":9,"rig":"weapon-09.json","controller":"MP5","states":{"AK-47_Load":{"clip":"MP5_Load","length":0.5833,"speed":1,"loop":false},"Reload":{"clip":"MP5_Reload","length":1.3333,"speed":1,"loop":false},"Shoot":{"clip":"MP5-Shoot","length":0.1167,"speed":1,"loop":false},"Inspect":{"clip":"MP5_Inspect","length":2.75,"speed":1,"loop":false},"Shoot_Aim":{"clip":"MP5-ShootAim","length":0.1167,"speed":1,"loop":false}}},"shotgun":{"index":10,"rig":"weapon-10.json","controller":"Shotgun","states":{"AK-47_Load":{"clip":"Shotgun_Load","length":0.6333,"speed":1,"loop":false},"Reload":{"clip":"Shotgun_Reload","length":2.3,"speed":1,"loop":false},"Shoot":{"clip":"Shotgun_Shoot","length":0.7167,"speed":1,"loop":false},"Reload2":{"clip":"Shotgun_Reload2","length":1.5,"speed":1,"loop":false},"Inspect":{"clip":"Shotgun_Inspect","length":2.75,"speed":1,"loop":false}}},"glock":{"index":11,"rig":"weapon-11.json","controller":"Glock","states":{"Load":{"clip":"Glock_Load","length":0.6167,"speed":1,"loop":false},"Shoot":{"clip":"Glock_Shoot","length":0.25,"speed":1,"loop":false},"Reload":{"clip":"Glock_Reload","length":1,"speed":1,"loop":false},"Inspect":{"clip":"Glock_Inspect","length":4.4167,"speed":1,"loop":false},"Shoot_Aim":{"clip":"Glock_Shoot_Aim","length":0.25,"speed":1,"loop":false}}},"karambit":{"index":12,"rig":"weapon-12.json","controller":"Karambit","states":{"Idle":{"clip":"LOCAL_LoadKarambit 1","length":0.5833,"speed":1,"loop":false},"Stab0":{"clip":"KarambitStab","length":0.5833,"speed":1,"loop":false},"Stab1":{"clip":"Karambit_Stab 1","length":0.4833,"speed":1,"loop":false},"Inspect":{"clip":"LOCAL_InspectKarambit 1","length":2,"speed":1,"loop":false},"LOCAL_LoadKarambit 1":{"clip":"LOCAL_LoadKarambit 1","length":0.5833,"speed":1,"loop":false}}},"knife":{"index":13,"rig":"weapon-13.json","controller":"Knife","states":{"Idle":{"clip":"Karambit_Load","length":0.3333,"speed":1,"loop":false},"Stab0":{"clip":"Knife_Stab","length":0.5833,"speed":1,"loop":false},"Stab1":{"clip":"Knife_Stab 1","length":0.4833,"speed":1,"loop":false},"Inspect":{"clip":"Knife_Inspect","length":3.25,"speed":1,"loop":false}}},"scar":{"index":14,"rig":"weapon-14.json","controller":"Scar","states":{"AK-47_Load":{"clip":"ScarLoad","length":0.5,"speed":1,"loop":false},"Reload":{"clip":"ScarReload","length":1.3333,"speed":1,"loop":false},"Shoot":{"clip":"Scar_Shoot","length":0.1667,"speed":1,"loop":false},"Inspect":{"clip":"Scar_Inspect","length":2.75,"speed":1,"loop":false}}},"minigun":{"index":15,"rig":"weapon-15.json","controller":"Minigun","states":{"AK-47_Load":{"clip":"Minigun_Load","length":0.4167,"speed":1,"loop":false},"Reload":{"clip":"Minigun_Reload","length":2.8333,"speed":1,"loop":false},"Shoot":{"clip":"Minigun_Shoot","length":0.1,"speed":1,"loop":false},"Inspect":{"clip":"Minigun_Inspect","length":4.5,"speed":1,"loop":false}}},"famas":{"index":16,"rig":"weapon-16.json","controller":"Famas","states":{"AK-47_Load":{"clip":"FamasLoad","length":1,"speed":1,"loop":false},"Reload":{"clip":"FamasReload","length":1.7833,"speed":1,"loop":false},"Shoot":{"clip":"FamasShoot","length":0.4167,"speed":1,"loop":false},"Inspect":{"clip":"FamasInspect","length":3.9667,"speed":1,"loop":false}}},"vector":{"index":17,"rig":"weapon-17.json","controller":"Vector","states":{"AK-47_Load":{"clip":"Vector_Load","length":0.5833,"speed":1,"loop":false},"Reload":{"clip":"Vector_Reload","length":1,"speed":1,"loop":false},"Shoot":{"clip":"MP5-Shoot","length":0.1167,"speed":1,"loop":false},"Inspect":{"clip":"MP5_Inspect","length":2.75,"speed":1,"loop":false},"Shoot_Aim":{"clip":"Vector-ShootAim","length":0.1167,"speed":1,"loop":false}}},"flamethrower":{"index":18,"rig":"weapon-18.json","controller":"Flamethrower","states":{"Idle":{"clip":"Flamethrower_Load","length":0.8333,"speed":1,"loop":false},"Shoot":{"clip":"Flamethrower_Shoot","length":0.8167,"speed":1,"loop":false},"Reload":{"clip":"RPG_Reload","length":2,"speed":1,"loop":false},"Inspect":{"clip":"Flamethrower_Inspect","length":3.45,"speed":1,"loop":false}}},"kar98":{"index":19,"rig":"weapon-19.json","controller":"Kar98","states":{"Idle":{"clip":"Awp_Load","length":0.85,"speed":1,"loop":false},"Shoot":{"clip":"Awp_Shoot","length":1.8333,"speed":1.3,"loop":false},"Reload":{"clip":"Awp_Reload","length":3,"speed":1.3,"loop":false},"Inspect":{"clip":"Awp_Inspect","length":3.45,"speed":1,"loop":false}}},"m4a1":{"index":20,"rig":"weapon-20.json","controller":"M4A4","states":{"AK-47_Load":{"clip":"M4_Load","length":0.4833,"speed":1,"loop":false},"Reload":{"clip":"M4_Reload","length":1.95,"speed":1,"loop":false},"Shoot":{"clip":"AK-47_Shoot","length":0.2833,"speed":1,"loop":false},"Inspect":{"clip":"AK-47_Inspect","length":2.75,"speed":1,"loop":false}}},"tec9":{"index":21,"rig":"weapon-21.json","controller":"Tec9","states":{"Idle":{"clip":"Tec9-Load","length":0.6167,"speed":1,"loop":false},"Shoot":{"clip":"Tec9-Shoot","length":0.3167,"speed":1,"loop":false},"Reload":{"clip":"Tec9-Reload","length":1,"speed":1,"loop":false},"Inspect":{"clip":"Pistol_Inspect","length":4.5,"speed":1,"loop":false}}},"beretta":{"index":22,"rig":"weapon-22.json","controller":"Beretta","states":{"Idle":{"clip":"Glock_Load","length":0.6167,"speed":1,"loop":false},"Shoot":{"clip":"Glock_Shoot","length":0.25,"speed":1,"loop":false},"Reload":{"clip":"Glock_Reload","length":1,"speed":1,"loop":false},"Inspect":{"clip":"Pistol_Inspect","length":4.5,"speed":1,"loop":false}}},"cz":{"index":23,"rig":"weapon-23.json","controller":"Cz","states":{"Idle":{"clip":"Glock_Load","length":0.6167,"speed":1,"loop":false},"Shoot":{"clip":"Glock_Shoot","length":0.25,"speed":1,"loop":false},"Reload":{"clip":"Glock_Reload","length":1,"speed":1,"loop":false},"Inspect":{"clip":"Pistol_Inspect","length":4.5,"speed":1,"loop":false},"Shoot_Aim":{"clip":"Glock_Shoot_Aim","length":0.25,"speed":1,"loop":false}}},"ak109":{"index":24,"rig":"weapon-24.json","controller":"Ak47","states":{"Load":{"clip":"AK-47_Load","length":0.6333,"speed":1,"loop":false},"Reload":{"clip":"Ak47Reload","length":1.4167,"speed":1,"loop":false},"Shoot":{"clip":"AK-47_Shoot","length":0.2833,"speed":1,"loop":false},"Inspect":{"clip":"AK-47_Inspect","length":2.75,"speed":1,"loop":false},"Shoot_Aim":{"clip":"AK-47_ShootAim","length":0.2833,"speed":1,"loop":false}}},"p90":{"index":25,"rig":"weapon-25.json","controller":"P90","states":{"AK-47_Load":{"clip":"p90load","length":0.5833,"speed":1,"loop":false},"Reload":{"clip":"p90reload","length":2,"speed":1,"loop":false},"Shoot":{"clip":"p90shoot","length":0.2,"speed":1,"loop":false},"Inspect":{"clip":"p90inspect","length":3,"speed":1,"loop":false}}},"thompson":{"index":26,"rig":"weapon-26.json","controller":"Thompson","states":{"AK-47_Load":{"clip":"Thompson_Load","length":0.8,"speed":1,"loop":false},"Reload":{"clip":"Thompson_Reload","length":1.8,"speed":1,"loop":false},"Shoot":{"clip":"Thompson_Shoot","length":0.55,"speed":1,"loop":false},"Inspect":{"clip":"AK-47_Inspect","length":2.75,"speed":1,"loop":false}}},"ump":{"index":27,"rig":"weapon-27.json","controller":"UMP","states":{"AK-47_Load":{"clip":"MP5_Load","length":0.5833,"speed":1,"loop":false},"Reload":{"clip":"UMP_Reload","length":1.3333,"speed":1,"loop":false},"Shoot":{"clip":"MP5-Shoot","length":0.1167,"speed":1,"loop":false},"Inspect":{"clip":"MP5_Inspect","length":2.75,"speed":1,"loop":false},"Shoot_Aim":{"clip":"MP5-Shoot","length":0.1167,"speed":1,"loop":false}}},"xm1014":{"index":28,"rig":"weapon-28.json","controller":"XMShotgun","states":{"AK-47_Load":{"clip":"Shotgun_Load","length":0.6333,"speed":1,"loop":false},"Reload2Shell":{"clip":"Shotgun_Reload","length":2.3,"speed":1,"loop":false},"Shoot":{"clip":"XMShotgun_Shoot","length":0.5,"speed":1,"loop":false},"Reload1Shell":{"clip":"Shotgun_Reload2","length":1.5,"speed":1,"loop":false},"Inspect":{"clip":"Shotgun_Inspect","length":2.75,"speed":1,"loop":false},"Reload3Shell":{"clip":"Shotgun_Reload3","length":2.5167,"speed":1,"loop":false},"Reload4Shell":{"clip":"Shotgun_Reload4","length":3.1167,"speed":1,"loop":false},"Reload5Shell":{"clip":"Shotgun_Reload5","length":3.8167,"speed":1,"loop":false}}},"butterfly":{"index":29,"rig":"weapon-29.json","controller":"Butterfly","states":{"Idle":{"clip":"ButterflyLoad","length":0.5833,"speed":1,"loop":false},"Stab0":{"clip":"Butterfly_Stab1","length":0.5833,"speed":1,"loop":false},"Stab1":{"clip":"Butterfly_Stab2","length":0.4833,"speed":1,"loop":false},"Inspect":{"clip":"Butterfly_Inspect","length":1.1167,"speed":1,"loop":false}}},"lasergun":{"index":30,"rig":"weapon-30.json","controller":"LaserGun","states":{"AK-47_Load":{"clip":"LaserGunload","length":0.2167,"speed":1,"loop":false},"Reload":{"clip":"laserGunReload","length":2,"speed":1,"loop":false},"Shoot":{"clip":"lasergunShoot","length":0.2167,"speed":1,"loop":false},"Inspect":{"clip":"LasergunInspect","length":3,"speed":1,"loop":false}}},"bomb":{"index":31,"rig":"weapon-31.json","controller":"Bomb","states":{"BombLoad":{"clip":"BombLoad","length":0.4333,"speed":1,"loop":false},"Plant":{"clip":"BombPlant","length":2.25,"speed":1,"loop":false}}},"smoke":{"index":32,"rig":"weapon-32.json","controller":"Smoke","states":{"Idle":{"clip":"Smoke_load","length":0.3333,"speed":1,"loop":false},"Shoot":{"clip":"Smoke_Throw","length":0.75,"speed":1,"loop":false}}},"molotov":{"index":33,"rig":"weapon-33.json","controller":"Smoke","states":{"Idle":{"clip":"Smoke_load","length":0.3333,"speed":1,"loop":false},"Shoot":{"clip":"Smoke_Throw","length":0.75,"speed":1,"loop":false}}},"grenade":{"index":34,"rig":"weapon-34.json","controller":"Smoke","states":{"Idle":{"clip":"Smoke_load","length":0.3333,"speed":1,"loop":false},"Shoot":{"clip":"Smoke_Throw","length":0.75,"speed":1,"loop":false}}},"flashbang":{"index":35,"rig":"weapon-35.json","controller":"Smoke","states":{"Idle":{"clip":"Smoke_load","length":0.3333,"speed":1,"loop":false},"Shoot":{"clip":"Smoke_Throw","length":0.75,"speed":1,"loop":false}}},"glizzy":{"index":36,"rig":"weapon-36.json","controller":"Glizzy","states":{"Idle":{"clip":"LOCAL_LoadKarambit 1","length":0.5833,"speed":1,"loop":false},"Stab0":{"clip":"KarambitStab","length":0.5833,"speed":1,"loop":false},"Stab1":{"clip":"Karambit_Stab 1","length":0.4833,"speed":1,"loop":false},"Inspect":{"clip":"LOCAL_InspectGlizzy","length":4.0333,"speed":1,"loop":false},"LOCAL_LoadKarambit 1":{"clip":"LOCAL_LoadKarambit 1","length":0.5833,"speed":1,"loop":false}}},"axe":{"index":37,"rig":"weapon-37.json","controller":"Axe","states":{"Idle":{"clip":"Axe_Load","length":0.5167,"speed":1,"loop":false},"Stab0":{"clip":"Axe_Stab","length":0.5833,"speed":1,"loop":false},"Inspect":{"clip":"Axe_Inspect","length":2.5,"speed":1,"loop":false},"Stab1":{"clip":"Axe_Stab","length":0.5833,"speed":1,"loop":false}}},"fists":{"index":38,"rig":"weapon-38.json","controller":"BareFists","states":{"Idle":{"clip":"LOCAL_LoadFists","length":0.25,"speed":1,"loop":false},"Stab0":{"clip":"FistsAttack1","length":0.1667,"speed":1,"loop":false},"Stab1":{"clip":"FistsAttack2","length":0.1667,"speed":1,"loop":false},"Inspect":{"clip":"InspectFists","length":4.8333,"speed":1,"loop":false}}}}'),
   _d = ["vss", "crossbow", "xm1014", "instagib"],
-  kd = new Map(Object.values(v.weapons).map(t => [t.index, t.id]));
+  kd = new Map(Object.values(v.weapons).map(item => [item.index, item.id]));
 var xd = {
     scythe: {
       light: .1,
@@ -5108,7 +5108,7 @@ function Vd(t, e, n) {
   Wd.set(t.rig, s);
   const r = t.saveState();
   return s.bake(o, e => {
-    const n = e.tree.find(t => t.clip)?.clip,
+    const n = e.tree.find(item => item.clip)?.clip,
       s = n ? t.rig.clips.get(n) : void 0;
     return {
       seconds: (s?.duration ?? 1) / Math.max(1e-6, e.speed || 1),
@@ -5240,10 +5240,10 @@ var Jd = class {
       const n = this.weaponKey(t);
       let s = this.built.get(n);
       if (s) return this.built.delete(n), this.built.set(n, s), e && this.urgency.get(n)?.wake(), s;
-      if (s = this.$_6px(t, n, e).catch(t => (console.warn("first-person weapon failed to load", t), this.built.delete(n), null)), this.built.set(n, s), this.built.size > 8) {
-        const uniqueItems = new Set(this.slots.map(t => r[t] ? this.weaponKey(t) : ""));
+      if (s = this.$_6px(t, n, e).catch(error => (console.warn("first-person weapon failed to load", error), this.built.delete(n), null)), this.built.set(n, s), this.built.size > 8) {
+        const uniqueItems = new Set(this.slots.map(item => r[item] ? this.weaponKey(item) : ""));
         for (const [e, s] of this.built) if (e !== n && e !== this.held?.key && !uniqueItems.has(e) && this.ready.has(e)) {
-          this.built.delete(e), this.ready.delete(e), s.then(t => t && t !== this.held && this.$_5p8(t));
+          this.built.delete(e), this.ready.delete(e), s.then(result => result && result !== this.held && this.$_5p8(result));
           break;
         }
       }
@@ -5251,7 +5251,7 @@ var Jd = class {
     }
     $_2dh(t) {
       let e = this.$_42z.get(t);
-      return e || (e = qd[t](this.skin).then(e => (e.setSkin?.(this.skin), this.custom.set(t, e), e)).catch(e => (console.warn(`first-person view of ${t} failed to build`, e), this.$_42z.delete(t), null)), this.$_42z.set(t, e)), e;
+      return e || (e = qd[t](this.skin).then(result => (result.setSkin?.(this.skin), this.custom.set(t, result), result)).catch(error => (console.warn(`first-person view of ${t} failed to build`, error), this.$_42z.delete(t), null)), this.$_42z.set(t, e)), e;
     }
     $_5p8(t) {
       t.fx?.dispose(), t.c4?.dispose(), t.trail?.dispose(), t.rig.dispose(), t.twin?.dispose();
@@ -5330,19 +5330,19 @@ var Jd = class {
     }
     async preload(t) {
       const e = await Rn();
-      await Promise.all(t.map(async t => {
-        const n = r[t],
+      await Promise.all(t.map(async item => {
+        const n = r[item],
           s = n ? e.weapons[n.model] : void 0;
         if (!n || !s) return;
         const i = await go(s.file);
-        this.$_23xl(t, i);
+        this.$_23xl(item, i);
         const [o] = co(this.weaponSkins[n.skinWeapon] ?? -1),
           a = o || i.data.defaultSkin,
           h = [...i.textures.values()];
         a && h.push(await lo(a));
         const l = await yo(`../skins/body/${this.skin}.png`).catch(() => null);
-        l && h.push(l), await Promise.all(h.map(t => Vi(t))), await this.prepare(t);
-      })).catch(t => console.warn("weapon preload failed", t));
+        l && h.push(l), await Promise.all(h.map(_item4 => Vi(_item4))), await this.prepare(item);
+      })).catch(error => console.warn("weapon preload failed", error));
     }
     $_575() {
       this.$_ord = 0;
@@ -5407,7 +5407,7 @@ var Jd = class {
         await nd(c, a);
         for (const t of c.meshes) t && (t.frustumCulled = !1);
         for (const t of [l, c]) {
-          const e = t.data.nodes.findIndex(t => "Clavicle_L" === t.name);
+          const e = t.data.nodes.findIndex(node => "Clavicle_L" === node.name);
           e >= 0 && f.push(t.nodes[e]);
         }
       }
@@ -5416,8 +5416,8 @@ var Jd = class {
         const e = r[t];
         d = new pn(this.particles, l, e.magazine, e.reload, e.fireRate, !0), d.load();
       }
-      const A = l.data.behaviours.find(t => "Bomb" === t.script),
-        p = l.data.behaviours.find(t => "MuzzleFlash" === t.script),
+      const A = l.data.behaviours.find(item => "Bomb" === item.script),
+        p = l.data.behaviours.find(item => "MuzzleFlash" === item.script),
         m = {
           key: e,
           rig: l,
@@ -5445,7 +5445,7 @@ var Jd = class {
     }
     $_76vj() {
       this.fx?.rest();
-      for (const t of this.built.values()) t.then(t => t?.fx?.rest());
+      for (const t of this.built.values()) t.then(result => result?.fx?.rest());
     }
     $_67g() {
       this.$_34j = !1, this.$_708 = -1, this.fx?.rest(), this.fx = null, this.c4 = null, this.rocket = null, this.fan?.stop(), this.fan = null, this.trail && (this.trail.clear(), this.trail.mesh.removeFromParent(), this.trail = null), this.held = null;
@@ -5596,7 +5596,7 @@ var Jd = class {
       if (n.animators) {
         const t = e - n.start,
           s = n.hands;
-        n.animators.forEach((e, i) => e.seek(s ? os(s.plans[i], t - s.offsets[i]) : os(n.plan, t)));
+        n.animators.forEach((item, index) => item.seek(s ? os(s.plans[index], t - s.offsets[index]) : os(n.plan, t)));
       }
       return n.plan;
     }
@@ -5681,7 +5681,7 @@ var Jd = class {
     $_7fy = !0;
     scoped = !1;
     sniperVisuals() {
-      return (this.weapon?.data.behaviours.find(t => "Sniper" === t.script)?.data?.sniperVisuals ?? []).map(t => t.node).filter(t => "number" == typeof t);
+      return (this.weapon?.data.behaviours.find(t => "Sniper" === t.script)?.data?.sniperVisuals ?? []).map(item => item.node).filter(item => "number" == typeof item);
     }
     $_1hc(t) {
       this.scoped = t;
@@ -5846,20 +5846,20 @@ function sA(t) {
   let e = 0,
     n = 0;
   for (const r of t) e += r.position.length / 3, n += r.index.length;
-  const s = new Float32Array(3 * e),
+  const float32Values = new Float32Array(3 * e),
     i = e > 65535 ? new Uint32Array(n) : new Uint16Array(n);
   let o = 0,
     a = 0;
   for (const r of t) {
-    s.set(r.position, 3 * o);
+    float32Values.set(r.position, 3 * o);
     const t = r.index;
     for (let e = 0; e < t.length; e++) i[a++] = t[e] + o;
     o += r.position.length / 3;
   }
   return {
-    position: s,
+    position: float32Values,
     index: i.subarray(0, a),
-    sphere: nA(s).sphere
+    sphere: nA(float32Values).sphere
   };
 }
 function iA(t) {
@@ -5936,7 +5936,7 @@ function uA(t, e) {
   if (Array.isArray(n) || !n || !n.isShaderMaterial) return null;
   if (!gi(n) || n.transparent || "KOUR_MAT_TABLE" in n.defines) return null;
   const s = t.geometry;
-  if (Object.keys(s.attributes).length !== lA.length || !lA.every(t => s.attributes[t])) return null;
+  if (Object.keys(s.attributes).length !== lA.length || !lA.every(item => s.attributes[item])) return null;
   if (!s.index || s.groups.length || Object.keys(s.morphAttributes).length) return null;
   const i = n.uniforms,
     o = i.uEmission?.value;
@@ -5950,10 +5950,10 @@ function fA(t) {
   const e = t[0].material,
     n = Oi(e);
   for (const o in e.uniforms) e.uniforms[o]?.value?.isTexture && (n.uniforms[o] = e.uniforms[o]);
-  n.name = `merged:${t.map(t => t.material.name).join("+")}`, n.defines.KOUR_MAT_TABLE = String(16);
-  const s = new Float32Array(5 * t.length * 4),
-    i = new Float32Array(4 * t.length);
-  return t.forEach((t, e) => function (t, e, n, s) {
+  n.name = `merged:${t.map(item => item.material.name).join("+")}`, n.defines.KOUR_MAT_TABLE = String(16);
+  const float32Values = new Float32Array(5 * t.length * 4),
+    _float32Values = new Float32Array(4 * t.length);
+  return t.forEach((item, index) => function (t, e, n, s) {
     const i = 5 * n * 4,
       o = s.uColor.value;
     t[i] = o.x, t[i + 1] = o.y, t[i + 2] = o.z, t[i + 3] = o.w, t[i + 4] = s.uMetallic.value, t[i + 5] = s.uSmoothness.value, t[i + 6] = s.uAlphaTest.value, t[i + 7] = s.uGlow.value;
@@ -5965,10 +5965,10 @@ function fA(t) {
     t[i + 16] = h.r, t[i + 17] = h.g, t[i + 18] = h.b;
     const l = s.uMainST.value;
     e[4 * n] = l.x, e[4 * n + 1] = l.y, e[4 * n + 2] = l.z, e[4 * n + 3] = l.w;
-  }(s, i, e, t.material.uniforms)), n.uniforms.kourMatTable = {
-    value: s
+  }(float32Values, _float32Values, index, item.material.uniforms)), n.uniforms.kourMatTable = {
+    value: float32Values
   }, n.uniforms.kourMatST = {
-    value: i
+    value: _float32Values
   }, n;
 }
 function dA(t) {
@@ -5977,24 +5977,24 @@ function dA(t) {
   let s = 0,
     i = 0;
   for (const m of t) s += m.geometry.attributes.position.count, i += m.geometry.index.count;
-  const o = new Float32Array(3 * s),
-    a = new Float32Array(3 * s),
-    r = new Float32Array(2 * s),
-    h = new Uint8Array(s),
+  const float32Values = new Float32Array(3 * s),
+    _float32Values2 = new Float32Array(3 * s),
+    _float32Values3 = new Float32Array(2 * s),
+    uint8Values = new Uint8Array(s),
     l = s > 65535 ? new Uint32Array(i) : new Uint16Array(i);
   let c = 0,
     u = 0,
     f = 0;
-  t.forEach((t, e) => {
-    const n = t.geometry,
+  t.forEach((item, index) => {
+    const n = item.geometry,
       s = n.attributes.position.count;
-    o.set(n.attributes.position.array, 3 * c), a.set(n.attributes.normal.array, 3 * c), r.set(n.attributes.uv.array, 2 * c), h.fill(e, c, c + s);
+    float32Values.set(n.attributes.position.array, 3 * c), _float32Values2.set(n.attributes.normal.array, 3 * c), _float32Values3.set(n.attributes.uv.array, 2 * c), uint8Values.fill(index, c, c + s);
     const i = n.index.array;
     for (let o = 0; o < i.length; o++) l[u + o] = i[o] + c;
-    u += i.length, c += s, f += t.userData.parts ?? 0;
+    u += i.length, c += s, f += item.userData.parts ?? 0;
   });
   const d = new Vt();
-  d.setAttribute("position", new At(o, 3)), d.setAttribute("normal", new At(a, 3)), d.setAttribute("uv", new At(r, 2)), d.setAttribute("kourMat", new At(h, 1)), d.setIndex(new At(l, 1));
+  d.setAttribute("position", new At(float32Values, 3)), d.setAttribute("normal", new At(_float32Values2, 3)), d.setAttribute("uv", new At(_float32Values3, 2)), d.setAttribute("kourMat", new At(uint8Values, 1)), d.setIndex(new At(l, 1));
   const A = new It();
   for (const m of t) m.geometry.boundingBox || m.geometry.computeBoundingBox(), A.union(m.geometry.boundingBox);
   d.boundingBox = A, d.computeBoundingSphere();
@@ -6014,7 +6014,7 @@ var AA = new R(),
     };
     timer = null;
     constructor(t, e, n = 1e4) {
-      this.hooks = e, this.timeoutMs = n, t.addEventListener("webglcontextlost", t => this.$_1km(t), !1), t.addEventListener("webglcontextrestored", () => {
+      this.hooks = e, this.timeoutMs = n, t.addEventListener("webglcontextlost", event => this.$_1km(event), !1), t.addEventListener("webglcontextrestored", () => {
         this.$_b49();
       }, !1);
     }
@@ -6333,14 +6333,14 @@ var _A = bn(!1),
   $A = 1 + TA.motes,
   OA = (() => {
     const t = TA.motes,
-      e = new Float32Array(3 * t);
+      float32Values = new Float32Array(3 * t);
     for (let n = 0; n < t; n++) {
       const s = 1 - 2 * (n + .5) / t,
         i = Math.sqrt(1 - s * s),
         o = 2.399963 * n;
-      e[3 * n] = Math.cos(o) * i, e[3 * n + 1] = s, e[3 * n + 2] = Math.sin(o) * i;
+      float32Values[3 * n] = Math.cos(o) * i, float32Values[3 * n + 1] = s, float32Values[3 * n + 2] = Math.sin(o) * i;
     }
-    return e;
+    return float32Values;
   })(),
   HA = (t, e) => {
     const n = new $({
@@ -6398,29 +6398,29 @@ function np(t, e) {
 var sp = class {
     group = new _t();
     legs = NA(48, HA(function () {
-      const t = new Uint8Array(256),
+      const uint8Values = new Uint8Array(256),
         [e, n, s] = GA;
       for (let o = 0; o < 64; o++) {
         const i = 2 * Math.abs((o + .5) / 64 - .5),
           a = Math.exp(-((i / .24) ** 2)),
           r = .9 * Math.exp(-((i / .6) ** 2)) * (1 - i);
-        t[4 * o] = Math.round(255 * Math.min(1, a + r * e)), t[4 * o + 1] = Math.round(255 * Math.min(1, a + r * n)), t[4 * o + 2] = Math.round(255 * Math.min(1, a + r * s)), t[4 * o + 3] = 255;
+        uint8Values[4 * o] = Math.round(255 * Math.min(1, a + r * e)), uint8Values[4 * o + 1] = Math.round(255 * Math.min(1, a + r * n)), uint8Values[4 * o + 2] = Math.round(255 * Math.min(1, a + r * s)), uint8Values[4 * o + 3] = 255;
       }
-      const i = new K(t, 1, 64, Tt);
+      const i = new K(uint8Values, 1, 64, Tt);
       return i.magFilter = i.minFilter = F, i.wrapS = i.wrapT = Xt, i.needsUpdate = !0, i;
     }(), "laser-beam"));
     glows = NA(40 + $A, HA(function () {
       const t = 32,
-        e = new Uint8Array(4096),
+        uint8Values = new Uint8Array(4096),
         [n, s, i] = GA;
       for (let a = 0; a < t; a++) for (let o = 0; o < t; o++) {
         const r = 2 * Math.hypot((o + .5) / t - .5, (a + .5) / t - .5),
           h = Math.exp(-((r / .18) ** 2)),
           l = Math.max(0, 1 - r) ** 2 * .7,
           c = 4 * (a * t + o);
-        e[c] = Math.round(255 * Math.min(1, h + l * n)), e[c + 1] = Math.round(255 * Math.min(1, h + l * s)), e[c + 2] = Math.round(255 * Math.min(1, h + l * i)), e[c + 3] = 255;
+        uint8Values[c] = Math.round(255 * Math.min(1, h + l * n)), uint8Values[c + 1] = Math.round(255 * Math.min(1, h + l * s)), uint8Values[c + 2] = Math.round(255 * Math.min(1, h + l * i)), uint8Values[c + 3] = 255;
       }
-      const o = new K(e, t, t, Tt);
+      const o = new K(uint8Values, t, t, Tt);
       return o.magFilter = o.minFilter = F, o.needsUpdate = !0, o;
     }(), "laser-glow"));
     ends = new Float32Array(288);
@@ -6787,23 +6787,23 @@ var yp = class {
         const t = function (t) {
           const e = "random" === t.reason;
           return {
-            points: t.points.map(t => e ? "random" : t.d < 0 ? "-" : `${Math.round(t.d)} m${void 0 === t.score ? "" : ` · ${Math.round(t.score)}`}`),
+            points: t.points.map(point => e ? "random" : point.d < 0 ? "-" : `${Math.round(point.d)} m${void 0 === point.score ? "" : ` · ${Math.round(point.score)}`}`),
             chosen: `★ ${t.name || t.player} (${gp[t.reason] ?? t.reason})`,
-            rivals: t.rivals.map(t => t.name || t.id)
+            rivals: t.rivals.map(item => item.name || item.id)
           };
         }(o);
-        o.points.forEach((e, n) => {
-          vp(i.point, e.x, e.y + .06, e.z, .3), this.label(t.points[n], Ap, e.x, e.y + .6, e.z);
+        o.points.forEach((point, index) => {
+          vp(i.point, point.x, point.y + .06, point.z, .3), this.label(t.points[index], Ap, point.x, point.y + .6, point.z);
         });
         const e = o.chosen;
         vp(i.chosen, e.x, e.y + .07, e.z, .6), i.chosen.push(e.x, e.y, e.z, e.x, e.y + 3, e.z), this.label(t.chosen, pp, e.x, e.y + 3 + .35, e.z);
         let n = -1,
           s = 1 / 0;
-        if (o.rivals.forEach((o, a) => {
+        if (o.rivals.forEach((item, index) => {
           const r = .35;
-          i.rival.push(o.x - r, o.y + .05, o.z - r, o.x + r, o.y + .05, o.z + r), i.rival.push(o.x - r, o.y + .05, o.z + r, o.x + r, o.y + .05, o.z - r), i.rival.push(o.x, o.y, o.z, o.x, o.y + 2, o.z), this.label(t.rivals[a], wp, o.x, o.y + 2.35, o.z);
-          const h = Math.hypot(o.x - e.x, o.z - e.z);
-          h < s && (s = h, n = a);
+          i.rival.push(item.x - r, item.y + .05, item.z - r, item.x + r, item.y + .05, item.z + r), i.rival.push(item.x - r, item.y + .05, item.z + r, item.x + r, item.y + .05, item.z - r), i.rival.push(item.x, item.y, item.z, item.x, item.y + 2, item.z), this.label(t.rivals[index], wp, item.x, item.y + 2.35, item.z);
+          const h = Math.hypot(item.x - e.x, item.z - e.z);
+          h < s && (s = h, n = index);
         }), n >= 0) {
           const t = o.rivals[n];
           i.line.push(e.x, e.y + 1, e.z, t.x, t.y + 1, t.z);
@@ -6831,13 +6831,13 @@ var yp = class {
   };
 function Sp(t, e) {
   const n = Mp[e] ? `${Mp[e]} Spawn` : "Spawn";
-  return t.map((t, s) => ({
-    x: t.x,
-    y: t.y,
-    z: t.z,
-    yaw: t.yaw,
+  return t.map((item, index) => ({
+    x: item.x,
+    y: item.y,
+    z: item.z,
+    yaw: item.yaw,
     team: e,
-    label: `${n} ${s + 1}`
+    label: `${n} ${index + 1}`
   }));
 }
 var bp = new Set(["kourstrike", "zombies", "parkour", "koursurf"]),
@@ -6925,13 +6925,13 @@ function $p(t) {
 }
 var Op = new R();
 function Hp(t, e, n) {
-  t.rotation.y = Math.atan2(-n.fx, -n.fz), n.boxes.forEach((t, n) => {
-    const s = e[n];
+  t.rotation.y = Math.atan2(-n.fx, -n.fz), n.boxes.forEach((item, index) => {
+    const s = e[index];
     if (!s) return;
-    const i = Math.max(.001, 2 * t.hx),
-      o = Math.max(.001, 2 * t.hy),
-      a = Math.max(.001, 2 * t.hz);
-    Op.set(t.xu * i, t.yu * o, t.zu * a, t.u, t.xv * i, t.yv * o, t.zv * a, t.v, -t.xw * i, -t.yw * o, -t.zw * a, -t.w, 0, 0, 0, 1), s.matrixAutoUpdate = !1, s.matrix.copy(Op), s.matrixWorldNeedsUpdate = !0;
+    const i = Math.max(.001, 2 * item.hx),
+      o = Math.max(.001, 2 * item.hy),
+      a = Math.max(.001, 2 * item.hz);
+    Op.set(item.xu * i, item.yu * o, item.zu * a, item.u, item.xv * i, item.yv * o, item.zv * a, item.v, -item.xw * i, -item.yw * o, -item.zw * a, -item.w, 0, 0, 0, 1), s.matrixAutoUpdate = !1, s.matrix.copy(Op), s.matrixWorldNeedsUpdate = !0;
   });
 }
 var Np = class {
@@ -7115,8 +7115,8 @@ var Np = class {
       if (t === this.objective) return;
       this.objective = t;
       const e = this.$_uot;
-      this.$_30s.forEach((n, s) => {
-        n.fill.material = s === t ? e.activeFill : e.fill, n.edges.material = s === t ? e.activeEdges : e.edges;
+      this.$_30s.forEach((item, index) => {
+        item.fill.material = index === t ? e.activeFill : e.fill, item.edges.material = index === t ? e.activeEdges : e.edges;
       });
     }
     $_3kwh(t, e) {
@@ -7207,11 +7207,11 @@ var Np = class {
                   }
                 };
               }
-              const i = n.filter(n => tf(n, t) > Ku.spawnClearance && tf(n, e) > Ku.spawnClearance),
+              const i = n.filter(item => tf(item, t) > Ku.spawnClearance && tf(item, e) > Ku.spawnClearance),
                 o = i.length >= 2 * Ku.minTeamSpawns ? i : [...n],
                 a = (t, e) => {
-                  const n = o.filter(n => tf(n, t) < tf(n, e));
-                  return n.length >= Ku.minTeamSpawns ? n : [...o].sort((e, n) => tf(e, t) - tf(n, t)).slice(0, Math.min(o.length, Ku.minTeamSpawns));
+                  const n = o.filter(item => tf(item, t) < tf(item, e));
+                  return n.length >= Ku.minTeamSpawns ? n : [...o].sort((leftItem, rightItem) => tf(leftItem, t) - tf(rightItem, t)).slice(0, Math.min(o.length, Ku.minTeamSpawns));
                 };
               return {
                 red: {
@@ -7233,11 +7233,11 @@ var Np = class {
           const t = Se(n, h, Ce.Red, i, s.extraSpawns);
           t.team ? r.spawns.push(...Sp(t.points, Ce.Red), ...Sp(Se(n, h, Ce.Blue, i, s.extraSpawns).points, Ce.Blue)) : r.spawns.push(...Sp(t.points, Ce.None));
         }
-        if ("hardpoint" === e && s.hardpoints.forEach((t, e) => r.boxes.push({
-          center: t.center,
-          half: t.half,
-          axes: t.axes,
-          label: `Hardpoint ${e + 1}${t.name ? ` (${t.name})` : ""}`
+        if ("hardpoint" === e && s.hardpoints.forEach((item, index) => r.boxes.push({
+          center: item.center,
+          half: item.half,
+          axes: item.axes,
+          label: `Hardpoint ${index + 1}${item.name ? ` (${item.name})` : ""}`
         })), "kourstrike" === e) {
           const t = (t, e, n) => {
             "box" === t.volume.kind && r.boxes.push({
@@ -7270,13 +7270,13 @@ var Np = class {
             });
           }
         };
-        if ((s.checkpoints ?? []).forEach((t, e) => {
-          l(t, `Checkpoint ${e + 1}`, "checkpoint"), t.spawn && r.checkpointSpawns.push({
-            ...t.spawn,
+        if ((s.checkpoints ?? []).forEach((item, index) => {
+          l(item, `Checkpoint ${index + 1}`, "checkpoint"), item.spawn && r.checkpointSpawns.push({
+            ...item.spawn,
             team: Ce.None,
-            label: `Respawn ${e + 1}`
+            label: `Respawn ${index + 1}`
           });
-        }), (s.finishes ?? []).forEach((t, e) => l(t, (s.finishes?.length ?? 0) > 1 ? `Finish ${e + 1}` : "Finish", "finish")), "ctf" === e && o) for (const [a, c] of [[Ce.Red, o.red], [Ce.Blue, o.blue]]) r.cylinders.push({
+        }), (s.finishes ?? []).forEach((item, index) => l(item, (s.finishes?.length ?? 0) > 1 ? `Finish ${index + 1}` : "Finish", "finish")), "ctf" === e && o) for (const [a, c] of [[Ce.Red, o.red], [Ce.Blue, o.blue]]) r.cylinders.push({
           x: c.x,
           y: c.y,
           z: c.z,
@@ -7290,12 +7290,12 @@ var Np = class {
       }(t);
       this.rated = function (t, e, n) {
         if (bp.has(e)) return null;
-        const s = t.spawns.filter(t => t.team === n);
+        const s = t.spawns.filter(item => item.team === n);
         if (s.length) return {
           spawns: s,
           teamPool: n !== Ce.None
         };
-        const i = t.spawns.filter(t => t.team === Ce.None);
+        const i = t.spawns.filter(item => item.team === Ce.None);
         return i.length ? {
           spawns: i,
           teamPool: !1
@@ -7305,7 +7305,7 @@ var Np = class {
         s = l(t.mode),
         i = t => t === Ce.Red || t === Ce.Blue ? new tt().fromArray(t === Ce.Red ? s.team1.color : s.team2.color).getHex() : Bp.spawn;
       for (const a of [Ce.None, Ce.Red, Ce.Blue]) {
-        const t = e.spawns.filter(t => t.team === a);
+        const t = e.spawns.filter(item => item.team === a);
         if (!t.length) continue;
         const s = i(a),
           o = [];
@@ -7455,20 +7455,20 @@ var Np = class {
         } : null);
       }
       for (this.$_5x4(), this.layerOn("hurtboxes") || this.layerOn("capsules") || (t = Up), this.layerOn("chickens") || (e = []); this.players.length < t.length;) this.players.push(this.$_1ua());
-      for (this.players.forEach((e, n) => {
-        const s = t[n],
+      for (this.players.forEach((player, index) => {
+        const s = t[index],
           i = !!s;
-        if (e.boxes.visible = i, e.standing.visible = i && !s.tucked, e.tucked.visible = i && !!s.tucked, !s) return;
-        e.boxes.position.set(s.x, s.y, s.z), e.standing.position.set(s.x, s.y, s.z), e.tucked.position.set(s.x, s.y, s.z);
+        if (player.boxes.visible = i, player.standing.visible = i && !s.tucked, player.tucked.visible = i && !!s.tucked, !s) return;
+        player.boxes.position.set(s.x, s.y, s.z), player.standing.position.set(s.x, s.y, s.z), player.tucked.position.set(s.x, s.y, s.z);
         const o = s.pose ?? bn(!!s.crouching, s.yaw ?? 0, this.$_73x);
-        Hp(e.boxes, e.box, o);
+        Hp(player.boxes, player.box, o);
       }); this.spheres.length < e.length;) {
         const t = new j(this.sphere, this.materials.chicken);
         this.spheres.push(t), this.layer("chickens").add(t);
       }
-      this.spheres.forEach((t, n) => {
-        const s = e[n];
-        t.visible = !!s, s && (t.position.copy(s.center), t.scale.setScalar(s.radius));
+      this.spheres.forEach((item, index) => {
+        const s = e[index];
+        item.visible = !!s, s && (item.position.copy(s.center), item.scale.setScalar(s.radius));
       });
     }
     $_5x4() {
@@ -7489,12 +7489,12 @@ var Np = class {
           boxes: e
         });
       }
-      this.$_440.forEach((t, e) => {
-        const n = s[e];
+      this.$_440.forEach((item, index) => {
+        const n = s[index];
         var i, o;
-        t.root.visible = !!n, n && (t.root.position.set(n.x, n.y, n.z), Hp(t.root, t.boxes, (i = n, (o = this.$_5wt).fx = i.fx, o.fz = i.fz, o.boxes.forEach((t, e) => {
-          const n = 12 * e;
-          [t.u, t.v, t.w, t.xu, t.xv, t.xw, t.yu, t.yv, t.yw, t.zu, t.zv, t.zw] = i.boxes.slice(n, n + 12);
+        item.root.visible = !!n, n && (item.root.position.set(n.x, n.y, n.z), Hp(item.root, item.boxes, (i = n, (o = this.$_5wt).fx = i.fx, o.fz = i.fz, o.boxes.forEach((_item5, _index) => {
+          const n = 12 * _index;
+          [_item5.u, _item5.v, _item5.w, _item5.xu, _item5.xv, _item5.xw, _item5.yu, _item5.yv, _item5.yw, _item5.zu, _item5.zv, _item5.zw] = i.boxes.slice(n, n + 12);
         }), o)));
       });
     }
@@ -7539,16 +7539,16 @@ var Np = class {
                 }
                 return r;
               },
-              h = t.map(t => {
-                const s = e.length ? lp(t, e) : 100 * n();
+              h = t.map(item => {
+                const s = e.length ? lp(item, e) : 100 * n();
                 return {
-                  s: t,
+                  s: item,
                   d: s,
-                  score: r(t, s),
+                  score: r(item, s),
                   sighted: !1
                 };
               });
-            h.sort((t, e) => e.score - t.score);
+            h.sort((leftItem, rightItem) => rightItem.score - leftItem.score);
             const l = s.sight;
             if (!l || !e.length) return h;
             let c = 0;
@@ -7560,7 +7560,7 @@ var Np = class {
               for (let e = 0; e < c; e++) n = Math.max(n, h[e].score);
               if (c >= h.length || n >= h[c].score) break;
             }
-            return h.slice(0, c).sort((t, e) => e.score - t.score).concat(h.slice(c));
+            return h.slice(0, c).sort((leftItem, rightItem) => rightItem.score - leftItem.score).concat(h.slice(c));
           }(n.spawns, i, Math.random, {
             mates: hp(t.players, t.me, t.team, !!t.teams),
             sight: e ? (t, n) => function (t, e, n) {
@@ -7569,22 +7569,22 @@ var Np = class {
               return s < 1e-6 || (Fp.divideScalar(s), !t.sceneRaycast(xp.set(e.x, e.y, e.z), Fp, s));
             }(e, t, n) : void 0
           }),
-          lookupMap = new Map(s.map(t => [t.s, t.score]));
+          lookupMap = new Map(s.map(item => [item.s, item.score]));
         for (const t of n.spawns) a.push(lookupMap.get(t) ?? -1 / 0);
       }
       (function (t, e) {
         const n = e ?? t;
         let s = -1;
-        return n.forEach((e, i) => {
-          Number.isFinite(t[i]) && (s < 0 || e > n[s]) && (s = i);
-        }), t.map((t, n) => ({
-          text: Number.isFinite(t) ? `${n === s ? "★ " : ""}${Math.round(t)} m${e ? ` · ${Math.round(e[n])}` : ""}` : "no opponents: random",
-          best: n === s
+        return n.forEach((item, index) => {
+          Number.isFinite(t[index]) && (s < 0 || item > n[s]) && (s = index);
+        }), t.map((item, index) => ({
+          text: Number.isFinite(item) ? `${index === s ? "★ " : ""}${Math.round(item)} m${e ? ` · ${Math.round(e[index])}` : ""}` : "no opponents: random",
+          best: index === s
         }));
-      })(o, i.length ? a : void 0).forEach((t, e) => {
-        const s = this.$_2zdh[e],
-          i = n.spawns[e];
-        s.set(t.text, t.best ? Bp.ratingBest : Bp.rating), s.sprite.visible = !0, s.sprite.position.set(i.x, i.y + Ep + .75, i.z);
+      })(o, i.length ? a : void 0).forEach((item, index) => {
+        const s = this.$_2zdh[index],
+          i = n.spawns[index];
+        s.set(item.text, item.best ? Bp.ratingBest : Bp.rating), s.sprite.visible = !0, s.sprite.position.set(i.x, i.y + Ep + .75, i.z);
       });
     }
   };
@@ -7859,12 +7859,12 @@ function cm(t) {
       n = t.format === E,
       s = 33776 === t.format || 33777 === t.format;
     return e?.data && (s || n) ? function (t, e, n, s, i = !0) {
-      const o = new Uint8Array(e * n * 4),
-        a = Math.ceil(e / 4),
-        r = Math.ceil(n / 4),
+      const uint8Values = new Uint8Array(e * n * 4),
+        ceiledValue = Math.ceil(e / 4),
+        _ceiledValue = Math.ceil(n / 4),
         h = s ? 16 : 8;
-      for (let l = 0; l < r; l++) for (let r = 0; r < a; r++) {
-        const c = (l * a + r) * h;
+      for (let l = 0; l < _ceiledValue; l++) for (let r = 0; r < ceiledValue; r++) {
+        const c = (l * ceiledValue + r) * h;
         if (c + h > t.length) continue;
         let u = c;
         if (s) {
@@ -7895,18 +7895,18 @@ function cm(t) {
             const h = 4 * a + n,
               l = 4 * (A >>> 2 * h & 3),
               f = 4 * (u * e + i);
-            if (o[f] = 0 | Wp[l], o[f + 1] = 0 | Wp[l + 1], o[f + 2] = 0 | Wp[l + 2], s) {
+            if (uint8Values[f] = 0 | Wp[l], uint8Values[f + 1] = 0 | Wp[l + 1], uint8Values[f + 2] = 0 | Wp[l + 2], s) {
               const e = 3 * h,
                 n = c + 2 + (e >> 3),
                 s = 7 & e,
                 i = (t[n] | t[n + 1] << 8) >> s & 7;
-              o[f + 3] = 0 | Vp[i];
-            } else o[f + 3] = 255;
+              uint8Values[f + 3] = 0 | Vp[i];
+            } else uint8Values[f + 3] = 255;
           }
         }
       }
       return {
-        data: o,
+        data: uint8Values,
         width: e,
         height: n
       };
@@ -7929,7 +7929,7 @@ function cm(t) {
   }
 }
 var um = {
-    data: Uint8Array.from(Yl.flatMap(t => [t[0], t[1], t[2], 255])),
+    data: Uint8Array.from(Yl.flatMap(item => [item[0], item[1], item[2], 255])),
     width: 2,
     height: 2
   },
@@ -7987,15 +7987,15 @@ var um = {
       Pi(this.$_1a6), Pi(this.defaultMaterial), Pi(this.$_qkt);
       for (const a of this.$_6ct) a && yo(a).then(Vi, () => {});
       const o = this.particles;
-      if (o) for (const a of ["chickExplosion", "chickenExplosion"]) this.$_134(a).then(async t => {
-        if (!t) return;
-        if (await o.preload(t, 2), "chickenExplosion" !== a) return;
+      if (o) for (const a of ["chickExplosion", "chickenExplosion"]) this.$_134(a).then(async result => {
+        if (!result) return;
+        if (await o.preload(result, 2), "chickenExplosion" !== a) return;
         const lookupMap = new Map();
         for (const n of Object.values(this.$_2w5)) {
           const t = om(n ?? null);
           t && lookupMap.set(t.join(","), t);
         }
-        for (const [n, s] of lookupMap) await o.preload(t, 1, {
+        for (const [n, s] of lookupMap) await o.preload(result, 1, {
           system: t => rm(t, s),
           variant: n
         });
@@ -8008,8 +8008,8 @@ var um = {
       try {
         s = await yo("myth-chicken.png"), this.$_559 = cm(s);
       } catch {
-        const t = new Uint8Array(16);
-        [Yl[2], Yl[3], Yl[0], Yl[1]].forEach((e, n) => t.set([e[0], e[1], e[2], 255], 4 * n)), s = new K(t, 2, 2), s.colorSpace = Yi, s.magFilter = s.minFilter = Ot, s.needsUpdate = !0, this.$_559 = null;
+        const uint8Values = new Uint8Array(16);
+        [Yl[2], Yl[3], Yl[0], Yl[1]].forEach((item, index) => uint8Values.set([item[0], item[1], item[2], 255], 4 * index)), s = new K(uint8Values, 2, 2), s.colorSpace = Yi, s.magFilter = s.minFilter = Ot, s.needsUpdate = !0, this.$_559 = null;
       }
       return s.wrapS = s.wrapT = M, n.uniforms.uMap.value = s, n;
     }
@@ -8125,9 +8125,9 @@ var um = {
       let s = n,
         i = -1;
       const o = new ne();
-      return this.models.forEach((n, a) => {
-        if (!n?.root.visible) return;
-        zu(n.root.position, n.scale, o);
+      return this.models.forEach((item, index) => {
+        if (!item?.root.visible) return;
+        zu(item.root.position, item.scale, o);
         const r = function (t, e, n, s) {
           const i = t.x - n.x,
             o = t.y - n.y,
@@ -8139,14 +8139,14 @@ var um = {
           if (l < 0) return null;
           const c = -r - Math.sqrt(l);
           return c >= 0 ? c : null;
-        }(t, e, o, Gu(n.scale));
-        null !== r && r < s && (s = r, i = a);
+        }(t, e, o, Gu(item.scale));
+        null !== r && r < s && (s = r, i = index);
       }), i;
     }
     $_1s3() {
-      return this.models.filter(t => t?.root.visible).map(t => ({
-        center: zu(t.root.position, t.scale),
-        radius: Gu(t.scale)
+      return this.models.filter(item => item?.root.visible).map(item => ({
+        center: zu(item.root.position, item.scale),
+        radius: Gu(item.scale)
       }));
     }
     explode(t) {
@@ -8164,8 +8164,8 @@ var um = {
       const s = this.particles,
         i = e.tint,
         o = 7 * t.scaleMulti;
-      s && this.$_134(e.prefab).then(t => {
-        t && s.spawn(t, n, {
+      s && this.$_134(e.prefab).then(result => {
+        result && s.spawn(result, n, {
           scale: o,
           system: i ? t => rm(t, i) : void 0,
           variant: i ? i.join(",") : void 0
@@ -8203,9 +8203,9 @@ var um = {
       const e = new vo(this.egg);
       e.nodes[0].position.set(0, 0, 0);
       const n = this.$_6ct[t.golden ? 1 : 0];
-      n && yo(n).then(n => {
-        e.meshes.forEach((e, s) => {
-          e && (e.material = this.$_752(e.material, s, t.golden, n));
+      n && yo(n).then(result => {
+        e.meshes.forEach((mesh, index) => {
+          mesh && (mesh.material = this.$_752(mesh.material, index, t.golden, result));
         });
       }), e.nodes[0]?.scale.setScalar(1);
       const s = new _t();
@@ -10341,14 +10341,14 @@ var sw = new Float64Array([1, 1, 0, -1, 1, 0, 1, -1, 0, -1, -1, 0, 1, 0, 1, -1, 
   iw = t => t * t * t * (t * (6 * t - 15) + 10),
   ow = t => 30 * t * t * (t * (t - 2) + 1);
 function aw(t, e, n, s) {
-  const i = Math.floor(t),
-    o = Math.floor(e),
-    a = Math.floor(n),
-    r = 255 & i,
-    h = 255 & o,
-    l = 255 & a;
-  e -= o, n -= a;
-  const c = iw(t -= i),
+  const flooredValue = Math.floor(t),
+    _flooredValue = Math.floor(e),
+    _flooredValue2 = Math.floor(n),
+    r = 255 & flooredValue,
+    h = 255 & _flooredValue,
+    l = 255 & _flooredValue2;
+  e -= _flooredValue, n -= _flooredValue2;
+  const c = iw(t -= flooredValue),
     u = iw(e),
     f = iw(n),
     d = ow(t),
@@ -10456,7 +10456,7 @@ function mw(t, e, n) {
           if (t.fixed) return s.slice(1);
           const o = n[i - 1],
             a = s[0] > o[0] ? (e - o[0]) / (s[0] - o[0]) : 1;
-          return o.slice(1).map((t, e) => t + (s[e + 1] - t) * a);
+          return o.slice(1).map((item, index) => item + (s[index + 1] - item) * a);
         }
       }
       return n[n.length - 1].slice(1);
@@ -10562,8 +10562,8 @@ var Gw = class {
     }
     play(t) {
       if ((!this.playing || !this.emitting) && (this.idle && t && this.setTransform(t), this.playing = !0, this.emitting = !0, this.time = 0, this.$_324 = 0, this.$_6ub = 0, this.$_2rz = null, this.delay = pw(this.data.startDelay, 0, Math.random()), this.data.prewarm && this.data.looping)) {
-        const t = Math.ceil(30 * this.data.duration);
-        for (let e = 0; e < t; e++) this.step(1 / 30);
+        const ceiledValue = Math.ceil(30 * this.data.duration);
+        for (let e = 0; e < ceiledValue; e++) this.step(1 / 30);
       }
     }
     stop() {
@@ -10610,12 +10610,12 @@ var Gw = class {
           r = e.emission;
         if (r) {
           this.$_324 += pw(r.rateOverTime, a, Math.random()) * t;
-          let e = Math.floor(this.$_324);
-          if (this.$_324 -= e, r.rateOverDistance && (r.rateOverDistance.s > 0 || 0 !== r.rateOverDistance.m) && this.$_2rz) {
+          let flooredValue = Math.floor(this.$_324);
+          if (this.$_324 -= flooredValue, r.rateOverDistance && (r.rateOverDistance.s > 0 || 0 !== r.rateOverDistance.m) && this.$_2rz) {
             const t = this.$_2es.distanceTo(this.$_2rz);
             this.$_6ub += pw(r.rateOverDistance, a, Math.random()) * t;
-            const n = Math.floor(this.$_6ub);
-            this.$_6ub -= n, e += n;
+            const _flooredValue3 = Math.floor(this.$_6ub);
+            this.$_6ub -= _flooredValue3, flooredValue += _flooredValue3;
           }
           for (const t of r.bursts ?? []) {
             const s = t.cycleCount > 0 ? t.cycleCount : 1 / 0;
@@ -10624,11 +10624,11 @@ var Gw = class {
               if (s >= o || s > n) break;
               if (s >= i && s < o) {
                 if (t.probability < 1 && Math.random() > t.probability) continue;
-                e += Math.round(pw(t.countCurve, s / n, Math.random()));
+                flooredValue += Math.round(pw(t.countCurve, s / n, Math.random()));
               }
             }
           }
-          for (let t = 0; t < e; t++) this.spawn(a, (t + .5) / Math.max(e, 1));
+          for (let t = 0; t < flooredValue; t++) this.spawn(a, (t + .5) / Math.max(flooredValue, 1));
         }
         if (this.time = o, s -= t, this.time >= n - 1e-6 && (e.looping ? this.time = 0 : this.emitting = !1), t <= 0) break;
       }
@@ -10723,8 +10723,8 @@ var Gw = class {
         case 15:
         case 16:
           if (t.boxThickness, e.set(o(5) - .5, o(6) - .5, o(7) - .5), 5 !== t.type) {
-            const t = Math.floor(3 * o(8));
-            e.setComponent(t, e.getComponent(t) < 0 ? -.5 : .5);
+            const flooredValue = Math.floor(3 * o(8));
+            e.setComponent(flooredValue, e.getComponent(flooredValue) < 0 ? -.5 : .5);
           }
           n.set(0, 0, 1);
           break;
@@ -10863,9 +10863,9 @@ var Gw = class {
       }
       if (h.length = u, this.orphans.length) {
         for (const e of this.orphans) for (let n = 0; n < e.times.length; n++) e.times[n] -= t;
-        this.orphans = this.orphans.filter(t => {
-          for (; t.times.length > 0 && -t.times[0] > t.life;) t.times.shift(), t.pts.shift();
-          return t.pts.length > 1;
+        this.orphans = this.orphans.filter(item => {
+          for (; item.times.length > 0 && -item.times[0] > item.life;) item.times.shift(), item.pts.shift();
+          return item.pts.length > 1;
         });
       }
     }
@@ -10924,8 +10924,8 @@ var Gw = class {
             i = Dw[3 * t + 2] - e.z;
           Qw[t] = n * n + s * s + i * i;
         }
-        Uw.sort((t, e) => Qw[e] - Qw[t]);
-      } else 2 === i.sortMode ? Uw.sort((t, e) => a[t].age - a[e].age) : 3 === i.sortMode && Uw.sort((t, e) => a[e].age - a[t].age);
+        Uw.sort((leftItem, rightItem) => Qw[rightItem] - Qw[leftItem]);
+      } else 2 === i.sortMode ? Uw.sort((leftItem, rightItem) => a[leftItem].age - a[rightItem].age) : 3 === i.sortMode && Uw.sort((leftItem, rightItem) => a[rightItem].age - a[leftItem].age);
       return r;
     }
     pack(t, e) {
@@ -11217,8 +11217,8 @@ var eg = class {
         f.settle() || (f.advance(e, ng), d = f.particles.length, (d > 0 || u.trails && f.orphans.length > 0) && f.prepare(u.view, u.meshReach, u.trails), u.trails && ([A, p] = f.$_1a7(u.view.camPos, f.$_2es, this.trails)), f.$_etz || f.settle());
         const m = tg(d, A, p);
         if (r + m > s.length) {
-          const t = new Float32Array(Math.max(r + m, 2 * s.length));
-          t.set(s.subarray(0, r)), s = t;
+          const float32Values = new Float32Array(Math.max(r + m, 2 * s.length));
+          float32Values.set(s.subarray(0, r)), s = float32Values;
         }
         s[r] = t, s[r + 1] = (f.playing ? 1 : 0) | (f.$_etz ? 2 : 0), s[r + 2] = d, s[r + 3] = f.bounds.center.x, s[r + 4] = f.bounds.center.y, s[r + 5] = f.bounds.center.z, s[r + 6] = d > 0 ? f.bounds.radius : 1 / 0, s[r + 7] = f.$_2es.x, s[r + 8] = f.$_2es.y, s[r + 9] = f.$_2es.z, s[r + 10] = A, s[r + 11] = p;
         let w = r + 12;
@@ -11867,7 +11867,7 @@ async function Bg(t, e) {
   const n = t.renderer,
     s = 4 !== (n?.renderMode ?? 0),
     i = (t, n) => t && e[t] ? Cg(t, e[t], n) : Promise.resolve(null),
-    [o, a, r] = await Promise.all([i(n?.material, s), i(n?.trailMaterial, !0), Promise.all((4 === n?.renderMode ? n.meshes ?? [] : []).map(t => uo(t).then(t => t.geometry)))]);
+    [o, a, r] = await Promise.all([i(n?.material, s), i(n?.trailMaterial, !0), Promise.all((4 === n?.renderMode ? n.meshes ?? [] : []).map(item => uo(item).then(result => result.geometry)))]);
   return {
     material: o,
     trailMaterial: a,
@@ -11945,12 +11945,12 @@ var Dg = jw(),
       this.scene = t, this.root.scale.x = -1, this.root.name = "particles", this.root.updateMatrix(), this.root.matrixAutoUpdate = !1, t.add(this.root);
     }
     $_6cr8(t) {
-      return this.index ??= wo("effects.json").catch(() => ({})), this.index.then(e => e[t]?.file ?? null);
+      return this.index ??= wo("effects.json").catch(() => ({})), this.index.then(result => result[t]?.file ?? null);
     }
     async preload(t, e = 0, n = {}, s = 8) {
       const i = await wo(t).catch(() => null);
       if (!i) return;
-      await Promise.all(i.components.filter(t => "ParticleSystem" === t.type && t.ps).map(t => Bg(t.ps, i.materials)));
+      await Promise.all(i.components.filter(component => "ParticleSystem" === component.type && component.ps).map(item => Bg(item.ps, i.materials)));
       const o = Lg(t, n);
       if (e <= 0 || null === o) return;
       this.keep.set(o, Math.max(this.keep.get(o) ?? 8, e, s));
@@ -11976,9 +11976,9 @@ var Dg = jw(),
         try {
           await ri("rig");
           const n = await this.build(e.file, e.opts);
-          n.pool = t, n.systems.forEach((t, n) => {
-            e.sizes[n] && t.system.$_7lc(e.sizes[n]);
-          }), await Promise.all(n.systems.filter(t => t.system.drawable).map(t => Ki(t.system.object))), n.rest(), this.refills++;
+          n.pool = t, n.systems.forEach((item, index) => {
+            e.sizes[index] && item.system.$_7lc(e.sizes[index]);
+          }), await Promise.all(n.systems.filter(item => item.system.drawable).map(item => Ki(item.system.object))), n.rest(), this.refills++;
           const s = this.$_5vv(t);
           s.length < (this.keep.get(t) ?? 8) ? s.push(n) : n.dispose();
         } catch (n) {
@@ -12006,7 +12006,7 @@ var Dg = jw(),
     async build(t, e, n = !0) {
       const [s, i] = await Promise.all([ao(t), wo(t)]),
         o = new Qg(s, this),
-        a = i.behaviours.find(t => "DestoryAfterTime" === t.script);
+        a = i.behaviours.find(item => "DestoryAfterTime" === item.script);
       a?.data?.afterTime && (o.$_5zb = Number(a.data.afterTime));
       for (const r of i.components) {
         if ("ParticleSystem" !== r.type || !r.ps) continue;
@@ -12032,9 +12032,9 @@ var Dg = jw(),
         for (const e of n.systems) e.system.update(.1, Rg, Dg), t ||= e.system.$_etz;
         if (!t) break;
       }
-      const s = n.systems.map(t => t.system.capacity());
-      for (const i of t) i.systems.forEach((t, e) => {
-        t.system.$_7lc(s[e]), t.system.drawable && Ni(t.system.object);
+      const s = n.systems.map(item => item.system.capacity());
+      for (const i of t) i.systems.forEach((item, index) => {
+        item.system.$_7lc(s[index]), item.system.drawable && Ni(item.system.object);
       }), i.rest();
       return s;
     }
@@ -12063,7 +12063,7 @@ var Dg = jw(),
       }), a.$_3ih8(kg()), a;
     }
     remove(t) {
-      this.attached = this.attached.filter(e => e.system !== t || (t.dispose(), !1)), this.$_7gp = this.$_7gp.filter(e => e !== t);
+      this.attached = this.attached.filter(item => item.system !== t || (t.dispose(), !1)), this.$_7gp = this.$_7gp.filter(item => item !== t);
     }
     $_4nr(t) {
       this.$_7gp.push(t);
@@ -12090,20 +12090,20 @@ var Dg = jw(),
       s.length = i;
       let o = !1;
       for (const a of this.attached) !a.owner || a.owner.parent ? a.system.update(t, e, n) : (a.system.clear(), a.system.stop(), o = !0);
-      o && (this.attached = this.attached.filter(t => !(t.owner && !t.owner.parent && (t.system.dispose(), 1))));
+      o && (this.attached = this.attached.filter(item => !(item.owner && !item.owner.parent && (item.system.dispose(), 1))));
     }
   },
   jg = [1, .42, .08],
   zg = t => {
     const e = t.slice(),
       n = .3 * t[0] + .59 * t[1] + .11 * t[2],
-      s = jg.map(t => Math.min(1, t * Math.max(.35, 1.4 * n)));
+      s = jg.map(item => Math.min(1, item * Math.max(.35, 1.4 * n)));
     for (let i = 0; i < 3; i++) e[i] = t[i] + .6 * (s[i] - t[i]);
     return e;
   },
   Gg = t => t && {
     ...t,
-    c: t.c.map(t => [...zg(t.slice(0, 3)), ...t.slice(3)])
+    c: t.c.map(item => [...zg(item.slice(0, 3)), ...item.slice(3)])
   },
   Tg = new WeakMap(),
   $g = class {
@@ -12131,7 +12131,7 @@ var Dg = jw(),
       }
     }
     get objects() {
-      return this.rings.map(t => t.mesh);
+      return this.rings.map(item => item.mesh);
     }
     show(t, e = Fl.radius, n = Fl.fuse) {
       let s = this.rings[0];
@@ -12235,9 +12235,9 @@ var Kg = class {
       return this.burns.size;
     }
     light(t, e) {
-      e.spawning = !0, this.file().then(async n => {
-        if (!n) return;
-        const s = await this.particles.spawn(n, qg, {
+      e.spawning = !0, this.file().then(async result => {
+        if (!result) return;
+        const s = await this.particles.spawn(result, qg, {
           ...this.options(),
           parent: e.holder
         });
@@ -12327,7 +12327,7 @@ var Kg = class {
       let e = this.$_49n.get(t);
       return e || (e = (async () => {
         let e;
-        const n = (t, e) => wo(t).then(t => t.behaviours.find(t => t.data?.[e])?.data?.[e]);
+        const n = (t, e) => wo(t).then(result => result.behaviours.find(item => item.data?.[e])?.data?.[e]);
         return "rocket" === t ? e = await n("rocket.json", "impactPrefab") : "bomb" === t ? e = await n("world-bomb.json", "exploadEffect") : Vg[t] && (e = await n(Vg[t], "explosionFx")), e?.key ? this.particles.$_6cr8(e.key) : null;
       })().catch(() => null), this.$_49n.set(t, e)), e;
     }
@@ -12335,13 +12335,13 @@ var Kg = class {
       return this.fxFile(t);
     }
     preload() {
-      for (const t of ["rocket", "frag", "smoke", "molotov", "bomb"]) this.fxFile(t).then(t => t ? this.particles.preload(t) : void 0);
+      for (const t of ["rocket", "frag", "smoke", "molotov", "bomb"]) this.fxFile(t).then(result => result ? this.particles.preload(result) : void 0);
       this.particles.preload("rocket.json"), this.particles.preload("world-grenade.json");
     }
     async prepare(t) {
       const e = [];
-      for (const [s, i] of Object.entries(Xg)) e.push(this.fxFile(s).then(t => t ? this.particles.preload(t, i) : void 0));
-      this.$_6bwd && e.push(this.$_2wl().then(t => t ? this.particles.preload(t, 12, {}, 32) : void 0));
+      for (const [s, i] of Object.entries(Xg)) e.push(this.fxFile(s).then(result => result ? this.particles.preload(result, i) : void 0));
+      this.$_6bwd && e.push(this.$_2wl().then(result => result ? this.particles.preload(result, 12, {}, 32) : void 0));
       const n = (t, n) => {
         const s = this.$_2k3(rv(t));
         for (let i = s.length; i < n; i++) {
@@ -12356,21 +12356,21 @@ var Kg = class {
         kind: "grenade",
         type: s
       }, 2);
-      "zombies" === t && e.push(this.fxFile("frag").then(t => t ? this.particles.preload(t, 2, Yg) : void 0)), await Promise.all(e), await async function () {
+      "zombies" === t && e.push(this.fxFile("frag").then(result => result ? this.particles.preload(result, 2, Yg) : void 0)), await Promise.all(e), await async function () {
         const t = await Promise.all(xg.values());
-        await Promise.all(t.map(t => t ? Pi(t) : null));
+        await Promise.all(t.map(item => item ? Pi(item) : null));
       }();
     }
     explosion(t) {
       if ("flash" === t.kind) return;
       if ("barrel" === t.kind) return;
       const e = new ne().fromArray(t.at);
-      "zombieFire" !== t.kind ? this.fxFile(t.kind).then(async n => {
-        if (!n) return this.fallback(t.kind, e);
-        const s = await this.particles.spawn(n, e, "smoke" === t.kind ? Zg : tv);
+      "zombieFire" !== t.kind ? this.fxFile(t.kind).then(async result => {
+        if (!result) return this.fallback(t.kind, e);
+        const s = await this.particles.spawn(result, e, "smoke" === t.kind ? Zg : tv);
         Jg[t.kind] && s.$_xk7(Jg[t.kind]);
-      }) : this.fxFile("frag").then(t => {
-        t ? this.particles.spawn(t, e, Yg) : this.fallback("frag", e);
+      }) : this.fxFile("frag").then(result => {
+        result ? this.particles.spawn(result, e, Yg) : this.fallback("frag", e);
       });
     }
     $_28b = null;
@@ -12378,11 +12378,11 @@ var Kg = class {
     $_2wl() {
       return this.$_28b ??= (async () => {
         const t = await wo("bullets.json"),
-          e = Object.values(t).find(t => t.impact)?.impact;
+          e = Object.values(t).find(item => item.impact)?.impact;
         if (!e) return null;
-        const n = (await wo(e)).behaviours.find(t => "ImpactEffect" === t.script)?.data?.smoke;
+        const n = (await wo(e)).behaviours.find(item => "ImpactEffect" === item.script)?.data?.smoke;
         return n?.key ? this.particles.$_6cr8(n.key) : null;
-      })().catch(() => null).then(t => this.$_33f = t), this.$_28b;
+      })().catch(() => null).then(result => this.$_33f = result), this.$_28b;
     }
     $_75y(t, e, n = .072) {
       const s = this.$_33f;
@@ -12486,9 +12486,9 @@ var Kg = class {
     }
     $_eof(t, e) {
       let n = this.$_3y6.get(t);
-      return n || (n = lo(e, "third").then(t => bi({
+      return n || (n = lo(e, "third").then(result => bi({
         color: [1, 1, 1, 1],
-        map: t
+        map: result
       })), this.$_3y6.set(t, n)), n;
     }
     async $_520(t, e) {
@@ -12502,7 +12502,7 @@ var Kg = class {
           const [s, i] = await Promise.all([uo(t.mesh), this.$_eof(e.type, t.skin)]);
           i && n.add(new j(s.geometry, i));
         }
-        const o = s.behaviours.find(t => "WorldGrenade" === t.script)?.data?.fireTrail?.node;
+        const o = s.behaviours.find(item => "WorldGrenade" === item.script)?.data?.fireTrail?.node;
         3 === e.type && "number" == typeof o && i.setActive(o, !0);
       }
       for (const o of s.components) {
@@ -12529,9 +12529,9 @@ var Kg = class {
       this.time += t, this.particles.update(t, e);
       const n = this.$_7lo?.() ?? null;
       for (const s of this.projectiles.values()) s.flight && (s.flight.update(t, n), s.object.position.copy(s.flight.position), s.object.quaternion.copy(s.flight.quaternion));
-      this.timed.length && (this.timed = this.timed.filter(t => this.time >= t.until ? (t.object.removeFromParent(), t.object.traverse(t => {
+      this.timed.length && (this.timed = this.timed.filter(item => this.time >= item.until ? (item.object.removeFromParent(), item.object.traverse(t => {
         (t instanceof j || t instanceof mt) && (t.geometry.dispose(), t.material.dispose());
-      }), !1) : (t.update?.(this.time - t.born, t.until - t.born), !0)));
+      }), !1) : (item.update?.(this.time - item.born, item.until - item.born), !0)));
     }
   },
   lv = class {
@@ -13492,13 +13492,13 @@ var Kg = class {
       } : null, !this.settings) return;
       const s = this.curves.image.data,
         i = this.settings.curves;
-      [[i.hueVsHue, i.hueVsSat, i.satVsSat, i.lumVsSat], [i.red, i.green, i.blue, i.master]].forEach((t, e) => {
-        const n = t.map(No);
-        for (let i = 0; i < 128; i++) for (let t = 0; t < 4; t++) s[4 * (128 * e + i) + t] = L.toHalfFloat(n[t][i]);
+      [[i.hueVsHue, i.hueVsSat, i.satVsSat, i.lumVsSat], [i.red, i.green, i.blue, i.master]].forEach((item, index) => {
+        const n = item.map(No);
+        for (let i = 0; i < 128; i++) for (let t = 0; t < 4; t++) s[4 * (128 * index + i) + t] = L.toHalfFloat(n[t][i]);
       }), this.curves.needsUpdate = !0, this.dirty = !0;
     }
     tweenTo(t, e, n = performance.now()) {
-      if (this.settings) for (const [s, i] of Object.entries(t)) this.tweens = this.tweens.filter(t => t.key !== s), e <= 0 ? (this.settings[s] = i, this.dirty = !0) : this.tweens.push({
+      if (this.settings) for (const [s, i] of Object.entries(t)) this.tweens = this.tweens.filter(item => item.key !== s), e <= 0 ? (this.settings[s] = i, this.dirty = !0) : this.tweens.push({
         key: s,
         from: this.settings[s],
         to: i,
@@ -13553,7 +13553,7 @@ var Kg = class {
         const n = Math.max(0, Math.min(1, (t - e.start) / e.duration));
         this.settings[e.key] = e.from + (e.to - e.from) * Av(n), this.dirty = !0;
       }
-      return this.tweens.length && (this.tweens = this.tweens.filter(e => t - e.start < e.duration)), this.$_3wr ?? this.target;
+      return this.tweens.length && (this.tweens = this.tweens.filter(item => t - item.start < item.duration)), this.$_3wr ?? this.target;
     }
     end(t, e = null, n = Po, s = null) {
       if (!this.settings) return;
@@ -13867,7 +13867,7 @@ var Cv = class {
       for (const [r, h] of Object.entries(e)) h.value instanceof tt ? lookupMap.set(r, h.value.clone()) : "number" != typeof h.value || Iv.includes(r) || _lookupMap2.set(r, h.value);
       const a = {
         light: Ti.uLightColor.value.clone(),
-        sh: Ti.uSH.value.map(t => t.clone()),
+        sh: Ti.uSH.value.map(item => item.clone()),
         fogColor: Ti.uFogColor.value.clone(),
         fog: Ti.uFog.value.clone(),
         skyTop: Ti.uSkyTop.value.clone(),
@@ -13878,7 +13878,7 @@ var Cv = class {
       this.restore = () => {
         for (const [t, n] of lookupMap) e[t].value.copy(n);
         for (const [t, n] of _lookupMap2) e[t].value = n;
-        Ti.uLightColor.value.copy(a.light), Ti.uSH.value.forEach((t, e) => t.copy(a.sh[e])), Ti.uFogColor.value.copy(a.fogColor), Ti.uFog.value.copy(a.fog), Ti.uSkyTop.value.copy(a.skyTop), Ti.uSkyBottom.value.copy(a.skyBottom), s.visible = a.visible, n.background = a.background;
+        Ti.uLightColor.value.copy(a.light), Ti.uSH.value.forEach((item, index) => item.copy(a.sh[index])), Ti.uFogColor.value.copy(a.fogColor), Ti.uFog.value.copy(a.fog), Ti.uSkyTop.value.copy(a.skyTop), Ti.uSkyBottom.value.copy(a.skyBottom), s.visible = a.visible, n.background = a.background;
       }, e._SkyGroundContribution.value = 0;
       for (const r of Bv) e[r].value = 0;
       for (const [r, h] of Object.entries(t.sky.colors)) e[r]?.value instanceof tt && e[r].value.setRGB(h[0], h[1], h[2]);
@@ -13905,16 +13905,16 @@ var Cv = class {
     }
     async $_4hp(t, e, n) {
       const s = e?.render,
-        lookupMap = new Map(ie(t).map(t => [t.node.id, t.matrix])),
+        lookupMap = new Map(ie(t).map(item => [item.node.id, item.matrix])),
         o = e?.lights.find(t => 1 === t.type && t.enabled && t.node === s?.sun) ?? e?.lights.find(t => 1 === t.type && t.enabled),
         a = new ne(.3, .8, .4).normalize();
       o?.node && lookupMap.has(o.node) && a.set(0, 0, 1).transformDirection(lookupMap.get(o.node)).negate();
       const r = function (t, e) {
-        return t ? t.lights.some(t => 1 === t.type && t.enabled && t.intensity > 0) ? null : e && bv[e] || Mv : null;
+        return t ? t.lights.some(item => 1 === item.type && item.enabled && item.intensity > 0) ? null : e && bv[e] || Mv : null;
       }(e, n);
       r && a.set(...r.toSun).normalize(), Ti.uLightDir.value.copy(a), this.$_2pi.copy(a);
       const h = e?.sunCycle,
-        l = h ? t.nodes.find(t => t.id === h.node) : void 0;
+        l = h ? t.nodes.find(node => node.id === h.node) : void 0;
       if (this.cycle = null, h && l && !1 !== h.enabled && !r) {
         const {
           yaw: t,
@@ -14153,7 +14153,7 @@ var Uv = {
       return !!this.data;
     }
     async load(t, e, n) {
-      this.clear(), this.nodes = n, this.names = new Map(t.nodes.map(t => [t.name, t.id]));
+      this.clear(), this.nodes = n, this.names = new Map(t.nodes.map(node => [node.name, node.id]));
       const s = e?.minimap;
       if (!s?.camera) return;
       this.data = s;
@@ -14175,21 +14175,21 @@ var Uv = {
           yaw: Math.atan2(-e.x, -e.z)
         };
       }
-      const lookupMap = new Map(t.nodes.map(t => [t.id, t.parent])),
+      const lookupMap = new Map(t.nodes.map(node => [node.id, node.parent])),
         c = e?.managers.SearchAndDestroyManager?.[0]?.data,
-        u = t => Array.isArray(t) ? t.map(t => t?.node ?? null) : [],
+        u = t => Array.isArray(t) ? t.map(item => item?.node ?? null) : [],
         f = u(c?.teamMapMarkers),
         uniqueItems = new Set(u(c?.teammateMinimapSpriteRenderer)),
         A = e?.source ?? t.source,
         p = [];
-      await Promise.all(s.sprites.map(async t => {
-        if (!t.sprite || !t.node) return;
-        const e = n.get(t.node);
+      await Promise.all(s.sprites.map(async item => {
+        if (!item.sprite || !item.node) return;
+        const e = n.get(item.node);
         if (!e) return;
         const s = await async function (t, e) {
           const n = await Ts(t);
           return n.colorSpace = Yi, n.wrapS = n.wrapT = Xt, n.generateMipmaps = e.mipmaps, n.magFilter = 0 === e.filter ? Ot : F, n.minFilter = e.mipmaps ? 2 === e.filter ? et : 0 === e.filter ? ut : B : n.magFilter, n;
-        }(`/assets/extracted/${A}/${t.sprite.file}`, t.sprite);
+        }(`/assets/extracted/${A}/${item.sprite.file}`, item.sprite);
         this.textures.push(s);
         const o = function (t, e) {
             const n = new $({
@@ -14208,21 +14208,21 @@ var Uv = {
               h = new j(r, n);
             return h.name = t.name, h.renderOrder = t.order, h.visible = t.enabled, h;
           }({
-            ...t,
-            sprite: t.sprite
+            ...item,
+            sprite: item.sprite
           }, s),
           a = o.material;
         o.matrixAutoUpdate = !1, o.layers.set(ra.Minimap), (t => {
           for (let e = t ? lookupMap.get(t) : null; e; e = lookupMap.get(e)) if (e === i.node) return !0;
           return !1;
-        })(t.node) && h ? (o.matrix.copy(h.clone().invert().multiply(e)), this.rig.add(o)) : (o.matrix.copy(e), this.scene.add(o)), uniqueItems.has(t.node) && this.tinted.push(a);
-        const r = f.indexOf(t.node);
+        })(item.node) && h ? (o.matrix.copy(h.clone().invert().multiply(e)), this.rig.add(o)) : (o.matrix.copy(e), this.scene.add(o)), uniqueItems.has(item.node) && this.tinted.push(a);
+        const r = f.indexOf(item.node);
         r >= 0 && (o.visible = !1, p[r] = {
           object: o,
           base: e.clone(),
           connected: null
         });
-      })), this.markers = p.filter(t => !!t), this.follow(this.pose);
+      })), this.markers = p.filter(item => !!item), this.follow(this.pose);
     }
     zoom = 1;
     resolution = 1;
@@ -14232,9 +14232,9 @@ var Uv = {
         s = this.target;
       if (!n || !s || e === this.resolution) return;
       this.resolution = e;
-      const i = Math.round(n.target.size[0] * e),
-        o = Math.round(n.target.size[1] * e);
-      s.setSize(i, o), this.$_4ex(i, o);
+      const roundedValue = Math.round(n.target.size[0] * e),
+        _roundedValue = Math.round(n.target.size[1] * e);
+      s.setSize(roundedValue, _roundedValue), this.$_4ex(roundedValue, _roundedValue);
     }
     setZoom(t) {
       const e = this.data?.camera;
@@ -14948,7 +14948,7 @@ function xy(t) {
     }
     if (s.length) return s;
   }
-  for (const i of p.find(e => e.id === t.classId)?.weapons ?? []) i && r[i] && s.push([i, -1]);
+  for (const i of p.find(item => item.id === t.classId)?.weapons ?? []) i && r[i] && s.push([i, -1]);
   return s;
 }
 function Fy(t) {
@@ -15047,7 +15047,7 @@ var Py = (t, e) => new Wt({
       }
     }
     tune(t) {
-      this.emitters > 0 && (this.settings = t), this.settings || (this.drawn = !1), this.materials.forEach((t, e) => t.uniforms.uEmission.value.copy(this.sources[e]));
+      this.emitters > 0 && (this.settings = t), this.settings || (this.drawn = !1), this.materials.forEach((item, index) => item.uniforms.uEmission.value.copy(this.sources[index]));
     }
     add(t) {
       t.matrixAutoUpdate = !1, t.frustumCulled = !1, this.group.add(t);
@@ -15146,7 +15146,7 @@ function Qy(t, e) {
 function Uy(t) {
   if (!(t instanceof j) || t instanceof Rt) return !1;
   const e = t.material;
-  return Array.isArray(e) ? e.some(t => t.visible && !t.transparent) : e.visible && !e.transparent;
+  return Array.isArray(e) ? e.some(item => item.visible && !item.transparent) : e.visible && !e.transparent;
 }
 var jy = new class {
     enabled = !0;
@@ -15210,7 +15210,7 @@ var jy = new class {
       };
       t.traverse(t => {
         if (!(t instanceof j) || t instanceof Rt) return;
-        if ((Array.isArray(t.material) ? t.material : [t.material]).every(t => t.transparent)) return;
+        if ((Array.isArray(t.material) ? t.material : [t.material]).every(item => item.transparent)) return;
         const e = Dy(t, s);
         n.throughWalls && (e.renderOrder = 10), this.world.add(e), i.pairs.push({
           source: t,
@@ -15406,13 +15406,13 @@ function Xy(t, e, n, s) {
 }
 var Yy = t => t.edits?.objects ? "objects.edited.json" : "objects.json",
   Zy = new R().makeScale(-1, 1, 1),
-  tM = Jy.bones.map(t => t ? new R().fromArray(t) : null);
+  tM = Jy.bones.map(bone => bone ? new R().fromArray(bone) : null);
 function eM(t, e) {
   const n = t.geometry,
     s = n.getAttribute("position"),
     i = n.getAttribute("skinIndex"),
     o = n.getAttribute("skinWeight"),
-    a = new Float32Array(3 * s.count),
+    float32Values = new Float32Array(3 * s.count),
     r = new ne(),
     h = new ne(),
     l = new ne();
@@ -15424,10 +15424,10 @@ function eM(t, e) {
         a = i ? e[i.getComponent(d, n)] : e[0];
       s <= 0 || !a || (h.addScaledVector(l.copy(r).applyMatrix4(a), s), t += s);
     }
-    t > 0 && h.divideScalar(t), a.set([h.x, h.y, h.z], 3 * d);
+    t > 0 && h.divideScalar(t), float32Values.set([h.x, h.y, h.z], 3 * d);
   }
   const c = new Vt();
-  c.setAttribute("position", new At(a, 3));
+  c.setAttribute("position", new At(float32Values, 3));
   const u = n.getAttribute("uv");
   u && c.setAttribute("uv", u);
   const f = n.getAttribute("color");
@@ -15448,18 +15448,18 @@ var nM = class {
       const i = ++this.ticket;
       this.systems.clear(), this.$_5i45.length = 0;
       for (const p of this.$_e4q) p.removeFromParent();
-      this.$_e4q.length = 0, this.barrels = [], this.parents = new Map(t.nodes.map(t => [t.id, t.parent ?? null]));
+      this.$_e4q.length = 0, this.barrels = [], this.parents = new Map(t.nodes.map(node => [node.id, node.parent ?? null]));
       for (const p of e?.objects ?? []) {
         const t = p.scripts?.ExplosiveBarrel?.effects ?? [],
           e = p.node ? n.get(p.node) : void 0;
         e && t.length && this.barrels.push({
           at: new ne().setFromMatrixPosition(e),
-          effects: t.map(t => t.node).filter(t => !!t)
+          effects: t.map(item => item.node).filter(item => !!item)
         });
       }
-      const o = t => ws(`/assets/extracted/${t}/effects.json`).then(t => t.ok ? t.json() : null).catch(() => null),
+      const o = t => ws(`/assets/extracted/${t}/effects.json`).then(result => result.ok ? result.json() : null).catch(() => null),
         a = e?.effectCopies ?? [],
-        r = [...new Set(a.map(t => t.map))].filter(e => e !== t.source),
+        r = [...new Set(a.map(item => item.map))].filter(item => item !== t.source),
         [h, ...l] = await Promise.all([o(t.source), ...r.map(o)]);
       if (i !== this.ticket) return;
       const c = function (t, e, n, s) {
@@ -15489,7 +15489,7 @@ var nM = class {
               s.has(t) && (i.skinned.push({
                 ...n,
                 node: t,
-                bones: n.bones.map(t => t && s.has(e(t)) ? e(t) : null)
+                bones: n.bones.map(bone => bone && s.has(e(bone)) ? e(bone) : null)
               }), r = !0);
             }
             if (r) {
@@ -15498,29 +15498,29 @@ var nM = class {
             }
           }
           return o ? i : null;
-        }(h, a, new Map([[t.source, h], ...r.map((t, e) => [t, l[e]])]), n),
+        }(h, a, new Map([[t.source, h], ...r.map((item, index) => [item, l[index]])]), n),
         uniqueItems = new Set(),
-        f = (c?.skinned ?? []).filter(t => t.mesh);
+        f = (c?.skinned ?? []).filter(item => item.mesh);
       for (const p of f) {
         const t = s?.rootOf(p.node);
         t && p.enabled && uniqueItems.add(t);
       }
-      const d = (s?.roots ?? []).filter(t => !uniqueItems.has(t.id)).map(t => this.$_643(t, s, i));
+      const d = (s?.roots ?? []).filter(item => !uniqueItems.has(item.id)).map(item => this.$_643(item, s, i));
       if (!c) return void (await Promise.all(d));
-      const lookupMap = new Map(t.nodes.map(t => [t.id, t]));
-      await Promise.all([...d, ...c.particles.map(async t => {
-        const s = n.get(t.node),
-          o = Xy(e, t.node, t.active, !!t.ps.playOnAwake);
+      const lookupMap = new Map(t.nodes.map(node => [node.id, node]));
+      await Promise.all([...d, ...c.particles.map(async item => {
+        const s = n.get(item.node),
+          o = Xy(e, item.node, item.active, !!item.ps.playOnAwake);
         if (!s || !o.build) return;
         const a = new ht();
-        a.matrixAutoUpdate = !1, a.matrix.copy(s), a.matrixWorldNeedsUpdate = !0, a.name = t.name;
-        const r = new ne().fromArray(lookupMap.get(t.node)?.scale ?? [1, 1, 1]),
-          h = await this.particles.attach(t.ps, c.materials, a, r);
+        a.matrixAutoUpdate = !1, a.matrix.copy(s), a.matrixWorldNeedsUpdate = !0, a.name = item.name;
+        const r = new ne().fromArray(lookupMap.get(item.node)?.scale ?? [1, 1, 1]),
+          h = await this.particles.attach(item.ps, c.materials, a, r);
         if (i !== this.ticket) return this.particles.remove(h);
-        this.world.add(a), this.particles.$_4nr(h), this.systems.set(t.node, h), o.play && h.play();
-      }), ...f.map(t => {
-        const o = s?.rootOf(t.node);
-        return o ? t.enabled && Xy(e, t.node, !0, !0).build ? this.$_19l(t, c.materials, n, o, s, i) : null : Xy(e, t.node, t.active && t.enabled, !0).play ? this.$_5rz(t, c.materials, n, i) : null;
+        this.world.add(a), this.particles.$_4nr(h), this.systems.set(item.node, h), o.play && h.play();
+      }), ...f.map(item => {
+        const o = s?.rootOf(item.node);
+        return o ? item.enabled && Xy(e, item.node, !0, !0).build ? this.$_19l(item, c.materials, n, o, s, i) : null : Xy(e, item.node, item.active && item.enabled, !0).play ? this.$_5rz(item, c.materials, n, i) : null;
       })]);
     }
     async $_19l(t, e, n, s, i, o) {
@@ -15532,9 +15532,9 @@ var nM = class {
       const [c, u] = await Promise.all([uo(t.mesh), Cg(a, r, !0)]);
       if (!u || o !== this.ticket) return;
       const f = l.clone().invert(),
-        d = t.bones.map((t, e) => {
-          const s = t ? n.get(t) : void 0;
-          return s ? f.clone().multiply(s).multiply(c.bindPoses[e] ?? new R()) : null;
+        d = t.bones.map((bone, index) => {
+          const s = bone ? n.get(bone) : void 0;
+          return s ? f.clone().multiply(s).multiply(c.bindPoses[index] ?? new R()) : null;
         });
       this.$_20f(eM(c, d), u, t.name, h.group);
     }
@@ -15545,7 +15545,7 @@ var nM = class {
       if (!o || n !== this.ticket) return;
       const [a, r, h] = Jy.box,
         l = new R().makeScale((t.box[0] || a) / a, (t.box[1] || r) / r, (t.box[2] || h) / h),
-        c = tM.map((t, e) => t ? l.clone().multiply(t).multiply(i.bindPoses[e] ?? new R()) : null);
+        c = tM.map((item, index) => item ? l.clone().multiply(item).multiply(i.bindPoses[index] ?? new R()) : null);
       this.$_20f(eM(i, c), o, "SM_LightRay_Cube", s.group);
     }
     $_20f(t, e, n, s) {
@@ -15559,9 +15559,9 @@ var nM = class {
       if (!o) return;
       const [a, r] = await Promise.all([uo(t.mesh), Cg(i, o, !0)]);
       if (!r || s !== this.ticket) return;
-      const h = t.bones.map((t, e) => {
-          const s = t ? n.get(t) : void 0;
-          return s ? new R().multiplyMatrices(Zy, s).multiply(a.bindPoses[e] ?? new R()) : null;
+      const h = t.bones.map((bone, index) => {
+          const s = bone ? n.get(bone) : void 0;
+          return s ? new R().multiplyMatrices(Zy, s).multiply(a.bindPoses[index] ?? new R()) : null;
         }),
         l = new j(eM(a, h), r);
       l.name = t.name;
@@ -15703,9 +15703,9 @@ var uM = new class {
           }
           const s = function (t, e, n = 0) {
               const lookupMap = new Map();
-              let i = new Float64Array(0),
-                o = new Float64Array(0),
-                a = new Int32Array(0);
+              let float64Values = new Float64Array(0),
+                _float64Values = new Float64Array(0),
+                int32Values = new Int32Array(0);
               for (const h of e) {
                 const e = t[h.mesh],
                   r = e.indices,
@@ -15718,7 +15718,7 @@ var uM = new class {
                   e < c && (c = e), e > u && (u = e);
                 }
                 const f = u - c + 1;
-                a.length < f && (a = new Int32Array(f), i = new Float64Array(3 * f), o = new Float64Array(3 * f)), a.fill(-2, 0, f);
+                int32Values.length < f && (int32Values = new Int32Array(f), float64Values = new Float64Array(3 * f), _float64Values = new Float64Array(3 * f)), int32Values.fill(-2, 0, f);
                 const d = h.matrix,
                   A = tA.getNormalMatrix(eA.fromArray(d)).elements,
                   p = e.positions,
@@ -15730,15 +15730,15 @@ var uM = new class {
                 for (let t = h.start; t < l; t++) {
                   const e = r[t],
                     n = e - c;
-                  if (-2 !== a[n]) continue;
-                  a[n] = -1;
+                  if (-2 !== int32Values[n]) continue;
+                  int32Values[n] = -1;
                   const s = p[3 * e],
                     h = p[3 * e + 1],
                     l = p[3 * e + 2],
                     u = d[0] * s + d[4] * h + d[8] * l + d[12],
                     f = d[1] * s + d[5] * h + d[9] * l + d[13],
                     M = d[2] * s + d[6] * h + d[10] * l + d[14];
-                  i[3 * n] = u, i[3 * n + 1] = f, i[3 * n + 2] = M, u < w && (w = u), u > v && (v = u), M < g && (g = M), M > y && (y = M);
+                  float64Values[3 * n] = u, float64Values[3 * n + 1] = f, float64Values[3 * n + 2] = M, u < w && (w = u), u > v && (v = u), M < g && (g = M), M > y && (y = M);
                   const S = m[3 * e],
                     b = m[3 * e + 1],
                     _ = m[3 * e + 2];
@@ -15746,7 +15746,7 @@ var uM = new class {
                     x = A[1] * S + A[4] * b + A[7] * _,
                     F = A[2] * S + A[5] * b + A[8] * _;
                   const C = Math.hypot(k, x, F);
-                  C > 0 && (k /= C, x /= C, F /= C), o[3 * n] = k, o[3 * n + 1] = x, o[3 * n + 2] = F;
+                  C > 0 && (k /= C, x /= C, F /= C), _float64Values[3 * n] = k, _float64Values[3 * n + 1] = x, _float64Values[3 * n + 2] = F;
                 }
                 const M = n > 0 ? Math.floor((w + v) / 2 / n) : 0,
                   S = n > 0 ? Math.floor((g + y) / 2 / n) : 0,
@@ -15766,29 +15766,29 @@ var uM = new class {
                 for (let t = h.start; t < l; t++) {
                   const e = r[t],
                     n = e - c;
-                  let s = a[n];
-                  s < 0 && (s = a[n] = _.positions.length / 3, _.positions.push(i[3 * n], i[3 * n + 1], i[3 * n + 2]), _.normals.push(o[3 * n], o[3 * n + 1], o[3 * n + 2]), k ? _.uvs.push(k[2 * e], k[2 * e + 1]) : _.uvs.push(0, 0)), _.indices.push(s);
+                  let s = int32Values[n];
+                  s < 0 && (s = int32Values[n] = _.positions.length / 3, _.positions.push(float64Values[3 * n], float64Values[3 * n + 1], float64Values[3 * n + 2]), _.normals.push(_float64Values[3 * n], _float64Values[3 * n + 1], _float64Values[3 * n + 2]), k ? _.uvs.push(k[2 * e], k[2 * e + 1]) : _.uvs.push(0, 0)), _.indices.push(s);
                 }
               }
               const r = [];
               for (const h of lookupMap.values()) {
-                const t = new Float32Array(h.positions),
+                const float32Values = new Float32Array(h.positions),
                   e = h.positions.length / 3;
                 r.push({
                   material: h.material,
                   layer: h.layer,
                   castShadow: h.castShadow,
                   parts: h.parts,
-                  position: t,
+                  position: float32Values,
                   normal: new Float32Array(h.normals),
                   uv: new Float32Array(h.uvs),
                   index: e > 65535 ? new Uint32Array(h.indices) : new Uint16Array(h.indices),
-                  ...nA(t)
+                  ...nA(float32Values)
                 });
               }
               return r;
             }(t.meshes, t.parts, t.cell),
-            i = s.filter(e => e.castShadow && t.casters[e.material]),
+            i = s.filter(item => item.castShadow && t.casters[item.material]),
             o = i.length ? sA(i) : null;
           for (const a of s) for (const t of [a.position, a.normal, a.uv, a.index]) hM(uniqueItems, t);
           if (o) for (const a of [o.position, o.index]) hM(uniqueItems, a);
@@ -15856,18 +15856,18 @@ var uM = new class {
           return {
             meshes: e,
             materials: n,
-            parts: t.map(t => {
-              let o = lookupMap.get(t.mesh);
-              void 0 === o && lookupMap.set(t.mesh, o = e.push(t.mesh) - 1);
-              let a = _lookupMap3.get(t.material);
-              return void 0 === a && _lookupMap3.set(t.material, a = n.push(t.material) - 1), {
+            parts: t.map(item => {
+              let o = lookupMap.get(item.mesh);
+              void 0 === o && lookupMap.set(item.mesh, o = e.push(item.mesh) - 1);
+              let a = _lookupMap3.get(item.material);
+              return void 0 === a && _lookupMap3.set(item.material, a = n.push(item.material) - 1), {
                 mesh: o,
-                start: t.start,
-                count: t.count,
-                matrix: t.matrix.elements,
+                start: item.start,
+                count: item.count,
+                matrix: item.matrix.elements,
                 material: a,
-                layer: t.layer,
-                castShadow: t.castShadow
+                layer: item.layer,
+                castShadow: item.castShadow
               };
             })
           };
@@ -15883,12 +15883,12 @@ var uM = new class {
       let a = performance.now() - s;
       const r = await o;
       s = performance.now(), this.stats.batchMs = r.ms;
-      const h = r.batches.map(t => function (t, e) {
+      const h = r.batches.map(item => function (t, e) {
           const n = new Vt();
           n.setAttribute("position", new At(t.position, 3)), n.setAttribute("normal", new At(t.normal, 3)), n.setAttribute("uv", new At(t.uv, 2)), n.setIndex(new At(t.index, 1)), n.boundingBox = new It(new ne(t.box[0], t.box[1], t.box[2]), new ne(t.box[3], t.box[4], t.box[5])), n.boundingSphere = new Ct(new ne(t.sphere[0], t.sphere[1], t.sphere[2]), t.sphere[3]);
           const s = new j(n, e);
           return s.name = `batch:${e.name}`, s.layers.enable(t.layer), s.userData.castShadow = t.castShadow, s.userData.parts = t.parts, aA(s), s;
-        }(t, i.materials[t.material])),
+        }(item, i.materials[item.material])),
         l = r.casters ? iA(r.casters) : null;
       return a += performance.now() - s, this.stats.mainMs += a, {
         meshes: h,
@@ -15902,10 +15902,10 @@ var uM = new class {
     start = -1 / 0;
     $_1u3 = new ne();
     constructor(t = 2e3) {
-      const e = new Float32Array(4 * t * 3),
-        n = new Float32Array(4 * t * 4),
-        s = new Float32Array(4 * t * 2),
-        i = new Uint16Array(6 * t),
+      const float32Values = new Float32Array(4 * t * 3),
+        _float32Values4 = new Float32Array(4 * t * 4),
+        _float32Values5 = new Float32Array(4 * t * 2),
+        uint16Values = new Uint16Array(6 * t),
         o = function () {
           let t = 1853188965;
           return () => {
@@ -15918,11 +15918,11 @@ var uM = new class {
       for (let h = 0; h < t; h++) {
         const r = [o(), o(), o()],
           l = [o(), o(), (h + .5) / t, o()];
-        for (let t = 0; t < 4; t++) e.set(r, 3 * (4 * h + t)), n.set(l, 4 * (4 * h + t)), s.set([a[2 * t], a[2 * t + 1]], 2 * (4 * h + t));
-        i.set([4 * h, 4 * h + 1, 4 * h + 2, 4 * h, 4 * h + 2, 4 * h + 3], 6 * h);
+        for (let t = 0; t < 4; t++) float32Values.set(r, 3 * (4 * h + t)), _float32Values4.set(l, 4 * (4 * h + t)), _float32Values5.set([a[2 * t], a[2 * t + 1]], 2 * (4 * h + t));
+        uint16Values.set([4 * h, 4 * h + 1, 4 * h + 2, 4 * h, 4 * h + 2, 4 * h + 3], 6 * h);
       }
       const r = new Vt();
-      r.setAttribute("position", new At(e, 3)), r.setAttribute("aRand", new At(n, 4)), r.setAttribute("aCorner", new At(s, 2)), r.setIndex(new At(i, 1)), this.material = new Wt({
+      r.setAttribute("position", new At(float32Values, 3)), r.setAttribute("aRand", new At(_float32Values4, 4)), r.setAttribute("aCorner", new At(_float32Values5, 2)), r.setIndex(new At(uint16Values, 1)), this.material = new Wt({
         name: "NukeEmbers",
         vertexShader: "\n// position = the particle's seed in the unit cube; aRand = life, phase, density threshold, speed\nattribute vec4 aRand;\nattribute vec2 aCorner;\nuniform float uTime;\nuniform float uDensity;\nuniform float uPixel;\nuniform float uBox;\nuniform float uFar;\nuniform float uFarShare;\n/** wind away from the detonation (m/s, horizontal) */\nuniform vec3 uWind;\nvarying vec2 vUv;\nvarying vec3 vColor;\nvec3 hash3(vec3 p) {\n  p = fract(p * vec3(0.1031, 0.1030, 0.0973));\n  p += dot(p, p.yxz + 33.33);\n  return fract((p.xxy + p.yxx) * p.zyx);\n}\nvoid main() {\n  // one life: 3.2 .. 6 s; the particle comes back at another place for the next one\n  float life = mix(3.2, 6.0, aRand.x);\n  float lives = uTime / life + aRand.y;\n  float age = fract(lives);\n  vec3 seed = hash3(position + floor(lives) * 0.618);\n  // near cube or far cube\n  float far = step(1.0 - uFarShare, fract(aRand.y * 13.7 + aRand.x * 3.1));\n  float box = uBox * mix(1.0, uFar, far);\n  vec3 p = seed * box;\n  float t = age * life;\n  // rises 0.25 .. 0.85 m/s and sways (two sines per axis: no visible period)\n  float ph = fract(aRand.x * 7.31 + aRand.y * 3.17) * 6.2831853;\n  p.y += t * mix(0.25, 0.85, aRand.w);\n  p.x += sin(t * 0.9 + ph) * 0.45 + sin(t * 2.3 + ph * 1.7) * 0.14;\n  p.z += cos(t * 0.75 + ph * 1.3) * 0.45 + sin(t * 2.0 + ph * 0.6) * 0.14;\n  // carried away from the blast (lighter ones a little faster)\n  p += uWind * t * mix(0.7, 1.3, aRand.w);\n  // the copy of the cube around the camera\n  vec3 rel = mod(p - cameraPosition + 0.5 * box, box) - 0.5 * box;\n  vec4 mv = viewMatrix * vec4(cameraPosition + rel, 1.0);\n  float depth = -mv.z;\n  // glow radius 4 .. 10 cm (far cube: 1.8 times), never below 1.3 pixels (a smaller one would\n  // flicker); what the enlarged quad gains in area it loses in brightness\n  float radius = mix(0.04, 0.1, fract(aRand.w * 5.3 + aRand.x)) * mix(1.0, 1.8, far);\n  float least = 1.3 * uPixel * max(depth, 0.0);\n  float size = max(radius, least);\n  float energy = radius / size;\n  mv.xy += aCorner * size;\n  gl_Position = projectionMatrix * mv;\n  vUv = aCorner;\n  // alive while the density still reaches the particle's own threshold (soft: no popping)\n  float alive = smoothstep(0.0, 0.07, uDensity - aRand.z);\n  float envelope = smoothstep(0.0, 0.14, age) * (1.0 - smoothstep(0.55, 1.0, age));\n  float flicker = 0.72 + 0.28 * sin(uTime * mix(5.0, 13.0, aRand.y) + ph * 3.0);\n  float d = length(rel);\n  float range = (1.0 - smoothstep(0.34 * box, 0.49 * box, d)) * smoothstep(0.35, 1.6, depth);\n  // the first ones appear while the flash is still fading\n  float start = smoothstep(0.1, 0.9, uTime);\n  float a = alive * envelope * flicker * range * start * energy * energy;\n  // hot (pale yellow) when new, orange while it cools\n  vec3 hot = vec3(1.0, 0.86, 0.5);\n  vec3 cool = vec3(1.0, 0.38, 0.08);\n  vColor = mix(hot, cool, smoothstep(0.1, 0.9, age) * 0.85 + 0.15 * aRand.w) * a;\n  // nothing to draw: the quad collapses (no fragments)\n  if (a <= 0.002) gl_Position = vec4(2.0, 2.0, 2.0, 1.0);\n}",
         fragmentShader: "\nvarying vec2 vUv;\nvarying vec3 vColor;\nvoid main() {\n  float r2 = dot(vUv, vUv);\n  // a bright core in a soft halo that reaches zero at the edge of the quad\n  float glow = 1.25 * exp(-r2 * 12.0) + 0.42 * exp(-r2 * 3.0) * (1.0 - r2);\n  gl_FragColor = vec4(vColor * glow * step(r2, 1.0), 1.0);\n}",
@@ -16374,7 +16374,7 @@ var OM = class {
     }
     configure(t, e) {
       const n = e >= 3;
-      t && n === this.quality >= 3 || this.dispose(), this.enabled = t, this.quality = e, t && !this.cascades.length && (this.cascades = (n ? vM : gM).map(t => new GM(t.distance, t.size)));
+      t && n === this.quality >= 3 || this.dispose(), this.enabled = t, this.quality = e, t && !this.cascades.length && (this.cascades = (n ? vM : gM).map(item => new GM(item.distance, item.size)));
     }
     $_1ed(t) {
       if (t !== this.$_uq3) {
@@ -16409,8 +16409,8 @@ var OM = class {
       if (t.isMesh) {
         const n = this.lookAt;
         if (n + 16 > e.state.length) {
-          const t = new Float64Array(2 * e.state.length);
-          t.set(e.state), e.state = t;
+          const float64Values = new Float64Array(2 * e.state.length);
+          float64Values.set(e.state), e.state = float64Values;
         }
         const s = t.matrixWorld.elements,
           i = e.state;
@@ -16428,7 +16428,7 @@ var OM = class {
           this.look(n) && (n.$_29w = e);
         }
       } else {
-        this.$_5fzb = t, this.movers = t.map(t => new zM(t));
+        this.$_5fzb = t, this.movers = t.map(item => new zM(item));
         for (const t of this.movers) this.look(t);
         for (const t of this.cascades) t.baked = new Uint8Array(0), t.fit(this.movers.length);
       }
@@ -16539,13 +16539,13 @@ var OM = class {
       const o = function (t, e, n) {
         let s = 0;
         for (const h of t) s += h;
-        const i = Math.floor(s * e / n),
-          o = Math.floor(s * (e + 1) / n),
+        const flooredValue = Math.floor(s * e / n),
+          _flooredValue4 = Math.floor(s * (e + 1) / n),
           a = [];
         let r = 0;
         for (const h of t) {
-          const t = Math.max(i - r, 0),
-            e = Math.min(o - r, h);
+          const t = Math.max(flooredValue - r, 0),
+            e = Math.min(_flooredValue4 - r, h);
           a.push(e > t ? [t, e - t] : [0, 0]), r += h;
         }
         return a;
@@ -16815,8 +16815,8 @@ var OM = class {
     }
   }],
   WM = 6e3,
-  VM = t => t ? qM.findIndex(e => e.id === t) + 1 : 0,
-  JM = t => t ? qM.find(e => e.id === t) ?? null : null;
+  VM = t => t ? qM.findIndex(item => item.id === t) + 1 : 0,
+  JM = t => t ? qM.find(item => item.id === t) ?? null : null;
 function XM(t) {
   const e = /^#([0-9a-f]{6})$/i.exec(t)?.[1] ?? "ffffff",
     n = parseInt(e, 16);
@@ -16837,19 +16837,19 @@ function YM(t, e, n = [0, 0, 0]) {
   return n;
 }
 function ZM(t, e) {
-  const n = qM.filter(e => !t.has(e.id) && e.weight > 0),
-    s = n.reduce((t, e) => t + e.weight, 0);
+  const n = qM.filter(item => !t.has(item.id) && item.weight > 0),
+    s = n.reduce((accumulator, item) => accumulator + item.weight, 0);
   if (!s) return null;
   let i = Math.min(Math.max(e, 0), .999999) * s;
   for (const o of n) if (i -= o.weight, i < 0) return o;
   return n[n.length - 1];
 }
 var tS = .7547169923782349,
-  eS = qM.map(t => {
-    const e = new Float32Array(48),
+  eS = qM.map(item => {
+    const float32Values = new Float32Array(48),
       n = [0, 0, 0];
-    for (let s = 0; s < 16; s++) YM(t, s / 15, n), e.set(n, 3 * s);
-    return e;
+    for (let s = 0; s < 16; s++) YM(item, s / 15, n), float32Values.set(n, 3 * s);
+    return float32Values;
   });
 function nS(t) {
   const e = t <= 0 ? 0 : t >= 1 ? 1 : t,
@@ -16879,13 +16879,13 @@ var sS = 26,
     constructor() {
       const t = new Vt();
       this.position = new At(this.positions, 3), this.color = new At(this.colors, 4), this.position.setUsage(Q), this.color.setUsage(Q), t.setAttribute("position", this.position), t.setAttribute("color", this.color);
-      const e = new Uint16Array(2496);
+      const uint16Values = new Uint16Array(2496);
       let n = 0;
       for (let o = 0; o < 16; o++) for (let t = 0; t < 26; t++) {
         const s = 2 * (27 * o + t);
-        e[n++] = s, e[n++] = s + 1, e[n++] = s + 2, e[n++] = s + 1, e[n++] = s + 3, e[n++] = s + 2;
+        uint16Values[n++] = s, uint16Values[n++] = s + 1, uint16Values[n++] = s + 2, uint16Values[n++] = s + 1, uint16Values[n++] = s + 3, uint16Values[n++] = s + 2;
       }
-      t.setIndex(new At(e, 1)), t.setDrawRange(0, 0);
+      t.setIndex(new At(uint16Values, 1)), t.setDrawRange(0, 0);
       const s = new Wt({
         name: "move-trail",
         uniforms: {
@@ -17059,7 +17059,7 @@ var sS = 26,
     }
   },
   lS = 512,
-  cS = qM.map(t => t.particles ? XM(t.particles.color) : null),
+  cS = qM.map(item => item.particles ? XM(item.particles.color) : null),
   uS = ["position", "color", "size"],
   fS = class {
     points;
@@ -17174,7 +17174,7 @@ var sS = 26,
       if (e === this.$_59z && n === this.$_6l3) return;
       const s = this.now();
       if (e !== this.$_vbl || n !== this.$_1fs) return this.$_vbl = e, this.$_1fs = n, void (this.$_29w = s);
-      !this.allowed || s - this.$_29w < 1500 || (this.running = !0, this.run().catch(t => console.warn("g-buffer prelink failed", t)).finally(() => {
+      !this.allowed || s - this.$_29w < 1500 || (this.running = !0, this.run().catch(error => console.warn("g-buffer prelink failed", error)).finally(() => {
         this.running = !1;
       }));
     }
@@ -17283,9 +17283,9 @@ var sS = 26,
     }
     $_3h6() {
       const t = this.renderer;
-      this.passes ??= [ey, ny, sy, iy, ay, ry, hy, ly, uy].map(t => new Wt({
+      this.passes ??= [ey, ny, sy, iy, ay, ry, hy, ly, uy].map(item => new Wt({
         vertexShader: Yv,
-        fragmentShader: t,
+        fragmentShader: item,
         glslVersion: y,
         depthTest: !1,
         depthWrite: !1,
@@ -17344,9 +17344,9 @@ var sS = 26,
           return e.updateMatrixWorld(), e.matrixWorld.decompose(t.position, t.quaternion, t.scale), t.fov = n.fov * Gy, t.aspect = n.aspect, t.near = e.near, t.far = e.far, t.updateProjectionMatrix(), t.$_1uk(n.stretch), t.updateMatrixWorld(!0), t;
         }(this.camera, s.camera, t), a);
         const h = s.gradeStill(a.texture, r) ? r : a,
-          l = new Uint8Array(i * o * 4);
-        return await s.renderer.readRenderTargetPixelsAsync(h, 0, 0, i, o, l), this.drawn++, {
-          data: l,
+          uint8Values = new Uint8Array(i * o * 4);
+        return await s.renderer.readRenderTargetPixelsAsync(h, 0, 0, i, o, uint8Values), this.drawn++, {
+          data: uint8Values,
           width: i,
           height: o
         };
@@ -17421,7 +17421,7 @@ var MS = class {
     const o = $s(s);
     return o && "function" == typeof createImageBitmap ? (i = (async () => {
       try {
-        const i = Ns(s) ?? (await fetch(o).then(t => t.ok ? t.blob() : null));
+        const i = Ns(s) ?? (await fetch(o).then(result => result.ok ? result.blob() : null));
         if (!i) return;
         const a = await createImageBitmap(i, {
           ...wS,
@@ -17539,7 +17539,7 @@ var MS = class {
   }
 };
 function SS(t) {
-  return `${t.textures.map(t => `${t.type}/${t.format}/${t.internalFormat ?? ""}`).join(",")}|${t.depthTexture ? `tex${t.depthTexture.type}/${t.depthTexture.format}` : t.depthBuffer ? "rb" : "none"}|${t.stencilBuffer ? "s" : ""}|${t.samples}`;
+  return `${t.textures.map(item => `${item.type}/${item.format}/${item.internalFormat ?? ""}`).join(",")}|${t.depthTexture ? `tex${t.depthTexture.type}/${t.depthTexture.format}` : t.depthBuffer ? "rb" : "none"}|${t.stencilBuffer ? "s" : ""}|${t.samples}`;
 }
 var bS = () => new Promise(t => setTimeout(t, 0)),
   _S = class {
@@ -17558,7 +17558,7 @@ var bS = () => new Promise(t => setTimeout(t, 0)),
       return this.built;
     }
     roots() {
-      return this.free.flatMap(t => t.$_70vf());
+      return this.free.flatMap(item => item.$_70vf());
     }
     async build() {
       const t = await Nn.create("player", 0);
@@ -17667,8 +17667,8 @@ var bS = () => new Promise(t => setTimeout(t, 0)),
     name: "Ragdoll"
   },
   FS = t => Number.isInteger(t) && t > 0 ? kS[t - 1] ?? null : null,
-  CS = t => t ? kS.findIndex(e => e.id === t) + 1 : 0,
-  IS = t => t ? kS.find(e => e.id === t) ?? null : null,
+  CS = t => t ? kS.findIndex(item => item.id === t) + 1 : 0,
+  IS = t => t ? kS.find(item => item.id === t) ?? null : null,
   PS = {
     sides: 14,
     inner: .76,
@@ -17751,8 +17751,8 @@ var jS = {
           const t = n.getAttribute(a),
             e = s.getAttribute(a);
           if (!t || !e) continue;
-          const o = new Float32Array(t.array.length + e.array.length);
-          o.set(t.array, 0), o.set(e.array, t.array.length), i.setAttribute(a, new At(o, t.itemSize));
+          const float32Values = new Float32Array(t.array.length + e.array.length);
+          float32Values.set(t.array, 0), float32Values.set(e.array, t.array.length), i.setAttribute(a, new At(float32Values, t.itemSize));
         }
         const o = n.getAttribute("position").count;
         for (const a of n.groups) i.addGroup(a.start, a.count, a.materialIndex);
@@ -17788,9 +17788,9 @@ var jS = {
   NS = 17;
 function KS(t, e, n = 0) {
   const s = t % 8,
-    i = Math.floor(t / 8),
+    flooredValue = Math.floor(t / 8),
     o = .5;
-  return e[n] = (s * HS + o) / 1024, e[n + 1] = (i * HS + o) / 512, e[n + 2] = ((s + 1) * HS - o) / 1024, e[n + 3] = ((i + 1) * HS - o) / 512, e;
+  return e[n] = (s * HS + o) / 1024, e[n + 1] = (flooredValue * HS + o) / 512, e[n + 2] = ((s + 1) * HS - o) / 1024, e[n + 3] = ((flooredValue + 1) * HS - o) / 512, e;
 }
 var qS = t => t - Math.floor(t),
   WS = t => t < 0 ? 0 : t > 1 ? 1 : t,
@@ -17803,16 +17803,16 @@ function JS(t, e, n) {
   return s = Math.imul(s ^ s >>> 15, 2246822507), s = Math.imul(s ^ s >>> 13, 3266489909), ((s ^ s >>> 16) >>> 0) / 4294967296;
 }
 function XS(t, e, n) {
-  const s = Math.floor(t),
-    i = Math.floor(e),
-    o = t - s,
-    a = e - i,
+  const flooredValue = Math.floor(t),
+    _flooredValue5 = Math.floor(e),
+    o = t - flooredValue,
+    a = e - _flooredValue5,
     r = o * o * (3 - 2 * o),
     h = a * a * (3 - 2 * a),
-    l = JS(s, i, n),
-    c = JS(s + 1, i, n),
-    u = JS(s, i + 1, n);
-  return l + (c - l) * r + (u - l) * h + (l - c - u + JS(s + 1, i + 1, n)) * r * h;
+    l = JS(flooredValue, _flooredValue5, n),
+    c = JS(flooredValue + 1, _flooredValue5, n),
+    u = JS(flooredValue, _flooredValue5 + 1, n);
+  return l + (c - l) * r + (u - l) * h + (l - c - u + JS(flooredValue + 1, _flooredValue5 + 1, n)) * r * h;
 }
 function YS(t, e, n, s) {
   let i = 0,
@@ -18043,7 +18043,7 @@ function db() {
     for (const [o, a, r] of lb) {
       const h = e ? performance.now() : 0,
         l = o % 8,
-        c = Math.floor(o / 8);
+        flooredValue = Math.floor(o / 8);
       for (let e = 0; e < n; e++) for (let o = 0; o < n; o++) {
         let h = 0,
           u = 0,
@@ -18051,7 +18051,7 @@ function db() {
           d = 0;
         for (let t = 0; t < r; t++) for (let l = 0; l < r; l++) a((o + (l + .5) / r) / n * 2 - 1, (e + (t + .5) / r) / n * 2 - 1, i, s * (r > 1 ? .75 : 1)), h += i[0], u += i[1], f += i[2], d += i[3];
         const A = 1 / (r * r),
-          p = 4 * (1024 * (c * n + e) + l * n + o);
+          p = 4 * (1024 * (flooredValue * n + e) + l * n + o);
         t[p] = Math.round(255 * WS(h * A)), t[p + 1] = Math.round(255 * WS(u * A)), t[p + 2] = Math.round(255 * WS(f * A)), t[p + 3] = Math.round(255 * WS(d * A));
       }
       e && (e[o] = performance.now() - h);
@@ -18202,10 +18202,10 @@ var Bb = class {
       this.materials = [Ab.glow, Ab.soft, Ab.cut].map(Pb);
       const t = ["kill-fx-glow", "kill-fx-soft", "kill-fx-cut"],
         e = [4, 3, 0];
-      this.layers = this.materials.map((n, s) => new Cb(pb.quads[s], n, t[s], e[s]));
+      this.layers = this.materials.map((item, index) => new Cb(pb.quads[index], item, t[index], e[index]));
     }
     get meshes() {
-      return this.layers.map(t => t.mesh);
+      return this.layers.map(layer => layer.mesh);
     }
     get count() {
       return this.alive;
@@ -18597,14 +18597,14 @@ function r_(t) {
 var h_ = t => 2 * r_(t) - 1;
 function l_(t, e) {
   const n = t.getAttribute("normal"),
-    s = new Float32Array(3 * n.count);
+    float32Values = new Float32Array(3 * n.count);
   for (let i = 0; i < n.count; i++) {
     Qb.fromBufferAttribute(n, i);
     const t = e?.(i, Qb) ?? [1, 1, 1],
       o = Qb.y > .5 ? 1 : Qb.y < -.5 ? .55 : Math.abs(Qb.x) > .5 ? .82 : .68;
-    s[3 * i] = t[0] * o, s[3 * i + 1] = t[1] * o, s[3 * i + 2] = t[2] * o;
+    float32Values[3 * i] = t[0] * o, float32Values[3 * i + 1] = t[1] * o, float32Values[3 * i + 2] = t[2] * o;
   }
-  return t.setAttribute("color", new At(s, 3)), t;
+  return t.setAttribute("color", new At(float32Values, 3)), t;
 }
 function c_(t, e, n, s, i, o) {
   const a = new Rt(t, e, n);
@@ -18670,9 +18670,9 @@ var f_ = class {
               own: n !== t
             };
           }),
-          s = n.reduce((t, e) => t + e.g.getAttribute("position").count, 0),
-          i = new Float32Array(3 * s),
-          o = new Float32Array(3 * s),
+          s = n.reduce((accumulator, item) => accumulator + item.g.getAttribute("position").count, 0),
+          float32Values = new Float32Array(3 * s),
+          _float32Values6 = new Float32Array(3 * s),
           a = new ne(),
           r = new ne(),
           h = new ne(),
@@ -18685,22 +18685,22 @@ var f_ = class {
               count: t.count,
               materialIndex: 0
             }],
-            n = new Uint8Array(t.count);
-          for (const s of e) for (let e = s.start; e < Math.min(t.count, s.start + s.count); e++) n[e] = Math.min(f.colors.length - 1, s.materialIndex ?? 0);
+            uint8Values = new Uint8Array(t.count);
+          for (const s of e) for (let e = s.start; e < Math.min(t.count, s.start + s.count); e++) uint8Values[e] = Math.min(f.colors.length - 1, s.materialIndex ?? 0);
           for (let s = 0; s + 2 < t.count; s += 3) {
             a.fromBufferAttribute(t, s), r.fromBufferAttribute(t, s + 1), h.fromBufferAttribute(t, s + 2), l.subVectors(h, r).cross(r.clone().sub(a)).normalize();
             const e = .58 + .48 * Math.max(0, Math.abs(l.dot(TS)));
             for (let t = 0; t < 3; t++, c++) {
               const l = 0 === t ? a : 1 === t ? r : h,
-                u = f.colors[n[s + t]];
-              i[3 * c] = l.x * GS, i[3 * c + 1] = l.y * GS, i[3 * c + 2] = l.z * GS, o[3 * c] = Math.min(1, u[0] * e), o[3 * c + 1] = Math.min(1, u[1] * e), o[3 * c + 2] = Math.min(1, u[2] * e);
+                u = f.colors[uint8Values[s + t]];
+              float32Values[3 * c] = l.x * GS, float32Values[3 * c + 1] = l.y * GS, float32Values[3 * c + 2] = l.z * GS, _float32Values6[3 * c] = Math.min(1, u[0] * e), _float32Values6[3 * c + 1] = Math.min(1, u[1] * e), _float32Values6[3 * c + 2] = Math.min(1, u[2] * e);
             }
           }
           f.own && f.g.dispose();
         }
         t.dispose();
         const u = new Vt();
-        return u.name = "kill-fx-kp-coin", u.setAttribute("position", new At(i, 3)), u.setAttribute("color", new At(o, 3)), u.computeBoundingSphere(), u;
+        return u.name = "kill-fx-kp-coin", u.setAttribute("position", new At(float32Values, 3)), u.setAttribute("color", new At(_float32Values6, 3)), u.computeBoundingSphere(), u;
       }(), this.$_3gz, 128, 2, .391, .32), this.cubes = c_(l_(new Ft(1, 1, 1).toNonIndexed()), this.$_3gz, 128, 0, 1.3, .18);
       const e = new dt(.5, 0);
       e.scale(.45, 1.5, .3), e.computeVertexNormals(), this.shards = c_(l_(e, (t, e) => e.x > 0 ? [.92, .98, 1] : [.8, .9, 1]), this.$_3gz, 128, 1, .9, .22), this.kinds = [this.coins, this.cubes, this.shards];
@@ -18816,18 +18816,18 @@ var f_ = class {
     }
     due(t, e, n) {
       t.owed += e * n;
-      const s = Math.floor(t.owed);
-      return t.owed -= s, s;
+      const flooredValue = Math.floor(t.owed);
+      return t.owed -= flooredValue, flooredValue;
     }
     $_7fg(t, e, n) {
       t.owed2 += e * n;
-      const s = Math.floor(t.owed2);
-      return t.owed2 -= s, s;
+      const flooredValue = Math.floor(t.owed2);
+      return t.owed2 -= flooredValue, flooredValue;
     }
     $_3rk(t, e, n) {
       t.owed3 += e * n;
-      const s = Math.floor(t.owed3);
-      return t.owed3 -= s, s;
+      const flooredValue = Math.floor(t.owed3);
+      return t.owed3 -= flooredValue, flooredValue;
     }
     left(t, e) {
       return Math.max(.05, t.seconds - e);
@@ -18860,10 +18860,10 @@ var f_ = class {
     }
     glints(t, e, n, s, i) {
       if (t.alive) for (let o = 0; o < s; o++) {
-        const s = Math.floor(r_(e) * t.age.length);
-        if (t.age[s] === 1 / 0) continue;
-        const o = 3 * s,
-          a = Math.max(.16, t.size[s] * (2 === t.rest ? .3 : .9));
+        const flooredValue = Math.floor(r_(e) * t.age.length);
+        if (t.age[flooredValue] === 1 / 0) continue;
+        const o = 3 * flooredValue,
+          a = Math.max(.16, t.size[flooredValue] * (2 === t.rest ? .3 : .9));
         this.twinkle(e, t.pos[o], t.pos[o + 1] + .03, t.pos[o + 2], i, a, Math.min(this.left(e, n), .26));
       }
     }
@@ -19387,7 +19387,7 @@ var f_ = class {
       for (const n of this.kinds) n.mesh.setMatrixAt(0, Ob.identity()), e.push(Ki(n.mesh, !0));
       db(), this.sprites.$_5a0w();
       for (const n of this.sprites.meshes) e.push(Ki(n, !0));
-      await Promise.all(e).catch(t => console.warn("kill effects warm-up failed", t));
+      await Promise.all(e).catch(error => console.warn("kill effects warm-up failed", error));
       for (const n of this.kinds) n.mesh.setMatrixAt(0, qb), n.mesh.instanceMatrix.needsUpdate = !0;
       this.sprites.clear();
     }
@@ -19399,7 +19399,7 @@ function A_(t, e, n) {
     const i = t;
     if (!i.isMesh || Array.isArray(i.material)) return;
     const o = i.material;
-    if (!e.some(t => t.m === o)) return;
+    if (!e.some(item => item.m === o)) return;
     const a = function (t) {
       const e = d_.get(t);
       if (e) return e;
@@ -19425,7 +19425,7 @@ function p_(t) {
 function m_(t) {
   an(t, -1);
   const e = [];
-  for (const n of t) n.uniforms?.uColor && !e.some(t => t.m === n) && (e.push({
+  for (const n of t) n.uniforms?.uColor && !e.some(item => item.m === n) && (e.push({
     m: n,
     color: n.uniforms.uColor.value.clone(),
     emission: n.uniforms.uEmission.value.clone(),
@@ -19440,7 +19440,7 @@ function w_(t, e) {
     const t = n.m;
     delete t.defines.USE_TINT, delete t.uniforms.uTint, t.uniforms.uColor.value.copy(n.color), t.uniforms.uEmission.value.copy(n.emission), t.transparent = n.transparent, t.depthWrite = n.depthWrite, t.allowOverride = n.allowOverride, t.needsUpdate = !0;
   }
-  an(t.map(t => t.m), e);
+  an(t.map(item => item.m), e);
 }
 var g_ = .9,
   v_ = 1.8,
@@ -19477,7 +19477,7 @@ function R_(t, e, n, s) {
 I_.map(([t]) => t), B_.map(([t, e]) => [P_(t), P_(e)]);
 var D_ = Int32Array.from(B_.map(([t]) => P_(t))),
   Q_ = Int32Array.from(B_.map(([, t]) => P_(t))),
-  U_ = new Set(["Spine_02", "Neck", "Head", "Shoulder_L", "Elbow_L", "Hand_L", "Shoulder_R", "Elbow_R", "Hand_R"].map(t => P_(t))),
+  U_ = new Set(["Spine_02", "Neck", "Head", "Shoulder_L", "Elbow_L", "Hand_L", "Shoulder_R", "Elbow_R", "Hand_R"].map(item => P_(item))),
   j_ = Math.PI / 180,
   z_ = {
     hips: P_("Hips"),
@@ -19594,7 +19594,7 @@ var sk = new ne(),
       for (const n of t) n.traverse(t => {
         const n = t;
         if (!n.isMesh || n.isSkinnedMesh) return;
-        if ((Array.isArray(n.material) ? n.material : [n.material]).some(t => t.transparent || !t.depthWrite)) return;
+        if ((Array.isArray(n.material) ? n.material : [n.material]).some(item => item.transparent || !item.depthWrite)) return;
         const s = n.geometry;
         if (!s.getAttribute("position")) return;
         let i = lookupMap.get(s);
@@ -19783,7 +19783,7 @@ var mk = class {
       this.movers.set(t);
     }
     push(t, e, n, s) {
-      const i = this.running.find(e => e.id === t && e.age < .3);
+      const i = this.running.find(item => item.id === t && item.age < .3);
       i ? this.kick(i, e, n, s) : this.pushes.set(t, {
         x: e,
         y: n,
@@ -19794,7 +19794,7 @@ var mk = class {
     killFx(t, e, n) {
       const s = this.fx;
       if (!s) return;
-      const i = this.running.find(e => e.id === t && !e.run && e.age < .5);
+      const i = this.running.find(item => item.id === t && !item.run && item.age < .5);
       if (!i) return s.note(t, e, n);
       i.run = s.start(i, e, n), i.run && (i.age = 0, i.ready && s.dress(i.run, i.model));
     }
@@ -19850,41 +19850,41 @@ var mk = class {
       for (let m = 0; m < h.length && m < r.length; m++) h[m].position.copy(r[m].position), h[m].quaternion.copy(r[m].quaternion).normalize(), h[m].scale.copy(r[m].scale);
       this.scene.add(a), a.updateWorldMatrix(!0, !0);
       const l = I_.map(([t]) => i.rig.node(t));
-      if (l.some(t => !t)) return this.scene.remove(a), this.pool.give(i), !1;
-      const c = new Float64Array(3 * L_),
-        u = new Float64Array(3 * L_),
-        f = new Float64Array(B_.length);
-      l.forEach((t, e) => {
-        t.getWorldPosition(sk), c.set([sk.x, sk.y, sk.z], 3 * e);
+      if (l.some(item => !item)) return this.scene.remove(a), this.pool.give(i), !1;
+      const float64Values = new Float64Array(3 * L_),
+        _float64Values2 = new Float64Array(3 * L_),
+        _float64Values3 = new Float64Array(B_.length);
+      l.forEach((item, index) => {
+        item.getWorldPosition(sk), float64Values.set([sk.x, sk.y, sk.z], 3 * index);
       });
       for (let m = 0; m < B_.length; m++) {
         const t = 3 * D_[m],
           e = 3 * Q_[m];
-        f[m] = Math.hypot(c[e] - c[t], c[e + 1] - c[t + 1], c[e + 2] - c[t + 2]);
+        _float64Values3[m] = Math.hypot(float64Values[e] - float64Values[t], float64Values[e + 1] - float64Values[t + 1], float64Values[e + 2] - float64Values[t + 2]);
       }
       const d = {
         id: t,
         model: i,
         group: a,
         bones: l,
-        pos: c,
-        prev: u,
-        rest: f,
+        pos: float64Values,
+        prev: _float64Values2,
+        rest: _float64Values3,
         age: 0,
         pending: 0,
         still: 0,
         ready: !1,
-        front: nk(c, ak.set(0, 0, 1).applyQuaternion(a.quaternion)),
+        front: nk(float64Values, ak.set(0, 0, 1).applyQuaternion(a.quaternion)),
         run: null
       };
       s && this.fx && (d.run = this.fx.start(d, s.fx, s.n));
       const A = t => Number.isFinite(t) ? t * y_ : 0;
       for (let m = 0; m < L_; m++) {
         const t = 3 * m;
-        u[t] = c[t] - A(n.x), u[t + 1] = c[t + 1] - A(n.y), u[t + 2] = c[t + 2] - A(n.z);
+        _float64Values2[t] = float64Values[t] - A(n.x), _float64Values2[t + 1] = float64Values[t + 1] - A(n.y), _float64Values2[t + 2] = float64Values[t + 2] - A(n.z);
       }
       const p = this.pushes.get(t);
-      if (p && this.time - p.at < .6) this.kick(d, p.x, p.y, p.z);else if (this.blastPush(d, ok.set(c[3], c[4], c[5]))) ;else {
+      if (p && this.time - p.at < .6) this.kick(d, p.x, p.y, p.z);else if (this.blastPush(d, ok.set(float64Values[3], float64Values[4], float64Values[5]))) ;else {
         const t = ik.set(0, 0, 1).applyQuaternion(a.quaternion);
         this.kick(d, 1.5 * t.x, 0, 1.5 * t.z);
       }
@@ -19994,8 +19994,8 @@ var mk = class {
       let e = this.near;
       const n = 15 * this.$_6cx;
       if (n + 15 > e.length) {
-        const t = new Float64Array(2 * e.length);
-        t.set(e), this.near = e = t;
+        const float64Values = new Float64Array(2 * e.length);
+        float64Values.set(e), this.near = e = float64Values;
       }
       const s = t.a,
         i = t.b,
@@ -20091,7 +20091,7 @@ var mk = class {
   },
   wk = [[1, .72, .2], [1, .56, .08], [1, .43, .04], [.9, .3, .03]],
   gk = [.36, .1, .02],
-  vk = t => `vec3(${t.map(t => t.toFixed(3)).join(", ")})`,
+  vk = t => `vec3(${t.map(item => item.toFixed(3)).join(", ")})`,
   yk = `\nvec3 rampFire(float k) {\n  float t = clamp(k, 0.0, 1.0) * 3.0;\n  vec3 c = mix(${vk(wk[0])}, ${vk(wk[1])}, clamp(t, 0.0, 1.0));\n  c = mix(c, ${vk(wk[2])}, clamp(t - 1.0, 0.0, 1.0));\n  return mix(c, ${vk(wk[3])}, clamp(t - 2.0, 0.0, 1.0));\n}`,
   Mk = "\nfloat rampFog(float depth) {\n  if (uFog.x < 0.5) return 1.0;\n  float f;\n  if (uFog.x < 1.5) f = (uFog.z - depth) / max(uFog.z - uFog.y, 1e-4);\n  else if (uFog.x < 2.5) f = exp2(-uFog.w * depth * 1.442695);\n  else { float d = uFog.w * depth; f = exp2(-d * d * 1.442695); }\n  return clamp(f, 0.0, 1.0);\n}",
   Sk = 2048,
@@ -20145,9 +20145,9 @@ var Ck = class extends Gt {
 };
 function Ik(t, e, n) {
   const s = new Kt(),
-    i = new Float32Array(12);
-  for (let o = 0; o < 4; o++) i.set([t[2 * o], t[2 * o + 1], 0], 3 * o);
-  s.setAttribute("position", new At(i, 3)), s.setIndex([0, 1, 2, 1, 3, 2]);
+    float32Values = new Float32Array(12);
+  for (let o = 0; o < 4; o++) float32Values.set([t[2 * o], t[2 * o + 1], 0], 3 * o);
+  s.setAttribute("position", new At(float32Values, 3)), s.setIndex([0, 1, 2, 1, 3, 2]);
   for (const [o, a] of Object.entries(n)) s.setAttribute(o, a);
   return s.instanceCount = e, s;
 }
@@ -20475,8 +20475,8 @@ var Pk = Oe.maxNormalY,
       const c = Math.max(1, Math.round(a * this.share));
       this.budget > 0 && this.emit(l, jk, 2);
       for (let f = 0; f < c && this.budget > 0; f++) this.emit(l, jk, 0);
-      const u = Math.ceil(c / 3);
-      for (let f = 0; f < u && this.budget > 0; f++) this.emit(l, jk, 1);
+      const ceiledValue = Math.ceil(c / 3);
+      for (let f = 0; f < ceiledValue && this.budget > 0; f++) this.emit(l, jk, 1);
       this.$_1fm = 0, h.point.copy(zk), h.normal.copy(Gk);
     }
     emit(t, e, n) {
@@ -20564,7 +20564,7 @@ async function Wk(t, e, n) {
       for (const s of Object.values(e)) s.texture && uniqueItems.add(qk(t, s.texture).map);
       return [...uniqueItems];
     }(t, e),
-    lookupMap = new Map(await Promise.all(s.map(async t => [t, await n(t)])));
+    lookupMap = new Map(await Promise.all(s.map(async item => [item, await n(item)])));
   return e => {
     const n = qk(t, e);
     return lookupMap.get(n.map)?.[n.file];
@@ -20609,9 +20609,9 @@ function tx(t, e = new Map()) {
         let i = lookupMap.get(e);
         return i || lookupMap.set(e, i = bi(fo(n, Jk))), i;
       },
-      i = Zk(s.behaviours.find(t => 0 === t.node && t.data && Array.isArray(t.data.weaponRenderers))?.data?.weaponRenderers),
-      o = s.renderers.find(t => i.has(t.node)),
-      a = Zk(s.behaviours.find(t => "FPSArms" === t.script)?.data?.handsMeshRenderers);
+      i = Zk(s.behaviours.find(item => 0 === item.node && item.data && Array.isArray(item.data.weaponRenderers))?.data?.weaponRenderers),
+      o = s.renderers.find(item => i.has(item.node)),
+      a = Zk(s.behaviours.find(item => "FPSArms" === item.script)?.data?.handsMeshRenderers);
     for (const r of s.renderers) {
       if (!r.mesh) continue;
       const t = "skinned" === r.type;
@@ -20658,7 +20658,7 @@ function tx(t, e = new Map()) {
         }
       }
     }
-    if (s.components.some(t => "sprite" === t.type && t.sprite)) for (const s of [!1, !0]) n(mo(Vk, new tt(1, 1, 1), 1, s), !1);
+    if (s.components.some(component => "sprite" === component.type && component.sprite)) for (const s of [!1, !0]) n(mo(Vk, new tt(1, 1, 1), 1, s), !1);
   }
   return e;
 }
@@ -20733,17 +20733,17 @@ var rx = null;
 function hx() {
   return rx ??= (async () => {
     const t = await Rn(),
-      e = [...new Set(t.weapons.map(t => t?.file).filter(t => !!t))],
-      n = [...nx(ex(tx((await Promise.all(e.map(t => wo(t).catch(() => null)))).filter(t => !!t)))).values()];
+      e = [...new Set(t.weapons.map(item => item?.file).filter(item => !!item))],
+      n = [...nx(ex(tx((await Promise.all(e.map(item => wo(item).catch(() => null)))).filter(item => !!item)))).values()];
     return {
-      common: ax(n.filter(t => !t.rare)),
-      rare: n.filter(t => t.rare).map(t => ax([t]))
+      common: ax(n.filter(item => !item.rare)),
+      rare: n.filter(item => item.rare).map(item => ax([item]))
     };
-  })().catch(t => (console.warn("program catalog failed", t), rx = null, null));
+  })().catch(error => (console.warn("program catalog failed", error), rx = null, null));
 }
 async function lx(t, e = !0) {
   const n = await hx();
-  return n ? e ? (await t(n.common), n.common.children.length) : (await Promise.all([t(n.common), ...n.rare.map(e => t(e))]), n.common.children.length + n.rare.length) : 0;
+  return n ? e ? (await t(n.common), n.common.children.length) : (await Promise.all([t(n.common), ...n.rare.map(item => t(item))]), n.common.children.length + n.rare.length) : 0;
 }
 var cx = Math.cos(10 * Math.PI / 180),
   ux = 1e-4,
@@ -20791,15 +20791,15 @@ var Mx = class {
     constructor(t) {
       this.group.name = "transparent-runs", this.group.matrixAutoUpdate = !1;
       const lookupMap = new Map();
-      t.forEach(t => {
-        for (const n of t.pieces) {
-          const s = `${n.material.uuid}|${t.layer}`;
+      t.forEach(item => {
+        for (const n of item.pieces) {
+          const s = `${n.material.uuid}|${item.layer}`;
           let i = lookupMap.get(s);
           i || lookupMap.set(s, i = {
             material: n.material,
-            layer: t.layer,
+            layer: item.layer,
             parts: []
-          }), i.parts.push([n, t.matrix]);
+          }), i.parts.push([n, item.matrix]);
         }
       });
       const _lookupMap4 = new Map();
@@ -20807,16 +20807,16 @@ var Mx = class {
         let t = 0,
           e = 0;
         for (const [n] of i.parts) t += n.count, e += n.count;
-        const o = new Float32Array(3 * t),
-          a = new Float32Array(3 * t),
-          r = new Float32Array(2 * t);
+        const float32Values = new Float32Array(3 * t),
+          _float32Values7 = new Float32Array(3 * t),
+          _float32Values8 = new Float32Array(2 * t);
         let h = 0;
         const l = {
           key: s,
           material: i.material,
           layer: i.layer,
           twoPass: 2 === i.material.side && !i.material.forceSinglePass,
-          positions: o,
+          positions: float32Values,
           index: new At(t > 65535 ? new Uint32Array(e) : new Uint16Array(e), 1).setUsage(Q),
           attributes: {},
           runs: [],
@@ -20831,13 +20831,13 @@ var Mx = class {
             i = s.mesh.positions,
             u = yx(s.mesh),
             f = s.mesh.uv.length === i.length / 3 * 2 ? s.mesh.uv : null,
-            d = new Uint32Array(s.count);
+            uint32Values = new Uint32Array(s.count);
           for (let n = 0; n < s.count; n++) {
             const l = s.mesh.indices[s.start + n],
               c = i[3 * l],
               A = i[3 * l + 1],
               p = i[3 * l + 2];
-            o[3 * h] = t[0] * c + t[4] * A + t[8] * p + t[12], o[3 * h + 1] = t[1] * c + t[5] * A + t[9] * p + t[13], o[3 * h + 2] = t[2] * c + t[6] * A + t[10] * p + t[14];
+            float32Values[3 * h] = t[0] * c + t[4] * A + t[8] * p + t[12], float32Values[3 * h + 1] = t[1] * c + t[5] * A + t[9] * p + t[13], float32Values[3 * h + 2] = t[2] * c + t[6] * A + t[10] * p + t[14];
             const m = u[3 * l],
               w = u[3 * l + 1],
               g = u[3 * l + 2];
@@ -20845,17 +20845,17 @@ var Mx = class {
               y = e[1] * m + e[4] * w + e[7] * g,
               M = e[2] * m + e[5] * w + e[8] * g;
             const S = Math.hypot(v, y, M);
-            S > 0 && (v /= S, y /= S, M /= S), a[3 * h] = v, a[3 * h + 1] = y, a[3 * h + 2] = M, f && (r[2 * h] = f[2 * l], r[2 * h + 1] = f[2 * l + 1]), d[n] = h++;
+            S > 0 && (v /= S, y /= S, M /= S), _float32Values7[3 * h] = v, _float32Values7[3 * h + 1] = y, _float32Values7[3 * h + 2] = M, f && (_float32Values8[2 * h] = f[2 * l], _float32Values8[2 * h + 1] = f[2 * l + 1]), uint32Values[n] = h++;
           }
           _lookupMap4.set(s, {
             batch: l,
-            triangles: d
+            triangles: uint32Values
           });
         }
         if (l.attributes = {
-          position: new At(o, 3),
-          normal: new At(a, 3),
-          uv: new At(r, 2)
+          position: new At(float32Values, 3),
+          normal: new At(_float32Values7, 3),
+          uv: new At(_float32Values8, 2)
         }, l.twoPass) {
           const t = i.material instanceof Wt ? Oi(i.material) : i.material.clone();
           t.forceSinglePass = !0;
@@ -20866,32 +20866,32 @@ var Mx = class {
         }
         this.batches.push(l);
       }
-      t.forEach((t, e) => {
-        const s = t.sphere.clone().applyMatrix4(t.matrix),
-          i = t.pieces.map(t => {
-            const e = _lookupMap4.get(t);
+      t.forEach((item, index) => {
+        const s = item.sphere.clone().applyMatrix4(item.matrix),
+          i = item.pieces.map(_item6 => {
+            const e = _lookupMap4.get(_item6);
             return {
               batch: e.batch,
               triangles: e.triangles
             };
           }),
-          o = new Float64Array([1 / 0, 1 / 0, 1 / 0, -1 / 0, -1 / 0, -1 / 0]);
+          float64Values = new Float64Array([1 / 0, 1 / 0, 1 / 0, -1 / 0, -1 / 0, -1 / 0]);
         for (const n of i) for (let t = 0; t < n.triangles.length; t++) for (let e = 0; e < 3; e++) {
           const s = n.batch.positions[3 * n.triangles[t] + e];
-          s < o[e] && (o[e] = s), s > o[e + 3] && (o[e + 3] = s);
+          s < float64Values[e] && (float64Values[e] = s), s > float64Values[e + 3] && (float64Values[e + 3] = s);
         }
         this.surfaces.push({
           parts: i,
           sphere: s,
-          ccwFirst: t.matrix.determinant() < 0,
-          order: e,
+          ccwFirst: item.matrix.determinant() < 0,
+          order: index,
           z: 0,
           x0: 0,
           y0: 0,
           x1: 0,
           y1: 0,
           wide: !0,
-          box: o,
+          box: float64Values,
           under: null,
           anchor: null
         });
@@ -20910,32 +20910,32 @@ var Mx = class {
           }
           return [n, s];
         },
-        n = this.surfaces.map(t => {
-          const e = t.parts[0];
+        n = this.surfaces.map(item => {
+          const e = item.parts[0];
           if (!e || e.triangles.length < 3) return null;
           const n = t => new ne().fromArray(e.batch.positions, 3 * e.triangles[t]),
             s = n(0),
             i = new ne().crossVectors(n(1).sub(s), n(2).sub(s));
           return i.lengthSq() > 0 ? i.normalize() : null;
         });
-      this.surfaces.forEach((s, i) => {
-        const o = n[i];
-        if (!t[i].decal || !o) return;
-        const [a, r] = e(s, o),
+      this.surfaces.forEach((item, index) => {
+        const o = n[index];
+        if (!t[index].decal || !o) return;
+        const [a, r] = e(item, o),
           h = [];
-        this.surfaces.forEach((l, c) => {
-          const u = n[c];
-          if (c === i || t[c].decal || !u || Math.abs(u.dot(o)) < cx) return;
+        this.surfaces.forEach((_item7, _index2) => {
+          const u = n[_index2];
+          if (_index2 === index || t[_index2].decal || !u || Math.abs(u.dot(o)) < cx) return;
           if (!((t, e, n) => {
             for (let s = 0; s < 3; s++) {
               const i = .01 + .3 * Math.abs(n.getComponent(s));
               if (t[s] > e[s + 3] + i || e[s] > t[s + 3] + i) return !1;
             }
             return !0;
-          })(s.box, l.box, o)) return;
-          const [f, d] = e(l, o);
-          d - f > .05 || f > r + .3 || d < a - .3 || h.push(l);
-        }), h.length && (s.under = h);
+          })(item.box, _item7.box, o)) return;
+          const [f, d] = e(_item7, o);
+          d - f > .05 || f > r + .3 || d < a - .3 || h.push(_item7);
+        }), h.length && (item.under = h);
       });
     }
     get $_3un() {
@@ -21172,21 +21172,21 @@ var Px = class {
     $_6s4;
     $_495 = 0;
     constructor(t) {
-      const e = [...t].sort((t, e) => t.renderOrder - e.renderOrder || Fx(t) - Fx(e) || t.id - e.id);
-      this.items = e.map(t => {
-        t.updateMatrixWorld(), t.geometry.boundingSphere || t.geometry.computeBoundingSphere();
-        const e = t.geometry.boundingSphere.clone().applyMatrix4(t.matrixWorld),
+      const e = [...t].sort((leftItem, rightItem) => leftItem.renderOrder - rightItem.renderOrder || Fx(leftItem) - Fx(rightItem) || leftItem.id - rightItem.id);
+      this.items = e.map(item => {
+        item.updateMatrixWorld(), item.geometry.boundingSphere || item.geometry.computeBoundingSphere();
+        const e = item.geometry.boundingSphere.clone().applyMatrix4(item.matrixWorld),
           n = {
-            mesh: t,
+            mesh: item,
             layers: new Bt(),
             sphere: e,
             listed: !1,
             program: -1
           };
-        return n.layers.mask = t.layers.mask, t.onAfterRender = () => {
-          t.onAfterRender = xx, t.layers.set(31), n.listed = !0, this.$_495 = 0;
+        return n.layers.mask = item.layers.mask, item.onAfterRender = () => {
+          item.onAfterRender = xx, item.layers.set(31), n.listed = !0, this.$_495 = 0;
         }, n;
-      }), this.$_6s4 = this.items.every(t => t.mesh.matrixWorld.equals(e[0].matrixWorld));
+      }), this.$_6s4 = this.items.every(item => item.mesh.matrixWorld.equals(e[0].matrixWorld));
       const n = e[0],
         s = new Vt();
       for (const [i, o] of Object.entries(n.geometry.attributes)) s.setAttribute(i, o);
@@ -21271,20 +21271,20 @@ var Px = class {
           weapons: t.weapons ?? "",
           building: !e
         };
-      this.prepared.set(t.id, n), (e ? Promise.resolve(e) : this.pool.create(() => -1)).then(e => {
-        if (n.building = !1, this.prepared.get(t.id) !== n) return this.pool.give(e);
-        n.model = e, e.object.visible = !1;
+      this.prepared.set(t.id, n), (e ? Promise.resolve(e) : this.pool.create(() => -1)).then(result => {
+        if (n.building = !1, this.prepared.get(t.id) !== n) return this.pool.give(result);
+        n.model = result, result.object.visible = !1;
         const s = ts(t.skin, t.hat, {
           mode: this.mode(),
           classId: t.classId
         });
-        s && e.setSkin(s.skin, s.hat);
+        s && result.setSkin(s.skin, s.hat);
         const i = n.weapons ? n.weapons.split(",") : [],
-          o = (p.find(e => e.id === t.classId)?.weapons ?? []).map((t, e) => i[e] || t);
+          o = (p.find(item => item.id === t.classId)?.weapons ?? []).map((item, index) => i[index] || item);
         let a = !0;
         for (const t of o) {
           const n = t ? r[t] : void 0;
-          n && (a ? e.setWeapon(n.index, -1) : e.$_26iv(n.index, -1), a = !1);
+          n && (a ? result.setWeapon(n.index, -1) : result.$_26iv(n.index, -1), a = !1);
         }
       });
     }
@@ -21303,18 +21303,18 @@ function Rx(t) {
       const e = globalThis;
       if (e.Buffer) return new Uint8Array(e.Buffer.from(t, "base64"));
       const n = atob(t),
-        s = new Uint8Array(n.length);
-      for (let i = 0; i < n.length; i++) s[i] = n.charCodeAt(i);
-      return s;
+        uint8Values = new Uint8Array(n.length);
+      for (let i = 0; i < n.length; i++) uint8Values[i] = n.charCodeAt(i);
+      return uint8Values;
     }(t);
   } catch {
     return null;
   }
   if (e.length < 8) return null;
-  const n = new DataView(e.buffer, e.byteOffset, e.byteLength);
-  if (75 !== n.getUint8(0) || 71 !== n.getUint8(1) || 1 !== n.getUint8(2)) return null;
-  const s = n.getUint8(3),
-    i = n.getUint32(4, !0);
+  const dataView = new DataView(e.buffer, e.byteOffset, e.byteLength);
+  if (75 !== dataView.getUint8(0) || 71 !== dataView.getUint8(1) || 1 !== dataView.getUint8(2)) return null;
+  const s = dataView.getUint8(3),
+    i = dataView.getUint32(4, !0);
   if (!s || 0 === i || i > 9e3) return null;
   const o = {
     dt: .02 * s,
@@ -21332,14 +21332,14 @@ function Rx(t) {
     l = 0;
   for (let c = 0; c < i; c++) {
     if (a + 9 > e.length) return null;
-    const t = n.getUint8(a),
-      s = n.getUint16(a + 1, !0);
+    const t = dataView.getUint8(a),
+      s = dataView.getUint16(a + 1, !0);
     if (1 & t) {
       if (a + 15 > e.length) return null;
-      r = n.getInt32(a + 3, !0), h = n.getInt32(a + 7, !0), l = n.getInt32(a + 11, !0), a += 15;
+      r = dataView.getInt32(a + 3, !0), h = dataView.getInt32(a + 7, !0), l = dataView.getInt32(a + 11, !0), a += 15;
     } else {
       if (0 === c) return null;
-      r += n.getInt16(a + 3, !0), h += n.getInt16(a + 5, !0), l += n.getInt16(a + 7, !0), a += 9;
+      r += dataView.getInt16(a + 3, !0), h += dataView.getInt16(a + 5, !0), l += dataView.getInt16(a + 7, !0), a += 9;
     }
     o.flags[c] = t, o.yaw[c] = s / 65536 * Ex, o.x[c] = r / 100, o.y[c] = h / 100, o.z[c] = l / 100;
   }
@@ -21386,8 +21386,8 @@ function Ux(t, e, n = {
   return n.crouch = !!(4 & t.flags[r]), n.grounded = !!(8 & t.flags[r]), n;
 }
 function jx(t) {
-  const e = Math.round(Math.abs(t) / 10);
-  return `${t < 0 && e > 0 ? "-" : "+"}${Math.floor(e / 100)}.${String(e % 100).padStart(2, "0")}`;
+  const roundedValue = Math.round(Math.abs(t) / 10);
+  return `${t < 0 && roundedValue > 0 ? "-" : "+"}${Math.floor(roundedValue / 100)}.${String(roundedValue % 100).padStart(2, "0")}`;
 }
 var zx = ["best", "record", "off"],
   Gx = "courseGhost",
@@ -21520,9 +21520,9 @@ var qx = (t, e) => t === e || !!t && !!e && t.course === e.course && t.rank === 
       if (this.loading) return;
       this.loading = !0;
       const t = this.pool.take();
-      (t ? Promise.resolve(t) : this.pool.create(() => -1)).then(t => {
-        if (this.loading = !1, this.model) return this.pool.give(t);
-        this.model = t, t.object.visible = !1, t.setWeapon(r.fists.index, -1).then(() => t.$_47ko(!1)), t.setSkin(25, -1), this.holder.add(t.object), this.holder.parent || this.scene.add(this.holder);
+      (t ? Promise.resolve(t) : this.pool.create(() => -1)).then(result => {
+        if (this.loading = !1, this.model) return this.pool.give(result);
+        this.model = result, result.object.visible = !1, result.setWeapon(r.fists.index, -1).then(() => result.$_47ko(!1)), result.setSkin(25, -1), this.holder.add(result.object), this.holder.parent || this.scene.add(this.holder);
       }, () => {
         this.loading = !1;
       });
@@ -21633,9 +21633,9 @@ var rF = class {
     for (const i of this.figures) i.fresh = !1;
     for (let i = 0; i < e; i++) {
       const e = t[i];
-      let o = this.figures.find(t => t.id === e.id);
+      let o = this.figures.find(item => item.id === e.id);
       const a = !o;
-      if (o ??= this.figures.find(t => !t.id && !t.fresh), !o) break;
+      if (o ??= this.figures.find(item => !item.id && !item.fresh), !o) break;
       o.id = e.id, o.fresh = !0, o.at = s, hF(o.target, e), a && hF(o.shown, e), o.label.set(n(e.id));
     }
     for (const i of this.figures) i.fresh || this.drop(i);
@@ -21722,12 +21722,12 @@ function MF(t, e, n) {
       color: e.color
     });
   }
-  return s.sort((t, e) => t.at - e.at), SF(s);
+  return s.sort((leftItem, rightItem) => leftItem.at - rightItem.at), SF(s);
 }
 function SF(t) {
-  const e = t.filter(t => t.at >= 0 && t.at <= 1),
-    n = [...t].reverse().find(t => t.at < 0),
-    s = t.find(t => t.at > 1);
+  const e = t.filter(item => item.at >= 0 && item.at <= 1),
+    n = [...t].reverse().find(item => item.at < 0),
+    s = t.find(item => item.at > 1);
   return n && e.unshift({
     at: 0,
     color: n.color
@@ -21786,9 +21786,9 @@ function xF(t, e, n, s, i, o) {
   if ("fire" === a.effect) {
     o.animated = !0;
     const e = (a.colors.length > 1 ? a.colors : ["FFF6B0", "FFC233", "FF7A1A", "E5321C"]).map(gF),
-      n = [...e, e[0]].map((t, n) => ({
-        color: t,
-        at: n / e.length
+      n = [...e, e[0]].map((item, index) => ({
+        color: item,
+        at: index / e.length
       })),
       r = 1 / Math.max(.05, a.speed),
       h = i % r / r,
@@ -21799,11 +21799,11 @@ function xF(t, e, n, s, i, o) {
   const h = function (t) {
     const e = t.colors.map(gF),
       n = t.data.stops,
-      s = Array.isArray(n) && n.length === e.length && n.every(t => Number.isFinite(t)),
+      s = Array.isArray(n) && n.length === e.length && n.every(item => Number.isFinite(item)),
       i = "rainbow" === t.effect ? ["#FF4040", "#FFD040", "#40FF60", "#40C0FF", "#C040FF", "#FF4040"] : "animated" === t.effect && e.length > 1 ? [...e, e[0]] : e;
-    return i.map((t, o) => ({
-      color: t,
-      at: s && i === e ? Number(n[o]) / 100 : i.length > 1 ? o / (i.length - 1) : 0
+    return i.map((item, index) => ({
+      color: item,
+      at: s && i === e ? Number(n[index]) / 100 : i.length > 1 ? index / (i.length - 1) : 0
     }));
   }(a);
   if ("solid" === a.effect || "custom" === a.effect || h.length < 2) return h[0]?.color ?? r;
@@ -21811,9 +21811,9 @@ function xF(t, e, n, s, i, o) {
     o.animated = !0;
     const e = 1 / Math.max(.05, a.speed),
       n = i % e / e,
-      r = Math.sin(a.angle * Math.PI / 180) < 0 ? h.map(t => ({
-        at: 1 - t.at,
-        color: t.color
+      r = Math.sin(a.angle * Math.PI / 180) < 0 ? h.map(item => ({
+        at: 1 - item.at,
+        color: item.color
       })).reverse() : h,
       l = t.createLinearGradient(s.x, 0, s.x + s.w, 0);
     for (const t of MF(r, n, .5)) l.addColorStop(t.at, t.color);
@@ -21824,7 +21824,7 @@ function xF(t, e, n, s, i, o) {
   for (const A of SF(h)) d.addColorStop(A.at, A.color);
   return d;
 }
-var FF = t => !!t?.pad && t.pad.some(t => 0 !== t);
+var FF = t => !!t?.pad && t.pad.some(item => 0 !== item);
 function CF(t, e, n, s) {
   const i = t.rect[0] || t.w,
     o = t.rect[1] || t.h;
@@ -21847,9 +21847,9 @@ function IF(t) {
     n = t.h / (t.rect[1] || t.h),
     [s, i, o, a] = t.border,
     r = (t, e, n) => {
-      let s = Math.round(t),
-        i = Math.round(e);
-      return s + i >= n && (s = Math.min(s, Math.floor((n - 1) / 2)), i = Math.min(i, n - 1 - s)), [Math.max(0, s), Math.max(0, i)];
+      let roundedValue = Math.round(t),
+        _roundedValue2 = Math.round(e);
+      return roundedValue + _roundedValue2 >= n && (roundedValue = Math.min(roundedValue, Math.floor((n - 1) / 2)), _roundedValue2 = Math.min(_roundedValue2, n - 1 - roundedValue)), [Math.max(0, roundedValue), Math.max(0, _roundedValue2)];
     },
     [h, l] = r(s * e, o * e, t.w),
     [c, u] = r(i * n, a * n, t.h);
@@ -21871,23 +21871,23 @@ function BF(t, e, n, s, i, o) {
     c = t.naturalWidth,
     u = t.naturalHeight,
     [f, d, A, p] = n;
-  let m = Math.round(f * o),
-    w = Math.round(A * o),
-    g = Math.round(p * o),
-    v = Math.round(d * o);
-  if (m + w > s) {
-    const t = Math.floor(s * m / (m + w));
-    [m, w] = [t, s - t];
+  let roundedValue = Math.round(f * o),
+    _roundedValue3 = Math.round(A * o),
+    _roundedValue4 = Math.round(p * o),
+    _roundedValue5 = Math.round(d * o);
+  if (roundedValue + _roundedValue3 > s) {
+    const flooredValue = Math.floor(s * roundedValue / (roundedValue + _roundedValue3));
+    [roundedValue, _roundedValue3] = [flooredValue, s - flooredValue];
   }
-  if (g + v > i) {
-    const t = Math.floor(i * g / (g + v));
-    [g, v] = [t, i - t];
+  if (_roundedValue4 + _roundedValue5 > i) {
+    const flooredValue = Math.floor(i * _roundedValue4 / (_roundedValue4 + _roundedValue5));
+    [_roundedValue4, _roundedValue5] = [flooredValue, i - flooredValue];
   }
   return {
     sx: [0, l, c - r, c],
     sy: [0, a, u - h, u],
-    dx: [0, m, s - w, s],
-    dy: [0, g, i - v, i]
+    dx: [0, roundedValue, s - _roundedValue3, s],
+    dy: [0, _roundedValue4, i - _roundedValue5, i]
   };
 }
 function LF(t, e, n, s) {
@@ -22014,7 +22014,7 @@ async function JF(t, e, n, s, i, o, a = [1, 1, 1, 1], r = 1, h, l, c) {
     if (!s) return void p();
     const i = PF([g / w, v / w, y / w, M / w], o),
       a = IF(f),
-      h = u.slice(0, 3).map(t => t.toFixed(3)),
+      h = u.slice(0, 3).map(item => item.toFixed(3)),
       l = function (t, e, n, s, i, o, a, r, h, l, c = "auto") {
         if ("own" === c) return GF.set(t, "own"), null;
         const u = DF.get(n);
@@ -22031,7 +22031,7 @@ async function JF(t, e, n, s, i, o, a = [1, 1, 1, 1], r = 1, h, l, c) {
           }(t),
           A = QF.get(n);
         return void 0 === A ? (QF.size > 5e3 && QF.clear(), QF.set(n, d), null) : A === d ? null : HF(t, e, n, s, i, o, a, r, h, l);
-      }(t, d, `${e.sprite}|${Math.round(o[0] * r)}x${Math.round(o[1] * r)}|${i.map(t => t.toFixed(2))}|${h}|${e.fillCenter}`, s, a, i, o, r, u, e.fillCenter, c ? GF.get(c) ?? "own" : "auto");
+      }(t, d, `${e.sprite}|${Math.round(o[0] * r)}x${Math.round(o[1] * r)}|${i.map(item => item.toFixed(2))}|${h}|${e.fillCenter}`, s, a, i, o, r, u, e.fillCenter, c ? GF.get(c) ?? "own" : "auto");
     return p(), l ? void OF(t, l) : void function (t, e, n, s, i, o, a, r) {
       const h = performance.now();
       let element = t.querySelector(":scope > canvas.u-slice");
@@ -22113,7 +22113,7 @@ async function tC(t, e, n, s, i, o, a = 1, r = [.5, .5]) {
     const n = await function (t, e, n, s, i, o) {
       const a = Math.max(1, Math.round(i[0] * o)),
         r = Math.max(1, Math.round(i[1] * o)),
-        h = `${e}|${a}x${r}|${s.map(t => t.toFixed(2)).join(",")}`;
+        h = `${e}|${a}x${r}|${s.map(item => item.toFixed(2)).join(",")}`;
       let l = KF.get(h);
       if (!l) {
         const element = document.createElement("canvas");
@@ -22194,7 +22194,7 @@ function cC(t, e, n) {
     i = n - lC(t, e) * (s.amax[e] - s.amin[e]);
   s.size[e] !== i && (sC(s), s.size[e] = i);
 }
-var uC = (t, e) => t.components().find(t => t.t === e && !1 !== t.enabled);
+var uC = (t, e) => t.components().find(item => item.t === e && !1 !== item.enabled);
 function fC(t) {
   return uC(t, "HLG") ?? uC(t, "VLG") ?? uC(t, "Grid");
 }
@@ -22246,9 +22246,9 @@ function AC(t, e, n, s) {
 var pC = (t, e) => AC(t, "min", e, 0),
   mC = (t, e) => Math.max(AC(t, "min", e, 0), AC(t, "pref", e, 0));
 function wC(t) {
-  return t.children.filter(t => t.activeSelf && t.rt && !function (t) {
+  return t.children.filter(child => child.activeSelf && child.rt && !function (t) {
     return !!uC(t, "LayoutElement")?.ignore;
-  }(t));
+  }(child));
 }
 var gC = (t, e) => 0 === e ? t.align % 3 * .5 : .5 * Math.floor(t.align / 3),
   vC = (t, e) => 0 === e ? t.padding[0] + t.padding[1] : t.padding[2] + t.padding[3];
@@ -22370,15 +22370,15 @@ function kC(t, e) {
           h = 1;
         e.constraint === As.FixedColumnCount ? (r = e.count, i > r && (h = Math.floor(i / r) + (i % r > 0 ? 1 : 0))) : e.constraint === As.FixedRowCount ? (h = e.count, i > h && (r = Math.floor(i / h) + (i % h > 0 ? 1 : 0))) : (r = e.cell[0] + e.spacing[0] <= 0 ? Number.MAX_SAFE_INTEGER : Math.max(1, Math.floor((o - vC(e, 0) + e.spacing[0] + .001) / (e.cell[0] + e.spacing[0]))), h = e.cell[1] + e.spacing[1] <= 0 ? Number.MAX_SAFE_INTEGER : Math.max(1, Math.floor((a - vC(e, 1) + e.spacing[1] + .001) / (e.cell[1] + e.spacing[1]))));
         const l = e.startCorner % 2,
-          c = Math.floor(e.startCorner / 2);
+          flooredValue = Math.floor(e.startCorner / 2);
         let u, f, d;
         const A = (t, e, n) => Math.min(Math.max(t, e), n);
         e.startAxis === us.Horizontal ? (u = r, f = A(r, 1, i), d = e.constraint === As.FixedRowCount ? Math.min(h, i) : A(h, 1, Math.ceil(i / u))) : (u = h, d = A(h, 1, i), f = e.constraint === As.FixedColumnCount ? Math.min(r, i) : A(r, 1, Math.ceil(i / u)));
         const p = [f * e.cell[0] + (f - 1) * e.spacing[0], d * e.cell[1] + (d - 1) * e.spacing[1]],
           m = [yC(t, e, 0, p[0]), yC(t, e, 1, p[1])];
-        s.forEach((t, n) => {
+        s.forEach((item, index) => {
           let s, i;
-          e.startAxis === us.Horizontal ? (s = n % u, i = Math.floor(n / u)) : (s = Math.floor(n / u), i = n % u), 1 === l && (s = f - 1 - s), 1 === c && (i = d - 1 - i), MC(t, 0, m[0] + (e.cell[0] + e.spacing[0]) * s, e.cell[0]), MC(t, 1, m[1] + (e.cell[1] + e.spacing[1]) * i, e.cell[1]);
+          e.startAxis === us.Horizontal ? (s = index % u, i = Math.floor(index / u)) : (s = Math.floor(index / u), i = index % u), 1 === l && (s = f - 1 - s), 1 === flooredValue && (i = d - 1 - i), MC(item, 0, m[0] + (e.cell[0] + e.spacing[0]) * s, e.cell[0]), MC(item, 1, m[1] + (e.cell[1] + e.spacing[1]) * i, e.cell[1]);
         });
       }(t, i, e) : function (t, e, n) {
         const s = "VLG" === e.t,
@@ -22522,8 +22522,8 @@ var TC = t => `${t[0].toFixed(3)},${t[1].toFixed(3)},${t[2].toFixed(3)}`,
     }
     image(t) {
       const e = this.images.get(t);
-      return "loading" === e || "failed" === e ? null : e || (this.images.set(t, "loading"), this.assets.image(t).then(e => {
-        this.images.set(t, e), this.onImage();
+      return "loading" === e || "failed" === e ? null : e || (this.images.set(t, "loading"), this.assets.image(t).then(result => {
+        this.images.set(t, result), this.onImage();
       }, () => this.images.set(t, "failed")), null);
     }
     skip = null;
@@ -22651,17 +22651,17 @@ var TC = t => `${t[0].toFixed(3)},${t[1].toFixed(3)},${t[2].toFixed(3)}`,
             };
           let a = -1;
           const r = t => {
-            t && t.split("\n").forEach((t, e) => {
-              if (e > 0 && s.push({
+            t && t.split("\n").forEach((item, index) => {
+              if (index > 0 && s.push({
                 ...o(),
                 kind: "break"
-              }), !t) return;
+              }), !item) return;
               const n = s[s.length - 1],
                 i = {
                   ...o(),
-                  text: t
+                  text: item
                 };
-              "text" === n?.kind && cF(n, i) ? n.text += t : s.push(i);
+              "text" === n?.kind && cF(n, i) ? n.text += item : s.push(i);
             });
           };
           if (!e) return r(t), s;
@@ -22825,9 +22825,9 @@ var TC = t => `${t[0].toFixed(3)},${t[1].toFixed(3)},${t[2].toFixed(3)}`,
               o = -1 / 0,
               a = 1 / 0,
               r = -1 / 0;
-            return t.lines.forEach((h, l) => {
-              const c = mF(t, e, n, s, l);
-              i = Math.min(i, c.x), o = Math.max(o, c.x + (t.lines[l] ?? 0)), a = Math.min(a, c.baseline - t.ascent), r = Math.max(r, c.baseline + t.descent);
+            return t.lines.forEach((item, index) => {
+              const c = mF(t, e, n, s, index);
+              i = Math.min(i, c.x), o = Math.max(o, c.x + (t.lines[index] ?? 0)), a = Math.min(a, c.baseline - t.ascent), r = Math.max(r, c.baseline + t.descent);
             }), Number.isFinite(i) ? {
               x: i,
               y: a,
@@ -22897,9 +22897,9 @@ var TC = t => `${t[0].toFixed(3)},${t[1].toFixed(3)},${t[2].toFixed(3)}`,
                 complete: !0,
                 animated: !1
               },
-              r = n.shadows.map(t => wF.exec(t)).filter(t => !!t),
+              r = n.shadows.map(item => wF.exec(item)).filter(item => !!item),
               h = n.opacity ?? 1,
-              l = e.lines.map((t, o) => mF(e, n, s, i, o));
+              l = e.lines.map((item, index) => mF(e, n, s, i, index));
             t.save(), t.scale(1 / o.scale, 1 / o.scale);
             const c = o.scale;
             t.lineJoin = "round", t.textBaseline = "alphabetic";
@@ -22939,10 +22939,10 @@ var TC = t => `${t[0].toFixed(3)},${t[1].toFixed(3)},${t[2].toFixed(3)}`,
                 continue;
               }
               const g = e => {
-                i.mono > 0 ? [...w].forEach((n, s) => {
-                  const o = t.measureText(n).width,
-                    a = A + (s * i.mono * c + (i.mono * c - o) / 2);
-                  e ? t.fillText(n, a, p) : t.strokeText(n, a, p);
+                i.mono > 0 ? [...w].forEach((item, index) => {
+                  const o = t.measureText(item).width,
+                    a = A + (index * i.mono * c + (i.mono * c - o) / 2);
+                  e ? t.fillText(item, a, p) : t.strokeText(item, a, p);
                 }) : e ? t.fillText(w, A, p) : t.strokeText(w, A, p);
               };
               if ("shadow" === d) {
@@ -23151,9 +23151,9 @@ var VC = class {
           n = new At(new Float32Array(12 * t), 3),
           s = new At(new Float32Array(16 * t), 4);
         e.setAttribute("uv", new At(new Float32Array(8 * t).fill(.5), 2));
-        const i = new Float32Array(12 * t);
-        for (let a = 2; a < i.length; a += 3) i[a] = 1;
-        e.setAttribute("normal", new At(i, 3)), n.setUsage(Q), s.setUsage(Q);
+        const float32Values = new Float32Array(12 * t);
+        for (let a = 2; a < float32Values.length; a += 3) float32Values[a] = 1;
+        e.setAttribute("normal", new At(float32Values, 3)), n.setUsage(Q), s.setUsage(Q);
         const o = [];
         for (let a = 0; a < t; a++) {
           const t = 4 * a;
@@ -24039,17 +24039,17 @@ var uI = [],
     }
     async $_1dk() {
       await async function () {
-        await Promise.all(["lobby", "player", "chicken"].map(async t => {
-          const e = await ws(`/assets/extracted/actors/${t}.json`);
-          if (!e.ok) throw new Error(`Missing original ${t} rig`);
+        await Promise.all(["lobby", "player", "chicken"].map(async item => {
+          const e = await ws(`/assets/extracted/actors/${item}.json`);
+          if (!e.ok) throw new Error(`Missing original ${item} rig`);
           const n = await e.json();
-          wA.set(t, n);
-          const uniqueItems = new Set(n.nodes.flatMap(t => t.materials?.map(t => t.texture).filter(t => !!t) ?? []));
-          await Promise.all([...uniqueItems].map(t => {
-            let e = vA.get(t);
-            return e || (e = Hs("/assets/extracted/actors", t).then(e => {
-              e.colorSpace = Yi, gA.set(t, e);
-            }), e.catch(() => vA.delete(t)), vA.set(t, e)), e;
+          wA.set(item, n);
+          const uniqueItems = new Set(n.nodes.flatMap(node => node.materials?.map(t => t.texture).filter(t => !!t) ?? []));
+          await Promise.all([...uniqueItems].map(_item8 => {
+            let e = vA.get(_item8);
+            return e || (e = Hs("/assets/extracted/actors", _item8).then(result => {
+              result.colorSpace = Yi, gA.set(_item8, result);
+            }), e.catch(() => vA.delete(_item8)), vA.set(_item8, e)), e;
           }));
         }));
       }(), this.$_3ry = !0;
@@ -24100,14 +24100,14 @@ var uI = [],
           }
         }
         return e;
-      }([this.scene, this.foreground, this.worldUi.scene, ...this.pool.roots(), ...[...this.characters.values()].flatMap(t => t.model?.$_70vf() ?? []), ...(this.$_3fo?.() ?? [])])), this.transparent = null, this.$_7fga = null, this.staticWorld = new _t(), this.staticWorld.name = "static-world", aA(this.staticWorld), this.world.add(this.staticWorld), this.moving = [], this.shadowSkip = [], this.shadows.$_6di(t.source), this.effects.burns.clear(), this.effects.particles.$_55e(), this.effects.preload();
-      const [, i] = await Promise.all([this.environment.apply(t, e, t.source), Wk(t.source, t.materials, t => ws(`/assets/extracted/${t}/textures.json`).then(t => t.ok ? t.json() : {}).catch(() => ({})))]),
+      }([this.scene, this.foreground, this.worldUi.scene, ...this.pool.roots(), ...[...this.characters.values()].flatMap(item => item.model?.$_70vf() ?? []), ...(this.$_3fo?.() ?? [])])), this.transparent = null, this.$_7fga = null, this.staticWorld = new _t(), this.staticWorld.name = "static-world", aA(this.staticWorld), this.world.add(this.staticWorld), this.moving = [], this.shadowSkip = [], this.shadows.$_6di(t.source), this.effects.burns.clear(), this.effects.particles.$_55e(), this.effects.preload();
+      const [, i] = await Promise.all([this.environment.apply(t, e, t.source), Wk(t.source, t.materials, t => ws(`/assets/extracted/${t}/textures.json`).then(result => result.ok ? result.json() : {}).catch(() => ({})))]),
         o = de(t);
-      if (this.spawns = o.map(t => ({
-        x: t.x,
-        y: t.y,
-        z: t.z,
-        yaw: t.yaw
+      if (this.spawns = o.map(item => ({
+        x: item.x,
+        y: item.y,
+        z: item.z,
+        yaw: item.yaw
       })), o.length) {
         const t = new ne();
         for (const e of o) t.add(new ne(e.x, e.y, e.z));
@@ -24128,7 +24128,7 @@ var uI = [],
             mapST: [B.scale[0], B.scale[1], B.offset[0], B.offset[1]],
             metallic: s ? e._metallic ?? 0 : e._Metallic ?? 0,
             smoothness: s ? e._smoothness ?? .5 : e._Glossiness ?? e._Smoothness ?? .5,
-            emission: (!B.keywords || B.keywords.includes("_EMISSION")) && n._EmissionColor && n._EmissionColor.some((t, e) => e < 3 && t > 0) ? n._EmissionColor.slice(0, 3) : null,
+            emission: (!B.keywords || B.keywords.includes("_EMISSION")) && n._EmissionColor && n._EmissionColor.some((item, index) => index < 3 && item > 0) ? n._EmissionColor.slice(0, 3) : null,
             grid: s ? {
               scale: e._scale ?? B.triplanar ?? 1,
               falloff: e._falloff ?? 10,
@@ -24141,8 +24141,8 @@ var uI = [],
           });
         if (B.texture) {
           const e = qk(t.source, B.texture);
-          l.push(Hs(`/assets/extracted/${e.map}`, e.file).then(t => {
-            t.colorSpace = Yi, t.wrapS = t.wrapT = M, io(t, i(B.texture)), s && (t.wrapS = t.wrapT = M), t.userData.mapFile = `${e.map}/${e.file}`, o.uniforms.uMap.value = t, o.defines[s ? "USE_GRID" : "USE_MAP"] = "", o.needsUpdate = !0;
+          l.push(Hs(`/assets/extracted/${e.map}`, e.file).then(result => {
+            result.colorSpace = Yi, result.wrapS = result.wrapT = M, io(result, i(B.texture)), s && (result.wrapS = result.wrapT = M), result.userData.mapFile = `${e.map}/${e.file}`, o.uniforms.uMap.value = result, o.defines[s ? "USE_GRID" : "USE_MAP"] = "", o.needsUpdate = !0;
           }));
         }
         _lookupMap6.set(P, o);
@@ -24152,12 +24152,12 @@ var uI = [],
           side: 2
         }),
         u = ie(t),
-        _lookupMap7 = new Map(u.map(t => [t.node.id, t.matrix])),
+        _lookupMap7 = new Map(u.map(item => [item.node.id, item.matrix])),
         d = function (t, e) {
-          const _lookupMap0 = new Map(ie(t).map(t => [t.node.id, t.matrix]));
+          const _lookupMap0 = new Map(ie(t).map(item => [item.node.id, item.matrix]));
           return function (t, e) {
             return t.chickenRoutes ?? function (t) {
-              const e = (t?.managers?.MapInfo ?? []).find(t => Array.isArray(t?.data?.chickenLines));
+              const e = (t?.managers?.MapInfo ?? []).find(item => Array.isArray(item?.data?.chickenLines));
               if (!e || !t) return null;
               const _lookupMap1 = new Map();
               for (const i of t.objects) {
@@ -24167,22 +24167,22 @@ var uI = [],
               const s = [];
               for (const i of e.data.chickenLines) {
                 const t = i?.node ? _lookupMap1.get(i.node) : void 0;
-                t && s.push(t.flatMap(t => t?.node ? [t.node] : []));
+                t && s.push(t.flatMap(item => item?.node ? [item.node] : []));
               }
               return s;
             }(e) ?? [];
-          }(t, e).map(t => t.filter(t => _lookupMap0.has(t)).map(t => new ne().setFromMatrixPosition(_lookupMap0.get(t)))).filter(t => t.length > 0);
+          }(t, e).map(item => item.filter(_item9 => _lookupMap0.has(_item9)).map(_item0 => new ne().setFromMatrixPosition(_lookupMap0.get(_item0)))).filter(item => item.length > 0);
         }(t, e);
-      this.debug.$_2o6(d), this.$_48h = this.chickens.load(((t, e) => e.map(e => t[e.line]))(d, function (t) {
+      this.debug.$_2o6(d), this.$_48h = this.chickens.load(((t, e) => e.map(item => t[item.line]))(d, function (t) {
         const e = function (t) {
             const e = t.map(Qu),
               n = t.map(() => 1);
             let s = ((i = t.length) > 0 ? Math.round(1.5 * i) : 0) - t.length;
             var i;
-            const o = t.map((t, e) => ({
-              i: e,
-              length: Du(t)
-            })).sort((t, e) => e.length - t.length || t.i - e.i);
+            const o = t.map((item, index) => ({
+              i: index,
+              length: Du(item)
+            })).sort((leftItem, rightItem) => rightItem.length - leftItem.length || leftItem.i - rightItem.i);
             for (let a = 1; a < 2 && s > 0; a++) for (const {
               i: t
             } of o) {
@@ -24192,22 +24192,22 @@ var uI = [],
             return n;
           }(t),
           n = [];
-        for (let s = 0; s < 2; s++) e.forEach((t, e) => {
-          s < t && n.push({
-            line: e,
+        for (let s = 0; s < 2; s++) e.forEach((item, index) => {
+          s < item && n.push({
+            line: index,
             copy: s,
-            copies: t
+            copies: item
           });
         });
         return n;
-      }(d)), t.chickenMaterial?.texture ?? null, d).catch(t => console.warn("chickens failed to load", t)), this.dynamic.clear();
+      }(d)), t.chickenMaterial?.texture ?? null, d).catch(error => console.warn("chickens failed to load", error)), this.dynamic.clear();
       const _uniqueItems2 = new Set(),
         _uniqueItems3 = new Set();
       for (const M of e?.objects ?? []) {
         const t = M.scripts?.ExplosiveBarrel?.gfx?.node;
         t && _uniqueItems2.add(t), "Destructible" !== M.tag && "Ball" !== M.tag && "Secret" !== M.tag || !M.node || _uniqueItems2.add(M.node), M.scripts?.HardpointArea && M.node && (_uniqueItems2.add(M.node), _uniqueItems3.add(M.node)), M.scripts?.ZombieDoor && M.node && (_uniqueItems2.add(M.node), _uniqueItems3.add(M.node)), M.scripts?.SumoRing && M.node && _uniqueItems2.add(M.node);
       }
-      const _lookupMap8 = new Map(t.nodes.map(t => [t.id, t])),
+      const _lookupMap8 = new Map(t.nodes.map(node => [node.id, node])),
         w = t => {
           for (let e = t ? _lookupMap8.get(t) : void 0; e; e = e.parent ? _lookupMap8.get(e.parent) : void 0) if (_uniqueItems2.has(e.id)) return e.id;
           return null;
@@ -24227,7 +24227,7 @@ var uI = [],
           local: s
         });
       }
-      const _lookupMap9 = new Map(u.map(t => [t.node.id, t.active])),
+      const _lookupMap9 = new Map(u.map(item => [item.node.id, item.active])),
         v = (t, e) => {
           let n = _lookupMap8.get(t);
           for (; n && n.id !== e; n = n.parent ? _lookupMap8.get(n.parent) : void 0) if (!n.active) return !1;
@@ -24249,9 +24249,9 @@ var uI = [],
         const e = w(M.id);
         if (!(B || e && _uniqueItems3.has(e) && v(M.id, e)) || !M.mesh || 5 === M.layer || 6 === M.layer) continue;
         const n = t.meshes[M.mesh],
-          s = M.batch ? n.groups.slice(M.batch.first, M.batch.first + M.batch.count).map(([t, e], n) => [t, e, n]) : n.groups.map(([t, e, n]) => [t, e, n ?? 0]),
+          s = M.batch ? n.groups.slice(M.batch.first, M.batch.first + M.batch.count).map(([t, e], index) => [t, e, index]) : n.groups.map(([t, e, n]) => [t, e, n ?? 0]),
           i = M.materials?.map(t => t ? _lookupMap6.get(t) ?? c : c) ?? [c],
-          o = !i.every(t => t.transparent),
+          o = !i.every(item => item.transparent),
           l = M.batch ? M.batch.root ? _lookupMap7.get(M.batch.root) ?? new R().makeScale(-1, 1, 1) : new R().makeScale(-1, 1, 1) : P,
           u = e ? this.dynamic.get(e) : void 0;
         let d = s;
@@ -24294,21 +24294,21 @@ var uI = [],
           }
         }
         const A = d.length === s.length,
-          m = M.mesh + (M.batch ? `:${M.batch.first}:${M.batch.count}` : "") + (A ? "" : `|${d.map(t => t[2]).join(",")}`);
+          m = M.mesh + (M.batch ? `:${M.batch.first}:${M.batch.count}` : "") + (A ? "" : `|${d.map(item => item[2]).join(",")}`);
         if (!lookupMap.has(m)) {
           let t = _lookupMap5.get(M.mesh);
           t || (t = Fe(n), _lookupMap5.set(M.mesh, t));
           const e = new Vt();
           for (const [n, s] of Object.entries(t.attributes)) e.setAttribute(n, s);
-          if (e.setIndex(t.getIndex()), d.forEach(([t, n, s], i) => e.addGroup(t, n, A ? s : i)), M.batch) {
+          if (e.setIndex(t.getIndex()), d.forEach(([t, n, s], index) => e.addGroup(t, n, A ? s : index)), M.batch) {
             const t = rA(n, d.map(([t, e]) => [t, e]));
             e.boundingBox = t.box, e.boundingSphere = t.sphere;
           }
           lookupMap.set(m, e);
         }
-        const g = A ? i : d.map(t => i[t[2]]),
+        const g = A ? i : d.map(item => i[item[2]]),
           _ = new j(lookupMap.get(m), g);
-        _.name = M.name, o && !g.every(t => t.transparent) || this.shadowSkip.push(_), _.layers.enable(M.layer), u ? (_.applyMatrix4(u.world.clone().invert().multiply(l)), u.group.add(_)) : (_.applyMatrix4(l), this.staticWorld.add(_)), aA(_);
+        _.name = M.name, o && !g.every(item => item.transparent) || this.shadowSkip.push(_), _.layers.enable(M.layer), u ? (_.applyMatrix4(u.world.clone().invert().multiply(l)), u.group.add(_)) : (_.applyMatrix4(l), this.staticWorld.add(_)), aA(_);
       }
       S.length && (this.transparent = new Mx(S), this.staticWorld.add(this.transparent.group), this.shadowSkip.push(this.transparent.group));
       const _ = new _t();
@@ -24333,18 +24333,18 @@ var uI = [],
         return e ? new ne().setFromMatrixPosition(e) : null;
       })), this.glow.$_6di(e?.bloom ?? null, I, F), jy.$_5xx(I);
       for (const M of this.$_3ef) jy.remove(M);
-      this.$_3ef = [..._uniqueItems3].map(t => this.dynamic.get(t)?.group).filter(t => !!t);
+      this.$_3ef = [..._uniqueItems3].map(item => this.dynamic.get(item)?.group).filter(item => !!item);
       for (const M of this.$_3ef) jy.add(M, Ly.hardpoint);
-      this.ragdolls.$_4i8([...this.dynamic.values()].map(t => t.group)), await Promise.all([...l, this.minimap.load(t, e, _lookupMap7), this.$_319.load(t, e, _lookupMap7, {
+      this.ragdolls.$_4i8([...this.dynamic.values()].map(item => item.group)), await Promise.all([...l, this.minimap.load(t, e, _lookupMap7), this.$_319.load(t, e, _lookupMap7, {
         rootOf: t => {
           const e = w(t);
           return e && _uniqueItems3.has(e) ? e : null;
         },
         group: t => this.dynamic.get(t) ?? null,
-        roots: (e?.objects ?? []).flatMap(t => {
-          const e = t.scripts?.HardpointArea?.detectionBoxSize;
-          return t.node && _uniqueItems3.has(t.node) && e ? [{
-            id: t.node,
+        roots: (e?.objects ?? []).flatMap(item => {
+          const e = item.scripts?.HardpointArea?.detectionBoxSize;
+          return item.node && _uniqueItems3.has(item.node) && e ? [{
+            id: item.node,
             box: [e.x ?? 10, e.y ?? 50, e.z ?? 10]
           }] : [];
         })
@@ -24402,7 +24402,7 @@ var uI = [],
         n = this.gpu,
         s = (s, i, o) => n ? n.compile(s, i, o) : e ? t.compileAsync(s, i, o) : Promise.resolve(t.compile(s, i, o)),
         i = [s(this.scene, this.camera), s(this.foreground, this.foregroundCamera)];
-      this.$_3ry && i.push(this.pool.fill(1)), await Promise.all(i).catch(t => console.warn("shader precompile failed", t));
+      this.$_3ry && i.push(this.pool.fill(1)), await Promise.all(i).catch(error => console.warn("shader precompile failed", error));
     }
     async $_1vq() {
       if (this.shadows.invalidate(), this.soft.$_llj(), !this.gpu) {
@@ -24417,8 +24417,8 @@ var uI = [],
       let i = 0;
       const o = performance.now();
       await this.$_48h;
-      const a = this.$_3ry ? this.pool.fill(n, () => e(Math.min(s - 1, ++i), s)).catch(t => console.warn("character pool failed", t)) : Promise.resolve(),
-        h = Promise.all([lx(t => this.$_7kt.stage(t), this.$_37z()), this.effects.prepare(this.mode), this.bullets.$_5jc(), this.arrows.prepare(), ...Object.keys(r).map(t => this.bullets.$_1rvq.preload(t))]).catch(t => console.warn("program catalog failed", t));
+      const a = this.$_3ry ? this.pool.fill(n, () => e(Math.min(s - 1, ++i), s)).catch(error => console.warn("character pool failed", error)) : Promise.resolve(),
+        h = Promise.all([lx(t => this.$_7kt.stage(t), this.$_37z()), this.effects.prepare(this.mode), this.bullets.$_5jc(), this.arrows.prepare(), ...Object.keys(r).map(item => this.bullets.$_1rvq.preload(item))]).catch(error => console.warn("program catalog failed", error));
       await this.$_7kt.decodeAll(this.scene), await this.$_7ww.prepare(), this.gpu || this.nukeFlash.prime(this.renderer);
       const l = this.gpu?.asWebGL ?? this.renderer;
       this.glow.prime(l, this.camera), jy.prime(l, this.camera);
@@ -24455,7 +24455,7 @@ var uI = [],
           await t(i), s++;
         }
         return s;
-      }(t => this.$_7kt.stage(t), () => t === this.$_1c7 && Xs()).catch(t => console.warn("rare program variants failed", t));
+      }(t => this.$_7kt.stage(t), () => t === this.$_1c7 && Xs()).catch(error => console.warn("rare program variants failed", error));
     }
     $_540() {
       this.settling = new Set(this.characters.values()), this.$_1ir = -1;
@@ -24546,9 +24546,9 @@ var uI = [],
     }
     $_4fo = !0;
     predictedShot(t, e = "", n = 0) {
-      this.bullets.$_1rvq.attack(e, t.map(t => ({
-        at: t.to,
-        normal: t.normal
+      this.bullets.$_1rvq.attack(e, t.map(item => ({
+        at: item.to,
+        normal: item.normal
       })));
       const s = this.$_vpe?.$_3t9();
       if (!s) return;
@@ -24560,10 +24560,10 @@ var uI = [],
         for (const t of this.$_6md.keys()) (t <= n - 64 || t > n) && this.$_6md.delete(t);
       }
       let o = 0;
-      t.forEach((t, e) => {
-        if (this.bullets.fire(s.key, s.from, t.to, t.normal, n ? hn(n, e) : void 0, !this.hideOwnTracers, s.tint), t.walls?.length && t.from && t.dir) for (const i of t.walls) {
+      t.forEach((item, index) => {
+        if (this.bullets.fire(s.key, s.from, item.to, item.normal, n ? hn(n, index) : void 0, !this.hideOwnTracers, s.tint), item.walls?.length && item.from && item.dir) for (const i of item.walls) {
           const e = o++,
-            a = e => t.from.clone().addScaledVector(t.dir, e),
+            a = e => item.from.clone().addScaledVector(item.dir, e),
             r = t => n ? hn(n, kn + 2 * e + t) : void 0;
           this.bullets.$_amh(s.key, a(i.entry), i.entryNormal.clone(), r(0)), this.bullets.$_amh(s.key, a(i.exit), i.exitNormal.clone(), r(1));
         }
@@ -24601,10 +24601,10 @@ var uI = [],
     }
     strike(t, e, n) {
       const s = t.to[0];
-      t.killed && t.hit && s && this.ragdolls.$_3nfn(t.hit, t.from, s), e && n || this.bullets.$_1rvq.attack(t.weapon, t.to.map((e, n) => {
-        const s = t.normals?.[n];
+      t.killed && t.hit && s && this.ragdolls.$_3nfn(t.hit, t.from, s), e && n || this.bullets.$_1rvq.attack(t.weapon, t.to.map((item, index) => {
+        const s = t.normals?.[index];
         return {
-          at: new ne().fromArray(e),
+          at: new ne().fromArray(item),
           normal: s ? new ne().fromArray(s) : null
         };
       }));
@@ -24616,26 +24616,26 @@ var uI = [],
       for (const h of t.more ?? []) h.killed && this.ragdolls.$_3nfn(h.hit, t.from, t.to[0]);
       if (e && n) {
         const e = t.n ? this.$_6md.get(t.n) : void 0;
-        return void (e && t.n && (this.$_6md.delete(t.n), this.bullets.$_37g(e, t.n, [...t.to.map((e, n) => {
-          const s = t.normals?.[n];
+        return void (e && t.n && (this.$_6md.delete(t.n), this.bullets.$_37g(e, t.n, [...t.to.map((item, index) => {
+          const s = t.normals?.[index];
           return {
-            to: new ne().fromArray(e),
+            to: new ne().fromArray(item),
             normal: s ? new ne().fromArray(s) : null
           };
-        }), ...(t.walls ?? []).flatMap((t, e) => Jf(t).map((t, n) => ({
-          to: t.at,
-          normal: t.normal,
-          index: kn + 2 * e + n
+        }), ...(t.walls ?? []).flatMap((item, index) => Jf(item).map((_item1, _index3) => ({
+          to: _item1.at,
+          normal: _item1.normal,
+          index: kn + 2 * index + _index3
         })))])));
       }
       if (e && t.n && (this.$_6md.delete(t.n), this.bullets.$_6m5s(t.n, t.to.length)), e) this.$_vpe?.shoot(t.kick, t.alt, t.hand);else if (!e) {
         const e = this.characters.get(t.shooter)?.model;
         e?.$_3mi3(t.alt, t.hand), this.$_4fo && e?.muzzleFlash();
       }
-      this.bullets.$_1rvq.attack(t.weapon, t.to.map((e, n) => {
-        const s = t.normals?.[n];
+      this.bullets.$_1rvq.attack(t.weapon, t.to.map((item, index) => {
+        const s = t.normals?.[index];
         return {
-          at: new ne().fromArray(e),
+          at: new ne().fromArray(item),
           normal: s ? new ne().fromArray(s) : null
         };
       }));
@@ -24652,16 +24652,16 @@ var uI = [],
         return void this.laser(s, [{
           to: n,
           normal: i(t.normals?.[0])
-        }, ...t.bounces.map((e, n) => ({
-          to: new ne().fromArray(e),
-          normal: i(t.bounceNormals?.[n])
+        }, ...t.bounces.map((item, index) => ({
+          to: new ne().fromArray(item),
+          normal: i(t.bounceNormals?.[index])
         }))], a);
       }
       e || i && i.holder.visible && i.shown && !this.culled?.(t.shooter) || (a = !1);
       const r = !e && t.from.length >= 3 ? fI.fromArray(t.from) : null;
-      t.to.forEach((e, n) => {
-        const s = t.normals?.[n],
-          i = new ne().fromArray(e);
+      t.to.forEach((item, index) => {
+        const s = t.normals?.[index],
+          i = new ne().fromArray(item);
         let h = o.from;
         r && a && (h = new ne(), ky(o.from, r, i, function (t, e, n) {
           if (!n?.length) return null;
@@ -24795,9 +24795,9 @@ var uI = [],
           if (t) h.model = t, t.$_xa8 = h.rank, t.object.visible = !1, h.holder.add(t.object);else {
             h.loading = !0;
             const t = h;
-            this.pool.create(h.rank).then(e => {
-              if (this.characters.get(i.id) !== t) return this.pool.give(e);
-              t.model = e, e.$_xa8 = t.rank, e.object.visible = !1, t.holder.add(e.object), t.weapon = "", t.emote = 0, t.look.skin = NaN;
+            this.pool.create(h.rank).then(result => {
+              if (this.characters.get(i.id) !== t) return this.pool.give(result);
+              t.model = result, result.$_xa8 = t.rank, result.object.visible = !1, t.holder.add(result.object), t.weapon = "", t.emote = 0, t.look.skin = NaN;
             }, e => this.$_39b(t, "character", e));
           }
         }
@@ -24856,8 +24856,8 @@ var uI = [],
                 classId: i.classId,
                 classSkin: i.look.classSkin
               });
-            n && this.pend(h, h.model.setSkin(n.skin, n.hat).catch(t => {
-              h.look.skin = NaN, this.$_39b(h, "skin", t);
+            n && this.pend(h, h.model.setSkin(n.skin, n.hat).catch(error => {
+              h.look.skin = NaN, this.$_39b(h, "skin", error);
             }));
           }
           const s = i.look.weaponSkin;
@@ -24877,7 +24877,7 @@ var uI = [],
             h.prepared = o;
             for (const [t, e] of xy(i)) {
               const n = r[t];
-              !n || t === i.weapon && e === s || (this.pend(h, h.model.$_26iv(n.index, e).then(t => t ? this.bullets.preload(t) : null)), this.bullets.$_1rvq.preload(t));
+              !n || t === i.weapon && e === s || (this.pend(h, h.model.$_26iv(n.index, e).then(result => result ? this.bullets.preload(result) : null)), this.bullets.$_1rvq.preload(t));
             }
             "ctf" === this.mode && this.pend(h, h.model.$_26iv(r.flag.index, -1));
           }
@@ -24939,12 +24939,12 @@ var uI = [],
   kI = MI;
 function xI(t) {
   const e = Array.isArray(t) ? t : [],
-    n = bI.filter(t => e.includes(t));
+    n = bI.filter(item => e.includes(item));
   return n.length ? n : [...kI];
 }
 function FI(t, e) {
-  const n = bI.filter(e => t.includes(e));
-  return bI.includes(e) ? n.includes(e) ? n.length > 1 ? n.filter(t => t !== e) : n : bI.filter(t => t === e || n.includes(t)) : n.length ? n : [...kI];
+  const n = bI.filter(item => t.includes(item));
+  return bI.includes(e) ? n.includes(e) ? n.length > 1 ? n.filter(item => item !== e) : n : bI.filter(item => item === e || n.includes(item)) : n.length ? n : [...kI];
 }
 var CI = t => 1 === t.length ? t[0] : "random";
 function II(t) {
@@ -25016,7 +25016,7 @@ function RI(t, e = new Set(), n) {
     const i = `${e.mesh}|${e.materials?.join(",")}`;
     let o = lookupMap.get(i);
     return void 0 === o && lookupMap.set(i, o = function (t, e, n) {
-      return !(!e.mesh || !e.materials?.length) && e.materials.every(e => !!e && EI(t.materials[e], n));
+      return !(!e.mesh || !e.materials?.length) && e.materials.every(item => !!item && EI(t.materials[item], n));
     }(t, e, n)), o;
   });
 }
@@ -25037,13 +25037,13 @@ var DI = class {
           i = t.geometry.getIndex()?.array;
         if (!e || !i || 1 !== n?.length || !(s.array instanceof Float32Array) || s.normalized) return null;
         const o = i.length / 3,
-          a = new Float32Array(9 * o);
+          float32Values = new Float32Array(9 * o);
         for (let h = 0; h < o; h++) for (let t = 0; t < 3; t++) {
           const e = i[3 * h + t];
-          a[9 * h + 3 * t] = s.getX(e), a[9 * h + 3 * t + 1] = s.getY(e), a[9 * h + 3 * t + 2] = s.getZ(e);
+          float32Values[9 * h + 3 * t] = s.getX(e), float32Values[9 * h + 3 * t + 1] = s.getY(e), float32Values[9 * h + 3 * t + 2] = s.getZ(e);
         }
-        const r = new Uint8Array(o);
-        return new Kr(e, a, n[0], r, r);
+        const uint8Values = new Uint8Array(o);
+        return new Kr(e, float32Values, n[0], uint8Values, uint8Values);
       }(this.bvh));
     }
     first(t) {
@@ -25133,12 +25133,12 @@ function zI(t) {
 }
 var GI = t => `/assets/extracted/${t}`;
 async function TI(t, e) {
-  const n = fetch(`${t}/${le}`, e).then(t => t.ok ? t.arrayBuffer() : null).then(t => t ? he(t) : null).catch(() => null),
+  const n = fetch(`${t}/${le}`, e).then(result => result.ok ? result.arrayBuffer() : null).then(result => result ? he(result) : null).catch(() => null),
     s = await async function (t, e) {
       const n = await bo(`${t}/scene.binz`, zI, e),
         s = n && $I(n, `${t}/scene.binz`);
       if (s) return s;
-      const i = await fetch(`${t}/scene.bin`, e).then(t => t.ok ? t.arrayBuffer() : null).catch(() => null),
+      const i = await fetch(`${t}/scene.bin`, e).then(result => result.ok ? result.arrayBuffer() : null).catch(() => null),
         o = i && zI(i) && $I(i, `${t}/scene.bin`);
       if (o) return o;
       const a = await ws(`${t}/scene.json`, e);
@@ -25184,16 +25184,16 @@ function $I(t, e) {
   }
 }
 function OI(t, e, n) {
-  return ws(`${t}/${Yy(e)}`, n).then(t => t.ok ? t.json() : null).catch(() => null);
+  return ws(`${t}/${Yy(e)}`, n).then(result => result.ok ? result.json() : null).catch(() => null);
 }
 var HI = () => Pf.best(),
   NI = null;
 function KI(t) {
   return NI ??= (async () => {
     const e = GI(ya),
-      [n, s] = await Promise.all([TI(e, t), ws(`${e}/palette.json`, t).then(t => {
-        if (!t.ok) throw new Error("Community maps are not installed.");
-        return t.json();
+      [n, s] = await Promise.all([TI(e, t), ws(`${e}/palette.json`, t).then(result => {
+        if (!result.ok) throw new Error("Community maps are not installed.");
+        return result.json();
       })]);
     return {
       palette: s,
@@ -25212,10 +25212,10 @@ function qI() {
 function WI() {
   try {
     const parsedValue = JSON.parse(qI()?.getItem("kourCommunityMaps") ?? "[]");
-    return Array.isArray(parsedValue) ? parsedValue.filter(t => !!t && Sa(t.id) && "string" == typeof t.name && ba.includes(t.mode)).map(t => ({
-      id: t.id,
-      name: t.name.slice(0, 40),
-      mode: t.mode
+    return Array.isArray(parsedValue) ? parsedValue.filter(item => !!item && Sa(item.id) && "string" == typeof item.name && ba.includes(item.mode)).map(item => ({
+      id: item.id,
+      name: item.name.slice(0, 40),
+      mode: item.mode
     })) : [];
   } catch {
     return [];
@@ -25229,7 +25229,7 @@ async function VI() {
   } catch {
     t = [];
   }
-  const e = [...t, ...WI().filter(e => !t.some(t => t.id === e.id))];
+  const e = [...t, ...WI().filter(item => !t.some(_item10 => _item10.id === item.id))];
   for (const n of e) Ra(n.id, n.name);
   return e;
 }
@@ -25258,7 +25258,7 @@ async function JI(t) {
         id: t.id,
         name: t.name,
         mode: t.mode
-      }, ...WI().filter(e => e.id !== t.id)].slice(0, 20);
+      }, ...WI().filter(item => item.id !== t.id)].slice(0, 20);
       try {
         qI()?.setItem("kourCommunityMaps", JSON.stringify(e));
       } catch {}
@@ -25277,7 +25277,7 @@ async function JI(t) {
     };
   }
 }
-var XI = t => d.find(e => e.id === t)?.name ?? t,
+var XI = t => d.find(item => item.id === t)?.name ?? t,
   YI = class extends Error {
     mapId;
     reason;
@@ -25337,12 +25337,12 @@ var XI = t => d.find(e => e.id === t)?.name ?? t,
       return this.asked.set(t.url, a), a;
     }
     failed(t, e) {
-      if (this.website.has(t) || !d.some(e => e.id === t)) return;
+      if (this.website.has(t) || !d.some(item => item.id === t)) return;
       const n = e instanceof Error ? e.message : String(e);
       this.website.set(t, n), this.log(`[maps] ${t} (${XI(t)}) could not be loaded and is left out from now on: ${n} - the website is missing its files (operator: DEPLOY.md "Wenn Karten nicht laden")`);
     }
     refused(t, e) {
-      if (!e || !d.some(t => t.id === e)) return;
+      if (!e || !d.some(item => item.id === e)) return;
       const n = t?.url ?? this.current;
       if (!n) return;
       let s = this.servers.get(n);
@@ -25358,7 +25358,7 @@ var XI = t => d.find(e => e.id === t)?.name ?? t,
       if (this.website.has(t)) return "website";
       const n = e?.url ?? this.current,
         s = n ? this.servers.get(n) : void 0;
-      return s && d.some(e => e.id === t) && (s.refused.has(t) || s.report && !s.report.available.includes(t)) ? "server" : null;
+      return s && d.some(item => item.id === t) && (s.refused.has(t) || s.report && !s.report.available.includes(t)) ? "server" : null;
     }
     available(t, e = null) {
       return null === this.issue(t, e);
@@ -25394,7 +25394,7 @@ function sP() {
 }
 function iP(t, e, n = Math.random) {
   const s = tP.get(t);
-  if (s && e.some(t => t.id === s)) return s;
+  if (s && e.some(item => item.id === s)) return s;
   const i = e[Math.floor(n() * e.length)]?.id;
   return i && tP.set(t, i), i;
 }
@@ -25408,7 +25408,7 @@ function aP(t) {
   const n = PI(e, t.rooms, t.random ?? nP(), t.elo ?? null);
   if (n.mapId) return n.mapId;
   const s = n.mode,
-    i = t.pinned && A(s).some(e => e.id === t.pinned) ? t.pinned : null;
+    i = t.pinned && A(s).some(item => item.id === t.pinned) ? t.pinned : null;
   if (i) return i;
   const o = pe(s),
     a = t.roll(s, o);
@@ -25421,7 +25421,7 @@ function lP(t, e = null) {
     s = (t, e) => {
       if (e > 6 || null === t || "object" != typeof t) return;
       if (ArrayBuffer.isView(t)) return;
-      const i = Array.isArray(t) ? t.map(t => ["", t]) : Object.entries(t);
+      const i = Array.isArray(t) ? t.map(item => ["", item]) : Object.entries(t);
       for (const [o, a] of i) rP.has(o) || ("string" == typeof a ? /^[\w.-]+\.(?:png|jpe?g|webp)$/i.test(a) && !hP.test(a) && uniqueItems.add(a) : s(a, e + 1));
     };
   for (const [i, o] of Object.entries(t)) "meshes" !== i && "nodes" !== i && "chickenMaterial" !== i && s(o, 0);
@@ -25449,7 +25449,7 @@ async function dP(t, e) {
     },
     i = GI(t),
     o = TI(i, s).catch(() => null),
-    a = o.then(t => t ? OI(i, t, s) : null),
+    a = o.then(result => result ? OI(i, result, s) : null),
     r = {
       id: t,
       scene: o,
@@ -25462,13 +25462,13 @@ async function dP(t, e) {
     l = await a,
     c = () => abortController.signal.aborted || r.taken;
   if (!h || c()) return void (cP !== r || h || (cP = null));
-  const u = ["textures.json", "effects.json", ...lP(h, l)].map(t => `${i}/${t}`),
+  const u = ["textures.json", "effects.json", ...lP(h, l)].map(item => `${i}/${item}`),
     f = h.chickenMaterial?.texture;
   f && u.push(`/assets/extracted/rig/tex/${f}`);
   for (const d of u) {
     for (; !e() && !c();) await new Promise(t => setTimeout(t, 1e3));
     if (c()) return;
-    gs(d) || (await fetch(vs(d), s).then(t => t.arrayBuffer()).catch(() => null));
+    gs(d) || (await fetch(vs(d), s).then(result => result.arrayBuffer()).catch(() => null));
   }
 }
 async function AP(t) {
@@ -25510,16 +25510,16 @@ async function mP(t, e) {
   const i = performance.now(),
     o = Sa(t) ? await async function (t, e) {
       if (!Sa(t)) throw new Error("Map is unavailable");
-      const [n, s] = await Promise.all([KI(e), fetch(HI().http(`/community-maps/${t}`), e).then(t => {
-          if (!t.ok) throw new Error("Map is unavailable");
-          return t.text();
+      const [n, s] = await Promise.all([KI(e), fetch(HI().http(`/community-maps/${t}`), e).then(result => {
+          if (!result.ok) throw new Error("Map is unavailable");
+          return result.text();
         })]),
         i = Ca(s, function (t, e, n = 0) {
           return {
             meshes: t.meshList.length,
             textures: t.textureList.length,
             shaders: t.shaderList.length,
-            triangles: t.meshList.map(t => t && e.meshes[t] ? e.meshes[t].indices.length / 3 : 0),
+            triangles: t.meshList.map(item => item && e.meshes[item] ? e.meshes[item].indices.length / 3 : 0),
             weapons: n
           };
         }(n.palette, n.scene, Object.keys(r).length));

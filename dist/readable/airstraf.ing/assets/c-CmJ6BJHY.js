@@ -1,4 +1,4 @@
-const __vite__mapDeps = (i, m = __vite__mapDeps, d = m.f || (m.f = ["assets/three-Bi9Yyrpt.js", "assets/c-BJ87Xak5.js"])) => i.map(i => d[i]);
+const __vite__mapDeps = (i, m = __vite__mapDeps, d = m.f || (m.f = ["assets/three-Bi9Yyrpt.js", "assets/c-BJ87Xak5.js"])) => i.map(item => d[item]);
 import { $ as A, Et as t, P as s, Tt as n, V as e, W as B, X as o, Z as i, at as r, f as w, ht as f, lt as a, ot as g, r as c, t as Q, ut as h } from "./c-CwMHWVDn.js";
 import { t as l } from "./c-D7DrHuA8.js";
 import { At as C, Br as H, Ct as u, Dr as E, Dt as F, Ft as D, H as P, It as d, J as M, Lt as k, Mt as b, Or as I, Pt as G, Rr as U, T as v, W as p, Xt as m, Yt as Y, Z as T, _ as L, et as J, f as R, g as O, gr as V, h as y, hr as j, mr as x, nn as z, on as X, qt as W, sn as S, v as Z, w as N, x as K, zr as q } from "./three-Bi9Yyrpt.js";
@@ -360,8 +360,8 @@ var Tt = [{
   },
   yt = A => A && Rt[A] || 0,
   jt = Tt.length,
-  xt = Tt.findIndex(A => "head" === A.name),
-  zt = Tt.findIndex(A => "chest" === A.name),
+  xt = Tt.findIndex(item => "head" === item.name),
+  zt = Tt.findIndex(item => "chest" === item.name),
   Xt = 7 * jt,
   Wt = Xt + 6,
   St = Jt.length,
@@ -372,16 +372,16 @@ function Nt(A, t, s = jt) {
     e = n.length >> 1,
     B = [];
   for (let o = 0; o < e / t; o++) {
-    const A = new Float64Array(t);
+    const float64Values = new Float64Array(t);
     for (let e = 0; e < t; e++) {
       const B = 2 * (o * t + e);
       let i = n.charCodeAt(B) | n.charCodeAt(B + 1) << 8;
       i >= 32768 && (i -= 65536);
       const r = e < 7 * s ? e % 7 >= 3 : e >= 7 * s + 3;
-      A[e] = r ? i / 32767 : i / 1e3;
+      float64Values[e] = r ? i / 32767 : i / 1e3;
     }
-    for (let t = 0; t < s; t++) Kt(A, 7 * t + 3);
-    B.push(A);
+    for (let t = 0; t < s; t++) Kt(float64Values, 7 * t + 3);
+    B.push(float64Values);
   }
   return B;
 }
@@ -397,22 +397,22 @@ var qt = {
     jump: Nt(Vt.jump, Xt),
     land: Nt(Vt.land, Xt),
     landCrouch: Nt(Vt.landCrouch, Xt),
-    dances: Vt.dances.map(A => Nt(A, Wt)),
-    holds: Vt.holds.map(A => ({
-      lean: Nt(A.lean, Zt, St),
-      crouchLean: Nt(A.crouchLean, Zt, St),
-      jump: Nt(A.jump, Zt, St),
-      land: Nt(A.land, Zt, St),
-      landCrouch: Nt(A.landCrouch, Zt, St)
+    dances: Vt.dances.map(item => Nt(item, Wt)),
+    holds: Vt.holds.map(item => ({
+      lean: Nt(item.lean, Zt, St),
+      crouchLean: Nt(item.crouchLean, Zt, St),
+      jump: Nt(item.jump, Zt, St),
+      land: Nt(item.land, Zt, St),
+      landCrouch: Nt(item.landCrouch, Zt, St)
     }))
   },
   _t = (qt.land.length - 1) / 20,
   $t = (qt.landCrouch.length - 1) / 20,
   As = Ot.indexOf(0),
   ts = qt.lean[As],
-  ss = [ts, ...qt.holds.map(A => Bs(ts.slice(), A.lean[As]))],
+  ss = [ts, ...qt.holds.map(item => Bs(ts.slice(), item.lean[As]))],
   ns = qt.crouchLean[As],
-  es = [ns, ...qt.holds.map(A => Bs(ns.slice(), A.crouchLean[As]))];
+  es = [ns, ...qt.holds.map(item => Bs(ns.slice(), item.crouchLean[As]))];
 function Bs(A, t) {
   for (let s = 0; s < St; s++) {
     const n = 7 * Jt[s];
@@ -438,10 +438,10 @@ function ws(A, t, s, n, e = rs, B = jt) {
   const o = A.length;
   let i = Math.max(0, t) * s;
   n ? i %= o : i = Math.min(i, o - 1);
-  const r = Math.floor(i),
-    w = i - r,
-    f = A[r];
-  return is(f, A[n ? (r + 1) % o : Math.min(o - 1, r + 1)], w, f.length, e, B);
+  const flooredValue = Math.floor(i),
+    w = i - flooredValue,
+    f = A[flooredValue];
+  return is(f, A[n ? (flooredValue + 1) % o : Math.min(o - 1, flooredValue + 1)], w, f.length, e, B);
 }
 var fs = new Float64Array(Xt);
 function as(A, t, s = fs, n = jt) {
@@ -496,7 +496,7 @@ function Ds(A, t, s, n = function () {
     const s = Ds(qt.idle, 0, {
         fx: 0,
         fz: -1,
-        boxes: Tt.map((A, t) => ps(t))
+        boxes: Tt.map((item, index) => ps(index))
       }, 0),
       n = A => Math.abs(A.xv) * A.hx + Math.abs(A.yv) * A.hy + Math.abs(A.zv) * A.hz,
       e = s.boxes[xt],
@@ -603,7 +603,7 @@ var ps = A => {
   ms = () => Ds(qt.idle, 0, {
     fx: 0,
     fz: -1,
-    boxes: Tt.map((A, t) => ps(t))
+    boxes: Tt.map((item, index) => ps(index))
   }),
   Ys = (A, t = 0, s = ms()) => Ds(A ? qt.crouch : qt.idle, t, s),
   Ts = (A, t, s = 0, n) => A ?? Ys(t, s, n);
@@ -615,7 +615,7 @@ function Ls(A) {
     crouching: Rs(!0)
   }), A ? Os.crouching : Os.standing;
 }
-var Js = Tt.findIndex(A => "head" === A.name),
+var Js = Tt.findIndex(item => "head" === item.name),
   Rs = A => {
     const t = Ys(A),
       s = t.boxes[Js];
@@ -709,11 +709,11 @@ var xs = () => ({
   },
   Ns = (tA.length, A => Number.isInteger(A) && (-3 === A || -1 === A || -2 === A || nA(A)) ? A : -1);
 function Ks(A) {
-  const t = A ? Q.find(t => t.id === A) : void 0;
+  const t = A ? Q.find(item => item.id === A) : void 0;
   return t ? t.skin >= 0 ? t.skin : t.index : -1;
 }
 var qs = A => {
-  return !(A > 0 && (t = A, AA.some(A => A.skinIndex === t)));
+  return !(A > 0 && (t = A, AA.some(item => item.skinIndex === t)));
   var t;
 };
 function _s(A, t) {
@@ -734,10 +734,10 @@ function tn(A, t, s) {
   if (!t && A > 0) {
     let t = "";
     for (const s of AA) s.skinIndex === A && s.iconPath && (t = s.iconPath);
-    if (t || (t = $.find(t => "characterSkin" === t.kind && t.skinIndex === A && t.iconPath)?.iconPath ?? ""), t) return t;
+    if (t || (t = $.find(item => "characterSkin" === item.kind && item.skinIndex === A && item.iconPath)?.iconPath ?? ""), t) return t;
   }
-  const n = s ? Q.find(A => A.id === s) : void 0;
-  return An(n) ?? An(Q.find(t => Ks(t.id) === A));
+  const n = s ? Q.find(item => item.id === s) : void 0;
+  return An(n) ?? An(Q.find(item => Ks(item.id) === A));
 }
 var sn = [1, 2, 4, 8],
   nn = {
@@ -776,7 +776,7 @@ function an(A, t) {
     o = {
       ...A,
       reload: A.reload * B,
-      bulletAddReloadTimes: A.bulletAddReloadTimes.map(A => A * B),
+      bulletAddReloadTimes: A.bulletAddReloadTimes.map(item => item * B),
       groundSpeedMulti: A.groundSpeedMulti * (4 & s ? 1.12 : 1),
       ...(A.shells ? {
         shells: {
@@ -831,12 +831,12 @@ function Dn(A) {
   let e = null;
   if (s && n) {
     const t = s.count,
-      B = new Float32Array(3 * t),
-      o = new Float32Array(3 * t);
-    for (let A = 0; A < t; A++) B[3 * A] = s.getX(A), B[3 * A + 1] = s.getY(A), B[3 * A + 2] = s.getZ(A), o[3 * A] = n.getX(A), o[3 * A + 1] = n.getY(A), o[3 * A + 2] = n.getZ(A);
+      float32Values = new Float32Array(3 * t),
+      _float32Values = new Float32Array(3 * t);
+    for (let A = 0; A < t; A++) float32Values[3 * A] = s.getX(A), float32Values[3 * A + 1] = s.getY(A), float32Values[3 * A + 2] = s.getZ(A), _float32Values[3 * A] = n.getX(A), _float32Values[3 * A + 1] = n.getY(A), _float32Values[3 * A + 2] = n.getZ(A);
     e = new Z(), e.name = `${A.name || "mesh"} (outline)`;
     for (const [s, n] of Object.entries(A.attributes)) "normal" !== s && e.setAttribute(s, n);
-    e.setAttribute("normal", new L(DA(B, o, t), 3)), e.setIndex(A.index), e.setDrawRange(A.drawRange.start, A.drawRange.count), A.boundingSphere && (e.boundingSphere = A.boundingSphere.clone()), A.boundingBox && (e.boundingBox = A.boundingBox.clone());
+    e.setAttribute("normal", new L(DA(float32Values, _float32Values, t), 3)), e.setIndex(A.index), e.setDrawRange(A.drawRange.start, A.drawRange.count), A.boundingSphere && (e.boundingSphere = A.boundingSphere.clone()), A.boundingBox && (e.boundingBox = A.boundingBox.clone());
   }
   return Fn.set(A, e), e;
 }
@@ -853,7 +853,7 @@ function Pn(A, t) {
   return e.name = "skin-outline", e.userData.skinOutline = !0, e.frustumCulled = A.frustumCulled, e.renderOrder = A.renderOrder, e.matrixAutoUpdate = !1, e;
 }
 function dn(A) {
-  return A.children.filter(A => A.userData.skinOutline);
+  return A.children.filter(child => child.userData.skinOutline);
 }
 var Mn = 72;
 function kn(A, t) {
@@ -1039,8 +1039,8 @@ var xn = class {
         const t = w[A];
         if (!t || "Knife" !== t.kind || t.flag) return null;
         const s = (await NA("index.json")).weapons[t.model];
-        return s ? (await NA(s.file)).behaviours.find(A => "Knife" === A.script)?.data?.impactPrefab?.key ?? null : null;
-      }(A).then(async A => A ? (await async function (A) {
+        return s ? (await NA(s.file)).behaviours.find(item => "Knife" === item.script)?.data?.impactPrefab?.key ?? null : null;
+      }(A).then(async result => result ? (await async function (A) {
         const t = await NA(`impact-${A}.json`).catch(() => null),
           s = t?.components.find(A => "sprite" === A.type && A.sprite);
         if (!t || !s?.sprite) return null;
@@ -1056,7 +1056,7 @@ var xn = class {
           center: [B.center[0] * o, B.center[1] * o],
           color: new v(i, r, w)
         };
-      }(A)) ?? function () {
+      }(result)) ?? function () {
         const element = document.createElement("canvas");
         element.width = 136, element.height = 18;
         const drawingContext = element.getContext("2d"),
@@ -1067,7 +1067,7 @@ var xn = class {
           center: [0, 0],
           color: new v(1, 1, 1)
         };
-      }() : null).catch(() => null).then(t => (this.ready.set(A, t), t && vA(this.batch(t).mesh), t)), this.defs.set(A, t)), t;
+      }() : null).catch(() => null).then(result => (this.ready.set(A, result), result && vA(this.batch(result).mesh), result)), this.defs.set(A, t)), t;
     }
     batch(A) {
       let t = this.batches.get(A.texture);
@@ -1089,12 +1089,12 @@ var xn = class {
     }
     attack(A, t) {
       if (!this.enabled || "Knife" !== w[A]?.kind) return;
-      const s = t.filter(A => A.normal && A.normal.lengthSq() > 1e-10);
+      const s = t.filter(item => item.normal && item.normal.lengthSq() > 1e-10);
       if (!s.length) return;
       const n = A,
         e = this.ready.get(n);
-      if (null !== e) if (e) for (const B of s) this.spawn(e, B.at, B.normal);else this.def(n).then(A => {
-        if (A) for (const t of s) this.spawn(A, t.at, t.normal);
+      if (null !== e) if (e) for (const B of s) this.spawn(e, B.at, B.normal);else this.def(n).then(result => {
+        if (result) for (const t of s) this.spawn(result, t.at, t.normal);
       });
     }
     spawn(A, t, s) {
@@ -1336,7 +1336,7 @@ var ie = new q(),
       return this.load(A);
     }
     async $_5jc() {
-      this.index ??= NA("bullets.json").catch(() => ({})), await Promise.all(Object.keys(await this.index).map(A => this.load(A)));
+      this.index ??= NA("bullets.json").catch(() => ({})), await Promise.all(Object.keys(await this.index).map(item => this.load(item)));
     }
     $_333(A) {
       const t = "number" == typeof A ? A : A.getHex();
@@ -1382,11 +1382,11 @@ var ie = new q(),
         const t = (await this.index)[A];
         if (!t) return null;
         const s = await NA(t.file),
-          n = await Promise.all(s.components.filter(A => "TrailRenderer" === A.type && A.enabled).map(async A => {
-            const t = A.materials[0] ? s.materials[A.materials[0]] : void 0,
+          n = await Promise.all(s.components.filter(component => "TrailRenderer" === component.type && component.enabled).map(async item => {
+            const t = item.materials[0] ? s.materials[item.materials[0]] : void 0,
               n = t?.texture ? await KA(t.texture).catch(() => null) : null;
             return !n || 1006 === n.magFilter && 1006 === n.minFilter || (n.magFilter = u, n.minFilter = u, n.needsUpdate = !0), {
-              def: A,
+              def: item,
               material: new k({
                 map: n,
                 vertexColors: !0,
@@ -1399,11 +1399,11 @@ var ie = new q(),
               })
             };
           })),
-          e = s.renderers.map(A => {
-            const t = s.nodes[A.node],
-              [n, e, B] = (A.materials[0] ? s.materials[A.materials[0]] : void 0)?.color ?? [1, 1, 1];
+          e = s.renderers.map(item => {
+            const t = s.nodes[item.node],
+              [n, e, B] = (item.materials[0] ? s.materials[item.materials[0]] : void 0)?.color ?? [1, 1, 1];
             return {
-              node: A.node,
+              node: item.node,
               scale: new q().fromArray(t.s),
               material: this.$_333(new v(n, e, B))
             };
@@ -1428,7 +1428,7 @@ var ie = new q(),
         const A = new d(this.cube, B.material);
         A.scale.copy(B.scale), s.add(A), n.push(A);
       }
-      const e = t.trails.map(A => new He(A.def, A.material));
+      const e = t.trails.map(item => new He(item.def, item.material));
       for (const B of e) this.group.add(B.mesh);
       return this.group.add(s), {
         key: A,
@@ -1497,11 +1497,11 @@ var ie = new q(),
     $_37g(A, t, s) {
       const n = this.ready.get(A),
         e = this.confirmed;
-      e.clear(), s.forEach((A, s) => {
-        const B = ne(t, A.index ?? s);
+      e.clear(), s.forEach((item, index) => {
+        const B = ne(t, item.index ?? index);
         e.add(B);
         const o = this.$_738.get(B);
-        this.$_738.delete(B), o && (o.tag = null), o && A.normal ? (ge.copy(A.to).addScaledVector(A.normal, se), o.position.distanceTo(ge) > .01 && this.$_7o9(o, A.to, A.normal)) : o ? this.$_27m(o) : A.normal && n?.impact && this.bulletHoles && this.impact(n.impact, A.to, A.normal);
+        this.$_738.delete(B), o && (o.tag = null), o && item.normal ? (ge.copy(item.to).addScaledVector(item.normal, se), o.position.distanceTo(ge) > .01 && this.$_7o9(o, item.to, item.normal)) : o ? this.$_27m(o) : item.normal && n?.impact && this.bulletHoles && this.impact(n.impact, item.to, item.normal);
       }), this.$_6a3(t, e);
     }
     confirmed = new Set();
@@ -1587,7 +1587,7 @@ var ie = new q(),
   },
   Ee = new Set(["Knife", "Grenade", "Bomb", "RocketLauncher"]);
 function Fe(A) {
-  const t = A.data.behaviours.find(A => A.data && "bulletPrefab" in A.data);
+  const t = A.data.behaviours.find(item => item.data && "bulletPrefab" in item.data);
   if (!t || Ee.has(t.script)) return null;
   const s = t.data.bulletPrefab?.key,
     n = t.data.bulletSpawnPoint?.node;
@@ -1654,7 +1654,7 @@ var Pe = class {
     const A = this.rig.data,
       t = A.materials,
       s = this.kept ? null : this.rig.nodes[0],
-      n = A.behaviours.find(A => "Flamethrower" === A.script)?.data?.flame?.node;
+      n = A.behaviours.find(item => "Flamethrower" === item.script)?.data?.flame?.node;
     for (const o of A.components) {
       const A = o.ps;
       if ("ParticleSystem" !== o.type || !A) continue;
@@ -1665,10 +1665,10 @@ var Pe = class {
       this.systems.set(o.node, i);
     }
     const e = (t, s) => {
-        const n = A.behaviours.find(A => A.script === t)?.data?.[s]?.node;
+        const n = A.behaviours.find(item => item.script === t)?.data?.[s]?.node;
         return "number" == typeof n ? this.systems.get(n) ?? null : null;
       },
-      B = A.behaviours.find(A => A.data && "aftersmokeParticleFx" in A.data);
+      B = A.behaviours.find(item => item.data && "aftersmokeParticleFx" in item.data);
     this.$_4zm = B ? e(B.script, "aftersmokeParticleFx") : null, this.flame = e("Flamethrower", "flame"), this.reloadSmoke = e("Minigun", "reloadSmoke");
   }
   shoot() {
@@ -1979,11 +1979,11 @@ var wB = [{
     phase = 0;
     swing = new eB();
     constructor(A, t) {
-      this.root = A, this.mount.name = "flagMount", A.add(this.mount), this.hands = ["Hand_R", "Hand_L"].map(t).filter(A => !!A), this.chest = t("Spine_03"), wB.forEach((A, s) => {
-        const n = Object.fromEntries(Object.entries(A).map(([A, s]) => [A, t(s)]));
-        Object.values(n).some(A => !A) || this.arms.push({
+      this.root = A, this.mount.name = "flagMount", A.add(this.mount), this.hands = ["Hand_R", "Hand_L"].map(t).filter(item => !!item), this.chest = t("Spine_03"), wB.forEach((item, index) => {
+        const n = Object.fromEntries(Object.entries(item).map(([A, s]) => [A, t(s)]));
+        Object.values(n).some(_item => !_item) || this.arms.push({
           ...n,
-          side: s,
+          side: index,
           hint: new q()
         });
       });
@@ -2099,13 +2099,13 @@ var VB = [.86, .92, 1],
       this.samples = A, this.ring = new Float32Array(6 * A), this.ages = new Float32Array(A);
       const t = new Z();
       this.position = new L(new Float32Array(6 * A), 3), this.position.setUsage(P), this.color = new L(new Float32Array(8 * A), 4), this.color.setUsage(P), t.setAttribute("position", this.position), t.setAttribute("color", this.color);
-      const s = new Uint16Array(6 * (A - 1));
+      const uint16Values = new Uint16Array(6 * (A - 1));
       for (let n = 0; n < A - 1; n++) {
         const A = 2 * n,
           t = A + 2;
-        s.set([A, A + 1, t, A + 1, t + 1, t], 6 * n);
+        uint16Values.set([A, A + 1, t, A + 1, t + 1, t], 6 * n);
       }
-      t.setIndex(new L(s, 1)), t.setDrawRange(0, 0), this.mesh = new d(t, yB ??= new k({
+      t.setIndex(new L(uint16Values, 1)), t.setDrawRange(0, 0), this.mesh = new d(t, yB ??= new k({
         name: "scythe-trail",
         vertexColors: !0,
         transparent: !0,
@@ -2645,12 +2645,12 @@ function eo(A) {
 }
 var Bo = (A, t) => Object.hasOwn(A, t) ? A[t] : null;
 function oo(A, s = {}) {
-  return !A || t(A) ? [] : [Bo(s, A), Bo(no, A), Bo(so, A)].filter(A => !!A);
+  return !A || t(A) ? [] : [Bo(s, A), Bo(no, A), Bo(so, A)].filter(item => !!item);
 }
 var io = "/assets/extracted/custom-weapons/",
   ro = null;
 function wo() {
-  return ro ??= wA(`${io}models.json`).then(A => A.ok ? A.json() : {}).then(A => A?.weapons ?? {}).catch(() => ({}));
+  return ro ??= wA(`${io}models.json`).then(result => result.ok ? result.json() : {}).then(result => result?.weapons ?? {}).catch(() => ({}));
 }
 function fo(A) {
   const t = "string" == typeof A.color ? to.palette[A.color] : void 0;
@@ -2729,7 +2729,7 @@ function Eo(A, t) {
   const n = t.color ? t.color.clone().convertLinearToSRGB() : new v(.5, .5, .5),
     e = A.lift ?? 1;
   return {
-    color: [n.r, n.g, n.b].map(A => Math.min(1, A * e)),
+    color: [n.r, n.g, n.b].map(item => Math.min(1, item * e)),
     metallic: A.metallic ?? 0,
     smoothness: A.smoothness ?? .2
   };
@@ -2746,7 +2746,7 @@ async function Do(A, t, s = new Set()) {
       } = await fA(async () => {
         const {
           clone: A
-        } = await import("./three-Bi9Yyrpt.js").then(A => A.n);
+        } = await import("./three-Bi9Yyrpt.js").then(result => result.n);
         return {
           clone: A
         };
@@ -2792,7 +2792,7 @@ async function Do(A, t, s = new Set()) {
       clone: n
     }, {
       mergeGeometries: e
-    }] = await Promise.all([fA(() => import("./three-Bi9Yyrpt.js").then(A => A.n), __vite__mapDeps([0, 1])), fA(() => import("./three-Bi9Yyrpt.js").then(A => A.i), __vite__mapDeps([0, 1]))]),
+    }] = await Promise.all([fA(() => import("./three-Bi9Yyrpt.js").then(result => result.n), __vite__mapDeps([0, 1])), fA(() => import("./three-Bi9Yyrpt.js").then(result => result.i), __vite__mapDeps([0, 1]))]),
     B = n(A),
     o = A => 2 === A.side ? 2 : 0,
     lookupMap = new Map(),
@@ -2807,7 +2807,7 @@ async function Do(A, t, s = new Set()) {
     const e = n;
     if (e.isSkinnedMesh && !Array.isArray(n.material) && n.parent) {
       const A = n.material,
-        s = [e.skeleton.bones.map(A => A.uuid).join(","), e.skeleton.boneInverses.map(A => A.elements.join(",")).join(";"), n.parent.uuid, e.bindMatrix.elements.join(","), n.position.toArray().join(","), n.quaternion.toArray().join(","), n.scale.toArray().join(","), o(A)].join("|"),
+        s = [e.skeleton.bones.map(bone => bone.uuid).join(","), e.skeleton.boneInverses.map(item => item.elements.join(",")).join(";"), n.parent.uuid, e.bindMatrix.elements.join(","), n.position.toArray().join(","), n.quaternion.toArray().join(","), n.scale.toArray().join(","), o(A)].join("|"),
         B = lookupMap.get(s) ?? [];
       B.push({
         mesh: e,
@@ -2822,21 +2822,21 @@ async function Do(A, t, s = new Set()) {
     const e = [];
     for (const w of s) {
       const A = 1 === w.length,
-        s = w.map(s => {
-          const n = s.geometry,
+        s = w.map(item => {
+          const n = item.geometry,
             e = new Z();
-          e.setAttribute("position", n.getAttribute("position").clone()), n.getAttribute("normal") ? e.setAttribute("normal", n.getAttribute("normal").clone()) : e.computeVertexNormals(), n.index && e.setIndex(n.index.clone()), A || (s.updateMatrix(), e.applyMatrix4(s.matrix));
-          const B = Eo(t, s.material).color,
+          e.setAttribute("position", n.getAttribute("position").clone()), n.getAttribute("normal") ? e.setAttribute("normal", n.getAttribute("normal").clone()) : e.computeVertexNormals(), n.index && e.setIndex(n.index.clone()), A || (item.updateMatrix(), e.applyMatrix4(item.matrix));
+          const B = Eo(t, item.material).color,
             o = e.getAttribute("position").count,
-            i = new Float32Array(4 * o),
+            float32Values = new Float32Array(4 * o),
             r = n.getAttribute("color");
           for (let A = 0; A < o; A++) {
             const t = r ? r.getX(A) : 1;
-            i.set([B[0] * t, B[1] * t, B[2] * t, 1], 4 * A);
+            float32Values.set([B[0] * t, B[1] * t, B[2] * t, 1], 4 * A);
           }
-          return e.setAttribute("color", new L(i, 4)), e;
+          return e.setAttribute("color", new L(float32Values, 4)), e;
         }),
-        B = s.every(A => A.index) ? s : s.map(A => A.index ? A.toNonIndexed() : A),
+        B = s.every(item => item.index) ? s : s.map(item => item.index ? item.toNonIndexed() : item),
         o = A ? B[0] : n(B, !1);
       if (!o) {
         for (const A of w) {
@@ -2846,10 +2846,10 @@ async function Do(A, t, s = new Set()) {
         continue;
       }
       let i = 0;
-      o.userData.skinRanges = B.map((A, t) => {
-        const s = A.getAttribute("position").count,
+      o.userData.skinRanges = B.map((item, index) => {
+        const s = item.getAttribute("position").count,
           n = {
-            name: w[t].material.name,
+            name: w[index].material.name,
             start: i,
             count: s
           };
@@ -2872,15 +2872,15 @@ async function Do(A, t, s = new Set()) {
     const B = A.matrixWorld.clone().invert(),
       o = new y(),
       i = new q(),
-      r = e.map(A => {
-        const t = B.clone().multiply(A.matrixWorld),
-          s = A.geometry.getAttribute("position");
+      r = e.map(item => {
+        const t = B.clone().multiply(item.matrixWorld),
+          s = item.geometry.getAttribute("position");
         for (let n = 0; n < s.count; n++) o.expandByPoint(i.fromBufferAttribute(s, n).applyMatrix4(t));
         return t;
       });
-    e.forEach((A, t) => {
-      A.geometry.userData.skinFrame = {
-        matrix: r[t].elements.slice(),
+    e.forEach((item, index) => {
+      item.geometry.userData.skinFrame = {
+        matrix: r[index].elements.slice(),
         min: o.min.toArray(),
         max: o.max.toArray()
       };
@@ -2901,12 +2901,12 @@ async function Do(A, t, s = new Set()) {
         for (const o of ["position", "normal", "skinIndex", "skinWeight"]) n.getAttribute(o) && s.setAttribute(o, n.getAttribute(o));
         n.index && s.setIndex(n.index), s.getAttribute("normal") || s.computeVertexNormals();
         const e = s.getAttribute("position").count,
-          B = new Float32Array(4 * e);
-        for (let o = 0; o < e; o++) B.set([t[0], t[1], t[2], 1], 4 * o);
-        return s.setAttribute("color", new L(B, 4)), s;
+          float32Values = new Float32Array(4 * e);
+        for (let o = 0; o < e; o++) float32Values.set([t[0], t[1], t[2], 1], 4 * o);
+        return s.setAttribute("color", new L(float32Values, 4)), s;
       }),
-      n = s.every(A => A.index) ? s : s.map(A => A.index ? A.toNonIndexed() : A),
-      B = n.every(A => A.getAttribute("skinIndex")) && n.length ? e(n, !1) : null;
+      n = s.every(item => item.index) ? s : s.map(item => item.index ? item.toNonIndexed() : item),
+      B = n.every(item => item.getAttribute("skinIndex")) && n.length ? e(n, !1) : null;
     if (!B) {
       for (const {
         mesh: A,
@@ -2923,10 +2923,10 @@ async function Do(A, t, s = new Set()) {
       continue;
     }
     let i = 0;
-    B.userData.skinRanges = n.map((A, t) => {
-      const s = A.getAttribute("position").count,
+    B.userData.skinRanges = n.map((item, index) => {
+      const s = item.getAttribute("position").count,
         n = {
-          name: g[t].name,
+          name: g[index].name,
           start: i,
           count: s
         };
@@ -2973,12 +2973,12 @@ function Io(A, t) {
       const t = n.getComponent(D, A);
       t < w[A] && (w[A] = t), t > f[A] && (f[A] = t);
     }
-    const a = [0, 1, 2].map(A => Math.max(f[A] - w[A], 1e-9)),
-      [g, c, Q] = [0, 1, 2].sort((A, t) => a[t] - a[A] || A - t),
+    const a = [0, 1, 2].map(item => Math.max(f[item] - w[item], 1e-9)),
+      [g, c, Q] = [0, 1, 2].sort((leftItem, rightItem) => a[rightItem] - a[leftItem] || leftItem - rightItem),
       h = ko,
       l = Math.min((h.u1 - h.u0) / a[g], (h.v1 - h.v0) / Math.max(a[c], a[Q])),
       C = A => {
-        const n = s.find(t => A >= t.start && A < t.start + t.count)?.name ?? "";
+        const n = s.find(item => A >= item.start && A < item.start + item.count)?.name ?? "";
         return t.pattern.includes(n) ? "pattern" : t.accent?.includes(n) ? "accent" : t.detail?.includes(n) ? "detail" : "base";
       },
       H = new Z();
@@ -2989,14 +2989,14 @@ function Io(A, t) {
       for (let A = 0; A < B; A++) for (let n = 0; n < t.itemSize; n++) s[A * t.itemSize + n] = t.getComponent(o(A), n);
       H.setAttribute(D, new L(s, t.itemSize, t.normalized));
     }
-    const u = new Float32Array(2 * B),
+    const float32Values = new Float32Array(2 * B),
       E = [new q(), new q(), new q()],
       F = new q(),
       P = new q();
     for (let D = 0; D < B; D += 3) {
       const A = C(o(D));
       if ("pattern" !== A) {
-        for (let t = 0; t < 3; t++) u.set(Mo[A], 2 * (D + t));
+        for (let t = 0; t < 3; t++) float32Values.set(Mo[A], 2 * (D + t));
         continue;
       }
       for (let w = 0; w < 3; w++) E[w].fromBufferAttribute(n, o(D + w)), r && E[w].applyMatrix4(r);
@@ -3004,9 +3004,9 @@ function Io(A, t) {
         s = [Math.abs(t.getComponent(g)), Math.abs(t.getComponent(c))],
         e = Math.abs(t.getComponent(Q)),
         [B, i] = e >= s[0] && e >= s[1] ? [g, c] : s[1] >= s[0] ? [g, Q] : [Q, c];
-      for (let n = 0; n < 3; n++) u[2 * (D + n)] = h.u0 + (E[n].getComponent(B) - w[B]) * l, u[2 * (D + n) + 1] = h.v0 + (E[n].getComponent(i) - w[i]) * l;
+      for (let n = 0; n < 3; n++) float32Values[2 * (D + n)] = h.u0 + (E[n].getComponent(B) - w[B]) * l, float32Values[2 * (D + n) + 1] = h.v0 + (E[n].getComponent(i) - w[i]) * l;
     }
-    return H.setAttribute("uv", new L(u, 2)), H;
+    return H.setAttribute("uv", new L(float32Values, 2)), H;
   }(A, t)), e;
 }
 function Go(A, t, s, n, e, B = null, o = !1) {
@@ -3045,7 +3045,7 @@ function po(A, t, s = null) {
     o || vo.set(B, o = {
       material: B.material,
       geometry: B.geometry
-    }), B.material = o.material, B.geometry = o.geometry, t && ("uv" !== e ? o.geometry.userData.skinRanges && !Array.isArray(o.material) && (B.geometry = Io(o.geometry, e), B.material = Go(t, Fo(n), o.material.side, n.name, void 0, s)) : B.material = Array.isArray(o.material) ? o.material.map(A => Uo(A, t, s)) : Uo(o.material, t, s));
+    }), B.material = o.material, B.geometry = o.geometry, t && ("uv" !== e ? o.geometry.userData.skinRanges && !Array.isArray(o.material) && (B.geometry = Io(o.geometry, e), B.material = Go(t, Fo(n), o.material.side, n.name, void 0, s)) : B.material = Array.isArray(o.material) ? o.material.map(item => Uo(item, t, s)) : Uo(o.material, t, s));
   });
   return A.length > 0;
 }
@@ -3059,7 +3059,7 @@ function To(A) {
     return t || (t = fA(async () => {
       const {
         GLTFLoader: A
-      } = await import("./three-Bi9Yyrpt.js").then(A => A.t);
+      } = await import("./three-Bi9Yyrpt.js").then(result => result.t);
       return {
         GLTFLoader: A
       };
@@ -3073,16 +3073,16 @@ function To(A) {
           return n && (s.color = new v().setRGB(n[0], n[1], n[2], F)), Promise.resolve();
         }
       };
-    }(A)).loadAsync(`${io}${A}`)).then(A => ({
-      scene: A.scene,
-      animations: A.animations
-    })).catch(t => (console.warn(`weapon model ${A} missing`, t), null)), Co.set(A, t)), t;
-  }(A.model).then(async t => {
-    if (!t) return null;
-    const uniqueItems = new Set(t.animations.flatMap(A => A.tracks.map(A => X.parseTrackName(A.name).nodeName)));
+    }(A)).loadAsync(`${io}${A}`)).then(result => ({
+      scene: result.scene,
+      animations: result.animations
+    })).catch(error => (console.warn(`weapon model ${A} missing`, error), null)), Co.set(A, t)), t;
+  }(A.model).then(async result => {
+    if (!result) return null;
+    const uniqueItems = new Set(result.animations.flatMap(animation => animation.tracks.map(track => X.parseTrackName(track.name).nodeName)));
     return {
-      scene: await Do(t.scene, A, uniqueItems),
-      animations: t.animations
+      scene: await Do(result.scene, A, uniqueItems),
+      animations: result.animations
     };
   }), Yo.set(serializedValue, s)), s;
 }
@@ -3114,7 +3114,7 @@ var Jo = "KHR_materials_pbrSpecularGlossiness",
           } = "string" == typeof g ? {
             clip: g
           } : g,
-          o = t.find(t => t.name === A);
+          o = t.find(item => item.name === A);
         if (!o) {
           console.warn(`weapon model: no animation "${A}" for state ${a}`);
           continue;
@@ -3127,12 +3127,12 @@ var Jo = "KHR_materials_pbrSpecularGlossiness",
         });
       }
       if (!lookupMap.size) return !1;
-      const o = n ? t.find(A => A.name === n) : void 0;
+      const o = n ? t.find(item => item.name === n) : void 0;
       n && !o && console.warn(`weapon model: no animation "${n}" (empty)`);
       let i = null;
       o && (i = e.clipAction(o), i.setLoop(C, 1), i.clampWhenFinished = !0);
       const uniqueItems = new Set(),
-        w = [...lookupMap.values()].map(A => A.action.getClip());
+        w = [...lookupMap.values()].map(item => item.action.getClip());
       o && w.push(o);
       for (const a of w) for (const t of a.tracks) {
         const {
@@ -3141,11 +3141,11 @@ var Jo = "KHR_materials_pbrSpecularGlossiness",
           n = X.findNode(A, s);
         n && n !== A && uniqueItems.add(n);
       }
-      const f = [...uniqueItems].map(A => ({
-        node: A,
-        p: A.position.clone(),
-        q: A.quaternion.clone(),
-        s: A.scale.clone()
+      const f = [...uniqueItems].map(item => ({
+        node: item,
+        p: item.position.clone(),
+        q: item.quaternion.clone(),
+        s: item.scale.clone()
       }));
       return this.parts.push({
         mixer: e,
@@ -3208,8 +3208,8 @@ var Vo = new D(),
           depth: r
         });
       }
-      for (const B of e) B.parent = e.find(A => A.node === B.node.parent) ?? null;
-      return this.links.push(...e), this.links.sort((A, t) => A.depth - t.depth), e;
+      for (const B of e) B.parent = e.find(item => item.node === B.node.parent) ?? null;
+      return this.links.push(...e), this.links.sort((leftItem, rightItem) => leftItem.depth - rightItem.depth), e;
     }
     sync() {
       for (const A of this.links) {
@@ -3230,12 +3230,12 @@ function Xo(A, t) {
 }
 async function Wo(A, t, s = "world") {
   const n = "first" === s ? t.firstPerson?.scale ?? 1 : 1,
-    e = new q().fromArray(t.firstPerson?.pivot ?? t.parts.find(A => A.model)?.at ?? [0, 0, 0]),
+    e = new q().fromArray(t.firstPerson?.pivot ?? t.parts.find(item => item.model)?.at ?? [0, 0, 0]),
     B = A => A.sub(e).multiplyScalar(n).add(e),
     uniqueItems = new Set(t.hide);
-  A.data.renderers.forEach((t, s) => {
-    const n = A.meshes[s];
-    n && uniqueItems.has(A.data.nodes[t.node]?.name ?? "") && (n.visible = !1);
+  A.data.renderers.forEach((item, index) => {
+    const n = A.meshes[index];
+    n && uniqueItems.has(A.data.nodes[item.node]?.name ?? "") && (n.visible = !1);
   });
   const lookupMap = new Map();
   let r = null,
@@ -3243,9 +3243,9 @@ async function Wo(A, t, s = "world") {
   const f = [],
     a = [],
     g = function (A, t) {
-      const s = (A.data.behaviours ?? []).find(A => 0 === A.node && A.data && Array.isArray(A.data.weaponRenderers))?.data?.weaponRenderers?.find(A => "number" == typeof A?.node);
+      const s = (A.data.behaviours ?? []).find(item => 0 === item.node && item.data && Array.isArray(item.data.weaponRenderers))?.data?.weaponRenderers?.find(A => "number" == typeof A?.node);
       if ("number" == typeof s?.node) return s.node;
-      const n = A.data.renderers.find(s => t.has(A.data.nodes[s.node]?.name ?? ""));
+      const n = A.data.renderers.find(item => t.has(A.data.nodes[item.node]?.name ?? ""));
       return n ? n.node : -1;
     }(A, uniqueItems);
   t.relativeSize && xo.set(A, t.relativeSize);
@@ -3277,7 +3277,7 @@ async function Wo(A, t, s = "world") {
         } = await fA(async () => {
           const {
             clone: A
-          } = await import("./three-Bi9Yyrpt.js").then(A => A.n);
+          } = await import("./three-Bi9Yyrpt.js").then(result => result.n);
           return {
             clone: A
           };
@@ -3354,7 +3354,7 @@ async function So(A, t, s = "world") {
   return n;
 }
 async function Zo(A) {
-  return (await Promise.all(A.parts.filter(A => A.model).map(A => To(A)))).every(A => null !== A);
+  return (await Promise.all(A.parts.filter(item => item.model).map(item => To(item)))).every(item => null !== item);
 }
 var No = {
     state: 0,
@@ -3556,10 +3556,10 @@ var gi = null,
     chest;
     spine;
     constructor(A, t) {
-      this.root = A, this.chest = t("Spine_03"), this.spine = t("Spine_01"), Ko.forEach((A, s) => {
-        const n = Object.fromEntries(Object.entries(A).map(([A, s]) => [A, t(s)]));
-        if (Object.values(n).some(A => !A)) return;
-        const [e, B, o] = No.elbows[s];
+      this.root = A, this.chest = t("Spine_03"), this.spine = t("Spine_01"), Ko.forEach((item, index) => {
+        const n = Object.fromEntries(Object.entries(item).map(([A, s]) => [A, t(s)]));
+        if (Object.values(n).some(_item2 => !_item2)) return;
+        const [e, B, o] = No.elbows[index];
         this.arms.push({
           ...n,
           hint: new q(e, B, o).normalize()
@@ -3677,11 +3677,11 @@ var gi = null,
     tube;
     carried;
     static of(t) {
-      const s = t.data.behaviours.find(A => "RocketLauncher" === A.script)?.data?.tempRocket?.node;
+      const s = t.data.behaviours.find(item => "RocketLauncher" === item.script)?.data?.tempRocket?.node;
       if ("number" != typeof s || !t.nodes[s]) return null;
-      const n = t.data.renderers.find(A => A.node === s)?.mesh,
+      const n = t.data.renderers.find(item => item.node === s)?.mesh,
         e = t.data.nodes[s].parent,
-        B = n ? t.data.renderers.find(A => A.node !== s && A.mesh === n && t.data.nodes[A.node].parent === e) : void 0;
+        B = n ? t.data.renderers.find(item => item.node !== s && item.mesh === n && t.data.nodes[item.node].parent === e) : void 0;
       return new A(t, s, B?.node ?? -1);
     }
     loaded = !0;
@@ -3728,11 +3728,11 @@ var gi = null,
   Ei = new S();
 function Fi(A, t) {
   const s = Math.min(1, Math.max(0, t)) * (A.samples - 1),
-    n = Math.floor(s);
+    flooredValue = Math.floor(s);
   return {
-    a: n,
-    b: Math.min(A.samples - 1, n + 1),
-    k: s - n
+    a: flooredValue,
+    b: Math.min(A.samples - 1, flooredValue + 1),
+    k: s - flooredValue
   };
 }
 function Di(A, t, s) {
@@ -3807,18 +3807,18 @@ function bi(A, t, s, n = []) {
       const s = A.frames - 1;
       if (s < 2) return null;
       const n = A.samples,
-        e = new Float64Array(A.frames);
-      for (const o of A.tracks) if ("position" === o.kind && t.includes(o.path)) for (let A = 0; A <= s; A++) e[A] = Math.max(e[A], ki(n, o.offset, A, s));
-      let B = Mi(e);
-      if (B < 0 || e[B] < 1e-4) {
-        e.fill(0);
+        float64Values = new Float64Array(A.frames);
+      for (const o of A.tracks) if ("position" === o.kind && t.includes(o.path)) for (let A = 0; A <= s; A++) float64Values[A] = Math.max(float64Values[A], ki(n, o.offset, A, s));
+      let B = Mi(float64Values);
+      if (B < 0 || float64Values[B] < 1e-4) {
+        float64Values.fill(0);
         for (const t of A.tracks) if ("rotation" === t.kind) for (let A = 0; A <= s; A++) {
           const B = t.offset + 4 * A,
             o = t.offset + 4 * s,
             i = Math.min(1, Math.abs(n[B] * n[o] + n[B + 1] * n[o + 1] + n[B + 2] * n[o + 2] + n[B + 3] * n[o + 3]));
-          e[A] += 2 * Math.acos(i);
+          float64Values[A] += 2 * Math.acos(i);
         }
-        if (B = Mi(e), B < 0 || e[B] < 1e-4) return null;
+        if (B = Mi(float64Values), B < 0 || float64Values[B] < 1e-4) return null;
       }
       return B / s;
     }(o, n),
@@ -3826,16 +3826,16 @@ function bi(A, t, s, n = []) {
       const t = A.frames - 1,
         uniqueItems = new Set();
       for (const n of A.tracks) if (!n.kind && !n.pptr && "m_IsActive" === n.property) for (let e = 1; e <= t; e++) A.samples[n.offset + e - 1] > .5 && A.samples[n.offset + e] <= .5 && uniqueItems.add(e / t);
-      return [...uniqueItems].sort((A, t) => A - t);
+      return [...uniqueItems].sort((leftItem, rightItem) => leftItem - rightItem);
     }(o),
     f = function (A, t) {
       const s = A.frames - 1;
       if (s < 2 || t.length < 2) return null;
       const n = A.samples,
-        e = A.tracks.map(A => {
-          if ("position" !== A.kind && "scale" !== A.kind) return 0;
+        e = A.tracks.map(track => {
+          if ("position" !== track.kind && "scale" !== track.kind) return 0;
           let t = 0;
-          for (let e = 0; e < s; e++) t = Math.max(t, ki(n, A.offset, e, s));
+          for (let e = 0; e < s; e++) t = Math.max(t, ki(n, track.offset, e, s));
           return t;
         }),
         B = Math.cos(.25 * Math.PI / 180),
@@ -3852,7 +3852,7 @@ function bi(A, t, s, n = []) {
           }
           return o;
         },
-        i = t.map(A => Math.round(A * s));
+        i = t.map(item => Math.round(item * s));
       let r = null,
         w = 1;
       for (let f = 0; f + 1 < i.length; f++) {
@@ -3907,9 +3907,9 @@ function Gi(A, t, s, n) {
       o = A.duration - e - B;
     return o <= 0 || (A.times = [0, e, e + o, A.duration], A.clip = [0, s, s, t.ready]), A;
   }(B, n);
-  const i = Math.ceil(Ui(A, t, s) / o.rounds);
-  if (i < 1) return B;
-  if (n.inserts.length < i) return n.loop ? function (A, t, s, n) {
+  const ceiledValue = Math.ceil(Ui(A, t, s) / o.rounds);
+  if (ceiledValue < 1) return B;
+  if (n.inserts.length < ceiledValue) return n.loop ? function (A, t, s, n) {
     const e = n.loop,
       {
         inserts: B
@@ -3939,11 +3939,11 @@ function Gi(A, t, s, n) {
       c.times.push(f[Q]), c.clip.push(Math.min(1, g(a[Q])));
     }
     return c;
-  }(B, o, i, n) : B;
+  }(B, o, ceiledValue, n) : B;
   const r = [0],
     w = [0];
-  for (let f = 0; f < i; f++) r.push(o.first + f * o.per), w.push(n.inserts[f]);
-  r.push(e), w.push(Math.max(n.ready, n.inserts[i - 1]));
+  for (let f = 0; f < ceiledValue; f++) r.push(o.first + f * o.per), w.push(n.inserts[f]);
+  r.push(e), w.push(Math.max(n.ready, n.inserts[ceiledValue - 1]));
   for (let f = 1; f < w.length; f++) if (w[f] < w[f - 1] || r[f] <= r[f - 1]) return B;
   return B.times = r, B.clip = w, B;
 }
@@ -4016,9 +4016,9 @@ function Li(A, t, s, n, e = -1) {
       reserve: e
     }, A);
   if (!B) return t - o;
-  const i = Math.ceil(Ui(A, s, e) / B.rounds),
+  const ceiledValue = Math.ceil(Ui(A, s, e) / B.rounds),
     r = Math.max(0, Math.ceil((n - s) / B.rounds - 1e-9));
-  return r >= i ? t - o : t - B.first - r * B.per;
+  return r >= ceiledValue ? t - o : t - B.first - r * B.per;
 }
 var Ji = ["reload-rifle", "reload-pistol", "reload-shotgun", "reload-rpg"],
   Ri = "/assets/extracted/anim-2v2/clips/",
@@ -4049,8 +4049,8 @@ var yi = new S(),
       }
       this.reference = new Float32Array(4 * this.bones.length);
       const n = A.samples;
-      this.offsets.forEach((A, t) => {
-        yi.set(n[A], n[A + 1], n[A + 2], n[A + 3]).normalize().invert(), yi.toArray(this.reference, 4 * t);
+      this.offsets.forEach((item, index) => {
+        yi.set(n[item], n[item + 1], n[item + 2], n[item + 3]).normalize().invert(), yi.toArray(this.reference, 4 * index);
       });
     }
     get empty() {
@@ -4119,7 +4119,7 @@ var yi = new S(),
     }
   },
   Zi = ["Spine_02", "Neck", "Clavicle_L", "Clavicle_R", "Shoulder_R", "Elbow_R", "Hand_R"],
-  Ni = (A, t) => Object.fromEntries(t.filter(t => A[t] > 0).map(t => [t, A[t]])),
+  Ni = (A, t) => Object.fromEntries(t.filter(item => A[item] > 0).map(item => [item, A[item]])),
   Ki = (A, t, s) => (A => {
     const t = Math.min(1, Math.max(0, A));
     return t * t * (3 - 2 * t);
@@ -4153,11 +4153,11 @@ var yi = new S(),
       const e = A.data,
         B = e.nodes[s]?.path ?? "",
         lookupMap = new Map();
-      e.nodes.forEach((A, t) => {
+      e.nodes.forEach((node, index) => {
         (A => {
           for (let t = A; t >= 0; t = e.nodes[t].parent) if (t === n) return !0;
           return !1;
-        })(t) && ("" === B || A.path.startsWith(B + "/")) && lookupMap.set(yA("" === B ? A.path : A.path.slice(B.length + 1)), t);
+        })(index) && ("" === B || node.path.startsWith(B + "/")) && lookupMap.set(yA("" === B ? node.path : node.path.slice(B.length + 1)), index);
       });
       for (const i of t.tracks) {
         const t = lookupMap.get(i.path);
@@ -4176,17 +4176,17 @@ var yi = new S(),
     apply(A) {
       const t = this.clip.samples,
         s = Math.min(1, Math.max(0, A)) * (this.frames - 1),
-        n = Math.floor(s),
-        e = Math.min(this.frames - 1, n + 1),
-        B = s - n;
+        flooredValue = Math.floor(s),
+        e = Math.min(this.frames - 1, flooredValue + 1),
+        B = s - flooredValue;
       for (const o of this.bound) {
         const A = o.offset;
-        if ("position" === o.kind || "scale" === o.kind) ("position" === o.kind ? o.node.position : o.node.scale).set(t[A + 3 * n] + (t[A + 3 * e] - t[A + 3 * n]) * B, t[A + 3 * n + 1] + (t[A + 3 * e + 1] - t[A + 3 * n + 1]) * B, t[A + 3 * n + 2] + (t[A + 3 * e + 2] - t[A + 3 * n + 2]) * B);else {
+        if ("position" === o.kind || "scale" === o.kind) ("position" === o.kind ? o.node.position : o.node.scale).set(t[A + 3 * flooredValue] + (t[A + 3 * e] - t[A + 3 * flooredValue]) * B, t[A + 3 * flooredValue + 1] + (t[A + 3 * e + 1] - t[A + 3 * flooredValue + 1]) * B, t[A + 3 * flooredValue + 2] + (t[A + 3 * e + 2] - t[A + 3 * flooredValue + 2]) * B);else {
           if ("rotation" !== o.kind) {
             this.rig.setActive(o.i, t[A + Math.round(s)] > .5);
             continue;
           }
-          $i.set(t[A + 4 * n], t[A + 4 * n + 1], t[A + 4 * n + 2], t[A + 4 * n + 3]), Ar.set(t[A + 4 * e], t[A + 4 * e + 1], t[A + 4 * e + 2], t[A + 4 * e + 3]), o.node.quaternion.slerpQuaternions($i, Ar, B);
+          $i.set(t[A + 4 * flooredValue], t[A + 4 * flooredValue + 1], t[A + 4 * flooredValue + 2], t[A + 4 * flooredValue + 3]), Ar.set(t[A + 4 * e], t[A + 4 * e + 1], t[A + 4 * e + 2], t[A + 4 * e + 3]), o.node.quaternion.slerpQuaternions($i, Ar, B);
         }
         o.node.updateMatrix();
       }
@@ -4210,7 +4210,7 @@ var yi = new S(),
   Qr = new q(),
   hr = new D();
 function lr(A) {
-  const t = A.data.nodes.findIndex(A => /mag/i.test(A.name) && !/release|retainer|_end/i.test(A.name));
+  const t = A.data.nodes.findIndex(node => /mag/i.test(node.name) && !/release|retainer|_end/i.test(node.name));
   return t >= 0 && A.nodes[t].parent ? t : -1;
 }
 var Cr = class {
@@ -4222,14 +4222,14 @@ var Cr = class {
       this.bones = A, this.before = A.map(() => new S()), this.after = A.map(() => new S());
     }
     begin() {
-      this.restore(), this.bones.forEach((A, t) => this.before[t].copy(A.quaternion));
+      this.restore(), this.bones.forEach((bone, index) => this.before[index].copy(bone.quaternion));
     }
     end() {
-      this.bones.forEach((A, t) => this.after[t].copy(A.quaternion)), this.posed = !0;
+      this.bones.forEach((bone, index) => this.after[index].copy(bone.quaternion)), this.posed = !0;
     }
     restore() {
-      this.posed && (this.posed = !1, this.bones.forEach((A, t) => {
-        A.quaternion.equals(this.after[t]) && A.quaternion.copy(this.before[t]);
+      this.posed && (this.posed = !1, this.bones.forEach((bone, index) => {
+        bone.quaternion.equals(this.after[index]) && bone.quaternion.copy(this.before[index]);
       }));
     }
   },
@@ -4255,7 +4255,7 @@ var Cr = class {
         hand: B
       } : null;
       const o = Zi.map(t);
-      this.guard = new Cr([this.shoulderR, this.handR, n, e, B, ...o].filter((A, t, s) => !!A && s.indexOf(A) === t));
+      this.guard = new Cr([this.shoulderR, this.handR, n, e, B, ...o].filter((item, index, s) => !!item && s.indexOf(item) === index));
     }
     setWeapon(A, t = -1, s = null, n = _.Rifle) {
       if (this.release(), !A) return void (this.weapon = null);
@@ -4274,8 +4274,8 @@ var Cr = class {
             const e = A.nodes,
               B = e[s]?.path ?? "",
               lookupMap = new Map();
-            e.forEach((A, t) => {
-              ("" === B || t === s || A.path.startsWith(B + "/")) && lookupMap.set(yA("" === B ? A.path : A.path.slice(B.length + 1)), t);
+            e.forEach((item, index) => {
+              ("" === B || index === s || item.path.startsWith(B + "/")) && lookupMap.set(yA("" === B ? item.path : item.path.slice(B.length + 1)), index);
             });
             const _lookupMap2 = new Map();
             for (const E of t.tracks) {
@@ -4290,17 +4290,17 @@ var Cr = class {
               }), "position" === E.kind ? t.pos = E.offset : "rotation" === E.kind ? t.rot = E.offset : "scale" === E.kind ? t.scale = E.offset : "m_IsActive" !== E.property || E.pptr || (t.active = E.offset);
             }
             const r = function (A) {
-                const t = A.nodes.findIndex(A => /mag/i.test(A.name) && !/release|retainer|_end/i.test(A.name));
+                const t = A.nodes.findIndex(node => /mag/i.test(node.name) && !/release|retainer|_end/i.test(node.name));
                 return t > 0 && A.nodes[t].parent >= 0 ? t : -1;
               }(A),
-              w = e.findIndex((A, t) => "Hand_L" === A.name && function (A, t, s) {
+              w = e.findIndex((item, index) => "Hand_L" === item.name && function (A, t, s) {
                 for (let n = t; n >= 0; n = A[n].parent) if (n === s) return !0;
                 return !1;
-              }(e, t, s)),
+              }(e, index, s)),
               f = r >= 0 && !!_lookupMap2.get(r) && (_lookupMap2.get(r).pos >= 0 || _lookupMap2.get(r).rot >= 0),
               a = [];
             if (w >= 0) for (let E = w; E >= 0 && E !== s; E = e[E].parent) a.unshift(E);
-            const g = w >= 0 && a.some(A => _lookupMap2.has(A)),
+            const g = w >= 0 && a.some(item => _lookupMap2.has(item)),
               c = [];
             if (r >= 0) for (let E = r; E >= 0 && E !== s; E = e[E].parent) c.unshift(E);
             if (!f && !g) return null;
@@ -4310,27 +4310,27 @@ var Cr = class {
                 for (const n of A.tracks) {
                   if (!n.kind) continue;
                   const A = n.width,
-                    e = new Uint8Array(s);
+                    uint8Values = new Uint8Array(s);
                   if ("rotation" === n.kind) for (let o = 0; o < s; o++) {
                     const s = n.offset + o * A,
                       B = Math.hypot(t[s], t[s + 1], t[s + 2], t[s + 3]);
-                    Math.abs(B - 1) < .05 || (e[o] = 1);
+                    Math.abs(B - 1) < .05 || (uint8Values[o] = 1);
                   } else for (let o = 0; o < A; o++) {
                     const B = [];
                     for (let e = 0; e < s; e++) B.push(Math.abs(t[n.offset + e * A + o]));
-                    const i = B.slice().sort((A, t) => A - t),
+                    const i = B.slice().sort((leftItem, rightItem) => leftItem - rightItem),
                       r = i[Math.min(i.length - 1, Math.floor(.9 * i.length))],
                       w = 50 * Math.max(r, .001);
-                    for (let A = 0; A < s; A++) B[A] <= w || (e[A] = 1);
+                    for (let A = 0; A < s; A++) B[A] <= w || (uint8Values[A] = 1);
                   }
                   let B = -1;
                   for (let o = 0; o < s; o++) {
-                    if (!e[o]) {
+                    if (!uint8Values[o]) {
                       B = o;
                       continue;
                     }
                     let i = B;
-                    if (i < 0) for (let A = o + 1; A < s && i < 0; A++) e[A] || (i = A);
+                    if (i < 0) for (let A = o + 1; A < s && i < 0; A++) uint8Values[A] || (i = A);
                     if (i < 0) break;
                     for (let s = 0; s < A; s++) t[n.offset + o * A + s] = t[n.offset + i * A + s];
                   }
@@ -4373,17 +4373,17 @@ var Cr = class {
               };
             for (let E = 0; E < n; E++) {
               const A = E / Math.max(1, n - 1) * (h - 1),
-                t = Math.floor(A),
-                s = Math.min(h - 1, t + 1),
-                B = A - t;
+                flooredValue = Math.floor(A),
+                s = Math.min(h - 1, flooredValue + 1),
+                B = A - flooredValue;
               if (l.mag) {
-                u(r, t, s, B), H.decompose(li, Hi, Ci), li.toArray(l.mag.pos, 3 * E), Hi.toArray(l.mag.rot, 4 * E);
+                u(r, flooredValue, s, B), H.decompose(li, Hi, Ci), li.toArray(l.mag.pos, 3 * E), Hi.toArray(l.mag.rot, 4 * E);
                 const n = _lookupMap2.get(r).active;
                 l.mag.shown && (l.mag.shown[E] = Q[n + Math.round(A)] > .5 ? 1 : 0);
               }
               if (l.hand) {
                 C.identity();
-                for (const A of a) if (C.multiply(u(A, t, s, B)), 0 === E && l.arm) {
+                for (const A of a) if (C.multiply(u(A, flooredValue, s, B)), 0 === E && l.arm) {
                   const t = ["Shoulder_L", "Elbow_L", "Hand_L"].indexOf(e[A].name);
                   t >= 0 && li.setFromMatrixPosition(C).toArray(l.arm, 3 * t);
                 }
@@ -4391,7 +4391,7 @@ var Cr = class {
               }
               if (l.magAt) {
                 C.identity();
-                for (const A of c) C.multiply(u(A, t, s, B));
+                for (const A of c) C.multiply(u(A, flooredValue, s, B));
                 li.setFromMatrixPosition(C).toArray(l.magAt, 3 * E);
               }
             }
@@ -4649,10 +4649,10 @@ function Jr(A) {
   const t = A.skeleton,
     s = Yr.get(t);
   if (void 0 !== s) return s;
-  const n = pr.map(A => t.bones.findIndex(t => t?.name === A));
-  if (n.some(A => A < 0 || !t.boneInverses[A])) return Yr.set(t, null), null;
+  const n = pr.map(item => t.bones.findIndex(bone => bone?.name === item));
+  if (n.some(item => item < 0 || !t.boneInverses[item])) return Yr.set(t, null), null;
   const e = Tr(t, n[0], new q()),
-    B = t.bones.findIndex(A => "Neck" === A?.name),
+    B = t.bones.findIndex(bone => "Neck" === bone?.name),
     o = Tr(t, B >= 0 ? B : n[mr - 1], new q()).clone().sub(e),
     i = o.length();
   if (!(i > 1e-6)) return Yr.set(t, null), null;
@@ -4764,8 +4764,8 @@ function xr(A, t, s, n, e = 0) {
         spheres: new Float32Array(0)
       };
     if (!B || !o || !i) return n.set(s, w), null;
-    const f = new Float32Array(B.count * mr),
-      a = new Uint8Array(B.count);
+    const _float32Values2 = new Float32Array(B.count * mr),
+      uint8Values = new Uint8Array(B.count);
     for (let E = 0; E < B.count; E++) {
       let A = 0;
       for (let t = 1; t < 4; t++) i.getComponent(E, t) > i.getComponent(E, A) && (A = t);
@@ -4775,10 +4775,10 @@ function xr(A, t, s, n, e = 0) {
       for (let n = 0; n < 4; n++) {
         const A = t.bones.indexOf(o.getComponent(E, n)),
           e = i.getComponent(E, n);
-        !(A < 0) && e > 0 && (f[E * mr + A] += e, s += e);
+        !(A < 0) && e > 0 && (_float32Values2[E * mr + A] += e, s += e);
       }
-      for (let t = 0; t < mr; t++) f[E * mr + t] /= s;
-      a[E] = 1;
+      for (let t = 0; t < mr; t++) _float32Values2[E * mr + t] /= s;
+      uint8Values[E] = 1;
     }
     const g = (r ? r.count : B.count) / 3,
       c = (A, t) => r ? r.getX(3 * A + t) : 3 * A + t,
@@ -4788,7 +4788,7 @@ function xr(A, t, s, n, e = 0) {
       C = new q();
     for (let E = 0; E < g; E++) {
       const [A, t, s] = [c(E, 0), c(E, 1), c(E, 2)];
-      a[A] && a[t] && a[s] && (h.fromBufferAttribute(B, A), l.fromBufferAttribute(B, t), C.fromBufferAttribute(B, s), l.clone().sub(h).cross(C.clone().sub(h)).lengthSq() > 1e-12 && Q.push(A, t, s));
+      uint8Values[A] && uint8Values[t] && uint8Values[s] && (h.fromBufferAttribute(B, A), l.fromBufferAttribute(B, t), C.fromBufferAttribute(B, s), l.clone().sub(h).cross(C.clone().sub(h)).lengthSq() > 1e-12 && Q.push(A, t, s));
     }
     const H = Q.length / 3,
       u = {
@@ -4807,7 +4807,7 @@ function xr(A, t, s, n, e = 0) {
           i = B.getY(n),
           r = B.getZ(n);
         u.corners[9 * E + 3 * e] = o, u.corners[9 * E + 3 * e + 1] = i, u.corners[9 * E + 3 * e + 2] = r, A += o / 3, t += i / 3, s += r / 3;
-        for (let A = 0; A < mr; A++) u.weights[(3 * E + e) * mr + A] = f[n * mr + A];
+        for (let A = 0; A < mr; A++) u.weights[(3 * E + e) * mr + A] = _float32Values2[n * mr + A];
       }
       let n = 0;
       for (let e = 0; e < 3; e++) {
@@ -4821,8 +4821,8 @@ function xr(A, t, s, n, e = 0) {
     return n.set(s, u), H ? u : null;
   }(A, t);
   if (!B) return null;
-  const o = new Uint16Array(4 * n),
-    i = new Float32Array(4 * n),
+  const uint16Values = new Uint16Array(4 * n),
+    float32Values = new Float32Array(4 * n),
     {
       corners: r,
       weights: w,
@@ -4869,7 +4869,7 @@ function xr(A, t, s, n, e = 0) {
     const M = Q[P] + (d >= 0 ? Q[d] : 0);
     let k = 0;
     const b = (A, t) => {
-      t > jr && !(k >= 4) && (o[4 * l + k] = A, i[4 * l + k] = t, k++);
+      t > jr && !(k >= 4) && (uint16Values[4 * l + k] = A, float32Values[4 * l + k] = t, k++);
     };
     for (const s of d >= 0 ? [P, d] : [P]) {
       const A = Q[s] / M,
@@ -4878,14 +4878,14 @@ function xr(A, t, s, n, e = 0) {
       b(t.bones[s], A - e), b(n > 0 ? t.up[s] : t.down[s], e);
     }
     let I = 0;
-    for (let t = 0; t < k; t++) I += i[4 * l + t];
+    for (let t = 0; t < k; t++) I += float32Values[4 * l + t];
     if (I > 0) {
-      if (1 !== I) for (let t = 0; t < k; t++) i[4 * l + t] /= I;
-    } else o[4 * l] = t.bones[P], i[4 * l] = 1;
+      if (1 !== I) for (let t = 0; t < k; t++) float32Values[4 * l + t] /= I;
+    } else uint16Values[4 * l] = t.bones[P], float32Values[4 * l] = 1;
   }
   return {
-    skinIndex: o,
-    skinWeight: i
+    skinIndex: uint16Values,
+    skinWeight: float32Values
   };
 }
 var zr = new WeakMap(),
@@ -4898,8 +4898,8 @@ var zr = new WeakMap(),
     }
     reserve(A) {
       if (this.length + A <= this.array.length) return;
-      const t = new Float32Array(Math.max(2 * this.array.length, this.length + A));
-      t.set(this.array.subarray(0, this.length)), this.array = t;
+      const float32Values = new Float32Array(Math.max(2 * this.array.length, this.length + A));
+      float32Values.set(this.array.subarray(0, this.length)), this.array = float32Values;
     }
     push(A) {
       this.reserve(1), this.array[this.length++] = A;
@@ -4916,8 +4916,8 @@ var zr = new WeakMap(),
     length = 0;
     push(A) {
       if (this.length === this.array.length) {
-        const A = new Uint32Array(2 * this.array.length);
-        A.set(this.array), this.array = A;
+        const uint32Values = new Uint32Array(2 * this.array.length);
+        uint32Values.set(this.array), this.array = uint32Values;
       }
       this.array[this.length++] = A;
     }
@@ -5016,15 +5016,15 @@ function* ow(A, t, s) {
   const e = function (A, t, s) {
     const _lookupMap6 = new Map(),
       _uniqueItems = new Set(t),
-      B = [t.map(t => A.nodes.indexOf(t)).join(","), [...s].sort((A, t) => A - t).join(",")];
+      B = [t.map(item => A.nodes.indexOf(item)).join(","), [...s].sort((leftItem, rightItem) => leftItem - rightItem).join(",")];
     for (const o of A.meshes) {
       if (!o) {
         B.push("-");
         continue;
       }
-      const A = (Array.isArray(o.material) ? o.material : [o.material]).map(A => {
-        let t = _lookupMap6.get(A);
-        return void 0 === t && _lookupMap6.set(A, t = _lookupMap6.size), t;
+      const A = (Array.isArray(o.material) ? o.material : [o.material]).map(item => {
+        let t = _lookupMap6.get(item);
+        return void 0 === t && _lookupMap6.set(item, t = _lookupMap6.size), t;
       }).join(".");
       let t = o.visible,
         s = !1;
@@ -5099,7 +5099,7 @@ function* ow(A, t, s) {
     let h = null,
       l = [];
     if (o) {
-      if (l = o.skeleton.bones.map(A => sw(A)), l.some(A => A < 0)) continue;
+      if (l = o.skeleton.bones.map(bone => sw(bone)), l.some(item => item < 0)) continue;
       const A = i.getAttribute("skinIndex"),
         t = i.getAttribute("skinWeight");
       h = new Int32Array(g.count);
@@ -5200,7 +5200,7 @@ function* ow(A, t, s) {
           }
           return B;
         };
-      return t.map((A, t) => n(t));
+      return t.map((item, index) => n(index));
     }(A),
     lookupMap = new Map(),
     H = A => {
@@ -5242,15 +5242,15 @@ function* ow(A, t, s) {
         skin: B
       } = E,
       o = A.count,
-      i = new Float64Array(3 * o),
-      r = new Float64Array(3 * o);
+      float64Values = new Float64Array(3 * o),
+      _float64Values = new Float64Array(3 * o);
     if (B) {
       const s = E.mesh.geometry,
         n = s.getAttribute("skinIndex"),
         e = s.getAttribute("skinWeight"),
         w = E.target,
-        a = E.boneNode.map((A, t) => l[A].clone().multiply(B.skeleton.boneInverses[t])),
-        g = a.map(A => new G().getNormalMatrix(A));
+        a = E.boneNode.map((item, index) => l[item].clone().multiply(B.skeleton.boneInverses[index])),
+        g = a.map(item => new G().getNormalMatrix(item));
       for (let c = 0; c < o; c++) {
         Aw.v.fromBufferAttribute(A, c).applyMatrix4(B.bindMatrix), Aw.acc.set(0, 0, 0), Aw.nacc.set(0, 0, 0);
         for (let A = 0; A < 4; A++) {
@@ -5260,7 +5260,7 @@ function* ow(A, t, s) {
           Aw.acc.addScaledVector(Aw.w.copy(Aw.v).applyMatrix4(a[B]), s), t && Aw.nacc.addScaledVector(Aw.w.fromBufferAttribute(t, c).applyMatrix3(g[B]), s);
         }
         const s = w[c];
-        Aw.acc.applyMatrix4(H(s)), i[3 * c] = Aw.acc.x, i[3 * c + 1] = Aw.acc.y, i[3 * c + 2] = Aw.acc.z, t && (Aw.nacc.applyMatrix3(F(s)).normalize(), r[3 * c] = Aw.nacc.x, r[3 * c + 1] = Aw.nacc.y, r[3 * c + 2] = Aw.nacc.z), ++f >= 4096 && (f = 0, yield);
+        Aw.acc.applyMatrix4(H(s)), float64Values[3 * c] = Aw.acc.x, float64Values[3 * c + 1] = Aw.acc.y, float64Values[3 * c + 2] = Aw.acc.z, t && (Aw.nacc.applyMatrix3(F(s)).normalize(), _float64Values[3 * c] = Aw.nacc.x, _float64Values[3 * c + 1] = Aw.nacc.y, _float64Values[3 * c + 2] = Aw.nacc.z), ++f >= 4096 && (f = 0, yield);
       }
     } else {
       const s = Aw.m.identity();
@@ -5268,7 +5268,7 @@ function* ow(A, t, s) {
       Aw.n.getNormalMatrix(s);
       const e = s.clone(),
         B = Aw.n.clone();
-      for (let n = 0; n < o; n++) Aw.v.fromBufferAttribute(A, n).applyMatrix4(e), i[3 * n] = Aw.v.x, i[3 * n + 1] = Aw.v.y, i[3 * n + 2] = Aw.v.z, t && (Aw.v.fromBufferAttribute(t, n).applyMatrix3(B).normalize(), r[3 * n] = Aw.v.x, r[3 * n + 1] = Aw.v.y, r[3 * n + 2] = Aw.v.z), ++f >= 4096 && (f = 0, yield);
+      for (let n = 0; n < o; n++) Aw.v.fromBufferAttribute(A, n).applyMatrix4(e), float64Values[3 * n] = Aw.v.x, float64Values[3 * n + 1] = Aw.v.y, float64Values[3 * n + 2] = Aw.v.z, t && (Aw.v.fromBufferAttribute(t, n).applyMatrix3(B).normalize(), _float64Values[3 * n] = Aw.v.x, _float64Values[3 * n + 1] = Aw.v.y, _float64Values[3 * n + 2] = Aw.v.z), ++f >= 4096 && (f = 0, yield);
     }
     const w = E.mesh.geometry,
       a = [],
@@ -5295,7 +5295,7 @@ function* ow(A, t, s) {
             n = B[t] = e.vertices++;
             const A = e.positions,
               s = e.normals;
-            A.reserve(3), A.array[A.length++] = i[3 * t], A.array[A.length++] = i[3 * t + 1], A.array[A.length++] = i[3 * t + 2], s.reserve(3), s.array[s.length++] = r[3 * t], s.array[s.length++] = r[3 * t + 1], s.array[s.length++] = r[3 * t + 2];
+            A.reserve(3), A.array[A.length++] = float64Values[3 * t], A.array[A.length++] = float64Values[3 * t + 1], A.array[A.length++] = float64Values[3 * t + 2], s.reserve(3), s.array[s.length++] = _float64Values[3 * t], s.array[s.length++] = _float64Values[3 * t + 1], s.array[s.length++] = _float64Values[3 * t + 2];
             for (let n = 0; n < a.length; n++) {
               const A = c[n];
               let s = e.extra.get(a[n]);
@@ -5328,7 +5328,7 @@ function* ow(A, t, s) {
     });
   }
   for (const E of U) v.baked.push(A.meshes.indexOf(E));
-  return v.buckets.every(A => A.parent >= 0) && v.baked.every(A => A >= 0) && (B || Zr.set(A.data, B = new Map()), B.set(e, v)), Kr(A, U), n.baked = U.length, n.pruned = qr(A, t, s), n;
+  return v.buckets.every(item => item.parent >= 0) && v.baked.every(item => item >= 0) && (B || Zr.set(A.data, B = new Map()), B.set(e, v)), Kr(A, U), n.baked = U.length, n.pruned = qr(A, t, s), n;
 }
 function iw(A, t) {
   let s = 0;
@@ -5362,15 +5362,15 @@ function gw(A, t, s) {
   return !0;
 }
 function cw(A, t, s, n) {
-  const e = [A, ...s.map(A => A.geometry)];
+  const e = [A, ...s.map(item => item.geometry)];
   let B = 0,
     o = 0;
   for (const D of e) B += D.getAttribute("position").count, o += D.getIndex()?.count ?? D.getAttribute("position").count;
-  const i = new Float32Array(3 * B),
-    r = new Float32Array(3 * B),
-    w = new Float32Array(2 * B),
-    f = new Uint16Array(4 * B),
-    a = new Float32Array(4 * B),
+  const float32Values = new Float32Array(3 * B),
+    _float32Values3 = new Float32Array(3 * B),
+    _float32Values4 = new Float32Array(2 * B),
+    uint16Values = new Uint16Array(4 * B),
+    _float32Values5 = new Float32Array(4 * B),
     g = B > 65535 ? new Uint32Array(o) : new Uint16Array(o),
     {
       width: c,
@@ -5383,30 +5383,30 @@ function cw(A, t, s, n) {
     u = new q(),
     E = new D(),
     F = new G();
-  e.forEach((n, e) => {
-    const B = n.getAttribute("position"),
-      o = n.getAttribute("normal"),
-      D = n.getAttribute("uv"),
-      P = e > 0 ? s[e - 1] : null;
+  e.forEach((item, index) => {
+    const B = item.getAttribute("position"),
+      o = item.getAttribute("normal"),
+      D = item.getAttribute("uv"),
+      P = index > 0 ? s[index - 1] : null;
     P && (E.copy(t[P.bone]).invert().multiply(P.local), F.getNormalMatrix(E));
-    const d = n.getAttribute("skinIndex"),
-      M = n.getAttribute("skinWeight");
+    const d = item.getAttribute("skinIndex"),
+      M = item.getAttribute("skinWeight");
     for (let A = 0; A < B.count; A++) {
       const t = l + A;
-      if (H.fromBufferAttribute(B, A), o ? u.fromBufferAttribute(o, A) : u.set(0, 1, 0), P) H.applyMatrix4(E), u.applyMatrix3(F).normalize(), f[4 * t] = P.bone, a[4 * t] = 1;else for (let e = 0; e < 4; e++) f[4 * t + e] = d.getComponent(A, e), a[4 * t + e] = M.getComponent(A, e);
-      i[3 * t] = H.x, i[3 * t + 1] = H.y, i[3 * t + 2] = H.z, r[3 * t] = u.x, r[3 * t + 1] = u.y, r[3 * t + 2] = u.z;
-      const [s, n] = aw(h[e], c, Q, D.getX(A), D.getY(A));
-      w[2 * t] = s, w[2 * t + 1] = n;
+      if (H.fromBufferAttribute(B, A), o ? u.fromBufferAttribute(o, A) : u.set(0, 1, 0), P) H.applyMatrix4(E), u.applyMatrix3(F).normalize(), uint16Values[4 * t] = P.bone, _float32Values5[4 * t] = 1;else for (let e = 0; e < 4; e++) uint16Values[4 * t + e] = d.getComponent(A, e), _float32Values5[4 * t + e] = M.getComponent(A, e);
+      float32Values[3 * t] = H.x, float32Values[3 * t + 1] = H.y, float32Values[3 * t + 2] = H.z, _float32Values3[3 * t] = u.x, _float32Values3[3 * t + 1] = u.y, _float32Values3[3 * t + 2] = u.z;
+      const [s, n] = aw(h[index], c, Q, D.getX(A), D.getY(A));
+      _float32Values4[2 * t] = s, _float32Values4[2 * t + 1] = n;
     }
-    const k = P?.trunk ? xr(A, P.trunk, i, B.count, 3 * l) : null;
-    k && (f.set(k.skinIndex, 4 * l), a.set(k.skinWeight, 4 * l));
-    const b = n.getIndex(),
+    const k = P?.trunk ? xr(A, P.trunk, float32Values, B.count, 3 * l) : null;
+    k && (uint16Values.set(k.skinIndex, 4 * l), _float32Values5.set(k.skinWeight, 4 * l));
+    const b = item.getIndex(),
       I = b ? b.count : B.count;
     for (let A = 0; A < I; A++) g[C + A] = (b ? b.getX(A) : A) + l;
     l += B.count, C += I;
   });
   const P = new Z();
-  return P.setAttribute("position", new L(i, 3)), P.setAttribute("normal", new L(r, 3)), P.setAttribute("uv", new L(w, 2)), P.setAttribute("skinIndex", new L(f, 4)), P.setAttribute("skinWeight", new L(a, 4)), P.setIndex(new L(g, 1)), P.computeBoundingSphere(), P;
+  return P.setAttribute("position", new L(float32Values, 3)), P.setAttribute("normal", new L(_float32Values3, 3)), P.setAttribute("uv", new L(_float32Values4, 2)), P.setAttribute("skinIndex", new L(uint16Values, 4)), P.setAttribute("skinWeight", new L(_float32Values5, 4)), P.setIndex(new L(g, 1)), P.computeBoundingSphere(), P;
 }
 var Qw = {
     blendIn: .07,
@@ -5626,12 +5626,12 @@ var Tw = class A {
             matrix: new D()
           }), lookupMap.set(t, i), i;
         };
-      A.data.renderers.forEach((s, e) => {
-        const B = A.meshes[e];
-        if (!B || !s.enabled || t.includes(s.node)) return;
+      A.data.renderers.forEach((item, index) => {
+        const B = A.meshes[index];
+        if (!B || !item.enabled || t.includes(item.node)) return;
         if (B.isSkinnedMesh) {
           const t = B,
-            e = A.nodes[s.rootBone ?? -1],
+            e = A.nodes[item.rootBone ?? -1],
             o = e ? t.skeleton.bones.indexOf(e) : -1;
           if (o < 0) return;
           for (const [s, B] of function (A, t) {
@@ -5677,25 +5677,25 @@ var Tw = class A {
           i = [];
         for (const A of [o.min.x, o.max.x]) for (const t of [o.min.y, o.max.y]) for (const s of [o.min.z, o.max.z]) i.push(new q(A, t, s));
         this.probes.push({
-          slot: n(s.node),
+          slot: n(item.node),
           points: i
         });
       });
-      const e = A.data.nodes.findIndex(A => "Hand_R" === A.name);
+      const e = A.data.nodes.findIndex(node => "Hand_R" === node.name);
       if (e >= 0) {
         const t = s => s === e || s >= 0 && t(A.data.nodes[s].parent);
-        A.data.nodes.forEach((A, s) => {
-          t(s) && this.probes.push({
-            slot: n(s),
+        A.data.nodes.forEach((node, index) => {
+          t(index) && this.probes.push({
+            slot: n(index),
             points: [new q()]
           });
         });
-        const s = A.data.nodes.findIndex(A => A.name === Vw.elbow);
+        const s = A.data.nodes.findIndex(node => node.name === Vw.elbow);
         if (s >= 0 && A.data.nodes[e].parent === s) {
           const t = A.nodes[e].position;
           this.probes.push({
             slot: n(s),
-            points: Vw.at.map(A => t.clone().multiplyScalar(A))
+            points: Vw.at.map(item => t.clone().multiplyScalar(item))
           });
         }
       }
@@ -5741,9 +5741,9 @@ var Tw = class A {
       for (const o of n?.states ?? []) {
         const s = t(o),
           n = Math.min(100, Math.max(9, Math.ceil(20 * s.seconds) + 1)),
-          B = new Float32Array(n);
-        for (let t = 0; t < n; t++) A.play(o.name, 0, t / (n - 1)), A.update(0), B[t] = this.measure();
-        lookupMap.set(o, B), this.loops.set(o, s.loop);
+          float32Values = new Float32Array(n);
+        for (let t = 0; t < n; t++) A.play(o.name, 0, t / (n - 1)), A.update(0), float32Values[t] = this.measure();
+        lookupMap.set(o, float32Values), this.loops.set(o, s.loop);
       }
       return A.restart(), A.update(0), A.speed = B, this.table = lookupMap, lookupMap;
     }
@@ -5920,7 +5920,7 @@ var ff = class {
     }
   },
   hf = [[0, 0, 0], [.1, .83, 5.19], [.25, 2.56, 5.67], [.5, 5.92, 5.1], [.75, 8.02, 4.19], [1, 8.96, 3.41], [1.25, 9.65, 2.98], [1.5, 10.29, 2.52], [2, 11.23, 2.23], [2.5, 11.81, 1.87], [3, 12, 1.86], [4, 12.13, 1.74], [6, 12.19, 1.86], [9, 12.38, 1.76], [12, 12.42, 1.76], [16, 12.52, 1.72], [20, 12.54, 1.69], [23, 12.54, 1.64], [25, 12.81, .937], [26, 13.15, .49], [27, 13.78, .189], [28, 14.5, .0639], [29, 14.93, .0122], [30, 0, 0]],
-  lf = (Math.max(...hf.map(A => A[1])), 0),
+  lf = (Math.max(...hf.map(item => item[1])), 0),
   Cf = {
     radius: 0,
     density: 0
@@ -5995,7 +5995,7 @@ var Df = class {
       this.clouds.length = 0;
     }
     prune(A) {
-      this.clouds.some(t => t.until <= A) && (this.clouds = this.clouds.filter(t => t.until > A));
+      this.clouds.some(item => item.until <= A) && (this.clouds = this.clouds.filter(item => item.until > A));
     }
   },
   Pf = {
@@ -6848,7 +6848,7 @@ var Df = class {
   },
   bf = ["male", "female", "rtx", "egg"];
 function If(A) {
-  return kf.bodies.find(t => t.key === A)?.bone ?? "Head";
+  return kf.bodies.find(item => item.key === A)?.bone ?? "Head";
 }
 function Gf(A, t) {
   return A < 0 ? null : kf.fits[String(A)]?.[t] ?? null;
@@ -6860,7 +6860,7 @@ function vf(A, t = new D()) {
 }
 var pf = null;
 function mf() {
-  return pf ??= NA("index.json").then(de).then(A => function (A, t = n) {
+  return pf ??= NA("index.json").then(de).then(result => function (A, t = n) {
     for (const [s, n] of Object.entries(t)) {
       const t = o[s];
       if (!t) continue;
@@ -6873,16 +6873,16 @@ function mf() {
       });
     }
     return A;
-  }(A));
+  }(result));
 }
 var Yf = new Map();
 function Tf(A, t) {
   const s = `${A}/${t}`;
   let n = Yf.get(s);
   if (!n) {
-    const e = KA(`../skins/${A}/${t}.png`).then(A => A).catch(() => null);
-    n = e, Yf.set(s, e), e.then(A => {
-      A || Yf.get(s) !== e || Yf.delete(s);
+    const e = KA(`../skins/${A}/${t}.png`).then(result => result).catch(() => null);
+    n = e, Yf.set(s, e), e.then(result => {
+      result || Yf.get(s) !== e || Yf.delete(s);
     });
   }
   return n;
@@ -7024,12 +7024,12 @@ var Jf = {
     constructor(A, t, s) {
       this.rig = A, this.index = t, this.lobby = s, this.object = A.object, this.$_4qu = new vr(A.object, A.node("Spine_03"), t => A.node(t)), this.weaponsParent = A.node("weaponsParent");
       const n = A.node("Hand_L");
-      n && (this.$_40a = new J(), this.$_40a.position.copy(this.weaponsParent.position).negate(), this.$_40a.quaternion.copy(this.weaponsParent.quaternion), this.$_40a.scale.copy(this.weaponsParent.scale).negate(), n.add(this.$_40a), this.shoulderR = A.node("Shoulder_R") ?? null), A.data.nodes.forEach((A, t) => yf.test(A.name) && this.fingers.add(t)), this.$_2n4g = new dB(A.object, t => A.node(t)), this.$_7aqp = new ci(A.object, t => A.node(t)), this.$_323 = new BB(A.object, t => A.node(t));
+      n && (this.$_40a = new J(), this.$_40a.position.copy(this.weaponsParent.position).negate(), this.$_40a.quaternion.copy(this.weaponsParent.quaternion), this.$_40a.scale.copy(this.weaponsParent.scale).negate(), n.add(this.$_40a), this.shoulderR = A.node("Shoulder_R") ?? null), A.data.nodes.forEach((node, index) => yf.test(node.name) && this.fingers.add(index)), this.$_2n4g = new dB(A.object, t => A.node(t)), this.$_7aqp = new ci(A.object, t => A.node(t)), this.$_323 = new BB(A.object, t => A.node(t));
       const e = A.animators[0],
         lookupMap = new Map();
-      A.data.nodes.forEach((t, s) => {
-        const n = e?.$_36i?.(s);
-        void 0 === n || lookupMap.has(n) || lookupMap.set(n, A.nodes[s]);
+      A.data.nodes.forEach((node, index) => {
+        const n = e?.$_36i?.(index);
+        void 0 === n || lookupMap.has(n) || lookupMap.set(n, A.nodes[index]);
       }), this.$_31s = new Hr(A.object, t => A.node(t), A => lookupMap.get(A)), this.$_5xd = new Lw(A.object, t => A.node(t), this.$_31s.guard), this.$_2v8 = new ff(A.object, t => A.node(t), this.$_31s.guard), this.$_1jj = A.node("Spine_02") ?? null, this.$_4oi = A.node("Spine_01") ?? null, this.lobbyAnimator = A.animators[0];
       for (let i = 0; i < 4; i++) {
         const A = this.bodyMesh(i);
@@ -7048,13 +7048,13 @@ var Jf = {
     }
     static async create(t = "player", s = 0, n = -1) {
       const e = await mf();
-      "player" === t && (Oi.loading ??= async function (A = A => fetch(`${Ri}${A}.bin`).then(t => {
-        if (!t.ok) throw new Error(`Missing clip ${A}`);
-        return t.arrayBuffer().then(VA);
+      "player" === t && (Oi.loading ??= async function (A = A => fetch(`${Ri}${A}.bin`).then(result => {
+        if (!result.ok) throw new Error(`Missing clip ${A}`);
+        return result.arrayBuffer().then(VA);
       }), t) {
         const s = {};
         try {
-          const n = t ?? (await wA(`${Ri}clips.json`).then(A => A.ok ? A.json() : null));
+          const n = t ?? (await wA(`${Ri}clips.json`).then(result => result.ok ? result.json() : null));
           for (const t of Ji) {
             const e = n?.roles?.[t];
             if (e && /^[\w-]+$/.test(e)) try {
@@ -7065,12 +7065,12 @@ var Jf = {
           }
         } catch {}
         return s;
-      }().then(A => Oi.clips = A), Oi.loading);
+      }().then(result => Oi.clips = result), Oi.loading);
       const B = await jA(e.prefabs[t]),
         o = new A(B, e, "lobby" === t);
-      return await o.setSkin(s, n).catch(A => {
-        if (!o.$_1j1) throw A;
-        console.warn("a character was built with a stand-in look", A);
+      return await o.setSkin(s, n).catch(error => {
+        if (!o.$_1j1) throw error;
+        console.warn("a character was built with a stand-in look", error);
       }), o;
     }
     $_5s5r = !0;
@@ -7120,11 +7120,11 @@ var Jf = {
       if (e !== this.$_4i0) return;
       this.$_2co(B.meshIndex, f?.geometry ?? null), this.$_63n = function (A, t, s) {
         return s ? `body-${A}` : bf[t] ?? "male";
-      }(A, B.meshIndex, !!w), this.$_5hh = If(this.$_63n), ["MaleCharacter", "FemaleCharacter", "RTXCharacter", "EggCharacter"].forEach((A, t) => {
-        const s = this.rig.index(A);
-        s < 0 || (this.rig.setActive(s, t === B.meshIndex), this.rig.data.renderers.forEach((A, n) => {
-          const e = this.rig.meshes[n];
-          A.node === s && e && (e.material = i, r && t === B.meshIndex && (Mf.add(e, 0), this.$_6n2e.push(e)));
+      }(A, B.meshIndex, !!w), this.$_5hh = If(this.$_63n), ["MaleCharacter", "FemaleCharacter", "RTXCharacter", "EggCharacter"].forEach((item, index) => {
+        const s = this.rig.index(item);
+        s < 0 || (this.rig.setActive(s, index === B.meshIndex), this.rig.data.renderers.forEach((_item3, _index) => {
+          const e = this.rig.meshes[_index];
+          _item3.node === s && e && (e.material = i, r && index === B.meshIndex && (Mf.add(e, 0), this.$_6n2e.push(e)));
         }));
       });
       const a = this.$_3w2p(A, t, B.useHatIndex);
@@ -7205,7 +7205,7 @@ var Jf = {
       const t = ["MaleCharacter", "FemaleCharacter", "RTXCharacter", "EggCharacter"][A],
         s = t ? this.rig.index(t) : -1;
       if (s < 0) return null;
-      const n = this.rig.data.renderers.findIndex(A => A.node === s),
+      const n = this.rig.data.renderers.findIndex(item => item.node === s),
         e = n >= 0 ? this.rig.meshes[n] : null;
       return e && e.isSkinnedMesh ? e : null;
     }
@@ -7265,12 +7265,12 @@ var Jf = {
       if (r.length && w && Qn.has(w)) return !1;
       const f = function (A, t, s, n, e) {
         if ("undefined" == typeof document) return null;
-        const B = [s, ...e.map(A => A.texture)],
+        const B = [s, ...e.map(item => item.texture)],
           o = B.map(fw);
-        if (o.some(A => !A)) return null;
-        const i = o.map(A => ({
-          w: A.width,
-          h: A.height
+        if (o.some(item => !item)) return null;
+        const i = o.map(item => ({
+          w: item.width,
+          h: item.height
         }));
         if (!gw(t, i[0].w, i[0].h)) return null;
         for (let l = 0; l < e.length; l++) if (!gw(e[l].geometry, i[l + 1].w, i[l + 1].h)) return null;
@@ -7297,18 +7297,18 @@ var Jf = {
               rects: n
             };
           }(i),
-          w = B.map(A => A.uuid).join("|"),
-          f = `${A}|${e.map(A => `${A.key}@${A.bone}${A.trunk ? "~trunk" : ""}`).join("|")}|${r.width}x${r.height}|${i.map(A => `${A.w}x${A.h}`).join(",")}`;
+          w = B.map(item => item.uuid).join("|"),
+          f = `${A}|${e.map(item => `${item.key}@${item.bone}${item.trunk ? "~trunk" : ""}`).join("|")}|${r.width}x${r.height}|${i.map(item => `${item.w}x${item.h}`).join(",")}`;
         let a = rw.get(w);
         if (!a) {
           const A = new K(function (A, t) {
             const element = document.createElement("canvas");
             element.width = t.width, element.height = t.height;
             const drawingContext = element.getContext("2d");
-            return drawingContext.imageSmoothingEnabled = !1, A.forEach((A, s) => {
-              const e = t.rects[s];
+            return drawingContext.imageSmoothingEnabled = !1, A.forEach((item, index) => {
+              const e = t.rects[index];
               drawingContext.save(), drawingContext.beginPath(), drawingContext.rect(e.x - 1, e.y - 1, e.w + 2, e.h + 2), drawingContext.clip();
-              for (let t = -1; t <= 1; t++) for (let s = -1; s <= 1; s++) drawingContext.drawImage(A, e.x + s * e.w, e.y + t * e.h, e.w, e.h);
+              for (let t = -1; t <= 1; t++) for (let s = -1; s <= 1; s++) drawingContext.drawImage(item, e.x + s * e.w, e.y + t * e.h, e.w, e.h);
               drawingContext.restore();
             }), element;
           }(o, r));
@@ -7349,8 +7349,8 @@ var Jf = {
       this.$_4gu();
       for (const c of [...this.$_1y7(), this.rig.node("BODY_TEMPLATE")]) if (c) {
         for (const A of [...c.children]) A.userData.skinPart && c.remove(A);
-        this.rig.data.renderers.forEach((A, t) => {
-          this.rig.nodes[A.node] === c && this.rig.meshes[t] && (this.rig.meshes[t].visible = !1);
+        this.rig.data.renderers.forEach((item, index) => {
+          this.rig.nodes[item.node] === c && this.rig.meshes[index] && (this.rig.meshes[index].visible = !1);
         });
       }
       return B.visible = !1, B.parent.add(g), this.merged = {
@@ -7416,23 +7416,23 @@ var Jf = {
           w = r ? Rr(r.skeleton) : null,
           f = r && w ? this.$_3ih(e, r.skeleton) : null,
           a = r && w && f ? function (A, t, s, n) {
-            const e = `${s.uuid}|${n.bones.join(",")}|${t.elements.map(A => Math.fround(A)).join(",")}`;
+            const e = `${s.uuid}|${n.bones.join(",")}|${t.elements.map(item => Math.fround(item)).join(",")}`;
             let B = zr.get(A);
             B || zr.set(A, B = new Map());
             const o = B.get(e);
             if (void 0 !== o) return o;
             const i = A.getAttribute("position"),
               r = A.getAttribute("normal"),
-              w = new Float32Array(3 * i.count),
-              f = new Float32Array(3 * i.count),
+              float32Values = new Float32Array(3 * i.count),
+              _float32Values6 = new Float32Array(3 * i.count),
               a = new q(),
               g = new q(),
               c = new G().getNormalMatrix(t);
-            for (let l = 0; l < i.count; l++) a.fromBufferAttribute(i, l).applyMatrix4(t), r ? g.fromBufferAttribute(r, l).applyMatrix3(c).normalize() : g.set(0, 1, 0), a.toArray(w, 3 * l), g.toArray(f, 3 * l);
-            const Q = xr(s, n, w, i.count);
+            for (let l = 0; l < i.count; l++) a.fromBufferAttribute(i, l).applyMatrix4(t), r ? g.fromBufferAttribute(r, l).applyMatrix3(c).normalize() : g.set(0, 1, 0), a.toArray(float32Values, 3 * l), g.toArray(_float32Values6, 3 * l);
+            const Q = xr(s, n, float32Values, i.count);
             if (!Q) return B.set(e, null), null;
             const h = new Z();
-            h.name = "body-attachment-bound", h.setAttribute("position", new L(w, 3)), h.setAttribute("normal", new L(f, 3));
+            h.name = "body-attachment-bound", h.setAttribute("position", new L(float32Values, 3)), h.setAttribute("normal", new L(_float32Values6, 3));
             for (const l of Object.keys(A.attributes)) ["position", "normal", "skinIndex", "skinWeight"].includes(l) || h.setAttribute(l, A.attributes[l]);
             h.setIndex(A.getIndex());
             for (const l of A.groups) h.addGroup(l.start, l.count, l.materialIndex);
@@ -7453,8 +7453,8 @@ var Jf = {
       }
       for (const w of n ? this.$_1y7() : [e]) for (const A of [...w.children]) A.userData.skinPart && w.remove(A);
       const r = this.rig.node(A);
-      this.rig.data.renderers.forEach((A, t) => {
-        this.rig.nodes[A.node] === r && this.rig.meshes[t] && (this.rig.meshes[t].visible = !1);
+      this.rig.data.renderers.forEach((item, index) => {
+        this.rig.nodes[item.node] === r && this.rig.meshes[index] && (this.rig.meshes[index].visible = !1);
       }), i && e.add(i);
     }
     async setWeapon(A, t = -1) {
@@ -7496,10 +7496,10 @@ var Jf = {
           turn: s ? 0 : ZB[A] ?? 0
         });
       }(A, t, s, A => this.lobbyAnimator.hasState(A, 0));
-      const B = "match" === e.controller ? await (o = this.index, Sf ??= NA(o.prefabs.player).then(A => {
-        const t = A.animators[0]?.controller;
+      const B = "match" === e.controller ? await (o = this.index, Sf ??= NA(o.prefabs.player).then(result => {
+        const t = result.animators[0]?.controller;
         return t ? ZA(t) : null;
-      }).catch(A => (console.warn("player controller failed to load", A), Sf = null, null))) : null;
+      }).catch(error => (console.warn("player controller failed to load", error), Sf = null, null))) : null;
       var o;
       n === this.$_71v && ("match" !== e.controller || B || (e = {
         controller: "lobby",
@@ -7523,15 +7523,15 @@ var Jf = {
       const s = `${A}:${t}`;
       let n = this.held.get(s);
       if (n) return this.held.delete(s), this.held.set(s, n), n;
-      n = this.$_6px(A, t).catch(A => (console.warn("weapon failed to load", A), this.held.delete(s), null)), this.held.set(s, n);
+      n = this.$_6px(A, t).catch(error => (console.warn("weapon failed to load", error), this.held.delete(s), null)), this.held.set(s, n);
       const e = n;
-      if (e.then(A => {
-        A && this.held.get(s) === e && this.$_6ge.set(s, A);
+      if (e.then(result => {
+        result && this.held.get(s) === e && this.$_6ge.set(s, result);
       }), this.held.size > 5) {
         const A = `${this.weaponIndex}:${this.weaponSkin}`;
         for (const [t, n] of this.held) if (t !== this.$_288 && t !== A && t !== s) {
-          this.held.delete(t), this.$_6ge.delete(t), n.then(A => {
-            A?.weapon.dispose(), A?.twin?.dispose(), A?.fx?.dispose();
+          this.held.delete(t), this.$_6ge.delete(t), n.then(result => {
+            result?.weapon.dispose(), result?.twin?.dispose(), result?.fx?.dispose();
           });
           break;
         }
@@ -7542,7 +7542,7 @@ var Jf = {
       const s = this.index.weapons[iA(A)];
       if (!s) return null;
       this.staged && (await lA("rig", this.$_xa8));
-      const n = Object.values(w).find(t => t.index === A),
+      const n = Object.values(w).find(item => item.index === A),
         e = await So(s.file, n?.id);
       await SA(e, ...XA(t), "third");
       const B = n?.dual && this.$_40a ? await jA(s.file) : null;
@@ -7551,7 +7551,7 @@ var Jf = {
         i = [],
         r = e.nodes[0];
       r.position.set(0, 0, 0), e.animators.length = 0;
-      const f = e.data.behaviours.find(A => 0 === A.node && A.data && "weaponType" in A.data),
+      const f = e.data.behaviours.find(item => 0 === item.node && item.data && "weaponType" in item.data),
         a = f?.data?.handsModel?.node;
       "number" == typeof a && e.setActive(a, !1);
       const g = Jf[s.class],
@@ -7578,7 +7578,7 @@ var Jf = {
         ew(e, o, Lf(e)), B && ew(B, i, Lf(B)), gA("bake", A);
       }
       for (const w of o) dA(w);
-      return this.staged && (await Promise.all([...o, ...i].map(A => vA(A, !1, this.$_xa8)))), n?.flag && (o.length = 0), {
+      return this.staged && (await Promise.all([...o, ...i].map(item => vA(item, !1, this.$_xa8)))), n?.flag && (o.length = 0), {
         weapon: e,
         twin: B,
         objects: o,
@@ -7736,7 +7736,7 @@ var Jf = {
     }
     $_76vj() {
       this.fx?.rest();
-      for (const A of this.held.values()) A.then(A => A?.fx?.rest());
+      for (const A of this.held.values()) A.then(result => result?.fx?.rest());
     }
     $_1ap;
     $_50r() {
@@ -7750,8 +7750,8 @@ var Jf = {
     dispose() {
       for (const A of this.$_6n2e) Mf.remove(A);
       this.$_6n2e.length = 0, this.$_4gu(), this.fx = null;
-      for (const A of this.held.values()) A.then(A => {
-        A?.weapon.dispose(), A?.twin?.dispose(), A?.fx?.dispose();
+      for (const A of this.held.values()) A.then(result => {
+        result?.weapon.dispose(), result?.twin?.dispose(), result?.fx?.dispose();
       });
       this.held.clear(), this.$_6ge.clear(), this.$_7aqp.dispose(), this.rig.dispose();
     }

@@ -109,7 +109,7 @@ var u = () => r,
       const s = this.waiting;
       let e = !1;
       for (const n of s) n.rank ? (n.at = n.rank(), e = !0) : n.at = 1;
-      e && s.sort((t, s) => t.at - s.at || t.seq - s.seq);
+      e && s.sort((leftItem, rightItem) => leftItem.at - rightItem.at || leftItem.seq - rightItem.seq);
       let r = 0,
         a = 0;
       for (; s.length && a < 16;) {
@@ -133,7 +133,7 @@ var u = () => r,
   l = () => h.pump(),
   m = (t, s) => h.measure(t, s),
   g = ["other", "net", "world", "anim", "particles", "shadows", "minimap", "render", "post", "ui", "portrait"],
-  p = Object.fromEntries(g.map((t, s) => [t, s])),
+  p = Object.fromEntries(g.map((item, index) => [item, index])),
   d = g.length,
   M = new Float64Array(d),
   w = new Float64Array(d),
@@ -186,7 +186,7 @@ function et() {}
 function rt() {}
 function at() {}
 function nt(t, s, e) {
-  return s ? Array.from(t.subarray(0, s)).sort((t, s) => t - s)[Math.min(s - 1, Math.floor(s * e))] : 0;
+  return s ? Array.from(t.subarray(0, s)).sort((leftItem, rightItem) => leftItem - rightItem)[Math.min(s - 1, Math.floor(s * e))] : 0;
 }
 var ot = (t, s = 3) => {
   const e = 10 ** s;
@@ -196,7 +196,7 @@ function it(a = !0) {
   const o = performance.now(),
     i = Math.max(1, x),
     c = {};
-  g.forEach((t, s) => c[t] = ot(M[s] / i));
+  g.forEach((item, index) => c[item] = ot(M[index] / i));
   const u = t.tickMs + t.updateMs,
     f = t.frames,
     l = u >= $ && f > z ? u - $ : u,
@@ -214,11 +214,11 @@ function it(a = !0) {
         stagedPrograms: a,
         stagedTextures: o,
         stagedKb: Math.round(i / 1024),
-        recent: e.map(s => ({
-          secondsAgo: Math.round((t - s.at) / 100) / 10,
-          kind: s.kind,
-          what: s.what,
-          by: s.by
+        recent: e.map(item => ({
+          secondsAgo: Math.round((t - item.at) / 100) / 10,
+          kind: item.kind,
+          what: item.what,
+          by: item.by
         }))
       };
     }(),
@@ -268,13 +268,13 @@ function it(a = !0) {
     longFrames: C,
     gapMax: ot(H, 1),
     gapTypical: ot(0, 2),
-    longLog: L.map(t => ({
-      secondsAgo: ot((o - t.at) / 1e3, 1),
-      gapMs: ot(t.gapMs, 1),
-      jsMs: ot(t.jsMs, 1),
-      programs: t.programs,
-      textures: t.textures,
-      work: t.work
+    longLog: L.map(item => ({
+      secondsAgo: ot((o - item.at) / 1e3, 1),
+      gapMs: ot(item.gapMs, 1),
+      jsMs: ot(item.jsMs, 1),
+      programs: item.programs,
+      textures: item.textures,
+      work: item.work
     })),
     latePrograms: p.programs,
     lateTextureUploads: p.textures,

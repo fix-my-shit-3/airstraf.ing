@@ -18,11 +18,11 @@ var a = ["glow", "shadow", "rainbow"],
   }];
 function t(n, a, t) {
   const o = Math.max(Number(n) || 0, Number(a) || 0);
-  return r.map(n => ({
-    ...n,
-    unlocked: o >= n.score,
-    progress: Math.max(0, Math.min(1, o / n.score)),
-    active: t === n.style
+  return r.map(item => ({
+    ...item,
+    unlocked: o >= item.score,
+    progress: Math.max(0, Math.min(1, o / item.score)),
+    active: t === item.style
   }));
 }
 var o = /^[0-9A-Fa-f]{6}/;

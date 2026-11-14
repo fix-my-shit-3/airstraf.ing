@@ -8,7 +8,7 @@ function t(t, e = null) {
   return t.then(r, r), t;
 }
 function e(t) {
-  const e = (void 0 === t ? [...n.values()] : [n.get(t), n.get(null)]).flatMap(n => n ? [...n] : []);
+  const e = (void 0 === t ? [...n.values()] : [n.get(t), n.get(null)]).flatMap(item => item ? [...item] : []);
   return e.length ? Promise.allSettled(e).then(() => {}) : Promise.resolve();
 }
 export { t as n, e as t };

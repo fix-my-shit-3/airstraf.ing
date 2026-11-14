@@ -76,8 +76,8 @@ var l = class {
       min: i.min ?? null
     });
     for (const t of ["keydown", "keyup", "keypress"]) e.addEventListener(t, event => event.stopPropagation());
-    e.addEventListener("click", t => {
-      t.target.closest?.("[data-close]") && this.back();
+    e.addEventListener("click", event => {
+      event.target.closest?.("[data-close]") && this.back();
     }), u(e), this.layer = t(e, {
       name: i.name,
       ...(void 0 !== i.z ? {
@@ -107,8 +107,8 @@ var l = class {
       const promise = new Promise(t => i = window.setTimeout(() => t("timeout"), n)),
         s = (async () => {
           o && "function" == typeof o.then && (await Promise.resolve(o).catch(() => {}));
-          const n = [...t.querySelectorAll("img")].filter(t => !t.complete);
-          return await Promise.all(n.map(t => t.decode().catch(() => {}))), "ready";
+          const n = [...t.querySelectorAll("img")].filter(item => !item.complete);
+          return await Promise.all(n.map(item => item.decode().catch(() => {}))), "ready";
         })(),
         r = await Promise.race([s, promise]);
       return clearTimeout(i), r;

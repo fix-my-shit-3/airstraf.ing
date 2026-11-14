@@ -69,7 +69,7 @@ var n = class {
     }
     onChange(t) {
       return this.listeners.push(t), () => {
-        this.listeners = this.listeners.filter(e => e !== t);
+        this.listeners = this.listeners.filter(item => item !== t);
       };
     }
     changed() {
@@ -80,13 +80,13 @@ var n = class {
     }
     layers() {
       for (const e of this.entries.keys()) e.spec.showing && !e.spec.showing() && (this.entries.delete(e), e.place(null));
-      const t = [...this.entries.keys()].map(t => ({
-        layer: t,
-        z: t.z(),
-        seq: this.entries.get(t),
-        el: t.spec.element?.() ?? null
+      const t = [...this.entries.keys()].map(item => ({
+        layer: item,
+        z: item.z(),
+        seq: this.entries.get(item),
+        el: item.spec.element?.() ?? null
       }));
-      return t.sort((t, e) => t.z !== e.z ? e.z - t.z : t.el && e.el && t.el !== e.el && t.el.isConnected && e.el.isConnected ? 4 & t.el.compareDocumentPosition(e.el) ? 1 : -1 : e.seq - t.seq), t.map(t => t.layer);
+      return t.sort((leftItem, rightItem) => leftItem.z !== rightItem.z ? rightItem.z - leftItem.z : leftItem.el && rightItem.el && leftItem.el !== rightItem.el && leftItem.el.isConnected && rightItem.el.isConnected ? 4 & leftItem.el.compareDocumentPosition(rightItem.el) ? 1 : -1 : rightItem.seq - leftItem.seq), t.map(item => item.layer);
     }
     top() {
       return this.layers()[0] ?? null;

@@ -328,12 +328,12 @@ var $ = {
     }]
   },
   M = $.originalPictures,
-  P = $.pictures.map(e => ({
-    ...e,
-    path: "stream" === e.render.kind ? e.render.path : `profile-pictures/${e.id}`
+  P = $.pictures.map(item => ({
+    ...item,
+    path: "stream" === item.render.kind ? item.render.path : `profile-pictures/${item.id}`
   })),
   C = M + P.length,
-  K = new Map(P.map(e => [e.index, e])),
+  K = new Map(P.map(item => [item.index, item])),
   T = e => K.get(e),
   I = "profile_picture",
   B = e => `pfp${e}`;
@@ -346,7 +346,7 @@ function A(e) {
   return n = e, !!(Number.isInteger(n) && n >= 0 && n < C) && (e < M || 0 === (T(e)?.goals.length ?? 0));
   var n;
 }
-var N = P.filter(e => e.goals.length > 0),
+var N = P.filter(item => item.goals.length > 0),
   G = {
     chicken_kills: 0,
     chickalettas_killed: 0,
@@ -370,9 +370,9 @@ function L(e, t) {
   return Math.max(0, Number(t[e.stat]) || 0);
 }
 function z(e, n) {
-  return 0 === e.goals.length || e.goals.some(e => ((e, n) => L(e, n) >= e.min)(e, n));
+  return 0 === e.goals.length || e.goals.some(item => ((e, n) => L(e, n) >= e.min)(item, n));
 }
-var E = e => N.filter(n => z(n, e)).map(e => e.index),
+var E = e => N.filter(item => z(item, e)).map(item => item.index),
   F = e => String(Math.round(e)).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 function R(n) {
   const t = F(n.min);
@@ -394,7 +394,7 @@ function R(n) {
     case "games_won":
       return `Win ${t} Matches`;
     case "class_level":
-      return void 0 === n.class ? `Reach LVL ${t} With Any Class` : `Reach ${a = n.class, e.find(e => e.index === a)?.name ?? `Class ${a}`} LVL ${t}`;
+      return void 0 === n.class ? `Reach LVL ${t} With Any Class` : `Reach ${a = n.class, e.find(item => item.index === a)?.name ?? `Class ${a}`} LVL ${t}`;
     case "map_secrets":
       return 1 === n.min ? "Find All Secrets Of A Map" : `Find All Secrets Of ${t} Maps`;
     case "level":
@@ -424,12 +424,12 @@ function O(e, n) {
 }
 var D = "kour-rank-rainbow";
 function V(e, n, t) {
-  const a = Math.floor(6 * e),
-    o = 6 * e - a,
+  const flooredValue = Math.floor(6 * e),
+    o = 6 * e - flooredValue,
     r = t * (1 - n),
     s = t * (1 - o * n),
     i = t * (1 - (1 - o) * n),
-    [c, l, f] = [[t, i, r], [s, t, r], [r, t, i], [r, s, t], [i, r, t], [t, r, s]][(a % 6 + 6) % 6];
+    [c, l, f] = [[t, i, r], [s, t, r], [r, t, i], [r, s, t], [i, r, t], [t, r, s]][(flooredValue % 6 + 6) % 6];
   return [Math.round(255 * c), Math.round(255 * l), Math.round(255 * f)];
 }
 var q = !1;
@@ -481,8 +481,8 @@ var X = e => `rank-hd-${e.toLowerCase().replace(/ /g, "-")}`,
   ee = e => e === Z ? "rainbow" : "Celestial" === e ? "celestial" : "",
   ne = (e, n, t) => "Celestial" === n ? Y.color : e[t];
 function te(e) {
-  const n = (e ?? []).map(e => [e.r, e.g, e.b, e.a]);
-  return W.forEach((e, t) => n[a.length + t] = e.color), n;
+  const n = (e ?? []).map(item => [item.r, item.g, item.b, item.a]);
+  return W.forEach((item, index) => n[a.length + index] = item.color), n;
 }
 function ae(e, n) {
   const t = e?.graphic;
@@ -515,25 +515,25 @@ function re(e, n) {
 var se = new Set(["UIManager.EnterKourEngine", "ServerFinderPanel.ShowCustomGamesPanel", "GameModeSelectPanel.CustomGamesButtonPressed", "GameModeSelectPanel.PlayCustom", "SettingsPanel.EnterKourEditor"]),
   ie = /Kour Engine|Kour Editor|Firebase: UID|Editor Application Version/i;
 function ce(e) {
-  return (e.c ?? []).some(e => (e => e.onClick ?? [])(e).some(e => se.has(`${e.type}.${e.method}`)));
+  return (e.c ?? []).some(item => (e => e.onClick ?? [])(item).some(_item => se.has(`${_item.type}.${_item.method}`)));
 }
 function le(e) {
-  return (e.c ?? []).some(e => ie.test((e => e.text ?? "")(e))) || (e.children ?? []).some(e => le(e));
+  return (e.c ?? []).some(item => ie.test((e => e.text ?? "")(item))) || (e.children ?? []).some(item => le(item));
 }
 function fe(e) {
   for (const t of e.children ?? []) ce(t) || /Slot/.test(t.name) && le(t) ? t.active = !1 : fe(t);
   const n = e.children?.find(e => "frame" === e.name);
-  n?.children?.length && n.children.every(e => !e.active) && (e.active = !1);
+  n?.children?.length && n.children.every(child => !child.active) && (e.active = !1);
 }
 var ue = new Set(["MapInfo.FreeKP", "ShopPanel.FreeKPButtonPressed", "ProfilePanel.ShowUserRecovery", "UIManager.ShowUserRecoveryPanel", "UIManager.FreeCrateButtonPressed", "FreeCrateMission.Claim", "GameEndedPanel.GetDoubleKP"]),
   pe = [["LeftNav", "frame"], ["News", "Legion"], ["HealthPanel", "dashpapa"]],
   de = [["PriorityCanvas", "TemporaryUnlockPanel"], ["LeftNav", "FreeCrate"], ["lockedPanel", "WatchAdToUnlockPanel"]];
 function me(e) {
-  return (e.c ?? []).some(e => (e => e.onClick ?? [])(e).some(e => ue.has(`${e.type}.${e.method}`)));
+  return (e.c ?? []).some(item => (e => e.onClick ?? [])(item).some(_item2 => ue.has(`${_item2.type}.${_item2.method}`)));
 }
 var he = (e, n) => de.some(([t, a]) => t === e.name && a === n.name);
 function we(e) {
-  e.children?.some(n => he(e, n)) && (e.children = e.children.filter(n => !he(e, n)));
+  e.children?.some(n => he(e, n)) && (e.children = e.children.filter(child => !he(e, child)));
   for (const n of e.children ?? []) me(n) || pe.some(([t, a]) => t === e.name && a === n.name) ? n.active = !1 : we(n);
 }
 var be = "/loading/airstrafing-wordmark.webp",
@@ -552,7 +552,7 @@ function ye(e) {
   };
 }
 function _e(e, n, t) {
-  const a = e.length > 1 ? e.filter(e => e.file !== t) : e;
+  const a = e.length > 1 ? e.filter(item => item.file !== t) : e;
   return a.length ? a[Math.min(a.length - 1, Math.floor(n * a.length))] : null;
 }
 var xe = "airstrafing-wordmark",
@@ -580,7 +580,7 @@ var xe = "airstrafing-wordmark",
     }
   },
   Me = new Set(["1f5d7acc68071ed7", "08a6a9d4ad7d25f6", "625301a9b286b6d3"]),
-  Pe = e => (e.c ?? []).find(e => "Image" === e.t),
+  Pe = e => (e.c ?? []).find(item => "Image" === item.t),
   Ce = {
     "0e5de552a3db2de4": {
       why: "challenges title"
@@ -670,13 +670,13 @@ var Ne = "https://discord.gg/ukqNTnSNVp",
   Oe = "news-notification",
   De = "20bfe0b00440b461",
   Ve = "c06b8275d5c9c1f3",
-  qe = e => (e.c ?? []).flatMap(e => e.onClick ?? []),
-  He = (e, n) => qe(e).some(e => `${e.type}.${e.method}` === n) || (e.children ?? []).some(e => He(e, n));
+  qe = e => (e.c ?? []).flatMap(item => item.onClick ?? []),
+  He = (e, n) => qe(e).some(item => `${item.type}.${item.method}` === n) || (e.children ?? []).some(item => He(item, n));
 function We(e, n) {
   for (const t of e.c ?? []) "TMP" !== t.t && "Text" !== t.t || (t.text = n);
 }
 function Ye(e) {
-  Le.has(e.id) || qe(e).some(e => Ge.has(`${e.type}.${e.method}`)) ? e.active = !1 : ze.has(e.id) && (e.active = !0);
+  Le.has(e.id) || qe(e).some(item => Ge.has(`${item.type}.${item.method}`)) ? e.active = !1 : ze.has(e.id) && (e.active = !0);
   const n = Ee[e.id];
   void 0 !== n && We(e, n);
   const t = Fe[e.id];
@@ -692,11 +692,11 @@ function Ye(e) {
     const n = Pe(e),
       t = n?.sprite ? $e[n.sprite] : void 0;
     if (!n || !t) return !1;
-    const a = (e.children ?? []).filter(e => {
-      const n = Pe(e)?.sprite;
+    const a = (e.children ?? []).filter(item => {
+      const n = Pe(item)?.sprite;
       return !!n && Me.has(n);
     });
-    if (a.length && (e.children = (e.children ?? []).filter(e => !a.includes(e))), n.sprite = xe, n.type = 0, n.preserveAspect = !0, e.rt) {
+    if (a.length && (e.children = (e.children ?? []).filter(item => !a.includes(item))), n.sprite = xe, n.type = 0, n.preserveAspect = !0, e.rt) {
       const n = Math.round(e.rt.size[1] * t.fill * 10) / 10,
         o = Math.round(n * Se[0] / Se[1] * 10) / 10;
       e.rt.size = [o, n], a.length && (e.rt.pos = [0, e.rt.pos[1]]);
@@ -708,7 +708,7 @@ function Ye(e) {
     case "52d9d6efe182da1e":
       !function (e) {
         e.rt && (e.rt.size = [Re, Re]);
-        const n = (e.c ?? []).find(e => "Image" === e.t);
+        const n = (e.c ?? []).find(item => "Image" === item.t);
         if (!n) return;
         const t = {
           ...structuredClone(e),
@@ -822,8 +822,8 @@ var ln = (e, n) => e ? {
   } : n,
   fn = e => e.amin[0] === e.amax[0] && e.amin[1] === e.amax[1];
 function un(e, n = on) {
-  const t = (e.children ?? []).filter(e => rn.includes(e.name) && e.rt && fn(e.rt));
-  if (!t.some(e => "Image_2" === e.name) || !t.some(e => "Image_3" === e.name)) return !1;
+  const t = (e.children ?? []).filter(item => rn.includes(item.name) && item.rt && fn(item.rt));
+  if (!t.some(item => "Image_2" === item.name) || !t.some(item => "Image_3" === item.name)) return !1;
   let a = !1;
   for (const i of t) {
     const e = i.rt;
@@ -1105,7 +1105,7 @@ var xn = class e {
       s = e => t.index.tmpFonts[e]?.material;
     return h(e => function (e) {
       const n = kn(e);
-      return n?.verticalLayoutGroup?.node && "8528bd4d35e50342" !== n.verticalLayoutGroup.node ? m("map-ui").then(n => {
+      return n?.verticalLayoutGroup?.node && "8528bd4d35e50342" !== n.verticalLayoutGroup.node ? m("map-ui").then(result => {
         const t = function (e) {
           const n = kn(e),
             t = vn(e),
@@ -1114,9 +1114,9 @@ var xn = class e {
           return n && a && o ? {
             field: structuredClone(a),
             lines: structuredClone(o),
-            slots: (n.chatSlots ?? []).map(e => e.node ?? "").filter(Boolean)
+            slots: (n.chatSlots ?? []).map(item => item.node ?? "").filter(Boolean)
           } : null;
-        }(n);
+        }(result);
         return t ? function (e, n) {
           const t = kn(e);
           if (!t?.messageIF?.node || !t.verticalLayoutGroup?.node) return e;
@@ -1126,11 +1126,11 @@ var xn = class e {
             r = a.get(t.verticalLayoutGroup.node);
           if (!(o?.rt && r?.rt && n.field.rt && n.lines.rt)) return e;
           const lookupMap = new Map([[n.field.id, o.id], [n.lines.id, r.id]]),
-            i = (t.chatSlots ?? []).map(e => e.node ?? "").filter(Boolean),
-            c = n.slots.map((e, n) => i[n] ?? `${r.id}~slot${n}`);
-          n.slots.forEach((e, n) => lookupMap.set(e, c[n]));
+            i = (t.chatSlots ?? []).map(item => item.node ?? "").filter(Boolean),
+            c = n.slots.map((item, index) => i[index] ?? `${r.id}~slot${index}`);
+          n.slots.forEach((item, index) => lookupMap.set(item, c[index]));
           const l = _n(n.field, lookupMap);
-          o.c = l.c, o.children = (l.children ?? []).filter(e => e.id !== r.id);
+          o.c = l.c, o.children = (l.children ?? []).filter(item => item.id !== r.id);
           const f = _n(n.lines, lookupMap);
           r.c = f.c, r.children = f.children ?? [];
           const [u, p] = (e => {
@@ -1145,8 +1145,8 @@ var xn = class e {
             pivot: [...d.pivot],
             size: [...d.size],
             pos: [u + d.pos[0], p + d.pos[1]]
-          }, t.chatSlots = c.map(e => ({
-            node: e,
+          }, t.chatSlots = c.map(item => ({
+            node: item,
             script: "ChatSlot"
           })), e;
         }(e, t) : e;
@@ -1169,7 +1169,7 @@ var xn = class e {
     }(function (e) {
       for (const n of e.roots) Ye(n);
       return function (e) {
-        const n = (e, n) => (e.children ?? []).find(e => e.name === n),
+        const n = (e, n) => (e.children ?? []).find(item => item.name === n),
           t = e => {
             if ("GamePausedPanel" === e.name) {
               const t = n(e, "TopNav"),
@@ -1177,7 +1177,7 @@ var xn = class e {
                 o = a && n(a, "firendsBtn"),
                 r = t && n(t, "COINS");
               if (!(t?.children && a?.children && o?.rt && r?.rt)) return;
-              a.children = a.children.filter(e => e !== o);
+              a.children = a.children.filter(child => child !== o);
               const s = (o.rt.size[0] + r.rt.size[0]) / 2;
               return Object.assign(o.rt, {
                 amin: [...r.rt.amin],
@@ -1200,7 +1200,7 @@ var xn = class e {
         const o = n,
           r = t;
         if (!o || !r || r === o || !r.children) return;
-        const s = r.children.findIndex(e => e.id === Ue),
+        const s = r.children.findIndex(child => child.id === Ue),
           [i] = r.children.splice(s, 1);
         (o.children ??= []).push(i);
       }(e), function (e) {
@@ -1213,10 +1213,10 @@ var xn = class e {
         for (const i of e.roots) a(i);
         const o = n,
           r = t;
-        if (!o || !r || (r.children ?? []).some(e => "news-notification" === e.id)) return;
+        if (!o || !r || (r.children ?? []).some(item => "news-notification" === item.id)) return;
         const s = structuredClone(o);
-        s.id = Oe, s.name = "newsNotification", s.active = !1, (s.children ?? []).forEach((e, n) => {
-          e.id = `${Oe}-${n}`, We(e, "!");
+        s.id = Oe, s.name = "newsNotification", s.active = !1, (s.children ?? []).forEach((item, index) => {
+          item.id = `${Oe}-${index}`, We(item, "!");
         }), (r.children ??= []).push(s);
       }(e), function (e) {
         for (const n of e.roots) {
@@ -1258,7 +1258,7 @@ var xn = class e {
             rect: [256, 244]
           }, n[t] = a;
         };
-      o.forEach((e, n) => t(e.name, W[n].sprite)), t(r, Y.sprite), function (e) {
+      o.forEach((item, index) => t(item.name, W[index].sprite)), t(r, Y.sprite), function (e) {
         const n = e.rankSprites ??= {};
         for (const t of a) {
           const a = X(t),
@@ -1267,11 +1267,11 @@ var xn = class e {
             ...o,
             w: 2 * o.w,
             h: 2 * o.h,
-            border: o.border.map(e => 2 * e),
+            border: o.border.map(item => 2 * item),
             ppu: 2 * o.ppu,
             rect: [2 * o.rect[0], 2 * o.rect[1]],
             ...(o.pad ? {
-              pad: o.pad.map(e => 2 * e)
+              pad: o.pad.map(item => 2 * item)
             } : {})
           }, n[t] = a);
         }
@@ -1287,7 +1287,7 @@ var xn = class e {
       }, e.weaponIcons[n] = t.sprite;
     }(t.index), d(t.index), function (e) {
       const n = e.profilePictures;
-      n && (n.paths = [...n.paths.slice(0, M), ...P.map(e => e.path)]);
+      n && (n.paths = [...n.paths.slice(0, M), ...P.map(item => item.path)]);
     }(t.index), function (e) {
       f(Ke, "/assets/extracted/ui/sprites/effects-tab.png"), e.sprites[Ke] ??= {
         name: Ke,
@@ -1319,7 +1319,7 @@ var xn = class e {
     return element.style.cssText = `position:fixed;inset:0;pointer-events:none;z-index:${e}`, this.layer.append(element), element;
   }
   on(e, n, t) {
-    const a = (this.handlers.get(e) ?? []).filter(e => t || e.scope);
+    const a = (this.handlers.get(e) ?? []).filter(item => t || item.scope);
     a.push({
       handler: n,
       scope: t

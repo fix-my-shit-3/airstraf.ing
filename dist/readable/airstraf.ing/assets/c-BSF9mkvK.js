@@ -17,19 +17,19 @@ function r(t) {
 }
 function i(t) {
   const n = Math.max(0, Math.floor(100 * t)),
-    a = Math.floor(n / 6e3),
+    flooredValue = Math.floor(n / 6e3),
     r = Math.floor(n / 100) % 60;
-  return `${a}:${String(r).padStart(2, "0")}.${String(n % 100).padStart(2, "0")}`;
+  return `${flooredValue}:${String(r).padStart(2, "0")}.${String(n % 100).padStart(2, "0")}`;
 }
 function u(t) {
   const n = t % 100;
   return n >= 11 && n <= 13 ? "th" : ["th", "st", "nd", "rd"][t % 10] ?? "th";
 }
 function o(t) {
-  return "#" + [0, 1, 2, 3].map(n => Math.max(0, Math.min(255, function (t) {
-    const n = Math.round(t);
-    return .5 === Math.abs(t % 1) && n % 2 != 0 ? n - 1 : n;
-  }(255 * (t[n] ?? 1)))).toString(16).toUpperCase().padStart(2, "0")).join("");
+  return "#" + [0, 1, 2, 3].map(item => Math.max(0, Math.min(255, function (t) {
+    const roundedValue = Math.round(t);
+    return .5 === Math.abs(t % 1) && roundedValue % 2 != 0 ? roundedValue - 1 : roundedValue;
+  }(255 * (t[item] ?? 1)))).toString(16).toUpperCase().padStart(2, "0")).join("");
 }
 function s(t) {
   const n = /^#?([0-9a-f]{6})([0-9a-f]{2})?$/i.exec(t.trim());

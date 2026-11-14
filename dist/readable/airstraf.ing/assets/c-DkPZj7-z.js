@@ -2,7 +2,7 @@ var r = ["solid", "gradient", "animated", "rainbow", "glow", "custom", "shine", 
   e = /^[0-9A-F]{6}([0-9A-F]{2})?$/;
 function n(n) {
   const o = r.includes(n.effect) ? n.effect : "solid",
-    a = Array.isArray(n.colors) ? n.colors.filter(r => "string" == typeof r && e.test(r)) : [];
+    a = Array.isArray(n.colors) ? n.colors.filter(item => "string" == typeof item && e.test(item)) : [];
   return {
     id: Number(n.id),
     key: String(n.key ?? ""),
@@ -23,7 +23,7 @@ function o(r) {
     return null;
   }(r);
   if (n) return n;
-  const o = [r.effect, String(Math.round(r.angle)), String(+r.speed.toFixed(3)), r.colors.filter(r => e.test(r)).join(".")];
+  const o = [r.effect, String(Math.round(r.angle)), String(+r.speed.toFixed(3)), r.colors.filter(item => e.test(item)).join(".")];
   return r.glow && e.test(r.glow) && o.push(r.glow), o.join("|");
 }
 function a(r, e) {
@@ -101,7 +101,7 @@ function k(r, e) {
     index: i.index,
     style: i.style
   }));
-  return t.sort((r, e) => r.index - e.index);
+  return t.sort((leftItem, rightItem) => leftItem.index - rightItem.index);
 }
 function d(r, e) {
   const n = [];
@@ -117,9 +117,9 @@ function d(r, e) {
 function g(r, e, n) {
   const t = k(r, n);
   if (!t.length) return a(r, e);
-  const i = Array.from(r);
-  for (const o of t) i[o.index] = a(i[o.index], o.style);
-  return `<namestyle=${o(e) ?? "letters"}>${i.join("")}</namestyle>`;
+  const arrayValues = Array.from(r);
+  for (const o of t) arrayValues[o.index] = a(arrayValues[o.index], o.style);
+  return `<namestyle=${o(e) ?? "letters"}>${arrayValues.join("")}</namestyle>`;
 }
 var m = "@keyframes kour-name-scroll{from{background-position:0% 50%}to{background-position:200% 50%}}@keyframes kour-name-shine{0%{background-position:100% 0,0 0}60%,100%{background-position:0% 0,0 0}}@property --kour-fx-t{syntax:'<angle>';inherits:false;initial-value:0deg}@property --kour-fx-p{syntax:'<number>';inherits:false;initial-value:1}@property --kour-fx-g{syntax:'<number>';inherits:false;initial-value:0}@keyframes kour-name-orbit{from{--kour-fx-t:0deg}to{--kour-fx-t:360deg}}@keyframes kour-name-neon{from{--kour-fx-p:0.35}to{--kour-fx-p:1}}@keyframes kour-name-glitch{0%,16%,58%,100%{--kour-fx-g:0}8%{--kour-fx-g:1}12%{--kour-fx-g:-0.6}52%{--kour-fx-g:0.5}55%{--kour-fx-g:-1}}@keyframes kour-name-rise{from{background-position:0% 0%}to{background-position:0% 200%}}@keyframes kour-name-breathe{from{opacity:1}to{opacity:0.55}}",
   p = {
@@ -141,9 +141,9 @@ function y(r) {
   const e = r.colors.map(x),
     n = (1 / Math.max(.05, r.speed)).toFixed(2),
     o = r.data.stops,
-    a = Array.isArray(o) && o.length === e.length && o.every(r => Number.isFinite(r)),
+    a = Array.isArray(o) && o.length === e.length && o.every(item => Number.isFinite(item)),
     t = (n, t = "100%") => ({
-      backgroundImage: `linear-gradient(${r.angle}deg, ${n.map((r, t) => a && n === e ? `${r} ${Number(o[t])}%` : r).join(", ")})`,
+      backgroundImage: `linear-gradient(${r.angle}deg, ${n.map((item, index) => a && n === e ? `${item} ${Number(o[index])}%` : item).join(", ")})`,
       backgroundSize: `${t} 100%`,
       backgroundClip: "text",
       webkitBackgroundClip: "text",

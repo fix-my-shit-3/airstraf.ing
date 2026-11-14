@@ -1,0 +1,24 @@
+import { Ai as n, Ci as t, Di as u, Si as r, Ti as e } from "./c-DRieNrHJ.js";
+function a(n, e, a = 1, i = null, o = r) {
+  return u(t, n, e, (n => ({
+    menu: !0,
+    min: n ?? null
+  }))(i), o) * a;
+}
+function i(t, u = {}) {
+  const i = "number" == typeof u ? {
+      unit: u
+    } : u,
+    o = i.unit ?? 1,
+    l = () => {
+      const u = n.state,
+        l = a(u.width, u.height, o, i.min, u.sizing) || 1,
+        [s, p] = function (n, t, u = 1, i = null, o = r) {
+          return e(n, t, a(n, t, u, i, o));
+        }(u.width, u.height, o, i.min, u.sizing),
+        x = t.style;
+      x.position = "fixed", x.left = "0", x.top = "0", x.right = "auto", x.bottom = "auto", x.width = `${s}px`, x.height = `${p}px`, x.transformOrigin = "0 0", x.transform = `scale(${l})`, x.setProperty("--layer-w", `${s}px`), x.setProperty("--layer-h", `${p}px`), x.setProperty("--layer-px", `${Number((1 / (l * (u.dpr || 1))).toPrecision(4))}px`);
+    };
+  return l(), n.subscribe(l), l;
+}
+export { i as t };

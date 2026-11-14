@@ -150,12 +150,12 @@ var t = {
   s = "'Poppins', sans-serif",
   b = {
     "4f2d9f92432fc76b": "/assets/badges/clan-leader.png",
-    ...Object.fromEntries(["98d21239067545cf", "af59a46cb827220d", "57b8aec2515bbed7", "b59190799c3ffa83", "282f5055ad655964", "f8f82cc9089380b0"].map(e => [e, `${n}/sprites/kp-coin.webp`])),
+    ...Object.fromEntries(["98d21239067545cf", "af59a46cb827220d", "57b8aec2515bbed7", "b59190799c3ffa83", "282f5055ad655964", "f8f82cc9089380b0"].map(item => [item, `${n}/sprites/kp-coin.webp`])),
     d46f22ec3f4c93a5: `${n}/sprites/kp-coin-tall.webp`,
     c9826ceaff75e1d4: `${n}/sprites/kp-coin-tall.webp`,
     "3b91c1e90c45a1e5": `${n}/sprites/kp-pile.webp`
   },
-  o = Object.keys(b).filter(e => b[e].includes("/kp-coin"));
+  o = Object.keys(b).filter(item => b[item].includes("/kp-coin"));
 function r(e, a) {
   b[e] = a;
 }
@@ -208,19 +208,19 @@ var i = e => b[e] ?? `${n}/sprites/${e}.png`,
     image(e) {
       let a = this.images.get(e);
       return a || (a = new Promise((a, c) => {
-        const f = new Image();
-        f.onload = () => {
-          "function" == typeof f.decode ? f.decode().then(() => a(f), () => a(f)) : a(f);
-        }, f.onerror = c, f.src = e;
+        const image = new Image();
+        image.onload = () => {
+          "function" == typeof image.decode ? image.decode().then(() => a(image), () => a(image)) : a(image);
+        }, image.onerror = c, image.src = e;
       }), this.images.set(e, a)), a;
     }
     $_3ru5(e) {
       let a = this.masks.get(e);
-      return a || (a = this.image(e).then(async a => {
+      return a || (a = this.image(e).then(async result => {
         const element = document.createElement("canvas");
-        element.width = a.naturalWidth, element.height = a.naturalHeight;
+        element.width = result.naturalWidth, element.height = result.naturalHeight;
         const drawingContext = element.getContext("2d", u);
-        drawingContext.drawImage(a, 0, 0);
+        drawingContext.drawImage(result, 0, 0);
         const d = drawingContext.getImageData(0, 0, element.width, element.height),
           t = d.data;
         for (let e = 3; e < t.length; e += 4) t[e] = t[e] > 0 ? 255 : 0;
@@ -232,11 +232,11 @@ var i = e => b[e] ?? `${n}/sprites/${e}.png`,
     $_wok(e, a) {
       const c = `${e}|${a}`;
       let f = this.shapes.get(c);
-      return f || (f = this.image(e).then(e => {
+      return f || (f = this.image(e).then(result => {
         const element = document.createElement("canvas");
-        element.width = e.naturalWidth, element.height = e.naturalHeight;
+        element.width = result.naturalWidth, element.height = result.naturalHeight;
         const drawingContext = element.getContext("2d", u);
-        return drawingContext.drawImage(e, 0, 0), function (e, a, c, f) {
+        return drawingContext.drawImage(result, 0, 0), function (e, a, c, f) {
           const t = function (e, a, c, f, d = 1, t = 0) {
             const n = 255 * f,
               s = [];
@@ -255,13 +255,13 @@ var i = e => b[e] ?? `${n}/sprites/${e}.png`,
             }
             return s;
           }(e, a, c, f, 4, 3);
-          if (t.every(e => e && 0 === e[0] && e[1] === a)) return null;
+          if (t.every(item => item && 0 === item[0] && item[1] === a)) return null;
           const n = function (e, a = .25) {
             const c = [],
               f = [];
             let t = -1;
-            if (e.forEach((e, a) => {
-              e && (c.length || (c.push([e[0], a]), f.push([e[1], a])), c.push([e[0], a + .5]), f.push([e[1], a + .5]), t = a);
+            if (e.forEach((item, index) => {
+              item && (c.length || (c.push([item[0], index]), f.push([item[1], index])), c.push([item[0], index + .5]), f.push([item[1], index + .5]), t = index);
             }), !c.length) return null;
             const n = e[t];
             return c.push([n[0], t + 1]), f.push([n[1], t + 1]), [...d(f, a), ...d(c.reverse(), a)];
@@ -276,13 +276,13 @@ var i = e => b[e] ?? `${n}/sprites/${e}.png`,
     tint(e, a) {
       if ((c = a)[0] >= .999 && c[1] >= .999 && c[2] >= .999 && c[3] >= .999) return Promise.resolve(e);
       var c;
-      const f = `${e}|${a.map(e => e.toFixed(3)).join(",")}`;
+      const f = `${e}|${a.map(item => item.toFixed(3)).join(",")}`;
       let d = this.tinted.get(f);
-      return d || (d = this.image(e).then(async c => {
+      return d || (d = this.image(e).then(async result => {
         const element = document.createElement("canvas");
-        element.width = c.naturalWidth, element.height = c.naturalHeight;
+        element.width = result.naturalWidth, element.height = result.naturalHeight;
         const drawingContext = element.getContext("2d", u);
-        drawingContext.drawImage(c, 0, 0);
+        drawingContext.drawImage(result, 0, 0);
         const t = drawingContext.getImageData(0, 0, element.width, element.height),
           n = t.data;
         for (let e = 0; e < n.length; e += 4) n[e] *= a[0], n[e + 1] *= a[1], n[e + 2] *= a[2], n[e + 3] *= a[3];

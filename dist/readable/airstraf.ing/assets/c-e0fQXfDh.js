@@ -1,5 +1,5 @@
 import { a, f as n, l as r, n as s, r as t, s as e } from "./c-Caw4SzGP.js";
-var c = a => new Map(a.map(a => [a.index, a])),
+var c = a => new Map(a.map(item => [item.index, item])),
   o = c(s),
   u = c(n),
   i = c(e),
@@ -22,7 +22,7 @@ function v(a, n) {
   }
 }
 var M = r => "characterSkin" === r ? s : "weaponSkin" === r ? n : "hat" === r ? e : a,
-  S = (a, n) => M(a).find(a => a.name === n)?.index;
+  S = (a, n) => M(a).find(item => item.name === n)?.index;
 function l(a, n) {
   const r = v(a, n);
   return r ? S(a, r.name) ?? n : n;
@@ -30,13 +30,13 @@ function l(a, n) {
 var b = a => S(a.kind, a.name) !== a.index;
 function d(a) {
   const lookupMap = new Map();
-  return a.filter(a => {
-    let r = lookupMap.get(a.kind);
-    return r || lookupMap.set(a.kind, r = function (a) {
+  return a.filter(item => {
+    let r = lookupMap.get(item.kind);
+    return r || lookupMap.set(item.kind, r = function (a) {
       const _lookupMap = new Map();
       for (const r of M(a)) _lookupMap.has(r.name) || _lookupMap.set(r.name, r.index);
       return _lookupMap;
-    }(a.kind)), r.get(a.name) === a.index;
+    }(item.kind)), r.get(item.name) === item.index;
   });
 }
 var j = a => Number.isInteger(a) && (a >= 0 && a < 102 || p.has(a)),

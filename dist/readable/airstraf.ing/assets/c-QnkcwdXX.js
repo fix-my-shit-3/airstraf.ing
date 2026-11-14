@@ -27,10 +27,10 @@ function u(t, n, o) {
     const n = function (t, n) {
         let o = t;
         for (; o.parent;) o = o.parent;
-        return [...o.walk()].filter(t => t.get("Toggle")?.group === n);
+        return [...o.walk()].filter(item => item.get("Toggle")?.group === n);
       }(t, r.group),
       e = !!c.script("ToggleGroup")?.data?.m_AllowSwitchOff;
-    if (r.isOn || !n.some(t => t.get("Toggle").isOn) && !e) {
+    if (r.isOn || !n.some(item => item.get("Toggle").isOn) && !e) {
       r.isOn = !0;
       for (const r of n) r !== t && r.get("Toggle").isOn && u(r, !1, o);
     }
@@ -98,9 +98,9 @@ function v(t, n) {
       } catch {}
       i(event), e(event, t.el), event.stopPropagation();
     }
-  }), t.el.addEventListener("pointermove", n => {
-    const o = n.kourPadPress;
-    (t.el.hasPointerCapture(n.pointerId) || o && t.el.contains(o)) && i(n);
+  }), t.el.addEventListener("pointermove", event => {
+    const o = event.kourPadPress;
+    (t.el.hasPointerCapture(event.pointerId) || o && t.el.contains(o)) && i(event);
   });
 }
 var d = new WeakMap();
@@ -203,8 +203,8 @@ function S(o, r) {
     };
     v.el.addEventListener("pointerdown", event => {
       0 === event.button && (v.el.setPointerCapture(event.pointerId), t(event), e(event, v.el), event.stopPropagation());
-    }), v.el.addEventListener("pointermove", n => {
-      v.el.hasPointerCapture(n.pointerId) && t(n);
+    }), v.el.addEventListener("pointermove", event => {
+      v.el.hasPointerCapture(event.pointerId) && t(event);
     });
   }
   return () => {

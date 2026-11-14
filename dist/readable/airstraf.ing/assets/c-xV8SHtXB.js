@@ -5056,14 +5056,14 @@ function o(a, p) {
   }
   return t;
 }
-var k = new Map(e.classes.golden.map(a => [a.class, a.weapon])),
-  c = new Map(p.filter(a => "Golden" === a.collection && a.weapon).map(a => [a.weapon, a]));
+var k = new Map(e.classes.golden.map(item => [item.class, item.weapon])),
+  c = new Map(p.filter(item => "Golden" === item.collection && item.weapon).map(item => [item.weapon, item]));
 function u(a) {
   const p = k.get(a);
   return p ? (a => c.get(a) ?? null)(p) : null;
 }
 var g = a => `weaponSkin${a}`,
-  d = [...k.keys()].sort((a, p) => a - p);
+  d = [...k.keys()].sort((leftItem, rightItem) => leftItem - rightItem);
 function x(a) {
   const p = /^cls(\d{1,3})\./.exec(a);
   return p ? Number(p[1]) : null;
@@ -5093,19 +5093,19 @@ var h = Object.fromEntries(Object.entries(e.counters).map(([a, p]) => [a, {
     };
     var r, m;
   },
-  w = (a, p, e) => a.map((a, t) => a.map((a, r) => b(a, `${p}${t}.${r}`, e, {
-    slot: t,
-    option: r
+  w = (a, p, e) => a.map((item, index) => item.map((_item, _index) => b(_item, `${p}${index}.${_index}`, e, {
+    slot: index,
+    option: _index
   }))),
   y = w(e.daily, "d", "daily"),
   S = w(e.weekly, "w", "weekly"),
-  M = e.special.map(a => b(a, `s.${a.key}`, "special")),
-  C = Object.fromEntries(e.special.map(a => [`s.${a.key}`, a.legacy])),
-  A = new Map(d.map(a => [a, e.classes.challenges.map(p => b({
-    ...p,
-    arg: String(a)
-  }, `cls${a}.${p.key}`, "class", {
-    cls: a
+  M = e.special.map(item => b(item, `s.${item.key}`, "special")),
+  C = Object.fromEntries(e.special.map(item => [`s.${item.key}`, item.legacy])),
+  A = new Map(d.map(item => [item, e.classes.challenges.map(_item2 => b({
+    ..._item2,
+    arg: String(item)
+  }, `cls${item}.${_item2.key}`, "class", {
+    cls: item
   }))])),
   B = (e.classes.challenges.length, (() => {
     const lookupMap = new Map();
@@ -5134,7 +5134,7 @@ var h = Object.fromEntries(Object.entries(e.counters).map(([a, p]) => [a, {
     byId;
     $_1no;
     constructor(a, p, e, t, r, m = null, s = new Map()) {
-      this.daily = a, this.weekly = p, this.special = e, this.maps = t, this.rewards = r, this.version = m, this.classes = s, this.$_1no = [...t.keys()], this.$_d96 = [...s.keys()].sort((a, p) => a - p), this.byId = new Map(this.all().map(a => [a.id, a]));
+      this.daily = a, this.weekly = p, this.special = e, this.maps = t, this.rewards = r, this.version = m, this.classes = s, this.$_1no = [...t.keys()], this.$_d96 = [...s.keys()].sort((leftItem, rightItem) => leftItem - rightItem), this.byId = new Map(this.all().map(item => [item.id, item]));
     }
     $_d96;
     all() {
@@ -5142,14 +5142,14 @@ var h = Object.fromEntries(Object.entries(e.counters).map(([a, p]) => [a, {
     }
     pick(a, p, e) {
       const t = [];
-      return a.forEach((a, r) => {
-        if (!a.length) return;
+      return a.forEach((item, index) => {
+        if (!item.length) return;
         const m = function (a, p, e) {
             if (e <= 1) return 0;
             let t = (7919 * a + 104729 * p + 12345) % $;
             return t = (t * t + 1013) % $, t = (t * t + p + 7) % $, t % e;
-          }(e, p + r, a.length),
-          s = a.find(a => (a.option ?? 0) === m);
+          }(e, p + index, item.length),
+          s = item.find(_item3 => (_item3.option ?? 0) === m);
         s && t.push(s);
       }), t;
     }
@@ -5253,7 +5253,7 @@ var ta = {
     goldMaps: Math.max(1, e.rewards.goldLetterMaps ?? 10),
     bronzeWeeks: Math.max(1, e.rewards.bronzeLetterWeeks ?? 1)
   },
-  ra = new Set(M.filter(a => "skin" === a.reward?.kind && a.reward.id).map(a => a.reward.id));
+  ra = new Set(M.filter(item => "skin" === item.reward?.kind && item.reward.id).map(item => item.reward.id));
 function ma(a) {
   const p = [];
   return a.kp > 0 && p.push(`+${sa(a.kp)} KP`), a.items.length && p.push(`${a.items.length} Item${1 === a.items.length ? "" : "s"}`), p.join(" and ");
@@ -5261,11 +5261,11 @@ function ma(a) {
 var sa = a => Math.trunc(a).toLocaleString("en-US");
 function ia(a, p = !1) {
   const e = Math.max(0, a) / 1e3,
-    t = Math.floor(e / 60),
-    r = e - 60 * t,
-    m = Math.floor(r),
-    s = `${t}:${String(m).padStart(2, "0")}`;
-  return p ? `${s}.${Math.floor(10 * (r - m))}` : s;
+    flooredValue = Math.floor(e / 60),
+    r = e - 60 * flooredValue,
+    _flooredValue = Math.floor(r),
+    s = `${flooredValue}:${String(_flooredValue).padStart(2, "0")}`;
+  return p ? `${s}.${Math.floor(10 * (r - _flooredValue))}` : s;
 }
 function na(a, p) {
   const e = h[a.counter];
@@ -5273,15 +5273,15 @@ function na(a, p) {
   const t = 1 === a.target && e.titleOne ? e.titleOne : e.title,
     r = "ms" === e.unit ? ia(a.target) : function (a) {
       if (a < 3600) {
-        const p = Math.round(a / 60);
-        return `${p} Minute${1 === p ? "" : "s"}`;
+        const roundedValue = Math.round(a / 60);
+        return `${roundedValue} Minute${1 === roundedValue ? "" : "s"}`;
       }
       const p = Math.round(a / 3600 * 10) / 10;
       return `${p} Hour${1 === p ? "" : "s"}`;
     }(a.target);
   return t.replace("{n}", sa(a.target)).replace("{time}", r).replace("{class}", "class" === e.sub && null !== a.arg ? p.class(Number(a.arg)) : "").replace("{mode}", "mode" === e.sub && null !== a.arg ? p.mode(a.arg) : "").replace("{course}", "course" === e.sub && null !== a.arg ? la(a.arg) : "");
 }
-var la = p => a.find(a => a.id === p)?.name ?? p;
+var la = p => a.find(item => item.id === p)?.name ?? p;
 function oa(a, p) {
   const e = h[a.counter];
   if ("seconds" === e?.unit) {

@@ -352,79 +352,79 @@ var o = {
   },
   l = ["profile_background", "profile_banner", "profile_effect"],
   s = a => l.includes(a),
-  c = o.backgrounds.map(a => ({
+  c = o.backgrounds.map(item => ({
     kind: "profile_background",
-    ...a
+    ...item
   })),
   d = a => `skin${a}`,
   F = "profile-banners",
   f = i.mapBanner.rarity,
-  g = i.mapBanners.map(a => {
+  g = i.mapBanners.map(item => {
     return {
       kind: "profile_banner",
-      id: a.map,
-      name: (e = a.name, `${e} Banner`),
+      id: item.map,
+      name: (e = item.name, `${e} Banner`),
       rarity: f,
       skin: -1,
-      iconPath: `${F}/${a.map}`,
-      map: a.map,
+      iconPath: `${F}/${item.map}`,
+      map: item.map,
       earned: !0,
-      ...(a.retired ? {
+      ...(item.retired ? {
         retired: !0
       } : {})
     };
     var e;
   }),
-  p = a => g.find(e => e.id === a),
-  m = (i.artBanners ?? []).map(a => ({
+  p = a => g.find(item => item.id === a),
+  m = (i.artBanners ?? []).map(item => ({
     kind: "profile_banner",
-    id: a.id,
-    name: a.name,
-    rarity: a.rarity,
+    id: item.id,
+    name: item.name,
+    rarity: item.rarity,
     skin: -1,
-    iconPath: `${F}/${a.id}`,
+    iconPath: `${F}/${item.id}`,
     art: !0,
-    goals: a.goals,
-    ...(a.credit ? {
-      credit: a.credit
+    goals: item.goals,
+    ...(item.credit ? {
+      credit: item.credit
     } : {}),
     earned: !0
   })),
-  u = a => m.find(e => e.id === a),
+  u = a => m.find(item => item.id === a),
   h = a => !!a.map || !0 === a.art,
-  y = [...n.map(a => ({
+  y = [...n.map(item => ({
     kind: "profile_banner",
-    id: d(a.index),
-    name: a.name,
-    rarity: a.rarity,
-    skin: a.index,
-    iconPath: a.iconPath
-  })), ...e.filter(a => "characterSkin" === a.kind).map(a => ({
+    id: d(item.index),
+    name: item.name,
+    rarity: item.rarity,
+    skin: item.index,
+    iconPath: item.iconPath
+  })), ...e.filter(item => "characterSkin" === item.kind).map(item => ({
     kind: "profile_banner",
-    id: d(a.index),
-    name: a.name,
-    rarity: a.rarity,
-    skin: a.index,
-    iconPath: a.iconPath ?? "",
+    id: d(item.index),
+    name: item.name,
+    rarity: item.rarity,
+    skin: item.index,
+    iconPath: item.iconPath ?? "",
     retired: !0
-  })), ...a.map(a => {
+  })), ...a.map(item => {
     return {
       kind: "profile_banner",
-      id: t(a.index),
-      name: (e = a.name, `${e} Banner`),
+      id: t(item.index),
+      name: (e = item.name, `${e} Banner`),
       rarity: 3,
       skin: -1,
-      iconPath: `characters/icons/${a.icon}`,
-      classIndex: a.index,
+      iconPath: `characters/icons/${item.icon}`,
+      classIndex: item.index,
       earned: !0
     };
     var e;
   }), ...g, ...m],
   b = a => `Reach ${a} LVL ${r}`,
-  w = o.effects.map(a => ({
+  w = o.effects.map(item => ({
     kind: "profile_effect",
     angle: 90,
-    ...a
+    ...item
   })),
   x = {
     profile_background: c,
@@ -442,8 +442,8 @@ var B = o.rarityWeights,
   C = a => a.earned || a.retired ? 0 : B[Math.min(Math.max(a.rarity, 0), B.length - 1)],
   A = a => a.rarity >= 2;
 function v(a, e, n) {
-  const i = x[a].filter(a => !e(a.id) && C(a) > 0),
-    t = i.reduce((a, e) => a + C(e), 0);
+  const i = x[a].filter(item => !e(item.id) && C(item) > 0),
+    t = i.reduce((accumulator, item) => accumulator + C(item), 0);
   if (!i.length || t <= 0) return null;
   let r = n() * t;
   for (const o of i) if (r -= C(o), r < 0) return o;
@@ -556,7 +556,7 @@ function Q(a, e) {
         const e = Math.max(24, Math.round(.8 * o)),
           i = I(n),
           t = a.angle * Math.PI / 180,
-          r = i.map((a, n) => `${a} ${V(e * n / Math.max(1, i.length - 1))}`).join(", ");
+          r = i.map((item, index) => `${item} ${V(e * index / Math.max(1, i.length - 1))}`).join(", ");
         s = [W(`repeating-linear-gradient(${a.angle}deg, ${r})`, "pfx-anim pfx-flow", {
           inset: V(-e),
           "--pfx-dx": V(Math.sin(t) * e),
@@ -582,9 +582,9 @@ function Q(a, e) {
     case "flicker":
       {
         const e = 8 * H(a.speed);
-        s = [W(n[0]), ...n.slice(1).map((a, n) => W(a, "pfx-anim pfx-flicker-" + (n % 2 ? "b" : "a"), {
-          animationDuration: z(e * (1 + .31 * n)),
-          animationDelay: `${(-.37 * (n + 1) * e).toFixed(3)}s`
+        s = [W(n[0]), ...n.slice(1).map((item, index) => W(item, "pfx-anim pfx-flicker-" + (index % 2 ? "b" : "a"), {
+          animationDuration: z(e * (1 + .31 * index)),
+          animationDelay: `${(-.37 * (index + 1) * e).toFixed(3)}s`
         }))], d = {
           className: "pfx-glow pfx-anim pfx-flicker-glow",
           style: {
@@ -658,7 +658,7 @@ function Q(a, e) {
         const e = n.length > 1 ? n[n.length - 1] : "#FFFFFF",
           i = n.length > 2 ? n.slice(0, -1) : [n[0]],
           o = 220,
-          l = i.map((a, e) => `${a} ${+(o + 134 * (e + 1) / (i.length + 1)).toFixed(2)}deg`).join(", ");
+          l = i.map((item, index) => `${item} ${+(o + 134 * (index + 1) / (i.length + 1)).toFixed(2)}deg`).join(", ");
         s = [W(n[0], "", {
           opacity: "0.35"
         }), W(`conic-gradient(transparent 0deg, transparent ${o}deg, ${l}, ${e} 354deg, ${e} 360deg)`, "pfx-anim pfx-rotate", {

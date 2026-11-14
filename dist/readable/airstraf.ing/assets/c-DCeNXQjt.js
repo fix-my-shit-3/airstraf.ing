@@ -134,7 +134,7 @@ var B = "adminNick",
     text: I("size"),
     party: !1
   }];
-new Map(L.map(t => [t.name, t]));
+new Map(L.map(item => [item.name, item]));
 var R = "announce",
   U = ["banner", "souls"],
   H = t => U.includes(t);
@@ -167,7 +167,7 @@ var P = ["grey", "normal", "red", "green", "rainbow"],
       return this.current?.a ?? null;
     }
     get waiting() {
-      return this.queue.map(t => t.a);
+      return this.queue.map(item => item.a);
     }
     receive(t) {
       const n = function (t) {
@@ -337,7 +337,7 @@ var dt = class {
     names = new Set();
     listeners = new Set();
     set(t) {
-      this.$_4t5 = new Map(t.map(t => [t.uid, t.username])), this.rebuild();
+      this.$_4t5 = new Map(t.map(item => [item.uid, item.username])), this.rebuild();
     }
     add(t, n) {
       this.$_4t5.set(t, n), this.rebuild();
@@ -366,7 +366,7 @@ var dt = class {
       };
     }
     rebuild() {
-      this.names = new Set([...this.$_4t5.values()].map(t => t.toLowerCase()).filter(Boolean));
+      this.names = new Set([...this.$_4t5.values()].map(item => item.toLowerCase()).filter(Boolean));
       for (const t of this.listeners) t();
     }
   },
@@ -392,9 +392,9 @@ var dt = class {
     }
     of(t, n = 5) {
       const e = t.trim().toLowerCase(),
-        s = this.lines.filter(t => t.name === e).slice(-n);
+        s = this.lines.filter(item => item.name === e).slice(-n);
       return {
-        lines: s.map(t => t.text),
+        lines: s.map(item => item.text),
         where: s.at(-1)?.where ?? null
       };
     }
@@ -424,7 +424,7 @@ function jt(t, n) {
     s = 0,
     r = 0;
   const i = [],
-    o = () => e + i.map(t => `</${t}>`).reverse().join(""),
+    o = () => e + i.map(item => `</${item}>`).reverse().join(""),
     u = St.exec(t)[0].length;
   for (const c of t.matchAll(Ft)) {
     const a = t.slice(r, c.index);
@@ -476,7 +476,7 @@ function Dt(t) {
       name: e
     });
   }
-  return n.sort((t, n) => n.key.length - t.key.length);
+  return n.sort((leftItem, rightItem) => rightItem.key.length - leftItem.key.length);
 }
 var Bt = (t, n) => {
     const e = t.codePointAt(n);
@@ -510,7 +510,7 @@ function Yt(t, n) {
 }
 function It(t, n, e = []) {
   const s = Ot(n).toLowerCase();
-  return s ? Yt(t, [n, ...[...e].filter(t => Ot(t).toLowerCase() !== s)]).filter(t => t.name === n) : [];
+  return s ? Yt(t, [n, ...[...e].filter(item => Ot(item).toLowerCase() !== s)]).filter(item => item.name === n) : [];
 }
 function Lt(t, n) {
   const e = t.toLowerCase(),
@@ -520,7 +520,7 @@ function Lt(t, n) {
     key: i,
     lower: o
   } of Dt(n)) o.startsWith(e) && !uniqueItems.has(o) && (uniqueItems.add(o), r.push(i));
-  return r.sort((t, n) => t.toLowerCase().localeCompare(n.toLowerCase()));
+  return r.sort((leftItem, rightItem) => leftItem.toLowerCase().localeCompare(rightItem.toLowerCase()));
 }
 function Rt(t, n) {
   const e = b(t, n),
@@ -569,7 +569,7 @@ function _t(t, n = !1, r) {
   if (t.systemColor && q(t.systemColor)) return s(function (t, n) {
     if ("rainbow" !== n) return `<color=${W[n]}>${t}</color>`;
     let e = 0;
-    return [...t].map(t => " " === t ? t : `<color=${_[e++ % _.length]}>${t}</color>`).join("");
+    return [...t].map(item => " " === item ? item : `<color=${_[e++ % _.length]}>${item}</color>`).join("");
   }(`[SYSTEM] ${u}`, t.systemColor));
   if ("nick" in t) {
     const a = i(t.nick),
@@ -716,8 +716,8 @@ var Qt = class {
             return t.length ? {
               kind: "mention",
               partial: s,
-              items: t.map(t => ({
-                label: t
+              items: t.map(item => ({
+                label: item
               }))
             } : null;
           }
@@ -727,13 +727,13 @@ var Qt = class {
           return i.length ? {
             kind: "emoji",
             partial: r.partial,
-            items: i.map(t => ({
-              label: `:${t.name}:`,
-              emoji: t.emoji
+            items: i.map(item => ({
+              label: `:${item.name}:`,
+              emoji: item.emoji
             }))
           } : null;
         }(t.value, t.selectionStart ?? t.value.length, this.options.names()) : null,
-        e = !!n && !!this.state && n.kind === this.state.kind && n.items.map(t => t.label).join("\n") === this.state.items.map(t => t.label).join("\n");
+        e = !!n && !!this.state && n.kind === this.state.kind && n.items.map(item => item.label).join("\n") === this.state.items.map(item => item.label).join("\n");
       this.state = n, e || (this.picked = 0), this.render();
     }
     move(t) {
@@ -751,15 +751,15 @@ var Qt = class {
       if (!t) return this.el && (this.el.hidden = !0), void this.layer.close();
       const n = this.box();
       if (!n) return;
-      n.replaceChildren(...t.items.map((t, n) => {
+      n.replaceChildren(...t.items.map((item, index) => {
         const element = document.createElement("div");
-        if (element.className = "kour-chat-assist-row", n === this.picked && element.classList.add("is-picked"), t.emoji) {
+        if (element.className = "kour-chat-assist-row", index === this.picked && element.classList.add("is-picked"), item.emoji) {
           const _element2 = document.createElement("span");
-          _element2.className = "kour-chat-assist-emoji", _element2.textContent = t.emoji, element.append(_element2);
+          _element2.className = "kour-chat-assist-emoji", _element2.textContent = item.emoji, element.append(_element2);
         }
         const _element = document.createElement("span");
-        return _element.className = t.emoji ? "kour-chat-assist-code" : "kour-chat-assist-name", _element.textContent = t.label, element.append(_element), element.addEventListener("pointerdown", event => {
-          event.preventDefault(), event.stopPropagation(), this.$_2kw?.(n);
+        return _element.className = item.emoji ? "kour-chat-assist-code" : "kour-chat-assist-name", _element.textContent = item.label, element.append(_element), element.addEventListener("pointerdown", event => {
+          event.preventDefault(), event.stopPropagation(), this.$_2kw?.(index);
         }), element;
       }));
       const e = this.input.style.fontSize || getComputedStyle(this.input).fontSize;
@@ -782,7 +782,7 @@ var Qt = class {
       try {
         const n = t?.getItem(tn),
           e = n ? JSON.parse(n) : [];
-        Array.isArray(e) && (this.entries = e.filter(t => "string" == typeof t && !!t.trim()).map(t => t.slice(0, 200)).slice(-30));
+        Array.isArray(e) && (this.entries = e.filter(item => "string" == typeof item && !!item.trim()).map(item => item.slice(0, 200)).slice(-30));
       } catch {
         this.entries = [];
       }

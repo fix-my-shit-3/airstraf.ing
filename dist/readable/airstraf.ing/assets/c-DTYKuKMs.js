@@ -10,7 +10,7 @@ function a(n) {
 }
 function r(n) {
   const e = o(n),
-    t = s.findIndex(n => n >= e);
+    t = s.findIndex(item => item >= e);
   return t < 0 ? l : t + 1;
 }
 function c(n) {
@@ -161,11 +161,11 @@ var d = [{
     meleeKills: 1 / 0
   },
   x = (n, e) => "knifeKills" === n.stat ? e.meleeKills : 0,
-  A = n => M.find(e => e.weapon === n),
+  A = n => M.find(item => item.weapon === n),
   N = (n, e, t = !1) => k(x(n, e), n.goal, n.label, t),
-  W = n => t.find(e => e.id === n) ?? null,
+  W = n => t.find(item => item.id === n) ?? null,
   z = n => n ? e[n]?.index ?? -1 : -1,
-  j = n => Object.keys(e).find(t => e[t].index === n) ?? null,
+  j = n => Object.keys(e).find(item => e[item].index === n) ?? null,
   C = n => {
     const t = j(n);
     return t ? e[t].model : n;
@@ -197,19 +197,19 @@ var _ = (n, e, t = !1) => n.firstLevelIsUnlock && e < 0 && !t,
   X = new WeakMap();
 function q(n) {
   let e = X.get(n);
-  return e || (e = n.levels.filter(n => n.unlock).map(e => {
+  return e || (e = n.levels.filter(item => item.unlock).map(item => {
     return {
-      slot: e.unlock.slot,
-      weapon: e.unlock.weapon,
-      level: $(n.id, e.unlock.weapon),
-      kills: (t = n.id, o = e.unlock.weapon, a = $(t, o), s[Math.min(l, Math.max(1, Math.trunc(a) || 1)) - 1])
+      slot: item.unlock.slot,
+      weapon: item.unlock.weapon,
+      level: $(n.id, item.unlock.weapon),
+      kills: (t = n.id, o = item.unlock.weapon, a = $(t, o), s[Math.min(l, Math.max(1, Math.trunc(a) || 1)) - 1])
     };
     var t, o, a;
-  }).sort((n, e) => n.kills - e.kills), X.set(n, e)), e;
+  }).sort((leftItem, rightItem) => leftItem.kills - rightItem.kills), X.set(n, e)), e;
 }
 function B(n, t, s, l, o, a = R, r = b) {
   const c = [],
-    i = n => c.some(e => e.weapon === n),
+    i = n => c.some(item => item.weapon === n),
     f = n.weapons[t];
   f && c.push({
     weapon: f,
@@ -272,22 +272,22 @@ function B(n, t, s, l, o, a = R, r = b) {
   }
   return c;
 }
-var F = (n, e, t, s = R, l = b) => B(n, e, t, 1 / 0, 0, s, l).filter(n => !n.locked).map(n => n.weapon);
+var F = (n, e, t, s = R, l = b) => B(n, e, t, 1 / 0, 0, s, l).filter(item => !item.locked).map(item => item.weapon);
 function G(n, e) {
-  return new Set(B(n, e, 1 / 0, 1 / 0, 0, R, K).map(n => n.weapon));
+  return new Set(B(n, e, 1 / 0, 1 / 0, 0, R, K).map(item => item.weapon));
 }
 function H(n, e, t, s = R, l, o = b) {
   const a = [],
     r = n => null !== n && a.includes(n);
-  return n.weapons.forEach((c, u) => {
-    const i = c ?? null,
-      f = e?.[u];
+  return n.weapons.forEach((item, index) => {
+    const i = item ?? null,
+      f = e?.[index];
     let p = null;
-    if (u < 3 && "random" === f) {
-      const e = l ? F(n, u, t ?? 1 / 0, s, o).filter(n => !r(n)) : [];
+    if (index < 3 && "random" === f) {
+      const e = l ? F(n, index, t ?? 1 / 0, s, o).filter(_item => !r(_item)) : [];
       e.length && (p = e[Math.min(e.length - 1, Math.floor(l() * e.length))]);
-    } else if (u < 3 && f) {
-      const e = B(n, u, t ?? 1 / 0, 1 / 0, 0, s, o).find(n => n.weapon === f);
+    } else if (index < 3 && f) {
+      const e = B(n, index, t ?? 1 / 0, 1 / 0, 0, s, o).find(_item2 => _item2.weapon === f);
       !e || e.locked || r(e.weapon) || (p = e.weapon);
     }
     a.push(p ?? (r(i) ? null : i));

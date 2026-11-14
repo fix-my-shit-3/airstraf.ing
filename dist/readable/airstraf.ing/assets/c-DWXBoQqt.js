@@ -62,7 +62,7 @@ function n(i = 0, n = "kour-select-frame") {
   };
 }
 function o(e, r, l = !0, t = 0) {
-  let i = r.children.find(e => "kour-select-frame" === e.name) ?? null;
+  let i = r.children.find(child => "kour-select-frame" === child.name) ?? null;
   return i || l ? (i ? l && i !== r.children[r.children.length - 1] && i.$_hl4() : i = e.instantiate(n(t), r), i.setActive(l), i) : null;
 }
 export { n as i, o as n, i as r, t };

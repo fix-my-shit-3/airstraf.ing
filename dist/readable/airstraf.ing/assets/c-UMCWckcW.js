@@ -377,7 +377,7 @@ var ut = class {
         const c = e[a];
         if (c.displaced || c.el.parentElement !== this.el) {
           if (t) t.after(c.el);else {
-            const t = e.find(t => t !== c && !t.displaced && t.el.parentElement === this.el);
+            const t = e.find(item => item !== c && !item.displaced && item.el.parentElement === this.el);
             t ? this.el.insertBefore(c.el, t.el) : this.el.append(c.el);
           }
           c.displaced = !1;
@@ -400,7 +400,7 @@ var ut = class {
       for (let a = 0; a < e.length; a++) if (e[a].t === t) return e[a];
     }
     script(t) {
-      return this.$_6nz.find(e => "Script" === e.t && e.cls === t);
+      return this.$_6nz.find(item => "Script" === item.t && item.cls === t);
     }
     components() {
       return this.$_6nz;
@@ -537,7 +537,7 @@ var ut = class {
     }
     setColor(t) {
       const e = this.get("Image") ?? this.get("RawImage") ?? this.get("TMP") ?? this.get("Text");
-      e && !e.color.every((e, a) => e === t[a]) && (e.color = [...t], this.mark(2));
+      e && !e.color.every((item, index) => item === t[index]) && (e.color = [...t], this.mark(2));
     }
     $_49i(t) {
       this.colorFilter !== t && (this.colorFilter = t, this.mark(2));
@@ -611,7 +611,7 @@ var ut = class {
     }
     $_6nd(t) {
       const e = this.rt;
-      e && !e.rot.every((e, a) => e === t[a]) && (e.rot = [...t], this.mark(4));
+      e && !e.rot.every((item, index) => item === t[index]) && (e.rot = [...t], this.mark(4));
     }
     $_5bg(t, e, a = 1) {
       const c = this.rt;
@@ -653,8 +653,8 @@ var ut = class {
             ...t,
             color: c
           }, f, s, a.fontFamily(null), e, c[3] * this.tint[3], this.host.pixelSize()),
-          d = c.map((t, e) => t * this.tint[e]);
-        return void 0 !== i.opacity && (d[3] = 1), t.gradient ? (i.color = v(d, t.gradient[2]), i.gradientTop = v(d, t.gradient[0])) : this.tint.some(t => 1 !== t) && (i.color = v(d, [1, 1, 1, 1])), i;
+          d = c.map((item, index) => item * this.tint[index]);
+        return void 0 !== i.opacity && (d[3] = 1), t.gradient ? (i.color = v(d, t.gradient[2]), i.gradientTop = v(d, t.gradient[0])) : this.tint.some(item => 1 !== item) && (i.color = v(d, [1, 1, 1, 1])), i;
       }
       return m(c === t.color ? t : {
         ...t,
@@ -748,11 +748,11 @@ var ut = class {
         e !== this.$_pjy && (a || Number.isNaN(this.$_pjy) || !Q() || this.$_5ok5(K.Opacity), c.opacity = e < 0 ? "" : String(e), this.$_pjy = e, p++);
       }
       if (p && (o.styleWrites += p, s = !0), this.graphic || 3 & i) {
-        const t = Math.round(100 * r),
-          e = Math.round(100 * l),
-          a = Math.round(1e3 * (this.host.rasterScale?.() ?? this.host.deviceScale?.() ?? 1));
+        const roundedValue = Math.round(100 * r),
+          _roundedValue = Math.round(100 * l),
+          _roundedValue2 = Math.round(1e3 * (this.host.rasterScale?.() ?? this.host.deviceScale?.() ?? 1));
         let c = !!(1 & i);
-        c || t === this.gW && e === this.gH && a === this.gD || !this.$_xoh() || (c = !0), (c || 2 & i) && !this.host.graphicsOff?.() && (this.gW = t, this.gH = e, this.gD = a, this.$_69i9([r, l])), this.$_5xp && (c || t !== this.tW || e !== this.tH || a !== this.tD ? (this.tW = t, this.tH = e, this.tD = a, ot.push(this)) : 2 & i && this.$_mb7());
+        c || roundedValue === this.gW && _roundedValue === this.gH && _roundedValue2 === this.gD || !this.$_xoh() || (c = !0), (c || 2 & i) && !this.host.graphicsOff?.() && (this.gW = roundedValue, this.gH = _roundedValue, this.gD = _roundedValue2, this.$_69i9([r, l])), this.$_5xp && (c || roundedValue !== this.tW || _roundedValue !== this.tH || _roundedValue2 !== this.tD ? (this.tW = roundedValue, this.tH = _roundedValue, this.tD = _roundedValue2, ot.push(this)) : 2 & i && this.$_mb7());
       }
       if (s && this.$_168(), a || u) {
         const t = this.children;
@@ -763,7 +763,7 @@ var ut = class {
       const t = this.get("Image");
       if (!t) return !1;
       const a = this.host.assets.sprite(t.sprite);
-      return !!e(a) || t.type === r.Sliced && !!a?.border && a.border.some(t => t > 0);
+      return !!e(a) || t.type === r.Sliced && !!a?.border && a.border.some(item => item > 0);
     }
     motion = null;
     $_101 = -1;

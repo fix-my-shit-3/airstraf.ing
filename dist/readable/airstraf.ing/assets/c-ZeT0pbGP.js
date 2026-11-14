@@ -89,18 +89,18 @@ function F(e, t, n, r) {
         let i = "",
           l = n.length,
           c = "";
-        t.cuts.forEach((t, n) => {
-          const r = t.at - s;
-          i += o(2 * n + 1, c + e.slice(l, r) + t.close), i += o(2 * n + 2, e.slice(r, r + t.length)), l = r + t.length, c = t.reopen;
+        t.cuts.forEach((item, index) => {
+          const r = item.at - s;
+          i += o(2 * index + 1, c + e.slice(l, r) + item.close), i += o(2 * index + 2, e.slice(r, r + item.length)), l = r + item.length, c = item.reopen;
         }), i += o(a, c + e.slice(l, -7));
         let p = "";
-        return t.cuts.forEach((e, t) => p += o(2 * t + 2, e.visible)), `<span style="display:inline-grid;align-items:baseline;white-space:pre;vertical-align:baseline"><span style="${r};display:grid;grid-template-columns:subgrid;grid-row:1;grid-column:1 / span ${a};align-items:baseline">${i}</span>${p}</span>`;
+        return t.cuts.forEach((item, index) => p += o(2 * index + 2, item.visible)), `<span style="display:inline-grid;align-items:baseline;white-space:pre;vertical-align:baseline"><span style="${r};display:grid;grid-template-columns:subgrid;grid-row:1;grid-column:1 / span ${a};align-items:baseline">${i}</span>${p}</span>`;
       }(a.slice(n.start), n)));
     },
     A = e => {
       const t = o.lastIndexOf(e);
       if (t < 0) return;
-      const n = o.slice(t + 1).map((e, n) => [e, p[t + 1 + n]]),
+      const n = o.slice(t + 1).map((item, index) => [item, p[t + 1 + index]]),
         r = n.every(([e]) => x.has(e));
       for (; o.length > t;) j();
       if (r) for (const [s, a] of n) F(s, a, !0);
@@ -130,7 +130,7 @@ function F(e, t, n, r) {
             {
               const e = parseInt(O.replace("#", ""), 16) / 255,
                 t = o.lastIndexOf("alpha");
-              t >= 0 && o.slice(t + 1).every(e => x.has(e)) && A("alpha"), F("alpha", `<span style="opacity:${e.toFixed(3)}">`);
+              t >= 0 && o.slice(t + 1).every(item => x.has(item)) && A("alpha"), F("alpha", `<span style="opacity:${e.toFixed(3)}">`);
               break;
             }
           case "b":
@@ -400,7 +400,7 @@ function K(e, t) {
   const r = `${e.join(",")}|${Q(n)}`,
     s = Y.get(r);
   if (void 0 !== s) return s;
-  const a = e.map(e => T.exec(e)).filter(e => !!e);
+  const a = e.map(item => T.exec(item)).filter(item => !!item);
   let o = "";
   if (1 !== a.length || n) {
     if ((a.length || n) && "undefined" != typeof document) {
@@ -409,12 +409,12 @@ function K(e, t) {
         e.setAttribute("aria-hidden", "true"), e.style.cssText = "position:absolute;width:0;height:0;overflow:hidden", Z = document.createElementNS("http://www.w3.org/2000/svg", "defs"), e.append(Z), document.body.append(e);
       }
       const e = `u-shadow-${Y.size}-${Z.childElementCount}`,
-        t = a.map(([, e, t, n, r], s) => {
+        t = a.map(([, e, t, n, r], index) => {
           const a = Number(n) / 2;
-          return (a > 0 ? `<feGaussianBlur in="SourceAlpha" stdDeviation="${a}"/>` : "") + `<feOffset ${a > 0 ? "" : 'in="SourceAlpha" '}dx="${e}" dy="${t}" result="o${s}"/><feFlood flood-color="${r}"/><feComposite operator="in" in2="o${s}" result="s${s}"/>`;
+          return (a > 0 ? `<feGaussianBlur in="SourceAlpha" stdDeviation="${a}"/>` : "") + `<feOffset ${a > 0 ? "" : 'in="SourceAlpha" '}dx="${e}" dy="${t}" result="o${index}"/><feFlood flood-color="${r}"/><feComposite operator="in" in2="o${index}" result="s${index}"/>`;
         }).join(""),
         r = n ? `<feMorphology in="SourceAlpha" operator="dilate" radius="${Number(n.width.toPrecision(4))}" result="m"/><feFlood flood-color="${n.color}"/><feComposite operator="in" in2="m" result="rim"/>` : "",
-        s = a.map((e, t) => `<feMergeNode in="s${a.length - 1 - t}"/>`).join("") + (n ? '<feMergeNode in="rim"/>' : "");
+        s = a.map((item, index) => `<feMergeNode in="s${a.length - 1 - index}"/>`).join("") + (n ? '<feMergeNode in="rim"/>' : "");
       Z.insertAdjacentHTML("beforeend", `<filter id="${e}" x="-50%" y="-50%" width="200%" height="200%" color-interpolation-filters="sRGB">${t}${r}<feMerge>${s}<feMergeNode in="SourceGraphic"/></feMerge></filter>`), o = `url(#${e})`;
     }
   } else {
@@ -552,8 +552,8 @@ function ie(e, t, n, r = !1) {
   return ae.set(s, $), ae.size > 2e4 && ae.clear(), a.measureMs += performance.now() - l, $;
 }
 function le(e, t) {
-  const n = e.map((e, n) => e * (t[n] ?? 1));
-  return `rgba(${n.slice(0, 3).map(e => Math.round(255 * Math.min(1, Math.max(0, e)))).join(",")},${Math.min(1, Math.max(0, n[3]))})`;
+  const n = e.map((item, index) => item * (t[index] ?? 1));
+  return `rgba(${n.slice(0, 3).map(item => Math.round(255 * Math.min(1, Math.max(0, item)))).join(",")},${Math.min(1, Math.max(0, n[3]))})`;
 }
 function ce(e, t) {
   return `<span class="u-gradient">${e}<span class="u-gradient-top" aria-hidden="true" style="color:${t}">${e}</span></span>`;

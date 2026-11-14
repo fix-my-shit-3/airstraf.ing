@@ -44,18 +44,18 @@ function u(n) {
 }
 var d = null;
 function k() {
-  return d ??= o("emotes.json").then(e => ({
-    ...e,
-    emotes: [...e.emotes, ...n.filter(n => n.custom && !e.emotes.some(e => e.name === n.name)).map(u)]
+  return d ??= o("emotes.json").then(result => ({
+    ...result,
+    emotes: [...result.emotes, ...n.filter(item => item.custom && !result.emotes.some(_item => _item.name === item.name)).map(u)]
   }));
 }
 function p(e) {
-  return new Map(n.map(n => [n.index, e.emotes.find(e => e.name === n.name) ?? null]));
+  return new Map(n.map(item => [item.index, e.emotes.find(_item2 => _item2.name === item.name) ?? null]));
 }
 async function f(n) {
   const o = await k();
   return {
-    emote: o.emotes.find(e => e.name === n) ?? null,
+    emote: o.emotes.find(item => item.name === n) ?? null,
     controller: await e(o.danceController)
   };
 }

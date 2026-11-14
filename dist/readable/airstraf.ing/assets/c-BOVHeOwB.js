@@ -12,9 +12,9 @@ var t = {
     glyphs: "0123456789ABCDEFGHJKLMNPQRSTUVWXYZ#$%&?+=<>"
   };
 function a(t, n) {
-  const a = Math.floor((n - t.length) / 2),
+  const flooredValue = Math.floor((n - t.length) / 2),
     e = [];
-  for (let r = 0; r < n; r++) e.push(t[r - a] ?? " ");
+  for (let r = 0; r < n; r++) e.push(t[r - flooredValue] ?? " ");
   return e;
 }
 function e(t, n) {
@@ -44,13 +44,13 @@ function o(o, l, c) {
       glyphs: v
     } = n,
     x = f * m,
-    g = Math.floor(c * $),
+    flooredValue = Math.floor(c * $),
     y = o === o.toLowerCase() && o !== o.toUpperCase();
   let A = "";
   for (let t = 0; t < h; t++) {
     const n = h > 1 ? t / (h - 1) * (m - p) : 0;
     if (x < n) A += M[t];else if (x >= n + p || " " === M[t] && " " === F[t]) A += F[t];else {
-      const n = v[Math.floor(e(t, g) * v.length)];
+      const n = v[Math.floor(e(t, flooredValue) * v.length)];
       A += y ? n.toLowerCase() : n;
     }
   }

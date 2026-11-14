@@ -306,7 +306,7 @@ var l = {
   o = new Map();
 function d(e) {
   let t = o.get(e);
-  return t || (t = i(`/assets/extracted/ui/anim/${e}.json`).then(e => e.json()).then(t => function (e, t) {
+  return t || (t = i(`/assets/extracted/ui/anim/${e}.json`).then(result => result.json()).then(result => function (e, t) {
     const s = l[e],
       i = t.layers?.[0];
     if (!s || !i) return t;
@@ -319,7 +319,7 @@ function d(e) {
       for (const [e, [, t]] of Object.entries(s)) i.fades[e] = t;
     }
     return t;
-  }(e, t)), o.set(e, t)), t;
+  }(e, result)), o.set(e, t)), t;
 }
 function n(e, t) {
   let s = 0,
@@ -340,9 +340,9 @@ function h(e, t) {
         const s = e.values.length;
         if (!s) return 0;
         const i = Math.max(0, Math.min(s - 1, (t - e.begin) * e.rate)),
-          r = Math.floor(i),
-          l = Math.min(r + 1, s - 1);
-        return e.values[r] + (e.values[l] - e.values[r]) * (i - r);
+          flooredValue = Math.floor(i),
+          l = Math.min(flooredValue + 1, s - 1);
+        return e.values[flooredValue] + (e.values[l] - e.values[flooredValue]) * (i - flooredValue);
       }
     case "poly":
       {
@@ -467,7 +467,7 @@ function u(e, t) {
     case 114:
       {
         const o = function (e, t) {
-          return "Image" === t ? e.get("Image") : "RawImage" === t ? e.get("RawImage") : "TextMeshProUGUI" === t ? e.get("TMP") : "Text" === t ? e.get("Text") : "Outline" === t || "Shadow" === t ? e.$_6nz.find(e => e.t === t) : "Button" === t ? e.get("Button") : void 0;
+          return "Image" === t ? e.get("Image") : "RawImage" === t ? e.get("RawImage") : "TextMeshProUGUI" === t ? e.get("TMP") : "Text" === t ? e.get("Text") : "Outline" === t || "Shadow" === t ? e.$_6nz.find(item => item.t === t) : "Button" === t ? e.get("Button") : void 0;
         }(e, t.script ?? "");
         if (!o) return null;
         if (t.pptr && "m_Sprite" === s && "Image" === o.t) {
@@ -538,13 +538,13 @@ function P(e, t) {
   return !!b.get(e)?.has(t);
 }
 var S = (() => {
-    const e = new Uint32Array(256);
+    const uint32Values = new Uint32Array(256);
     for (let t = 0; t < 256; t++) {
       let s = t;
       for (let e = 0; e < 8; e++) s = 1 & s ? 3988292384 ^ s >>> 1 : s >>> 1;
-      e[t] = s >>> 0;
+      uint32Values[t] = s >>> 0;
     }
-    return e;
+    return uint32Values;
   })(),
   D = [];
 function N(e, t, s, i) {
@@ -580,8 +580,8 @@ var H = class {
         }(t), e);
         for (const s of e.children) i(s, t ? `${t}/${s.name}` : s.name);
       };
-      i(e, ""), this.layers = t.layers.map(e => ({
-        state: s ? e.default : null,
+      i(e, ""), this.layers = t.layers.map(layer => ({
+        state: s ? layer.default : null,
         time: 0,
         done: !1,
         fade: null
@@ -618,9 +618,9 @@ var H = class {
     }
     $_5iz(e, t) {
       const uniqueItems = new Set();
-      return this.controller.layers.forEach((i, r) => {
-        const l = r === e ? t : this.layers[r]?.state,
-          o = l ? i.states[l]?.clip : null;
+      return this.controller.layers.forEach((layer, index) => {
+        const l = index === e ? t : this.layers[index]?.state,
+          o = l ? layer.states[l]?.clip : null;
         for (const e of o && this.clips.get(o)?.keys || []) uniqueItems.add(e);
       }), uniqueItems;
     }
@@ -670,7 +670,7 @@ var H = class {
     }
     update(e) {
       if (!this.playing) return !1;
-      if (!this.node.activeInHierarchy) return this.layers.some(e => !!e.state && !e.done);
+      if (!this.node.activeInHierarchy) return this.layers.some(layer => !!layer.state && !layer.done);
       let t = !1;
       for (let s = 0; s < this.controller.layers.length; s++) {
         const i = this.controller.layers[s],
@@ -748,7 +748,7 @@ function w(e, t) {
   } : null;
 }
 function M(e) {
-  let t = e.free.map(e => e ? "f" : "c").join("");
+  let t = e.free.map(item => item ? "f" : "c").join("");
   for (const s of e.order) t += `,${e.home.get(s)}`;
   return t;
 }
@@ -775,7 +775,7 @@ function C(e, t, s) {
   if (t && ("object" != typeof s || !s.once)) {
     const i = A(s);
     let r = k.get(this);
-    if (r || k.set(this, r = []), !r.some(s => s.type === e && s.fn === t && s.capture === i)) {
+    if (r || k.set(this, r = []), !r.some(item => item.type === e && item.fn === t && item.capture === i)) {
       const s = {
         type: e,
         fn: t,
@@ -791,7 +791,7 @@ function C(e, t, s) {
 function O(e, t, s) {
   const i = k.get(this),
     r = A(s),
-    l = i ? i.findIndex(s => s.type === e && s.fn === t && s.capture === r) : -1;
+    l = i ? i.findIndex(item => item.type === e && item.fn === t && item.capture === r) : -1;
   if (i && l >= 0) {
     const t = i[l];
     for (const [s, i] of t.forwarders) x.call(s, e, i, r);
@@ -813,7 +813,7 @@ function $(e, t) {
 }
 var W = [1, 1, 1, 1],
   q = [0, 0, 0, 1],
-  B = (e, t) => e.reduce((e, s, i) => e + (s - t[i]) * (s - t[i]), 0) < 999999944e-19;
+  B = (e, t) => e.reduce((accumulator, item, index) => accumulator + (item - t[index]) * (item - t[index]), 0) < 999999944e-19;
 function z(e, t, s, i) {
   const r = e.rt;
   r && !P(e, "scale") && t.to(e, "scale", [r.scale[0], r.scale[1], r.scale[2]], [s, s, s], .05, i, t => e.$_5bg(t[0], t[1], t[2]));

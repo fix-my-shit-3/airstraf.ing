@@ -58,7 +58,7 @@ function $(n) {
     key: "",
     label: "",
     effect: u,
-    colors: s.split(".").map(n => n.toUpperCase()).filter(n => d.test(n)),
+    colors: s.split(".").map(item => item.toUpperCase()).filter(item => d.test(item)),
     angle: Number.isFinite(Number(a)) ? Number(a) : 90,
     speed: Number.isFinite(Number(c)) ? Number(c) : 1,
     glow: d.test(i.toUpperCase()) ? i.toUpperCase() : null,

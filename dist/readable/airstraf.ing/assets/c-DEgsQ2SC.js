@@ -84,31 +84,31 @@ function h(n, a) {
   var o;
 }
 function m(t, a, r = Math.random, e) {
-  const o = a.filter(n => h(n, t)),
+  const o = a.filter(item => h(item, t)),
     s = t => e ? function (t, a) {
       if (!t || !n.includes(t.mode ?? "")) return 0;
       const r = t.elo;
       return "number" == typeof r && Number.isFinite(r) ? Math.abs(r - a) : 0;
     }(t.metadata, e.elo) : 0,
-    i = e ? o.filter(t => s(t) <= e.window) : o,
+    i = e ? o.filter(item => s(item) <= e.window) : o,
     u = i.length ? i : o,
-    c = t.filter(t => u.some(n => n.metadata?.mode === t));
+    c = t.filter(item => u.some(_item => _item.metadata?.mode === item));
   if (!c.length) return {
     mode: t[Math.floor(r() * t.length)],
     rooms: []
   };
   const m = c[Math.floor(r() * c.length)],
-    f = t => t.filter(t => t.metadata?.mode === m),
-    E = f(i).sort((t, n) => n.clients - t.clients || s(t) - s(n)),
-    M = f(o.filter(t => !i.includes(t))).sort((t, n) => s(t) - s(n) || n.clients - t.clients),
+    f = t => t.filter(item => item.metadata?.mode === m),
+    E = f(i).sort((leftItem, rightItem) => rightItem.clients - leftItem.clients || s(leftItem) - s(rightItem)),
+    M = f(o.filter(item => !i.includes(item))).sort((leftItem, rightItem) => s(leftItem) - s(rightItem) || rightItem.clients - leftItem.clients),
     l = E.length ? E : M,
     p = l[0],
-    _ = l.filter(t => t.clients === p.clients && s(t) === s(p)),
+    _ = l.filter(item => item.clients === p.clients && s(item) === s(p)),
     d = _[Math.floor(r() * _.length)];
   return {
     mode: m,
     mapId: d.metadata.mapId,
-    rooms: [d.roomId, ...[...E, ...M].filter(t => t !== d).map(t => t.roomId)],
+    rooms: [d.roomId, ...[...E, ...M].filter(item => item !== d).map(item => item.roomId)],
     ...(e && !i.length ? {
       wait: !0
     } : {})

@@ -1,0 +1,42 @@
+function n(n, t, o, u, r) {
+  const c = {
+    apply: (e, f, s) => (null !== u && (u[r] = (u[r] ?? 0) + 1), t(f, s) && o(f, s, c.apply), n(e, f, s))
+  };
+  return c;
+}
+function t(n, t, o, u, r) {
+  const c = {
+    construct: (e, f, s) => (null !== u && (u[r] = (u[r] ?? 0) + 1), t(void 0, f) && o(void 0, f, c.construct), n(e, f, s))
+  };
+  return c;
+}
+function o(n, t) {
+  return (o, u) => {
+    const r = u[n];
+    return "function" == typeof r && !t.has(r);
+  };
+}
+function u(n, t) {
+  return (o, u) => {
+    const r = u[n];
+    return null !== r && "object" == typeof r && !t.has(r);
+  };
+}
+function r(n) {
+  return (t, o) => {
+    const u = o[2];
+    if (null === u || "object" != typeof u) return !1;
+    const r = u.get,
+      c = u.set;
+    return "function" == typeof r && !n.has(r) || "function" == typeof c && !n.has(c);
+  };
+}
+function c(n, t, o) {
+  let u = -1 / 0;
+  const r = () => {
+    const c = t();
+    c - u < n || (u = c, o(r));
+  };
+  return r;
+}
+export { u as a, o as i, t as n, c as o, r, n as t };

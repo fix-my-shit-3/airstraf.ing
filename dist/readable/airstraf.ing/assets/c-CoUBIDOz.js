@@ -142,8 +142,8 @@ function d(e) {
     t = e.adapter;
   t && r.push(`adapter: ${t.label}${t.core ? "" : " (compatibility level)"}`), e.device && r.push(`device: ${e.device.compatibility ? "compatibility mode" : "core"}, canvas ${e.device.canvasFormat}, ${e.device.features.length} features` + (Object.keys(e.requiredLimits).length ? `, asked limits ${JSON.stringify(e.requiredLimits)}` : ""));
   const a = e.selfTest;
-  return a && r.push(`start check: ${a.ok ? a.off?.length ? `passed ${a.note}` : "passed" : `failed - ${a.note}`}; ` + (a.detail ?? []).map(e => {
-    return e.skipped ? `${e.name} skipped` : `${e.name} ${e.ok ? "ok" : "BAD"} (${r = e.share, `${Math.round(100 * r)}%`} > px, mean ${e.mean.toFixed(1)}, max ${e.max})`;
+  return a && r.push(`start check: ${a.ok ? a.off?.length ? `passed ${a.note}` : "passed" : `failed - ${a.note}`}; ` + (a.detail ?? []).map(item => {
+    return item.skipped ? `${item.name} skipped` : `${item.name} ${item.ok ? "ok" : "BAD"} (${r = item.share, `${Math.round(100 * r)}%`} > px, mean ${item.mean.toFixed(1)}, max ${item.max})`;
     var r;
   }).join(", ")), r.push(`times: adapter ${Math.round(e.ms.adapter)} ms, init ${Math.round(e.ms.init)} ms, check ${Math.round(e.ms.selfTest)} ms`), e.later && r.push(`failed while drawing: ${e.later}`), r.push(`browser: ${e.browser}`, `three.js r${e.three}${e.build ? `, build ${e.build}` : ""}`), r.join("\n");
 }

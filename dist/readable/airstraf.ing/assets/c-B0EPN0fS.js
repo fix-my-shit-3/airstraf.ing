@@ -1309,24 +1309,24 @@ function Mn(t) {
             u = Math.min(i, flooredValue + 1),
             w = r - flooredValue,
             d = i > 0 ? r / i : 0;
-          t.tracks.forEach((t, n) => {
-            const s = Dt(t),
-              e = o[n].offset + f * s;
-            if ("rotation" === t.kind) {
+          t.tracks.forEach((track, index) => {
+            const s = Dt(track),
+              e = o[index].offset + f * s;
+            if ("rotation" === track.kind) {
               let n = 0,
                 s = 0,
                 r = 0,
                 o = 0;
-              const f = t.offset + 4 * flooredValue,
-                p = t.offset + 4 * u,
+              const f = track.offset + 4 * flooredValue,
+                p = track.offset + 4 * u,
                 m = c[f] * c[p] + c[f + 1] * c[p + 1] + c[f + 2] * c[p + 2] + c[f + 3] * c[p + 3] < 0 ? -1 : 1;
               n = c[f] * (1 - w) + c[p] * w * m, s = c[f + 1] * (1 - w) + c[p + 1] * w * m, r = c[f + 2] * (1 - w) + c[p + 2] * w * m, o = c[f + 3] * (1 - w) + c[p + 3] * w * m;
               const y = Math.hypot(n, s, r, o) || 1;
-              jt(c, t.offset, t.offset + 4 * i, d, Ut), Rt(Ut, n / y, s / y, r / y, o / y, h, float32Values, e);
+              jt(c, track.offset, track.offset + 4 * i, d, Ut), Rt(Ut, n / y, s / y, r / y, o / y, h, float32Values, e);
             } else for (let r = 0; r < s; r++) {
-              const n = c[t.offset + r] + (c[t.offset + i * s + r] - c[t.offset + r]) * d,
-                o = c[t.offset + flooredValue * s + r] * (1 - w) + c[t.offset + u * s + r] * w;
-              float32Values[e + r] = t.kind ? n + (o - n) * h : o;
+              const n = c[track.offset + r] + (c[track.offset + i * s + r] - c[track.offset + r]) * d,
+                o = c[track.offset + flooredValue * s + r] * (1 - w) + c[track.offset + u * s + r] * w;
+              float32Values[e + r] = track.kind ? n + (o - n) * h : o;
             }
           });
         }
@@ -1346,18 +1346,18 @@ function Mn(t) {
         name: xt.state,
         fullPath: `${t.layers[0]?.name ?? "Base Layer"}.${xt.state}`,
         transitions: [],
-        tree: i.tree.map(t => t.clip === r ? {
-          ...t,
+        tree: i.tree.map(item => item.clip === r ? {
+          ...item,
           clip: a
-        } : t)
+        } : item)
       };
       return {
         ...t,
         clips: [...t.clips, a],
-        machines: t.machines.map((t, n) => n === s ? {
-          ...t,
-          states: [...t.states, c]
-        } : t)
+        machines: t.machines.map((item, index) => index === s ? {
+          ...item,
+          states: [...item.states, c]
+        } : item)
       };
     }(u, _lookupMap)), Ot(n.weaponIndex, n.animators, lookupMap, _lookupMap, n.nodes), {
       data: n,
@@ -1402,10 +1402,10 @@ async function gn(t, n, s = !1, e = "first") {
     return void (j(t, i) && C(t.object));
   }
   if (a) {
-    if (i.renderers.forEach((n, s) => {
-      const e = t.meshes[s];
+    if (i.renderers.forEach((item, index) => {
+      const e = t.meshes[index];
       if (!e) return;
-      const i = n.materials.map(n => kn(n, t.rig));
+      const i = item.materials.map(_item3 => kn(_item3, t.rig));
       e.material = i.length > 1 ? i : i[0];
     }), await gn(t, null, !1, e), F(t, t => V(t, o, W))) {
       for (const n of t.meshes) if (n) for (const t of Array.isArray(n.material) ? n.material : [n.material]) B(t, n.geometry);
@@ -1415,11 +1415,11 @@ async function gn(t, n, s = !1, e = "first") {
   }
   const h = n || i.defaultSkin;
   if (!h) return;
-  const f = (i.behaviours.find(t => 0 === t.node && t.data && Array.isArray(t.data.weaponRenderers))?.data?.weaponRenderers ?? []).map(t => t?.node).filter(t => "number" == typeof t);
+  const f = (i.behaviours.find(item => 0 === item.node && item.data && Array.isArray(item.data.weaponRenderers))?.data?.weaponRenderers ?? []).map(item => item?.node).filter(item => "number" == typeof item);
   if (!f.length) return;
   const l = await wn(h, e);
   if (!l) return;
-  const u = i.renderers.findIndex(t => t.node === f[0]);
+  const u = i.renderers.findIndex(item => item.node === f[0]);
   let w;
   if (!n || s) w = O({
     color: [1, 1, 1, 1],
@@ -1431,9 +1431,9 @@ async function gn(t, n, s = !1, e = "first") {
     if (!n) return;
     w = W(n), q(w, l);
   }
-  n && H(w, o), i.renderers.forEach((s, e) => {
-    const i = t.meshes[e];
-    f.includes(s.node) && i && (i.material = w, n && "antique" === o && B(w, i.geometry));
+  n && H(w, o), i.renderers.forEach((item, index) => {
+    const i = t.meshes[index];
+    f.includes(item.node) && i && (i.material = w, n && "antique" === o && B(w, i.geometry));
   }), C(t.object);
 }
 function Tn(t, n) {
@@ -1525,23 +1525,23 @@ var jn = class {
     this.rig = t;
     const n = D(),
       s = this.data = t.data;
-    this.object.scale.x = -1, this.active = s.nodes.map(t => t.active), s.nodes.forEach((t, n) => {
+    this.object.scale.x = -1, this.active = s.nodes.map(node => node.active), s.nodes.forEach((node, index) => {
       const s = new d();
-      s.name = t.name, s.position.fromArray(t.t), s.quaternion.fromArray(t.r), s.scale.fromArray(t.s), s.quaternion._onChange(_n), s.visible = t.active, s.userData.rigIndex = n, this.nodes.push(s), this.byPath.set(t.path, n);
-    }), s.nodes.forEach((t, n) => (t.parent >= 0 ? this.nodes[t.parent] : this.object).add(this.nodes[n]));
+      s.name = node.name, s.position.fromArray(node.t), s.quaternion.fromArray(node.r), s.scale.fromArray(node.s), s.quaternion._onChange(_n), s.visible = node.active, s.userData.rigIndex = index, this.nodes.push(s), this.byPath.set(node.path, index);
+    }), s.nodes.forEach((node, index) => (node.parent >= 0 ? this.nodes[node.parent] : this.object).add(this.nodes[index]));
     for (const c of s.renderers) {
       const n = c.mesh ? t.meshes.get(c.mesh) : void 0;
       if (!n) {
         this.meshes.push(null);
         continue;
       }
-      const s = c.materials.map(n => kn(n, t)),
+      const s = c.materials.map(item => kn(item, t)),
         r = this.nodes[c.node];
       let o;
       if ("skinned" === c.type && n.geometry.getAttribute("skinIndex")) {
         const t = new w(n.geometry, s.length > 1 ? s : s[0]),
-          i = c.bones.map(t => t >= 0 ? this.nodes[t] : new d()),
-          a = n.bindPoses.map(t => t.clone());
+          i = c.bones.map(bone => bone >= 0 ? this.nodes[bone] : new d()),
+          a = n.bindPoses.map(item => item.clone());
         for (; a.length < i.length;) a.push(new e());
         t.bind(new p(i, a), new e()), t.frustumCulled = !1, o = t, r.add(t);
       } else o = new i(n.geometry, s.length > 1 ? s : s[0]), r.add(o);
@@ -1567,8 +1567,8 @@ var jn = class {
             0 === n ? i.position.set(s[e], s[e + 1], s[e + 2]) : 1 === n ? i.quaternion.set(s[e], s[e + 1], s[e + 2], s[e + 3]) : i.scale.set(s[e], s[e + 1], s[e + 2]);
           },
           applyFloat: (t, n, s, e) => {
-            1 === n && "m_IsActive" === s ? this.setActive(t, e > .5) : "m_Enabled" === s && this.data.renderers.forEach((n, s) => {
-              n.node === t && this.meshes[s] && (this.meshes[s].visible = e > .5);
+            1 === n && "m_IsActive" === s ? this.setActive(t, e > .5) : "m_Enabled" === s && this.data.renderers.forEach((item, index) => {
+              item.node === t && this.meshes[index] && (this.meshes[index].visible = e > .5);
             });
           }
         },
@@ -1590,7 +1590,7 @@ var jn = class {
     return e.$_36i = s.$_36i, this.animators[t] = e, e;
   }
   async $_2fx(t, n) {
-    const [s, e, r] = await Promise.all([Xt ??= g(`${Vt}tex/sprites.json`).then(t => t.ok ? t.json() : {}).catch(() => ({})), tn(), sn(t.sprite).catch(() => null)]),
+    const [s, e, r] = await Promise.all([Xt ??= g(`${Vt}tex/sprites.json`).then(result => result.ok ? result.json() : {}).catch(() => ({})), tn(), sn(t.sprite).catch(() => null)]),
       o = s[t.sprite];
     if (!r || !o) return;
     const c = t.materials?.[0] ?? null,
@@ -1608,14 +1608,14 @@ var jn = class {
   $_5rrc;
   index(t) {
     const n = this.byPath.get(t);
-    return void 0 !== n ? n : this.data.nodes.findIndex(n => n.name === t);
+    return void 0 !== n ? n : this.data.nodes.findIndex(node => node.name === t);
   }
   node(t) {
     const n = this.index(t);
     return n >= 0 ? this.nodes[n] : void 0;
   }
   behaviour(t) {
-    return this.data.behaviours.find(n => n.script === t);
+    return this.data.behaviours.find(item => item.script === t);
   }
   setActive(t, n) {
     this.active[t] = n, this.nodes[t].visible = n;
@@ -1631,7 +1631,7 @@ var jn = class {
   saveState() {
     return {
       active: this.active.slice(),
-      renderers: this.meshes.map(t => t?.visible ?? !1)
+      renderers: this.meshes.map(mesh => mesh?.visible ?? !1)
     };
   }
   restoreState(t) {

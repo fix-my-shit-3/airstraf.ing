@@ -50,18 +50,18 @@
     clearTimeout(timer);
     timer = setTimeout(show, 2500);
   }
-  window.addEventListener('error', function (e) {
-    if (started() || !e) return;
-    var t = e.target;
+  window.addEventListener('error', function (event) {
+    if (started() || !event) return;
+    var t = event.target;
     if (t && t !== window && t.tagName === 'SCRIPT') {
       failed('A game file did not load: ' + String(t.src || '').replace(/^.*\//, ''));
       return;
     }
-    if (e.message) failed(e.message);
+    if (event.message) failed(event.message);
   }, true);
-  window.addEventListener('unhandledrejection', function (e) {
-    if (started() || !e) return;
-    var r = e.reason;
+  window.addEventListener('unhandledrejection', function (event) {
+    if (started() || !event) return;
+    var r = event.reason;
     failed(r && r.message ? r.message : r);
   });
 })();

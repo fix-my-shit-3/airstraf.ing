@@ -163,8 +163,8 @@ function _(t, n, i, e, a) {
     const r = ((t, n, i, e, a = .02) => Math.max(t, Math.min(t * (1 + n.boost), n.boostLimit * z(i, e, a))))(a, n, t, i, e) / a;
     t.vx *= r, t.vz *= r;
   }(t, n, i, a);
-  const r = Math.ceil(e / Math.max(1, Math.round(1e3 * a))),
-    o = Math.min((t => Math.max(0, Math.min(255, Math.round((t.hopDelay ?? 0) / 1e3 / p))))(n), Math.max(0, r - 1));
+  const ceiledValue = Math.ceil(e / Math.max(1, Math.round(1e3 * a))),
+    o = Math.min((t => Math.max(0, Math.min(255, Math.round((t.hopDelay ?? 0) / 1e3 / p))))(n), Math.max(0, ceiledValue - 1));
   t.jumpCooldown < o && (t.jumpCooldown = o);
 }
 function S(t, n, i, e, a = .02) {
@@ -260,7 +260,7 @@ function C(t, n, i) {
     const c = n.forward > .5,
       h = i.cfg.crouchGroundLimit * g(1 - e * i.cfg.friction);
     if (w(t) && (!t.grounded || 0 === l || u || s < a.stopSpeed || c && s <= h) && (t.slideLeft = 0), !w(t) && a.groundSlide && 0 === o && l > 0 && t.grounded && t.slideArmed && !u && s >= a.minSpeed && (_(t, a, i.cfg, x(a, r, r), e), s = Math.hypot(t.vx, t.vz)), !w(t)) return !1;
-    const m = Math.round(1e3 * e),
+    const roundedValue = Math.round(1e3 * e),
       d = c && 1 === t.slideLeft,
       f = d ? Math.max(Math.min(s, h), s * g(1 - e * a.holdFriction)) : s * g(1 - e * a.friction),
       M = -Math.sin(n.yaw),
@@ -275,7 +275,7 @@ function C(t, n, i) {
     t.vx = y * f, t.vz = b * f;
     const v = i.floorFace ? i.normal : null;
     t.vy = v && v.y > 1e-6 ? -(t.vx * v.x + t.vz * v.z) / v.y : 0;
-    const A = (t.slideLeft ?? 0) - m;
+    const A = (t.slideLeft ?? 0) - roundedValue;
     return t.slideLeft = d || c && A <= 0 ? 1 : Math.max(0, A), !0;
   }(t, n, i, a);
   if (i.pad) {
@@ -491,7 +491,7 @@ var ut = t => "kourstrike" === t ? et.recoilPhysicalMulti : 1.5,
     field: "extraBuys",
     base: 5
   }],
-  ct = new Map(Object.values(n).map(t => [t.name, t.id])),
+  ct = new Map(Object.values(n).map(item => [item.name, item.id])),
   ht = {
     baseBuys: [[-1, null, "RIFLE", "Light theme spritesheet 2_16"], [-1, null, "SMG", "Light theme spritesheet 2_7"], [-1, null, "HEAVY", "Light theme spritesheet 2_1"], [-1, null, "PISTOL", "Light theme spritesheet 2_3"], [-1, null, "GRENADE", "btn_icon_bomb"], [-1, null, "EXTRAS", "frame_linetextframe_04_White3"]],
     rifleBuys: [[2700, "AK-47", "", null], [2100, "Famas", "", null], [3100, "M4A4", "", null], [3900, "AK-109", "", null], [4100, "Awp", "", null], [-1, null, "", null]],
@@ -513,21 +513,21 @@ function mt(t) {
       } : null
     }))])),
     e = i.baseBuys ?? [];
-  return st.map(t => ({
-    id: t.id,
-    layout: t.layout,
-    name: e[t.base]?.overrideName ?? t.id.toUpperCase(),
-    sprite: e[t.base]?.overrideSprite?.name ?? null,
-    items: (i[t.field] ?? []).map((i, e) => {
-      if (!i || i.price < 0) return null;
-      const a = i.weapon?.gameObject ? ct.get(i.weapon.gameObject) ?? null : null,
+  return st.map(item => ({
+    id: item.id,
+    layout: item.layout,
+    name: e[item.base]?.overrideName ?? item.id.toUpperCase(),
+    sprite: e[item.base]?.overrideSprite?.name ?? null,
+    items: (i[item.field] ?? []).map((_item, index) => {
+      if (!_item || _item.price < 0) return null;
+      const a = _item.weapon?.gameObject ? ct.get(_item.weapon.gameObject) ?? null : null,
         r = {
-          price: i.price,
+          price: _item.price,
           weapon: a,
-          name: i.overrideName || (a ? n[a].name : ""),
-          sprite: i.overrideSprite?.name ?? null
+          name: _item.overrideName || (a ? n[a].name : ""),
+          sprite: _item.overrideSprite?.name ?? null
         };
-      return "extras" === t.id && e < 2 && (r.armor = 0 === e ? 10 : 20), r;
+      return "extras" === item.id && index < 2 && (r.armor = 0 === index ? 10 : 20), r;
     })
   }));
 }

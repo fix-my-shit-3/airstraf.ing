@@ -53,7 +53,7 @@ var e = function (e) {
         Respawn: ["<Keyboard>/space", ""]
       }
     };
-    for (const o of Object.keys(e)) o.startsWith("Move") || (e[o] = e[o].map((e, o) => 1 === o && a.test(e) ? "" : e));
+    for (const o of Object.keys(e)) o.startsWith("Move") || (e[o] = e[o].map((item, index) => 1 === index && a.test(item) ? "" : item));
     return e;
   }(),
   n = {
@@ -62,7 +62,7 @@ var e = function (e) {
     FourthWeapon: ["<Keyboard>/4", ""],
     Respawn: ["<Keyboard>/space", ""]
   },
-  t = Object.values(e).filter(e => !e.startsWith("Move")),
+  t = Object.values(e).filter(item => !item.startsWith("Move")),
   u = ["Any", "Escape"],
   d = ["ShowConsole", "Dash", "OpenKourzoneInventory"],
   y = ["Escape", "MoveForward", "MoveBack", "MoveLeft", "MoveRight"],

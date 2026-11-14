@@ -17,7 +17,7 @@ function S(o) {
   return o === o.toUpperCase() ? r.toUpperCase() : o === o.toLowerCase() ? r.toLowerCase() : r;
 }
 function e(r) {
-  if (!/kour/i.test(r) || i.some(o => o.test(r))) return r;
+  if (!/kour/i.test(r) || i.some(item => item.test(r))) return r;
   const o = t[r];
   if (o) return o;
   let n = r.replace(u, S);

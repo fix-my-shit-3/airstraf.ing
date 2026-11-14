@@ -70,7 +70,7 @@ function u(e, n) {
     r = t.lastIndexOf(":");
   if (r < 0) return null;
   const a = t.slice(r + 1);
-  return a.length > o || [...a].some(e => !i.test(e)) || r > 0 && l.test(t[r - 1]) ? null : {
+  return a.length > o || [...a].some(item => !i.test(item)) || r > 0 && l.test(t[r - 1]) ? null : {
     at: r,
     partial: a
   };
@@ -119,7 +119,7 @@ var v = "undefined" != typeof Intl && "Segmenter" in Intl ? new Intl.Segmenter(v
 }) : null;
 function x(e, n = 120) {
   if ([...e].length <= n) return e;
-  const t = v ? [...v.segment(e)].map(e => e.segment) : [...e];
+  const t = v ? [...v.segment(e)].map(item => item.segment) : [...e];
   let r = "",
     a = 0;
   for (const o of t) {
@@ -211,7 +211,7 @@ function E(e, n) {
   }
   return Z.size < 1e4 && Z.set(t, r), r;
 }
-var N = e => e.some(e => "letter" === e.cls);
+var N = e => e.some(item => "letter" === item.cls);
 function P(e) {
   const n = N(e);
   let t = "";
@@ -255,7 +255,7 @@ function C(e) {
   };
 }
 function R(e) {
-  return e.split(/[^\p{L}\p{M}\p{Nd}@$!|€+*]+/u).map(C).filter(e => !!e);
+  return e.split(/[^\p{L}\p{M}\p{Nd}@$!|€+*]+/u).map(C).filter(item => !!item);
 }
 var K = class e {
     entries = [];
@@ -387,7 +387,7 @@ var K = class e {
         let a = r;
         for (; a + 1 < e.length && a - r + 1 < 8 && T.test(e[a + 1].gap);) a++;
         for (let o = a; o > r; o--) {
-          const a = this.matchWord(e.slice(r, o + 1).flatMap(e => e.chars));
+          const a = this.matchWord(e.slice(r, o + 1).flatMap(item => item.chars));
           if (a) {
             n(a) && t++, r = o;
             break;
@@ -401,7 +401,7 @@ var K = class e {
         r = [];
       const a = () => {
         if (r.length >= 3) for (let e = 0; e < r.length; e++) for (let a = r.length; a >= e + 3; a--) {
-          const o = this.matchWord(r.slice(e, a).flatMap(e => e.chars));
+          const o = this.matchWord(r.slice(e, a).flatMap(item => item.chars));
           if (o) {
             n(o), t++, e = a - 1;
             break;
@@ -410,7 +410,7 @@ var K = class e {
         r = [];
       };
       for (const o of e) {
-        const e = 1 === o.chars.filter(e => "mark" !== e.cls).length,
+        const e = 1 === o.chars.filter(item => "mark" !== item.cls).length,
           n = r.length > 0 && o.gap.length > 0 && o.gap.length <= 3;
         !e || !n && r.length ? (a(), e && r.push(o)) : r.push(o);
       }
@@ -425,7 +425,7 @@ var K = class e {
       this.count = e, this.windowMs = n;
     }
     recent(e, n) {
-      const t = (this.sent.get(e) ?? []).filter(e => n - e < this.windowMs);
+      const t = (this.sent.get(e) ?? []).filter(item => n - item < this.windowMs);
       return t.length ? this.sent.set(e, t) : this.sent.delete(e), t;
     }
     waitMs(e, n) {
@@ -453,12 +453,12 @@ function O(e, n) {
 function B(e, n) {
   return n >= e.length ? "" : String.fromCodePoint(e.codePointAt(n));
 }
-var J = D.map(e => {
+var J = D.map(item => {
     return {
-      pattern: new RegExp((n = e, n.replace(/[.*+?^${}()|[\]\\/-]/g, "\\$&")), "giu"),
-      leftWord: G(B(e, 0)),
-      rightWord: G(O(e, e.length)),
-      stars: "*".repeat(e.length)
+      pattern: new RegExp((n = item, n.replace(/[.*+?^${}()|[\]\\/-]/g, "\\$&")), "giu"),
+      leftWord: G(B(item, 0)),
+      rightWord: G(O(item, item.length)),
+      stars: "*".repeat(item.length)
     };
     var n;
   }),
@@ -520,7 +520,7 @@ function _e(e, n) {
   return se(ee(e)) ?? (n ? null : "Enter your password");
 }
 function ue(e, n) {
-  return "invalid_credentials" === e || /invalid login credentials/i.test(n ?? "") ? "Invalid Login Credentials" : (e || n || "Unknown Error").split(/[_\s]+/).filter(Boolean).map(e => e[0].toUpperCase() + e.slice(1).toLowerCase()).join(" ");
+  return "invalid_credentials" === e || /invalid login credentials/i.test(n ?? "") ? "Invalid Login Credentials" : (e || n || "Unknown Error").split(/[_\s]+/).filter(Boolean).map(item => item[0].toUpperCase() + item.slice(1).toLowerCase()).join(" ");
 }
 function fe(e) {
   return e.replace(/[^A-Za-z0-9]/g, "").toUpperCase();

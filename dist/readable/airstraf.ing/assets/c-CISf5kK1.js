@@ -200,15 +200,15 @@ var e = "News",
 function i(e, a) {
   return `v4.${24 + Math.max(1, Math.trunc(a) - Math.max(0, Math.trunc(e)))}`;
 }
-function l(e = a, o = e.map((a, s) => i(s, e.length))) {
-  return e.map((e, a) => {
+function l(e = a, o = e.map((item, index) => i(index, e.length))) {
+  return e.map((item, index) => {
     return `<color=#e6b029><b>${function (e) {
       const a = /^(\d{4})-(\d{2})-(\d{2})$/.exec(e);
       if (!a) return e;
       const s = Number(a[3]),
         t = s % 100 >= 11 && s % 100 <= 13 ? "th" : ["th", "st", "nd", "rd"][s % 10] ?? "th";
       return `${r[Number(a[2]) - 1] ?? a[2]} ${s}${t}, ${a[1]}`;
-    }(e.date)}: ${n = e.title, n.replace(s, "$1")}</b></color>` + (o[a] ? `  <alpha=#88>${o[a]}<alpha=#FF>` : "") + "\n" + e.items.map(e => `- ${t(e)}`).join("\n");
+    }(item.date)}: ${n = item.title, n.replace(s, "$1")}</b></color>` + (o[index] ? `  <alpha=#88>${o[index]}<alpha=#FF>` : "") + "\n" + item.items.map(_item => `- ${t(_item)}`).join("\n");
     var n;
   }).join("\n<size=50%> </size>\n");
 }

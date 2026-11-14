@@ -57,7 +57,7 @@ var l = [[0, 0, 1e-5], [110.13479, .00953, 17e-5], [125.78199, .01332, .00146], 
     name: "Immortal",
     elo: 3e4
   }],
-  i = [...s, ...I.map(e => e.name)],
+  i = [...s, ...I.map(item => item.name)],
   u = I[I.length - 1].elo,
   c = 3500;
 function f(t) {
@@ -78,13 +78,13 @@ function v(e) {
   let n = 0,
     r = Math.max(0, Math.floor(e));
   for (; n < r;) {
-    const e = Math.floor((n + r) / 2);
-    f(e) >= t ? r = e : n = e + 1;
+    const flooredValue = Math.floor((n + r) / 2);
+    f(flooredValue) >= t ? r = flooredValue : n = flooredValue + 1;
   }
   const a = e > 0 ? n : 0;
   for (n = Math.floor(e), r = u; n < r;) {
-    const e = Math.floor((n + r) / 2);
-    f(e) > t ? r = e : n = e + 1;
+    const flooredValue = Math.floor((n + r) / 2);
+    f(flooredValue) > t ? r = flooredValue : n = flooredValue + 1;
   }
   return {
     currentRank: t,
@@ -95,9 +95,9 @@ function v(e) {
 var p = e => (e.deltaElo - e.eloToNextRank) / e.deltaElo;
 function S(e, t) {
   const n = function (e) {
-    const t = Math.floor(e),
-      n = e - t;
-    return n > .5 ? t + 1 : n < .5 || t % 2 == 0 ? t : t + 1;
+    const flooredValue = Math.floor(e),
+      n = e - flooredValue;
+    return n > .5 ? flooredValue + 1 : n < .5 || flooredValue % 2 == 0 ? flooredValue : flooredValue + 1;
   }(e / 100);
   return n < 1 || t >= 150 ? 0 : Math.min(n, 150 - t);
 }

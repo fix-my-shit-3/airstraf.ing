@@ -299,7 +299,7 @@ var l = "flag",
     head: "custom-flag-hit-head.m4a"
   },
   u = a => e.sounds[a]?.file ?? null,
-  h = Object.fromEntries([[d.stolen, u("special1111")], [d.taken, u("special111")], [d.dropped, u("special1111")], [d.returned, u("natural-message")], [d.scored, u("special11")], [d.lost, u("error-message")], [c.body, u("hitted")], [c.head, u("headshot")]].filter(e => !!e[1])),
+  h = Object.fromEntries([[d.stolen, u("special1111")], [d.taken, u("special111")], [d.dropped, u("special1111")], [d.returned, u("natural-message")], [d.scored, u("special11")], [d.lost, u("error-message")], [c.body, u("hitted")], [c.head, u("headshot")]].filter(item => !!item[1])),
   p = {
     tick: "custom-sumo-tick.m4a",
     fight: "custom-sumo-fight.m4a",
@@ -315,7 +315,7 @@ var l = "flag",
     combo: .45
   },
   g = a => e.sounds[a]?.file ?? null,
-  b = Object.fromEntries([[p.tick, g("button-pointer-down")], [p.fight, g("special11")], [p.crumble, g("gethit")], [p.round, g("special111")], [p.combo, g("button-pointer-down")]].filter(e => !!e[1])),
+  b = Object.fromEntries([[p.tick, g("button-pointer-down")], [p.fight, g("special11")], [p.crumble, g("gethit")], [p.round, g("special111")], [p.combo, g("button-pointer-down")]].filter(item => !!item[1])),
   v = {
     "850847621352db3a.m4a": "custom-heavysniper-bolt1.m4a",
     "a2189824e57c8b56.m4a": "custom-heavysniper-bolt2.m4a",
@@ -558,9 +558,9 @@ var ye = {
             file: w,
             pitch: 1
           },
-          load: s.load.map(e => j(e, a)),
-          reload: s.reload.map(e => j(e, a)),
-          aftershots: s.aftershots.map(e => j(e, a))
+          load: s.load.map(item => j(item, a)),
+          reload: s.reload.map(item => j(item, a)),
+          aftershots: s.aftershots.map(item => j(item, a))
         };
       }
     },
@@ -775,8 +775,8 @@ function Me(e) {
         ...n.aim,
         instability: Pe(n.aim.instability * t.spread)
       })), void 0 !== t.recoil && 1 !== t.recoil && (n.recoilPhysical = Pe(n.recoilPhysical * t.recoil)), t.shells) {
-        const e = Math.ceil(t.magazine / t.shells),
-          a = pe(e),
+        const ceiledValue = Math.ceil(t.magazine / t.shells),
+          a = pe(ceiledValue),
           s = n.reload / a;
         n.shells = {
           rounds: t.shells,
@@ -785,7 +785,7 @@ function Me(e) {
           tail: Pe(19 * s),
           speed: a / 60 / n.reload,
           inserts: 5,
-          ...(e > 5 ? {
+          ...(ceiledValue > 5 ? {
             loop: !0
           } : {})
         };
@@ -857,13 +857,13 @@ var Ce = q(O.classHealth),
   He = e => "Knife" === e.kind && !e.flag && "flag" !== e.id,
   Le = q(O.melee);
 function Ie(e) {
-  const a = e.map(e => ({
-      ...e,
-      health: Ce[e.id] ?? e.health,
+  const a = e.map(item => ({
+      ...item,
+      health: Ce[item.id] ?? item.health,
       comingSoon: !1
     })),
-    s = (e.find(e => "gunner" === e.id) ?? e[0]).levels.map(e => ({
-      kills: e.kills,
+    s = (e.find(item => "gunner" === item.id) ?? e[0]).levels.map(item => ({
+      kills: item.kills,
       unlock: null
     }));
   for (const r of Be) a.push({
@@ -881,18 +881,18 @@ function Ie(e) {
     description: r.description,
     comingSoon: je.has(r.id)
   });
-  return a.map(e => {
-    const a = Te.defaults[e.id],
-      s = [...(Te.unlocks[e.id] ?? [])];
-    if (!a && !s.length) return e;
-    const r = e.weapons.map((e, s) => a?.[s] ?? e),
-      o = e.levels.map(e => e.unlock || !s.length ? e : {
-        ...e,
+  return a.map(item => {
+    const a = Te.defaults[item.id],
+      s = [...(Te.unlocks[item.id] ?? [])];
+    if (!a && !s.length) return item;
+    const r = item.weapons.map((_item, index) => a?.[index] ?? _item),
+      o = item.levels.map(_item2 => _item2.unlock || !s.length ? _item2 : {
+        ..._item2,
         unlock: s.shift()
       });
     return {
-      ...e,
-      weapon: r[0] ?? e.weapon,
+      ...item,
+      weapon: r[0] ?? item.weapon,
       weapons: r,
       levels: o
     };
@@ -961,10 +961,10 @@ var Ue = {
     outer: 2.5,
     inner: 0,
     drop: Ge.roundSeconds
-  }].map(e => ({
-    outer: Math.round(2.8 * e.outer * 100) / 100,
-    inner: Math.round(2.8 * e.inner * 100) / 100,
-    drop: e.drop
+  }].map(item => ({
+    outer: Math.round(2.8 * item.outer * 100) / 100,
+    inner: Math.round(2.8 * item.inner * 100) / 100,
+    drop: item.drop
   })),
   Xe = (_e.length, function (e) {
     return e.Waiting = "waiting", e.Countdown = "countdown", e.Fight = "fight", e.Over = "over", e;
@@ -1016,12 +1016,12 @@ var aa = (e, a) => "countdown" === e && (1 === a || 2 === a),
     sprite: e.sprite ?? null,
     selectSprite: e.selectSprite ?? e.sprite ?? null
   }),
-  ha = e.teamDesigns.map(e => {
-    const [a, s] = ca[e.name] ?? ["T", "CT"];
+  ha = e.teamDesigns.map(item => {
+    const [a, s] = ca[item.name] ?? ["T", "CT"];
     return {
-      name: e.name,
-      team1: ua(e.team1, a),
-      team2: ua(e.team2, s)
+      name: item.name,
+      team1: ua(item.team1, a),
+      team2: ua(item.team2, s)
     };
   }),
   pa = new Map([...ha, {
@@ -1040,7 +1040,7 @@ var aa = (e, a) => "countdown" === e && (1 === a || 2 === a),
       sprite: null,
       selectSprite: null
     }
-  }].map(e => [e.name, e])),
+  }].map(item => [item.name, item])),
   fa = {
     tdm: "first",
     hardpoint: "second",
@@ -1124,10 +1124,10 @@ var ba,
     }
   })),
   ka = e.gunGame,
-  ya = a.map(e => ({
-    id: e.id,
-    name: e.name,
-    buildIndex: e.buildIndex
+  ya = a.map(item => ({
+    id: item.id,
+    name: item.name,
+    buildIndex: item.buildIndex
   }));
 function za(e) {
   return s(e);
@@ -1138,9 +1138,9 @@ var Sa = 2.5,
   Ma = Ie(e.classes),
   Ra = Object.keys(wa),
   Ca = e.modeOrder,
-  Ba = new Set(e.removedModes.map(e => e.id)),
-  Fa = new Set(e.removedModes.map(e => e.name)),
-  ja = e => Ra.find(a => wa[a].originalId === e) ?? null;
+  Ba = new Set(e.removedModes.map(item => item.id)),
+  Fa = new Set(e.removedModes.map(item => item.name)),
+  ja = e => Ra.find(item => wa[item].originalId === e) ?? null;
 function Ta(e) {
   return function (e) {
     return pa.get(fa[e] ?? "first") ?? pa.get("first") ?? ha[0];

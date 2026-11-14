@@ -26,8 +26,8 @@ var O = class {
     back: () => this.hide()
   });
   constructor(t, s) {
-    this.node = t, this.host = s, this.f = t.get("Dropdown"), this.options = this.f.options.map(t => t.text), this.images = this.f.options.map(t => t.image ? {
-      sprite: t.image
+    this.node = t, this.host = s, this.f = t.get("Dropdown"), this.options = this.f.options.map(item => item.text), this.images = this.f.options.map(item => item.image ? {
+      sprite: item.image
     } : null), this.$_25e();
   }
   ref(t) {
@@ -78,12 +78,12 @@ var O = class {
       f = u.h,
       d = l.h - (u.y + u.h),
       p = u.y,
-      m = this.options.map((t, i) => {
+      m = this.options.map((item, index) => {
         const e = this.host.instantiate({
           ...c.data,
-          name: `Item ${i}: ${t}`
+          name: `Item ${index}: ${item}`
         }, a);
-        return e.lookup(s.id)?.setText(t), this.f.itemImage && U(e.lookup(this.f.itemImage), this.images[i]), x(e, i === this.f.value, null), e.el.addEventListener("click", () => this.select(i)), e;
+        return e.lookup(s.id)?.setText(item), this.f.itemImage && U(e.lookup(this.f.itemImage), this.images[index]), x(e, index === this.f.value, null), e.el.addEventListener("click", () => this.select(index)), e;
       });
     c.setActive(!1), a.rt.size[1] = f * m.length + d + p, this.host.update();
     const g = o(r).h - o(a).h;
@@ -99,9 +99,9 @@ var O = class {
       const t = 2 * S.y + S.h - (v.y + v.h);
       h.pos[1] = -(t + v.h * (1 - h.pivot[1]));
     }
-    m.forEach((t, s) => {
-      const i = t.rt;
-      i.amin[1] = 0, i.amax[1] = 0, i.pos[1] = d + f * (m.length - 1 - s) + f * i.pivot[1], i.size[1] = f, t.markDirty();
+    m.forEach((item, index) => {
+      const i = item.rt;
+      i.amin[1] = 0, i.amax[1] = 0, i.pos[1] = d + f * (m.length - 1 - index) + f * i.pivot[1], i.size[1] = f, item.markDirty();
     }), this.list = r, this.host.invalidate();
     const y = t => !r.el.contains(t.target),
       b = event => {
@@ -155,19 +155,19 @@ var N = [1, 1, 1, 1],
   H = t => t?.node ?? null,
   q = (t, s = 0) => "number" == typeof t ? t : s;
 function W(t) {
-  return Array.isArray(t) ? t : (t?.m_PersistentCalls?.m_Calls ?? []).map(t => ({
-    target: t.m_Target ?? null,
-    type: (t.m_TargetAssemblyTypeName ?? "").split(",")[0],
-    method: t.m_MethodName,
-    mode: t.m_Mode,
+  return Array.isArray(t) ? t : (t?.m_PersistentCalls?.m_Calls ?? []).map(item => ({
+    target: item.m_Target ?? null,
+    type: (item.m_TargetAssemblyTypeName ?? "").split(",")[0],
+    method: item.m_MethodName,
+    mode: item.m_Mode,
     args: {
-      object: t.m_Arguments?.m_ObjectArgument ?? null,
-      int: t.m_Arguments?.m_IntArgument ?? 0,
-      float: t.m_Arguments?.m_FloatArgument ?? 0,
-      string: t.m_Arguments?.m_StringArgument ?? "",
-      bool: t.m_Arguments?.m_BoolArgument ?? !1
+      object: item.m_Arguments?.m_ObjectArgument ?? null,
+      int: item.m_Arguments?.m_IntArgument ?? 0,
+      float: item.m_Arguments?.m_FloatArgument ?? 0,
+      string: item.m_Arguments?.m_StringArgument ?? "",
+      bool: item.m_Arguments?.m_BoolArgument ?? !1
     },
-    state: t.m_CallState
+    state: item.m_CallState
   }));
 }
 function Z(t) {
@@ -236,10 +236,10 @@ function J(t) {
   switch (t.cls) {
     case "TMP_Dropdown":
       return function (t, s) {
-        const i = (s.m_Options?.m_Options ?? []).map(t => ({
-          text: String(t.m_Text ?? ""),
-          image: t.m_Image?.sprite ?? null,
-          color: G(t.m_Color)
+        const i = (s.m_Options?.m_Options ?? []).map(item => ({
+          text: String(item.m_Text ?? ""),
+          image: item.m_Image?.sprite ?? null,
+          color: G(item.m_Color)
         }));
         return {
           t: "Dropdown",
@@ -351,15 +351,15 @@ var Q = t({
     isFiltered(t) {
       return this.docs.has(t) && !this.unfiltered.has(t);
     }
-  }(t => d(`/assets/extracted/ui/docs/${t}.json`).then(s => {
-    if (!s.ok) throw new Error(`UI document ${t} missing`);
-    return s.json();
-  }).then(t => function (t) {
+  }(t => d(`/assets/extracted/ui/docs/${t}.json`).then(result => {
+    if (!result.ok) throw new Error(`UI document ${t} missing`);
+    return result.json();
+  }).then(result => function (t) {
     if ((t.format ?? 1) >= 2) return t;
     for (const s of t.roots) K(s);
     for (const s of t.owners ?? []) s.c = s.c.map(J);
     return t.format = 2, t;
-  }(t))),
+  }(result))),
   tt = [];
 function st(t) {
   Y.setFilter(t);
@@ -632,8 +632,8 @@ var gt = class {
         n = !1 !== t?.enabled ? t : !1 !== e?.enabled ? e : void 0;
       if (!n?.controller) continue;
       const r = "Animator" === n.t || "Animation" === n.t && n.playAutomatically;
-      s.push(R(n.controller).then(t => {
-        this.attached(i) && (this.animators.set(i, this.animator(i, t, r)), i.$_1vk2?.(!0));
+      s.push(R(n.controller).then(result => {
+        this.attached(i) && (this.animators.set(i, this.animator(i, result, r)), i.$_1vk2?.(!0));
       }));
     }
     await Promise.all(s);

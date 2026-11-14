@@ -8,15 +8,15 @@ function _(e, n, t) {
 var g = e => .2126 * e[0] + .7152 * e[1] + .0722 * e[2],
   w = e => {
     const n = g(e);
-    return [0, 1, 2].map(t => e[t] - n + e[3]);
+    return [0, 1, 2].map(item => e[item] - n + e[3]);
   },
   y = e => {
     const n = g(e);
-    return [0, 1, 2].map(t => e[t] - n + e[3] + 1);
+    return [0, 1, 2].map(item => e[item] - n + e[3] + 1);
   },
   C = e => {
     const n = g(e);
-    return [0, 1, 2].map(t => 1 / Math.max(e[t] - n + e[3] + 1, .001));
+    return [0, 1, 2].map(item => 1 / Math.max(e[item] - n + e[3] + 1, .001));
   };
 function M(e, n) {
   const t = e / 60,
@@ -27,7 +27,7 @@ function M(e, n) {
   return [.949237 / (.7328 * a + .4296 - .1624 * i), 1.03542 / (-.7036 * a + 1.6975 + .0061 * i), 1.08728 / (.003 * a + .0136 + .9834 * i)];
 }
 function b(e) {
-  const n = e.mixer.map(e => e / 100);
+  const n = e.mixer.map(item => item / 100);
   return {
     _Brightness: (e.brightness + 100) / 100,
     _HueSatCon: [e.hueShift / 360, e.saturation / 100 + 1, e.contrast / 100 + 1],
@@ -42,9 +42,9 @@ function b(e) {
   };
 }
 function L(e) {
-  const n = new Float32Array(128);
-  for (let t = 0; t < 128; t++) n[t] = "identity" === e ? t / 128 : "number" == typeof e ? e : e[t];
-  return n;
+  const float32Values = new Float32Array(128);
+  for (let t = 0; t < 128; t++) float32Values[t] = "identity" === e ? t / 128 : "number" == typeof e ? e : e[t];
+  return float32Values;
 }
 var F = "\nout vec2 vUv;\nvoid main() {\n  vUv = uv;\n  gl_Position = vec4(position.xy, 0.0, 1.0);\n}",
   R = "\nuniform vec4 _Lut2D_Params;\nuniform vec3 _ColorBalance;\nuniform vec3 _ColorFilter;\nuniform vec3 _HueSatCon;\nuniform float _Brightness;\nuniform vec3 _ChannelMixerRed;\nuniform vec3 _ChannelMixerGreen;\nuniform vec3 _ChannelMixerBlue;\nuniform vec3 _Lift;\nuniform vec3 _InvGamma;\nuniform vec3 _Gain;\nuniform mediump sampler2D _Curves;\nin vec2 vUv;\nout highp vec4 outColor;\nconst vec3 LUM = vec3(0.212672904, 0.715152204, 0.0721750036);\nvec3 rgbToHsv(vec3 c) {\n  vec4 K = vec4(0.0, -1.0 / 3.0, 2.0 / 3.0, -1.0);\n  vec4 p = mix(vec4(c.bg, K.wz), vec4(c.gb, K.xy), step(c.b, c.g));\n  vec4 q = mix(vec4(p.xyw, c.r), vec4(c.r, p.yzx), step(p.x, c.r));\n  float d = q.x - min(q.w, q.y);\n  float e = 1.0e-4;\n  return vec3(abs(q.z + (q.w - q.y) / (6.0 * d + e)), d / (q.x + e), q.x);\n}\nvec3 hsvToRgb(vec3 c) {\n  vec3 p = abs(fract(c.xxx + vec3(1.0, 2.0 / 3.0, 1.0 / 3.0)) * 6.0 - 3.0);\n  return c.z * mix(vec3(1.0), clamp(p - 1.0, 0.0, 1.0), c.y);\n}\nfloat rotateHue(float value) {\n  return value < 0.0 ? value + 1.0 : (value > 1.0 ? value - 1.0 : value);\n}\nvoid main() {\n  // GetLutStripValue\n  vec2 uv = vUv - _Lut2D_Params.yz;\n  vec3 c;\n  c.r = fract(uv.x * _Lut2D_Params.x);\n  c.b = uv.x - c.r / _Lut2D_Params.x;\n  c.g = uv.y;\n  c *= _Lut2D_Params.w;\n  // ColorGradeLDR\n  c *= _Brightness;\n  c = (c - 0.217637643) * _HueSatCon.z + 0.217637643;\n  vec3 lms = vec3(\n    dot(vec3(0.390404999, 0.549941003, 0.00892631989), c),\n    dot(vec3(0.070841603, 0.963172019, 0.00135775004), c),\n    dot(vec3(0.0231081992, 0.128021002, 0.936245024), c)) * _ColorBalance;\n  c = vec3(\n    dot(vec3(2.85846996, -1.62879002, -0.0248910002), lms),\n    dot(vec3(-0.210181996, 1.15820003, 0.000324280991), lms),\n    dot(vec3(-0.0418119989, -0.118169002, 1.06867003), lms));\n  c *= _ColorFilter;\n  c = vec3(dot(c, _ChannelMixerRed), dot(c, _ChannelMixerGreen), dot(c, _ChannelMixerBlue));\n  c = c * _Gain + _Lift;\n  c = sign(c) * exp2(log2(abs(c)) * _InvGamma);\n  c = max(c, vec3(0.0));\n  vec3 hsv = rgbToHsv(c);\n  float luma = dot(c, LUM);\n  float satMult = clamp(textureLod(_Curves, vec2(hsv.x, 0.25), 0.0).y, 0.0, 1.0) * 2.0;\n  satMult *= clamp(textureLod(_Curves, vec2(hsv.y, 0.25), 0.0).z, 0.0, 1.0) * 2.0;\n  satMult *= clamp(textureLod(_Curves, vec2(luma, 0.25), 0.0).w, 0.0, 1.0) * 2.0;\n  float hue = hsv.x + _HueSatCon.x;\n  float offset = clamp(textureLod(_Curves, vec2(hue, 0.25), 0.0).x, 0.0, 1.0) - 0.5;\n  hsv.x = rotateHue(hue + offset);\n  c = hsvToRgb(hsv);\n  float l2 = dot(c, LUM);\n  c = clamp(l2 + _HueSatCon.y * satMult * (c - l2), 0.0, 1.0);\n  // YrgbCurve (half texel 1/256)\n  c += 0.00390625;\n  c = clamp(vec3(\n    texture(_Curves, vec2(c.r, 0.75)).w,\n    texture(_Curves, vec2(c.g, 0.75)).w,\n    texture(_Curves, vec2(c.b, 0.75)).w), 0.0, 1.0);\n  c += 0.00390625;\n  c = vec3(\n    texture(_Curves, vec2(c.r, 0.75)).x,\n    texture(_Curves, vec2(c.g, 0.75)).y,\n    texture(_Curves, vec2(c.b, 0.75)).z);\n  outColor = vec4(clamp(c, 0.0, 1.0), 1.0);\n}",

@@ -86,7 +86,7 @@ var _ = new Map();
 function j(t) {
   const n = t.replace(/\/+$/, "");
   let r = _.get(n);
-  return r || (r = f(`${n}/gpu-textures.json`).then(t => t.ok ? t.json() : null).then(t => t && 1 === t.version ? t.files : {}).catch(() => ({})), _.set(n, r)), r;
+  return r || (r = f(`${n}/gpu-textures.json`).then(result => result.ok ? result.json() : null).then(result => result && 1 === result.version ? result.files : {}).catch(() => ({})), _.set(n, r)), r;
 }
 async function N(t) {
   if ("undefined" == typeof DecompressionStream) return u(t);
@@ -102,7 +102,7 @@ var A = {
 async function D(t, r = !1) {
   const response = await fetch(t);
   if (!response.ok) throw new Error(`texture ${t}: ${response.status}`);
-  const a = new Uint8Array(await response.arrayBuffer()),
+  const uint8Values = new Uint8Array(await response.arrayBuffer()),
     i = function (t) {
       const n = t instanceof Uint8Array ? t : new Uint8Array(t);
       if (!function (t) {
@@ -110,11 +110,11 @@ async function D(t, r = !1) {
         for (let n = 0; n < 12; n++) if (t[n] !== E[n]) return !1;
         return !0;
       }(n)) throw new Error("not a KTX2 file");
-      const r = new DataView(n.buffer, n.byteOffset, n.byteLength),
-        e = t => r.getUint32(t, !0),
+      const dataView = new DataView(n.buffer, n.byteOffset, n.byteLength),
+        e = t => dataView.getUint32(t, !0),
         o = t => {
-          if (0 !== r.getUint32(t + 4, !0)) throw new Error("KTX2: offset beyond 4 GB");
-          return r.getUint32(t, !0);
+          if (0 !== dataView.getUint32(t + 4, !0)) throw new Error("KTX2: offset beyond 4 GB");
+          return dataView.getUint32(t, !0);
         },
         a = e(12),
         s = e(20),
@@ -160,7 +160,7 @@ async function D(t, r = !1) {
         supercompression: l,
         orientation: m
       };
-    }(a);
+    }(uint8Values);
   if (c = i.vkFormat, !x || !(145 === c ? x.bptc : x.s3tc && b(c) > 0)) throw new Error(`texture ${t}: vkFormat ${i.vkFormat}`);
   var c;
   const u = await async function (t, n, r) {
@@ -179,16 +179,16 @@ async function D(t, r = !1) {
         o.push(i);
       }
       return o;
-    }(a, i, N),
+    }(uint8Values, i, N),
     f = function (t, n) {
       const r = Math.max(0, Math.floor(Number(n)));
       let e = 0;
       for (; e < r && e + 1 < t.length && Math.max(t[e].width, t[e].height) > 64;) e++;
       return e ? t.slice(e) : t;
-    }(i.levels.map((t, n) => ({
-      data: u[n],
-      width: t.width,
-      height: t.height
+    }(i.levels.map((item, index) => ({
+      data: u[index],
+      width: item.width,
+      height: item.height
     })), r),
     w = f,
     l = new o(w, f[0].width, f[0].height, A[i.vkFormat]);
@@ -213,7 +213,7 @@ var G = 1024;
 function L(t, n, r = !1) {
   let e = 0;
   if ("first" !== n) {
-    const n = t.findIndex(t => Math.max(t.width, t.height) <= 1024);
+    const n = t.findIndex(item => Math.max(item.width, item.height) <= 1024);
     e = n < 0 ? t.length - 1 : n;
   }
   for (let o = Math.max(0, Math.floor(Number(r))); o > 0 && !(e + 1 >= t.length) && !(Math.max(t[e].width, t[e].height) <= 64); o--) e++;

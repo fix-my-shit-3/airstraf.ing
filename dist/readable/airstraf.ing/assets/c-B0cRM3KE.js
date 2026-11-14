@@ -12,11 +12,11 @@ var o = function (n) {
   c = 0;
 function l(n) {
   return new Promise(t => {
-    const r = new Image();
-    r.decoding = "async", r.onload = () => {
-      const n = () => t(r);
-      "function" == typeof r.decode ? r.decode().then(n, n) : n();
-    }, r.onerror = () => t(null), r.src = n;
+    const image = new Image();
+    image.decoding = "async", image.onload = () => {
+      const n = () => t(image);
+      "function" == typeof image.decode ? image.decode().then(n, n) : n();
+    }, image.onerror = () => t(null), image.src = n;
   });
 }
 function m() {
@@ -25,8 +25,8 @@ function m() {
     for (const r of s.values()) "queued" === r.state && (!n || r.priority < n.priority || r.priority === n.priority && r.seq < n.seq) && (n = r);
     if (!n) return;
     const t = n;
-    t.state = "loading", u++, l(t.url).then(n => {
-      u--, t.image = n, t.state = n ? "ready" : "error", n && s.get(t.url) === t && (t.bytes = (n.naturalWidth || n.width) * (n.naturalHeight || n.height) * 4, c += t.bytes), t.resolve(n), d(), m();
+    t.state = "loading", u++, l(t.url).then(result => {
+      u--, t.image = result, t.state = result ? "ready" : "error", result && s.get(t.url) === t && (t.bytes = (result.naturalWidth || result.width) * (result.naturalHeight || result.height) * 4, c += t.bytes), t.resolve(result), d(), m();
     });
   }
 }
@@ -40,7 +40,7 @@ function y(n) {
   s.delete(n.url), s.set(n.url, n);
 }
 async function p(n, t = () => !0) {
-  const r = [...new Set(n)].filter(n => !s.has(n) && !a.has(n));
+  const r = [...new Set(n)].filter(item => !s.has(item) && !a.has(item));
   await Promise.all(Array.from({
     length: 2
   }, async () => {
@@ -61,7 +61,7 @@ var w = "/assets/extracted/stream-slot",
   g = null,
   h = null;
 function v() {
-  return h ??= e(`${w}/index.json`).then(n => n.ok ? n.json() : null).then(n => g = n && 1 === n.version ? n : null).catch(() => null);
+  return h ??= e(`${w}/index.json`).then(result => result.ok ? result.json() : null).then(result => g = result && 1 === result.version ? result : null).catch(() => null);
 }
 function M(n, t) {
   if (!(g && t > 0)) return null;
@@ -105,8 +105,8 @@ function j(n, t, e = o.Visible, i) {
       resolve: r,
       seq: f++
     }, s.set(n, e), m(), promise;
-  }(u, e).then(t => {
-    t && n.tag.imageLoad === u && (n.setColor([1, 1, 1, 1]), n.$_6ks(u));
+  }(u, e).then(result => {
+    result && n.tag.imageLoad === u && (n.setColor([1, 1, 1, 1]), n.$_6ks(u));
   }), n.host);
 }
 function q(n) {

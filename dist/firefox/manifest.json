@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "name": "airstraf.ing readable replacement",
+  "version": "1.0.0",
+  "description": "Replace matching live scripts with readable code; update replacement files from GitHub.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "airstraf-replacement@local.invalid",
+      "strict_min_version": "102.0"
+    }
+  },
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "alarms",
+    "https://airstraf.ing/*",
+    "https://raw.githubusercontent.com/*",
+    "https://api.github.com/*"
+  ],
+  "browser_action": {
+    "default_title": "airstraf.ing replacement: starting"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  }
+}

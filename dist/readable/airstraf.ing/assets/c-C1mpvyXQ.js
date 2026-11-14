@@ -5,26 +5,26 @@ var a = [3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 15, 17, 19, 23, 27, 31, 35, 43, 51, 59
   f = [0, 0, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13],
   b = [16, 17, 18, 0, 8, 7, 9, 6, 10, 5, 11, 4, 12, 3, 13, 2, 14, 1, 15];
 function n(e, a) {
-  const d = new Uint16Array(16);
-  for (let b = 0; b < a; b++) d[e[b]]++;
-  d[0] = 0;
-  const c = new Uint16Array(16);
-  for (let b = 1; b < 16; b++) c[b] = c[b - 1] + d[b - 1];
-  const f = new Uint16Array(a);
-  for (let b = 0; b < a; b++) e[b] && (f[c[e[b]]++] = b);
+  const uint16Values = new Uint16Array(16);
+  for (let b = 0; b < a; b++) uint16Values[e[b]]++;
+  uint16Values[0] = 0;
+  const _uint16Values = new Uint16Array(16);
+  for (let b = 1; b < 16; b++) _uint16Values[b] = _uint16Values[b - 1] + uint16Values[b - 1];
+  const _uint16Values2 = new Uint16Array(a);
+  for (let b = 0; b < a; b++) e[b] && (_uint16Values2[_uint16Values[e[b]]++] = b);
   return {
-    counts: d,
-    symbols: f
+    counts: uint16Values,
+    symbols: _uint16Values2
   };
 }
 var t = null;
 function r() {
   if (t) return t;
-  const e = new Uint8Array(288);
-  e.fill(8, 0, 144), e.fill(9, 144, 256), e.fill(7, 256, 280), e.fill(8, 280, 288);
+  const uint8Values = new Uint8Array(288);
+  uint8Values.fill(8, 0, 144), uint8Values.fill(9, 144, 256), uint8Values.fill(7, 256, 280), uint8Values.fill(8, 280, 288);
   const a = new Uint8Array(30).fill(5);
   return t = {
-    literals: n(e, 288),
+    literals: n(uint8Values, 288),
     distances: n(a, 30)
   };
 }
@@ -34,7 +34,7 @@ var o = class extends Error {
   }
 };
 function s(e, t = 0, s = 0) {
-  let i = new Uint8Array(Math.max(s, 3 * e.length, 1024)),
+  let uint8Values = new Uint8Array(Math.max(s, 3 * e.length, 1024)),
     l = 0,
     u = t,
     w = 0,
@@ -64,9 +64,9 @@ function s(e, t = 0, s = 0) {
       throw new o("invalid code");
     },
     g = e => {
-      if (l + e <= i.length) return;
-      const a = new Uint8Array(Math.max(2 * i.length, l + e));
-      a.set(i.subarray(0, l)), i = a;
+      if (l + e <= uint8Values.length) return;
+      const _uint8Values = new Uint8Array(Math.max(2 * uint8Values.length, l + e));
+      _uint8Values.set(uint8Values.subarray(0, l)), uint8Values = _uint8Values;
     };
   let x = !1;
   for (; !x;) {
@@ -78,7 +78,7 @@ function s(e, t = 0, s = 0) {
         d = e[u + 2] | e[u + 3] << 8;
       if (u += 4, (65535 ^ a) !== d) throw new o("invalid stored block");
       if (u + a > e.length) throw new o("unexpected end of data");
-      g(a), i.set(e.subarray(u, u + a), l), l += a, u += a;
+      g(a), uint8Values.set(e.subarray(u, u + a), l), l += a, u += a;
       continue;
     }
     if (3 === t) throw new o("invalid block type");
@@ -91,32 +91,32 @@ function s(e, t = 0, s = 0) {
         a = v(5) + 1,
         d = v(4) + 4;
       if (e > 286 || a > 30) throw new o("invalid code counts");
-      const c = new Uint8Array(19);
-      for (let n = 0; n < d; n++) c[b[n]] = v(3);
-      const f = n(c, 19),
-        t = new Uint8Array(e + a);
-      for (let b = 0; b < t.length;) {
+      const _uint8Values2 = new Uint8Array(19);
+      for (let n = 0; n < d; n++) _uint8Values2[b[n]] = v(3);
+      const f = n(_uint8Values2, 19),
+        _uint8Values3 = new Uint8Array(e + a);
+      for (let b = 0; b < _uint8Values3.length;) {
         const e = p(f);
         if (e < 16) {
-          t[b++] = e;
+          _uint8Values3[b++] = e;
           continue;
         }
         let a,
           d = 0;
         if (16 === e) {
           if (!b) throw new o("invalid repeat");
-          d = t[b - 1], a = 3 + v(2);
+          d = _uint8Values3[b - 1], a = 3 + v(2);
         } else a = 17 === e ? 3 + v(3) : 11 + v(7);
-        if (b + a > t.length) throw new o("invalid repeat");
-        for (; a--;) t[b++] = d;
+        if (b + a > _uint8Values3.length) throw new o("invalid repeat");
+        for (; a--;) _uint8Values3[b++] = d;
       }
-      if (!t[256]) throw new o("no end of block code");
-      s = n(t.subarray(0, e), e), h = n(t.subarray(e), a);
+      if (!_uint8Values3[256]) throw new o("no end of block code");
+      s = n(_uint8Values3.subarray(0, e), e), h = n(_uint8Values3.subarray(e), a);
     }
     for (;;) {
       const e = p(s);
       if (e < 256) {
-        l >= i.length && g(1), i[l++] = e;
+        l >= uint8Values.length && g(1), uint8Values[l++] = e;
         continue;
       }
       if (256 === e) break;
@@ -129,10 +129,10 @@ function s(e, t = 0, s = 0) {
       if (r > l) throw new o("distance too far back");
       g(n);
       let u = l - r;
-      for (let a = 0; a < n; a++) i[l++] = i[u++];
+      for (let a = 0; a < n; a++) uint8Values[l++] = uint8Values[u++];
     }
   }
-  return i.length === l ? i : i.slice(0, l);
+  return uint8Values.length === l ? uint8Values : uint8Values.slice(0, l);
 }
 function i(e) {
   if (e.length < 18 || 31 !== e[0] || 139 !== e[1] || 8 !== e[2]) throw new o("not a gzip file");
@@ -231,8 +231,8 @@ function A(e, a) {
       const a = Math.imul(c, 625341585);
       e[n] ^= a, e[n + 1] ^= a >>> 8, e[n + 2] ^= a >>> 16, e[n + 3] ^= a >>> 24;
     } else {
-      const a = new Uint32Array(e.buffer, e.byteOffset, b);
-      for (; n < b; n++) c ^= c << 13, c ^= c >>> 17, c ^= c << 5, a[n] ^= Math.imul(c, 625341585);
+      const uint32Values = new Uint32Array(e.buffer, e.byteOffset, b);
+      for (; n < b; n++) c ^= c << 13, c ^= c >>> 17, c ^= c << 5, uint32Values[n] ^= Math.imul(c, 625341585);
       n = b << 2;
     }
     if (n < f) {
@@ -325,9 +325,9 @@ async function N(e, a) {
       if (x && a - x.at < 6e4) return x.table;
       const d = fetch(`${u(e.index.name)}?t=${a}`, {
         cache: "no-store"
-      }).then(async a => {
-        if (!a.ok) return null;
-        const d = A(new Uint8Array(await a.arrayBuffer()), e.index.seed);
+      }).then(async result => {
+        if (!result.ok) return null;
+        const d = A(new Uint8Array(await result.arrayBuffer()), e.index.seed);
         return d ? v(await d.text()) : null;
       }).catch(() => null);
       return x = {

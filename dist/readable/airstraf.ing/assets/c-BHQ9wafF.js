@@ -152,11 +152,11 @@ var e = [{
     hat: "hat",
     emote: "emote"
   },
-  s = new Map(e.map(e => [`${e.kind}:${e.index}`, e]));
+  s = new Map(e.map(item => [`${item.kind}:${item.index}`, item]));
 function n(e) {
   return e ? s.get(`${e.kind}:${e.index}`) ?? null : null;
 }
-new Map(e.map(e => [`${a[e.kind]}${e.index}`, e]));
+new Map(e.map(item => [`${a[item.kind]}${item.index}`, item]));
 var l = e => null !== n(e),
   i = e => n(e)?.label ?? "";
 export { l as n, i as r, e as t };
