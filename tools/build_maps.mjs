@@ -47,7 +47,7 @@ function infer(binding) {
         URLSearchParams: "queryParams", Date: "date", RegExp: "pattern",
         AbortController: "abortController", Promise: "promise"
       };
-      if (names[init.callee.name]) return { name: names[init.callee.name], why: "constructor" };
+      if (Object.hasOwn(names, init.callee.name)) return { name: names[init.callee.name], why: "constructor" };
     }
     if (t.isAwaitExpression(init) && t.isCallExpression(init.argument) &&
         t.isIdentifier(init.argument.callee, { name: "fetch" })) {
@@ -63,7 +63,7 @@ function infer(binding) {
         json: "parsedJson", text: "responseText",
         parse: "parsedValue", stringify: "serializedValue"
       };
-      if (names[method]) return { name: names[method], why: "call to ." + method + "()" };
+      if (method && Object.hasOwn(names, method)) return { name: names[method], why: "call to ." + method + "()" };
     }
   }
   if (declaration.isIdentifier() && declaration.parentPath?.isCatchClause()) {
@@ -122,7 +122,7 @@ function deobfuscate(ast) {
         if (binding.path.findParent((x) => x.isExportNamedDeclaration() ||
                                            x.isExportDefaultDeclaration())) continue;
         const guess = infer(binding);
-        if (guess && guess.name !== oldName) {
+        if (guess && typeof guess.name === "string" && guess.name !== oldName) {
           proposals.push({ binding, oldName, ...guess,
             line: binding.identifier?.loc?.start?.line ?? null });
         }
