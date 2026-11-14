@@ -1,7 +1,7 @@
 {
   "inputJsFiles": 75,
-  "successfullyMapped": 73,
-  "totalIdentifiersRenamed": 263,
+  "successfullyMapped": 75,
+  "totalIdentifiersRenamed": 564,
   "files": [
     {
       "file": "airstraf.ing/assets/c-0_FeqyJL.js",
@@ -573,8 +573,11 @@
     },
     {
       "file": "airstraf.ing/assets/main-0GITWSWA.js",
-      "status": "skipped",
-      "reason": "Generation failed: Error: Bad AST identifiers {\"badBefore\":[],\"badAfter\":[{\"nameType\":\"function\",\"name\":\"function toLocaleString() { [native code] }\",\"source\":\"e\",\"loc\":{\"line\":2,\"column\":331359,\"index\":334243},\"parentType\":\"VariableDeclarator\"},{\"nameType\":\"function\",\"name\":\"function toLocaleString() { [native code] }\",\"source\":\"e\",\"loc\":{\"line\":2,\"column\":331464,\"index\":334348},\"parentType\":\"BinaryExpression\"},{\"nameType\":\"function\",\"name\":\"function toLocaleString() { [native code] }\",\"source\":\"e\",\"loc\":{\"line\":2,\"column\":331470,\"index\":334354},\"parentType\":\"ConditionalExpression\"},{\"nameType\":\"function\",\"name\":\"function toString() { [native code] }\",\"source\":\"e\",\"loc\":{\"line\":2,\"column\":400530,\"index\":403414},\"parentType\":\"VariableDeclarator\"},{\"nameType\":\"function\",\"name\":\"function toString() { [native code] }\",\"source\":\"e\",\"loc\":{\"line\":2,\"column\":400552,\"index\":403436},\"parentType\":\"ConditionalExpression\"},{\"nameType\":\"function\",\"name\":\"function toString() { [native code] }\",\"source\":\"e\",\"loc\":{\"line\":2,\"column\":400558,\"index\":403442},\"parentType\":\"TemplateLiteral\"},{\"nameType\":\"function\",\"name\":\"function toString() { [native code] }\",\"source\":\"e\",\"loc\":{\"line\":2,\"column\":411221,\"index\":414105},\"parentType\":\"VariableDeclarator\"},{\"nameType\":\"function\",\"name\":\"function toString() { [native code] }\",\"source\":\"e\",\"loc\":{\"line\":2,\"column\":411243,\"index\":414127},\"parentType\":\"ConditionalExpression\"}],\"parserErrors\":[]}\n    at buildOne (file:///home/runner/work/airstraf.ing/airstraf.ing/tools/build_maps.mjs:179:11)\n    at file:///home/runner/work/airstraf.ing/airstraf.ing/tools/build_maps.mjs:231:18\n    at Array.map (<anonymous>)\n    at main (file:///home/runner/work/airstraf.ing/airstraf.ing/tools/build_maps.mjs:230:25)\n    at file:///home/runner/work/airstraf.ing/airstraf.ing/tools/build_maps.mjs:252:1\n    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)"
+      "status": "mapped",
+      "bytes": 1075217,
+      "mappings": 433905,
+      "identifiersRenamed": 256,
+      "dynamicScopeDetected": false
     },
     {
       "file": "airstraf.ing/assets/network-juVbujc5.js",
@@ -586,8 +589,11 @@
     },
     {
       "file": "airstraf.ing/assets/three-Bi9Yyrpt.js",
-      "status": "skipped",
-      "reason": "Generation failed: Error: Bad AST identifiers {\"badBefore\":[],\"badAfter\":[{\"nameType\":\"function\",\"name\":\"function toString() { [native code] }\",\"source\":\"i\",\"loc\":{\"line\":1,\"column\":860683,\"index\":860683},\"parentType\":\"VariableDeclarator\"},{\"nameType\":\"function\",\"name\":\"function toString() { [native code] }\",\"source\":\"i\",\"loc\":{\"line\":1,\"column\":860994,\"index\":860994},\"parentType\":\"MemberExpression\"},{\"nameType\":\"function\",\"name\":\"function toString() { [native code] }\",\"source\":\"i\",\"loc\":{\"line\":1,\"column\":861006,\"index\":861006},\"parentType\":\"MemberExpression\"},{\"nameType\":\"function\",\"name\":\"function toString() { [native code] }\",\"source\":\"i\",\"loc\":{\"line\":1,\"column\":861023,\"index\":861023},\"parentType\":\"MemberExpression\"}],\"parserErrors\":[]}\n    at buildOne (file:///home/runner/work/airstraf.ing/airstraf.ing/tools/build_maps.mjs:179:11)\n    at file:///home/runner/work/airstraf.ing/airstraf.ing/tools/build_maps.mjs:231:18\n    at Array.map (<anonymous>)\n    at main (file:///home/runner/work/airstraf.ing/airstraf.ing/tools/build_maps.mjs:230:25)\n    at file:///home/runner/work/airstraf.ing/airstraf.ing/tools/build_maps.mjs:252:1\n    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)"
+      "status": "mapped",
+      "bytes": 924392,
+      "mappings": 294961,
+      "identifiersRenamed": 45,
+      "dynamicScopeDetected": false
     },
     {
       "file": "airstraf.ing/boot-guard.js",

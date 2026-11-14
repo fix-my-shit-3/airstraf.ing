@@ -1707,6 +1707,1822 @@
     ]
   },
   {
+    "file": "airstraf.ing/assets/main-0GITWSWA.js",
+    "renames": [
+      {
+        "oldName": "e",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "t",
+        "newName": "parsedValue",
+        "line": 2,
+        "rule": "call to .parse()"
+      },
+      {
+        "oldName": "s",
+        "newName": "promise",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "t",
+        "newName": "event",
+        "line": 2,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "t",
+        "newName": "event",
+        "line": 2,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "t",
+        "newName": "event",
+        "line": 2,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "s",
+        "newName": "promise",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "event",
+        "line": 2,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "t",
+        "newName": "event",
+        "line": 2,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "t",
+        "newName": "event",
+        "line": 2,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "t",
+        "newName": "event",
+        "line": 2,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "s",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "eventTarget",
+        "line": 2,
+        "rule": "EventTarget interface"
+      },
+      {
+        "oldName": "n",
+        "newName": "eventTarget",
+        "line": 2,
+        "rule": "EventTarget interface"
+      },
+      {
+        "oldName": "r",
+        "newName": "abortController",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "n",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "t",
+        "newName": "eventTarget",
+        "line": 2,
+        "rule": "EventTarget interface"
+      },
+      {
+        "oldName": "s",
+        "newName": "_eventTarget",
+        "line": 2,
+        "rule": "EventTarget interface"
+      },
+      {
+        "oldName": "e",
+        "newName": "_eventTarget2",
+        "line": 2,
+        "rule": "EventTarget interface"
+      },
+      {
+        "oldName": "t",
+        "newName": "eventTarget",
+        "line": 2,
+        "rule": "EventTarget interface"
+      },
+      {
+        "oldName": "t",
+        "newName": "eventTarget",
+        "line": 2,
+        "rule": "EventTarget interface"
+      },
+      {
+        "oldName": "s",
+        "newName": "_eventTarget3",
+        "line": 2,
+        "rule": "EventTarget interface"
+      },
+      {
+        "oldName": "s",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "t",
+        "newName": "url",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "o",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "a",
+        "newName": "drawingContext",
+        "line": 2,
+        "rule": "call to .getContext()"
+      },
+      {
+        "oldName": "r",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "bounds",
+        "line": 2,
+        "rule": "call to .getBoundingClientRect()"
+      },
+      {
+        "oldName": "s",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "s",
+        "newName": "parsedValue",
+        "line": 2,
+        "rule": "call to .parse()"
+      },
+      {
+        "oldName": "t",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "s",
+        "newName": "_element",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "s",
+        "newName": "_element2",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "s",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "e",
+        "newName": "_element3",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "i",
+        "newName": "_element4",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "r",
+        "newName": "_element5",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "i",
+        "newName": "_element6",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "t",
+        "newName": "pointerEvent",
+        "line": 2,
+        "rule": "pointer coordinates"
+      },
+      {
+        "oldName": "t",
+        "newName": "pointerEvent",
+        "line": 2,
+        "rule": "pointer coordinates"
+      },
+      {
+        "oldName": "s",
+        "newName": "bounds",
+        "line": 2,
+        "rule": "call to .getBoundingClientRect()"
+      },
+      {
+        "oldName": "t",
+        "newName": "pointerEvent",
+        "line": 2,
+        "rule": "pointer coordinates"
+      },
+      {
+        "oldName": "e",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "date",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "t",
+        "newName": "pointerEvent",
+        "line": 2,
+        "rule": "pointer coordinates"
+      },
+      {
+        "oldName": "t",
+        "newName": "pointerEvent",
+        "line": 2,
+        "rule": "pointer coordinates"
+      },
+      {
+        "oldName": "r",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "t",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "t",
+        "newName": "eventTarget",
+        "line": 2,
+        "rule": "EventTarget interface"
+      },
+      {
+        "oldName": "t",
+        "newName": "event",
+        "line": 2,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "t",
+        "newName": "event",
+        "line": 2,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "n",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "a",
+        "newName": "parsedValue",
+        "line": 2,
+        "rule": "call to .parse()"
+      },
+      {
+        "oldName": "r",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "t",
+        "newName": "event",
+        "line": 2,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "t",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .querySelector()"
+      },
+      {
+        "oldName": "e",
+        "newName": "parsedValue",
+        "line": 2,
+        "rule": "call to .parse()"
+      },
+      {
+        "oldName": "e",
+        "newName": "bounds",
+        "line": 2,
+        "rule": "call to .getBoundingClientRect()"
+      },
+      {
+        "oldName": "t",
+        "newName": "event",
+        "line": 2,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "t",
+        "newName": "event",
+        "line": 2,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "e",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "i",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .querySelector()"
+      },
+      {
+        "oldName": "t",
+        "newName": "bounds",
+        "line": 2,
+        "rule": "call to .getBoundingClientRect()"
+      },
+      {
+        "oldName": "e",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "s",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "e",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "a",
+        "newName": "responseText",
+        "line": 2,
+        "rule": "call to .text()"
+      },
+      {
+        "oldName": "b",
+        "newName": "_responseText",
+        "line": 2,
+        "rule": "call to .text()"
+      },
+      {
+        "oldName": "t",
+        "newName": "event",
+        "line": 2,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "s",
+        "newName": "queryParams",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "url",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "queryParams",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "abortController",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "r",
+        "newName": "response",
+        "line": 2,
+        "rule": "Fetch Response interface"
+      },
+      {
+        "oldName": "e",
+        "newName": "url",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "t",
+        "newName": "url",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "queryParams",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "t",
+        "newName": "event",
+        "line": 2,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "r",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "t",
+        "newName": "parsedValue",
+        "line": 2,
+        "rule": "call to .parse()"
+      },
+      {
+        "oldName": "s",
+        "newName": "parsedValue",
+        "line": 2,
+        "rule": "call to .parse()"
+      },
+      {
+        "oldName": "s",
+        "newName": "drawingContext",
+        "line": 2,
+        "rule": "call to .getContext()"
+      },
+      {
+        "oldName": "s",
+        "newName": "parsedValue",
+        "line": 2,
+        "rule": "call to .parse()"
+      },
+      {
+        "oldName": "t",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "s",
+        "newName": "_element7",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "t",
+        "newName": "event",
+        "line": 2,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "e",
+        "newName": "pointerEvent",
+        "line": 2,
+        "rule": "pointer coordinates"
+      },
+      {
+        "oldName": "e",
+        "newName": "bounds",
+        "line": 2,
+        "rule": "call to .getBoundingClientRect()"
+      },
+      {
+        "oldName": "r",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "t",
+        "newName": "event",
+        "line": 2,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "t",
+        "newName": "event",
+        "line": 2,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "r",
+        "newName": "bounds",
+        "line": 2,
+        "rule": "call to .getBoundingClientRect()"
+      },
+      {
+        "oldName": "t",
+        "newName": "pointerEvent",
+        "line": 2,
+        "rule": "pointer coordinates"
+      },
+      {
+        "oldName": "s",
+        "newName": "bounds",
+        "line": 2,
+        "rule": "call to .getBoundingClientRect()"
+      },
+      {
+        "oldName": "t",
+        "newName": "promise",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "t",
+        "newName": "promise",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "i",
+        "newName": "eventTarget",
+        "line": 2,
+        "rule": "EventTarget interface"
+      },
+      {
+        "oldName": "e",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "parsedValue",
+        "line": 2,
+        "rule": "call to .parse()"
+      },
+      {
+        "oldName": "t",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "bounds",
+        "line": 2,
+        "rule": "call to .getBoundingClientRect()"
+      },
+      {
+        "oldName": "t",
+        "newName": "event",
+        "line": 2,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "s",
+        "newName": "bounds",
+        "line": 2,
+        "rule": "call to .getBoundingClientRect()"
+      },
+      {
+        "oldName": "i",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "n",
+        "newName": "_lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .getElementById()"
+      },
+      {
+        "oldName": "e",
+        "newName": "_element8",
+        "line": 2,
+        "rule": "call to .querySelector()"
+      },
+      {
+        "oldName": "t",
+        "newName": "_element9",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "e",
+        "newName": "_element0",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "t",
+        "newName": "_element1",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "s",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .querySelector()"
+      },
+      {
+        "oldName": "e",
+        "newName": "_element10",
+        "line": 2,
+        "rule": "call to .querySelector()"
+      },
+      {
+        "oldName": "n",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .getElementById()"
+      },
+      {
+        "oldName": "r",
+        "newName": "_element11",
+        "line": 2,
+        "rule": "call to .querySelector()"
+      },
+      {
+        "oldName": "t",
+        "newName": "_element12",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "t",
+        "newName": "_element13",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "t",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "t",
+        "newName": "event",
+        "line": 2,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "t",
+        "newName": "eventTarget",
+        "line": 2,
+        "rule": "EventTarget interface"
+      },
+      {
+        "oldName": "c",
+        "newName": "url",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "t",
+        "newName": "response",
+        "line": 2,
+        "rule": "Fetch Response interface"
+      },
+      {
+        "oldName": "i",
+        "newName": "pattern",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "url",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "h",
+        "newName": "url",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "url",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "i",
+        "newName": "abortController",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "o",
+        "newName": "url",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "r",
+        "newName": "url",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "n",
+        "newName": "url",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "queryParams",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "parsedValue",
+        "line": 2,
+        "rule": "call to .parse()"
+      },
+      {
+        "oldName": "e",
+        "newName": "parsedValue",
+        "line": 2,
+        "rule": "call to .parse()"
+      },
+      {
+        "oldName": "t",
+        "newName": "abortController",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "url",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "y",
+        "newName": "url",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "g",
+        "newName": "url",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "i",
+        "newName": "url",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "queryParams",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "t",
+        "newName": "queryParams",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "queryParams",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "r",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "a",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "h",
+        "newName": "_lookupMap2",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "l",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "u",
+        "newName": "_lookupMap3",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "parsedValue",
+        "line": 2,
+        "rule": "call to .parse()"
+      },
+      {
+        "oldName": "e",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "i",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "parsedValue",
+        "line": 2,
+        "rule": "call to .parse()"
+      },
+      {
+        "oldName": "e",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "i",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "i",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "date",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "parsedValue",
+        "line": 2,
+        "rule": "call to .parse()"
+      },
+      {
+        "oldName": "n",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "parsedValue",
+        "line": 2,
+        "rule": "call to .parse()"
+      },
+      {
+        "oldName": "i",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "r",
+        "newName": "_lookupMap4",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "o",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "c",
+        "newName": "_lookupMap5",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "response",
+        "line": 2,
+        "rule": "await fetch()"
+      },
+      {
+        "oldName": "e",
+        "newName": "serializedValue",
+        "line": 2,
+        "rule": "call to .stringify()"
+      },
+      {
+        "oldName": "e",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "i",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .querySelector()"
+      },
+      {
+        "oldName": "a",
+        "newName": "_element14",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "t",
+        "newName": "_element15",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "n",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .querySelector()"
+      },
+      {
+        "oldName": "s",
+        "newName": "_element16",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "e",
+        "newName": "_element17",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "s",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "e",
+        "newName": "_element18",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "t",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "n",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "c",
+        "newName": "_element19",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "l",
+        "newName": "_element20",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "t",
+        "newName": "_element21",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "s",
+        "newName": "_element22",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "e",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "i",
+        "newName": "_element23",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "n",
+        "newName": "_element24",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "m",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .querySelector()"
+      },
+      {
+        "oldName": "s",
+        "newName": "promise",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "a",
+        "newName": "parsedValue",
+        "line": 2,
+        "rule": "call to .parse()"
+      },
+      {
+        "oldName": "s",
+        "newName": "bounds",
+        "line": 2,
+        "rule": "call to .getBoundingClientRect()"
+      },
+      {
+        "oldName": "s",
+        "newName": "parsedValue",
+        "line": 2,
+        "rule": "call to .parse()"
+      },
+      {
+        "oldName": "o",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "t",
+        "newName": "bounds",
+        "line": 2,
+        "rule": "call to .getBoundingClientRect()"
+      },
+      {
+        "oldName": "t",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "s",
+        "newName": "_element25",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "e",
+        "newName": "_element26",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "s",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "e",
+        "newName": "_element27",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "i",
+        "newName": "_element28",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "t",
+        "newName": "_element29",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "e",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "n",
+        "newName": "_element30",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "o",
+        "newName": "_element31",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "t",
+        "newName": "_element32",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "t",
+        "newName": "event",
+        "line": 2,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "i",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "n",
+        "newName": "_lookupMap6",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "r",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "t",
+        "newName": "serializedValue",
+        "line": 2,
+        "rule": "call to .stringify()"
+      },
+      {
+        "oldName": "s",
+        "newName": "parsedValue",
+        "line": 2,
+        "rule": "call to .parse()"
+      },
+      {
+        "oldName": "s",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "o",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "t",
+        "newName": "event",
+        "line": 2,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "t",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "t",
+        "newName": "event",
+        "line": 2,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "i",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "t",
+        "newName": "event",
+        "line": 2,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "e",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "e",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "h",
+        "newName": "_element33",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "i",
+        "newName": "_element34",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "t",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "s",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "t",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "e",
+        "newName": "parsedValue",
+        "line": 2,
+        "rule": "call to .parse()"
+      },
+      {
+        "oldName": "e",
+        "newName": "eventTarget",
+        "line": 2,
+        "rule": "EventTarget interface"
+      },
+      {
+        "oldName": "t",
+        "newName": "event",
+        "line": 2,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "s",
+        "newName": "event",
+        "line": 2,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "s",
+        "newName": "event",
+        "line": 2,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "t",
+        "newName": "event",
+        "line": 2,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "t",
+        "newName": "event",
+        "line": 2,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "t",
+        "newName": "event",
+        "line": 2,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "s",
+        "newName": "pointerEvent",
+        "line": 2,
+        "rule": "pointer coordinates"
+      },
+      {
+        "oldName": "t",
+        "newName": "event",
+        "line": 2,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "o",
+        "newName": "pointerEvent",
+        "line": 2,
+        "rule": "pointer coordinates"
+      },
+      {
+        "oldName": "s",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "s",
+        "newName": "lookupMap",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "r",
+        "newName": "uniqueItems",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "f",
+        "newName": "_lookupMap7",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "t",
+        "newName": "pointerEvent",
+        "line": 2,
+        "rule": "pointer coordinates"
+      },
+      {
+        "oldName": "t",
+        "newName": "event",
+        "line": 2,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "t",
+        "newName": "pointerEvent",
+        "line": 2,
+        "rule": "pointer coordinates"
+      },
+      {
+        "oldName": "t",
+        "newName": "event",
+        "line": 2,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "s",
+        "newName": "response",
+        "line": 2,
+        "rule": "await fetch()"
+      },
+      {
+        "oldName": "e",
+        "newName": "event",
+        "line": 2,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "t",
+        "newName": "url",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "queryParams",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "queryParams",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "event",
+        "line": 2,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "t",
+        "newName": "event",
+        "line": 2,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "o",
+        "newName": "abortController",
+        "line": 2,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "s",
+        "newName": "serializedValue",
+        "line": 2,
+        "rule": "call to .stringify()"
+      },
+      {
+        "oldName": "t",
+        "newName": "element",
+        "line": 2,
+        "rule": "call to .createElement()"
+      },
+      {
+        "oldName": "e",
+        "newName": "abortController",
+        "line": 2,
+        "rule": "constructor"
+      }
+    ]
+  },
+  {
+    "file": "airstraf.ing/assets/three-Bi9Yyrpt.js",
+    "renames": [
+      {
+        "oldName": "e",
+        "newName": "drawingContext",
+        "line": 1,
+        "rule": "call to .getContext()"
+      },
+      {
+        "oldName": "n",
+        "newName": "drawingContext",
+        "line": 1,
+        "rule": "call to .getContext()"
+      },
+      {
+        "oldName": "n",
+        "newName": "uniqueItems",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "i",
+        "newName": "reader",
+        "line": 1,
+        "rule": "call to .getReader()"
+      },
+      {
+        "oldName": "i",
+        "newName": "parsedValue",
+        "line": 1,
+        "rule": "call to .parse()"
+      },
+      {
+        "oldName": "n",
+        "newName": "parsedValue",
+        "line": 1,
+        "rule": "call to .parse()"
+      },
+      {
+        "oldName": "n",
+        "newName": "parsedValue",
+        "line": 1,
+        "rule": "call to .parse()"
+      },
+      {
+        "oldName": "o",
+        "newName": "eventTarget",
+        "line": 1,
+        "rule": "EventTarget interface"
+      },
+      {
+        "oldName": "s",
+        "newName": "parsedValue",
+        "line": 1,
+        "rule": "call to .parse()"
+      },
+      {
+        "oldName": "r",
+        "newName": "drawingContext",
+        "line": 1,
+        "rule": "call to .getContext()"
+      },
+      {
+        "oldName": "o",
+        "newName": "lookupMap",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "weakMap",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "weakMap",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "n",
+        "newName": "_weakMap",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "r",
+        "newName": "weakMap",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "i",
+        "newName": "weakMap",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "o",
+        "newName": "eventTarget",
+        "line": 1,
+        "rule": "EventTarget interface"
+      },
+      {
+        "oldName": "r",
+        "newName": "weakMap",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "drawingContext",
+        "line": 1,
+        "rule": "call to .getContext()"
+      },
+      {
+        "oldName": "h",
+        "newName": "uniqueItems",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "A",
+        "newName": "lookupMap",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "t",
+        "newName": "weakMap",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "t",
+        "newName": "weakMap",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "weakMap",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "r",
+        "newName": "weakMap",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "o",
+        "newName": "_weakMap2",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "A",
+        "newName": "_weakMap3",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "E",
+        "newName": "weakMap",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "I",
+        "newName": "uniqueItems",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "_",
+        "newName": "_weakMap4",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "t",
+        "newName": "eventTarget",
+        "line": 1,
+        "rule": "EventTarget interface"
+      },
+      {
+        "oldName": "i",
+        "newName": "eventTarget",
+        "line": 1,
+        "rule": "EventTarget interface"
+      },
+      {
+        "oldName": "e",
+        "newName": "eventTarget",
+        "line": 1,
+        "rule": "EventTarget interface"
+      },
+      {
+        "oldName": "S",
+        "newName": "uniqueItems",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "M",
+        "newName": "_uniqueItems",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "Jt",
+        "newName": "_eventTarget",
+        "line": 1,
+        "rule": "EventTarget interface"
+      },
+      {
+        "oldName": "t",
+        "newName": "event",
+        "line": 1,
+        "rule": "DOM event methods"
+      },
+      {
+        "oldName": "i",
+        "newName": "_uniqueItems2",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "drawingContext",
+        "line": 1,
+        "rule": "call to .getContext()"
+      },
+      {
+        "oldName": "i",
+        "newName": "uniqueItems",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "s",
+        "newName": "_uniqueItems3",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "i",
+        "newName": "lookupMap",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "lookupMap",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "n",
+        "newName": "_lookupMap",
+        "line": 1,
+        "rule": "constructor"
+      },
+      {
+        "oldName": "e",
+        "newName": "lookupMap",
+        "line": 1,
+        "rule": "constructor"
+      }
+    ]
+  },
+  {
     "file": "airstraf.ing/boot-guard.js",
     "renames": [
       {
