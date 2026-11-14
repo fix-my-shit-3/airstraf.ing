@@ -7,6 +7,7 @@ on:
       - 'airstraf.ing-source.zip'
       - 'tools/**'
       - 'package.json'
+      - 'package-lock.json'
       - '.github/workflows/extract-and-map.yml'
   workflow_dispatch:
 
@@ -36,22 +37,18 @@ jobs:
         run: npm install --no-audit --no-fund
       - name: Build readable code and reverse maps
         run: npm run build:maps
-      - name: Verify 100 additional renames and all JS maps
-        run: |
-          node --input-type=module -e '
-            import fs from "node:fs";
-            const report = JSON.parse(fs.readFileSync("dist/report.json", "utf8"));
-            const batches = JSON.parse(fs.readFileSync("dist/renames.json", "utf8"));
-            const extra = batches.flatMap(x => x.renames).filter(x => x.pass === "additional");
-            if (report.additionalIdentifiersRenamed !== 100 || extra.length !== 100)
-              throw new Error("Expected exactly 100 new renames; got " + extra.length);
-            if (report.successfullyMapped !== report.inputJsFiles)
-              throw new Error("Not all JS files have source maps");
-            if (!extra.every(x => x.oldName !== x.newName && x.rule && x.line))
-              throw new Error("Rename audit contains invalid records");
-            console.log("PASS: all " + report.inputJsFiles + " JavaScript files mapped; " +
-              extra.length + " evidence-backed additional variable renames");
-          '
+      - name: Verify 200 new renames, previous work, and every source map
+        run: npm run verify:maps
+      - name: Upload source maps and audit report
+        uses: actions/upload-artifact@v4
+        with:
+          name: airstraf-devtools-source-maps
+          path: |
+            dist/maps/
+            dist/renames.json
+            dist/report.json
+          retention-days: 14
+          if-no-files-found: error
       - name: Commit generated files
         run: |
           git config user.name "github-actions[bot]"

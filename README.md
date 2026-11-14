@@ -25,7 +25,9 @@ Only scoped **local bindings** are considered for renaming; property keys, impor
 
 ## Automatic build
 
-The GitHub Actions workflow `Extract and map source` runs when the ZIP, tooling or workflow changes. It extracts the ZIP and commits the generated output back to `main` (if repository Actions has `contents: write` permission). It can also be run from the Actions tab.
+The GitHub Actions workflow `Extract and map source` runs automatically on pushes to `main` that change the source ZIP, scripts, mapping dependencies or workflow. It extracts the ZIP, builds readable JS and source maps, verifies all generated maps and the rename audit, **uploads a downloadable source-map artifact**, then commits the generated files to `main` (using the repository's `contents: write` permission). It can also be run manually from the Actions tab.
+
+The second naming batch targets **200 additional evidence-backed lexical identifiers**, prioritizing the main gameplay bundle; the prior 100 additional renames remain locked by a regression check. Baseline: 564 renames, previous batch: 100, second batch target: 200, giving **864 total** for this source archive. The generated `dist/report.json` is the authoritative actual count.
 
 Run locally with Node.js 20 or later and Python 3.11 or later:
 
@@ -33,6 +35,7 @@ Run locally with Node.js 20 or later and Python 3.11 or later:
 python3 tools/unpack_source.py
 npm install
 npm run build:maps
+npm run verify:maps
 ```
 
 ## Using a source map in DevTools
