@@ -160,7 +160,24 @@ function buildOne(file) {
   } catch (err) {
     return { file: rel, status: "skipped", reason: "Parse failed: " + err.message, bytes };
   }
+  const parserErrors = ast.errors?.slice(0, 4).map((x) => x.message) || [];
+  function badIds() {
+    const bad = [];
+    traverse(ast, { Identifier(p) {
+      if (typeof p.node.name !== "string" && bad.length < 8) {
+        bad.push({ nameType: typeof p.node.name, name: String(p.node.name),
+          source: original.slice(p.node.start, p.node.end).slice(0, 80),
+          loc: p.node.loc?.start, parentType: p.parentPath?.node?.type });
+      }
+    } });
+    return bad;
+  }
+  const badBefore = badIds();
   const analysis = deobfuscate(ast);
+  const badAfter = badIds();
+  if (badBefore.length || badAfter.length) {
+    throw new Error("Bad AST identifiers " + JSON.stringify({ badBefore, badAfter, parserErrors }));
+  }
   const generated = generate(ast, {
     comments: true, compact: false, minified: false,
     sourceMaps: true, sourceFileName: rel,
