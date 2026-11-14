@@ -38,7 +38,7 @@ GitHub Actions does this on relevant pushes to main and manual runs, publishes t
 - `dist/firefox/`: installable temporary add-on and replacement files.
 - `dist/report.json`, `dist/renames.json`: coverage and naming evidence.
 
-The automatic naming pass is no longer limited to a batch of 200. It applies all supported inference rules to eligible local bindings. Unknown names, public properties, protocols and dynamic-evaluation scopes are preserved. It cannot recover every original variable name or infer every meaning automatically. Current output: **3,216 renamed bindings across 75 files**.
+The automatic naming pass is no longer limited to a batch of 200. It applies all supported inference rules to eligible local bindings. Unknown names, public properties, protocols and dynamic-evaluation scopes are preserved. It cannot recover every original variable name or infer every meaning automatically. The initial generic pass records **3,216 renamed bindings across 75 files**. Additional render-specific passes now restore engine/controller names; see [Rendering deobfuscation and diagnostics](docs/RENDERING.md) for coverage, audits and remaining gaps.
 
 Tests check replacement/fallback/update behavior, original and replacement hashes, syntax and lexical-normalized AST equivalence. These checks do not replace a live Firefox gameplay test.
 
@@ -55,3 +55,13 @@ console.table(globalThis.__AIRSTRAF_REPLACEMENTS__ ?? [])
 ```
 
 Rows contain the file, readable-code SHA-256 and execution time. These markers run at the end of each replacement script; the list contains only scripts evaluated in that console's global context, not all 75 available files. Empty output means no new marker has run there yet (old package, skipped files, loading/error, or wrong frame/worker context). Popup counts indicate delivered responses; console markers indicate execution reached the end. These are debugging indicators, not tamper-proof attestation.
+
+## Rendering diagnostics
+
+The replacement files now include a readable render hook. After **Download latest → Reload game without cache**, inspect it with:
+
+```js
+globalThis.__AIRSTRAF_RENDER__?.getState()
+```
+
+Use `__AIRSTRAF_RENDER__.getOriginalMethods()` to inspect the deobfuscated render/frame functions, and `onFrame(callback)` for a removable observer. Full API, validation and incomplete coverage are documented in [docs/RENDERING.md](docs/RENDERING.md).

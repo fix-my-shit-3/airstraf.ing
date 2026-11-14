@@ -6,8 +6,8 @@
   "description": "Readable JavaScript replacements for live airstraf.ing in Firefox",
   "scripts": {
     "build:extension": "node tools/build_extension.mjs",
-    "test:extension": "node --test tests/extension.test.mjs",
-    "build": "node tools/build_readable.mjs",
+    "test:extension": "node --test tests/*.test.mjs",
+    "build": "node tools/build_readable.mjs && node tools/deobfuscate_render.mjs && node tools/refine_render_names.mjs && node tools/webgl_renderer_names.mjs && node tools/deobfuscate_game_render.mjs",
     "verify": "node tools/verify_readable.mjs && node tools/verify_equivalence.mjs"
   },
   "dependencies": {
@@ -17,5 +17,9 @@
     "@babel/types": "^7.26.9",
     "@jridgewell/gen-mapping": "^0.3.8",
     "@jridgewell/trace-mapping": "^0.3.25"
+  },
+  "devDependencies": {
+    "terser": "5.44.1",
+    "three": "0.186.0"
   }
 }

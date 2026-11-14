@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import {test} from 'node:test';
 import vm from 'node:vm';
 import fs from 'node:fs';
+import {instrumentRender} from '../tools/instrument_render.mjs';
 import {webcrypto,createHash} from 'node:crypto';
 const script=fs.readFileSync('extension/background.js','utf8');
 const sha=b=>createHash('sha256').update(b).digest('hex');
@@ -76,9 +77,10 @@ test('packaged code preserves readable bytes and exposes execution proof only wh
  for(const e of manifest.files){
   const readable=fs.readFileSync('dist/readable/'+e.url.slice(8),'utf8');
   const replacement=fs.readFileSync('dist/firefox/'+e.replacementPath,'utf8');
-  assert.ok(replacement.startsWith(readable));
+  const instrumented=instrumentRender(e.url.slice(8),readable);
+  assert.ok(replacement.startsWith(instrumented));
   const context=vm.createContext({});assert.equal(context.__AIRSTRAF_REPLACEMENTS__,undefined);
-  const marker=replacement.slice(readable.length);vm.runInContext(marker,context);vm.runInContext(marker,context);
+  const marker=replacement.slice(instrumented.length);vm.runInContext(marker,context);vm.runInContext(marker,context);
   assert.equal(context.__AIRSTRAF_REPLACEMENTS__.length,1);
   assert.equal(context.__AIRSTRAF_REPLACEMENTS__[0].readableSha256,sha(Buffer.from(readable)));
  }

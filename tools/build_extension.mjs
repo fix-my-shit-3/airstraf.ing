@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
+import {instrumentRender} from './instrument_render.mjs';
 const out = 'dist/firefox';
 fs.mkdirSync(`${out}/files`, {recursive:true});
 const digest = bytes => createHash('sha256').update(bytes).digest('hex');
@@ -13,7 +14,7 @@ for (const file of files) {
   // Executed only after this replacement finishes top-level evaluation.
   const proof = JSON.stringify({file: file.file, readableSha256: digest(readable)});
   const marker = '\n;(()=>{try{const proof='+proof+';const key="__AIRSTRAF_REPLACEMENTS__";const list=Array.isArray(globalThis[key])?globalThis[key]:(globalThis[key]=[]);if(!list.some(x=>x.file===proof.file))list.push({...proof,executedAt:new Date().toISOString()});}catch{}})();\n';
-  const replacement = Buffer.concat([readable, Buffer.from(marker)]);
+  const replacement = Buffer.from(instrumentRender(file.file,readable.toString('utf8')) + marker);
   const replacementSha256 = digest(replacement);
   const replacementPath = `files/${replacementSha256}.js`;
   fs.writeFileSync(`${out}/${replacementPath}`,replacement);
