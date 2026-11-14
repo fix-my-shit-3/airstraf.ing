@@ -1,0 +1,70 @@
+import { c as e } from "./c-CN8Wxji6.js";
+var r = "select-outline",
+  l = {
+    px: 4,
+    glowOut: 0,
+    line: 5,
+    glowIn: 0,
+    radius: 9,
+    size: 76,
+    border: 36
+  },
+  t = [1, 1, 1, 1];
+function i(e) {
+  const {
+    size: t,
+    border: i
+  } = l;
+  e.sprites[r] = {
+    name: r,
+    w: t,
+    h: t,
+    border: [i, i, i, i],
+    ppu: 100,
+    rect: [t, t]
+  };
+}
+function n(i = 0, n = "kour-select-frame") {
+  const o = 2 * (l.glowOut + i);
+  return {
+    id: n,
+    name: n,
+    active: !0,
+    layer: 5,
+    rt: {
+      amin: [0, 0],
+      amax: [1, 1],
+      pos: [0, 0],
+      size: [o, o],
+      pivot: [.5, .5],
+      z: 0,
+      rot: [0, 0, 0, 1],
+      rotZ: 0,
+      scale: [1, 1, 1]
+    },
+    c: [{
+      t: "Image",
+      enabled: !0,
+      sprite: r,
+      color: [...t],
+      material: null,
+      type: e.Sliced,
+      preserveAspect: !1,
+      fillCenter: !1,
+      fillMethod: 4,
+      fillAmount: 1,
+      fillClockwise: !0,
+      fillOrigin: 0,
+      ppuMul: l.px,
+      raycast: !1
+    }],
+    children: []
+  };
+}
+function o(e, r, l = !0, t = 0) {
+  let i = r.children.find(child => "kour-select-frame" === child.name) ?? null;
+  return i || l ? (i ? l && i !== r.children[r.children.length - 1] && i.$_hl4() : i = e.instantiate(n(t), r), i.setActive(l), i) : null;
+}
+export { n as i, o as n, i as r, t };
+
+;(()=>{try{const proof={"file":"airstraf.ing/assets/c-DWXBoQqt.js","readableSha256":"8c47160ae46e5b6a4e38802a2c955bc5d15169f436af0cbd1db96b44b1342a8b"};const key="__AIRSTRAF_REPLACEMENTS__";const list=Array.isArray(globalThis[key])?globalThis[key]:(globalThis[key]=[]);if(!list.some(x=>x.file===proof.file))list.push({...proof,executedAt:new Date().toISOString()});}catch{}})();

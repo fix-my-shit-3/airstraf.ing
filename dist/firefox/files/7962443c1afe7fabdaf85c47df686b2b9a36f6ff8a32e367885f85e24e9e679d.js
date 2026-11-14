@@ -1,0 +1,59 @@
+(function (S, y) {
+  const l = N,
+    q = S();
+  while (!![]) {
+    try {
+      const b = parseInt(l(0xf4)) / 0x1 + parseInt(l(0xf5)) / 0x2 * (-parseInt(l(0xfb)) / 0x3) + parseInt(l(0xec)) / 0x4 * (-parseInt(l(0xef)) / 0x5) + -parseInt(l(0xfc)) / 0x6 * (-parseInt(l(0xf8)) / 0x7) + -parseInt(l(0xf7)) / 0x8 * (-parseInt(l(0xe9)) / 0x9) + -parseInt(l(0xeb)) / 0xa + parseInt(l(0xf3)) / 0xb * (-parseInt(l(0xed)) / 0xc);
+      if (b === y) break;else q['push'](q['shift']());
+    } catch (M) {
+      q['push'](q['shift']());
+    }
+  }
+})(a, 0x5e2b5);
+function N(r, E) {
+  r = r - 0xe8;
+  const e = a();
+  let s = e[r];
+  return s;
+}
+import { c as E, d as s } from './c-DkPZj7-z.js';
+function a() {
+  const W = ['clanLetters', 'map', '3fsYqYj', '1146KFaXYA', 'isInteger', '6900813EUyENl', 'profileBackground', '49270cxxhrY', '4LuPOWx', '401196jBWalP', 'style', '2713015pFRSgs', 'isArray', 'profile_background', 'profileEffect', '44HZCoaF', '133408bqtsdh', '67090TizqPU', 'filter', '8hFOXdd', '7343vWcSTx'];
+  a = function () {
+    return W;
+  };
+  return a();
+}
+function t(S) {
+  const D = N;
+  if (!Array['isArray'](S)) return [];
+  const y = [];
+  for (const q of S) {
+    const b = Number(q?.['i']);
+    if (!Number[D(0xe8)](b) || b < 0x0) continue;
+    const M = E(q['s']);
+    M ? y['push']({
+      'index': b,
+      'style': M
+    }) : q[D(0xee)] && 'object' == typeof q['style'] && y['push']({
+      'index': b,
+      'style': s(q['style'])
+    });
+  }
+  return y;
+}
+var n = S => 'string' == typeof S && S ? S : null;
+function o(S) {
+  const Z = N;
+  return {
+    'adminBadges': (y = S['admin_badges'] ?? S['adminBadges'], Array[Z(0xf0)](y) ? y[Z(0xfa)](Number)[Z(0xf6)](q => Number[Z(0xe8)](q)) : []),
+    'letters': t(S['letters']),
+    'clanLetters': t(S['clan_letters'] ?? S[Z(0xf9)]),
+    'profileBackground': n(S[Z(0xf1)] ?? S[Z(0xea)]),
+    'profileEffect': n(S['profile_effect'] ?? S[Z(0xf2)])
+  };
+  var y;
+}
+export { o as n, t };
+
+;(()=>{try{const proof={"file":"airstraf.ing/assets/c-CfAS2_ra.js","readableSha256":"0d5d4d10f402c499c0f7a1ba819d2c6b29d4495da3919e92371267790a131e9a"};const key="__AIRSTRAF_REPLACEMENTS__";const list=Array.isArray(globalThis[key])?globalThis[key]:(globalThis[key]=[]);if(!list.some(x=>x.file===proof.file))list.push({...proof,executedAt:new Date().toISOString()});}catch{}})();

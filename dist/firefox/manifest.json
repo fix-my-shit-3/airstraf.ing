@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "airstraf.ing readable replacement",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Replace matching live scripts with readable code; update replacement files from GitHub.",
   "browser_specific_settings": {
     "gecko": {
@@ -18,7 +18,8 @@
     "https://api.github.com/*"
   ],
   "browser_action": {
-    "default_title": "airstraf.ing replacement: starting"
+    "default_title": "airstraf.ing readable replacement",
+    "default_popup": "popup.html"
   },
   "background": {
     "scripts": [

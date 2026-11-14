@@ -1,0 +1,31 @@
+var t = Math.PI / 180;
+function n(t) {
+  return Number.isFinite(t) ? Math.max(1, t) : 1;
+}
+function a(t, a) {
+  const r = 1 / n(a);
+  t[1] *= r, t[5] *= r, t[9] *= r, t[13] *= r;
+}
+function r(t) {
+  return 1 / n(t);
+}
+function u(t, n) {
+  return (1 + n) / (1 + n * Math.hypot(t, 1));
+}
+function o(t, n) {
+  if (!(n > 0 && t > 0)) return 1;
+  const a = 1 / u(t, n);
+  return Math.min(2, Math.max(1, Math.ceil(8 * a - 1e-6) / 8));
+}
+function s(t, n, a, r, o) {
+  const s = u(a[0], r),
+    c = t * a[0],
+    e = (1 + r) / (1 + r * Math.hypot(c, 1)) / s;
+  return o.x = t * e, o.y = n * e, e;
+}
+function c(n, a) {
+  return Math.tan(n * t / 2) / Math.tan(a * t / 2);
+}
+export { n as a, o as i, s as n, a as o, u as r, c as s, r as t };
+
+;(()=>{try{const proof={"file":"airstraf.ing/assets/c-D-iNDOV5.js","readableSha256":"139655acafafbd237276942e04d8e2447ac329717d9746d56147f5a20340d419"};const key="__AIRSTRAF_REPLACEMENTS__";const list=Array.isArray(globalThis[key])?globalThis[key]:(globalThis[key]=[]);if(!list.some(x=>x.file===proof.file))list.push({...proof,executedAt:new Date().toISOString()});}catch{}})();
