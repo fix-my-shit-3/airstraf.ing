@@ -1,7 +1,7 @@
 const __vite__mapDeps = (i, m = __vite__mapDeps, d = m.f || (m.f = ["assets/three-Bi9Yyrpt.js", "assets/c-BJ87Xak5.js"])) => i.map(item => d[item]);
 import { $ as A, Et as t, P as s, Tt as n, V as e, W as B, X as o, Z as i, at as r, f as w, ht as f, lt as a, ot as g, r as c, t as Q, ut as h } from "./c-CwMHWVDn.js";
 import { t as l } from "./c-D7DrHuA8.js";
-import { At as C, Br as H, Ct as u, Dr as E, Dt as F, Ft as D, H as P, It as d, J as M, Lt as k, Mt as b, Or as I, Pt as G, Rr as U, T as v, W as p, Xt as m, Yt as Y, Z as T, _ as L, et as J, f as R, g as O, gr as V, h as y, hr as j, mr as x, nn as z, on as X, qt as W, sn as S, v as Z, w as N, x as K, zr as q } from "./three-Bi9Yyrpt.js";
+import { At as C, Br as Vector4, Ct as LinearFilter, Dr as Uint16BufferAttribute, Dt as LinearSRGBColorSpace, Ft as Matrix4, H as P, It as Mesh, J as Float32BufferAttribute, Lt as MeshBasicMaterial, Mt as MathUtils, Or as Uint32BufferAttribute, Pt as Matrix3, Rr as Vector2, T as Color, W as Euler, Xt as Object3D, Yt as NearestMipmapNearestFilter, Z as Frustum, _ as BufferAttribute, et as Group, f as AnimationMixer, g as BoxGeometry, gr as Sphere, h as Box3, hr as SkinnedMesh, mr as Skeleton, nn as PlaneGeometry, on as PropertyBinding, qt as NearestFilter, sn as Quaternion, v as BufferGeometry, w as ClampToEdgeWrapping, x as CanvasTexture, zr as Vector3 } from "./three-Bi9Yyrpt.js";
 import { s as _ } from "./c-D-fVO02v.js";
 import { d as $, n as AA, r as tA, s as sA } from "./c-Caw4SzGP.js";
 import { a as nA, l as eA, r as BA, u as oA } from "./c-e0fQXfDh.js";
@@ -29,7 +29,7 @@ function $A(A, t, s) {
   return s ? .7 * n : n;
 }
 var At = A => A + 30;
-function tt(A, t, s, n = new q()) {
+function tt(A, t, s, n = new Vector3()) {
   const e = () => (2 * s() - 1) * t * 5e-4;
   return n.set(A.x + e(), A.y + e(), A.z + e());
 }
@@ -86,8 +86,8 @@ var ot = {
     boost: A
   },
   wt = class {
-    current = new q();
-    target = new q();
+    current = new Vector3();
+    target = new Vector3();
     returnSpeed = 3;
     crosshairMulti = 0;
     landing = 0;
@@ -128,12 +128,12 @@ var ot = {
       return this.current.set(A.cx, A.cy, A.cz), this.target.set(A.tx, A.ty, A.tz), this.returnSpeed = A.returnSpeed, this.crosshairMulti = A.crosshairMulti, this.landing = A.landing, this.wasGrounded = A.wasGrounded, this;
     }
   },
-  ft = new q(),
+  ft = new Vector3(),
   at = A => Math.min(1, Math.max(0, A)),
-  gt = new S(),
-  ct = new S(),
-  Qt = new p();
-function ht(A, t, s = 0, n = 0, e = new q()) {
+  gt = new Quaternion(),
+  ct = new Quaternion(),
+  Qt = new Euler();
+function ht(A, t, s = 0, n = 0, e = new Vector3()) {
   return gt.setFromEuler(Qt.set(t, A, 0, "YXZ")), ct.setFromEuler(Qt.set(-s * Math.PI / 180, -n * Math.PI / 180, 0, "YXZ")), e.set(0, 0, -1).applyQuaternion(gt.multiply(ct));
 }
 function lt(A, t, s, n, e, B) {
@@ -805,11 +805,11 @@ function ln(A, t, s = !1) {
 }
 var Cn = A => BA(A)?.outline ?? null;
 function Hn(A, t) {
-  const s = new v(t.color);
+  const s = new Color(t.color);
   return A.defines.KOUR_OUTLINE = "", A.uniforms.uOutline = {
-    value: new H(s.r, s.g, s.b, t.shimmer ?? .85)
+    value: new Vector4(s.r, s.g, s.b, t.shimmer ?? .85)
   }, A.uniforms.uGlitter = PA, A.uniforms.uOutlineWidth = {
-    value: new U(t.width / JA, CA)
+    value: new Vector2(t.width / JA, CA)
   }, A.side = 1, A.userData.skinOutline = !0, A.needsUpdate = !0, A;
 }
 var un = new Map();
@@ -834,9 +834,9 @@ function Dn(A) {
       float32Values = new Float32Array(3 * t),
       _float32Values = new Float32Array(3 * t);
     for (let A = 0; A < t; A++) float32Values[3 * A] = s.getX(A), float32Values[3 * A + 1] = s.getY(A), float32Values[3 * A + 2] = s.getZ(A), _float32Values[3 * A] = n.getX(A), _float32Values[3 * A + 1] = n.getY(A), _float32Values[3 * A + 2] = n.getZ(A);
-    e = new Z(), e.name = `${A.name || "mesh"} (outline)`;
+    e = new BufferGeometry(), e.name = `${A.name || "mesh"} (outline)`;
     for (const [s, n] of Object.entries(A.attributes)) "normal" !== s && e.setAttribute(s, n);
-    e.setAttribute("normal", new L(DA(float32Values, _float32Values, t), 3)), e.setIndex(A.index), e.setDrawRange(A.drawRange.start, A.drawRange.count), A.boundingSphere && (e.boundingSphere = A.boundingSphere.clone()), A.boundingBox && (e.boundingBox = A.boundingBox.clone());
+    e.setAttribute("normal", new BufferAttribute(DA(float32Values, _float32Values, t), 3)), e.setIndex(A.index), e.setDrawRange(A.drawRange.start, A.drawRange.count), A.boundingSphere && (e.boundingSphere = A.boundingSphere.clone()), A.boundingBox && (e.boundingBox = A.boundingBox.clone());
   }
   return Fn.set(A, e), e;
 }
@@ -847,9 +847,9 @@ function Pn(A, t) {
   let e;
   const B = A;
   if (B.isSkinnedMesh) {
-    const A = new j(s, n);
+    const A = new SkinnedMesh(s, n);
     A.bindMode = B.bindMode, A.bind(B.skeleton, B.bindMatrix), e = A;
-  } else e = new d(s, n);
+  } else e = new Mesh(s, n);
   return e.name = "skin-outline", e.userData.skinOutline = !0, e.frustumCulled = A.frustumCulled, e.renderOrder = A.renderOrder, e.matrixAutoUpdate = !1, e;
 }
 function dn(A) {
@@ -869,17 +869,17 @@ function kn(A, t) {
     center: [(r[0] + B / 2 - i[0] * n[0]) / s, (r[1] + o / 2 - i[1] * n[1]) / s]
   };
 }
-var bn = new D(),
-  In = new D(),
-  Gn = new y(),
-  Un = new q(),
-  vn = new q(),
-  pn = new q(),
-  mn = new m(),
-  Yn = new q(),
+var bn = new Matrix4(),
+  In = new Matrix4(),
+  Gn = new Box3(),
+  Un = new Vector3(),
+  vn = new Vector3(),
+  pn = new Vector3(),
+  mn = new Object3D(),
+  Yn = new Vector3(),
   Tn = new Float64Array(36),
   Ln = new Float64Array(36),
-  Jn = [new q(), new q(), new q()];
+  Jn = [new Vector3(), new Vector3(), new Vector3()];
 function Rn(A, t, s, n, e) {
   let B = 0;
   for (let o = 0; o < t; o++) {
@@ -899,10 +899,10 @@ function Rn(A, t, s, n, e) {
 var On = class A {
     surface = null;
     target = null;
-    lifted = new q();
+    lifted = new Vector3();
     visit = A => this.clip(A);
-    facing = new q();
-    static frame(A, t, s, n, e, B = [0, 0], o = .12, i = new D()) {
+    facing = new Vector3();
+    static frame(A, t, s, n, e, B = [0, 0], o = .12, i = new Matrix4()) {
       return mn.position.copy(A), mn.scale.set(1, 1, 1), mn.rotation.set(0, 0, 0), mn.lookAt(Yn.copy(A).add(t)), mn.rotateZ(e), mn.translateX(B[0]), mn.translateY(B[1]), mn.scale.set(s, n, o), mn.updateMatrix(), i.copy(mn.matrix);
     }
     project(t, s, n, e, B, o, i) {
@@ -973,9 +973,9 @@ var xn = class {
       this.slots = t;
       const s = t * Mn;
       this.positions = new Float32Array(3 * s), this.uvs = new Float32Array(2 * s), this.colors = new Float32Array(4 * s).fill(1), this.taken = new Uint8Array(t);
-      const n = new Z(),
-        e = (A, t) => new L(A, t).setUsage(P);
-      n.setAttribute("position", e(this.positions, 3)), n.setAttribute("uv", e(this.uvs, 2)), n.setAttribute("color", e(this.colors, 4)), n.setDrawRange(0, 0), this.mesh = new d(n, A), this.mesh.frustumCulled = !1, this.mesh.matrixAutoUpdate = !1, this.mesh.visible = !1;
+      const n = new BufferGeometry(),
+        e = (A, t) => new BufferAttribute(A, t).setUsage(P);
+      n.setAttribute("position", e(this.positions, 3)), n.setAttribute("uv", e(this.uvs, 2)), n.setAttribute("color", e(this.colors, 4)), n.setDrawRange(0, 0), this.mesh = new Mesh(n, A), this.mesh.frustumCulled = !1, this.mesh.matrixAutoUpdate = !1, this.mesh.visible = !1;
       for (let B = t - 1; B >= 0; B--) this.free.push(B);
     }
     take() {
@@ -1019,9 +1019,9 @@ var xn = class {
   },
   zn = 5 * Math.PI / 180,
   Xn = jn(),
-  Wn = new q(),
+  Wn = new Vector3(),
   Sn = class {
-    group = new J();
+    group = new Group();
     defs = new Map();
     ready = new Map();
     marks = [];
@@ -1054,7 +1054,7 @@ var xn = class {
           texture: n,
           size: [B.size[0] * o, B.size[1] * o],
           center: [B.center[0] * o, B.center[1] * o],
-          color: new v(i, r, w)
+          color: new Color(i, r, w)
         };
       }(result)) ?? function () {
         const element = document.createElement("canvas");
@@ -1062,16 +1062,16 @@ var xn = class {
         const drawingContext = element.getContext("2d"),
           s = drawingContext.createLinearGradient(0, 0, element.width, 0);
         return s.addColorStop(0, "rgba(60,58,60,0)"), s.addColorStop(.2, "rgba(60,58,60,0.85)"), s.addColorStop(.8, "rgba(60,58,60,0.85)"), s.addColorStop(1, "rgba(60,58,60,0)"), drawingContext.fillStyle = s, drawingContext.beginPath(), drawingContext.ellipse(68, 9, 66, 5, 0, 0, 2 * Math.PI), drawingContext.fill(), {
-          texture: new K(element),
+          texture: new CanvasTexture(element),
           size: [11.11936, .36 * 4.088],
           center: [0, 0],
-          color: new v(1, 1, 1)
+          color: new Color(1, 1, 1)
         };
       }() : null).catch(() => null).then(result => (this.ready.set(A, result), result && vA(this.batch(result).mesh), result)), this.defs.set(A, t)), t;
     }
     batch(A) {
       let t = this.batches.get(A.texture);
-      return t || (t = new xn(new k({
+      return t || (t = new xn(new MeshBasicMaterial({
         map: A.texture,
         color: A.color,
         vertexColors: !0,
@@ -1192,12 +1192,12 @@ function oe(A, t, s, n) {
   const e = A[A.length - 1];
   for (let B = 0; B < n; B++) s[B] = e[B + 1];
 }
-var ie = new q(),
-  re = new q(),
-  we = new q(),
-  fe = new q(),
-  ae = new q(),
-  ge = new q(),
+var ie = new Vector3(),
+  re = new Vector3(),
+  we = new Vector3(),
+  fe = new Vector3(),
+  ae = new Vector3(),
+  ge = new Vector3(),
   ce = [1, 1, 1],
   Qe = [1],
   he = jn(),
@@ -1210,7 +1210,7 @@ var ie = new q(),
     born = new Float64Array(le);
     first = 0;
     count = 0;
-    geometry = new Z();
+    geometry = new BufferGeometry();
     attributes;
     position;
     color;
@@ -1222,7 +1222,7 @@ var ie = new q(),
     $_1fp = 0;
     constructor(A, t) {
       this.def = A;
-      const s = A => new L(new Float32Array(128 * A), A).setUsage(P),
+      const s = A => new BufferAttribute(new Float32Array(128 * A), A).setUsage(P),
         n = s(3),
         e = s(4),
         B = s(2);
@@ -1234,7 +1234,7 @@ var ie = new q(),
       }
       this.geometry.setIndex(o), this.geometry.setDrawRange(0, 0), this.width = Be(A.widthCurve);
       let i = Ce.get(A);
-      i || Ce.set(A, i = []), this.shades = i, this.mesh = new d(this.geometry, t), this.mesh.frustumCulled = !1, this.mesh.renderOrder = 3e3, this.mesh.matrixAutoUpdate = !1;
+      i || Ce.set(A, i = []), this.shades = i, this.mesh = new Mesh(this.geometry, t), this.mesh.frustumCulled = !1, this.mesh.renderOrder = 3e3, this.mesh.matrixAutoUpdate = !1;
     }
     get empty() {
       return this.count < 2;
@@ -1305,7 +1305,7 @@ var ie = new q(),
     }
   },
   ue = class {
-    group = new J();
+    group = new Group();
     index = null;
     loaded = new Map();
     ready = new Map();
@@ -1322,8 +1322,8 @@ var ie = new q(),
     clock = {
       time: 0
     };
-    cube = new O(1, 1, 1);
-    quad = new z(1, 1);
+    cube = new BoxGeometry(1, 1, 1);
+    quad = new PlaneGeometry(1, 1);
     bulletHoles = !0;
     $_1rvq = new Sn();
     constructor() {
@@ -1341,7 +1341,7 @@ var ie = new q(),
     $_333(A) {
       const t = "number" == typeof A ? A : A.getHex();
       let s = this.$_3q8.get(t);
-      return s || (s = new k({
+      return s || (s = new MeshBasicMaterial({
         color: A,
         transparent: !0,
         depthWrite: !1
@@ -1353,9 +1353,9 @@ var ie = new q(),
         const t = (await NA(A).catch(() => null))?.components?.find(A => "sprite" === A.type && A.sprite);
         if (!t?.sprite) return null;
         const s = await KA(t.sprite),
-          n = new xn(new k({
+          n = new xn(new MeshBasicMaterial({
             map: s,
-            color: new v(t.color[0], t.color[1], t.color[2]),
+            color: new Color(t.color[0], t.color[1], t.color[2]),
             vertexColors: !0,
             transparent: !0,
             alphaTest: .01,
@@ -1385,9 +1385,9 @@ var ie = new q(),
           n = await Promise.all(s.components.filter(component => "TrailRenderer" === component.type && component.enabled).map(async item => {
             const t = item.materials[0] ? s.materials[item.materials[0]] : void 0,
               n = t?.texture ? await KA(t.texture).catch(() => null) : null;
-            return !n || 1006 === n.magFilter && 1006 === n.minFilter || (n.magFilter = u, n.minFilter = u, n.needsUpdate = !0), {
+            return !n || 1006 === n.magFilter && 1006 === n.minFilter || (n.magFilter = LinearFilter, n.minFilter = LinearFilter, n.needsUpdate = !0), {
               def: item,
-              material: new k({
+              material: new MeshBasicMaterial({
                 map: n,
                 vertexColors: !0,
                 transparent: !0,
@@ -1404,8 +1404,8 @@ var ie = new q(),
               [n, e, B] = (item.materials[0] ? s.materials[item.materials[0]] : void 0)?.color ?? [1, 1, 1];
             return {
               node: item.node,
-              scale: new q().fromArray(t.s),
-              material: this.$_333(new v(n, e, B))
+              scale: new Vector3().fromArray(t.s),
+              material: this.$_333(new Color(n, e, B))
             };
           }),
           B = t.impact ? await this.$_1pp(t.impact) : null,
@@ -1422,10 +1422,10 @@ var ie = new q(),
     }
     create(A, t) {
       cA("bullet");
-      const s = _n(new J()),
+      const s = _n(new Group()),
         n = [];
       for (const B of t.gfx) {
-        const A = new d(this.cube, B.material);
+        const A = new Mesh(this.cube, B.material);
         A.scale.copy(B.scale), s.add(A), n.push(A);
       }
       const e = t.trails.map(item => new He(item.def, item.material));
@@ -1437,8 +1437,8 @@ var ie = new q(),
         trails: e,
         info: t.info,
         speed: t.speed,
-        dir: new q(),
-        from: new q(),
+        dir: new Vector3(),
+        from: new Vector3(),
         distance: 0,
         age: 0,
         stopped: !1,
@@ -1532,7 +1532,7 @@ var ie = new q(),
       for (e || (cA("hole"), e = {
         def: A,
         slot: -1,
-        position: new q(),
+        position: new Vector3(),
         sx: 0,
         sy: 0,
         spin: 0,
@@ -1707,24 +1707,24 @@ function de(A) {
   for (const s of sA) s.mesh && ((A.skins.hatMeshes ??= {})[String(s.index)] = s.mesh);
   return A;
 }
-var Me = new q(),
-  ke = new q(),
-  be = new q(),
-  Ie = new q(),
-  Ge = new q(),
-  Ue = new q(),
-  ve = new q(),
-  pe = new q(),
-  me = new S(),
-  Ye = new S(),
-  Te = new S();
+var Me = new Vector3(),
+  ke = new Vector3(),
+  be = new Vector3(),
+  Ie = new Vector3(),
+  Ge = new Vector3(),
+  Ue = new Vector3(),
+  ve = new Vector3(),
+  pe = new Vector3(),
+  me = new Quaternion(),
+  Ye = new Quaternion(),
+  Te = new Quaternion();
 function Le(A, t, s) {
   return t.updateWorldMatrix(!0, !1), s.setFromMatrixPosition(t.matrixWorld), function (A, t) {
     for (let s = t; s; s = s.parent) if (s === A) return !0;
     return !1;
   }(A, t) || A.updateWorldMatrix(!0, !1), s.applyMatrix4(Je.copy(A.matrixWorld).invert());
 }
-var Je = new D();
+var Je = new Matrix4();
 function Re(A, t) {
   A.updateWorldMatrix(!0, !1), Oe(A, t);
 }
@@ -1812,17 +1812,17 @@ var ze = A => A * A * (3 - 2 * A),
     jabElbow: [.5, -.85, -.2],
     hookElbow: [.9, .35, -.25]
   },
-  Se = new q(1, 0, 0),
-  Ze = new q(0, 1, 0),
-  Ne = new q(0, 0, 1),
-  Ke = new S(),
-  qe = new S(),
-  _e = new q(),
-  $e = new q(),
-  AB = new q(),
-  tB = new q(),
-  sB = new q(),
-  nB = new q(),
+  Se = new Vector3(1, 0, 0),
+  Ze = new Vector3(0, 1, 0),
+  Ne = new Vector3(0, 0, 1),
+  Ke = new Quaternion(),
+  qe = new Quaternion(),
+  _e = new Vector3(),
+  $e = new Vector3(),
+  AB = new Vector3(),
+  tB = new Vector3(),
+  sB = new Vector3(),
+  nB = new Vector3(),
   eB = class {
     elapsed = -1;
     shape = Xe.light;
@@ -1883,7 +1883,7 @@ var ze = A => A * A * (3 - 2 * A),
       const s = this.root,
         n = this.swing.heavy,
         e = We,
-        B = b.DEG2RAD;
+        B = MathUtils.DEG2RAD;
       Le(s, t.shoulder, _e);
       const o = Math.sign(_e.x) || this.side;
       this.$_1jj && ye(s, this.$_1jj, Ke.setFromAxisAngle(Ze, -o * (n ? e.hookTwist : e.twist) * B * A)), n && this.$_4oi && A > 0 && ye(s, this.$_4oi, Ke.setFromAxisAngle(Se, e.lean * B * A)), Le(s, t.shoulder, _e), Le(s, t.elbow, $e), Le(s, t.hand, AB);
@@ -1926,10 +1926,10 @@ var ze = A => A * A * (3 - 2 * A),
       tilt: 1
     }
   };
-function iB(A = new S(), t = oB) {
+function iB(A = new Quaternion(), t = oB) {
   return A.setFromEuler(rB.set(t.tilt, t.turn, -t.lean, "ZXY"));
 }
-var rB = new p();
+var rB = new Euler();
 iB();
 var wB = [{
     shoulder: "Shoulder_R",
@@ -1948,20 +1948,20 @@ var wB = [{
     indexTip: "IndexFinger_03",
     fingerTip: "Finger_03"
   }],
-  fB = new q(),
-  aB = new q(),
-  gB = new q(),
-  cB = new q(),
-  QB = new q(),
-  hB = new q(),
-  lB = new q(),
-  CB = new q(),
-  HB = new q(),
-  uB = new S(),
-  EB = new S(),
-  FB = new S(),
-  DB = new p(),
-  PB = new q(0, 1, 0),
+  fB = new Vector3(),
+  aB = new Vector3(),
+  gB = new Vector3(),
+  cB = new Vector3(),
+  QB = new Vector3(),
+  hB = new Vector3(),
+  lB = new Vector3(),
+  CB = new Vector3(),
+  HB = new Vector3(),
+  uB = new Quaternion(),
+  EB = new Quaternion(),
+  FB = new Quaternion(),
+  DB = new Euler(),
+  PB = new Vector3(0, 1, 0),
   dB = class {
     root;
     get active() {
@@ -1972,7 +1972,7 @@ var wB = [{
     }
     held = !1;
     raised = -1;
-    mount = new J();
+    mount = new Group();
     hands;
     arms = [];
     chest;
@@ -1984,7 +1984,7 @@ var wB = [{
         Object.values(n).some(_item => !_item) || this.arms.push({
           ...n,
           side: index,
-          hint: new q()
+          hint: new Vector3()
         });
       });
     }
@@ -2070,16 +2070,16 @@ function bB(A, t, s) {
   for (let f = 0; f < 3; f++) s.at[f] = r[f] + (w[f] - r[f]) * i;
   return s.yaw = (e.yaw ?? 0) + ((B.yaw ?? 0) - (e.yaw ?? 0)) * i, s.pitch = (e.pitch ?? 0) + ((B.pitch ?? 0) - (e.pitch ?? 0)) * i, s.roll = (e.roll ?? 0) + ((B.roll ?? 0) - (e.roll ?? 0)) * i, s.spin = (e.spin ?? 0) + ((B.spin ?? 0) - (e.spin ?? 0)) * i, s;
 }
-var IB = new q(0, 1, 0),
-  GB = new q(1, 0, 0),
-  UB = new q(0, 0, 1),
-  vB = new S(),
-  pB = new D(),
-  mB = new q(),
-  YB = new q(),
-  TB = new q(),
-  LB = new S(),
-  JB = new q(...MB.gripLower),
+var IB = new Vector3(0, 1, 0),
+  GB = new Vector3(1, 0, 0),
+  UB = new Vector3(0, 0, 1),
+  vB = new Quaternion(),
+  pB = new Matrix4(),
+  mB = new Vector3(),
+  YB = new Vector3(),
+  TB = new Vector3(),
+  LB = new Quaternion(),
+  JB = new Vector3(...MB.gripLower),
   RB = (A, t, s) => s.set(t[0], t[1], t[2]).applyMatrix4(A);
 function OB(A, t, s, n) {
   return n.set(s[0] - t[0], s[1] - t[1], s[2] - t[2]).transformDirection(A), n;
@@ -2097,15 +2097,15 @@ var VB = [.86, .92, 1],
     count = 0;
     constructor(A = 40) {
       this.samples = A, this.ring = new Float32Array(6 * A), this.ages = new Float32Array(A);
-      const t = new Z();
-      this.position = new L(new Float32Array(6 * A), 3), this.position.setUsage(P), this.color = new L(new Float32Array(8 * A), 4), this.color.setUsage(P), t.setAttribute("position", this.position), t.setAttribute("color", this.color);
+      const t = new BufferGeometry();
+      this.position = new BufferAttribute(new Float32Array(6 * A), 3), this.position.setUsage(P), this.color = new BufferAttribute(new Float32Array(8 * A), 4), this.color.setUsage(P), t.setAttribute("position", this.position), t.setAttribute("color", this.color);
       const uint16Values = new Uint16Array(6 * (A - 1));
       for (let n = 0; n < A - 1; n++) {
         const A = 2 * n,
           t = A + 2;
         uint16Values.set([A, A + 1, t, A + 1, t + 1, t], 6 * n);
       }
-      t.setIndex(new L(uint16Values, 1)), t.setDrawRange(0, 0), this.mesh = new d(t, yB ??= new k({
+      t.setIndex(new BufferAttribute(uint16Values, 1)), t.setDrawRange(0, 0), this.mesh = new Mesh(t, yB ??= new MeshBasicMaterial({
         name: "scythe-trail",
         vertexColors: !0,
         transparent: !0,
@@ -2169,10 +2169,10 @@ var VB = [.86, .92, 1],
     [XB]: 0,
     [WB]: 0
   },
-  NB = new q(0, 1, 0),
-  KB = new S(),
-  qB = new S(),
-  _B = new S();
+  NB = new Vector3(0, 1, 0),
+  KB = new Quaternion(),
+  qB = new Quaternion(),
+  _B = new Quaternion();
 function $B(A, t, s) {
   if (0 !== s) {
     KB.identity();
@@ -2180,13 +2180,13 @@ function $B(A, t, s) {
     KB.normalize(), qB.setFromAxisAngle(NB, s * Math.PI / 180), _B.copy(KB).invert().multiply(qB).multiply(KB), t.quaternion.premultiply(_B).normalize();
   }
 }
-function Ao(A, t = new D()) {
+function Ao(A, t = new Matrix4()) {
   const s = A.size ?? 1,
-    n = new q(...(A.toAxis ?? [0, 1, 0])).normalize(),
-    e = new q(...(A.fromAxis ?? [0, 1, 0])).normalize(),
-    B = new D().makeRotationAxis(n, (A.spin ?? 0) * ao),
-    o = new D().makeRotationFromQuaternion(new S().setFromUnitVectors(n, e));
-  return t.makeTranslation(A.from[0], A.from[1], A.from[2]).multiply(new D().makeScale(s, s, s)).multiply(o).multiply(B).multiply(new D().makeTranslation(-A.to[0], -A.to[1], -A.to[2]));
+    n = new Vector3(...(A.toAxis ?? [0, 1, 0])).normalize(),
+    e = new Vector3(...(A.fromAxis ?? [0, 1, 0])).normalize(),
+    B = new Matrix4().makeRotationAxis(n, (A.spin ?? 0) * ao),
+    o = new Matrix4().makeRotationFromQuaternion(new Quaternion().setFromUnitVectors(n, e));
+  return t.makeTranslation(A.from[0], A.from[1], A.from[2]).multiply(new Matrix4().makeScale(s, s, s)).multiply(o).multiply(B).multiply(new Matrix4().makeTranslation(-A.to[0], -A.to[1], -A.to[2]));
 }
 var to = {
     _doc: "Own looks of the rebuild's new weapons (FUTURE-IMPROVMENTS #70), built in the client from parts on the bones of the placeholder prefab whose arms and clips they use (apps/client/src/render/weapon-models.ts). `base`: the weapon id of that prefab (balance.ts NEW_WEAPONS); `hide`: names of its renderer nodes switched off; `parts`: boxes (`box` size) or bars (`from` -> `to`, `width` x `height`) in the prefab's rest space (prefab units: muzzle towards -x, up +y, the camera's right +z), hung on the bone `bone` so they follow every clip; `turn`: Unity Euler degrees; `color`: a palette name or [r, g, b]; a palette entry may carry `alpha` (below 1: see-through glass - the shader port's blended variant with the sky as reflection, no depth write, no sun shadow; FB30: the Heavy Sniper's scope lenses, `glass`). A part `model` (a glTF / GLB file below extracted/custom-weapons/, installed from assets-custom/weapons/ by tools/install-custom-assets.mjs) is a user-supplied model placed the same way. A weapon with an exported own rig (reference/custom-rigs.json) shows that instead.",
@@ -2663,35 +2663,35 @@ function fo(A) {
     } : {})
   };
 }
-var ao = b.DEG2RAD,
-  go = new q(1, 0, 0);
+var ao = MathUtils.DEG2RAD,
+  go = new Vector3(1, 0, 0);
 function co(A) {
-  const t = new q(),
-    s = new S(),
-    n = new q(1, 1, 1);
+  const t = new Vector3(),
+    s = new Quaternion(),
+    n = new Vector3(1, 1, 1);
   if (A.from && A.to) {
-    const e = new q(...A.from),
-      B = new q(...A.to);
+    const e = new Vector3(...A.from),
+      B = new Vector3(...A.to);
     t.addVectors(e, B).multiplyScalar(.5);
     const o = B.clone().sub(e);
     n.set(o.length(), A.height ?? .1, A.width ?? .1), o.lengthSq() > 1e-12 && s.setFromUnitVectors(go, o.normalize());
   } else t.fromArray(A.at ?? [0, 0, 0]), A.box && n.fromArray(A.box);
-  return A.turn && s.multiply(new S().setFromEuler(new p(A.turn[0] * ao, A.turn[1] * ao, A.turn[2] * ao, "YXZ"))), {
+  return A.turn && s.multiply(new Quaternion().setFromEuler(new Euler(A.turn[0] * ao, A.turn[1] * ao, A.turn[2] * ao, "YXZ"))), {
     position: t,
     quaternion: s,
     size: n
   };
 }
 function Qo(A, t) {
-  const s = new D(),
-    n = new D();
+  const s = new Matrix4(),
+    n = new Matrix4();
   for (let e = t; e > 0; e = A.data.nodes[e].parent) {
     const t = A.data.nodes[e];
-    n.compose(new q(...t.t), new S(...t.r), new q(...t.s)), s.premultiply(n);
+    n.compose(new Vector3(...t.t), new Quaternion(...t.r), new Vector3(...t.s)), s.premultiply(n);
   }
   return s;
 }
-var ho = new O(1, 1, 1),
+var ho = new BoxGeometry(1, 1, 1),
   lo = new Map(),
   Co = new Map();
 function Ho(A) {
@@ -2726,7 +2726,7 @@ function Eo(A, t) {
       smoothness: t?.smoothness ?? A.smoothness
     });
   }
-  const n = t.color ? t.color.clone().convertLinearToSRGB() : new v(.5, .5, .5),
+  const n = t.color ? t.color.clone().convertLinearToSRGB() : new Color(.5, .5, .5),
     e = A.lift ?? 1;
   return {
     color: [n.r, n.g, n.b].map(item => Math.min(1, item * e)),
@@ -2760,7 +2760,7 @@ async function Do(A, t, s = new Set()) {
             look: B,
             map: o
           } = function (A, t) {
-            const s = t.color ? t.color.clone().convertLinearToSRGB() : new v(1, 1, 1);
+            const s = t.color ? t.color.clone().convertLinearToSRGB() : new Color(1, 1, 1);
             return {
               look: {
                 color: [s.r, s.g, s.b],
@@ -2814,7 +2814,7 @@ async function Do(A, t, s = new Set()) {
         color: Eo(t, A).color,
         name: A.name
       }), lookupMap.set(s, B);
-    } else if (!e.isSkinnedMesh && (A => !(Array.isArray(A.material) || !A.parent || A.children.length || uniqueItems.has(A.material.name) || s.has(A.name) || s.has(X.sanitizeNodeName(A.name))))(n)) {
+    } else if (!e.isSkinnedMesh && (A => !(Array.isArray(A.material) || !A.parent || A.children.length || uniqueItems.has(A.material.name) || s.has(A.name) || s.has(PropertyBinding.sanitizeNodeName(A.name))))(n)) {
       const A = `${n.parent.uuid}|${o(n.material)}`;
       _lookupMap.set(A, [...(_lookupMap.get(A) ?? []), n]);
     } else r.push(n);
@@ -2824,7 +2824,7 @@ async function Do(A, t, s = new Set()) {
       const A = 1 === w.length,
         s = w.map(item => {
           const n = item.geometry,
-            e = new Z();
+            e = new BufferGeometry();
           e.setAttribute("position", n.getAttribute("position").clone()), n.getAttribute("normal") ? e.setAttribute("normal", n.getAttribute("normal").clone()) : e.computeVertexNormals(), n.index && e.setIndex(n.index.clone()), A || (item.updateMatrix(), e.applyMatrix4(item.matrix));
           const B = Eo(t, item.material).color,
             o = e.getAttribute("position").count,
@@ -2834,7 +2834,7 @@ async function Do(A, t, s = new Set()) {
             const t = r ? r.getX(A) : 1;
             float32Values.set([B[0] * t, B[1] * t, B[2] * t, 1], 4 * A);
           }
-          return e.setAttribute("color", new L(float32Values, 4)), e;
+          return e.setAttribute("color", new BufferAttribute(float32Values, 4)), e;
         }),
         B = s.every(item => item.index) ? s : s.map(item => item.index ? item.toNonIndexed() : item),
         o = A ? B[0] : n(B, !1);
@@ -2862,7 +2862,7 @@ async function Do(A, t, s = new Set()) {
         r.geometry = o, r.material = a, r.frustumCulled = !1, e.push(r);
         continue;
       }
-      const g = new d(o, a);
+      const g = new Mesh(o, a);
       g.name = `${r.parent.name}:flat`, g.frustumCulled = !1, r.parent.add(g);
       for (const t of w) t.removeFromParent();
       e.push(g);
@@ -2870,8 +2870,8 @@ async function Do(A, t, s = new Set()) {
     if (!e.length) return;
     A.updateMatrixWorld(!0);
     const B = A.matrixWorld.clone().invert(),
-      o = new y(),
-      i = new q(),
+      o = new Box3(),
+      i = new Vector3(),
       r = e.map(item => {
         const t = B.clone().multiply(item.matrixWorld),
           s = item.geometry.getAttribute("position");
@@ -2896,14 +2896,14 @@ async function Do(A, t, s = new Set()) {
         mesh: A,
         color: t
       }) => {
-        const s = new Z(),
+        const s = new BufferGeometry(),
           n = A.geometry;
         for (const o of ["position", "normal", "skinIndex", "skinWeight"]) n.getAttribute(o) && s.setAttribute(o, n.getAttribute(o));
         n.index && s.setIndex(n.index), s.getAttribute("normal") || s.computeVertexNormals();
         const e = s.getAttribute("position").count,
           float32Values = new Float32Array(4 * e);
         for (let o = 0; o < e; o++) float32Values.set([t[0], t[1], t[2], 1], 4 * o);
-        return s.setAttribute("color", new L(float32Values, 4)), s;
+        return s.setAttribute("color", new BufferAttribute(float32Values, 4)), s;
       }),
       n = s.every(item => item.index) ? s : s.map(item => item.index ? item.toNonIndexed() : item),
       B = n.every(item => item.getAttribute("skinIndex")) && n.length ? e(n, !1) : null;
@@ -2933,7 +2933,7 @@ async function Do(A, t, s = new Set()) {
       return i += s, n;
     });
     const r = o(A.material),
-      w = new j(B, uo(Fo(t), t.name, r, !0));
+      w = new SkinnedMesh(B, uo(Fo(t), t.name, r, !0));
     w.name = `${A.name}:flat`, w.position.copy(A.position), w.quaternion.copy(A.quaternion), w.scale.copy(A.scale), w.frustumCulled = !1, A.parent.add(w), w.bind(A.skeleton, A.bindMatrix);
     for (const {
       mesh: t
@@ -2966,7 +2966,7 @@ function Io(A, t) {
       B = e ? e.count : n.count,
       o = A => e ? e.getX(A) : A,
       i = A.userData.skinFrame,
-      r = i ? new D().fromArray(i.matrix) : null,
+      r = i ? new Matrix4().fromArray(i.matrix) : null,
       w = i ? [...i.min] : [1 / 0, 1 / 0, 1 / 0],
       f = i ? [...i.max] : [-1 / 0, -1 / 0, -1 / 0];
     if (!i) for (let D = 0; D < n.count; D++) for (let A = 0; A < 3; A++) {
@@ -2981,18 +2981,18 @@ function Io(A, t) {
         const n = s.find(item => A >= item.start && A < item.start + item.count)?.name ?? "";
         return t.pattern.includes(n) ? "pattern" : t.accent?.includes(n) ? "accent" : t.detail?.includes(n) ? "detail" : "base";
       },
-      H = new Z();
+      H = new BufferGeometry();
     for (const D of ["position", "normal", "skinIndex", "skinWeight"]) {
       const t = A.getAttribute(D);
       if (!t) continue;
       const s = new t.array.constructor(B * t.itemSize);
       for (let A = 0; A < B; A++) for (let n = 0; n < t.itemSize; n++) s[A * t.itemSize + n] = t.getComponent(o(A), n);
-      H.setAttribute(D, new L(s, t.itemSize, t.normalized));
+      H.setAttribute(D, new BufferAttribute(s, t.itemSize, t.normalized));
     }
     const float32Values = new Float32Array(2 * B),
-      E = [new q(), new q(), new q()],
-      F = new q(),
-      P = new q();
+      E = [new Vector3(), new Vector3(), new Vector3()],
+      F = new Vector3(),
+      P = new Vector3();
     for (let D = 0; D < B; D += 3) {
       const A = C(o(D));
       if ("pattern" !== A) {
@@ -3006,7 +3006,7 @@ function Io(A, t) {
         [B, i] = e >= s[0] && e >= s[1] ? [g, c] : s[1] >= s[0] ? [g, Q] : [Q, c];
       for (let n = 0; n < 3; n++) float32Values[2 * (D + n)] = h.u0 + (E[n].getComponent(B) - w[B]) * l, float32Values[2 * (D + n) + 1] = h.v0 + (E[n].getComponent(i) - w[i]) * l;
     }
-    return H.setAttribute("uv", new L(float32Values, 2)), H;
+    return H.setAttribute("uv", new BufferAttribute(float32Values, 2)), H;
   }(A, t)), e;
 }
 function Go(A, t, s, n, e, B = null, o = !1) {
@@ -3070,7 +3070,7 @@ function To(A) {
         name: Jo,
         extendMaterialParams(t, s) {
           const n = A.json.materials?.[t]?.extensions?.[Jo]?.diffuseFactor;
-          return n && (s.color = new v().setRGB(n[0], n[1], n[2], F)), Promise.resolve();
+          return n && (s.color = new Color().setRGB(n[0], n[1], n[2], LinearSRGBColorSpace)), Promise.resolve();
         }
       };
     }(A)).loadAsync(`${io}${A}`)).then(result => ({
@@ -3079,7 +3079,7 @@ function To(A) {
     })).catch(error => (console.warn(`weapon model ${A} missing`, error), null)), Co.set(A, t)), t;
   }(A.model).then(async result => {
     if (!result) return null;
-    const uniqueItems = new Set(result.animations.flatMap(animation => animation.tracks.map(track => X.parseTrackName(track.name).nodeName)));
+    const uniqueItems = new Set(result.animations.flatMap(animation => animation.tracks.map(track => PropertyBinding.parseTrackName(track.name).nodeName)));
     return {
       scene: await Do(result.scene, A, uniqueItems),
       animations: result.animations
@@ -3104,7 +3104,7 @@ var Jo = "KHR_materials_pbrSpecularGlossiness",
       this.animators = A;
     }
     add(A, t, s, n) {
-      const e = new R(A),
+      const e = new AnimationMixer(A),
         lookupMap = new Map();
       for (const [a, g] of Object.entries(s)) {
         const {
@@ -3137,8 +3137,8 @@ var Jo = "KHR_materials_pbrSpecularGlossiness",
       for (const a of w) for (const t of a.tracks) {
         const {
             nodeName: s
-          } = X.parseTrackName(t.name),
-          n = X.findNode(A, s);
+          } = PropertyBinding.parseTrackName(t.name),
+          n = PropertyBinding.findNode(A, s);
         n && n !== A && uniqueItems.add(n);
       }
       const f = [...uniqueItems].map(item => ({
@@ -3179,16 +3179,16 @@ function Oo(A, t, s) {
   for (let n = A; n && n !== t; n = n.parent) s.premultiply(Vo.compose(n.position, n.quaternion, n.scale));
   return s;
 }
-var Vo = new D(),
+var Vo = new Matrix4(),
   yo = class {
     links = [];
-    delta = new D();
-    inverse = new D();
-    local = new D();
+    delta = new Matrix4();
+    inverse = new Matrix4();
+    local = new Matrix4();
     add(A, t, s, n) {
       const e = [];
       for (const [B, o] of Object.entries(n)) {
-        const n = A.getObjectByName(B) ?? A.getObjectByName(X.sanitizeNodeName(B)),
+        const n = A.getObjectByName(B) ?? A.getObjectByName(PropertyBinding.sanitizeNodeName(B)),
           i = s(o);
         if (!n || !i) {
           console.warn(`weapon model: cannot follow ${o} with ${B}`);
@@ -3200,11 +3200,11 @@ var Vo = new D(),
           node: n,
           bone: i,
           stop: t,
-          boneRestInverse: Oo(i, t, new D()).invert(),
-          nodeRest: Oo(n, t, new D()),
-          current: Oo(n, t, new D()),
+          boneRestInverse: Oo(i, t, new Matrix4()).invert(),
+          nodeRest: Oo(n, t, new Matrix4()),
+          current: Oo(n, t, new Matrix4()),
           parent: null,
-          parentInverse: n.parent ? Oo(n.parent, t, new D()).invert() : new D(),
+          parentInverse: n.parent ? Oo(n.parent, t, new Matrix4()).invert() : new Matrix4(),
           depth: r
         });
       }
@@ -3230,7 +3230,7 @@ function Xo(A, t) {
 }
 async function Wo(A, t, s = "world") {
   const n = "first" === s ? t.firstPerson?.scale ?? 1 : 1,
-    e = new q().fromArray(t.firstPerson?.pivot ?? t.parts.find(item => item.model)?.at ?? [0, 0, 0]),
+    e = new Vector3().fromArray(t.firstPerson?.pivot ?? t.parts.find(item => item.model)?.at ?? [0, 0, 0]),
     B = A => A.sub(e).multiplyScalar(n).add(e),
     uniqueItems = new Set(t.hide);
   A.data.renderers.forEach((item, index) => {
@@ -3253,8 +3253,8 @@ async function Wo(A, t, s = "world") {
     const t = A.index(h),
       s = t >= 0 ? A.data.nodes[t].parent : -1;
     if (t < 0) continue;
-    const n = s >= 0 ? Qo(A, s).invert() : new D();
-    A.nodes[t].position.copy(B(new q().fromArray(l))).applyMatrix4(n);
+    const n = s >= 0 ? Qo(A, s).invert() : new Matrix4();
+    A.nodes[t].position.copy(B(new Vector3().fromArray(l))).applyMatrix4(n);
   }
   if (!1 === t.flash) {
     const t = () => {
@@ -3285,15 +3285,15 @@ async function Wo(A, t, s = "world") {
         B = e(n.scene);
       Q = B;
       const o = "first" === s ? t.firstPerson?.hold : void 0;
-      if (o && (B.applyMatrix4(Ao(o)), Q = new J(), Q.add(B)), h.clips && n.animations.length && (r ??= new Ro(A.animators), r.add(B, n.animations, h.clips, h.empty)), c.size.setScalar(h.scale ?? 1), h.mirror && (c.size.x = -c.size.x), h.center) {
-        const A = new y().setFromObject(B).getCenter(new q());
-        B.position.sub(A), Q = new J(), Q.add(B);
+      if (o && (B.applyMatrix4(Ao(o)), Q = new Group(), Q.add(B)), h.clips && n.animations.length && (r ??= new Ro(A.animators), r.add(B, n.animations, h.clips, h.empty)), c.size.setScalar(h.scale ?? 1), h.mirror && (c.size.x = -c.size.x), h.center) {
+        const A = new Box3().setFromObject(B).getCenter(new Vector3());
+        B.position.sub(A), Q = new Group(), Q.add(B);
       }
     } else {
-      const A = new d(ho, Ho(h));
+      const A = new Mesh(ho, Ho(h));
       A.frustumCulled = !1, Q = A;
     }
-    Q.name = `part:${h.name}`, 1 !== n && (B(c.position), c.size.multiplyScalar(n)), new D().compose(c.position, c.quaternion, c.size).premultiply(o).decompose(Q.position, Q.quaternion, Q.scale), A.nodes[e].add(Q), g >= 0 && A.$_7dt(g, Q), h.model && h.follow && (w ??= new yo(), w.add(Q, A.nodes[e], t => A.nodes[A.index(t)] ?? null, h.follow));
+    Q.name = `part:${h.name}`, 1 !== n && (B(c.position), c.size.multiplyScalar(n)), new Matrix4().compose(c.position, c.quaternion, c.size).premultiply(o).decompose(Q.position, Q.quaternion, Q.scale), A.nodes[e].add(Q), g >= 0 && A.$_7dt(g, Q), h.model && h.follow && (w ??= new yo(), w.add(Q, A.nodes[e], t => A.nodes[A.index(t)] ?? null, h.follow));
     const l = eo(h);
     h.model && l && f.push({
       part: h,
@@ -3508,19 +3508,19 @@ var No = {
     roll: 0,
     spin: 0
   },
-  $o = new S(),
-  Ai = new q(),
-  ti = new q(),
-  si = new q(),
-  ni = new D(),
-  ei = new q(),
-  Bi = new q(),
-  oi = new q(),
-  ii = new q(),
-  ri = new q(),
-  wi = new q(),
-  fi = new q(),
-  ai = new q();
+  $o = new Quaternion(),
+  Ai = new Vector3(),
+  ti = new Vector3(),
+  si = new Vector3(),
+  ni = new Matrix4(),
+  ei = new Vector3(),
+  Bi = new Vector3(),
+  oi = new Vector3(),
+  ii = new Vector3(),
+  ri = new Vector3(),
+  wi = new Vector3(),
+  fi = new Vector3(),
+  ai = new Vector3();
 var gi = null,
   ci = class {
     root;
@@ -3562,7 +3562,7 @@ var gi = null,
         const [e, B, o] = No.elbows[index];
         this.arms.push({
           ...n,
-          hint: new q(e, B, o).normalize()
+          hint: new Vector3(e, B, o).normalize()
         });
       });
     }
@@ -3580,7 +3580,7 @@ var gi = null,
           return null;
         }());
         if (!A) return;
-        const t = new d(A.geometry, A.material);
+        const t = new Mesh(A.geometry, A.material);
         t.name = "scythe:held", t.matrixAutoUpdate = !1, t.frustumCulled = !1, t.visible = !1;
         const s = new jB();
         this.root.add(t, s.mesh), await Promise.all([vA(t, !1), vA(s.mesh, !1)]), this.mesh = t, this.trail = s, this.ready = !0, this.$_2fi();
@@ -3721,11 +3721,11 @@ var gi = null,
       return (this.reloading && !A || t !== this.life) && (this.loaded = !0), this.reloading = A, this.life = t, this.loaded;
     }
   },
-  li = new q(),
-  Ci = new q(),
-  Hi = new S(),
-  ui = new S(),
-  Ei = new S();
+  li = new Vector3(),
+  Ci = new Vector3(),
+  Hi = new Quaternion(),
+  ui = new Quaternion(),
+  Ei = new Quaternion();
 function Fi(A, t) {
   const s = Math.min(1, Math.max(0, t)) * (A.samples - 1),
     flooredValue = Math.floor(s);
@@ -4029,10 +4029,10 @@ var Ji = ["reload-rifle", "reload-pistol", "reload-shotgun", "reload-rpg"],
 function Vi(A, t, s) {
   return A.magazine > 0 ? s ? "reload-rpg" : t === _.Pistol ? "reload-pistol" : A.shells ? "reload-shotgun" : t === _.Rifle ? "reload-rifle" : null : null;
 }
-var yi = new S(),
-  ji = new S(),
-  xi = new S(),
-  zi = new S(),
+var yi = new Quaternion(),
+  ji = new Quaternion(),
+  xi = new Quaternion(),
+  zi = new Quaternion(),
   Xi = class {
     clip;
     bones = [];
@@ -4192,23 +4192,23 @@ var yi = new S(),
       }
     }
   },
-  $i = new S(),
-  Ar = new S(),
-  tr = new S(),
-  sr = new q(1, 0, 0),
-  nr = new q(0, 0, 1),
-  er = new q(),
-  Br = new q(),
-  or = new q(),
-  ir = new q(),
-  rr = new q(),
-  wr = new q(),
-  fr = new q(),
-  ar = new q(),
-  gr = new q(),
-  cr = new q(),
-  Qr = new q(),
-  hr = new D();
+  $i = new Quaternion(),
+  Ar = new Quaternion(),
+  tr = new Quaternion(),
+  sr = new Vector3(1, 0, 0),
+  nr = new Vector3(0, 0, 1),
+  er = new Vector3(),
+  Br = new Vector3(),
+  or = new Vector3(),
+  ir = new Vector3(),
+  rr = new Vector3(),
+  wr = new Vector3(),
+  fr = new Vector3(),
+  ar = new Vector3(),
+  gr = new Vector3(),
+  cr = new Vector3(),
+  Qr = new Vector3(),
+  hr = new Matrix4();
 function lr(A) {
   const t = A.data.nodes.findIndex(node => /mag/i.test(node.name) && !/release|retainer|_end/i.test(node.name));
   return t >= 0 && A.nodes[t].parent ? t : -1;
@@ -4219,7 +4219,7 @@ var Cr = class {
     after;
     posed = !1;
     constructor(A) {
-      this.bones = A, this.before = A.map(() => new S()), this.after = A.map(() => new S());
+      this.bones = A, this.before = A.map(() => new Quaternion()), this.after = A.map(() => new Quaternion());
     }
     begin() {
       this.restore(), this.bones.forEach((bone, index) => this.before[index].copy(bone.quaternion));
@@ -4240,7 +4240,7 @@ var Cr = class {
     shoulderR;
     handR;
     arm;
-    hint = new q(...Si.elbow).normalize();
+    hint = new Vector3(...Si.elbow).normalize();
     weapon = null;
     active = !1;
     guard;
@@ -4352,8 +4352,8 @@ var Cr = class {
                 magOut: f && g ? new Float32Array(n) : null,
                 arm: g ? new Float32Array(9) : null
               },
-              C = new D(),
-              H = new D(),
+              C = new Matrix4(),
+              H = new Matrix4(),
               u = (A, t, s, n) => {
                 const B = e[A],
                   o = _lookupMap2.get(A);
@@ -4433,8 +4433,8 @@ var Cr = class {
       this.weapon = {
         rig: A,
         mag: a,
-        rest: a >= 0 ? A.nodes[a].position.clone() : new q(),
-        restRot: a >= 0 ? A.nodes[a].quaternion.clone() : new S(),
+        rest: a >= 0 ? A.nodes[a].position.clone() : new Vector3(),
+        restRot: a >= 0 ? A.nodes[a].quaternion.clone() : new Quaternion(),
         rocket: B,
         motion: o,
         plan: i,
@@ -4582,12 +4582,12 @@ var Cr = class {
   Er = -125.3,
   Fr = -167.244,
   Dr = (A, t, s) => A < t ? t : A > s ? s : A,
-  Pr = new q(1, 0, 0),
+  Pr = new Vector3(1, 0, 0),
   dr = Math.PI / 180,
-  Mr = new p(),
-  kr = new S(),
-  br = new S(),
-  Ir = new S(),
+  Mr = new Euler(),
+  kr = new Quaternion(),
+  br = new Quaternion(),
+  Ir = new Quaternion(),
   Gr = {
     spine: 0,
     chest: 0,
@@ -4633,7 +4633,7 @@ var vr = class {
         this.$_4oi && Ur(this.root, this.$_4oi, A), this.$_1jj && Ur(this.root, this.$_1jj, n.spine - A);
       }
       var e;
-      if (e = n.chest, this.chest.quaternion.setFromEuler(Mr.set(0, b.degToRad(180), b.degToRad(e), "YXZ")), 0 !== n.arms && (this.$_2bp && Ur(this.root, this.$_2bp, n.arms), this.$_5q2 && Ur(this.root, this.$_5q2, n.arms)), 0 !== n.neck) {
+      if (e = n.chest, this.chest.quaternion.setFromEuler(Mr.set(0, MathUtils.degToRad(180), MathUtils.degToRad(e), "YXZ")), 0 !== n.arms && (this.$_2bp && Ur(this.root, this.$_2bp, n.arms), this.$_5q2 && Ur(this.root, this.$_5q2, n.arms)), 0 !== n.neck) {
         const A = this.head ? n.neck * ur.head : 0;
         this.neck && Ur(this.root, this.neck, n.neck - A), this.head && Ur(this.root, this.head, A);
       }
@@ -4644,16 +4644,16 @@ var vr = class {
   mr = pr.length,
   Yr = new WeakMap(),
   Tr = (A, t, s) => s.setFromMatrixPosition(Lr.copy(A.boneInverses[t]).invert()),
-  Lr = new D();
+  Lr = new Matrix4();
 function Jr(A) {
   const t = A.skeleton,
     s = Yr.get(t);
   if (void 0 !== s) return s;
   const n = pr.map(item => t.bones.findIndex(bone => bone?.name === item));
   if (n.some(item => item < 0 || !t.boneInverses[item])) return Yr.set(t, null), null;
-  const e = Tr(t, n[0], new q()),
+  const e = Tr(t, n[0], new Vector3()),
     B = t.bones.findIndex(bone => "Neck" === bone?.name),
-    o = Tr(t, B >= 0 ? B : n[mr - 1], new q()).clone().sub(e),
+    o = Tr(t, B >= 0 ? B : n[mr - 1], new Vector3()).clone().sub(e),
     i = o.length();
   if (!(i > 1e-6)) return Yr.set(t, null), null;
   o.divideScalar(i);
@@ -4666,9 +4666,9 @@ function Jr(A) {
     w = t.boneInverses.slice(),
     f = [],
     a = [],
-    g = new D();
+    g = new Matrix4();
   for (const h of n) for (const [A, s] of [[f, 1], [a, -1]]) A.push(r.length), r.push(t.bones[h]), g.makeTranslation(o.x * i * s, o.y * i * s, o.z * i * s), w.push(t.boneInverses[h].clone().multiply(g));
-  const c = new x(r, w);
+  const c = new Skeleton(r, w);
   A.bind(c, A.bindMatrix);
   const Q = {
     bones: n,
@@ -4783,9 +4783,9 @@ function xr(A, t, s, n, e = 0) {
     const g = (r ? r.count : B.count) / 3,
       c = (A, t) => r ? r.getX(3 * A + t) : 3 * A + t,
       Q = [],
-      h = new q(),
-      l = new q(),
-      C = new q();
+      h = new Vector3(),
+      l = new Vector3(),
+      C = new Vector3();
     for (let E = 0; E < g; E++) {
       const [A, t, s] = [c(E, 0), c(E, 1), c(E, 2)];
       uint8Values[A] && uint8Values[t] && uint8Values[s] && (h.fromBufferAttribute(B, A), l.fromBufferAttribute(B, t), C.fromBufferAttribute(B, s), l.clone().sub(h).cross(C.clone().sub(h)).lengthSq() > 1e-12 && Q.push(A, t, s));
@@ -4946,7 +4946,7 @@ function qr(A, t, s) {
 }
 var _r = new WeakMap();
 function $r(A, t, s) {
-  const n = new d(A, function (A) {
+  const n = new Mesh(A, function (A) {
     let t = _r.get(A);
     if (t) return t;
     const s = A,
@@ -4972,13 +4972,13 @@ function $r(A, t, s) {
   return n.name = `weapon-batch:${t.name || "material"}`, n.userData.weaponBatch = !0, n.matrixAutoUpdate = !1, s.add(n), n;
 }
 var Aw = {
-  m: new D(),
-  n: new G(),
-  v: new q(),
-  w: new q(),
-  acc: new q(),
-  nacc: new q(),
-  local: new D()
+  m: new Matrix4(),
+  n: new Matrix3(),
+  v: new Vector3(),
+  w: new Vector3(),
+  acc: new Vector3(),
+  nacc: new Vector3(),
+  local: new Matrix4()
 };
 function tw(A, t) {
   return t.compose(A.position, A.quaternion, A.scale);
@@ -5194,7 +5194,7 @@ function* ow(A, t, s) {
         n = e => {
           let B = s[e];
           if (!B) {
-            B = tw(A.nodes[e], new D());
+            B = tw(A.nodes[e], new Matrix4());
             const o = t[e].parent;
             o >= 0 && B.premultiply(n(o)), s[e] = B;
           }
@@ -5210,7 +5210,7 @@ function* ow(A, t, s) {
     _lookupMap3 = new Map(),
     F = A => {
       let t = _lookupMap3.get(A);
-      return t || _lookupMap3.set(A, t = new G().getNormalMatrix(H(A))), t;
+      return t || _lookupMap3.set(A, t = new Matrix3().getNormalMatrix(H(A))), t;
     },
     P = [],
     _lookupMap4 = new Map(),
@@ -5250,7 +5250,7 @@ function* ow(A, t, s) {
         e = s.getAttribute("skinWeight"),
         w = E.target,
         a = E.boneNode.map((item, index) => l[item].clone().multiply(B.skeleton.boneInverses[index])),
-        g = a.map(item => new G().getNormalMatrix(item));
+        g = a.map(item => new Matrix3().getNormalMatrix(item));
       for (let c = 0; c < o; c++) {
         Aw.v.fromBufferAttribute(A, c).applyMatrix4(B.bindMatrix), Aw.acc.set(0, 0, 0), Aw.nacc.set(0, 0, 0);
         for (let A = 0; A < 4; A++) {
@@ -5318,10 +5318,10 @@ function* ow(A, t, s) {
   };
   for (const D of P) {
     if (!D.indices.length) continue;
-    const t = new Z();
-    t.setAttribute("position", new M(D.positions.view(), 3)), t.setAttribute("normal", new M(D.normals.view(), 3));
-    for (const [A, s] of D.extra) t.setAttribute(A, new M(s.view(), _lookupMap5.get(A)));
-    t.setIndex(D.vertices > 65535 ? new I(D.indices.view(), 1) : new E(D.indices.view(), 1)), t.computeBoundingSphere(), t.computeBoundingBox(), n.meshes.push($r(t, D.material, D.parent)), v.buckets.push({
+    const t = new BufferGeometry();
+    t.setAttribute("position", new Float32BufferAttribute(D.positions.view(), 3)), t.setAttribute("normal", new Float32BufferAttribute(D.normals.view(), 3));
+    for (const [A, s] of D.extra) t.setAttribute(A, new Float32BufferAttribute(s.view(), _lookupMap5.get(A)));
+    t.setIndex(D.vertices > 65535 ? new Uint32BufferAttribute(D.indices.view(), 1) : new Uint16BufferAttribute(D.indices.view(), 1)), t.computeBoundingSphere(), t.computeBoundingBox(), n.meshes.push($r(t, D.material, D.parent)), v.buckets.push({
       geometry: t,
       source: D.source,
       parent: A.nodes.indexOf(D.parent)
@@ -5379,10 +5379,10 @@ function cw(A, t, s, n) {
     } = n;
   let l = 0,
     C = 0;
-  const H = new q(),
-    u = new q(),
-    E = new D(),
-    F = new G();
+  const H = new Vector3(),
+    u = new Vector3(),
+    E = new Matrix4(),
+    F = new Matrix3();
   e.forEach((item, index) => {
     const B = item.getAttribute("position"),
       o = item.getAttribute("normal"),
@@ -5405,8 +5405,8 @@ function cw(A, t, s, n) {
     for (let A = 0; A < I; A++) g[C + A] = (b ? b.getX(A) : A) + l;
     l += B.count, C += I;
   });
-  const P = new Z();
-  return P.setAttribute("position", new L(float32Values, 3)), P.setAttribute("normal", new L(_float32Values3, 3)), P.setAttribute("uv", new L(_float32Values4, 2)), P.setAttribute("skinIndex", new L(uint16Values, 4)), P.setAttribute("skinWeight", new L(_float32Values5, 4)), P.setIndex(new L(g, 1)), P.computeBoundingSphere(), P;
+  const P = new BufferGeometry();
+  return P.setAttribute("position", new BufferAttribute(float32Values, 3)), P.setAttribute("normal", new BufferAttribute(_float32Values3, 3)), P.setAttribute("uv", new BufferAttribute(_float32Values4, 2)), P.setAttribute("skinIndex", new BufferAttribute(uint16Values, 4)), P.setAttribute("skinWeight", new BufferAttribute(_float32Values5, 4)), P.setIndex(new BufferAttribute(g, 1)), P.computeBoundingSphere(), P;
 }
 var Qw = {
     blendIn: .07,
@@ -5488,18 +5488,18 @@ var Cw = class {
       return this.since / this.interval;
     }
   },
-  Hw = new q(),
-  uw = new q(),
-  Ew = new q(),
-  Fw = new q(),
-  Dw = new q(),
-  Pw = new q(),
-  dw = new q(),
-  Mw = new q(),
-  kw = new S(),
-  bw = new S(),
-  Iw = new S(),
-  Gw = new p(),
+  Hw = new Vector3(),
+  uw = new Vector3(),
+  Ew = new Vector3(),
+  Fw = new Vector3(),
+  Dw = new Vector3(),
+  Pw = new Vector3(),
+  dw = new Vector3(),
+  Mw = new Vector3(),
+  kw = new Quaternion(),
+  bw = new Quaternion(),
+  Iw = new Quaternion(),
+  Gw = new Euler(),
   Uw = ["Shoulder_L", "Elbow_L", "Hand_L", "IndexFinger_01", "Finger_01"],
   vw = ["IndexFinger_03", "Finger_03"];
 function pw(A) {
@@ -5536,9 +5536,9 @@ var Tw = class A {
     root;
     $_1t70z;
     arm;
-    hint = new q(...Qw.fp.elbow).normalize();
-    $_kxe = new q();
-    $_1gk = new q();
+    hint = new Vector3(...Qw.fp.elbow).normalize();
+    $_kxe = new Vector3();
+    $_1gk = new Vector3();
     reached = !1;
     constructor(A, t, s, n) {
       this.root = A.nodes[0], this.$_1t70z = t, this.arm = s, this.timing = new Cw(n);
@@ -5561,7 +5561,7 @@ var Tw = class A {
       const n = Qw.fp,
         e = this.root;
       e.position.x -= n.hip.forward / .2 * t, e.position.y += n.hip.up / .2 * t, e.position.z += n.hip.right / .2 * t;
-      const B = b.DEG2RAD;
+      const B = MathUtils.DEG2RAD;
       Iw.setFromEuler(Gw.set(-n.hip.cant * B * t, 0, n.hip.pitch * B * t, "XYZ")), e.quaternion.premultiply(Iw), Le(e, this.arm.hand, Ew), Le(e, this.$_1t70z, Hw), Yw(Hw, lw(this.timing.phase), n, uw), Ew.lerp(uw, t), this.$_kxe.copy(s.position);
       const o = Le(e, s, Fw);
       o.addScaledVector(Dw.subVectors(Ew, o).normalize(), n.reach * t), e.localToWorld(o), s.parent.updateWorldMatrix(!0, !1), s.position.copy(s.parent.worldToLocal(o)), this.$_1gk.copy(s.position), this.reached = !0, xe(e, s, this.arm.elbow, this.arm.hand, Ew, this.hint), mw(e, this.arm, n.fingers, n.knuckles, t);
@@ -5575,7 +5575,7 @@ var Tw = class A {
     arm;
     shoulderR;
     handR;
-    hint = new q(...Qw.tp.elbow).normalize();
+    hint = new Vector3(...Qw.tp.elbow).normalize();
     constructor(A, t, s) {
       this.root = A, this.guard = s, this.arm = pw(t), this.shoulderR = t("Shoulder_R"), this.handR = t("Hand_R");
     }
@@ -5607,7 +5607,7 @@ var Tw = class A {
     elbow: "Elbow_R",
     at: [0, .35, .7]
   },
-  yw = new q(),
+  yw = new Vector3(),
   jw = class {
     chain = [];
     probes = [];
@@ -5623,7 +5623,7 @@ var Tw = class A {
           return this.chain.push({
             node: A.nodes[t],
             parent: o,
-            matrix: new D()
+            matrix: new Matrix4()
           }), lookupMap.set(t, i), i;
         };
       A.data.renderers.forEach((item, index) => {
@@ -5640,7 +5640,7 @@ var Tw = class A {
               e = s.getAttribute("skinIndex"),
               B = s.getAttribute("skinWeight"),
               _lookupMap9 = new Map(),
-              i = new q();
+              i = new Vector3();
             for (let w = 0; n && w < n.count; w++) {
               let s = t;
               if (e && B) {
@@ -5654,12 +5654,12 @@ var Tw = class A {
               if (!r) continue;
               i.fromBufferAttribute(n, w).applyMatrix4(r);
               let f = _lookupMap9.get(s);
-              f || _lookupMap9.set(s, f = new y()), f.expandByPoint(i);
+              f || _lookupMap9.set(s, f = new Box3()), f.expandByPoint(i);
             }
             const _lookupMap0 = new Map();
             for (const [w, f] of _lookupMap9) {
               const A = [];
-              for (const t of [f.min.x, f.max.x]) for (const s of [f.min.y, f.max.y]) for (const n of [f.min.z, f.max.z]) A.push(new q(t, s, n));
+              for (const t of [f.min.x, f.max.x]) for (const s of [f.min.y, f.max.y]) for (const n of [f.min.z, f.max.z]) A.push(new Vector3(t, s, n));
               _lookupMap0.set(w, A);
             }
             return _lookupMap0;
@@ -5675,7 +5675,7 @@ var Tw = class A {
         B.geometry.boundingBox || B.geometry.computeBoundingBox();
         const o = B.geometry.boundingBox,
           i = [];
-        for (const A of [o.min.x, o.max.x]) for (const t of [o.min.y, o.max.y]) for (const s of [o.min.z, o.max.z]) i.push(new q(A, t, s));
+        for (const A of [o.min.x, o.max.x]) for (const t of [o.min.y, o.max.y]) for (const s of [o.min.z, o.max.z]) i.push(new Vector3(A, t, s));
         this.probes.push({
           slot: n(item.node),
           points: i
@@ -5687,7 +5687,7 @@ var Tw = class A {
         A.data.nodes.forEach((node, index) => {
           t(index) && this.probes.push({
             slot: n(index),
-            points: [new q()]
+            points: [new Vector3()]
           });
         });
         const s = A.data.nodes.findIndex(node => node.name === Vw.elbow);
@@ -5783,19 +5783,19 @@ function Sw(A) {
   return (1 - s) * (1 - s);
 }
 var Zw = [["Finger_01 1", "Finger_01"], ["Finger_02 1", "Finger_02"], ["Finger_03 1", "Finger_03"], ["IndexFinger_01 1", "IndexFinger_01"], ["IndexFinger_02 1", "IndexFinger_02"], ["IndexFinger_03 1", "IndexFinger_03"], ["Thumb_01 1", "Thumb_01"], ["Thumb_02 1", "Thumb_02"]],
-  Nw = new q(),
-  Kw = new q(),
-  qw = new q(),
-  _w = new q(),
-  $w = new q(),
-  Af = new q(),
-  tf = new q(),
-  sf = new q(),
-  nf = new q(),
-  ef = new q(),
-  Bf = new q(),
-  of = new q(),
-  rf = new D();
+  Nw = new Vector3(),
+  Kw = new Vector3(),
+  qw = new Vector3(),
+  _w = new Vector3(),
+  $w = new Vector3(),
+  Af = new Vector3(),
+  tf = new Vector3(),
+  sf = new Vector3(),
+  nf = new Vector3(),
+  ef = new Vector3(),
+  Bf = new Vector3(),
+  of = new Vector3(),
+  rf = new Matrix4();
 function wf(A, t, s, n, e) {
   return Re(A, t), e.set(s, n, 0).transformDirection(t.matrixWorld), e.transformDirection(rf.copy(A.matrixWorld).invert());
 }
@@ -5817,7 +5817,7 @@ var ff = class {
             shoulder: n,
             elbow: e,
             hand: B,
-            hint: new q(s * o, i, r).normalize()
+            hint: new Vector3(s * o, i, r).normalize()
           } : null;
         },
         e = n("R", 1),
@@ -5882,14 +5882,14 @@ var ff = class {
       return this.guard.end(), !0;
     }
   },
-  af = new q(1, 0, 0),
-  gf = new S(),
-  cf = new q(),
+  af = new Vector3(1, 0, 0),
+  gf = new Quaternion(),
+  cf = new Vector3(),
   Qf = class {
     node;
     amount = 0;
-    $_4rp = new q();
-    $_4cd = new S();
+    $_4rp = new Vector3();
+    $_4cd = new Quaternion();
     posed = !1;
     constructor(A) {
       this.node = A, A && (this.$_4rp.copy(A.position), this.$_4cd.copy(A.quaternion));
@@ -5911,7 +5911,7 @@ var ff = class {
         return this.posed = !1, n.position.copy(this.$_4rp), n.quaternion.copy(this.$_4cd), void n.updateMatrix();
       }
       this.posed = !0;
-      const B = gf.setFromAxisAngle(af, b.degToRad(-18 * e)),
+      const B = gf.setFromAxisAngle(af, MathUtils.degToRad(-18 * e)),
         o = cf.set(0, 1, 0);
       n.quaternion.copy(this.$_4cd).premultiply(B), n.position.copy(o).applyQuaternion(B).negate().add(o).add(this.$_4rp), n.position.y += .06 * e, n.updateMatrix();
     }
@@ -6855,8 +6855,8 @@ function Gf(A, t) {
 }
 kf.bodies;
 var Uf = A => A ? `${A.position.join(",")}/${A.scale.join(",")}` : "";
-function vf(A, t = new D()) {
-  return A ? t.compose(new q(...A.position), new S(), new q(...A.scale)) : t.identity();
+function vf(A, t = new Matrix4()) {
+  return A ? t.compose(new Vector3(...A.position), new Quaternion(), new Vector3(...A.scale)) : t.identity();
 }
 var pf = null;
 function mf() {
@@ -6918,11 +6918,11 @@ var Jf = {
       position: [-.16, .28, .15]
     })
   },
-  Rf = new p(),
-  Of = new V(),
-  Vf = new D(),
+  Rf = new Euler(),
+  Of = new Sphere(),
+  Vf = new Matrix4(),
   yf = /finger|thumb/i,
-  jf = class extends J {
+  jf = class extends Group {
     culled = !1;
     updateMatrixWorld(A) {
       if (!this.culled) return super.updateMatrixWorld(A);
@@ -6930,8 +6930,8 @@ var Jf = {
     }
   },
   xf = class {
-    frustum = new T();
-    eye = new q();
+    frustum = new Frustum();
+    eye = new Vector3();
     near = 0;
     screen = 0;
     pixels = 0;
@@ -7024,7 +7024,7 @@ var Jf = {
     constructor(A, t, s) {
       this.rig = A, this.index = t, this.lobby = s, this.object = A.object, this.$_4qu = new vr(A.object, A.node("Spine_03"), t => A.node(t)), this.weaponsParent = A.node("weaponsParent");
       const n = A.node("Hand_L");
-      n && (this.$_40a = new J(), this.$_40a.position.copy(this.weaponsParent.position).negate(), this.$_40a.quaternion.copy(this.weaponsParent.quaternion), this.$_40a.scale.copy(this.weaponsParent.scale).negate(), n.add(this.$_40a), this.shoulderR = A.node("Shoulder_R") ?? null), A.data.nodes.forEach((node, index) => yf.test(node.name) && this.fingers.add(index)), this.$_2n4g = new dB(A.object, t => A.node(t)), this.$_7aqp = new ci(A.object, t => A.node(t)), this.$_323 = new BB(A.object, t => A.node(t));
+      n && (this.$_40a = new Group(), this.$_40a.position.copy(this.weaponsParent.position).negate(), this.$_40a.quaternion.copy(this.weaponsParent.quaternion), this.$_40a.scale.copy(this.weaponsParent.scale).negate(), n.add(this.$_40a), this.shoulderR = A.node("Shoulder_R") ?? null), A.data.nodes.forEach((node, index) => yf.test(node.name) && this.fingers.add(index)), this.$_2n4g = new dB(A.object, t => A.node(t)), this.$_7aqp = new ci(A.object, t => A.node(t)), this.$_323 = new BB(A.object, t => A.node(t));
       const e = A.animators[0],
         lookupMap = new Map();
       A.data.nodes.forEach((node, index) => {
@@ -7158,14 +7158,14 @@ var Jf = {
         e = this.rig.index(A),
         B = this.rig.index("HEAD_TEMPLATE");
       if (!n || e < 0 || B < 0) return t;
-      s = new m(), s.name = `HEAD_SLOT_${A}`;
+      s = new Object3D(), s.name = `HEAD_SLOT_${A}`;
       try {
         (function (A, t, s) {
-          const n = new D(),
-            e = new D(),
-            B = new q(),
-            o = new S(),
-            i = new q();
+          const n = new Matrix4(),
+            e = new Matrix4(),
+            B = new Vector3(),
+            o = new Quaternion(),
+            i = new Vector3();
           for (let r = s; r !== t; r = A[r].parent) {
             if (r < 0) throw new Error(`node ${t} is not above ${s}`);
             const w = A[r];
@@ -7210,8 +7210,8 @@ var Jf = {
       return e && e.isSkinnedMesh ? e : null;
     }
     $_3ih(A, t) {
-      const s = new D(),
-        n = new D();
+      const s = new Matrix4(),
+        n = new Matrix4();
       for (let e = A; e; e = e.parent) {
         const B = t.bones.indexOf(e);
         if (B >= 0 && e !== A) return {
@@ -7301,7 +7301,7 @@ var Jf = {
           f = `${A}|${e.map(item => `${item.key}@${item.bone}${item.trunk ? "~trunk" : ""}`).join("|")}|${r.width}x${r.height}|${i.map(item => `${item.w}x${item.h}`).join(",")}`;
         let a = rw.get(w);
         if (!a) {
-          const A = new K(function (A, t) {
+          const A = new CanvasTexture(function (A, t) {
             const element = document.createElement("canvas");
             element.width = t.width, element.height = t.height;
             const drawingContext = element.getContext("2d");
@@ -7314,7 +7314,7 @@ var Jf = {
           }(o, r));
           A.name = "body-atlas", A.colorSpace = s.colorSpace, A.flipY = !0;
           const t = 1 === OA(i[0].w, i[0].h)[1];
-          A.generateMipmaps = t, A.magFilter = W, A.minFilter = t ? Y : W, A.wrapS = A.wrapT = N, a = {
+          A.generateMipmaps = t, A.magFilter = NearestFilter, A.minFilter = t ? NearestMipmapNearestFilter : NearestFilter, A.wrapS = A.wrapT = ClampToEdgeWrapping, a = {
             value: A,
             users: 0
           }, rw.set(w, a);
@@ -7342,7 +7342,7 @@ var Jf = {
         smoothness: 0,
         metallic: 0
       })), this.$_smm[this.$_3t7] = a), this.$_3t7 ^= 1, LA(a, f.atlas), ln([a], this.skin);
-      const g = new j(f.geometry, a);
+      const g = new SkinnedMesh(f.geometry, a);
       if (g.bind(B.skeleton, B.bindMatrix), g.frustumCulled = !1, g.name = "body-batch", g.userData.skinPart = !0, this.staged) {
         if (await vA(g, !1, this.$_xa8), A !== this.$_4i0) return f.release(), !0;
       } else MA(g);
@@ -7425,25 +7425,25 @@ var Jf = {
               r = A.getAttribute("normal"),
               float32Values = new Float32Array(3 * i.count),
               _float32Values6 = new Float32Array(3 * i.count),
-              a = new q(),
-              g = new q(),
-              c = new G().getNormalMatrix(t);
+              a = new Vector3(),
+              g = new Vector3(),
+              c = new Matrix3().getNormalMatrix(t);
             for (let l = 0; l < i.count; l++) a.fromBufferAttribute(i, l).applyMatrix4(t), r ? g.fromBufferAttribute(r, l).applyMatrix3(c).normalize() : g.set(0, 1, 0), a.toArray(float32Values, 3 * l), g.toArray(_float32Values6, 3 * l);
             const Q = xr(s, n, float32Values, i.count);
             if (!Q) return B.set(e, null), null;
-            const h = new Z();
-            h.name = "body-attachment-bound", h.setAttribute("position", new L(float32Values, 3)), h.setAttribute("normal", new L(_float32Values6, 3));
+            const h = new BufferGeometry();
+            h.name = "body-attachment-bound", h.setAttribute("position", new BufferAttribute(float32Values, 3)), h.setAttribute("normal", new BufferAttribute(_float32Values6, 3));
             for (const l of Object.keys(A.attributes)) ["position", "normal", "skinIndex", "skinWeight"].includes(l) || h.setAttribute(l, A.attributes[l]);
             h.setIndex(A.getIndex());
             for (const l of A.groups) h.addGroup(l.start, l.count, l.materialIndex);
-            return h.setAttribute("skinIndex", new E(Q.skinIndex, 4)), h.setAttribute("skinWeight", new M(Q.skinWeight, 4)), h.computeBoundingSphere(), B.set(e, h), A.addEventListener("dispose", () => {
+            return h.setAttribute("skinIndex", new Uint16BufferAttribute(Q.skinIndex, 4)), h.setAttribute("skinWeight", new Float32BufferAttribute(Q.skinWeight, 4)), h.computeBoundingSphere(), B.set(e, h), A.addEventListener("dispose", () => {
               B.delete(e), h.dispose();
             }), h;
           }(B.geometry, r.skeleton.boneInverses[f.bone].clone().invert().multiply(f.local), r.geometry, w) : null;
         if (a && r) {
-          const t = new j(a, A);
+          const t = new SkinnedMesh(a, A);
           t.bind(r.skeleton, r.bindMatrix), t.frustumCulled = !1, t.name = "body-attachment", i = t;
-        } else i = new d(B.geometry, A);
+        } else i = new Mesh(B.geometry, A);
         t?.fit && (i.position.fromArray(t.fit.position), i.scale.fromArray(t.fit.scale)), (!n || this.hat < 0) && ln([i.material], this.skin, !0), i.userData.skinPart = !0;
         const g = Cn(this.skin),
           c = g ? Pn(i, g) : null;
@@ -7560,11 +7560,11 @@ var Jf = {
       if (g && "number" == typeof c) {
         const A = e.nodes[c];
         r.updateMatrix();
-        const t = new D();
+        const t = new Matrix4();
         for (let s = c; s >= 0; s = e.data.nodes[s].parent) e.nodes[s].updateMatrix(), t.premultiply(e.nodes[s].matrix);
         t.decompose(A.position, A.quaternion, A.scale);
         const n = g(s.name);
-        A.position.fromArray(n.position), n.euler && A.quaternion.copy(((A, t, s, n = new S()) => n.setFromEuler(Rf.set(b.degToRad(A), b.degToRad(t), b.degToRad(s), "YXZ")))(n.euler[0], n.euler[1], n.euler[2])), A.removeFromParent(), o.push(A);
+        A.position.fromArray(n.position), n.euler && A.quaternion.copy(((A, t, s, n = new Quaternion()) => n.setFromEuler(Rf.set(MathUtils.degToRad(A), MathUtils.degToRad(t), MathUtils.degToRad(s), "YXZ")))(n.euler[0], n.euler[1], n.euler[2])), A.removeFromParent(), o.push(A);
       }
       r.removeFromParent(), o.push(r), B && (B.nodes[0].position.set(0, 0, 0), B.animators.length = 0, "number" == typeof a && B.setActive(a, !1), B.nodes[0].removeFromParent(), i.push(B.nodes[0]));
       const h = "number" == typeof a ? a : -1;
@@ -7662,7 +7662,7 @@ var Jf = {
         t = A ? Fe(A) : null;
       return t ? (t.node.updateWorldMatrix(!0, !1), {
         key: t.key,
-        from: t.node.getWorldPosition(new q()),
+        from: t.node.getWorldPosition(new Vector3()),
         tint: Ae(this.weaponSkin)
       }) : null;
     }
@@ -7691,7 +7691,7 @@ var Jf = {
         t = A?.data.behaviours.find(A => "MuzzleFlash" === A.script);
       if (!A || !t) return;
       const s = A.nodes[t.node];
-      s.visible = !0, zA(s, b.degToRad(1e3 * Math.random())), s.updateMatrix(), this.$_3pb = Number(t.data?.lifeTime ?? .05), this.$_bjz = s, this.$_7fy = !1;
+      s.visible = !0, zA(s, MathUtils.degToRad(1e3 * Math.random())), s.updateMatrix(), this.$_3pb = Number(t.data?.lifeTime ?? .05), this.$_bjz = s, this.$_7fy = !1;
     }
     $_3pb = 0;
     $_bjz = null;
@@ -7730,7 +7730,7 @@ var Jf = {
       w || (this.$_6rk = 0), this.$_28xp(w && !0), this.rig.update(A, s && !w), this.fx?.update(A), w || (!this.lobby && s ? this.$_4qu.apply(this.$_39lf, this.$_1ap.$_7i7, !this.dancing) : this.lobby && s && "match" === this.$_3ml && this.hold && (this.$_4qu.apply(this.hold.pitch - 167.244, 0, !0), this.$_4oi && $B(this.object, this.$_4oi, this.hold.turn)), 0 !== B && s && !this.dancing && this.shoulderR && function (A, t, s, n, e) {
         if (0 === n) return;
         const B = e ? Xe.heavy : Xe.light,
-          o = b.DEG2RAD;
+          o = MathUtils.DEG2RAD;
         Ke.setFromAxisAngle(Ze, -B.across * o * n), qe.setFromAxisAngle(Se, -B.raise * o * n), ye(A, t, Ke.multiply(qe)), s && ye(A, s, qe.setFromAxisAngle(Ze, -B.twist * o * n));
       }(this.object, this.shoulderR, this.$_1jj, B, this.$_2lz.heavy), 0 !== o && s && !this.dancing && this.$_323.pose(o), this.$_2n4g.active && this.$_2n4g.pose(this.dancing, A, t ? Math.hypot(t.vx, t.vz) : 0, s), this.$_7aqp.active && this.$_7aqp.pose(this.dancing, A, t ? Math.hypot(t.vx, t.vz) : 0, s), this.$_31s.pose(s && !this.dancing ? e : -1) ? this.$_5xd.pose(A, !1, !0) : this.$_5xd.pose(A, s && !this.dancing), this.$_2v8.active && this.$_2v8.pose(A, s && !this.dancing, e), this.$_1ap.pose(A, !this.lobby && !this.dancing && !!t?.slide, s));
     }

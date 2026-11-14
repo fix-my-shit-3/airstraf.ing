@@ -1,0 +1,5147 @@
+{
+  "reference": "three@0.186.0",
+  "renames": [
+    {
+      "oldName": "x_9",
+      "newName": "x_81",
+      "line": 401,
+      "evidence": "Three.js r186 public signature Vector2.constructor, parameter 0"
+    },
+    {
+      "oldName": "y_5",
+      "newName": "y_80",
+      "line": 401,
+      "evidence": "Three.js r186 public signature Vector2.constructor, parameter 1"
+    },
+    {
+      "oldName": "x_10",
+      "newName": "x_82",
+      "line": 416,
+      "evidence": "Three.js r186 public signature Vector2.set, parameter 0"
+    },
+    {
+      "oldName": "y_6",
+      "newName": "y_81",
+      "line": 416,
+      "evidence": "Three.js r186 public signature Vector2.set, parameter 1"
+    },
+    {
+      "oldName": "x_11",
+      "newName": "x_83",
+      "line": 422,
+      "evidence": "Three.js r186 public signature Vector2.setX, parameter 0"
+    },
+    {
+      "oldName": "y_7",
+      "newName": "y_82",
+      "line": 425,
+      "evidence": "Three.js r186 public signature Vector2.setY, parameter 0"
+    },
+    {
+      "oldName": "v_2",
+      "newName": "v_96",
+      "line": 454,
+      "evidence": "Three.js r186 public signature Vector2.copy, parameter 0"
+    },
+    {
+      "oldName": "v_3",
+      "newName": "v_97",
+      "line": 457,
+      "evidence": "Three.js r186 public signature Vector2.add, parameter 0"
+    },
+    {
+      "oldName": "s_3",
+      "newName": "s_36",
+      "line": 460,
+      "evidence": "Three.js r186 public signature Vector2.addScalar, parameter 0"
+    },
+    {
+      "oldName": "a_3",
+      "newName": "a_49",
+      "line": 463,
+      "evidence": "Three.js r186 public signature Vector2.addVectors, parameter 0"
+    },
+    {
+      "oldName": "b_3",
+      "newName": "b_51",
+      "line": 463,
+      "evidence": "Three.js r186 public signature Vector2.addVectors, parameter 1"
+    },
+    {
+      "oldName": "v_4",
+      "newName": "v_98",
+      "line": 466,
+      "evidence": "Three.js r186 public signature Vector2.addScaledVector, parameter 0"
+    },
+    {
+      "oldName": "s_4",
+      "newName": "s_37",
+      "line": 466,
+      "evidence": "Three.js r186 public signature Vector2.addScaledVector, parameter 1"
+    },
+    {
+      "oldName": "v_5",
+      "newName": "v_99",
+      "line": 469,
+      "evidence": "Three.js r186 public signature Vector2.sub, parameter 0"
+    },
+    {
+      "oldName": "s_5",
+      "newName": "s_38",
+      "line": 472,
+      "evidence": "Three.js r186 public signature Vector2.subScalar, parameter 0"
+    },
+    {
+      "oldName": "a_4",
+      "newName": "a_50",
+      "line": 475,
+      "evidence": "Three.js r186 public signature Vector2.subVectors, parameter 0"
+    },
+    {
+      "oldName": "b_4",
+      "newName": "b_52",
+      "line": 475,
+      "evidence": "Three.js r186 public signature Vector2.subVectors, parameter 1"
+    },
+    {
+      "oldName": "v_6",
+      "newName": "v_100",
+      "line": 478,
+      "evidence": "Three.js r186 public signature Vector2.multiply, parameter 0"
+    },
+    {
+      "oldName": "v_7",
+      "newName": "v_101",
+      "line": 484,
+      "evidence": "Three.js r186 public signature Vector2.divide, parameter 0"
+    },
+    {
+      "oldName": "m_3",
+      "newName": "m_41",
+      "line": 490,
+      "evidence": "Three.js r186 public signature Vector2.applyMatrix3, parameter 0"
+    },
+    {
+      "oldName": "v_8",
+      "newName": "v_102",
+      "line": 496,
+      "evidence": "Three.js r186 public signature Vector2.min, parameter 0"
+    },
+    {
+      "oldName": "v_9",
+      "newName": "v_103",
+      "line": 499,
+      "evidence": "Three.js r186 public signature Vector2.max, parameter 0"
+    },
+    {
+      "oldName": "min_4",
+      "newName": "min_18",
+      "line": 502,
+      "evidence": "Three.js r186 public signature Vector2.clamp, parameter 0"
+    },
+    {
+      "oldName": "max_4",
+      "newName": "max_17",
+      "line": 502,
+      "evidence": "Three.js r186 public signature Vector2.clamp, parameter 1"
+    },
+    {
+      "oldName": "min_5",
+      "newName": "min_19",
+      "line": 508,
+      "evidence": "Three.js r186 public signature Vector2.clampLength, parameter 0"
+    },
+    {
+      "oldName": "max_5",
+      "newName": "max_18",
+      "line": 508,
+      "evidence": "Three.js r186 public signature Vector2.clampLength, parameter 1"
+    },
+    {
+      "oldName": "v_10",
+      "newName": "v_104",
+      "line": 527,
+      "evidence": "Three.js r186 public signature Vector2.dot, parameter 0"
+    },
+    {
+      "oldName": "v_11",
+      "newName": "v_105",
+      "line": 530,
+      "evidence": "Three.js r186 public signature Vector2.cross, parameter 0"
+    },
+    {
+      "oldName": "v_12",
+      "newName": "v_106",
+      "line": 548,
+      "evidence": "Three.js r186 public signature Vector2.angleTo, parameter 0"
+    },
+    {
+      "oldName": "v_13",
+      "newName": "v_107",
+      "line": 554,
+      "evidence": "Three.js r186 public signature Vector2.distanceTo, parameter 0"
+    },
+    {
+      "oldName": "v_14",
+      "newName": "v_108",
+      "line": 557,
+      "evidence": "Three.js r186 public signature Vector2.distanceToSquared, parameter 0"
+    },
+    {
+      "oldName": "v_15",
+      "newName": "v_109",
+      "line": 562,
+      "evidence": "Three.js r186 public signature Vector2.manhattanDistanceTo, parameter 0"
+    },
+    {
+      "oldName": "v_16",
+      "newName": "v_110",
+      "line": 568,
+      "evidence": "Three.js r186 public signature Vector2.lerp, parameter 0"
+    },
+    {
+      "oldName": "v_17",
+      "newName": "v_111",
+      "line": 574,
+      "evidence": "Three.js r186 public signature Vector2.equals, parameter 0"
+    },
+    {
+      "oldName": "x_14",
+      "newName": "x_84",
+      "line": 601,
+      "evidence": "Three.js r186 public signature Quaternion.constructor, parameter 0"
+    },
+    {
+      "oldName": "y_10",
+      "newName": "y_83",
+      "line": 601,
+      "evidence": "Three.js r186 public signature Quaternion.constructor, parameter 1"
+    },
+    {
+      "oldName": "z_2",
+      "newName": "z_51",
+      "line": 601,
+      "evidence": "Three.js r186 public signature Quaternion.constructor, parameter 2"
+    },
+    {
+      "oldName": "w_2",
+      "newName": "w_24",
+      "line": 601,
+      "evidence": "Three.js r186 public signature Quaternion.constructor, parameter 3"
+    },
+    {
+      "oldName": "t_4",
+      "newName": "t_33",
+      "line": 604,
+      "evidence": "Three.js r186 public signature Quaternion.slerpFlat, parameter 6"
+    },
+    {
+      "oldName": "dst_2",
+      "newName": "dst_5",
+      "line": 629,
+      "evidence": "Three.js r186 public signature Quaternion.multiplyQuaternionsFlat, parameter 0"
+    },
+    {
+      "oldName": "x_15",
+      "newName": "x_85",
+      "line": 664,
+      "evidence": "Three.js r186 public signature Quaternion.set, parameter 0"
+    },
+    {
+      "oldName": "y_11",
+      "newName": "y_84",
+      "line": 664,
+      "evidence": "Three.js r186 public signature Quaternion.set, parameter 1"
+    },
+    {
+      "oldName": "z_3",
+      "newName": "z_52",
+      "line": 664,
+      "evidence": "Three.js r186 public signature Quaternion.set, parameter 2"
+    },
+    {
+      "oldName": "w_3",
+      "newName": "w_25",
+      "line": 664,
+      "evidence": "Three.js r186 public signature Quaternion.set, parameter 3"
+    },
+    {
+      "oldName": "m_4",
+      "newName": "m_42",
+      "line": 715,
+      "evidence": "Three.js r186 public signature Quaternion.setFromRotationMatrix, parameter 0"
+    },
+    {
+      "oldName": "q_3",
+      "newName": "q_19",
+      "line": 746,
+      "evidence": "Three.js r186 public signature Quaternion.angleTo, parameter 0"
+    },
+    {
+      "oldName": "q_4",
+      "newName": "q_20",
+      "line": 749,
+      "evidence": "Three.js r186 public signature Quaternion.rotateTowards, parameter 0"
+    },
+    {
+      "oldName": "v_18",
+      "newName": "v_112",
+      "line": 764,
+      "evidence": "Three.js r186 public signature Quaternion.dot, parameter 0"
+    },
+    {
+      "oldName": "q_5",
+      "newName": "q_21",
+      "line": 777,
+      "evidence": "Three.js r186 public signature Quaternion.multiply, parameter 0"
+    },
+    {
+      "oldName": "q_6",
+      "newName": "q_22",
+      "line": 780,
+      "evidence": "Three.js r186 public signature Quaternion.premultiply, parameter 0"
+    },
+    {
+      "oldName": "a_5",
+      "newName": "a_51",
+      "line": 783,
+      "evidence": "Three.js r186 public signature Quaternion.multiplyQuaternions, parameter 0"
+    },
+    {
+      "oldName": "b_5",
+      "newName": "b_53",
+      "line": 783,
+      "evidence": "Three.js r186 public signature Quaternion.multiplyQuaternions, parameter 1"
+    },
+    {
+      "oldName": "t_6",
+      "newName": "t_34",
+      "line": 794,
+      "evidence": "Three.js r186 public signature Quaternion.slerp, parameter 1"
+    },
+    {
+      "oldName": "qa_2",
+      "newName": "qa",
+      "line": 809,
+      "evidence": "Three.js r186 public signature Quaternion.slerpQuaternions, parameter 0"
+    },
+    {
+      "oldName": "qb_2",
+      "newName": "qb_3",
+      "line": 809,
+      "evidence": "Three.js r186 public signature Quaternion.slerpQuaternions, parameter 1"
+    },
+    {
+      "oldName": "t_7",
+      "newName": "t_35",
+      "line": 809,
+      "evidence": "Three.js r186 public signature Quaternion.slerpQuaternions, parameter 2"
+    },
+    {
+      "oldName": "x_18",
+      "newName": "x_86",
+      "line": 847,
+      "evidence": "Three.js r186 public signature Vector3.constructor, parameter 0"
+    },
+    {
+      "oldName": "y_14",
+      "newName": "y_85",
+      "line": 847,
+      "evidence": "Three.js r186 public signature Vector3.constructor, parameter 1"
+    },
+    {
+      "oldName": "z_6",
+      "newName": "z_53",
+      "line": 847,
+      "evidence": "Three.js r186 public signature Vector3.constructor, parameter 2"
+    },
+    {
+      "oldName": "x_19",
+      "newName": "x_87",
+      "line": 850,
+      "evidence": "Three.js r186 public signature Vector3.set, parameter 0"
+    },
+    {
+      "oldName": "y_15",
+      "newName": "y_86",
+      "line": 850,
+      "evidence": "Three.js r186 public signature Vector3.set, parameter 1"
+    },
+    {
+      "oldName": "z_7",
+      "newName": "z_54",
+      "line": 850,
+      "evidence": "Three.js r186 public signature Vector3.set, parameter 2"
+    },
+    {
+      "oldName": "x_20",
+      "newName": "x_88",
+      "line": 856,
+      "evidence": "Three.js r186 public signature Vector3.setX, parameter 0"
+    },
+    {
+      "oldName": "y_16",
+      "newName": "y_87",
+      "line": 859,
+      "evidence": "Three.js r186 public signature Vector3.setY, parameter 0"
+    },
+    {
+      "oldName": "z_8",
+      "newName": "z_55",
+      "line": 862,
+      "evidence": "Three.js r186 public signature Vector3.setZ, parameter 0"
+    },
+    {
+      "oldName": "v_19",
+      "newName": "v_113",
+      "line": 896,
+      "evidence": "Three.js r186 public signature Vector3.copy, parameter 0"
+    },
+    {
+      "oldName": "v_20",
+      "newName": "v_114",
+      "line": 899,
+      "evidence": "Three.js r186 public signature Vector3.add, parameter 0"
+    },
+    {
+      "oldName": "s_9",
+      "newName": "s_39",
+      "line": 902,
+      "evidence": "Three.js r186 public signature Vector3.addScalar, parameter 0"
+    },
+    {
+      "oldName": "a_6",
+      "newName": "a_52",
+      "line": 905,
+      "evidence": "Three.js r186 public signature Vector3.addVectors, parameter 0"
+    },
+    {
+      "oldName": "b_6",
+      "newName": "b_54",
+      "line": 905,
+      "evidence": "Three.js r186 public signature Vector3.addVectors, parameter 1"
+    },
+    {
+      "oldName": "v_21",
+      "newName": "v_115",
+      "line": 908,
+      "evidence": "Three.js r186 public signature Vector3.addScaledVector, parameter 0"
+    },
+    {
+      "oldName": "s_10",
+      "newName": "s_40",
+      "line": 908,
+      "evidence": "Three.js r186 public signature Vector3.addScaledVector, parameter 1"
+    },
+    {
+      "oldName": "v_22",
+      "newName": "v_116",
+      "line": 911,
+      "evidence": "Three.js r186 public signature Vector3.sub, parameter 0"
+    },
+    {
+      "oldName": "s_11",
+      "newName": "s_41",
+      "line": 914,
+      "evidence": "Three.js r186 public signature Vector3.subScalar, parameter 0"
+    },
+    {
+      "oldName": "a_7",
+      "newName": "a_53",
+      "line": 917,
+      "evidence": "Three.js r186 public signature Vector3.subVectors, parameter 0"
+    },
+    {
+      "oldName": "b_7",
+      "newName": "b_55",
+      "line": 917,
+      "evidence": "Three.js r186 public signature Vector3.subVectors, parameter 1"
+    },
+    {
+      "oldName": "v_23",
+      "newName": "v_117",
+      "line": 920,
+      "evidence": "Three.js r186 public signature Vector3.multiply, parameter 0"
+    },
+    {
+      "oldName": "a_8",
+      "newName": "a_54",
+      "line": 926,
+      "evidence": "Three.js r186 public signature Vector3.multiplyVectors, parameter 0"
+    },
+    {
+      "oldName": "b_8",
+      "newName": "b_56",
+      "line": 926,
+      "evidence": "Three.js r186 public signature Vector3.multiplyVectors, parameter 1"
+    },
+    {
+      "oldName": "m_5",
+      "newName": "m_43",
+      "line": 935,
+      "evidence": "Three.js r186 public signature Vector3.applyMatrix3, parameter 0"
+    },
+    {
+      "oldName": "m_6",
+      "newName": "m_44",
+      "line": 942,
+      "evidence": "Three.js r186 public signature Vector3.applyNormalMatrix, parameter 0"
+    },
+    {
+      "oldName": "m_7",
+      "newName": "m_45",
+      "line": 945,
+      "evidence": "Three.js r186 public signature Vector3.applyMatrix4, parameter 0"
+    },
+    {
+      "oldName": "q_7",
+      "newName": "q_23",
+      "line": 953,
+      "evidence": "Three.js r186 public signature Vector3.applyQuaternion, parameter 0"
+    },
+    {
+      "oldName": "m_8",
+      "newName": "m_46",
+      "line": 972,
+      "evidence": "Three.js r186 public signature Vector3.transformDirection, parameter 0"
+    },
+    {
+      "oldName": "v_24",
+      "newName": "v_118",
+      "line": 979,
+      "evidence": "Three.js r186 public signature Vector3.divide, parameter 0"
+    },
+    {
+      "oldName": "v_25",
+      "newName": "v_119",
+      "line": 985,
+      "evidence": "Three.js r186 public signature Vector3.min, parameter 0"
+    },
+    {
+      "oldName": "v_26",
+      "newName": "v_120",
+      "line": 988,
+      "evidence": "Three.js r186 public signature Vector3.max, parameter 0"
+    },
+    {
+      "oldName": "min_6",
+      "newName": "min_20",
+      "line": 991,
+      "evidence": "Three.js r186 public signature Vector3.clamp, parameter 0"
+    },
+    {
+      "oldName": "max_6",
+      "newName": "max_19",
+      "line": 991,
+      "evidence": "Three.js r186 public signature Vector3.clamp, parameter 1"
+    },
+    {
+      "oldName": "min_7",
+      "newName": "min_21",
+      "line": 997,
+      "evidence": "Three.js r186 public signature Vector3.clampLength, parameter 0"
+    },
+    {
+      "oldName": "max_7",
+      "newName": "max_20",
+      "line": 997,
+      "evidence": "Three.js r186 public signature Vector3.clampLength, parameter 1"
+    },
+    {
+      "oldName": "v_27",
+      "newName": "v_121",
+      "line": 1016,
+      "evidence": "Three.js r186 public signature Vector3.dot, parameter 0"
+    },
+    {
+      "oldName": "v_28",
+      "newName": "v_122",
+      "line": 1034,
+      "evidence": "Three.js r186 public signature Vector3.lerp, parameter 0"
+    },
+    {
+      "oldName": "v_29",
+      "newName": "v_123",
+      "line": 1040,
+      "evidence": "Three.js r186 public signature Vector3.cross, parameter 0"
+    },
+    {
+      "oldName": "a_9",
+      "newName": "a_55",
+      "line": 1043,
+      "evidence": "Three.js r186 public signature Vector3.crossVectors, parameter 0"
+    },
+    {
+      "oldName": "b_9",
+      "newName": "b_57",
+      "line": 1043,
+      "evidence": "Three.js r186 public signature Vector3.crossVectors, parameter 1"
+    },
+    {
+      "oldName": "v_30",
+      "newName": "v_124",
+      "line": 1052,
+      "evidence": "Three.js r186 public signature Vector3.projectOnVector, parameter 0"
+    },
+    {
+      "oldName": "v_31",
+      "newName": "v_125",
+      "line": 1064,
+      "evidence": "Three.js r186 public signature Vector3.angleTo, parameter 0"
+    },
+    {
+      "oldName": "v_32",
+      "newName": "v_126",
+      "line": 1070,
+      "evidence": "Three.js r186 public signature Vector3.distanceTo, parameter 0"
+    },
+    {
+      "oldName": "v_33",
+      "newName": "v_127",
+      "line": 1073,
+      "evidence": "Three.js r186 public signature Vector3.distanceToSquared, parameter 0"
+    },
+    {
+      "oldName": "v_34",
+      "newName": "v_128",
+      "line": 1079,
+      "evidence": "Three.js r186 public signature Vector3.manhattanDistanceTo, parameter 0"
+    },
+    {
+      "oldName": "s_12",
+      "newName": "s_42",
+      "line": 1082,
+      "evidence": "Three.js r186 public signature Vector3.setFromSpherical, parameter 0"
+    },
+    {
+      "oldName": "c_4",
+      "newName": "c_36",
+      "line": 1089,
+      "evidence": "Three.js r186 public signature Vector3.setFromCylindrical, parameter 0"
+    },
+    {
+      "oldName": "y_20",
+      "newName": "y_88",
+      "line": 1092,
+      "evidence": "Three.js r186 public signature Vector3.setFromCylindricalCoords, parameter 2"
+    },
+    {
+      "oldName": "m_9",
+      "newName": "m_47",
+      "line": 1095,
+      "evidence": "Three.js r186 public signature Vector3.setFromMatrixPosition, parameter 0"
+    },
+    {
+      "oldName": "m_10",
+      "newName": "m_48",
+      "line": 1099,
+      "evidence": "Three.js r186 public signature Vector3.setFromMatrixScale, parameter 0"
+    },
+    {
+      "oldName": "m_11",
+      "newName": "m_49",
+      "line": 1105,
+      "evidence": "Three.js r186 public signature Vector3.setFromMatrixColumn, parameter 0"
+    },
+    {
+      "oldName": "m_12",
+      "newName": "m_50",
+      "line": 1108,
+      "evidence": "Three.js r186 public signature Vector3.setFromMatrix3Column, parameter 0"
+    },
+    {
+      "oldName": "e_6",
+      "newName": "e_14",
+      "line": 1111,
+      "evidence": "Three.js r186 public signature Vector3.setFromEuler, parameter 0"
+    },
+    {
+      "oldName": "c_5",
+      "newName": "c_37",
+      "line": 1114,
+      "evidence": "Three.js r186 public signature Vector3.setFromColor, parameter 0"
+    },
+    {
+      "oldName": "v_35",
+      "newName": "v_129",
+      "line": 1117,
+      "evidence": "Three.js r186 public signature Vector3.equals, parameter 0"
+    },
+    {
+      "oldName": "t",
+      "newName": "n11_9",
+      "line": 1148,
+      "evidence": "Three.js r186 public signature Matrix3.constructor, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "n12_9",
+      "line": 1148,
+      "evidence": "Three.js r186 public signature Matrix3.constructor, parameter 1"
+    },
+    {
+      "oldName": "n",
+      "newName": "n13_7",
+      "line": 1148,
+      "evidence": "Three.js r186 public signature Matrix3.constructor, parameter 2"
+    },
+    {
+      "oldName": "i",
+      "newName": "n21_9",
+      "line": 1148,
+      "evidence": "Three.js r186 public signature Matrix3.constructor, parameter 3"
+    },
+    {
+      "oldName": "s",
+      "newName": "n22_9",
+      "line": 1148,
+      "evidence": "Three.js r186 public signature Matrix3.constructor, parameter 4"
+    },
+    {
+      "oldName": "r",
+      "newName": "n23_7",
+      "line": 1148,
+      "evidence": "Three.js r186 public signature Matrix3.constructor, parameter 5"
+    },
+    {
+      "oldName": "o",
+      "newName": "n31_7",
+      "line": 1148,
+      "evidence": "Three.js r186 public signature Matrix3.constructor, parameter 6"
+    },
+    {
+      "oldName": "a",
+      "newName": "n32_7",
+      "line": 1148,
+      "evidence": "Three.js r186 public signature Matrix3.constructor, parameter 7"
+    },
+    {
+      "oldName": "h",
+      "newName": "n33_7",
+      "line": 1148,
+      "evidence": "Three.js r186 public signature Matrix3.constructor, parameter 8"
+    },
+    {
+      "oldName": "m_13",
+      "newName": "m_51",
+      "line": 1158,
+      "evidence": "Three.js r186 public signature Matrix3.copy, parameter 0"
+    },
+    {
+      "oldName": "m_14",
+      "newName": "m_52",
+      "line": 1166,
+      "evidence": "Three.js r186 public signature Matrix3.setFromMatrix4, parameter 0"
+    },
+    {
+      "oldName": "m_15",
+      "newName": "m_53",
+      "line": 1170,
+      "evidence": "Three.js r186 public signature Matrix3.multiply, parameter 0"
+    },
+    {
+      "oldName": "m_16",
+      "newName": "m_54",
+      "line": 1173,
+      "evidence": "Three.js r186 public signature Matrix3.premultiply, parameter 0"
+    },
+    {
+      "oldName": "a_10",
+      "newName": "a_56",
+      "line": 1176,
+      "evidence": "Three.js r186 public signature Matrix3.multiplyMatrices, parameter 0"
+    },
+    {
+      "oldName": "b_10",
+      "newName": "b_58",
+      "line": 1176,
+      "evidence": "Three.js r186 public signature Matrix3.multiplyMatrices, parameter 1"
+    },
+    {
+      "oldName": "s_13",
+      "newName": "s_43",
+      "line": 1200,
+      "evidence": "Three.js r186 public signature Matrix3.multiplyScalar, parameter 0"
+    },
+    {
+      "oldName": "r_3",
+      "newName": "r_15",
+      "line": 1244,
+      "evidence": "Three.js r186 public signature Matrix3.transposeIntoArray, parameter 0"
+    },
+    {
+      "oldName": "tx_2",
+      "newName": "tx_6",
+      "line": 1248,
+      "evidence": "Three.js r186 public signature Matrix3.setUvTransform, parameter 0"
+    },
+    {
+      "oldName": "ty_2",
+      "newName": "ty_6",
+      "line": 1248,
+      "evidence": "Three.js r186 public signature Matrix3.setUvTransform, parameter 1"
+    },
+    {
+      "oldName": "sx_2",
+      "newName": "sx_7",
+      "line": 1248,
+      "evidence": "Three.js r186 public signature Matrix3.setUvTransform, parameter 2"
+    },
+    {
+      "oldName": "sy_2",
+      "newName": "sy_7",
+      "line": 1248,
+      "evidence": "Three.js r186 public signature Matrix3.setUvTransform, parameter 3"
+    },
+    {
+      "oldName": "sx_3",
+      "newName": "sx_8",
+      "line": 1253,
+      "evidence": "Three.js r186 public signature Matrix3.scale, parameter 0"
+    },
+    {
+      "oldName": "sy_3",
+      "newName": "sy_8",
+      "line": 1253,
+      "evidence": "Three.js r186 public signature Matrix3.scale, parameter 1"
+    },
+    {
+      "oldName": "tx_3",
+      "newName": "tx_7",
+      "line": 1259,
+      "evidence": "Three.js r186 public signature Matrix3.translate, parameter 0"
+    },
+    {
+      "oldName": "ty_3",
+      "newName": "ty_7",
+      "line": 1259,
+      "evidence": "Three.js r186 public signature Matrix3.translate, parameter 1"
+    },
+    {
+      "oldName": "x_24",
+      "newName": "x_89",
+      "line": 1262,
+      "evidence": "Three.js r186 public signature Matrix3.makeTranslation, parameter 0"
+    },
+    {
+      "oldName": "y_21",
+      "newName": "y_89",
+      "line": 1262,
+      "evidence": "Three.js r186 public signature Matrix3.makeTranslation, parameter 1"
+    },
+    {
+      "oldName": "x_25",
+      "newName": "x_90",
+      "line": 1270,
+      "evidence": "Three.js r186 public signature Matrix3.makeScale, parameter 0"
+    },
+    {
+      "oldName": "y_22",
+      "newName": "y_90",
+      "line": 1270,
+      "evidence": "Three.js r186 public signature Matrix3.makeScale, parameter 1"
+    },
+    {
+      "oldName": "e",
+      "newName": "image_15",
+      "line": 1462,
+      "evidence": "Three.js r186 public signature Texture.constructor, parameter 0"
+    },
+    {
+      "oldName": "n",
+      "newName": "mapping_6",
+      "line": 1462,
+      "evidence": "Three.js r186 public signature Texture.constructor, parameter 1"
+    },
+    {
+      "oldName": "i",
+      "newName": "wrapS_5",
+      "line": 1462,
+      "evidence": "Three.js r186 public signature Texture.constructor, parameter 2"
+    },
+    {
+      "oldName": "s",
+      "newName": "wrapT_5",
+      "line": 1462,
+      "evidence": "Three.js r186 public signature Texture.constructor, parameter 3"
+    },
+    {
+      "oldName": "r",
+      "newName": "magFilter_5",
+      "line": 1462,
+      "evidence": "Three.js r186 public signature Texture.constructor, parameter 4"
+    },
+    {
+      "oldName": "o",
+      "newName": "minFilter_5",
+      "line": 1462,
+      "evidence": "Three.js r186 public signature Texture.constructor, parameter 5"
+    },
+    {
+      "oldName": "a",
+      "newName": "format_7",
+      "line": 1462,
+      "evidence": "Three.js r186 public signature Texture.constructor, parameter 6"
+    },
+    {
+      "oldName": "h",
+      "newName": "type_32",
+      "line": 1462,
+      "evidence": "Three.js r186 public signature Texture.constructor, parameter 7"
+    },
+    {
+      "oldName": "c",
+      "newName": "anisotropy_5",
+      "line": 1462,
+      "evidence": "Three.js r186 public signature Texture.constructor, parameter 8"
+    },
+    {
+      "oldName": "A",
+      "newName": "colorSpace_18",
+      "line": 1462,
+      "evidence": "Three.js r186 public signature Texture.constructor, parameter 9"
+    },
+    {
+      "oldName": "t",
+      "newName": "uv_7",
+      "line": 1550,
+      "evidence": "Three.js r186 public signature Texture.transformUv, parameter 0"
+    },
+    {
+      "oldName": "x_26",
+      "newName": "x_91",
+      "line": 1586,
+      "evidence": "Three.js r186 public signature Vector4.constructor, parameter 0"
+    },
+    {
+      "oldName": "y_23",
+      "newName": "y_91",
+      "line": 1586,
+      "evidence": "Three.js r186 public signature Vector4.constructor, parameter 1"
+    },
+    {
+      "oldName": "z_12",
+      "newName": "z_56",
+      "line": 1586,
+      "evidence": "Three.js r186 public signature Vector4.constructor, parameter 2"
+    },
+    {
+      "oldName": "w_6",
+      "newName": "w_26",
+      "line": 1586,
+      "evidence": "Three.js r186 public signature Vector4.constructor, parameter 3"
+    },
+    {
+      "oldName": "x_27",
+      "newName": "x_92",
+      "line": 1601,
+      "evidence": "Three.js r186 public signature Vector4.set, parameter 0"
+    },
+    {
+      "oldName": "y_24",
+      "newName": "y_92",
+      "line": 1601,
+      "evidence": "Three.js r186 public signature Vector4.set, parameter 1"
+    },
+    {
+      "oldName": "z_13",
+      "newName": "z_57",
+      "line": 1601,
+      "evidence": "Three.js r186 public signature Vector4.set, parameter 2"
+    },
+    {
+      "oldName": "w_7",
+      "newName": "w_27",
+      "line": 1601,
+      "evidence": "Three.js r186 public signature Vector4.set, parameter 3"
+    },
+    {
+      "oldName": "x_28",
+      "newName": "x_93",
+      "line": 1607,
+      "evidence": "Three.js r186 public signature Vector4.setX, parameter 0"
+    },
+    {
+      "oldName": "y_25",
+      "newName": "y_93",
+      "line": 1610,
+      "evidence": "Three.js r186 public signature Vector4.setY, parameter 0"
+    },
+    {
+      "oldName": "z_14",
+      "newName": "z_58",
+      "line": 1613,
+      "evidence": "Three.js r186 public signature Vector4.setZ, parameter 0"
+    },
+    {
+      "oldName": "w_8",
+      "newName": "w_28",
+      "line": 1616,
+      "evidence": "Three.js r186 public signature Vector4.setW, parameter 0"
+    },
+    {
+      "oldName": "v_36",
+      "newName": "v_130",
+      "line": 1655,
+      "evidence": "Three.js r186 public signature Vector4.copy, parameter 0"
+    },
+    {
+      "oldName": "v_37",
+      "newName": "v_131",
+      "line": 1658,
+      "evidence": "Three.js r186 public signature Vector4.add, parameter 0"
+    },
+    {
+      "oldName": "s_16",
+      "newName": "s_44",
+      "line": 1661,
+      "evidence": "Three.js r186 public signature Vector4.addScalar, parameter 0"
+    },
+    {
+      "oldName": "a_12",
+      "newName": "a_57",
+      "line": 1664,
+      "evidence": "Three.js r186 public signature Vector4.addVectors, parameter 0"
+    },
+    {
+      "oldName": "b_12",
+      "newName": "b_59",
+      "line": 1664,
+      "evidence": "Three.js r186 public signature Vector4.addVectors, parameter 1"
+    },
+    {
+      "oldName": "v_38",
+      "newName": "v_132",
+      "line": 1667,
+      "evidence": "Three.js r186 public signature Vector4.addScaledVector, parameter 0"
+    },
+    {
+      "oldName": "s_17",
+      "newName": "s_45",
+      "line": 1667,
+      "evidence": "Three.js r186 public signature Vector4.addScaledVector, parameter 1"
+    },
+    {
+      "oldName": "v_39",
+      "newName": "v_133",
+      "line": 1670,
+      "evidence": "Three.js r186 public signature Vector4.sub, parameter 0"
+    },
+    {
+      "oldName": "s_18",
+      "newName": "s_46",
+      "line": 1673,
+      "evidence": "Three.js r186 public signature Vector4.subScalar, parameter 0"
+    },
+    {
+      "oldName": "a_13",
+      "newName": "a_58",
+      "line": 1676,
+      "evidence": "Three.js r186 public signature Vector4.subVectors, parameter 0"
+    },
+    {
+      "oldName": "b_13",
+      "newName": "b_60",
+      "line": 1676,
+      "evidence": "Three.js r186 public signature Vector4.subVectors, parameter 1"
+    },
+    {
+      "oldName": "v_40",
+      "newName": "v_134",
+      "line": 1679,
+      "evidence": "Three.js r186 public signature Vector4.multiply, parameter 0"
+    },
+    {
+      "oldName": "m_19",
+      "newName": "m_55",
+      "line": 1685,
+      "evidence": "Three.js r186 public signature Vector4.applyMatrix4, parameter 0"
+    },
+    {
+      "oldName": "v_41",
+      "newName": "v_135",
+      "line": 1693,
+      "evidence": "Three.js r186 public signature Vector4.divide, parameter 0"
+    },
+    {
+      "oldName": "q_8",
+      "newName": "q_24",
+      "line": 1699,
+      "evidence": "Three.js r186 public signature Vector4.setAxisAngleFromQuaternion, parameter 0"
+    },
+    {
+      "oldName": "t",
+      "newName": "m_56",
+      "line": 1704,
+      "evidence": "Three.js r186 public signature Vector4.setAxisAngleFromRotationMatrix, parameter 0"
+    },
+    {
+      "oldName": "m_20",
+      "newName": "m_57",
+      "line": 1732,
+      "evidence": "Three.js r186 public signature Vector4.setFromMatrixPosition, parameter 0"
+    },
+    {
+      "oldName": "v_42",
+      "newName": "v_136",
+      "line": 1736,
+      "evidence": "Three.js r186 public signature Vector4.min, parameter 0"
+    },
+    {
+      "oldName": "v_43",
+      "newName": "v_137",
+      "line": 1739,
+      "evidence": "Three.js r186 public signature Vector4.max, parameter 0"
+    },
+    {
+      "oldName": "min_8",
+      "newName": "min_22",
+      "line": 1742,
+      "evidence": "Three.js r186 public signature Vector4.clamp, parameter 0"
+    },
+    {
+      "oldName": "max_8",
+      "newName": "max_21",
+      "line": 1742,
+      "evidence": "Three.js r186 public signature Vector4.clamp, parameter 1"
+    },
+    {
+      "oldName": "min_9",
+      "newName": "min_23",
+      "line": 1748,
+      "evidence": "Three.js r186 public signature Vector4.clampLength, parameter 0"
+    },
+    {
+      "oldName": "max_9",
+      "newName": "max_22",
+      "line": 1748,
+      "evidence": "Three.js r186 public signature Vector4.clampLength, parameter 1"
+    },
+    {
+      "oldName": "v_44",
+      "newName": "v_138",
+      "line": 1767,
+      "evidence": "Three.js r186 public signature Vector4.dot, parameter 0"
+    },
+    {
+      "oldName": "v_45",
+      "newName": "v_139",
+      "line": 1785,
+      "evidence": "Three.js r186 public signature Vector4.lerp, parameter 0"
+    },
+    {
+      "oldName": "v_46",
+      "newName": "v_140",
+      "line": 1791,
+      "evidence": "Three.js r186 public signature Vector4.equals, parameter 0"
+    },
+    {
+      "oldName": "t",
+      "newName": "n11_10",
+      "line": 1944,
+      "evidence": "Three.js r186 public signature Matrix4.constructor, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "n12_10",
+      "line": 1944,
+      "evidence": "Three.js r186 public signature Matrix4.constructor, parameter 1"
+    },
+    {
+      "oldName": "n",
+      "newName": "n13_8",
+      "line": 1944,
+      "evidence": "Three.js r186 public signature Matrix4.constructor, parameter 2"
+    },
+    {
+      "oldName": "i",
+      "newName": "n14_4",
+      "line": 1944,
+      "evidence": "Three.js r186 public signature Matrix4.constructor, parameter 3"
+    },
+    {
+      "oldName": "s",
+      "newName": "n21_10",
+      "line": 1944,
+      "evidence": "Three.js r186 public signature Matrix4.constructor, parameter 4"
+    },
+    {
+      "oldName": "r",
+      "newName": "n22_10",
+      "line": 1944,
+      "evidence": "Three.js r186 public signature Matrix4.constructor, parameter 5"
+    },
+    {
+      "oldName": "o",
+      "newName": "n23_8",
+      "line": 1944,
+      "evidence": "Three.js r186 public signature Matrix4.constructor, parameter 6"
+    },
+    {
+      "oldName": "a",
+      "newName": "n24_4",
+      "line": 1944,
+      "evidence": "Three.js r186 public signature Matrix4.constructor, parameter 7"
+    },
+    {
+      "oldName": "h",
+      "newName": "n31_8",
+      "line": 1944,
+      "evidence": "Three.js r186 public signature Matrix4.constructor, parameter 8"
+    },
+    {
+      "oldName": "c",
+      "newName": "n32_8",
+      "line": 1944,
+      "evidence": "Three.js r186 public signature Matrix4.constructor, parameter 9"
+    },
+    {
+      "oldName": "A",
+      "newName": "n33_8",
+      "line": 1944,
+      "evidence": "Three.js r186 public signature Matrix4.constructor, parameter 10"
+    },
+    {
+      "oldName": "l",
+      "newName": "n34_4",
+      "line": 1944,
+      "evidence": "Three.js r186 public signature Matrix4.constructor, parameter 11"
+    },
+    {
+      "oldName": "u",
+      "newName": "n41_4",
+      "line": 1944,
+      "evidence": "Three.js r186 public signature Matrix4.constructor, parameter 12"
+    },
+    {
+      "oldName": "f",
+      "newName": "n42_4",
+      "line": 1944,
+      "evidence": "Three.js r186 public signature Matrix4.constructor, parameter 13"
+    },
+    {
+      "oldName": "d",
+      "newName": "n43_4",
+      "line": 1944,
+      "evidence": "Three.js r186 public signature Matrix4.constructor, parameter 14"
+    },
+    {
+      "oldName": "g",
+      "newName": "n44_4",
+      "line": 1944,
+      "evidence": "Three.js r186 public signature Matrix4.constructor, parameter 15"
+    },
+    {
+      "oldName": "m_21",
+      "newName": "m_58",
+      "line": 1957,
+      "evidence": "Three.js r186 public signature Matrix4.copy, parameter 0"
+    },
+    {
+      "oldName": "m_22",
+      "newName": "m_59",
+      "line": 1962,
+      "evidence": "Three.js r186 public signature Matrix4.copyPosition, parameter 0"
+    },
+    {
+      "oldName": "m_23",
+      "newName": "m_60",
+      "line": 1967,
+      "evidence": "Three.js r186 public signature Matrix4.setFromMatrix3, parameter 0"
+    },
+    {
+      "oldName": "m_24",
+      "newName": "m_61",
+      "line": 1977,
+      "evidence": "Three.js r186 public signature Matrix4.extractRotation, parameter 0"
+    },
+    {
+      "oldName": "q_9",
+      "newName": "q_25",
+      "line": 2036,
+      "evidence": "Three.js r186 public signature Matrix4.makeRotationFromQuaternion, parameter 0"
+    },
+    {
+      "oldName": "up_2",
+      "newName": "up_4",
+      "line": 2039,
+      "evidence": "Three.js r186 public signature Matrix4.lookAt, parameter 2"
+    },
+    {
+      "oldName": "m_25",
+      "newName": "m_62",
+      "line": 2043,
+      "evidence": "Three.js r186 public signature Matrix4.multiply, parameter 0"
+    },
+    {
+      "oldName": "m_26",
+      "newName": "m_63",
+      "line": 2046,
+      "evidence": "Three.js r186 public signature Matrix4.premultiply, parameter 0"
+    },
+    {
+      "oldName": "a_15",
+      "newName": "a_59",
+      "line": 2049,
+      "evidence": "Three.js r186 public signature Matrix4.multiplyMatrices, parameter 0"
+    },
+    {
+      "oldName": "b_15",
+      "newName": "b_61",
+      "line": 2049,
+      "evidence": "Three.js r186 public signature Matrix4.multiplyMatrices, parameter 1"
+    },
+    {
+      "oldName": "s_20",
+      "newName": "s_47",
+      "line": 2087,
+      "evidence": "Three.js r186 public signature Matrix4.multiplyScalar, parameter 0"
+    },
+    {
+      "oldName": "x_31",
+      "newName": "x_94",
+      "line": 2135,
+      "evidence": "Three.js r186 public signature Matrix4.setPosition, parameter 0"
+    },
+    {
+      "oldName": "y_28",
+      "newName": "y_94",
+      "line": 2135,
+      "evidence": "Three.js r186 public signature Matrix4.setPosition, parameter 1"
+    },
+    {
+      "oldName": "z_17",
+      "newName": "z_59",
+      "line": 2135,
+      "evidence": "Three.js r186 public signature Matrix4.setPosition, parameter 2"
+    },
+    {
+      "oldName": "v_47",
+      "newName": "v_141",
+      "line": 2174,
+      "evidence": "Three.js r186 public signature Matrix4.scale, parameter 0"
+    },
+    {
+      "oldName": "x_33",
+      "newName": "x_95",
+      "line": 2188,
+      "evidence": "Three.js r186 public signature Matrix4.makeTranslation, parameter 0"
+    },
+    {
+      "oldName": "y_30",
+      "newName": "y_95",
+      "line": 2188,
+      "evidence": "Three.js r186 public signature Matrix4.makeTranslation, parameter 1"
+    },
+    {
+      "oldName": "z_19",
+      "newName": "z_60",
+      "line": 2188,
+      "evidence": "Three.js r186 public signature Matrix4.makeTranslation, parameter 2"
+    },
+    {
+      "oldName": "x_35",
+      "newName": "x_96",
+      "line": 2217,
+      "evidence": "Three.js r186 public signature Matrix4.makeScale, parameter 0"
+    },
+    {
+      "oldName": "y_32",
+      "newName": "y_96",
+      "line": 2217,
+      "evidence": "Three.js r186 public signature Matrix4.makeScale, parameter 1"
+    },
+    {
+      "oldName": "z_21",
+      "newName": "z_61",
+      "line": 2217,
+      "evidence": "Three.js r186 public signature Matrix4.makeScale, parameter 2"
+    },
+    {
+      "oldName": "t",
+      "newName": "left_5",
+      "line": 2260,
+      "evidence": "Three.js r186 public signature Matrix4.makePerspective, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "right_4",
+      "line": 2260,
+      "evidence": "Three.js r186 public signature Matrix4.makePerspective, parameter 1"
+    },
+    {
+      "oldName": "n",
+      "newName": "top_5",
+      "line": 2260,
+      "evidence": "Three.js r186 public signature Matrix4.makePerspective, parameter 2"
+    },
+    {
+      "oldName": "i",
+      "newName": "bottom_3",
+      "line": 2260,
+      "evidence": "Three.js r186 public signature Matrix4.makePerspective, parameter 3"
+    },
+    {
+      "oldName": "s",
+      "newName": "near_8",
+      "line": 2260,
+      "evidence": "Three.js r186 public signature Matrix4.makePerspective, parameter 4"
+    },
+    {
+      "oldName": "r",
+      "newName": "far_8",
+      "line": 2260,
+      "evidence": "Three.js r186 public signature Matrix4.makePerspective, parameter 5"
+    },
+    {
+      "oldName": "o",
+      "newName": "coordinateSystem",
+      "line": 2260,
+      "evidence": "Three.js r186 public signature Matrix4.makePerspective, parameter 6"
+    },
+    {
+      "oldName": "a",
+      "newName": "reversedDepth",
+      "line": 2260,
+      "evidence": "Three.js r186 public signature Matrix4.makePerspective, parameter 7"
+    },
+    {
+      "oldName": "t",
+      "newName": "left_6",
+      "line": 2273,
+      "evidence": "Three.js r186 public signature Matrix4.makeOrthographic, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "right_5",
+      "line": 2273,
+      "evidence": "Three.js r186 public signature Matrix4.makeOrthographic, parameter 1"
+    },
+    {
+      "oldName": "n",
+      "newName": "top_6",
+      "line": 2273,
+      "evidence": "Three.js r186 public signature Matrix4.makeOrthographic, parameter 2"
+    },
+    {
+      "oldName": "i",
+      "newName": "bottom_4",
+      "line": 2273,
+      "evidence": "Three.js r186 public signature Matrix4.makeOrthographic, parameter 3"
+    },
+    {
+      "oldName": "s",
+      "newName": "near_9",
+      "line": 2273,
+      "evidence": "Three.js r186 public signature Matrix4.makeOrthographic, parameter 4"
+    },
+    {
+      "oldName": "r",
+      "newName": "far_9",
+      "line": 2273,
+      "evidence": "Three.js r186 public signature Matrix4.makeOrthographic, parameter 5"
+    },
+    {
+      "oldName": "o",
+      "newName": "coordinateSystem_2",
+      "line": 2273,
+      "evidence": "Three.js r186 public signature Matrix4.makeOrthographic, parameter 6"
+    },
+    {
+      "oldName": "a",
+      "newName": "reversedDepth_2",
+      "line": 2273,
+      "evidence": "Three.js r186 public signature Matrix4.makeOrthographic, parameter 7"
+    },
+    {
+      "oldName": "x_37",
+      "newName": "x_97",
+      "line": 2311,
+      "evidence": "Three.js r186 public signature Euler.constructor, parameter 0"
+    },
+    {
+      "oldName": "y_34",
+      "newName": "y_97",
+      "line": 2311,
+      "evidence": "Three.js r186 public signature Euler.constructor, parameter 1"
+    },
+    {
+      "oldName": "z_23",
+      "newName": "z_62",
+      "line": 2311,
+      "evidence": "Three.js r186 public signature Euler.constructor, parameter 2"
+    },
+    {
+      "oldName": "x_38",
+      "newName": "x_98",
+      "line": 2338,
+      "evidence": "Three.js r186 public signature Euler.set, parameter 0"
+    },
+    {
+      "oldName": "y_35",
+      "newName": "y_98",
+      "line": 2338,
+      "evidence": "Three.js r186 public signature Euler.set, parameter 1"
+    },
+    {
+      "oldName": "z_24",
+      "newName": "z_63",
+      "line": 2338,
+      "evidence": "Three.js r186 public signature Euler.set, parameter 2"
+    },
+    {
+      "oldName": "m_27",
+      "newName": "m_64",
+      "line": 2347,
+      "evidence": "Three.js r186 public signature Euler.setFromRotationMatrix, parameter 0"
+    },
+    {
+      "oldName": "q_10",
+      "newName": "q_26",
+      "line": 2382,
+      "evidence": "Three.js r186 public signature Euler.setFromQuaternion, parameter 0"
+    },
+    {
+      "oldName": "v_48",
+      "newName": "v_142",
+      "line": 2385,
+      "evidence": "Three.js r186 public signature Euler.setFromVector3, parameter 0"
+    },
+    {
+      "oldName": "q_11",
+      "newName": "q_27",
+      "line": 2512,
+      "evidence": "Three.js r186 public signature Object3D.applyQuaternion, parameter 0"
+    },
+    {
+      "oldName": "m_28",
+      "newName": "m_65",
+      "line": 2521,
+      "evidence": "Three.js r186 public signature Object3D.setRotationFromMatrix, parameter 0"
+    },
+    {
+      "oldName": "q_12",
+      "newName": "q_28",
+      "line": 2524,
+      "evidence": "Three.js r186 public signature Object3D.setRotationFromQuaternion, parameter 0"
+    },
+    {
+      "oldName": "x_39",
+      "newName": "x_99",
+      "line": 2560,
+      "evidence": "Three.js r186 public signature Object3D.lookAt, parameter 0"
+    },
+    {
+      "oldName": "y_36",
+      "newName": "y_99",
+      "line": 2560,
+      "evidence": "Three.js r186 public signature Object3D.lookAt, parameter 1"
+    },
+    {
+      "oldName": "z_25",
+      "newName": "z_64",
+      "line": 2560,
+      "evidence": "Three.js r186 public signature Object3D.lookAt, parameter 2"
+    },
+    {
+      "oldName": "id_2",
+      "newName": "id_7",
+      "line": 2590,
+      "evidence": "Three.js r186 public signature Object3D.getObjectById, parameter 0"
+    },
+    {
+      "oldName": "t",
+      "newName": "inputSource_3",
+      "line": 2798,
+      "evidence": "Three.js r186 public signature WebXRController.update, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "frame_6",
+      "line": 2798,
+      "evidence": "Three.js r186 public signature WebXRController.update, parameter 1"
+    },
+    {
+      "oldName": "n",
+      "newName": "referenceSpace_2",
+      "line": 2798,
+      "evidence": "Three.js r186 public signature WebXRController.update, parameter 2"
+    },
+    {
+      "oldName": "r_4",
+      "newName": "r_16",
+      "line": 3006,
+      "evidence": "Three.js r186 public signature Color.constructor, parameter 0"
+    },
+    {
+      "oldName": "g_3",
+      "newName": "g_9",
+      "line": 3006,
+      "evidence": "Three.js r186 public signature Color.constructor, parameter 1"
+    },
+    {
+      "oldName": "b_16",
+      "newName": "b_62",
+      "line": 3006,
+      "evidence": "Three.js r186 public signature Color.constructor, parameter 2"
+    },
+    {
+      "oldName": "r_5",
+      "newName": "r_17",
+      "line": 3009,
+      "evidence": "Three.js r186 public signature Color.set, parameter 0"
+    },
+    {
+      "oldName": "g_4",
+      "newName": "g_10",
+      "line": 3009,
+      "evidence": "Three.js r186 public signature Color.set, parameter 1"
+    },
+    {
+      "oldName": "b_17",
+      "newName": "b_63",
+      "line": 3009,
+      "evidence": "Three.js r186 public signature Color.set, parameter 2"
+    },
+    {
+      "oldName": "r_6",
+      "newName": "r_18",
+      "line": 3022,
+      "evidence": "Three.js r186 public signature Color.setRGB, parameter 0"
+    },
+    {
+      "oldName": "g_5",
+      "newName": "g_11",
+      "line": 3022,
+      "evidence": "Three.js r186 public signature Color.setRGB, parameter 1"
+    },
+    {
+      "oldName": "b_18",
+      "newName": "b_64",
+      "line": 3022,
+      "evidence": "Three.js r186 public signature Color.setRGB, parameter 2"
+    },
+    {
+      "oldName": "h_2",
+      "newName": "h_5",
+      "line": 3025,
+      "evidence": "Three.js r186 public signature Color.setHSL, parameter 0"
+    },
+    {
+      "oldName": "s_25",
+      "newName": "s_48",
+      "line": 3025,
+      "evidence": "Three.js r186 public signature Color.setHSL, parameter 1"
+    },
+    {
+      "oldName": "l_3",
+      "newName": "l_8",
+      "line": 3025,
+      "evidence": "Three.js r186 public signature Color.setHSL, parameter 2"
+    },
+    {
+      "oldName": "t",
+      "newName": "colorSpace_19",
+      "line": 3120,
+      "evidence": "Three.js r186 public signature Color.getStyle, parameter 0"
+    },
+    {
+      "oldName": "h_3",
+      "newName": "h_6",
+      "line": 3127,
+      "evidence": "Three.js r186 public signature Color.offsetHSL, parameter 0"
+    },
+    {
+      "oldName": "s_26",
+      "newName": "s_49",
+      "line": 3127,
+      "evidence": "Three.js r186 public signature Color.offsetHSL, parameter 1"
+    },
+    {
+      "oldName": "l_4",
+      "newName": "l_9",
+      "line": 3127,
+      "evidence": "Three.js r186 public signature Color.offsetHSL, parameter 2"
+    },
+    {
+      "oldName": "s_27",
+      "newName": "s_50",
+      "line": 3136,
+      "evidence": "Three.js r186 public signature Color.addScalar, parameter 0"
+    },
+    {
+      "oldName": "s_28",
+      "newName": "s_51",
+      "line": 3145,
+      "evidence": "Three.js r186 public signature Color.multiplyScalar, parameter 0"
+    },
+    {
+      "oldName": "v_49",
+      "newName": "v_143",
+      "line": 3161,
+      "evidence": "Three.js r186 public signature Color.setFromVector3, parameter 0"
+    },
+    {
+      "oldName": "m_30",
+      "newName": "m_66",
+      "line": 3164,
+      "evidence": "Three.js r186 public signature Color.applyMatrix3, parameter 0"
+    },
+    {
+      "oldName": "c_17",
+      "newName": "c_38",
+      "line": 3171,
+      "evidence": "Three.js r186 public signature Color.equals, parameter 0"
+    },
+    {
+      "oldName": "a_16",
+      "newName": "a_60",
+      "line": 3253,
+      "evidence": "Three.js r186 public signature Triangle.constructor, parameter 0"
+    },
+    {
+      "oldName": "b_21",
+      "newName": "b_65",
+      "line": 3253,
+      "evidence": "Three.js r186 public signature Triangle.constructor, parameter 1"
+    },
+    {
+      "oldName": "c_18",
+      "newName": "c_39",
+      "line": 3253,
+      "evidence": "Three.js r186 public signature Triangle.constructor, parameter 2"
+    },
+    {
+      "oldName": "a_21",
+      "newName": "a_61",
+      "line": 3287,
+      "evidence": "Three.js r186 public signature Triangle.set, parameter 0"
+    },
+    {
+      "oldName": "b_26",
+      "newName": "b_66",
+      "line": 3287,
+      "evidence": "Three.js r186 public signature Triangle.set, parameter 1"
+    },
+    {
+      "oldName": "c_23",
+      "newName": "c_40",
+      "line": 3287,
+      "evidence": "Three.js r186 public signature Triangle.set, parameter 2"
+    },
+    {
+      "oldName": "p_3",
+      "newName": "p_31",
+      "line": 3329,
+      "evidence": "Three.js r186 public signature Triangle.closestPointToPoint, parameter 0"
+    },
+    {
+      "oldName": "min_11",
+      "newName": "min_24",
+      "line": 3360,
+      "evidence": "Three.js r186 public signature Box3.constructor, parameter 0"
+    },
+    {
+      "oldName": "max_11",
+      "newName": "max_23",
+      "line": 3360,
+      "evidence": "Three.js r186 public signature Box3.constructor, parameter 1"
+    },
+    {
+      "oldName": "min_12",
+      "newName": "min_25",
+      "line": 3363,
+      "evidence": "Three.js r186 public signature Box3.set, parameter 0"
+    },
+    {
+      "oldName": "max_12",
+      "newName": "max_24",
+      "line": 3363,
+      "evidence": "Three.js r186 public signature Box3.set, parameter 1"
+    },
+    {
+      "oldName": "box_2",
+      "newName": "box_25",
+      "line": 3391,
+      "evidence": "Three.js r186 public signature Box3.copy, parameter 0"
+    },
+    {
+      "oldName": "box_3",
+      "newName": "box_26",
+      "line": 3429,
+      "evidence": "Three.js r186 public signature Box3.containsBox, parameter 0"
+    },
+    {
+      "oldName": "box_4",
+      "newName": "box_27",
+      "line": 3435,
+      "evidence": "Three.js r186 public signature Box3.intersectsBox, parameter 0"
+    },
+    {
+      "oldName": "box_5",
+      "newName": "box_28",
+      "line": 3460,
+      "evidence": "Three.js r186 public signature Box3.intersect, parameter 0"
+    },
+    {
+      "oldName": "box_6",
+      "newName": "box_29",
+      "line": 3463,
+      "evidence": "Three.js r186 public signature Box3.union, parameter 0"
+    },
+    {
+      "oldName": "box_7",
+      "newName": "box_30",
+      "line": 3472,
+      "evidence": "Three.js r186 public signature Box3.equals, parameter 0"
+    },
+    {
+      "oldName": "val_3",
+      "newName": "val_5",
+      "line": 3557,
+      "evidence": "Three.js r186 public signature DataUtils.toHalfFloat, parameter 0"
+    },
+    {
+      "oldName": "val_4",
+      "newName": "val_6",
+      "line": 3560,
+      "evidence": "Three.js r186 public signature DataUtils.fromHalfFloat, parameter 0"
+    },
+    {
+      "oldName": "m_32",
+      "newName": "m_67",
+      "line": 3601,
+      "evidence": "Three.js r186 public signature BufferAttribute.applyMatrix3, parameter 0"
+    },
+    {
+      "oldName": "m_33",
+      "newName": "m_68",
+      "line": 3605,
+      "evidence": "Three.js r186 public signature BufferAttribute.applyMatrix4, parameter 0"
+    },
+    {
+      "oldName": "m_34",
+      "newName": "m_69",
+      "line": 3609,
+      "evidence": "Three.js r186 public signature BufferAttribute.applyNormalMatrix, parameter 0"
+    },
+    {
+      "oldName": "m_35",
+      "newName": "m_70",
+      "line": 3613,
+      "evidence": "Three.js r186 public signature BufferAttribute.transformDirection, parameter 0"
+    },
+    {
+      "oldName": "x_41",
+      "newName": "x_100",
+      "line": 3631,
+      "evidence": "Three.js r186 public signature BufferAttribute.setX, parameter 1"
+    },
+    {
+      "oldName": "y_38",
+      "newName": "y_100",
+      "line": 3638,
+      "evidence": "Three.js r186 public signature BufferAttribute.setY, parameter 1"
+    },
+    {
+      "oldName": "z_27",
+      "newName": "z_65",
+      "line": 3645,
+      "evidence": "Three.js r186 public signature BufferAttribute.setZ, parameter 1"
+    },
+    {
+      "oldName": "w_13",
+      "newName": "w_29",
+      "line": 3652,
+      "evidence": "Three.js r186 public signature BufferAttribute.setW, parameter 1"
+    },
+    {
+      "oldName": "x_42",
+      "newName": "x_101",
+      "line": 3655,
+      "evidence": "Three.js r186 public signature BufferAttribute.setXY, parameter 1"
+    },
+    {
+      "oldName": "y_39",
+      "newName": "y_101",
+      "line": 3655,
+      "evidence": "Three.js r186 public signature BufferAttribute.setXY, parameter 2"
+    },
+    {
+      "oldName": "x_43",
+      "newName": "x_102",
+      "line": 3658,
+      "evidence": "Three.js r186 public signature BufferAttribute.setXYZ, parameter 1"
+    },
+    {
+      "oldName": "y_40",
+      "newName": "y_102",
+      "line": 3658,
+      "evidence": "Three.js r186 public signature BufferAttribute.setXYZ, parameter 2"
+    },
+    {
+      "oldName": "z_28",
+      "newName": "z_66",
+      "line": 3658,
+      "evidence": "Three.js r186 public signature BufferAttribute.setXYZ, parameter 3"
+    },
+    {
+      "oldName": "x_44",
+      "newName": "x_103",
+      "line": 3661,
+      "evidence": "Three.js r186 public signature BufferAttribute.setXYZW, parameter 1"
+    },
+    {
+      "oldName": "y_41",
+      "newName": "y_103",
+      "line": 3661,
+      "evidence": "Three.js r186 public signature BufferAttribute.setXYZW, parameter 2"
+    },
+    {
+      "oldName": "z_29",
+      "newName": "z_67",
+      "line": 3661,
+      "evidence": "Three.js r186 public signature BufferAttribute.setXYZW, parameter 3"
+    },
+    {
+      "oldName": "w_14",
+      "newName": "w_30",
+      "line": 3661,
+      "evidence": "Three.js r186 public signature BufferAttribute.setXYZW, parameter 4"
+    },
+    {
+      "oldName": "x_46",
+      "newName": "x_104",
+      "line": 3728,
+      "evidence": "Three.js r186 public signature Float16BufferAttribute.setX, parameter 1"
+    },
+    {
+      "oldName": "y_43",
+      "newName": "y_104",
+      "line": 3735,
+      "evidence": "Three.js r186 public signature Float16BufferAttribute.setY, parameter 1"
+    },
+    {
+      "oldName": "z_31",
+      "newName": "z_68",
+      "line": 3742,
+      "evidence": "Three.js r186 public signature Float16BufferAttribute.setZ, parameter 1"
+    },
+    {
+      "oldName": "w_16",
+      "newName": "w_31",
+      "line": 3749,
+      "evidence": "Three.js r186 public signature Float16BufferAttribute.setW, parameter 1"
+    },
+    {
+      "oldName": "x_47",
+      "newName": "x_105",
+      "line": 3752,
+      "evidence": "Three.js r186 public signature Float16BufferAttribute.setXY, parameter 1"
+    },
+    {
+      "oldName": "y_44",
+      "newName": "y_105",
+      "line": 3752,
+      "evidence": "Three.js r186 public signature Float16BufferAttribute.setXY, parameter 2"
+    },
+    {
+      "oldName": "x_48",
+      "newName": "x_106",
+      "line": 3755,
+      "evidence": "Three.js r186 public signature Float16BufferAttribute.setXYZ, parameter 1"
+    },
+    {
+      "oldName": "y_45",
+      "newName": "y_106",
+      "line": 3755,
+      "evidence": "Three.js r186 public signature Float16BufferAttribute.setXYZ, parameter 2"
+    },
+    {
+      "oldName": "z_32",
+      "newName": "z_69",
+      "line": 3755,
+      "evidence": "Three.js r186 public signature Float16BufferAttribute.setXYZ, parameter 3"
+    },
+    {
+      "oldName": "x_49",
+      "newName": "x_107",
+      "line": 3758,
+      "evidence": "Three.js r186 public signature Float16BufferAttribute.setXYZW, parameter 1"
+    },
+    {
+      "oldName": "y_46",
+      "newName": "y_107",
+      "line": 3758,
+      "evidence": "Three.js r186 public signature Float16BufferAttribute.setXYZW, parameter 2"
+    },
+    {
+      "oldName": "z_33",
+      "newName": "z_70",
+      "line": 3758,
+      "evidence": "Three.js r186 public signature Float16BufferAttribute.setXYZW, parameter 3"
+    },
+    {
+      "oldName": "w_17",
+      "newName": "w_32",
+      "line": 3758,
+      "evidence": "Three.js r186 public signature Float16BufferAttribute.setXYZW, parameter 4"
+    },
+    {
+      "oldName": "box_8",
+      "newName": "box_31",
+      "line": 3803,
+      "evidence": "Three.js r186 public signature Sphere.intersectsBox, parameter 0"
+    },
+    {
+      "oldName": "t",
+      "newName": "index_98",
+      "line": 3871,
+      "evidence": "Three.js r186 public signature BufferGeometry.setIndex, parameter 0"
+    },
+    {
+      "oldName": "q_14",
+      "newName": "q_29",
+      "line": 3919,
+      "evidence": "Three.js r186 public signature BufferGeometry.applyQuaternion, parameter 0"
+    },
+    {
+      "oldName": "x_50",
+      "newName": "x_108",
+      "line": 3931,
+      "evidence": "Three.js r186 public signature BufferGeometry.translate, parameter 0"
+    },
+    {
+      "oldName": "y_47",
+      "newName": "y_108",
+      "line": 3931,
+      "evidence": "Three.js r186 public signature BufferGeometry.translate, parameter 1"
+    },
+    {
+      "oldName": "z_34",
+      "newName": "z_71",
+      "line": 3931,
+      "evidence": "Three.js r186 public signature BufferGeometry.translate, parameter 2"
+    },
+    {
+      "oldName": "x_51",
+      "newName": "x_109",
+      "line": 3934,
+      "evidence": "Three.js r186 public signature BufferGeometry.scale, parameter 0"
+    },
+    {
+      "oldName": "y_48",
+      "newName": "y_109",
+      "line": 3934,
+      "evidence": "Three.js r186 public signature BufferGeometry.scale, parameter 1"
+    },
+    {
+      "oldName": "z_35",
+      "newName": "z_72",
+      "line": 3934,
+      "evidence": "Three.js r186 public signature BufferGeometry.scale, parameter 2"
+    },
+    {
+      "oldName": "m_36",
+      "newName": "m_71",
+      "line": 4263,
+      "evidence": "Three.js r186 public signature InterleavedBufferAttribute.applyMatrix4, parameter 0"
+    },
+    {
+      "oldName": "m_37",
+      "newName": "m_72",
+      "line": 4267,
+      "evidence": "Three.js r186 public signature InterleavedBufferAttribute.applyNormalMatrix, parameter 0"
+    },
+    {
+      "oldName": "m_38",
+      "newName": "m_73",
+      "line": 4271,
+      "evidence": "Three.js r186 public signature InterleavedBufferAttribute.transformDirection, parameter 0"
+    },
+    {
+      "oldName": "x_52",
+      "newName": "x_110",
+      "line": 4282,
+      "evidence": "Three.js r186 public signature InterleavedBufferAttribute.setX, parameter 1"
+    },
+    {
+      "oldName": "y_49",
+      "newName": "y_110",
+      "line": 4285,
+      "evidence": "Three.js r186 public signature InterleavedBufferAttribute.setY, parameter 1"
+    },
+    {
+      "oldName": "z_36",
+      "newName": "z_73",
+      "line": 4288,
+      "evidence": "Three.js r186 public signature InterleavedBufferAttribute.setZ, parameter 1"
+    },
+    {
+      "oldName": "w_19",
+      "newName": "w_33",
+      "line": 4291,
+      "evidence": "Three.js r186 public signature InterleavedBufferAttribute.setW, parameter 1"
+    },
+    {
+      "oldName": "x_54",
+      "newName": "x_111",
+      "line": 4310,
+      "evidence": "Three.js r186 public signature InterleavedBufferAttribute.setXY, parameter 1"
+    },
+    {
+      "oldName": "y_51",
+      "newName": "y_111",
+      "line": 4310,
+      "evidence": "Three.js r186 public signature InterleavedBufferAttribute.setXY, parameter 2"
+    },
+    {
+      "oldName": "x_55",
+      "newName": "x_112",
+      "line": 4313,
+      "evidence": "Three.js r186 public signature InterleavedBufferAttribute.setXYZ, parameter 1"
+    },
+    {
+      "oldName": "y_52",
+      "newName": "y_112",
+      "line": 4313,
+      "evidence": "Three.js r186 public signature InterleavedBufferAttribute.setXYZ, parameter 2"
+    },
+    {
+      "oldName": "z_38",
+      "newName": "z_74",
+      "line": 4313,
+      "evidence": "Three.js r186 public signature InterleavedBufferAttribute.setXYZ, parameter 3"
+    },
+    {
+      "oldName": "x_56",
+      "newName": "x_113",
+      "line": 4316,
+      "evidence": "Three.js r186 public signature InterleavedBufferAttribute.setXYZW, parameter 1"
+    },
+    {
+      "oldName": "y_53",
+      "newName": "y_113",
+      "line": 4316,
+      "evidence": "Three.js r186 public signature InterleavedBufferAttribute.setXYZW, parameter 2"
+    },
+    {
+      "oldName": "z_39",
+      "newName": "z_75",
+      "line": 4316,
+      "evidence": "Three.js r186 public signature InterleavedBufferAttribute.setXYZW, parameter 3"
+    },
+    {
+      "oldName": "w_21",
+      "newName": "w_34",
+      "line": 4316,
+      "evidence": "Three.js r186 public signature InterleavedBufferAttribute.setXYZW, parameter 4"
+    },
+    {
+      "oldName": "x_57",
+      "newName": "x_114",
+      "line": 4365,
+      "evidence": "Three.js r186 public signature Plane.setComponents, parameter 0"
+    },
+    {
+      "oldName": "y_54",
+      "newName": "y_114",
+      "line": 4365,
+      "evidence": "Three.js r186 public signature Plane.setComponents, parameter 1"
+    },
+    {
+      "oldName": "z_40",
+      "newName": "z_76",
+      "line": 4365,
+      "evidence": "Three.js r186 public signature Plane.setComponents, parameter 2"
+    },
+    {
+      "oldName": "w_22",
+      "newName": "w_35",
+      "line": 4365,
+      "evidence": "Three.js r186 public signature Plane.setComponents, parameter 3"
+    },
+    {
+      "oldName": "a_24",
+      "newName": "a_62",
+      "line": 4371,
+      "evidence": "Three.js r186 public signature Plane.setFromCoplanarPoints, parameter 0"
+    },
+    {
+      "oldName": "b_29",
+      "newName": "b_67",
+      "line": 4371,
+      "evidence": "Three.js r186 public signature Plane.setFromCoplanarPoints, parameter 1"
+    },
+    {
+      "oldName": "c_26",
+      "newName": "c_41",
+      "line": 4371,
+      "evidence": "Three.js r186 public signature Plane.setFromCoplanarPoints, parameter 2"
+    },
+    {
+      "oldName": "box_9",
+      "newName": "box_32",
+      "line": 4406,
+      "evidence": "Three.js r186 public signature Plane.intersectsBox, parameter 0"
+    },
+    {
+      "oldName": "t",
+      "newName": "object_53",
+      "line": 4605,
+      "evidence": "Three.js r186 public signature LOD.addLevel, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "distance_14",
+      "line": 4605,
+      "evidence": "Three.js r186 public signature LOD.addLevel, parameter 1"
+    },
+    {
+      "oldName": "n",
+      "newName": "hysteresis",
+      "line": 4605,
+      "evidence": "Three.js r186 public signature LOD.addLevel, parameter 2"
+    },
+    {
+      "oldName": "v_53",
+      "newName": "v_144",
+      "line": 4692,
+      "evidence": "Three.js r186 public signature Ray.lookAt, parameter 0"
+    },
+    {
+      "oldName": "box_10",
+      "newName": "box_33",
+      "line": 4760,
+      "evidence": "Three.js r186 public signature Ray.intersectBox, parameter 0"
+    },
+    {
+      "oldName": "box_11",
+      "newName": "box_34",
+      "line": 4768,
+      "evidence": "Three.js r186 public signature Ray.intersectsBox, parameter 0"
+    },
+    {
+      "oldName": "a_25",
+      "newName": "a_63",
+      "line": 4771,
+      "evidence": "Three.js r186 public signature Ray.intersectTriangle, parameter 0"
+    },
+    {
+      "oldName": "b_30",
+      "newName": "b_68",
+      "line": 4771,
+      "evidence": "Three.js r186 public signature Ray.intersectTriangle, parameter 1"
+    },
+    {
+      "oldName": "c_28",
+      "newName": "c_42",
+      "line": 4771,
+      "evidence": "Three.js r186 public signature Ray.intersectTriangle, parameter 2"
+    },
+    {
+      "oldName": "ray_2",
+      "newName": "ray_4",
+      "line": 4813,
+      "evidence": "Three.js r186 public signature Ray.equals, parameter 0"
+    },
+    {
+      "oldName": "t",
+      "newName": "parameters_22",
+      "line": 4821,
+      "evidence": "Three.js r186 public signature MeshBasicMaterial.constructor, parameter 0"
+    },
+    {
+      "oldName": "t",
+      "newName": "raycaster_12",
+      "line": 4893,
+      "evidence": "Three.js r186 public signature Mesh._computeIntersections, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "intersects_14",
+      "line": 4893,
+      "evidence": "Three.js r186 public signature Mesh._computeIntersections, parameter 1"
+    },
+    {
+      "oldName": "n",
+      "newName": "rayLocalSpace",
+      "line": 4893,
+      "evidence": "Three.js r186 public signature Mesh._computeIntersections, parameter 2"
+    },
+    {
+      "oldName": "t",
+      "newName": "force_10",
+      "line": 4995,
+      "evidence": "Three.js r186 public signature SkinnedMesh.updateMatrixWorld, parameter 0"
+    },
+    {
+      "oldName": "t",
+      "newName": "data_84",
+      "line": 5018,
+      "evidence": "Three.js r186 public signature DataTexture.constructor, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "width_30",
+      "line": 5018,
+      "evidence": "Three.js r186 public signature DataTexture.constructor, parameter 1"
+    },
+    {
+      "oldName": "n",
+      "newName": "height_33",
+      "line": 5018,
+      "evidence": "Three.js r186 public signature DataTexture.constructor, parameter 2"
+    },
+    {
+      "oldName": "i",
+      "newName": "format_8",
+      "line": 5018,
+      "evidence": "Three.js r186 public signature DataTexture.constructor, parameter 3"
+    },
+    {
+      "oldName": "s",
+      "newName": "type_33",
+      "line": 5018,
+      "evidence": "Three.js r186 public signature DataTexture.constructor, parameter 4"
+    },
+    {
+      "oldName": "r",
+      "newName": "mapping_7",
+      "line": 5018,
+      "evidence": "Three.js r186 public signature DataTexture.constructor, parameter 5"
+    },
+    {
+      "oldName": "o",
+      "newName": "wrapS_6",
+      "line": 5018,
+      "evidence": "Three.js r186 public signature DataTexture.constructor, parameter 6"
+    },
+    {
+      "oldName": "a",
+      "newName": "wrapT_6",
+      "line": 5018,
+      "evidence": "Three.js r186 public signature DataTexture.constructor, parameter 7"
+    },
+    {
+      "oldName": "h",
+      "newName": "magFilter_6",
+      "line": 5018,
+      "evidence": "Three.js r186 public signature DataTexture.constructor, parameter 8"
+    },
+    {
+      "oldName": "c",
+      "newName": "minFilter_6",
+      "line": 5018,
+      "evidence": "Three.js r186 public signature DataTexture.constructor, parameter 9"
+    },
+    {
+      "oldName": "A",
+      "newName": "anisotropy_6",
+      "line": 5018,
+      "evidence": "Three.js r186 public signature DataTexture.constructor, parameter 10"
+    },
+    {
+      "oldName": "l",
+      "newName": "colorSpace_20",
+      "line": 5018,
+      "evidence": "Three.js r186 public signature DataTexture.constructor, parameter 11"
+    },
+    {
+      "oldName": "t",
+      "newName": "m_74",
+      "line": 5220,
+      "evidence": "Three.js r186 public signature Frustum.setFromProjectionMatrix, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "coordinateSystem_3",
+      "line": 5220,
+      "evidence": "Three.js r186 public signature Frustum.setFromProjectionMatrix, parameter 1"
+    },
+    {
+      "oldName": "n",
+      "newName": "reversedDepth_3",
+      "line": 5220,
+      "evidence": "Three.js r186 public signature Frustum.setFromProjectionMatrix, parameter 2"
+    },
+    {
+      "oldName": "box_13",
+      "newName": "box_35",
+      "line": 5301,
+      "evidence": "Three.js r186 public signature Frustum.intersectsBox, parameter 0"
+    },
+    {
+      "oldName": "box_14",
+      "newName": "box_36",
+      "line": 5347,
+      "evidence": "Three.js r186 public signature FrustumArray.intersectsBox, parameter 0"
+    },
+    {
+      "oldName": "t",
+      "newName": "reference",
+      "line": 5463,
+      "evidence": "Three.js r186 public signature BatchedMesh._initializeGeometry, parameter 0"
+    },
+    {
+      "oldName": "t",
+      "newName": "video",
+      "line": 6022,
+      "evidence": "Three.js r186 public signature VideoTexture.constructor, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "mapping_8",
+      "line": 6022,
+      "evidence": "Three.js r186 public signature VideoTexture.constructor, parameter 1"
+    },
+    {
+      "oldName": "n",
+      "newName": "wrapS_7",
+      "line": 6022,
+      "evidence": "Three.js r186 public signature VideoTexture.constructor, parameter 2"
+    },
+    {
+      "oldName": "i",
+      "newName": "wrapT_7",
+      "line": 6022,
+      "evidence": "Three.js r186 public signature VideoTexture.constructor, parameter 3"
+    },
+    {
+      "oldName": "s",
+      "newName": "magFilter_7",
+      "line": 6022,
+      "evidence": "Three.js r186 public signature VideoTexture.constructor, parameter 4"
+    },
+    {
+      "oldName": "r",
+      "newName": "minFilter_7",
+      "line": 6022,
+      "evidence": "Three.js r186 public signature VideoTexture.constructor, parameter 5"
+    },
+    {
+      "oldName": "o",
+      "newName": "format_9",
+      "line": 6022,
+      "evidence": "Three.js r186 public signature VideoTexture.constructor, parameter 6"
+    },
+    {
+      "oldName": "a",
+      "newName": "type_34",
+      "line": 6022,
+      "evidence": "Three.js r186 public signature VideoTexture.constructor, parameter 7"
+    },
+    {
+      "oldName": "h",
+      "newName": "anisotropy_7",
+      "line": 6022,
+      "evidence": "Three.js r186 public signature VideoTexture.constructor, parameter 8"
+    },
+    {
+      "oldName": "t",
+      "newName": "images_8",
+      "line": 6083,
+      "evidence": "Three.js r186 public signature CompressedCubeTexture.constructor, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "format_10",
+      "line": 6083,
+      "evidence": "Three.js r186 public signature CompressedCubeTexture.constructor, parameter 1"
+    },
+    {
+      "oldName": "n",
+      "newName": "type_35",
+      "line": 6083,
+      "evidence": "Three.js r186 public signature CompressedCubeTexture.constructor, parameter 2"
+    },
+    {
+      "oldName": "t",
+      "newName": "images_9",
+      "line": 6088,
+      "evidence": "Three.js r186 public signature CubeTexture.constructor, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "mapping_9",
+      "line": 6088,
+      "evidence": "Three.js r186 public signature CubeTexture.constructor, parameter 1"
+    },
+    {
+      "oldName": "n",
+      "newName": "wrapS_8",
+      "line": 6088,
+      "evidence": "Three.js r186 public signature CubeTexture.constructor, parameter 2"
+    },
+    {
+      "oldName": "i",
+      "newName": "wrapT_8",
+      "line": 6088,
+      "evidence": "Three.js r186 public signature CubeTexture.constructor, parameter 3"
+    },
+    {
+      "oldName": "s",
+      "newName": "magFilter_8",
+      "line": 6088,
+      "evidence": "Three.js r186 public signature CubeTexture.constructor, parameter 4"
+    },
+    {
+      "oldName": "r",
+      "newName": "minFilter_8",
+      "line": 6088,
+      "evidence": "Three.js r186 public signature CubeTexture.constructor, parameter 5"
+    },
+    {
+      "oldName": "o",
+      "newName": "format_11",
+      "line": 6088,
+      "evidence": "Three.js r186 public signature CubeTexture.constructor, parameter 6"
+    },
+    {
+      "oldName": "a",
+      "newName": "type_36",
+      "line": 6088,
+      "evidence": "Three.js r186 public signature CubeTexture.constructor, parameter 7"
+    },
+    {
+      "oldName": "h",
+      "newName": "anisotropy_8",
+      "line": 6088,
+      "evidence": "Three.js r186 public signature CubeTexture.constructor, parameter 8"
+    },
+    {
+      "oldName": "c",
+      "newName": "colorSpace_21",
+      "line": 6088,
+      "evidence": "Three.js r186 public signature CubeTexture.constructor, parameter 9"
+    },
+    {
+      "oldName": "t",
+      "newName": "width_31",
+      "line": 6117,
+      "evidence": "Three.js r186 public signature DepthTexture.constructor, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "height_34",
+      "line": 6117,
+      "evidence": "Three.js r186 public signature DepthTexture.constructor, parameter 1"
+    },
+    {
+      "oldName": "n",
+      "newName": "type_37",
+      "line": 6117,
+      "evidence": "Three.js r186 public signature DepthTexture.constructor, parameter 2"
+    },
+    {
+      "oldName": "i",
+      "newName": "mapping_10",
+      "line": 6117,
+      "evidence": "Three.js r186 public signature DepthTexture.constructor, parameter 3"
+    },
+    {
+      "oldName": "s",
+      "newName": "wrapS_9",
+      "line": 6117,
+      "evidence": "Three.js r186 public signature DepthTexture.constructor, parameter 4"
+    },
+    {
+      "oldName": "r",
+      "newName": "wrapT_9",
+      "line": 6117,
+      "evidence": "Three.js r186 public signature DepthTexture.constructor, parameter 5"
+    },
+    {
+      "oldName": "o",
+      "newName": "magFilter_9",
+      "line": 6117,
+      "evidence": "Three.js r186 public signature DepthTexture.constructor, parameter 6"
+    },
+    {
+      "oldName": "a",
+      "newName": "minFilter_9",
+      "line": 6117,
+      "evidence": "Three.js r186 public signature DepthTexture.constructor, parameter 7"
+    },
+    {
+      "oldName": "h",
+      "newName": "anisotropy_9",
+      "line": 6117,
+      "evidence": "Three.js r186 public signature DepthTexture.constructor, parameter 8"
+    },
+    {
+      "oldName": "c",
+      "newName": "format_12",
+      "line": 6117,
+      "evidence": "Three.js r186 public signature DepthTexture.constructor, parameter 9"
+    },
+    {
+      "oldName": "A",
+      "newName": "depth_12",
+      "line": 6117,
+      "evidence": "Three.js r186 public signature DepthTexture.constructor, parameter 10"
+    },
+    {
+      "oldName": "t",
+      "newName": "size_17",
+      "line": 6134,
+      "evidence": "Three.js r186 public signature CubeDepthTexture.constructor, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "type_38",
+      "line": 6134,
+      "evidence": "Three.js r186 public signature CubeDepthTexture.constructor, parameter 1"
+    },
+    {
+      "oldName": "n",
+      "newName": "mapping_11",
+      "line": 6134,
+      "evidence": "Three.js r186 public signature CubeDepthTexture.constructor, parameter 2"
+    },
+    {
+      "oldName": "i",
+      "newName": "wrapS_10",
+      "line": 6134,
+      "evidence": "Three.js r186 public signature CubeDepthTexture.constructor, parameter 3"
+    },
+    {
+      "oldName": "s",
+      "newName": "wrapT_10",
+      "line": 6134,
+      "evidence": "Three.js r186 public signature CubeDepthTexture.constructor, parameter 4"
+    },
+    {
+      "oldName": "r",
+      "newName": "magFilter_10",
+      "line": 6134,
+      "evidence": "Three.js r186 public signature CubeDepthTexture.constructor, parameter 5"
+    },
+    {
+      "oldName": "o",
+      "newName": "minFilter_10",
+      "line": 6134,
+      "evidence": "Three.js r186 public signature CubeDepthTexture.constructor, parameter 6"
+    },
+    {
+      "oldName": "a",
+      "newName": "anisotropy_10",
+      "line": 6134,
+      "evidence": "Three.js r186 public signature CubeDepthTexture.constructor, parameter 7"
+    },
+    {
+      "oldName": "h",
+      "newName": "format_13",
+      "line": 6134,
+      "evidence": "Three.js r186 public signature CubeDepthTexture.constructor, parameter 8"
+    },
+    {
+      "oldName": "t",
+      "newName": "width_32",
+      "line": 6159,
+      "evidence": "Three.js r186 public signature BoxGeometry.constructor, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "height_35",
+      "line": 6159,
+      "evidence": "Three.js r186 public signature BoxGeometry.constructor, parameter 1"
+    },
+    {
+      "oldName": "n",
+      "newName": "depth_13",
+      "line": 6159,
+      "evidence": "Three.js r186 public signature BoxGeometry.constructor, parameter 2"
+    },
+    {
+      "oldName": "i",
+      "newName": "widthSegments_3",
+      "line": 6159,
+      "evidence": "Three.js r186 public signature BoxGeometry.constructor, parameter 3"
+    },
+    {
+      "oldName": "s",
+      "newName": "heightSegments_6",
+      "line": 6159,
+      "evidence": "Three.js r186 public signature BoxGeometry.constructor, parameter 4"
+    },
+    {
+      "oldName": "r",
+      "newName": "depthSegments",
+      "line": 6159,
+      "evidence": "Three.js r186 public signature BoxGeometry.constructor, parameter 5"
+    },
+    {
+      "oldName": "t",
+      "newName": "vertices_20",
+      "line": 6402,
+      "evidence": "Three.js r186 public signature PolyhedronGeometry.constructor, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "indices_17",
+      "line": 6402,
+      "evidence": "Three.js r186 public signature PolyhedronGeometry.constructor, parameter 1"
+    },
+    {
+      "oldName": "n",
+      "newName": "radius_24",
+      "line": 6402,
+      "evidence": "Three.js r186 public signature PolyhedronGeometry.constructor, parameter 2"
+    },
+    {
+      "oldName": "i",
+      "newName": "detail_7",
+      "line": 6402,
+      "evidence": "Three.js r186 public signature PolyhedronGeometry.constructor, parameter 3"
+    },
+    {
+      "oldName": "t",
+      "newName": "geometry_62",
+      "line": 6506,
+      "evidence": "Three.js r186 public signature EdgesGeometry.constructor, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "thresholdAngle",
+      "line": 6506,
+      "evidence": "Three.js r186 public signature EdgesGeometry.constructor, parameter 1"
+    },
+    {
+      "oldName": "u_4",
+      "newName": "u_13",
+      "line": 6564,
+      "evidence": "Three.js r186 public signature Curve.getPointAt, parameter 0"
+    },
+    {
+      "oldName": "u_5",
+      "newName": "u_14",
+      "line": 6596,
+      "evidence": "Three.js r186 public signature Curve.getUtoTmapping, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "optionalTarget_19",
+      "line": 6616,
+      "evidence": "Three.js r186 public signature Curve.getTangent, parameter 1"
+    },
+    {
+      "oldName": "u_6",
+      "newName": "u_15",
+      "line": 6626,
+      "evidence": "Three.js r186 public signature Curve.getTangentAt, parameter 0"
+    },
+    {
+      "oldName": "aX_2",
+      "newName": "aX_11",
+      "line": 6722,
+      "evidence": "Three.js r186 public signature ArcCurve.constructor, parameter 0"
+    },
+    {
+      "oldName": "aY_2",
+      "newName": "aY_11",
+      "line": 6722,
+      "evidence": "Three.js r186 public signature ArcCurve.constructor, parameter 1"
+    },
+    {
+      "oldName": "u_7",
+      "newName": "u_16",
+      "line": 6888,
+      "evidence": "Three.js r186 public signature LineCurve.getPointAt, parameter 0"
+    },
+    {
+      "oldName": "u_8",
+      "newName": "u_17",
+      "line": 6894,
+      "evidence": "Three.js r186 public signature LineCurve.getTangentAt, parameter 0"
+    },
+    {
+      "oldName": "u_9",
+      "newName": "u_18",
+      "line": 6916,
+      "evidence": "Three.js r186 public signature LineCurve3.getPointAt, parameter 0"
+    },
+    {
+      "oldName": "u_10",
+      "newName": "u_19",
+      "line": 6922,
+      "evidence": "Three.js r186 public signature LineCurve3.getTangentAt, parameter 0"
+    },
+    {
+      "oldName": "x_59",
+      "newName": "x_115",
+      "line": 7135,
+      "evidence": "Three.js r186 public signature Path.moveTo, parameter 0"
+    },
+    {
+      "oldName": "y_56",
+      "newName": "y_115",
+      "line": 7135,
+      "evidence": "Three.js r186 public signature Path.moveTo, parameter 1"
+    },
+    {
+      "oldName": "x_60",
+      "newName": "x_116",
+      "line": 7138,
+      "evidence": "Three.js r186 public signature Path.lineTo, parameter 0"
+    },
+    {
+      "oldName": "y_57",
+      "newName": "y_116",
+      "line": 7138,
+      "evidence": "Three.js r186 public signature Path.lineTo, parameter 1"
+    },
+    {
+      "oldName": "aX_3",
+      "newName": "aX_12",
+      "line": 7142,
+      "evidence": "Three.js r186 public signature Path.quadraticCurveTo, parameter 2"
+    },
+    {
+      "oldName": "aY_3",
+      "newName": "aY_12",
+      "line": 7142,
+      "evidence": "Three.js r186 public signature Path.quadraticCurveTo, parameter 3"
+    },
+    {
+      "oldName": "aX_4",
+      "newName": "aX_13",
+      "line": 7146,
+      "evidence": "Three.js r186 public signature Path.bezierCurveTo, parameter 4"
+    },
+    {
+      "oldName": "aY_4",
+      "newName": "aY_13",
+      "line": 7146,
+      "evidence": "Three.js r186 public signature Path.bezierCurveTo, parameter 5"
+    },
+    {
+      "oldName": "aX_5",
+      "newName": "aX_14",
+      "line": 7155,
+      "evidence": "Three.js r186 public signature Path.arc, parameter 0"
+    },
+    {
+      "oldName": "aY_5",
+      "newName": "aY_14",
+      "line": 7155,
+      "evidence": "Three.js r186 public signature Path.arc, parameter 1"
+    },
+    {
+      "oldName": "aX_6",
+      "newName": "aX_15",
+      "line": 7160,
+      "evidence": "Three.js r186 public signature Path.absarc, parameter 0"
+    },
+    {
+      "oldName": "aY_6",
+      "newName": "aY_15",
+      "line": 7160,
+      "evidence": "Three.js r186 public signature Path.absarc, parameter 1"
+    },
+    {
+      "oldName": "aX_7",
+      "newName": "aX_16",
+      "line": 7163,
+      "evidence": "Three.js r186 public signature Path.ellipse, parameter 0"
+    },
+    {
+      "oldName": "aY_7",
+      "newName": "aY_16",
+      "line": 7163,
+      "evidence": "Three.js r186 public signature Path.ellipse, parameter 1"
+    },
+    {
+      "oldName": "aX_8",
+      "newName": "aX_17",
+      "line": 7168,
+      "evidence": "Three.js r186 public signature Path.absellipse, parameter 0"
+    },
+    {
+      "oldName": "aY_8",
+      "newName": "aY_17",
+      "line": 7168,
+      "evidence": "Three.js r186 public signature Path.absellipse, parameter 1"
+    },
+    {
+      "oldName": "pts_2",
+      "newName": "pts_4",
+      "line": 7536,
+      "evidence": "Three.js r186 public signature ShapeUtils.isClockWise, parameter 0"
+    },
+    {
+      "oldName": "t",
+      "newName": "shapes_11",
+      "line": 7560,
+      "evidence": "Three.js r186 public signature ExtrudeGeometry.constructor, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "options_14",
+      "line": 7560,
+      "evidence": "Three.js r186 public signature ExtrudeGeometry.constructor, parameter 1"
+    },
+    {
+      "oldName": "p_26",
+      "newName": "p_32",
+      "line": 8174,
+      "evidence": "Three.js r186 public signature TorusKnotGeometry.constructor, parameter 4"
+    },
+    {
+      "oldName": "q_17",
+      "newName": "q_30",
+      "line": 8174,
+      "evidence": "Three.js r186 public signature TorusKnotGeometry.constructor, parameter 5"
+    },
+    {
+      "oldName": "t",
+      "newName": "path_13",
+      "line": 8228,
+      "evidence": "Three.js r186 public signature TubeGeometry.constructor, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "tubularSegments_3",
+      "line": 8228,
+      "evidence": "Three.js r186 public signature TubeGeometry.constructor, parameter 1"
+    },
+    {
+      "oldName": "n",
+      "newName": "radius_25",
+      "line": 8228,
+      "evidence": "Three.js r186 public signature TubeGeometry.constructor, parameter 2"
+    },
+    {
+      "oldName": "i",
+      "newName": "radialSegments_6",
+      "line": 8228,
+      "evidence": "Three.js r186 public signature TubeGeometry.constructor, parameter 3"
+    },
+    {
+      "oldName": "s",
+      "newName": "closed_3",
+      "line": 8228,
+      "evidence": "Three.js r186 public signature TubeGeometry.constructor, parameter 4"
+    },
+    {
+      "oldName": "t",
+      "newName": "parameters_23",
+      "line": 8399,
+      "evidence": "Three.js r186 public signature ShaderMaterial.constructor, parameter 0"
+    },
+    {
+      "oldName": "t",
+      "newName": "source_93",
+      "line": 8409,
+      "evidence": "Three.js r186 public signature ShaderMaterial.copy, parameter 0"
+    },
+    {
+      "oldName": "t",
+      "newName": "parameters_24",
+      "line": 8490,
+      "evidence": "Three.js r186 public signature MeshStandardMaterial.constructor, parameter 0"
+    },
+    {
+      "oldName": "t",
+      "newName": "parameters_25",
+      "line": 8565,
+      "evidence": "Three.js r186 public signature MeshPhongMaterial.constructor, parameter 0"
+    },
+    {
+      "oldName": "t",
+      "newName": "parameters_26",
+      "line": 8573,
+      "evidence": "Three.js r186 public signature MeshToonMaterial.constructor, parameter 0"
+    },
+    {
+      "oldName": "t",
+      "newName": "parameters_27",
+      "line": 8583,
+      "evidence": "Three.js r186 public signature MeshNormalMaterial.constructor, parameter 0"
+    },
+    {
+      "oldName": "t",
+      "newName": "parameters_28",
+      "line": 8591,
+      "evidence": "Three.js r186 public signature MeshLambertMaterial.constructor, parameter 0"
+    },
+    {
+      "oldName": "t",
+      "newName": "parameters_29",
+      "line": 8599,
+      "evidence": "Three.js r186 public signature MeshDepthMaterial.constructor, parameter 0"
+    },
+    {
+      "oldName": "t",
+      "newName": "parameters_30",
+      "line": 8615,
+      "evidence": "Three.js r186 public signature MeshMatcapMaterial.constructor, parameter 0"
+    },
+    {
+      "oldName": "t",
+      "newName": "sourceClip_2",
+      "line": 8690,
+      "evidence": "Three.js r186 public signature AnimationUtils.subclip, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "name_32",
+      "line": 8690,
+      "evidence": "Three.js r186 public signature AnimationUtils.subclip, parameter 1"
+    },
+    {
+      "oldName": "n",
+      "newName": "startFrame_2",
+      "line": 8690,
+      "evidence": "Three.js r186 public signature AnimationUtils.subclip, parameter 2"
+    },
+    {
+      "oldName": "i",
+      "newName": "endFrame_2",
+      "line": 8690,
+      "evidence": "Three.js r186 public signature AnimationUtils.subclip, parameter 3"
+    },
+    {
+      "oldName": "s",
+      "newName": "fps_4",
+      "line": 8690,
+      "evidence": "Three.js r186 public signature AnimationUtils.subclip, parameter 4"
+    },
+    {
+      "oldName": "t",
+      "newName": "targetClip_2",
+      "line": 8716,
+      "evidence": "Three.js r186 public signature AnimationUtils.makeClipAdditive, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "referenceFrame_2",
+      "line": 8716,
+      "evidence": "Three.js r186 public signature AnimationUtils.makeClipAdditive, parameter 1"
+    },
+    {
+      "oldName": "n",
+      "newName": "referenceClip_2",
+      "line": 8716,
+      "evidence": "Three.js r186 public signature AnimationUtils.makeClipAdditive, parameter 2"
+    },
+    {
+      "oldName": "i",
+      "newName": "fps_5",
+      "line": 8716,
+      "evidence": "Three.js r186 public signature AnimationUtils.makeClipAdditive, parameter 3"
+    },
+    {
+      "oldName": "t_19",
+      "newName": "t_36",
+      "line": 8867,
+      "evidence": "Three.js r186 public signature CubicInterpolant.interpolate_, parameter 2"
+    },
+    {
+      "oldName": "t_20",
+      "newName": "t_37",
+      "line": 8892,
+      "evidence": "Three.js r186 public signature LinearInterpolant.interpolate_, parameter 2"
+    },
+    {
+      "oldName": "t_21",
+      "newName": "t_38",
+      "line": 8913,
+      "evidence": "Three.js r186 public signature BezierInterpolant.interpolate_, parameter 2"
+    },
+    {
+      "oldName": "t",
+      "newName": "name_33",
+      "line": 8964,
+      "evidence": "Three.js r186 public signature KeyframeTrack.constructor, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "times_15",
+      "line": 8964,
+      "evidence": "Three.js r186 public signature KeyframeTrack.constructor, parameter 1"
+    },
+    {
+      "oldName": "n",
+      "newName": "values_28",
+      "line": 8964,
+      "evidence": "Three.js r186 public signature KeyframeTrack.constructor, parameter 2"
+    },
+    {
+      "oldName": "i",
+      "newName": "interpolation_7",
+      "line": 8964,
+      "evidence": "Three.js r186 public signature KeyframeTrack.constructor, parameter 3"
+    },
+    {
+      "oldName": "t",
+      "newName": "track_3",
+      "line": 8969,
+      "evidence": "Three.js r186 public signature KeyframeTrack.toJSON, parameter 0"
+    },
+    {
+      "oldName": "t",
+      "newName": "timeScale_5",
+      "line": 9046,
+      "evidence": "Three.js r186 public signature KeyframeTrack.scale, parameter 0"
+    },
+    {
+      "oldName": "t_22",
+      "newName": "t_39",
+      "line": 9173,
+      "evidence": "Three.js r186 public signature QuaternionLinearInterpolant.interpolate_, parameter 2"
+    },
+    {
+      "oldName": "t",
+      "newName": "name_34",
+      "line": 9205,
+      "evidence": "Three.js r186 public signature AnimationClip.constructor, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "duration_10",
+      "line": 9205,
+      "evidence": "Three.js r186 public signature AnimationClip.constructor, parameter 1"
+    },
+    {
+      "oldName": "n",
+      "newName": "tracks_8",
+      "line": 9205,
+      "evidence": "Three.js r186 public signature AnimationClip.constructor, parameter 2"
+    },
+    {
+      "oldName": "i",
+      "newName": "blendMode",
+      "line": 9205,
+      "evidence": "Three.js r186 public signature AnimationClip.constructor, parameter 3"
+    },
+    {
+      "oldName": "t",
+      "newName": "name_35",
+      "line": 9230,
+      "evidence": "Three.js r186 public signature AnimationClip.CreateFromMorphTargetSequence, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "morphTargetSequence",
+      "line": 9230,
+      "evidence": "Three.js r186 public signature AnimationClip.CreateFromMorphTargetSequence, parameter 1"
+    },
+    {
+      "oldName": "n",
+      "newName": "fps_6",
+      "line": 9230,
+      "evidence": "Three.js r186 public signature AnimationClip.CreateFromMorphTargetSequence, parameter 2"
+    },
+    {
+      "oldName": "i",
+      "newName": "noLoop_2",
+      "line": 9230,
+      "evidence": "Three.js r186 public signature AnimationClip.CreateFromMorphTargetSequence, parameter 3"
+    },
+    {
+      "oldName": "fps_3",
+      "newName": "fps_7",
+      "line": 9251,
+      "evidence": "Three.js r186 public signature AnimationClip.CreateClipsFromMorphTargetSequences, parameter 1"
+    },
+    {
+      "oldName": "url_2",
+      "newName": "url_22",
+      "line": 9370,
+      "evidence": "Three.js r186 public signature LoadingManager.member:itemEnd, parameter 0"
+    },
+    {
+      "oldName": "url_3",
+      "newName": "url_23",
+      "line": 9372,
+      "evidence": "Three.js r186 public signature LoadingManager.member:itemError, parameter 0"
+    },
+    {
+      "oldName": "url_4",
+      "newName": "url_24",
+      "line": 9374,
+      "evidence": "Three.js r186 public signature LoadingManager.member:resolveURL, parameter 0"
+    },
+    {
+      "oldName": "url_5",
+      "newName": "url_25",
+      "line": 9406,
+      "evidence": "Three.js r186 public signature Loader.loadAsync, parameter 0"
+    },
+    {
+      "oldName": "url_6",
+      "newName": "url_26",
+      "line": 9444,
+      "evidence": "Three.js r186 public signature FileLoader.load, parameter 0"
+    },
+    {
+      "oldName": "url_7",
+      "newName": "url_27",
+      "line": 9559,
+      "evidence": "Three.js r186 public signature AnimationLoader.load, parameter 0"
+    },
+    {
+      "oldName": "url_8",
+      "newName": "url_28",
+      "line": 9583,
+      "evidence": "Three.js r186 public signature CompressedTextureLoader.load, parameter 0"
+    },
+    {
+      "oldName": "url_9",
+      "newName": "url_29",
+      "line": 9623,
+      "evidence": "Three.js r186 public signature ImageLoader.load, parameter 0"
+    },
+    {
+      "oldName": "url_10",
+      "newName": "url_30",
+      "line": 9687,
+      "evidence": "Three.js r186 public signature DataTextureLoader.load, parameter 0"
+    },
+    {
+      "oldName": "url_11",
+      "newName": "url_31",
+      "line": 9713,
+      "evidence": "Three.js r186 public signature TextureLoader.load, parameter 0"
+    },
+    {
+      "oldName": "t",
+      "newName": "shadowCamera_3",
+      "line": 9765,
+      "evidence": "Three.js r186 public signature LightShadow._updateMatrix, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "shadowMatrix",
+      "line": 9765,
+      "evidence": "Three.js r186 public signature LightShadow._updateMatrix, parameter 1"
+    },
+    {
+      "oldName": "n",
+      "newName": "frustum_8",
+      "line": 9765,
+      "evidence": "Three.js r186 public signature LightShadow._updateMatrix, parameter 2"
+    },
+    {
+      "oldName": "i",
+      "newName": "viewport_3",
+      "line": 9765,
+      "evidence": "Three.js r186 public signature LightShadow._updateMatrix, parameter 3"
+    },
+    {
+      "oldName": "far_2",
+      "newName": "far_10",
+      "line": 9824,
+      "evidence": "Three.js r186 public signature PerspectiveCamera.constructor, parameter 3"
+    },
+    {
+      "oldName": "x_66",
+      "newName": "x_117",
+      "line": 9853,
+      "evidence": "Three.js r186 public signature PerspectiveCamera.setViewOffset, parameter 2"
+    },
+    {
+      "oldName": "y_62",
+      "newName": "y_117",
+      "line": 9853,
+      "evidence": "Three.js r186 public signature PerspectiveCamera.setViewOffset, parameter 3"
+    },
+    {
+      "oldName": "top_3",
+      "newName": "top_7",
+      "line": 9954,
+      "evidence": "Three.js r186 public signature OrthographicCamera.constructor, parameter 2"
+    },
+    {
+      "oldName": "far_4",
+      "newName": "far_11",
+      "line": 9954,
+      "evidence": "Three.js r186 public signature OrthographicCamera.constructor, parameter 5"
+    },
+    {
+      "oldName": "x_67",
+      "newName": "x_118",
+      "line": 9960,
+      "evidence": "Three.js r186 public signature OrthographicCamera.setViewOffset, parameter 2"
+    },
+    {
+      "oldName": "y_63",
+      "newName": "y_118",
+      "line": 9960,
+      "evidence": "Three.js r186 public signature OrthographicCamera.setViewOffset, parameter 3"
+    },
+    {
+      "oldName": "sh_2",
+      "newName": "sh",
+      "line": 10065,
+      "evidence": "Three.js r186 public signature SphericalHarmonics3.add, parameter 0"
+    },
+    {
+      "oldName": "sh_3",
+      "newName": "sh_8",
+      "line": 10069,
+      "evidence": "Three.js r186 public signature SphericalHarmonics3.addScaledSH, parameter 0"
+    },
+    {
+      "oldName": "s_33",
+      "newName": "s_52",
+      "line": 10069,
+      "evidence": "Three.js r186 public signature SphericalHarmonics3.addScaledSH, parameter 1"
+    },
+    {
+      "oldName": "s_34",
+      "newName": "s_53",
+      "line": 10073,
+      "evidence": "Three.js r186 public signature SphericalHarmonics3.scale, parameter 0"
+    },
+    {
+      "oldName": "sh_4",
+      "newName": "sh_9",
+      "line": 10077,
+      "evidence": "Three.js r186 public signature SphericalHarmonics3.lerp, parameter 0"
+    },
+    {
+      "oldName": "sh_5",
+      "newName": "sh_10",
+      "line": 10081,
+      "evidence": "Three.js r186 public signature SphericalHarmonics3.equals, parameter 0"
+    },
+    {
+      "oldName": "sh_6",
+      "newName": "sh_11",
+      "line": 10085,
+      "evidence": "Three.js r186 public signature SphericalHarmonics3.copy, parameter 0"
+    },
+    {
+      "oldName": "sh_7",
+      "newName": "sh_12",
+      "line": 10109,
+      "evidence": "Three.js r186 public signature LightProbe.constructor, parameter 0"
+    },
+    {
+      "oldName": "url_12",
+      "newName": "url_32",
+      "line": 10125,
+      "evidence": "Three.js r186 public signature MaterialLoader.load, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "materialClass",
+      "line": 10171,
+      "evidence": "Three.js r186 public signature MaterialLoader.registerMaterial, parameter 1"
+    },
+    {
+      "oldName": "url_13",
+      "newName": "url_33",
+      "line": 10176,
+      "evidence": "Three.js r186 public signature LoaderUtils.extractUrlBase, parameter 0"
+    },
+    {
+      "oldName": "url_14",
+      "newName": "url_34",
+      "line": 10180,
+      "evidence": "Three.js r186 public signature LoaderUtils.resolveURL, parameter 0"
+    },
+    {
+      "oldName": "url_15",
+      "newName": "url_35",
+      "line": 10200,
+      "evidence": "Three.js r186 public signature BufferGeometryLoader.load, parameter 0"
+    },
+    {
+      "oldName": "url_16",
+      "newName": "url_36",
+      "line": 10279,
+      "evidence": "Three.js r186 public signature ObjectLoader.load, parameter 0"
+    },
+    {
+      "oldName": "url_17",
+      "newName": "url_37",
+      "line": 10296,
+      "evidence": "Three.js r186 public signature ObjectLoader.loadAsync, parameter 0"
+    },
+    {
+      "oldName": "url_19",
+      "newName": "url_38",
+      "line": 10678,
+      "evidence": "Three.js r186 public signature ImageBitmapLoader.load, parameter 0"
+    },
+    {
+      "oldName": "url_20",
+      "newName": "url_39",
+      "line": 10718,
+      "evidence": "Three.js r186 public signature AudioLoader.load, parameter 0"
+    },
+    {
+      "oldName": "t",
+      "newName": "near_10",
+      "line": 10770,
+      "evidence": "Three.js r186 public signature CubeCamera.constructor, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "far_12",
+      "line": 10770,
+      "evidence": "Three.js r186 public signature CubeCamera.constructor, parameter 1"
+    },
+    {
+      "oldName": "n",
+      "newName": "renderTarget_19",
+      "line": 10770,
+      "evidence": "Three.js r186 public signature CubeCamera.constructor, parameter 2"
+    },
+    {
+      "oldName": "t_23",
+      "newName": "t_40",
+      "line": 11145,
+      "evidence": "Three.js r186 public signature PropertyMixer._select, parameter 3"
+    },
+    {
+      "oldName": "t_24",
+      "newName": "t_41",
+      "line": 11148,
+      "evidence": "Three.js r186 public signature PropertyMixer._slerp, parameter 3"
+    },
+    {
+      "oldName": "t_25",
+      "newName": "t_42",
+      "line": 11151,
+      "evidence": "Three.js r186 public signature PropertyMixer._slerpAdditive, parameter 3"
+    },
+    {
+      "oldName": "t_26",
+      "newName": "t_43",
+      "line": 11155,
+      "evidence": "Three.js r186 public signature PropertyMixer._lerp, parameter 3"
+    },
+    {
+      "oldName": "t_27",
+      "newName": "t_44",
+      "line": 11162,
+      "evidence": "Three.js r186 public signature PropertyMixer._lerpAdditive, parameter 3"
+    },
+    {
+      "oldName": "t",
+      "newName": "mixer_3",
+      "line": 11522,
+      "evidence": "Three.js r186 public signature AnimationAction.constructor, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "clip_8",
+      "line": 11522,
+      "evidence": "Three.js r186 public signature AnimationAction.constructor, parameter 1"
+    },
+    {
+      "oldName": "n",
+      "newName": "localRoot",
+      "line": 11522,
+      "evidence": "Three.js r186 public signature AnimationAction.constructor, parameter 2"
+    },
+    {
+      "oldName": "i",
+      "newName": "blendMode_2",
+      "line": 11522,
+      "evidence": "Three.js r186 public signature AnimationAction.constructor, parameter 3"
+    },
+    {
+      "oldName": "t",
+      "newName": "time_9",
+      "line": 11625,
+      "evidence": "Three.js r186 public signature AnimationAction._update, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "deltaTime_2",
+      "line": 11625,
+      "evidence": "Three.js r186 public signature AnimationAction._update, parameter 1"
+    },
+    {
+      "oldName": "n",
+      "newName": "timeDirection_2",
+      "line": 11625,
+      "evidence": "Three.js r186 public signature AnimationAction._update, parameter 2"
+    },
+    {
+      "oldName": "i",
+      "newName": "accuIndex_4",
+      "line": 11625,
+      "evidence": "Three.js r186 public signature AnimationAction._update, parameter 3"
+    },
+    {
+      "oldName": "t",
+      "newName": "deltaTime_3",
+      "line": 11662,
+      "evidence": "Three.js r186 public signature AnimationAction._updateTime, parameter 0"
+    },
+    {
+      "oldName": "t",
+      "newName": "clip_9",
+      "line": 11907,
+      "evidence": "Three.js r186 public signature AnimationMixer.clipAction, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "optionalRoot_3",
+      "line": 11907,
+      "evidence": "Three.js r186 public signature AnimationMixer.clipAction, parameter 1"
+    },
+    {
+      "oldName": "n",
+      "newName": "blendMode_3",
+      "line": 11907,
+      "evidence": "Three.js r186 public signature AnimationMixer.clipAction, parameter 2"
+    },
+    {
+      "oldName": "far_5",
+      "newName": "far_13",
+      "line": 12087,
+      "evidence": "Three.js r186 public signature Raycaster.constructor, parameter 3"
+    },
+    {
+      "oldName": "phi_2",
+      "newName": "phi_4",
+      "line": 12151,
+      "evidence": "Three.js r186 public signature Spherical.constructor, parameter 1"
+    },
+    {
+      "oldName": "phi_3",
+      "newName": "phi_5",
+      "line": 12154,
+      "evidence": "Three.js r186 public signature Spherical.set, parameter 1"
+    },
+    {
+      "oldName": "v_56",
+      "newName": "v_145",
+      "line": 12164,
+      "evidence": "Three.js r186 public signature Spherical.setFromVector3, parameter 0"
+    },
+    {
+      "oldName": "x_71",
+      "newName": "x_119",
+      "line": 12167,
+      "evidence": "Three.js r186 public signature Spherical.setFromCartesianCoords, parameter 0"
+    },
+    {
+      "oldName": "y_67",
+      "newName": "y_119",
+      "line": 12167,
+      "evidence": "Three.js r186 public signature Spherical.setFromCartesianCoords, parameter 1"
+    },
+    {
+      "oldName": "z_46",
+      "newName": "z_77",
+      "line": 12167,
+      "evidence": "Three.js r186 public signature Spherical.setFromCartesianCoords, parameter 2"
+    },
+    {
+      "oldName": "y_68",
+      "newName": "y_120",
+      "line": 12175,
+      "evidence": "Three.js r186 public signature Cylindrical.constructor, parameter 2"
+    },
+    {
+      "oldName": "y_69",
+      "newName": "y_121",
+      "line": 12178,
+      "evidence": "Three.js r186 public signature Cylindrical.set, parameter 2"
+    },
+    {
+      "oldName": "v_57",
+      "newName": "v_146",
+      "line": 12184,
+      "evidence": "Three.js r186 public signature Cylindrical.setFromVector3, parameter 0"
+    },
+    {
+      "oldName": "x_72",
+      "newName": "x_120",
+      "line": 12187,
+      "evidence": "Three.js r186 public signature Cylindrical.setFromCartesianCoords, parameter 0"
+    },
+    {
+      "oldName": "y_70",
+      "newName": "y_122",
+      "line": 12187,
+      "evidence": "Three.js r186 public signature Cylindrical.setFromCartesianCoords, parameter 1"
+    },
+    {
+      "oldName": "z_47",
+      "newName": "z_78",
+      "line": 12187,
+      "evidence": "Three.js r186 public signature Cylindrical.setFromCartesianCoords, parameter 2"
+    },
+    {
+      "oldName": "min_15",
+      "newName": "min_26",
+      "line": 12215,
+      "evidence": "Three.js r186 public signature Box2.constructor, parameter 0"
+    },
+    {
+      "oldName": "max_14",
+      "newName": "max_25",
+      "line": 12215,
+      "evidence": "Three.js r186 public signature Box2.constructor, parameter 1"
+    },
+    {
+      "oldName": "min_16",
+      "newName": "min_27",
+      "line": 12218,
+      "evidence": "Three.js r186 public signature Box2.set, parameter 0"
+    },
+    {
+      "oldName": "max_15",
+      "newName": "max_26",
+      "line": 12218,
+      "evidence": "Three.js r186 public signature Box2.set, parameter 1"
+    },
+    {
+      "oldName": "box_16",
+      "newName": "box_37",
+      "line": 12233,
+      "evidence": "Three.js r186 public signature Box2.copy, parameter 0"
+    },
+    {
+      "oldName": "box_17",
+      "newName": "box_38",
+      "line": 12260,
+      "evidence": "Three.js r186 public signature Box2.containsBox, parameter 0"
+    },
+    {
+      "oldName": "box_18",
+      "newName": "box_39",
+      "line": 12266,
+      "evidence": "Three.js r186 public signature Box2.intersectsBox, parameter 0"
+    },
+    {
+      "oldName": "box_19",
+      "newName": "box_40",
+      "line": 12275,
+      "evidence": "Three.js r186 public signature Box2.intersect, parameter 0"
+    },
+    {
+      "oldName": "box_20",
+      "newName": "box_41",
+      "line": 12278,
+      "evidence": "Three.js r186 public signature Box2.union, parameter 0"
+    },
+    {
+      "oldName": "box_21",
+      "newName": "box_42",
+      "line": 12284,
+      "evidence": "Three.js r186 public signature Box2.equals, parameter 0"
+    },
+    {
+      "oldName": "end_4",
+      "newName": "end_7",
+      "line": 12296,
+      "evidence": "Three.js r186 public signature Line3.constructor, parameter 1"
+    },
+    {
+      "oldName": "end_5",
+      "newName": "end_8",
+      "line": 12299,
+      "evidence": "Three.js r186 public signature Line3.set, parameter 1"
+    },
+    {
+      "oldName": "up_3",
+      "newName": "up_5",
+      "line": 12593,
+      "evidence": "Three.js r186 public signature CameraHelper.setColors, parameter 2"
+    },
+    {
+      "oldName": "box_22",
+      "newName": "box_43",
+      "line": 12651,
+      "evidence": "Three.js r186 public signature Box3Helper.constructor, parameter 0"
+    },
+    {
+      "oldName": "hex_3",
+      "newName": "hex_4",
+      "line": 12668,
+      "evidence": "Three.js r186 public signature PlaneHelper.constructor, parameter 2"
+    },
+    {
+      "oldName": "t",
+      "newName": "dir_2",
+      "line": 12693,
+      "evidence": "Three.js r186 public signature ArrowHelper.constructor, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "origin_7",
+      "line": 12693,
+      "evidence": "Three.js r186 public signature ArrowHelper.constructor, parameter 1"
+    },
+    {
+      "oldName": "n",
+      "newName": "length_10",
+      "line": 12693,
+      "evidence": "Three.js r186 public signature ArrowHelper.constructor, parameter 2"
+    },
+    {
+      "oldName": "i",
+      "newName": "color_40",
+      "line": 12693,
+      "evidence": "Three.js r186 public signature ArrowHelper.constructor, parameter 3"
+    },
+    {
+      "oldName": "s",
+      "newName": "headLength_2",
+      "line": 12693,
+      "evidence": "Three.js r186 public signature ArrowHelper.constructor, parameter 4"
+    },
+    {
+      "oldName": "r",
+      "newName": "headWidth_2",
+      "line": 12693,
+      "evidence": "Three.js r186 public signature ArrowHelper.constructor, parameter 5"
+    },
+    {
+      "oldName": "x_74",
+      "newName": "x_121",
+      "line": 12744,
+      "evidence": "Three.js r186 public signature ShapePath.moveTo, parameter 0"
+    },
+    {
+      "oldName": "y_72",
+      "newName": "y_123",
+      "line": 12744,
+      "evidence": "Three.js r186 public signature ShapePath.moveTo, parameter 1"
+    },
+    {
+      "oldName": "x_75",
+      "newName": "x_122",
+      "line": 12747,
+      "evidence": "Three.js r186 public signature ShapePath.lineTo, parameter 0"
+    },
+    {
+      "oldName": "y_73",
+      "newName": "y_124",
+      "line": 12747,
+      "evidence": "Three.js r186 public signature ShapePath.lineTo, parameter 1"
+    },
+    {
+      "oldName": "aX_9",
+      "newName": "aX_18",
+      "line": 12750,
+      "evidence": "Three.js r186 public signature ShapePath.quadraticCurveTo, parameter 2"
+    },
+    {
+      "oldName": "aY_9",
+      "newName": "aY_18",
+      "line": 12750,
+      "evidence": "Three.js r186 public signature ShapePath.quadraticCurveTo, parameter 3"
+    },
+    {
+      "oldName": "aX_10",
+      "newName": "aX_19",
+      "line": 12753,
+      "evidence": "Three.js r186 public signature ShapePath.bezierCurveTo, parameter 4"
+    },
+    {
+      "oldName": "aY_10",
+      "newName": "aY_19",
+      "line": 12753,
+      "evidence": "Three.js r186 public signature ShapePath.bezierCurveTo, parameter 5"
+    },
+    {
+      "oldName": "pts_3",
+      "newName": "pts_5",
+      "line": 12756,
+      "evidence": "Three.js r186 public signature ShapePath.splineThru, parameter 0"
+    },
+    {
+      "oldName": "t",
+      "newName": "texture_31",
+      "line": 12972,
+      "evidence": "Three.js r186 public signature TextureUtils.contain, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "aspect_5",
+      "line": 12972,
+      "evidence": "Three.js r186 public signature TextureUtils.contain, parameter 1"
+    },
+    {
+      "oldName": "t",
+      "newName": "texture_32",
+      "line": 12978,
+      "evidence": "Three.js r186 public signature TextureUtils.cover, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "aspect_6",
+      "line": 12978,
+      "evidence": "Three.js r186 public signature TextureUtils.cover, parameter 1"
+    },
+    {
+      "oldName": "t",
+      "newName": "texture_33",
+      "line": 12984,
+      "evidence": "Three.js r186 public signature TextureUtils.fill, parameter 0"
+    },
+    {
+      "oldName": "far_6",
+      "newName": "far_14",
+      "line": 14839,
+      "evidence": "Three.js r186 public signature PMREMGenerator.fromScene, parameter 3"
+    },
+    {
+      "oldName": "t",
+      "newName": "texture_34",
+      "line": 14873,
+      "evidence": "Three.js r186 public signature PMREMGenerator._fromTexture, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "renderTarget_20",
+      "line": 14873,
+      "evidence": "Three.js r186 public signature PMREMGenerator._fromTexture, parameter 1"
+    },
+    {
+      "oldName": "t",
+      "newName": "scene_14",
+      "line": 14994,
+      "evidence": "Three.js r186 public signature PMREMGenerator._sceneToCubeUV, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "near_11",
+      "line": 14994,
+      "evidence": "Three.js r186 public signature PMREMGenerator._sceneToCubeUV, parameter 1"
+    },
+    {
+      "oldName": "n",
+      "newName": "far_15",
+      "line": 14994,
+      "evidence": "Three.js r186 public signature PMREMGenerator._sceneToCubeUV, parameter 2"
+    },
+    {
+      "oldName": "i",
+      "newName": "cubeUVRenderTarget_4",
+      "line": 14994,
+      "evidence": "Three.js r186 public signature PMREMGenerator._sceneToCubeUV, parameter 3"
+    },
+    {
+      "oldName": "s",
+      "newName": "position_14",
+      "line": 14994,
+      "evidence": "Three.js r186 public signature PMREMGenerator._sceneToCubeUV, parameter 4"
+    },
+    {
+      "oldName": "t",
+      "newName": "texture_35",
+      "line": 15020,
+      "evidence": "Three.js r186 public signature PMREMGenerator._textureToCubeUV, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "cubeUVRenderTarget_5",
+      "line": 15020,
+      "evidence": "Three.js r186 public signature PMREMGenerator._textureToCubeUV, parameter 1"
+    },
+    {
+      "oldName": "t",
+      "newName": "cubeUVRenderTarget_6",
+      "line": 15038,
+      "evidence": "Three.js r186 public signature PMREMGenerator._applyGGXFilter, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "lodIn_2",
+      "line": 15038,
+      "evidence": "Three.js r186 public signature PMREMGenerator._applyGGXFilter, parameter 1"
+    },
+    {
+      "oldName": "n",
+      "newName": "lodOut_2",
+      "line": 15038,
+      "evidence": "Three.js r186 public signature PMREMGenerator._applyGGXFilter, parameter 2"
+    },
+    {
+      "oldName": "t",
+      "newName": "targetIn",
+      "line": 15061,
+      "evidence": "Three.js r186 public signature PMREMGenerator._blurPass, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "targetOut",
+      "line": 15061,
+      "evidence": "Three.js r186 public signature PMREMGenerator._blurPass, parameter 1"
+    },
+    {
+      "oldName": "n",
+      "newName": "lodIn_3",
+      "line": 15061,
+      "evidence": "Three.js r186 public signature PMREMGenerator._blurPass, parameter 2"
+    },
+    {
+      "oldName": "i",
+      "newName": "lodOut_3",
+      "line": 15061,
+      "evidence": "Three.js r186 public signature PMREMGenerator._blurPass, parameter 3"
+    },
+    {
+      "oldName": "s",
+      "newName": "sigmaRadians",
+      "line": 15061,
+      "evidence": "Three.js r186 public signature PMREMGenerator._blurPass, parameter 4"
+    },
+    {
+      "oldName": "t",
+      "newName": "renderer_10",
+      "line": 15123,
+      "evidence": "Three.js r186 public signature WebGLCubeRenderTarget.fromEquirectangularTexture, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "texture_36",
+      "line": 15123,
+      "evidence": "Three.js r186 public signature WebGLCubeRenderTarget.fromEquirectangularTexture, parameter 1"
+    },
+    {
+      "oldName": "t",
+      "newName": "parameters_31",
+      "line": 18658,
+      "evidence": "Three.js r186 public signature WebGLRenderer.constructor, parameter 0"
+    },
+    {
+      "oldName": "t",
+      "newName": "effects_2",
+      "line": 18840,
+      "evidence": "Three.js r186 public signature WebGLRenderer.member:setEffects, parameter 0"
+    },
+    {
+      "oldName": "x_77",
+      "newName": "x_123",
+      "line": 18852,
+      "evidence": "Three.js r186 public signature WebGLRenderer.member:setViewport, parameter 0"
+    },
+    {
+      "oldName": "y_76",
+      "newName": "y_125",
+      "line": 18852,
+      "evidence": "Three.js r186 public signature WebGLRenderer.member:setViewport, parameter 1"
+    },
+    {
+      "oldName": "x_78",
+      "newName": "x_124",
+      "line": 18856,
+      "evidence": "Three.js r186 public signature WebGLRenderer.member:setScissor, parameter 0"
+    },
+    {
+      "oldName": "y_77",
+      "newName": "y_126",
+      "line": 18856,
+      "evidence": "Three.js r186 public signature WebGLRenderer.member:setScissor, parameter 1"
+    },
+    {
+      "oldName": "t",
+      "newName": "camera_29",
+      "line": 18904,
+      "evidence": "Three.js r186 public signature WebGLRenderer.member:renderBufferDirect, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "scene_15",
+      "line": 18904,
+      "evidence": "Three.js r186 public signature WebGLRenderer.member:renderBufferDirect, parameter 1"
+    },
+    {
+      "oldName": "n",
+      "newName": "geometry_63",
+      "line": 18904,
+      "evidence": "Three.js r186 public signature WebGLRenderer.member:renderBufferDirect, parameter 2"
+    },
+    {
+      "oldName": "i",
+      "newName": "material_44",
+      "line": 18904,
+      "evidence": "Three.js r186 public signature WebGLRenderer.member:renderBufferDirect, parameter 3"
+    },
+    {
+      "oldName": "s",
+      "newName": "object_54",
+      "line": 18904,
+      "evidence": "Three.js r186 public signature WebGLRenderer.member:renderBufferDirect, parameter 4"
+    },
+    {
+      "oldName": "o",
+      "newName": "group_4",
+      "line": 18904,
+      "evidence": "Three.js r186 public signature WebGLRenderer.member:renderBufferDirect, parameter 5"
+    },
+    {
+      "oldName": "t",
+      "newName": "scene_16",
+      "line": 19183,
+      "evidence": "Three.js r186 public signature WebGLRenderer.member:render, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "camera_30",
+      "line": 19183,
+      "evidence": "Three.js r186 public signature WebGLRenderer.member:render, parameter 1"
+    },
+    {
+      "oldName": "x_79",
+      "newName": "x_125",
+      "line": 19255,
+      "evidence": "Three.js r186 public signature WebGLRenderer.member:readRenderTargetPixels, parameter 1"
+    },
+    {
+      "oldName": "y_78",
+      "newName": "y_127",
+      "line": 19255,
+      "evidence": "Three.js r186 public signature WebGLRenderer.member:readRenderTargetPixels, parameter 2"
+    },
+    {
+      "oldName": "t",
+      "newName": "renderTarget_21",
+      "line": 19274,
+      "evidence": "Three.js r186 public signature WebGLRenderer.member:readRenderTargetPixelsAsync, parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "x_126",
+      "line": 19274,
+      "evidence": "Three.js r186 public signature WebGLRenderer.member:readRenderTargetPixelsAsync, parameter 1"
+    },
+    {
+      "oldName": "n",
+      "newName": "y_128",
+      "line": 19274,
+      "evidence": "Three.js r186 public signature WebGLRenderer.member:readRenderTargetPixelsAsync, parameter 2"
+    },
+    {
+      "oldName": "i",
+      "newName": "width_33",
+      "line": 19274,
+      "evidence": "Three.js r186 public signature WebGLRenderer.member:readRenderTargetPixelsAsync, parameter 3"
+    },
+    {
+      "oldName": "s",
+      "newName": "height_36",
+      "line": 19274,
+      "evidence": "Three.js r186 public signature WebGLRenderer.member:readRenderTargetPixelsAsync, parameter 4"
+    },
+    {
+      "oldName": "r",
+      "newName": "buffer_40",
+      "line": 19274,
+      "evidence": "Three.js r186 public signature WebGLRenderer.member:readRenderTargetPixelsAsync, parameter 5"
+    },
+    {
+      "oldName": "o",
+      "newName": "activeCubeFaceIndex_2",
+      "line": 19274,
+      "evidence": "Three.js r186 public signature WebGLRenderer.member:readRenderTargetPixelsAsync, parameter 6"
+    },
+    {
+      "oldName": "a",
+      "newName": "textureIndex_6",
+      "line": 19274,
+      "evidence": "Three.js r186 public signature WebGLRenderer.member:readRenderTargetPixelsAsync, parameter 7"
+    },
+    {
+      "oldName": "e",
+      "newName": "depthTexture_3",
+      "line": 1882,
+      "evidence": "Assigned to this.depthTexture"
+    },
+    {
+      "oldName": "n",
+      "newName": "radius_26",
+      "line": 3828,
+      "evidence": "Assigned to this.radius"
+    },
+    {
+      "oldName": "w_35",
+      "newName": "constant_3",
+      "line": 4365,
+      "evidence": "Assigned to this.constant"
+    },
+    {
+      "oldName": "Ei",
+      "newName": "geometry_64",
+      "line": 3555,
+      "evidence": "Assigned to this.geometry"
+    },
+    {
+      "oldName": "s",
+      "newName": "array_57",
+      "line": 5470,
+      "evidence": "Named destructuring property array"
+    },
+    {
+      "oldName": "r",
+      "newName": "itemSize_18",
+      "line": 5471,
+      "evidence": "Named destructuring property itemSize"
+    },
+    {
+      "oldName": "o",
+      "newName": "normalized_17",
+      "line": 5472,
+      "evidence": "Named destructuring property normalized"
+    },
+    {
+      "oldName": "n",
+      "newName": "indexStart",
+      "line": 5619,
+      "evidence": "Named destructuring property indexStart"
+    },
+    {
+      "oldName": "i",
+      "newName": "vertexStart_2",
+      "line": 5620,
+      "evidence": "Named destructuring property vertexStart"
+    },
+    {
+      "oldName": "r",
+      "newName": "reservedIndexCount_2",
+      "line": 5621,
+      "evidence": "Named destructuring property reservedIndexCount"
+    },
+    {
+      "oldName": "e",
+      "newName": "vertexStart_3",
+      "line": 5633,
+      "evidence": "Named destructuring property vertexStart"
+    },
+    {
+      "oldName": "n",
+      "newName": "reservedVertexCount_3",
+      "line": 5634,
+      "evidence": "Named destructuring property reservedVertexCount"
+    },
+    {
+      "oldName": "o",
+      "newName": "array_58",
+      "line": 5640,
+      "evidence": "Named destructuring property array"
+    },
+    {
+      "oldName": "a",
+      "newName": "itemSize_19",
+      "line": 5641,
+      "evidence": "Named destructuring property itemSize"
+    },
+    {
+      "oldName": "e",
+      "newName": "_nextIndexStart",
+      "line": 5609,
+      "evidence": "Assigned to this._nextIndexStart"
+    },
+    {
+      "oldName": "t",
+      "newName": "_nextVertexStart",
+      "line": 5608,
+      "evidence": "Assigned to this._nextVertexStart"
+    },
+    {
+      "oldName": "A",
+      "newName": "image_16",
+      "line": 6140,
+      "evidence": "Assigned to this.image"
+    },
+    {
+      "oldName": "e",
+      "newName": "a_64",
+      "line": 6524,
+      "evidence": "Named destructuring property a"
+    },
+    {
+      "oldName": "o",
+      "newName": "b_69",
+      "line": 6525,
+      "evidence": "Named destructuring property b"
+    },
+    {
+      "oldName": "u",
+      "newName": "c_43",
+      "line": 6526,
+      "evidence": "Named destructuring property c"
+    },
+    {
+      "oldName": "e",
+      "newName": "index0",
+      "line": 6545,
+      "evidence": "Named destructuring property index0"
+    },
+    {
+      "oldName": "n",
+      "newName": "index1_3",
+      "line": 6546,
+      "evidence": "Named destructuring property index1"
+    },
+    {
+      "oldName": "n",
+      "newName": "_cachedIndex",
+      "line": 8771,
+      "evidence": "Assigned to this._cachedIndex"
+    },
+    {
+      "oldName": "e",
+      "newName": "node_7",
+      "line": 11286,
+      "evidence": "Assigned to this.node"
+    },
+    {
+      "oldName": "o",
+      "newName": "resolvedProperty",
+      "line": 11326,
+      "evidence": "Assigned to this.resolvedProperty"
+    },
+    {
+      "oldName": "r",
+      "newName": "propertyIndex",
+      "line": 11290,
+      "evidence": "Assigned to this.propertyIndex"
+    },
+    {
+      "oldName": "s",
+      "newName": "propertyName",
+      "line": 11289,
+      "evidence": "Assigned to this.propertyName"
+    },
+    {
+      "oldName": "a",
+      "newName": "_interpolantSettings",
+      "line": 11527,
+      "evidence": "Assigned to this._interpolantSettings"
+    },
+    {
+      "oldName": "o",
+      "newName": "_interpolants",
+      "line": 11526,
+      "evidence": "Assigned to this._interpolants"
+    },
+    {
+      "oldName": "i",
+      "newName": "time_10",
+      "line": 11665,
+      "evidence": "Assigned to this.time"
+    },
+    {
+      "oldName": "s",
+      "newName": "_loopCount",
+      "line": 11666,
+      "evidence": "Assigned to this._loopCount"
+    },
+    {
+      "oldName": "e",
+      "newName": "oldTime",
+      "line": 12144,
+      "evidence": "Assigned to this.oldTime"
+    },
+    {
+      "oldName": "t",
+      "newName": "numPlanes",
+      "line": 14817,
+      "evidence": "Assigned to this.numPlanes"
+    },
+    {
+      "oldName": "i",
+      "newName": "_lodMax",
+      "line": 14894,
+      "evidence": "Named destructuring property _lodMax"
+    },
+    {
+      "oldName": "l",
+      "newName": "_lodMax_2",
+      "line": 15049,
+      "evidence": "Named destructuring property _lodMax"
+    },
+    {
+      "oldName": "n",
+      "newName": "addr_2",
+      "line": 15776,
+      "evidence": "Assigned to this.addr"
+    },
+    {
+      "oldName": "n",
+      "newName": "addr_3",
+      "line": 15840,
+      "evidence": "Assigned to this.addr"
+    },
+    {
+      "oldName": "e",
+      "newName": "cacheKey_4",
+      "line": 16083,
+      "evidence": "Assigned to this.cacheKey"
+    },
+    {
+      "oldName": "g",
+      "newName": "program_12",
+      "line": 16122,
+      "evidence": "Assigned to this.program"
+    },
+    {
+      "oldName": "C",
+      "newName": "vertexShader",
+      "line": 16129,
+      "evidence": "Assigned to this.vertexShader"
+    },
+    {
+      "oldName": "_",
+      "newName": "fragmentShader",
+      "line": 16130,
+      "evidence": "Assigned to this.fragmentShader"
+    },
+    {
+      "oldName": "P",
+      "newName": "setTexture2D",
+      "line": 17594,
+      "evidence": "Assigned to this.setTexture2D"
+    },
+    {
+      "oldName": "Y",
+      "newName": "setupDepthRenderbuffer",
+      "line": 17859,
+      "evidence": "Assigned to this.setupDepthRenderbuffer"
+    },
+    {
+      "oldName": "q",
+      "newName": "setupFrameBufferTexture",
+      "line": 17804,
+      "evidence": "Assigned to this.setupFrameBufferTexture"
+    },
+    {
+      "oldName": "Z",
+      "newName": "useMultisampledRTT",
+      "line": 17899,
+      "evidence": "Assigned to this.useMultisampledRTT"
+    },
+    {
+      "oldName": "n",
+      "newName": "texture_37",
+      "line": 18186,
+      "evidence": "Assigned to this.texture"
+    },
+    {
+      "oldName": "n",
+      "newName": "context_2",
+      "line": 18661,
+      "evidence": "Named destructuring property context"
+    },
+    {
+      "oldName": "i",
+      "newName": "depth_14",
+      "line": 18662,
+      "evidence": "Named destructuring property depth"
+    },
+    {
+      "oldName": "s",
+      "newName": "stencil_4",
+      "line": 18663,
+      "evidence": "Named destructuring property stencil"
+    },
+    {
+      "oldName": "o",
+      "newName": "alpha_15",
+      "line": 18664,
+      "evidence": "Named destructuring property alpha"
+    },
+    {
+      "oldName": "a",
+      "newName": "antialias",
+      "line": 18665,
+      "evidence": "Named destructuring property antialias"
+    },
+    {
+      "oldName": "h",
+      "newName": "premultipliedAlpha_2",
+      "line": 18666,
+      "evidence": "Named destructuring property premultipliedAlpha"
+    },
+    {
+      "oldName": "c",
+      "newName": "preserveDrawingBuffer",
+      "line": 18667,
+      "evidence": "Named destructuring property preserveDrawingBuffer"
+    },
+    {
+      "oldName": "l",
+      "newName": "powerPreference",
+      "line": 18668,
+      "evidence": "Named destructuring property powerPreference"
+    },
+    {
+      "oldName": "f",
+      "newName": "failIfMajorPerformanceCaveat",
+      "line": 18669,
+      "evidence": "Named destructuring property failIfMajorPerformanceCaveat"
+    },
+    {
+      "oldName": "g",
+      "newName": "reversedDepthBuffer_2",
+      "line": 18670,
+      "evidence": "Named destructuring property reversedDepthBuffer"
+    },
+    {
+      "oldName": "p",
+      "newName": "outputBufferType",
+      "line": 18671,
+      "evidence": "Named destructuring property outputBufferType"
+    },
+    {
+      "oldName": "r",
+      "newName": "object_55",
+      "line": 19113,
+      "evidence": "Named destructuring property object"
+    },
+    {
+      "oldName": "o",
+      "newName": "geometry_65",
+      "line": 19114,
+      "evidence": "Named destructuring property geometry"
+    },
+    {
+      "oldName": "a",
+      "newName": "material_45",
+      "line": 19115,
+      "evidence": "Named destructuring property material"
+    },
+    {
+      "oldName": "h",
+      "newName": "group_5",
+      "line": 19116,
+      "evidence": "Named destructuring property group"
+    },
+    {
+      "oldName": "o",
+      "newName": "object_56",
+      "line": 19132,
+      "evidence": "Named destructuring property object"
+    },
+    {
+      "oldName": "a",
+      "newName": "geometry_66",
+      "line": 19133,
+      "evidence": "Named destructuring property geometry"
+    },
+    {
+      "oldName": "h",
+      "newName": "group_6",
+      "line": 19134,
+      "evidence": "Named destructuring property group"
+    },
+    {
+      "oldName": "i",
+      "newName": "left_7",
+      "line": 19516,
+      "evidence": "Named destructuring property left"
+    },
+    {
+      "oldName": "s",
+      "newName": "right_6",
+      "line": 19517,
+      "evidence": "Named destructuring property right"
+    },
+    {
+      "oldName": "r",
+      "newName": "splitAxis",
+      "line": 19518,
+      "evidence": "Named destructuring property splitAxis"
+    },
+    {
+      "oldName": "o",
+      "newName": "maxDepth",
+      "line": 19539,
+      "evidence": "Named destructuring property maxDepth"
+    },
+    {
+      "oldName": "a",
+      "newName": "verbose",
+      "line": 19540,
+      "evidence": "Named destructuring property verbose"
+    },
+    {
+      "oldName": "h",
+      "newName": "targetLeafSize",
+      "line": 19541,
+      "evidence": "Named destructuring property targetLeafSize"
+    },
+    {
+      "oldName": "c",
+      "newName": "_strictLeafSize",
+      "line": 19542,
+      "evidence": "Named destructuring property _strictLeafSize"
+    },
+    {
+      "oldName": "A",
+      "newName": "strategy",
+      "line": 19543,
+      "evidence": "Named destructuring property strategy"
+    },
+    {
+      "oldName": "l",
+      "newName": "onProgress_17",
+      "line": 19544,
+      "evidence": "Named destructuring property onProgress"
+    },
+    {
+      "oldName": "o",
+      "newName": "bounds",
+      "line": 19580,
+      "evidence": "Named destructuring property bounds"
+    },
+    {
+      "oldName": "a",
+      "newName": "leftCacheBounds",
+      "line": 19581,
+      "evidence": "Named destructuring property leftCacheBounds"
+    },
+    {
+      "oldName": "h",
+      "newName": "rightCacheBounds",
+      "line": 19582,
+      "evidence": "Named destructuring property rightCacheBounds"
+    },
+    {
+      "oldName": "t",
+      "newName": "_getNewPrimitive",
+      "line": 19705,
+      "evidence": "Assigned to this._getNewPrimitive"
+    },
+    {
+      "oldName": "a",
+      "newName": "float32Array",
+      "line": 19739,
+      "evidence": "Named destructuring property float32Array"
+    },
+    {
+      "oldName": "h",
+      "newName": "uint16Array",
+      "line": 19740,
+      "evidence": "Named destructuring property uint16Array"
+    },
+    {
+      "oldName": "c",
+      "newName": "uint32Array",
+      "line": 19741,
+      "evidence": "Named destructuring property uint32Array"
+    },
+    {
+      "oldName": "e",
+      "newName": "uint16Array_2",
+      "line": 19781,
+      "evidence": "Named destructuring property uint16Array"
+    },
+    {
+      "oldName": "n",
+      "newName": "uint32Array_2",
+      "line": 19782,
+      "evidence": "Named destructuring property uint32Array"
+    },
+    {
+      "oldName": "e",
+      "newName": "uint16Array_3",
+      "line": 19790,
+      "evidence": "Named destructuring property uint16Array"
+    },
+    {
+      "oldName": "n",
+      "newName": "uint32Array_3",
+      "line": 19791,
+      "evidence": "Named destructuring property uint32Array"
+    },
+    {
+      "oldName": "r",
+      "newName": "root_7",
+      "line": 19865,
+      "evidence": "Assigned to this.root"
+    },
+    {
+      "oldName": "e",
+      "newName": "boundsTraverseOrder",
+      "line": 20016,
+      "evidence": "Named destructuring property boundsTraverseOrder"
+    },
+    {
+      "oldName": "n",
+      "newName": "intersectsBounds",
+      "line": 20017,
+      "evidence": "Named destructuring property intersectsBounds"
+    },
+    {
+      "oldName": "i",
+      "newName": "intersectsRange",
+      "line": 20018,
+      "evidence": "Named destructuring property intersectsRange"
+    },
+    {
+      "oldName": "s",
+      "newName": "intersectsPrimitive",
+      "line": 20019,
+      "evidence": "Named destructuring property intersectsPrimitive"
+    },
+    {
+      "oldName": "r",
+      "newName": "scratchPrimitive",
+      "line": 20020,
+      "evidence": "Named destructuring property scratchPrimitive"
+    },
+    {
+      "oldName": "o",
+      "newName": "iterate",
+      "line": 20021,
+      "evidence": "Named destructuring property iterate"
+    },
+    {
+      "oldName": "i",
+      "newName": "intersectsRanges",
+      "line": 20039,
+      "evidence": "Named destructuring property intersectsRanges"
+    },
+    {
+      "oldName": "t",
+      "newName": "offset_55",
+      "line": 20094,
+      "evidence": "Named destructuring property offset"
+    },
+    {
+      "oldName": "e",
+      "newName": "count_22",
+      "line": 20095,
+      "evidence": "Named destructuring property count"
+    },
+    {
+      "oldName": "t",
+      "newName": "geometry_67",
+      "line": 20134,
+      "evidence": "Assigned to this.geometry"
+    },
+    {
+      "oldName": "e",
+      "newName": "geometry_68",
+      "line": 20145,
+      "evidence": "Named destructuring property geometry"
+    },
+    {
+      "oldName": "n",
+      "newName": "primitiveStride",
+      "line": 20146,
+      "evidence": "Named destructuring property primitiveStride"
+    },
+    {
+      "oldName": "e",
+      "newName": "offset_56",
+      "line": 20159,
+      "evidence": "Named destructuring property offset"
+    },
+    {
+      "oldName": "n",
+      "newName": "count_23",
+      "line": 20160,
+      "evidence": "Named destructuring property count"
+    },
+    {
+      "oldName": "i",
+      "newName": "_indirectBuffer",
+      "line": 20149,
+      "evidence": "Assigned to this._indirectBuffer"
+    },
+    {
+      "oldName": "o",
+      "newName": "radius_27",
+      "line": 20278,
+      "evidence": "Named destructuring property radius"
+    },
+    {
+      "oldName": "a",
+      "newName": "center_12",
+      "line": 20279,
+      "evidence": "Named destructuring property center"
+    },
+    {
+      "oldName": "h",
+      "newName": "a_65",
+      "line": 20282,
+      "evidence": "Named destructuring property a"
+    },
+    {
+      "oldName": "c",
+      "newName": "b_70",
+      "line": 20283,
+      "evidence": "Named destructuring property b"
+    },
+    {
+      "oldName": "A",
+      "newName": "c_44",
+      "line": 20284,
+      "evidence": "Named destructuring property c"
+    },
+    {
+      "oldName": "o",
+      "newName": "start_22",
+      "line": 20340,
+      "evidence": "Named destructuring property start"
+    },
+    {
+      "oldName": "a",
+      "newName": "end_9",
+      "line": 20341,
+      "evidence": "Named destructuring property end"
+    },
+    {
+      "oldName": "l",
+      "newName": "index_99",
+      "line": 20724,
+      "evidence": "Named destructuring property index"
+    },
+    {
+      "oldName": "u",
+      "newName": "groups_6",
+      "line": 20725,
+      "evidence": "Named destructuring property groups"
+    },
+    {
+      "oldName": "f",
+      "newName": "position_15",
+      "line": 20729,
+      "evidence": "Named destructuring property position"
+    },
+    {
+      "oldName": "d",
+      "newName": "normal_18",
+      "line": 20730,
+      "evidence": "Named destructuring property normal"
+    },
+    {
+      "oldName": "g",
+      "newName": "uv_8",
+      "line": 20731,
+      "evidence": "Named destructuring property uv"
+    },
+    {
+      "oldName": "p",
+      "newName": "uv1",
+      "line": 20732,
+      "evidence": "Named destructuring property uv1"
+    },
+    {
+      "oldName": "l",
+      "newName": "start_23",
+      "line": 20738,
+      "evidence": "Named destructuring property start"
+    },
+    {
+      "oldName": "m",
+      "newName": "count_24",
+      "line": 20739,
+      "evidence": "Named destructuring property count"
+    },
+    {
+      "oldName": "v",
+      "newName": "materialIndex_24",
+      "line": 20740,
+      "evidence": "Named destructuring property materialIndex"
+    },
+    {
+      "oldName": "a",
+      "newName": "geometry_69",
+      "line": 20770,
+      "evidence": "Named destructuring property geometry"
+    },
+    {
+      "oldName": "h",
+      "newName": "index_100",
+      "line": 20773,
+      "evidence": "Named destructuring property index"
+    },
+    {
+      "oldName": "a",
+      "newName": "geometry_70",
+      "line": 20863,
+      "evidence": "Named destructuring property geometry"
+    },
+    {
+      "oldName": "h",
+      "newName": "index_101",
+      "line": 20866,
+      "evidence": "Named destructuring property index"
+    },
+    {
+      "oldName": "a",
+      "newName": "float32Array_2",
+      "line": 20880,
+      "evidence": "Named destructuring property float32Array"
+    },
+    {
+      "oldName": "h",
+      "newName": "uint16Array_4",
+      "line": 20881,
+      "evidence": "Named destructuring property uint16Array"
+    },
+    {
+      "oldName": "c",
+      "newName": "uint32Array_4",
+      "line": 20882,
+      "evidence": "Named destructuring property uint32Array"
+    },
+    {
+      "oldName": "h",
+      "newName": "geometry_71",
+      "line": 20887,
+      "evidence": "Named destructuring property geometry"
+    },
+    {
+      "oldName": "c",
+      "newName": "_indirectBuffer_2",
+      "line": 20888,
+      "evidence": "Named destructuring property _indirectBuffer"
+    },
+    {
+      "oldName": "o",
+      "newName": "float32Array_3",
+      "line": 20906,
+      "evidence": "Named destructuring property float32Array"
+    },
+    {
+      "oldName": "a",
+      "newName": "uint16Array_5",
+      "line": 20907,
+      "evidence": "Named destructuring property uint16Array"
+    },
+    {
+      "oldName": "h",
+      "newName": "uint32Array_5",
+      "line": 20908,
+      "evidence": "Named destructuring property uint32Array"
+    },
+    {
+      "oldName": "a",
+      "newName": "geometry_72",
+      "line": 20913,
+      "evidence": "Named destructuring property geometry"
+    },
+    {
+      "oldName": "h",
+      "newName": "_indirectBuffer_3",
+      "line": 20914,
+      "evidence": "Named destructuring property _indirectBuffer"
+    },
+    {
+      "oldName": "r",
+      "newName": "float32Array_4",
+      "line": 20952,
+      "evidence": "Named destructuring property float32Array"
+    },
+    {
+      "oldName": "o",
+      "newName": "uint16Array_6",
+      "line": 20953,
+      "evidence": "Named destructuring property uint16Array"
+    },
+    {
+      "oldName": "a",
+      "newName": "uint32Array_6",
+      "line": 20954,
+      "evidence": "Named destructuring property uint32Array"
+    },
+    {
+      "oldName": "a",
+      "newName": "float32Array_5",
+      "line": 21112,
+      "evidence": "Named destructuring property float32Array"
+    },
+    {
+      "oldName": "h",
+      "newName": "uint16Array_7",
+      "line": 21113,
+      "evidence": "Named destructuring property uint16Array"
+    },
+    {
+      "oldName": "c",
+      "newName": "uint32Array_7",
+      "line": 21114,
+      "evidence": "Named destructuring property uint32Array"
+    },
+    {
+      "oldName": "h",
+      "newName": "geometry_73",
+      "line": 21119,
+      "evidence": "Named destructuring property geometry"
+    },
+    {
+      "oldName": "c",
+      "newName": "_indirectBuffer_4",
+      "line": 21120,
+      "evidence": "Named destructuring property _indirectBuffer"
+    },
+    {
+      "oldName": "o",
+      "newName": "float32Array_6",
+      "line": 21138,
+      "evidence": "Named destructuring property float32Array"
+    },
+    {
+      "oldName": "a",
+      "newName": "uint16Array_8",
+      "line": 21139,
+      "evidence": "Named destructuring property uint16Array"
+    },
+    {
+      "oldName": "h",
+      "newName": "uint32Array_8",
+      "line": 21140,
+      "evidence": "Named destructuring property uint32Array"
+    },
+    {
+      "oldName": "a",
+      "newName": "geometry_74",
+      "line": 21145,
+      "evidence": "Named destructuring property geometry"
+    },
+    {
+      "oldName": "h",
+      "newName": "_indirectBuffer_5",
+      "line": 21146,
+      "evidence": "Named destructuring property _indirectBuffer"
+    },
+    {
+      "oldName": "r",
+      "newName": "float32Array_7",
+      "line": 21184,
+      "evidence": "Named destructuring property float32Array"
+    },
+    {
+      "oldName": "o",
+      "newName": "uint16Array_9",
+      "line": 21185,
+      "evidence": "Named destructuring property uint16Array"
+    },
+    {
+      "oldName": "a",
+      "newName": "uint32Array_9",
+      "line": 21186,
+      "evidence": "Named destructuring property uint32Array"
+    },
+    {
+      "oldName": "s",
+      "newName": "index_102",
+      "line": 21313,
+      "evidence": "Named destructuring property index"
+    },
+    {
+      "oldName": "r",
+      "newName": "roots",
+      "line": 21314,
+      "evidence": "Named destructuring property roots"
+    },
+    {
+      "oldName": "o",
+      "newName": "indirectBuffer",
+      "line": 21315,
+      "evidence": "Named destructuring property indirectBuffer"
+    },
+    {
+      "oldName": "i",
+      "newName": "material_46",
+      "line": 21413,
+      "evidence": "Named destructuring property material"
+    },
+    {
+      "oldName": "s",
+      "newName": "intersectsRanges_2",
+      "line": 21471,
+      "evidence": "Named destructuring property intersectsRanges"
+    },
+    {
+      "oldName": "r",
+      "newName": "intersectsTriangles",
+      "line": 21472,
+      "evidence": "Named destructuring property intersectsTriangles"
+    },
+    {
+      "oldName": "t",
+      "newName": "pool_2",
+      "line": 21989,
+      "evidence": "Assigned to this.pool"
+    },
+    {
+      "oldName": "e",
+      "newName": "resolve_8",
+      "line": 22006,
+      "evidence": "Named destructuring property resolve"
+    },
+    {
+      "oldName": "n",
+      "newName": "msg",
+      "line": 22007,
+      "evidence": "Named destructuring property msg"
+    },
+    {
+      "oldName": "i",
+      "newName": "transfer",
+      "line": 22008,
+      "evidence": "Named destructuring property transfer"
+    },
+    {
+      "oldName": "t",
+      "newName": "workerCreator",
+      "line": 22013,
+      "evidence": "Assigned to this.workerCreator"
+    },
+    {
+      "oldName": "t",
+      "newName": "pool_3",
+      "line": 22016,
+      "evidence": "Assigned to this.pool"
+    },
+    {
+      "oldName": "i",
+      "newName": "_littleEndian",
+      "line": 22040,
+      "evidence": "Assigned to this._littleEndian"
+    },
+    {
+      "oldName": "t",
+      "newName": "_offset",
+      "line": 22063,
+      "evidence": "Assigned to this._offset"
+    },
+    {
+      "oldName": "t",
+      "newName": "_offset_2",
+      "line": 22067,
+      "evidence": "Assigned to this._offset"
+    },
+    {
+      "oldName": "t",
+      "newName": "transcoderPath",
+      "line": 22116,
+      "evidence": "Assigned to this.transcoderPath"
+    },
+    {
+      "oldName": "n",
+      "newName": "transcoderBinary",
+      "line": 22150,
+      "evidence": "Assigned to this.transcoderBinary"
+    },
+    {
+      "oldName": "n",
+      "newName": "type_39",
+      "line": 22180,
+      "evidence": "Named destructuring property type"
+    },
+    {
+      "oldName": "i",
+      "newName": "error_2",
+      "line": 22181,
+      "evidence": "Named destructuring property error"
+    },
+    {
+      "oldName": "s",
+      "newName": "faces_3",
+      "line": 22183,
+      "evidence": "Named destructuring property faces"
+    },
+    {
+      "oldName": "r",
+      "newName": "width_34",
+      "line": 22184,
+      "evidence": "Named destructuring property width"
+    },
+    {
+      "oldName": "o",
+      "newName": "height_37",
+      "line": 22185,
+      "evidence": "Named destructuring property height"
+    },
+    {
+      "oldName": "a",
+      "newName": "format_14",
+      "line": 22186,
+      "evidence": "Named destructuring property format"
+    },
+    {
+      "oldName": "h",
+      "newName": "type_40",
+      "line": 22187,
+      "evidence": "Named destructuring property type"
+    },
+    {
+      "oldName": "c",
+      "newName": "dfdFlags",
+      "line": 22188,
+      "evidence": "Named destructuring property dfdFlags"
+    },
+    {
+      "oldName": "e",
+      "newName": "vkFormat",
+      "line": 22319,
+      "evidence": "Named destructuring property vkFormat"
+    },
+    {
+      "oldName": "e",
+      "newName": "faces_4",
+      "line": 22431,
+      "evidence": "Named destructuring property faces"
+    },
+    {
+      "oldName": "i",
+      "newName": "buffers_2",
+      "line": 22432,
+      "evidence": "Named destructuring property buffers"
+    },
+    {
+      "oldName": "a",
+      "newName": "width_35",
+      "line": 22433,
+      "evidence": "Named destructuring property width"
+    },
+    {
+      "oldName": "l",
+      "newName": "height_38",
+      "line": 22434,
+      "evidence": "Named destructuring property height"
+    },
+    {
+      "oldName": "u",
+      "newName": "hasAlpha",
+      "line": 22435,
+      "evidence": "Named destructuring property hasAlpha"
+    },
+    {
+      "oldName": "f",
+      "newName": "format_15",
+      "line": 22436,
+      "evidence": "Named destructuring property format"
+    },
+    {
+      "oldName": "d",
+      "newName": "type_41",
+      "line": 22437,
+      "evidence": "Named destructuring property type"
+    },
+    {
+      "oldName": "g",
+      "newName": "dfdFlags_2",
+      "line": 22438,
+      "evidence": "Named destructuring property dfdFlags"
+    },
+    {
+      "oldName": "v",
+      "newName": "transcoderFormat",
+      "line": 22458,
+      "evidence": "Named destructuring property transcoderFormat"
+    },
+    {
+      "oldName": "E",
+      "newName": "engineFormat",
+      "line": 22459,
+      "evidence": "Named destructuring property engineFormat"
+    },
+    {
+      "oldName": "I",
+      "newName": "engineType",
+      "line": 22460,
+      "evidence": "Named destructuring property engineType"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import { $ as e, Ar as n, Br as t, Ct as s, Hr as r, It as a, Rr as i, b as c, lr as o, nn as v, qt as u, tt as l, ur as h, zr as m } from "./three-Bi9Yyrpt.js";
+import { $ as GLSL3, Ar as UnsignedByteType, Br as Vector4, Ct as LinearFilter, Hr as WebGLRenderTarget, It as Mesh, Rr as Vector2, b as Camera, lr as Scene, nn as PlaneGeometry, qt as NearestFilter, tt as HalfFloatType, ur as ShaderMaterial, zr as Vector3 } from "./three-Bi9Yyrpt.js";
 import { c as x } from "./c-C_iq9rgQ.js";
 import { x as p } from "./c-j2W5q53j.js";
 import { i as f, r as d } from "./c-D-iNDOV5.js";
@@ -61,7 +61,7 @@ var F = "\nout vec2 vUv;\nvoid main() {\n  vUv = uv;\n  gl_Position = vec4(posit
     hidden: .45,
     hiddenFar: .25
   },
-  k = new m();
+  k = new Vector3();
 function G(e, n, t) {
   const s = k.copy(n).setY(n.y + 2).sub(e),
     r = s.length();
@@ -72,11 +72,11 @@ function G(e, n, t) {
     return n ? 1 - (1 - t.farShare) * r : t.hidden + (t.hiddenFar - t.hidden) * r;
   }(r, !t?.raycast(e, s, r - .5)));
 }
-var H = new t(0, 0, 0, 1),
+var H = new Vector4(0, 0, 0, 1),
   S = `\nuniform sampler2D _MainTex;\nin vec2 vUv;\nout highp vec4 outColor;\n${P}\nvoid main() {\n  vec4 c = texture(_MainTex, vUv);\n  outColor = vec4(kourFlash(clamp(c.rgb, 0.0, 1.0)), 1.0);\n}`,
   $ = class {
-    scene = new o();
-    camera = new c();
+    scene = new Scene();
+    camera = new Camera();
     material;
     target = null;
     width = 1;
@@ -87,11 +87,11 @@ var H = new t(0, 0, 0, 1),
     exposure = H.clone();
     visibility = 1;
     constructor() {
-      this.material = new h({
+      this.material = new ShaderMaterial({
         name: "NukeFlash composite",
         vertexShader: "\nout vec2 vUv;\nvoid main() {\n  vUv = uv;\n  gl_Position = vec4(position.xy, 0.0, 1.0);\n}",
         fragmentShader: S,
-        glslVersion: e,
+        glslVersion: GLSL3,
         uniforms: {
           _MainTex: {
             value: null
@@ -104,7 +104,7 @@ var H = new t(0, 0, 0, 1),
         depthWrite: !1,
         toneMapped: !1
       });
-      const n = new a(new v(2, 2), this.material);
+      const n = new Mesh(new PlaneGeometry(2, 2), this.material);
       n.frustumCulled = !1, this.scene.add(n);
     }
     trigger(e = performance.now(), n = 1) {
@@ -136,12 +136,12 @@ var H = new t(0, 0, 0, 1),
     }
     prepare(e) {
       if (!this.target) {
-        this.target = new r(this.width, this.height, {
-          type: l,
+        this.target = new WebGLRenderTarget(this.width, this.height, {
+          type: HalfFloatType,
           depthBuffer: !0,
           samples: 0,
-          minFilter: u,
-          magFilter: u,
+          minFilter: NearestFilter,
+          magFilter: NearestFilter,
           generateMipmaps: !1
         }), p(!0);
         try {
@@ -156,7 +156,7 @@ var H = new t(0, 0, 0, 1),
     }
     prime(e) {
       const n = e.getRenderTarget(),
-        t = new r(1, 1, {
+        t = new WebGLRenderTarget(1, 1, {
           depthBuffer: !1
         });
       p(!0);
@@ -174,10 +174,10 @@ var H = new t(0, 0, 0, 1),
 function j() {
   return {
     uResample: {
-      value: new t(0, 0, 0, .6)
+      value: new Vector4(0, 0, 0, .6)
     },
     uResampleTexel: {
-      value: new i(1, 1)
+      value: new Vector2(1, 1)
     }
   };
 }
@@ -204,8 +204,8 @@ var Y = `\nuniform sampler2D _MainTex;\n/** view extents (tan of the half field 
     enabled = !1;
     strength = .5;
     sharp = !0;
-    scene = new o();
-    camera = new c();
+    scene = new Scene();
+    camera = new Camera();
     material;
     target = null;
     width = 1;
@@ -213,7 +213,7 @@ var Y = `\nuniform sampler2D _MainTex;\n/** view extents (tan of the half field 
     drawing = !1;
     resample = j();
     constructor(n) {
-      this.renderer = n, this.material = new h({
+      this.renderer = n, this.material = new ShaderMaterial({
         vertexShader: "\nout vec2 vUv;\nvoid main() {\n  vUv = uv;\n  gl_Position = vec4(position.xy, 0.0, 1.0);\n}",
         fragmentShader: Y,
         uniforms: {
@@ -221,19 +221,19 @@ var Y = `\nuniform sampler2D _MainTex;\n/** view extents (tan of the half field 
             value: null
           },
           _Params: {
-            value: new t(1, 1, 0, 1)
+            value: new Vector4(1, 1, 0, 1)
           },
           uFlash: {
             value: H.clone()
           },
           ...this.resample
         },
-        glslVersion: e,
+        glslVersion: GLSL3,
         depthTest: !1,
         depthWrite: !1,
         toneMapped: !1
       });
-      const s = new a(new v(2, 2), this.material);
+      const s = new Mesh(new PlaneGeometry(2, 2), this.material);
       s.frustumCulled = !1, this.scene.add(s);
     }
     get active() {
@@ -250,12 +250,12 @@ var Y = `\nuniform sampler2D _MainTex;\n/** view extents (tan of the half field 
       e !== this.hdr && (this.hdr = e, this.target && this.resize(this.width, this.height));
     }
     begin(e) {
-      return this.drawing = this.active, this.drawing && e ? (this.target ??= new r(this.width, this.height, {
-        type: this.hdr ? l : n,
+      return this.drawing = this.active, this.drawing && e ? (this.target ??= new WebGLRenderTarget(this.width, this.height, {
+        type: this.hdr ? HalfFloatType : UnsignedByteType,
         depthBuffer: !0,
         samples: 0,
-        minFilter: s,
-        magFilter: s,
+        minFilter: LinearFilter,
+        magFilter: LinearFilter,
         generateMipmaps: !1
       }), this.target) : (this.target && this.resize(this.width, this.height), null);
     }

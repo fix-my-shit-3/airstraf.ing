@@ -1,11 +1,11 @@
-import { Cr as t, Ct as n, Fn as r, Nn as e, O as o, Sr as a, Tt as s, Wn as i, kn as c } from "./three-Bi9Yyrpt.js";
+import { Cr as TextureLoader, Ct as LinearFilter, Fn as RGBA_S3TC_DXT5_Format, Nn as RGBA_S3TC_DXT1_Format, O as CompressedTexture, Sr as Texture, Tt as LinearMipmapLinearFilter, Wn as RGB_S3TC_DXT1_Format, kn as RGBA_BPTC_Format } from "./three-Bi9Yyrpt.js";
 import { a as u, n as f } from "./c-C1mpvyXQ.js";
 var w = new WeakMap(),
   l = new WeakMap(),
   h = null;
 async function m(n) {
-  if ("undefined" == typeof document || "function" != typeof URL.createObjectURL) return (h ??= new t()).loadAsync(n);
-  const r = new a(await async function (t) {
+  if ("undefined" == typeof document || "function" != typeof URL.createObjectURL) return (h ??= new TextureLoader()).loadAsync(n);
+  const r = new Texture(await async function (t) {
     const response = await fetch(t);
     if (!response.ok) throw new Error(`texture ${t}: ${response.status}`);
     const r = await response.blob(),
@@ -94,10 +94,10 @@ async function N(t) {
   return new Uint8Array(await new Response(n).arrayBuffer());
 }
 var A = {
-  [$]: i,
-  [y]: e,
-  [M]: r,
-  [v]: c
+  [$]: RGB_S3TC_DXT1_Format,
+  [y]: RGBA_S3TC_DXT1_Format,
+  [M]: RGBA_S3TC_DXT5_Format,
+  [v]: RGBA_BPTC_Format
 };
 async function D(t, r = !1) {
   const response = await fetch(t);
@@ -191,9 +191,9 @@ async function D(t, r = !1) {
       height: item.height
     })), r),
     w = f,
-    l = new o(w, f[0].width, f[0].height, A[i.vkFormat]);
+    l = new CompressedTexture(w, f[0].width, f[0].height, A[i.vkFormat]);
   if (!i.orientation.startsWith("ru")) throw new Error(`texture ${t}: rows top-down`);
-  return l.flipY = !1, l.generateMipmaps = !1, l.minFilter = w.length > 1 ? s : n, l.magFilter = n, l.name = t, l.needsUpdate = !0, l;
+  return l.flipY = !1, l.generateMipmaps = !1, l.minFilter = w.length > 1 ? LinearMipmapLinearFilter : LinearFilter, l.magFilter = LinearFilter, l.name = t, l.needsUpdate = !0, l;
 }
 async function F(t, n) {
   const r = t.replace(/\/+$/, "");
@@ -224,4 +224,4 @@ function R(t) {
 }
 export { R as a, K as c, X as d, m as f, k as i, L as l, d as m, U as n, F as o, p, j as r, S as s, G as t, g as u };
 
-;(()=>{try{const proof={"file":"airstraf.ing/assets/c-D6JpfG2D.js","readableSha256":"ff4e443376362f39f3a37461a1553dc435304eedf2a0bcb8708248ac7d985e81"};const key="__AIRSTRAF_REPLACEMENTS__";const list=Array.isArray(globalThis[key])?globalThis[key]:(globalThis[key]=[]);if(!list.some(x=>x.file===proof.file))list.push({...proof,executedAt:new Date().toISOString()});}catch{}})();
+;(()=>{try{const proof={"file":"airstraf.ing/assets/c-D6JpfG2D.js","readableSha256":"1f39e2977a48d8295f565a03439a36e670f0db531977096ad7ac3c6d1f03444b"};const key="__AIRSTRAF_REPLACEMENTS__";const list=Array.isArray(globalThis[key])?globalThis[key]:(globalThis[key]=[]);if(!list.some(x=>x.file===proof.file))list.push({...proof,executedAt:new Date().toISOString()});}catch{}})();

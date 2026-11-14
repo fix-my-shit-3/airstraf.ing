@@ -26,8 +26,8 @@
       "url": "https://airstraf.ing/assets/c-B0EPN0fS.js",
       "bytes": 38400,
       "sha256": "a7d9a205d3a8c2eeafe20455b6e224c1de0293bb8cdaf702a1c2d55443109f9d",
-      "replacementPath": "files/43c1b0b622ae985b5642413bb926158b88dbd7c6b2527b8624ae6e0ed476bc84.js",
-      "replacementSha256": "43c1b0b622ae985b5642413bb926158b88dbd7c6b2527b8624ae6e0ed476bc84"
+      "replacementPath": "files/e250ab10878a47af559f8d73d62074c996337b90ae3fec5bd9ec80f79f605f3d.js",
+      "replacementSha256": "e250ab10878a47af559f8d73d62074c996337b90ae3fec5bd9ec80f79f605f3d"
     },
     {
       "url": "https://airstraf.ing/assets/c-BD7xfdQF.js",
@@ -201,8 +201,8 @@
       "url": "https://airstraf.ing/assets/c-CHK4kGoZ.js",
       "bytes": 2304,
       "sha256": "8ea801ba496feb12d6afe64b4a08d9911c9f953e9c1a7de8295fcee4199f9f17",
-      "replacementPath": "files/2cfecc6549184d7365cdd5c36163e941e573763b4dbe95d96aa8bb98cd39d02e.js",
-      "replacementSha256": "2cfecc6549184d7365cdd5c36163e941e573763b4dbe95d96aa8bb98cd39d02e"
+      "replacementPath": "files/b3ed670f493ef2872416357e3cc52fa614b518734d5cf3055257d0e2537dda5a.js",
+      "replacementSha256": "b3ed670f493ef2872416357e3cc52fa614b518734d5cf3055257d0e2537dda5a"
     },
     {
       "url": "https://airstraf.ing/assets/c-CISf5kK1.js",
@@ -222,8 +222,8 @@
       "url": "https://airstraf.ing/assets/c-CmJ6BJHY.js",
       "bytes": 330291,
       "sha256": "4bdaecfbc8117b8db12d1a1b45b2c48dd03c98e2740c6759d3052d80d7a9ae64",
-      "replacementPath": "files/f73ce92e00dca14927b30077eb2f8363037411f6588abaefe73a990e9420b7ce.js",
-      "replacementSha256": "f73ce92e00dca14927b30077eb2f8363037411f6588abaefe73a990e9420b7ce"
+      "replacementPath": "files/f06573777033424dce95e67707147669f7c9ae7ddeda9aa8f92051c89dbc8edc.js",
+      "replacementSha256": "f06573777033424dce95e67707147669f7c9ae7ddeda9aa8f92051c89dbc8edc"
     },
     {
       "url": "https://airstraf.ing/assets/c-CN8Wxji6.js",
@@ -299,8 +299,8 @@
       "url": "https://airstraf.ing/assets/c-D6JpfG2D.js",
       "bytes": 5107,
       "sha256": "4eef310ada843843394257a35a396f02134d00c4371ba89eac8a09d344dea29d",
-      "replacementPath": "files/c93577f720ddf26e1de7e895ffed7a5e7f796cb5fa0b00269d65004d153fd3c0.js",
-      "replacementSha256": "c93577f720ddf26e1de7e895ffed7a5e7f796cb5fa0b00269d65004d153fd3c0"
+      "replacementPath": "files/d7b99962f2b035355447bc3fb47833530090d10b4f8588adcffb842edaada1bb.js",
+      "replacementSha256": "d7b99962f2b035355447bc3fb47833530090d10b4f8588adcffb842edaada1bb"
     },
     {
       "url": "https://airstraf.ing/assets/c-D7DrHuA8.js",
@@ -348,8 +348,8 @@
       "url": "https://airstraf.ing/assets/c-DHGnaUyg.js",
       "bytes": 67982,
       "sha256": "8a73dd1538d9343dbab0bb36a3223c9a010eb03357098085dc78ebbcebd65b68",
-      "replacementPath": "files/a00d3ee7b7bfe6e27f2b5c960de126c8b94d9c1f4768ac8e021cb10dbfcc6e32.js",
-      "replacementSha256": "a00d3ee7b7bfe6e27f2b5c960de126c8b94d9c1f4768ac8e021cb10dbfcc6e32"
+      "replacementPath": "files/bc27794c2832f46195af4703da429a5f84e9dd7b8be26ae459d13e37316f3477.js",
+      "replacementSha256": "bc27794c2832f46195af4703da429a5f84e9dd7b8be26ae459d13e37316f3477"
     },
     {
       "url": "https://airstraf.ing/assets/c-DkPZj7-z.js",
@@ -362,8 +362,8 @@
       "url": "https://airstraf.ing/assets/c-DlIhmCer.js",
       "bytes": 11779,
       "sha256": "1f312a6a6c29cd79f714d543018feb830dff3930f2cf0d327761ebdc46116cd6",
-      "replacementPath": "files/83cb3dc488e2a84262e46263b2737e8b25e5e4aea4309e92c155523632fbacca.js",
-      "replacementSha256": "83cb3dc488e2a84262e46263b2737e8b25e5e4aea4309e92c155523632fbacca"
+      "replacementPath": "files/c87bf2522b7ca62b72facd759730219cbd5f320281e975c81ba21f61e7e37fef.js",
+      "replacementSha256": "c87bf2522b7ca62b72facd759730219cbd5f320281e975c81ba21f61e7e37fef"
     },
     {
       "url": "https://airstraf.ing/assets/c-DLYyjYgG.js",
@@ -376,8 +376,8 @@
       "url": "https://airstraf.ing/assets/c-DRieNrHJ.js",
       "bytes": 741511,
       "sha256": "8cb0562adc4a2d8f644ce7c14c960780619cb48c6525bf4151e836d64427fb95",
-      "replacementPath": "files/75d4dfc894aac639eeb5c518d08e0ee9a4a85922611ab3afd8af04b1b46270a0.js",
-      "replacementSha256": "75d4dfc894aac639eeb5c518d08e0ee9a4a85922611ab3afd8af04b1b46270a0"
+      "replacementPath": "files/da6502b773798db6a0a6b86fcec3238d1131fab8db00043e0e2739640f01fb16.js",
+      "replacementSha256": "da6502b773798db6a0a6b86fcec3238d1131fab8db00043e0e2739640f01fb16"
     },
     {
       "url": "https://airstraf.ing/assets/c-DSIEVuRr.js",
@@ -453,8 +453,8 @@
       "url": "https://airstraf.ing/assets/c-PsaaRsFW.js",
       "bytes": 28189,
       "sha256": "301ffadbc209c1f257b1b346abdaf099fd534125b66b54819906737961652cd7",
-      "replacementPath": "files/373a529baa07c32d988c51715c1c60809d4a25eff7f9813a694b8cb759c569d4.js",
-      "replacementSha256": "373a529baa07c32d988c51715c1c60809d4a25eff7f9813a694b8cb759c569d4"
+      "replacementPath": "files/052b962d5cfe48f66272035749a60f82dd9922926996c0a3f061847380fdb04a.js",
+      "replacementSha256": "052b962d5cfe48f66272035749a60f82dd9922926996c0a3f061847380fdb04a"
     },
     {
       "url": "https://airstraf.ing/assets/c-qDanEe2E.js",
@@ -502,8 +502,8 @@
       "url": "https://airstraf.ing/assets/main-0GITWSWA.js",
       "bytes": 1075217,
       "sha256": "2c684244692d6dfa7261f6ef63110c71e195cc9ccdebbf5c529a3135023984a8",
-      "replacementPath": "files/9074921579e4224a77ce6f0b531ff9c53aee2381aae4568f6d0f01b9d77c1ea5.js",
-      "replacementSha256": "9074921579e4224a77ce6f0b531ff9c53aee2381aae4568f6d0f01b9d77c1ea5"
+      "replacementPath": "files/bf321327880b1d132b184f31b94b6aebe447fd72a20ee9abe8db77715fd04fcd.js",
+      "replacementSha256": "bf321327880b1d132b184f31b94b6aebe447fd72a20ee9abe8db77715fd04fcd"
     },
     {
       "url": "https://airstraf.ing/assets/network-juVbujc5.js",
@@ -516,8 +516,8 @@
       "url": "https://airstraf.ing/assets/three-Bi9Yyrpt.js",
       "bytes": 924392,
       "sha256": "e7070547ab0326c115f9b0c155de1b0b0c1e0d95eef3fdbc4046e1212dbaceb1",
-      "replacementPath": "files/28fc7adefee108f7dfc3b610de1922cb46137b7c51e33032796a5ca1cc61612f.js",
-      "replacementSha256": "28fc7adefee108f7dfc3b610de1922cb46137b7c51e33032796a5ca1cc61612f"
+      "replacementPath": "files/9e3fc8cd728cb843483e7f32cce4730c25f85a2103a941d5fe6d990987ed4c6f.js",
+      "replacementSha256": "9e3fc8cd728cb843483e7f32cce4730c25f85a2103a941d5fe6d990987ed4c6f"
     },
     {
       "url": "https://airstraf.ing/boot-guard.js",

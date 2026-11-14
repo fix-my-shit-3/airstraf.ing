@@ -1,13 +1,13 @@
 import { t } from "./c-Cw4QBOSY.js";
-import { Dt as s, Rr as i, c as n, sn as e, zr as a } from "./three-Bi9Yyrpt.js";
+import { Dt as LinearSRGBColorSpace, Rr as Vector2, c as WebGLRenderer, sn as Quaternion, zr as Vector3 } from "./three-Bi9Yyrpt.js";
 import "./c-CmJ6BJHY.js";
 import { _ as r, d as o, f as h, g as c, l as u } from "./c-DHGnaUyg.js";
-var l = new e(.3214637041, -.4579333067, .1649940163, .812240839),
+var l = new Quaternion(.3214637041, -.4579333067, .1649940163, .812240839),
   f = null;
 function m() {
   if (f) return f;
   const t = o(),
-    s = new a(0, 0, 1).applyQuaternion(l).negate();
+    s = new Vector3(0, 0, 1).applyQuaternion(l).negate();
   return u.uLightDir.value.set(-s.x, s.y, s.z), u.uLightColor.value.setRGB(1, 1, 1), r(1, [.8915094137, .9430024028, 1], [1, .9945321083, .9198113084], [.7264150977, .2974438667, .2364275604]), u.uFog.value.set(0, 0, 300, .01), u.uPointCount.value = 0, f = o(), c(t), f;
 }
 var p = [],
@@ -23,7 +23,7 @@ function d(t, s) {
   }
 }
 var x = null,
-  M = new i(),
+  M = new Vector2(),
   w = {
     w: 0,
     h: 0,
@@ -32,11 +32,11 @@ var x = null,
 function y() {
   if (!x) {
     const element = document.createElement("canvas");
-    t(element), (x = new n({
+    t(element), (x = new WebGLRenderer({
       canvas: element,
       alpha: !0,
       antialias: !1
-    })).outputColorSpace = s, x.setClearColor(0, 0);
+    })).outputColorSpace = LinearSRGBColorSpace, x.setClearColor(0, 0);
   }
   return x;
 }
@@ -82,4 +82,4 @@ var j = class {
 };
 export { d as i, y as n, m as r, j as t };
 
-;(()=>{try{const proof={"file":"airstraf.ing/assets/c-CHK4kGoZ.js","readableSha256":"31713812bb52a8c51f904097825a59f8b9156e0e61c96ffd16f2e3f38f04dad3"};const key="__AIRSTRAF_REPLACEMENTS__";const list=Array.isArray(globalThis[key])?globalThis[key]:(globalThis[key]=[]);if(!list.some(x=>x.file===proof.file))list.push({...proof,executedAt:new Date().toISOString()});}catch{}})();
+;(()=>{try{const proof={"file":"airstraf.ing/assets/c-CHK4kGoZ.js","readableSha256":"bddaa988f77649df2cf5f9797c826a6d556ef93e89f3cc962a8858a792e6efbd"};const key="__AIRSTRAF_REPLACEMENTS__";const list=Array.isArray(globalThis[key])?globalThis[key]:(globalThis[key]=[]);if(!list.some(x=>x.file===proof.file))list.push({...proof,executedAt:new Date().toISOString()});}catch{}})();

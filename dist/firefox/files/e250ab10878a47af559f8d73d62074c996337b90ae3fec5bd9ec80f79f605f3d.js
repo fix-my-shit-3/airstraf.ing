@@ -1,5 +1,5 @@
 const __vite__mapDeps = (i, m = __vite__mapDeps, d = m.f || (m.f = ["assets/meshopt_decoder-rMrdvjGn.js", "assets/c-BJ87Xak5.js", "assets/c-Do-pPzOP.js", "assets/three-Bi9Yyrpt.js", "assets/c-D6JpfG2D.js", "assets/c-C1mpvyXQ.js", "assets/c-BE9ZXeD7.js"])) => i.map(item => d[item]);
-import { $n as t, Ct as n, Et as s, Ft as e, It as i, Kt as r, Lt as o, T as a, Tt as c, W as h, Yt as f, _ as l, et as u, hr as w, m as d, mr as p, nn as m, qt as y, v, w as M } from "./three-Bi9Yyrpt.js";
+import { $n as RepeatWrapping, Ct as LinearFilter, Et as LinearMipmapNearestFilter, Ft as Matrix4, It as Mesh, Kt as MirroredRepeatWrapping, Lt as MeshBasicMaterial, T as Color, Tt as LinearMipmapLinearFilter, W as Euler, Yt as NearestMipmapNearestFilter, _ as BufferAttribute, et as Group, hr as SkinnedMesh, m as Bone, mr as Skeleton, nn as PlaneGeometry, qt as NearestFilter, v as BufferGeometry, w as ClampToEdgeWrapping } from "./three-Bi9Yyrpt.js";
 import { a as A } from "./c-Caw4SzGP.js";
 import { u as $ } from "./c-e0fQXfDh.js";
 import { i as S, n as g } from "./c-C1mpvyXQ.js";
@@ -630,12 +630,12 @@ function ot(t, n, s, e, i, r, o) {
     g = t[n + 3];
   t[n] = g * p + A * v + $ * y - S * m, t[n + 1] = g * m - A * y + $ * v + S * p, t[n + 2] = g * y + A * m - $ * p + S * v, t[n + 3] = g * v - A * p - $ * m - S * y;
 }
-var at = [t, M, r];
+var at = [RepeatWrapping, ClampToEdgeWrapping, MirroredRepeatWrapping];
 function ct(t, e) {
   const [i, r, o, a] = e ?? [0, 0, 0, 0],
     h = !0 === t.isCompressedTexture,
     l = h ? !!r && t.mipmaps.length > 1 : !!r;
-  return t.generateMipmaps = l && !h, t.magFilter = 0 === i ? y : n, t.minFilter = l ? 0 === i ? f : 1 === i ? s : c : 0 === i ? y : n, e && (t.wrapS = at[o] ?? 1e3, t.wrapT = at[a] ?? 1e3), t.needsUpdate = !0, t;
+  return t.generateMipmaps = l && !h, t.magFilter = 0 === i ? NearestFilter : LinearFilter, t.minFilter = l ? 0 === i ? NearestMipmapNearestFilter : 1 === i ? LinearMipmapNearestFilter : LinearMipmapLinearFilter : 0 === i ? NearestFilter : LinearFilter, e && (t.wrapS = at[o] ?? 1e3, t.wrapT = at[a] ?? 1e3), t.needsUpdate = !0, t;
 }
 var ht = [0, 0, 0, 0],
   ft = [0, 1, 0, 0];
@@ -1063,16 +1063,16 @@ function Gt(t) {
             header: n,
             body: s
           } = G(t, "KMSH"),
-          i = new v();
+          i = new BufferGeometry();
         for (const [e, r] of Object.entries(n.attributes)) {
           const n = Q(t, s + r.offset, r.count, r.type);
-          "index" === e ? i.setIndex(new l(n, 1)) : i.setAttribute(e, new l(n, r.itemSize));
+          "index" === e ? i.setIndex(new BufferAttribute(n, 1)) : i.setAttribute(e, new BufferAttribute(n, r.itemSize));
         }
         for (const [e, r, o] of n.groups) i.addGroup(e, r, o);
         return i.getAttribute("normal") || i.computeVertexNormals(), i.computeBoundingSphere(), {
           geometry: i,
           name: n.name,
-          bindPoses: n.bindPoses.map(item => new e().fromArray(item))
+          bindPoses: n.bindPoses.map(item => new Matrix4().fromArray(item))
         };
       }(result);
     return _("rig:mesh", n), s;
@@ -1464,7 +1464,7 @@ function kn(n, s) {
     if (!i) return En;
     if (e = O(bn(i, t => s.textures.get(t) ?? null)), e.uniforms.uMap.value) {
       const n = e.uniforms.uMap.value;
-      n.wrapS = n.wrapT = t;
+      n.wrapS = n.wrapT = RepeatWrapping;
     }
     Jt.set(n, e);
   }
@@ -1474,7 +1474,7 @@ var En = O({
   color: [1, 0, 1, 1]
 });
 function In(t, n, s, e) {
-  return new o({
+  return new MeshBasicMaterial({
     map: t,
     color: n,
     opacity: s,
@@ -1506,13 +1506,13 @@ function xn(t, n) {
   return s.set(n, e), e;
 }
 var _n = () => {},
-  Dn = new h();
+  Dn = new Euler();
 function Un(t, n) {
   Dn.setFromQuaternion(t.quaternion, t.rotation.order, !1), Dn.x = n, t.rotation.copy(Dn);
 }
 var jn = class {
   rig;
-  object = new u();
+  object = new Group();
   nodes = [];
   meshes = [];
   animators = [];
@@ -1526,7 +1526,7 @@ var jn = class {
     const n = D(),
       s = this.data = t.data;
     this.object.scale.x = -1, this.active = s.nodes.map(node => node.active), s.nodes.forEach((node, index) => {
-      const s = new d();
+      const s = new Bone();
       s.name = node.name, s.position.fromArray(node.t), s.quaternion.fromArray(node.r), s.scale.fromArray(node.s), s.quaternion._onChange(_n), s.visible = node.active, s.userData.rigIndex = index, this.nodes.push(s), this.byPath.set(node.path, index);
     }), s.nodes.forEach((node, index) => (node.parent >= 0 ? this.nodes[node.parent] : this.object).add(this.nodes[index]));
     for (const c of s.renderers) {
@@ -1539,12 +1539,12 @@ var jn = class {
         r = this.nodes[c.node];
       let o;
       if ("skinned" === c.type && n.geometry.getAttribute("skinIndex")) {
-        const t = new w(n.geometry, s.length > 1 ? s : s[0]),
-          i = c.bones.map(bone => bone >= 0 ? this.nodes[bone] : new d()),
+        const t = new SkinnedMesh(n.geometry, s.length > 1 ? s : s[0]),
+          i = c.bones.map(bone => bone >= 0 ? this.nodes[bone] : new Bone()),
           a = n.bindPoses.map(item => item.clone());
-        for (; a.length < i.length;) a.push(new e());
-        t.bind(new p(i, a), new e()), t.frustumCulled = !1, o = t, r.add(t);
-      } else o = new i(n.geometry, s.length > 1 ? s : s[0]), r.add(o);
+        for (; a.length < i.length;) a.push(new Matrix4());
+        t.bind(new Skeleton(i, a), new Matrix4()), t.frustumCulled = !1, o = t, r.add(t);
+      } else o = new Mesh(n.geometry, s.length > 1 ? s : s[0]), r.add(o);
       o.visible = c.enabled, o.name = r.name + ":renderer", this.meshes.push(o);
     }
     _("rig:nodes", n);
@@ -1599,9 +1599,9 @@ var jn = class {
       l = c && e[c] || [.5, .5, .5, .5],
       u = f ? 2 : 1,
       w = f ? l : [1, 1, 1, 1],
-      d = In(r, new a().setRGB(u * w[0] * t.color[0], u * w[1] * t.color[1], u * w[2] * t.color[2]), Math.min(1, u * w[3] * t.color[3]), f),
-      p = new m(o.size[0], o.size[1]).translate(o.center[0], o.center[1], 0).scale(t.flip[0] ? -1 : 1, t.flip[1] ? -1 : 1, 1),
-      y = new i(p, d);
+      d = In(r, new Color().setRGB(u * w[0] * t.color[0], u * w[1] * t.color[1], u * w[2] * t.color[2]), Math.min(1, u * w[3] * t.color[3]), f),
+      p = new PlaneGeometry(o.size[0], o.size[1]).translate(o.center[0], o.center[1], 0).scale(t.flip[0] ? -1 : 1, t.flip[1] ? -1 : 1, 1),
+      y = new Mesh(p, d);
     y.visible = t.enabled, y.frustumCulled = !1, y.name = this.nodes[t.node].name + ":sprite", this.nodes[t.node].add(y), this.sprites.push(y), C(y);
   }
   sprites = [];
@@ -1652,7 +1652,7 @@ var jn = class {
   }
   dispose() {
     this.object.removeFromParent();
-    for (const t of this.meshes) t instanceof w && t.skeleton.dispose();
+    for (const t of this.meshes) t instanceof SkinnedMesh && t.skeleton.dispose();
   }
 };
 async function Rn(t) {
@@ -1664,4 +1664,4 @@ async function Rn(t) {
 }
 export { lt as C, X as E, ct as S, Z as T, xt as _, Rn as a, Et as b, Tn as c, $n as d, Un as f, wn as g, Sn as h, Gt as i, bn as l, un as m, gn as n, yn as o, In as p, Zt as r, Mn as s, jn as t, sn as u, It as v, st as w, dt as x, Mt as y };
 
-;(()=>{try{const proof={"file":"airstraf.ing/assets/c-B0EPN0fS.js","readableSha256":"dfd793d6728054e46f08f5beb4e0efc0890a7bb1d6282d1b7c10496bcebae6f6"};const key="__AIRSTRAF_REPLACEMENTS__";const list=Array.isArray(globalThis[key])?globalThis[key]:(globalThis[key]=[]);if(!list.some(x=>x.file===proof.file))list.push({...proof,executedAt:new Date().toISOString()});}catch{}})();
+;(()=>{try{const proof={"file":"airstraf.ing/assets/c-B0EPN0fS.js","readableSha256":"286880362ee7362d7bd795525d22b1bb7d950c04e9d90125e0b414eced5a087a"};const key="__AIRSTRAF_REPLACEMENTS__";const list=Array.isArray(globalThis[key])?globalThis[key]:(globalThis[key]=[]);if(!list.some(x=>x.file===proof.file))list.push({...proof,executedAt:new Date().toISOString()});}catch{}})();

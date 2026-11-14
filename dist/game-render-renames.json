@@ -1,0 +1,1239 @@
+{
+  "file": "c-DRieNrHJ.js",
+  "renames": [
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "yI",
+      "newName": "GameRenderer",
+      "line": 23578,
+      "evidence": "Reviewed render-controller usage"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "rI",
+      "newName": "createWebGlContextAttributes",
+      "line": 23525,
+      "evidence": "Reviewed render-controller usage"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "hI",
+      "newName": "WebGlUnavailableError",
+      "line": 23540,
+      "evidence": "Reviewed render-controller usage"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "lI",
+      "newName": "retryWebGlInitialization",
+      "line": 23546,
+      "evidence": "Reviewed render-controller usage"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "cI",
+      "newName": "getMaterialTransparencyFlags",
+      "line": 23554,
+      "evidence": "Reviewed render-controller usage"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "uI",
+      "newName": "emptyDebugPlayers",
+      "line": 23569,
+      "evidence": "Reviewed render-controller usage"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "fI",
+      "newName": "renderScratchVector",
+      "line": 23570,
+      "evidence": "Reviewed render-controller usage"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "dI",
+      "newName": "beamPoints",
+      "line": 23571,
+      "evidence": "Reviewed render-controller usage"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "AI",
+      "newName": "beamNormals",
+      "line": 23572,
+      "evidence": "Reviewed render-controller usage"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "pI",
+      "newName": "chargePosition",
+      "line": 23573,
+      "evidence": "Reviewed render-controller usage"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "mI",
+      "newName": "weaponEffectOffset",
+      "line": 23574,
+      "evidence": "Reviewed render-controller usage"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "vI",
+      "newName": "deathPosePitch",
+      "line": 23577,
+      "evidence": "Reviewed render-controller usage"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "e",
+      "newName": "canvas",
+      "line": 23724,
+      "evidence": "Reviewed GameRenderer.constructor argument 0"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "n",
+      "newName": "options",
+      "line": 23724,
+      "evidence": "Reviewed GameRenderer.constructor argument 1"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "renderScale",
+      "line": 23818,
+      "evidence": "Reviewed GameRenderer.$_6lu argument 0"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "resolutionMultiplier",
+      "line": 23821,
+      "evidence": "Reviewed GameRenderer.$_kn1 argument 0"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "width",
+      "line": 23831,
+      "evidence": "Reviewed GameRenderer.$_6wb argument 0"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "e",
+      "newName": "height",
+      "line": 23831,
+      "evidence": "Reviewed GameRenderer.$_6wb argument 1"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "farPlane",
+      "line": 23844,
+      "evidence": "Reviewed GameRenderer.$_p2q argument 0"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "profile",
+      "line": 23850,
+      "evidence": "Reviewed GameRenderer.$_5hd argument 0"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "e",
+      "newName": "forceRefresh",
+      "line": 23850,
+      "evidence": "Reviewed GameRenderer.$_5hd argument 1"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "profileOverrides",
+      "line": 23853,
+      "evidence": "Reviewed GameRenderer.$_7cw argument 0"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "gpuBackend",
+      "line": 23871,
+      "evidence": "Reviewed GameRenderer.$_51n argument 0"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "gpuBackend_2",
+      "line": 23918,
+      "evidence": "Reviewed GameRenderer.$_1ag argument 0"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "reason",
+      "line": 23924,
+      "evidence": "Reviewed GameRenderer.$_1sh argument 0"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "stretch",
+      "line": 23986,
+      "evidence": "Reviewed GameRenderer.$_1uk argument 0"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "camera",
+      "line": 23993,
+      "evidence": "Reviewed GameRenderer.drawStill argument 0"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "e",
+      "newName": "target",
+      "line": 23993,
+      "evidence": "Reviewed GameRenderer.drawStill argument 1"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "target_2",
+      "line": 24004,
+      "evidence": "Reviewed GameRenderer.gradeStill argument 0"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "e",
+      "newName": "outputTarget",
+      "line": 24004,
+      "evidence": "Reviewed GameRenderer.gradeStill argument 1"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "enabled",
+      "line": 24030,
+      "evidence": "Reviewed GameRenderer.$_o23 argument 0"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "worldPoint",
+      "line": 24036,
+      "evidence": "Reviewed GameRenderer.$_513 argument 0"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "mapData",
+      "line": 24072,
+      "evidence": "Reviewed GameRenderer.loadMap argument 0"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "e",
+      "newName": "runtimeMap",
+      "line": 24072,
+      "evidence": "Reviewed GameRenderer.loadMap argument 1"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "playerCapacity",
+      "line": 24414,
+      "evidence": "Reviewed GameRenderer.prepare argument 0"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "e",
+      "newName": "onProgress",
+      "line": 24414,
+      "evidence": "Reviewed GameRenderer.prepare argument 1"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "character",
+      "line": 24480,
+      "evidence": "Reviewed GameRenderer.$_2ck argument 0"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "character_2",
+      "line": 24504,
+      "evidence": "Reviewed GameRenderer.$_39b argument 0"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "e",
+      "newName": "assetKind",
+      "line": 24504,
+      "evidence": "Reviewed GameRenderer.$_39b argument 1"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "n",
+      "newName": "error_2",
+      "line": 24504,
+      "evidence": "Reviewed GameRenderer.$_39b argument 2"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "character_3",
+      "line": 24507,
+      "evidence": "Reviewed GameRenderer.pend argument 0"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "e",
+      "newName": "promise_2",
+      "line": 24507,
+      "evidence": "Reviewed GameRenderer.pend argument 1"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "playerId",
+      "line": 24514,
+      "evidence": "Reviewed GameRenderer.$_52t argument 0"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "playerId_2",
+      "line": 24518,
+      "evidence": "Reviewed GameRenderer.$_1ee argument 0"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "nodeId",
+      "line": 24524,
+      "evidence": "Reviewed GameRenderer.setDynamic argument 0"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "e",
+      "newName": "matrix",
+      "line": 24524,
+      "evidence": "Reviewed GameRenderer.setDynamic argument 1"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "n",
+      "newName": "visible",
+      "line": 24524,
+      "evidence": "Reviewed GameRenderer.setDynamic argument 2"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "weaponId",
+      "line": 24528,
+      "evidence": "Reviewed GameRenderer.setWeapon argument 0"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "fovDegrees",
+      "line": 24541,
+      "evidence": "Reviewed GameRenderer.setFov argument 0"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "hits",
+      "line": 24548,
+      "evidence": "Reviewed GameRenderer.predictedShot argument 0"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "e",
+      "newName": "weaponId_2",
+      "line": 24548,
+      "evidence": "Reviewed GameRenderer.predictedShot argument 1"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "n",
+      "newName": "shotSequence",
+      "line": 24548,
+      "evidence": "Reviewed GameRenderer.predictedShot argument 2"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "origin",
+      "line": 24572,
+      "evidence": "Reviewed GameRenderer.laser argument 0"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "e",
+      "newName": "segments",
+      "line": 24572,
+      "evidence": "Reviewed GameRenderer.laser argument 1"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "n",
+      "newName": "showTracer",
+      "line": 24572,
+      "evidence": "Reviewed GameRenderer.laser argument 2"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "s",
+      "newName": "showImpact",
+      "line": 24572,
+      "evidence": "Reviewed GameRenderer.laser argument 3"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "charge",
+      "line": 24588,
+      "evidence": "Reviewed GameRenderer.$_64e argument 0"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "shot",
+      "line": 24596,
+      "evidence": "Reviewed GameRenderer.arrowEnd argument 0"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "shot_2",
+      "line": 24614,
+      "evidence": "Reviewed GameRenderer.shot argument 0"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "e",
+      "newName": "isLocal",
+      "line": 24614,
+      "evidence": "Reviewed GameRenderer.shot argument 1"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "n",
+      "newName": "wasPredicted",
+      "line": 24614,
+      "evidence": "Reviewed GameRenderer.shot argument 2"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "s",
+      "newName": "showLocalEffects",
+      "line": 24614,
+      "evidence": "Reviewed GameRenderer.shot argument 3"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "enabled_2",
+      "line": 24683,
+      "evidence": "Reviewed GameRenderer.bulletHoles argument 0"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "enabled_3",
+      "line": 24686,
+      "evidence": "Reviewed GameRenderer.$_75y argument 0"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "enabled_4",
+      "line": 24693,
+      "evidence": "Reviewed GameRenderer.$_4y6 argument 0"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "timestamp",
+      "line": 24698,
+      "evidence": "Reviewed GameRenderer.$_5xj argument 0"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "e",
+      "newName": "position",
+      "line": 24698,
+      "evidence": "Reviewed GameRenderer.$_5xj argument 1"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "timestamp_2",
+      "line": 24704,
+      "evidence": "Reviewed GameRenderer.$_45m argument 0"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "playerId_3",
+      "line": 24717,
+      "evidence": "Reviewed GameRenderer.wallKick argument 0"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "explosion",
+      "line": 24723,
+      "evidence": "Reviewed GameRenderer.explosion argument 0"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "timestamp_3",
+      "line": 24726,
+      "evidence": "Reviewed GameRenderer.frame argument 0"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "e",
+      "newName": "localPlayer",
+      "line": 24726,
+      "evidence": "Reviewed GameRenderer.frame argument 1"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "n",
+      "newName": "predictedState",
+      "line": 24726,
+      "evidence": "Reviewed GameRenderer.frame argument 2"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "s",
+      "newName": "players",
+      "line": 24726,
+      "evidence": "Reviewed GameRenderer.frame argument 3"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "i",
+      "newName": "projectiles",
+      "line": 24726,
+      "evidence": "Reviewed GameRenderer.frame argument 4"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "o",
+      "newName": "yaw",
+      "line": 24726,
+      "evidence": "Reviewed GameRenderer.frame argument 5"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "h",
+      "newName": "pitch",
+      "line": 24726,
+      "evidence": "Reviewed GameRenderer.frame argument 6"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "u",
+      "newName": "playing",
+      "line": 24726,
+      "evidence": "Reviewed GameRenderer.frame argument 7"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "f",
+      "newName": "aiming",
+      "line": 24726,
+      "evidence": "Reviewed GameRenderer.frame argument 8"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "d",
+      "newName": "inputState",
+      "line": 24726,
+      "evidence": "Reviewed GameRenderer.frame argument 9"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "A",
+      "newName": "externalView",
+      "line": 24726,
+      "evidence": "Reviewed GameRenderer.frame argument 10"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "p",
+      "newName": "elapsedSeconds",
+      "line": 24729,
+      "evidence": "Reviewed frame render pipeline"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "m",
+      "newName": "deltaSeconds",
+      "line": 24730,
+      "evidence": "Reviewed frame render pipeline"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "w",
+      "newName": "localPlayerAlive",
+      "line": 24732,
+      "evidence": "Reviewed frame render pipeline"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "g",
+      "newName": "externalFirstPersonView",
+      "line": 24733,
+      "evidence": "Reviewed frame render pipeline"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "v",
+      "newName": "fieldOfView",
+      "line": 24744,
+      "evidence": "Reviewed frame render pipeline"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "y",
+      "newName": "projectionElements",
+      "line": 24750,
+      "evidence": "Reviewed frame render pipeline"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "M",
+      "newName": "presentIds",
+      "line": 24759,
+      "evidence": "Reviewed frame render pipeline"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "S",
+      "newName": "debugPlayers",
+      "line": 24761,
+      "evidence": "Reviewed frame render pipeline"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "b",
+      "newName": "debugState",
+      "line": 24762,
+      "evidence": "Reviewed frame render pipeline"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "_",
+      "newName": "projectileList",
+      "line": 24894,
+      "evidence": "Reviewed frame render pipeline"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "k",
+      "newName": "flashActive",
+      "line": 24917,
+      "evidence": "Reviewed frame render pipeline"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "x",
+      "newName": "flashExposure",
+      "line": 24919,
+      "evidence": "Reviewed frame render pipeline"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "F",
+      "newName": "gradingTarget",
+      "line": 24920,
+      "evidence": "Reviewed frame render pipeline"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "C",
+      "newName": "postRequested",
+      "line": 24921,
+      "evidence": "Reviewed frame render pipeline"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "I",
+      "newName": "paniniTarget",
+      "line": 24922,
+      "evidence": "Reviewed frame render pipeline"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "P",
+      "newName": "standaloneFlash",
+      "line": 24923,
+      "evidence": "Reviewed frame render pipeline"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "B",
+      "newName": "postFrameState",
+      "line": 24924,
+      "evidence": "Reviewed frame render pipeline"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "L",
+      "newName": "compositeTarget",
+      "line": 24926,
+      "evidence": "Reviewed frame render pipeline"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "E",
+      "newName": "worldRenderTarget",
+      "line": 24928,
+      "evidence": "Reviewed frame render pipeline"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "R",
+      "newName": "paniniProjection",
+      "line": 24930,
+      "evidence": "Reviewed frame render pipeline"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "D",
+      "newName": "postOutput",
+      "line": 24931,
+      "evidence": "Reviewed frame render pipeline"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "i",
+      "newName": "playerState",
+      "line": 24765,
+      "evidence": "Reviewed per-player render loop"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "o",
+      "newName": "hideLocalPlayer",
+      "line": 24766,
+      "evidence": "Reviewed per-player render loop"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "h",
+      "newName": "character_4",
+      "line": 24769,
+      "evidence": "Reviewed per-player render loop"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "l",
+      "newName": "alive",
+      "line": 24805,
+      "evidence": "Reviewed per-player render loop"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "c",
+      "newName": "deathPose",
+      "line": 24806,
+      "evidence": "Reviewed per-player render loop"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "u",
+      "newName": "isLocalPlayer",
+      "line": 24812,
+      "evidence": "Reviewed per-player render loop"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "f",
+      "newName": "interpolatedPose",
+      "line": 24813,
+      "evidence": "Reviewed per-player render loop"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "p",
+      "newName": "renderPose",
+      "line": 24814,
+      "evidence": "Reviewed per-player render loop"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "w",
+      "newName": "modelScale",
+      "line": 24816,
+      "evidence": "Reviewed per-player render loop"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "g",
+      "newName": "holderVisible",
+      "line": 24818,
+      "evidence": "Reviewed per-player render loop"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "v",
+      "newName": "withinLodRange",
+      "line": 24819,
+      "evidence": "Reviewed per-player render loop"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "y",
+      "newName": "movementState",
+      "line": 24821,
+      "evidence": "Reviewed per-player render loop"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "b",
+      "newName": "characterYaw",
+      "line": 24845,
+      "evidence": "Reviewed per-player render loop"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "_",
+      "newName": "characterPitch",
+      "line": 24846,
+      "evidence": "Reviewed per-player render loop"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "pM",
+      "newName": "FrameFreezeCapture",
+      "line": 16043,
+      "evidence": "GameRenderer constructor assignment .freeze"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "pA",
+      "newName": "WebGlContextRecovery",
+      "line": 6005,
+      "evidence": "GameRenderer constructor assignment .contextLoss"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "pv",
+      "newName": "ColorGradingPass",
+      "line": 13361,
+      "evidence": "GameRenderer constructor assignment .grading"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "fy",
+      "newName": "PostProcessingPipeline",
+      "line": 14362,
+      "evidence": "GameRenderer constructor assignment .post"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "Qo",
+      "newName": "PaniniProjectionPass",
+      "line": 28,
+      "evidence": "GameRenderer constructor assignment .panini"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "Xi",
+      "newName": "ShaderProgramCache",
+      "line": 25,
+      "evidence": "GameRenderer constructor assignment .programs"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "MS",
+      "newName": "ShaderPrimer",
+      "line": 17393,
+      "evidence": "GameRenderer constructor assignment .primer"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "tw",
+      "newName": "SoftTransparencyRenderer",
+      "line": 10265,
+      "evidence": "GameRenderer constructor assignment .soft"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "AS",
+      "newName": "ShaderPrelinker",
+      "line": 17139,
+      "evidence": "GameRenderer constructor assignment .prelink"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "_S",
+      "newName": "CharacterModelPool",
+      "line": 17545,
+      "evidence": "GameRenderer constructor assignment .pool"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "mk",
+      "newName": "RagdollRenderer",
+      "line": 19694,
+      "evidence": "GameRenderer constructor assignment .ragdolls"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "f_",
+      "newName": "KillEffectRenderer",
+      "line": 18635,
+      "evidence": "GameRenderer constructor assignment .killFx"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "Lx",
+      "newName": "CharacterModelReserve",
+      "line": 21229,
+      "evidence": "GameRenderer constructor assignment .reserve"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "Xx",
+      "newName": "CourseGhostRenderer",
+      "line": 21446,
+      "evidence": "GameRenderer constructor assignment .courseGhost"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "rF",
+      "newName": "SpectatorCameraRenderer",
+      "line": 21578,
+      "evidence": "GameRenderer constructor assignment .spectatorCams"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "e",
+      "newName": "statusMessage",
+      "line": 23733,
+      "evidence": "Direct property value .statusMessage"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "o",
+      "newName": "motionTwin",
+      "line": 23805,
+      "evidence": "Direct property value .motionTwin"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "state",
+      "line": 23863,
+      "evidence": "Direct property value .state"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "e",
+      "newName": "state_2",
+      "line": 23864,
+      "evidence": "Direct property value .state"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "s",
+      "newName": "style",
+      "line": 23868,
+      "evidence": "Direct property value .style"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "e",
+      "newName": "state_3",
+      "line": 23873,
+      "evidence": "Direct property value .state"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "n",
+      "newName": "state_4",
+      "line": 23874,
+      "evidence": "Direct property value .state"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "i",
+      "newName": "style_2",
+      "line": 23878,
+      "evidence": "Direct property value .style"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "casters",
+      "line": 23963,
+      "evidence": "Direct property value .casters"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "e",
+      "newName": "stretch_2",
+      "line": 23987,
+      "evidence": "Direct property value .stretch"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "n",
+      "newName": "renderer",
+      "line": 23994,
+      "evidence": "Direct property value .renderer"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "i",
+      "newName": "autoClear",
+      "line": 23996,
+      "evidence": "Direct property value .autoClear"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "n",
+      "newName": "value",
+      "line": 24006,
+      "evidence": "Direct property value .value"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "s",
+      "newName": "localId",
+      "line": 24058,
+      "evidence": "Direct property value .localId"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "F",
+      "newName": "meshes",
+      "line": 24318,
+      "evidence": "Direct property value .meshes"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "e",
+      "newName": "material",
+      "line": 24091,
+      "evidence": "Direct property value .material"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "uniforms",
+      "line": 24096,
+      "evidence": "Direct property value .uniforms"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "e",
+      "newName": "allowOverride",
+      "line": 24394,
+      "evidence": "Direct property value .allowOverride"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "renderer_2",
+      "line": 24400,
+      "evidence": "Direct property value .renderer"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "e",
+      "newName": "position_2",
+      "line": 24481,
+      "evidence": "Direct property value .position"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "n",
+      "newName": "holder",
+      "line": 24483,
+      "evidence": "Direct property value .holder"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "s",
+      "newName": "from",
+      "line": 24649,
+      "evidence": "Direct property value .from"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "h",
+      "newName": "from_2",
+      "line": 24665,
+      "evidence": "Direct property value .from"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "firstPersonMotionState",
+      "line": 24736,
+      "evidence": "Direct property value .$_6ht"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "firstPersonMotionState_2",
+      "line": 24740,
+      "evidence": "Direct property value .$_6ht"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "mode",
+      "line": 24755,
+      "evidence": "Direct property value .mode"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "e",
+      "newName": "look",
+      "line": 24848,
+      "evidence": "Direct property value .look"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "s",
+      "newName": "weaponSkin",
+      "line": 24863,
+      "evidence": "Direct property value .weaponSkin"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "l",
+      "newName": "characterAnimationState",
+      "line": 24887,
+      "evidence": "Direct property value .$_3fd"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "model",
+      "line": 24866,
+      "evidence": "Direct property value .model"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "e",
+      "newName": "weapon",
+      "line": 24867,
+      "evidence": "Direct property value .weapon"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "t",
+      "newName": "prototype",
+      "line": 24903,
+      "evidence": "Direct property value .prototype"
+    },
+    {
+      "file": "c-DRieNrHJ.js",
+      "oldName": "e",
+      "newName": "update",
+      "line": 24904,
+      "evidence": "Direct property value .update"
+    }
+  ],
+  "propertyDescriptions": {
+    "$_6lu": "setRenderScale",
+    "$_kn1": "setResolutionMultiplier",
+    "$_731": "effectivePixelRatio",
+    "$_3ni": "cappedRenderScale",
+    "$_6wb": "computeResolutionLimit",
+    "$_p2q": "setCameraFarPlane",
+    "$_5hd": "setColorProfile",
+    "$_7cw": "applyPostProfile",
+    "$_51n": "resizeWebGpu",
+    "$_7il": "getModelPoolCounts",
+    "$_299": "backendName",
+    "$_72l": "getWebGpuStats",
+    "$_6ps": "openWebGpu",
+    "$_1ag": "attachWebGpu",
+    "$_1sh": "detachWebGpu",
+    "$_3jg": "getBackendBindings",
+    "$_6x89": "collectShadowCasters",
+    "$_4uq": "updateWorldResolution",
+    "$_11o": "computeOverscanScale",
+    "$_48ut": "resizeWorldTargets",
+    "$_1uk": "setCameraStretch",
+    "$_qcp": "updateResamplingUniforms",
+    "$_o23": "setStretchPixels",
+    "$_513": "projectWorldPointIntoViewmodelSpace",
+    "$_1dk": "preloadActorRigs",
+    "$_1vq": "restoreGpuResources",
+    "$_37z": "supportsParallelShaderCompile",
+    "$_5tm": "preloadRareModels",
+    "$_540": "beginSettling",
+    "$_7kt": "activePrimer",
+    "$_3u9": "countPendingCharacters",
+    "$_2ck": "createCharacterLoadPriority",
+    "$_6ne": "collectVisibleCharacterMeshes",
+    "$_39b": "recordCharacterLoadFailure",
+    "$_52t": "getVisibleCharacterPosition",
+    "$_1ee": "getVisibleCharacterMount",
+    "$_32e": "preloadCurrentWeaponProjectile",
+    "$_vpe": "activeFirstPersonView",
+    "$_64e": "updateChargeEffect",
+    "$_4y6": "setForcedSpeedLines",
+    "$_5xj": "triggerNuke",
+    "$_45m": "armNuke",
+    "$_z5l": "clearTransientEffects",
+    "$_134": "spawnEffect",
+    "$_6ht": "firstPersonMotionState",
+    "$_3fd": "characterAnimationState",
+    "$_66a": "firstPersonRoot",
+    "$_597": "postFrameState",
+    "$_2ob7": "paniniProjectionScratch",
+    "$_5uk": "worldResolutionScale",
+    "$_72r": "configuredFov",
+    "$_385": "activeWorldTarget",
+    "$_6aj": "requestedRenderScale",
+    "$_4tx": "maximumRenderScale",
+    "$_7m9": "colorProfile",
+    "$_70g": "profileDirty",
+    "$_6jqb": "orbitCenter",
+    "$_3ry": "modelsReady",
+    "$_2ba": "debugPlayerState",
+    "$_3kw": "projectileScratch",
+    "$_19i": "projectileCount",
+    "$_d12": "removeAbsentCharacter",
+    "$_310": "collectProjectile",
+    "$_7nj": "webGlGpuTimer",
+    "$_b6o": "webGpuTimer",
+    "$_7n7": "activeGpuTimer",
+    "$_147": "resolutionMultiplier",
+    "$_18j": "mapPostProfile",
+    "$_4aa": "renderLocalCharacter",
+    "$_1s7": "characterLodController",
+    "$_73c": "firstPersonController",
+    "$_1rv": "firstPersonParticles",
+    "$_319": "barrelEffects",
+    "$_3y9": "nukeLightEffect",
+    "$_5cdw": "cameraShake",
+    "$_3zm": "beamEffects",
+    "$_59t": "interpolatedPoseProvider",
+    "$_7mi": "movementPoseProvider",
+    "$_1ka": "aliveProvider",
+    "$_2qq": "debugPoseProvider",
+    "$_2he": "emoteProvider",
+    "$_403": "deathPoseProvider",
+    "$_47k": "extraShadowCasters",
+    "$_fpe": "contextStatusCallback"
+  }
+}

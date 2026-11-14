@@ -1,4 +1,4 @@
-import { $ as n, $n as e, B as t, Br as o, Ct as r, E as a, Ft as i, H as s, It as l, P as c, Pr as u, T as f, Y as h, _ as v, h as d, jt as m, kr as p, l as x, lr as k, pn as w, qt as g, sn as b, ur as y, v as S, zr as M } from "./three-Bi9Yyrpt.js";
+import { $ as GLSL3, $n as RepeatWrapping, B as DepthTexture, Br as Vector4, Ct as LinearFilter, E as ColorManagement, Ft as Matrix4, H as s, It as Mesh, P as DataTexture, Pr as UnsignedIntType, T as Color, Y as FloatType, _ as BufferAttribute, h as Box3, jt as Material, kr as UniformsGroup, l as x, lr as Scene, pn as RGBAFormat, qt as NearestFilter, sn as Quaternion, ur as ShaderMaterial, v as BufferGeometry, zr as Vector3 } from "./three-Bi9Yyrpt.js";
 import { f as $ } from "./c-Caw4SzGP.js";
 import { c as C } from "./c-C_iq9rgQ.js";
 import { h as T, m as _, x as P } from "./c-j2W5q53j.js";
@@ -15,8 +15,8 @@ function L(n, e) {
   const t = n.getAttribute("position"),
     o = n.getAttribute("skinIndex"),
     r = n.getAttribute("skinWeight"),
-    a = new M(),
-    i = new M();
+    a = new Vector3(),
+    i = new Vector3();
   return (n, s) => {
     a.fromBufferAttribute(t, n), s.set(0, 0, 0);
     let l = 0;
@@ -33,20 +33,20 @@ function W(n, e, t) {
     r = n.getAttribute("position"),
     a = o ? o.count : r.count,
     i = n => o ? o.getX(n) : n,
-    s = new S();
+    s = new BufferGeometry();
   for (const k of ["position", "normal", "skinIndex", "skinWeight"]) {
     const e = n.getAttribute(k);
     if (!e) continue;
     const t = new e.array.constructor(a * e.itemSize);
     for (let n = 0; n < a; n++) for (let o = 0; o < e.itemSize; o++) t[n * e.itemSize + o] = e.getComponent(i(n), o);
-    s.setAttribute(k, new v(t, e.itemSize, e.normalized));
+    s.setAttribute(k, new BufferAttribute(t, e.itemSize, e.normalized));
   }
   const float32Values = new Float32Array(2 * a),
     _float32Values = new Float32Array(3 * a),
     [u, f, h] = t.axes,
-    d = [new M(), new M(), new M()],
-    m = new M(),
-    p = new M();
+    d = [new Vector3(), new Vector3(), new Vector3()],
+    m = new Vector3(),
+    p = new Vector3();
   for (let v = 0; v + 2 < a; v += 3) {
     for (let t = 0; t < 3; t++) e(i(v + t), d[t]);
     const n = m.subVectors(d[1], d[0]).cross(p.subVectors(d[2], d[0])),
@@ -60,7 +60,7 @@ function W(n, e, t) {
       _float32Values[n] = (d[e].getComponent(f) - t.min[f]) * t.scale, _float32Values[n + 1] = (d[e].getComponent(u) - t.min[u]) * t.scale, _float32Values[n + 2] = (d[e].getComponent(h) - t.min[h]) * t.scale;
     }
   }
-  s.setAttribute("uv", new v(float32Values, 2)), s.setAttribute(z, new v(_float32Values, 3)), s.setIndex(new v(a < 65536 ? new Uint16Array(a) : new Uint32Array(a), 1));
+  s.setAttribute("uv", new BufferAttribute(float32Values, 2)), s.setAttribute(z, new BufferAttribute(_float32Values, 3)), s.setIndex(new BufferAttribute(a < 65536 ? new Uint16Array(a) : new Uint32Array(a), 1));
   const x = s.index.array;
   for (let v = 0; v < a; v++) x[v] = v;
   for (const v of n.groups) s.addGroup(v.start, v.count, v.materialIndex);
@@ -71,21 +71,21 @@ function H(n, e, t) {
     r = n.getAttribute("position"),
     a = o ? o.count : r.count,
     i = n => o ? o.getX(n) : n,
-    s = new S();
+    s = new BufferGeometry();
   for (const [S, M] of Object.entries(n.attributes)) {
     if ("kourBoxPos" === S || "kourWire" === S) continue;
     const n = new M.array.constructor(a * M.itemSize);
     for (let e = 0; e < a; e++) for (let t = 0; t < M.itemSize; t++) n[e * M.itemSize + t] = M.getComponent(i(e), t);
-    s.setAttribute(S, new v(n, M.itemSize, M.normalized));
+    s.setAttribute(S, new BufferAttribute(n, M.itemSize, M.normalized));
   }
   const flooredValue = Math.floor(a / 3),
     float32Values = new Float32Array(3 * a),
     [u, f, h] = t.axes,
     _float32Values2 = new Float32Array(3 * a),
     _float32Values3 = new Float32Array(3 * flooredValue),
-    p = new M(),
-    x = new M(),
-    k = new M();
+    p = new Vector3(),
+    x = new Vector3(),
+    k = new Vector3();
   for (let v = 0; v < 3 * flooredValue; v++) e(i(v), p), _float32Values2[3 * v] = p.x, _float32Values2[3 * v + 1] = p.y, _float32Values2[3 * v + 2] = p.z, float32Values[3 * v] = (p.getComponent(f) - t.min[f]) * t.scale, float32Values[3 * v + 1] = (p.getComponent(u) - t.min[u]) * t.scale, float32Values[3 * v + 2] = (p.getComponent(h) - t.min[h]) * t.scale;
   const w = 2e4 * t.scale / 2,
     lookupMap = new Map(),
@@ -116,21 +116,21 @@ function H(n, e, t) {
       for (let r = 0; r < 3; r++) _float32Values4[3 * (n + r) + e] = o || r === e ? 1 : 0;
     }
   }
-  s.setAttribute(z, new v(float32Values, 3)), s.setAttribute("kourWire", new v(_float32Values4, 3)), s.setIndex(new v(a < 65536 ? new Uint16Array(a) : new Uint32Array(a), 1));
+  s.setAttribute(z, new BufferAttribute(float32Values, 3)), s.setAttribute("kourWire", new BufferAttribute(_float32Values4, 3)), s.setIndex(new BufferAttribute(a < 65536 ? new Uint16Array(a) : new Uint32Array(a), 1));
   const T = s.index.array;
   for (let v = 0; v < a; v++) T[v] = v;
   for (const v of n.groups) s.addGroup(v.start, v.count, v.materialIndex);
   return n.boundingBox && (s.boundingBox = n.boundingBox.clone()), n.boundingSphere && (s.boundingSphere = n.boundingSphere.clone()), s;
 }
 function I(n, e = 2) {
-  const t = new d(),
-    o = new M();
+  const t = new Box3(),
+    o = new Vector3();
   for (const r of n) {
     const n = r.geometry.getAttribute("position").count;
     for (let e = 0; e < n; e++) t.expandByPoint(r.at(e, o));
   }
   return function (n, e = 2) {
-    const t = n.getSize(new M()).toArray().map(item => Math.max(item, 1e-9)),
+    const t = n.getSize(new Vector3()).toArray().map(item => Math.max(item, 1e-9)),
       o = [0, 1, 2].sort((leftItem, rightItem) => t[rightItem] - t[leftItem] || leftItem - rightItem);
     return {
       min: n.min.toArray(),
@@ -142,14 +142,14 @@ function I(n, e = 2) {
 var U = new WeakMap();
 function N(n) {
   let t = U.get(n);
-  return t || (t = n.clone(), t.wrapS = t.wrapT = e, t.magFilter = t.minFilter = g, t.generateMipmaps = !1, t.needsUpdate = !0, U.set(n, t)), t;
+  return t || (t = n.clone(), t.wrapS = t.wrapT = RepeatWrapping, t.magFilter = t.minFilter = NearestFilter, t.generateMipmaps = !1, t.needsUpdate = !0, U.set(n, t)), t;
 }
 function O(n, e) {
-  const t = new i(),
-    o = new i(),
-    r = new M(),
-    a = new b(),
-    s = new M();
+  const t = new Matrix4(),
+    o = new Matrix4(),
+    r = new Vector3(),
+    a = new Quaternion(),
+    s = new Vector3();
   for (let i = e; i > 0; i = n.nodes[i].parent) {
     const e = n.nodes[i];
     o.compose(r.fromArray(e.t), a.fromArray(e.r), s.fromArray(e.s)), t.premultiply(o);
@@ -308,7 +308,7 @@ var on = {
   },
   sn = "undefined" != typeof performance ? performance.now() : 0;
 function ln(n, e, t) {
-  const r = new o(0, n, e, t);
+  const r = new Vector4(0, n, e, t);
   return {
     get value() {
       const n = "undefined" != typeof performance ? performance.now() : 0;
@@ -458,8 +458,8 @@ function bn(n) {
   const e = n.getAttribute("position"),
     t = n.getAttribute("uv");
   if (!e || !t) return null;
-  const o = new M(),
-    r = new M();
+  const o = new Vector3(),
+    r = new Vector3();
   let a = 0,
     i = 0;
   for (let s = 0; s < e.count; s++) {
@@ -491,7 +491,7 @@ var yn = {
   },
   Mn = {
     hand: [.3, -.45, -.7],
-    color: new f(.62, .3, 1),
+    color: new Color(.62, .3, 1),
     intensity: 2.6,
     range: 6
   },
@@ -535,11 +535,11 @@ function Wn(n, e, t = !1, r = !1) {
     const t = n;
     t.uniforms?.uColor && t.defines && e !== "GLITTER_BOX" in t.defines && (t.defines.USE_GLITTER = "", t.defines.GLITTER_BOX = "", t.uniforms.uGlitter = un, t.needsUpdate = !0);
   }(a, !0) : vn(a, !0), a.uniforms.uMetallic.value = i.metallic, a.uniforms.uSmoothness.value = i.smoothness, a.userData.skinFx = e, a.needsUpdate = !0, n) : (a.defines.SKIN_FX = "", a.uniforms.uSkinFx = {
-    value: new o(i.kind, i.strength, i.glow, 0)
+    value: new Vector4(i.kind, i.strength, i.glow, 0)
   }, a.uniforms.uSkinTime = An, i.kind >= dn.laser.kind && i.kind <= dn.reality.kind && (a.defines.SKIN_SPACE = "", r && (a.defines.SKIN_FRAME = ""), a.uniforms.uSkinEyes = {
-    value: new o(-1, -1, -1, -1)
+    value: new Vector4(-1, -1, -1, -1)
   }, "chroma" === e && (a.uniforms.uSkinFx.value.w = r ? xn.span : xn.bodySpan)), "reality" === e && a.uniforms.uSkinEyes.value.set(0, 1, 0, 0), "antique" === e && (a.defines.SKIN_WOBBLE = "", a.uniforms.uSkinWobble = {
-    value: new o(0, 0, wn.speed, wn.handleUv)
+    value: new Vector4(0, 0, wn.speed, wn.handleUv)
   }, a.uniforms.uAlphaTest && (a.uniforms.uAlphaTest.value = wn.cut)), void 0 !== i.metallic && (a.uniforms.uMetallic.value = i.metallic), void 0 !== i.smoothness && (a.uniforms.uSmoothness.value = i.smoothness), a.userData.skinFx = e, a.needsUpdate = !0, n);
 }
 function Hn(n, e) {
@@ -625,7 +625,7 @@ var qn = n => Number.isInteger(n) ? n.toFixed(1) : String(n),
     halo: .35,
     strength: 1
   },
-  me = new o(0, de.strength, de.stars, de.nebula),
+  me = new Vector4(0, de.strength, de.stars, de.nebula),
   pe = "undefined" != typeof performance ? performance.now() : 0,
   xe = {
     get value() {
@@ -645,10 +645,10 @@ function ge(n, e, t = !1) {
 }
 var be = {
     uPrevViewProjection: {
-      value: new i()
+      value: new Matrix4()
     },
     uMotion: {
-      value: new o(0, 0, 0, 0)
+      value: new Vector4(0, 0, 0, 0)
     }
   },
   ye = "\nuniform mat4 uPrevViewProjection;\nuniform mat4 uPrevModel;\nuniform float uMotionObject;\nvarying vec4 vClipNow;\nvarying vec4 vClipPrev;\n#ifdef USE_SKINNING\n/** the bone texture's second half: last frame's bones (motion-vectors.ts extend) */\nmat4 kourPrevBone(const in float i, int size) {\n  int j = int(i) * 4;\n  int x = j % size;\n  int y = j / size + size;\n  return mat4(\n    texelFetch(boneTexture, ivec2(x, y), 0),\n    texelFetch(boneTexture, ivec2(x + 1, y), 0),\n    texelFetch(boneTexture, ivec2(x + 2, y), 0),\n    texelFetch(boneTexture, ivec2(x + 3, y), 0));\n}\n#endif\n",
@@ -689,7 +689,7 @@ function Le(n, e, t, o, r) {
         a = r * r * 4,
         float32Values = new Float32Array(2 * a);
       float32Values.set(o.subarray(0, a)), float32Values.copyWithin(a, 0, a);
-      const s = new c(float32Values, r, 2 * r, w, h);
+      const s = new DataTexture(float32Values, r, 2 * r, RGBAFormat, FloatType);
       if (s.needsUpdate = !0, n.boneMatrices = float32Values.subarray(0, a), n.boneTexture = s, t.dispose(), Pe) {
         P(!0);
         try {
@@ -714,8 +714,8 @@ function Le(n, e, t, o, r) {
     let e = Ce.get(n);
     return e || (e = {
       frame: -10,
-      prev: new i(),
-      cur: new i(),
+      prev: new Matrix4(),
+      cur: new Matrix4(),
       moving: !1
     }, Ce.set(n, e)), e;
   }(r);
@@ -751,7 +751,7 @@ function je(n) {
   if (!e) {
     const t = Ke;
     if (!t) throw new Error("envBlockGroup: ENV not registered");
-    e = new p(), e.setName(Ie), e.setUsage(s);
+    e = new UniformsGroup(), e.setName(Ie), e.setUsage(s);
     for (const [n,, o] of He) {
       const r = t[n],
         a = o ? Array.from({
@@ -900,7 +900,7 @@ function dt(n, e) {
 }
 function mt(e, t) {
   if (!0 === this.isRawShaderMaterial) return;
-  const o = this.glslVersion === n,
+  const o = this.glslVersion === GLSL3,
     r = ut(this);
   let a = e.fragmentShader;
   if (r) {
@@ -998,12 +998,12 @@ var yt = (n, e, t) => [n[0] + (e[0] - n[0]) * t, n[1] + (e[1] - n[1]) * t, n[2] 
     uPointPos: {
       value: Array.from({
         length: 8
-      }, () => new o())
+      }, () => new Vector4())
     },
     uPointColor: {
       value: Array.from({
         length: 8
-      }, () => new f(0, 0, 0))
+      }, () => new Color(0, 0, 0))
     },
     uPointCount: {
       value: 0
@@ -1014,10 +1014,10 @@ function Ct(n, e = () => null) {
   const t = [];
   for (const o of n) {
     if (!(2 === o.type && o.enabled && o.range > 0 && o.intensity > 0)) continue;
-    const n = o.position ? new M(-o.position[0], o.position[1], o.position[2]) : o.node ? e(o.node) : null;
+    const n = o.position ? new Vector3(-o.position[0], o.position[1], o.position[2]) : o.node ? e(o.node) : null;
     n && t.push({
       position: n,
-      color: new f(o.color[0], o.color[1], o.color[2]).multiplyScalar(o.intensity),
+      color: new Color(o.color[0], o.color[1], o.color[2]).multiplyScalar(o.intensity),
       range: o.range
     });
   }
@@ -1028,8 +1028,8 @@ var Tt = [1, .86, .66],
     lights = [];
     enabled = !0;
     event = {
-      position: new M(),
-      color: new f(),
+      position: new Vector3(),
+      color: new Color(),
       range: 1,
       start: -1 / 0,
       active: !1
@@ -1046,8 +1046,8 @@ var Tt = [1, .86, .66],
     carried = Array.from({
       length: 2
     }, () => ({
-      position: new M(),
-      color: new f(),
+      position: new Vector3(),
+      color: new Color(),
       range: 1
     }));
     $_2bi = 0;
@@ -1145,59 +1145,59 @@ function Ft(n, e, t, o = 1e-4) {
   }
   return float32Values;
 }
-a.enabled = !1, function () {
+ColorManagement.enabled = !1, function () {
   if (kt) return;
   kt = !0;
-  const n = m.prototype;
+  const n = Material.prototype;
   n.onBeforeCompile = mt, n.customProgramCacheKey = xt;
 }();
 var At = "",
-  Gt = new t(1, 1, u);
-Gt.minFilter = Gt.magFilter = r, Gt.compareFunction = 515, Gt.needsUpdate = !0;
+  Gt = new DepthTexture(1, 1, UnsignedIntType);
+Gt.minFilter = Gt.magFilter = LinearFilter, Gt.compareFunction = 515, Gt.needsUpdate = !0;
 var Et = {
   uLightDir: {
-    value: new M(.3, .8, .5).normalize()
+    value: new Vector3(.3, .8, .5).normalize()
   },
   uLightColor: {
-    value: new f(.5, .485, .45)
+    value: new Color(.5, .485, .45)
   },
   uSH: {
     value: Array.from({
       length: 9
-    }, () => new M())
+    }, () => new Vector3())
   },
   uFogColor: {
-    value: new f(.5, .7, .9)
+    value: new Color(.5, .7, .9)
   },
   uFog: {
-    value: new o(0, 100, 300, .01)
+    value: new Vector4(0, 100, 300, .01)
   },
   uSkyTop: {
-    value: new f(.2, .5, .9)
+    value: new Color(.2, .5, .9)
   },
   uSkyBottom: {
-    value: new f(.7, .9, 1)
+    value: new Color(.7, .9, 1)
   },
   uShadowMap: {
     value: Gt
   },
   uShadowMatrix: {
-    value: new i()
+    value: new Matrix4()
   },
   uShadowMap1: {
     value: Gt
   },
   uShadowMatrix1: {
-    value: new i()
+    value: new Matrix4()
   },
   uShadow1: {
-    value: new o(0, 1, 0, 0)
+    value: new Vector4(0, 1, 0, 0)
   },
   uShadow: {
-    value: new o(0, 1024, 0, 1)
+    value: new Vector4(0, 1024, 0, 1)
   },
   uShadowRange: {
-    value: new o(0, 1, 0, 0)
+    value: new Vector4(0, 1, 0, 0)
   },
   ...Mt
 };
@@ -1257,20 +1257,20 @@ function Bt(n) {
   const e = {};
   n.grid && n.map ? e.USE_GRID = "" : n.patternMask ? e.USE_PATTERN = "" : n.map && (e.USE_MAP = ""), n.unlit && (e.UNLIT = ""), n.vertexColors && (e.USE_VCOLOR = ""), n.vertexColors && n.glow && (e.VCOLOR_GLOW = ""), 2 === n.side && (e.FACE_VIEWER = ""), n.reflection && (e.USE_REFLECTION = "");
   const t = n.mapST ?? [1, 1, 0, 0],
-    r = new y({
+    r = new ShaderMaterial({
       name: n.name ?? "",
       defines: e,
       uniforms: {
         ...Et,
         ...be,
         uPrevModel: {
-          value: new i()
+          value: new Matrix4()
         },
         uMotionObject: {
           value: 0
         },
         uColor: {
-          value: new o(n.color[0], n.color[1], n.color[2], n.color[3] ?? 1)
+          value: new Vector4(n.color[0], n.color[1], n.color[2], n.color[3] ?? 1)
         },
         uMetallic: {
           value: n.metallic ?? 0
@@ -1279,7 +1279,7 @@ function Bt(n) {
           value: n.smoothness ?? .5
         },
         uEmission: {
-          value: new f().fromArray(n.emission ?? [0, 0, 0])
+          value: new Color().fromArray(n.emission ?? [0, 0, 0])
         },
         uAlphaTest: {
           value: n.alphaTest ?? 0
@@ -1291,13 +1291,13 @@ function Bt(n) {
           value: n.patternMask ?? null
         },
         uMainST: {
-          value: new o(t[0], t[1], t[2], t[3])
+          value: new Vector4(t[0], t[1], t[2], t[3])
         },
         uGrid: {
-          value: new o(n.grid?.scale ?? 1, n.grid?.falloff ?? 10, n.grid?.overlay ?? 1, 0)
+          value: new Vector4(n.grid?.scale ?? 1, n.grid?.falloff ?? 10, n.grid?.overlay ?? 1, 0)
         },
         uAddColor: {
-          value: new f().fromArray(n.grid?.add ?? [0, 0, 0])
+          value: new Color().fromArray(n.grid?.add ?? [0, 0, 0])
         },
         uGlow: {
           value: n.glow ?? 0
@@ -1325,7 +1325,7 @@ function Dt(n) {
 function qt(n) {
   const e = n;
   e.uniforms?.uColor && !e.uniforms.uTint && (e.uniforms.uTint = {
-    value: new o(1, 1, 1, 0)
+    value: new Vector4(1, 1, 1, 0)
   }, e.defines.USE_TINT = "", e.needsUpdate = !0);
 }
 function jt(n, e, t, o) {
@@ -1360,15 +1360,15 @@ function eo(n) {
 function to(n, e) {
   return Zt && n ? Zt.decode(n, !1, e) : Promise.resolve();
 }
-var oo = new S();
+var oo = new BufferGeometry();
 function ro(n) {
-  return n ? Zt ? Zt.stage(new l(oo, n)) : (Xt && Xt(new l(oo, n)), Promise.resolve()) : Promise.resolve();
+  return n ? Zt ? Zt.stage(new Mesh(oo, n)) : (Xt && Xt(new Mesh(oo, n)), Promise.resolve()) : Promise.resolve();
 }
-oo.setAttribute("position", new v(new Float32Array(9), 3)), oo.setAttribute("normal", new v(new Float32Array(9), 3)), oo.setAttribute("uv", new v(new Float32Array(6), 2)), oo.setAttribute("color", new v(new Float32Array(12), 4));
+oo.setAttribute("position", new BufferAttribute(new Float32Array(9), 3)), oo.setAttribute("normal", new BufferAttribute(new Float32Array(9), 3)), oo.setAttribute("uv", new BufferAttribute(new Float32Array(6), 2)), oo.setAttribute("color", new BufferAttribute(new Float32Array(12), 4));
 var ao = class {
   renderer;
   pinned = new WeakSet();
-  proxy = new k();
+  proxy = new Scene();
   constructor(n) {
     this.renderer = n, this.proxy.matrixAutoUpdate = !1;
   }

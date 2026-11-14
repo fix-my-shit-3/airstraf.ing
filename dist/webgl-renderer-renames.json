@@ -1,0 +1,1025 @@
+{
+  "reference": "three@0.186.0/src/renderers/WebGLRenderer.js",
+  "renames": [
+    {
+      "oldName": "Ml",
+      "newName": "WebGLCapabilities",
+      "line": 14729,
+      "evidence": "Verified r186 initGLContext/renderer subsystem construction"
+    },
+    {
+      "oldName": "Kf",
+      "newName": "WebGLState",
+      "line": 17096,
+      "evidence": "Verified r186 initGLContext/renderer subsystem construction"
+    },
+    {
+      "oldName": "Xf",
+      "newName": "WebGLTextures",
+      "line": 17493,
+      "evidence": "Verified r186 initGLContext/renderer subsystem construction"
+    },
+    {
+      "oldName": "kl",
+      "newName": "WebGLEnvironments",
+      "line": 15152,
+      "evidence": "Verified r186 initGLContext/renderer subsystem construction"
+    },
+    {
+      "oldName": "Bl",
+      "newName": "WebGLBindingStates",
+      "line": 14448,
+      "evidence": "Verified r186 initGLContext/renderer subsystem construction"
+    },
+    {
+      "oldName": "Df",
+      "newName": "WebGLPrograms",
+      "line": 16229,
+      "evidence": "Verified r186 initGLContext/renderer subsystem construction"
+    },
+    {
+      "oldName": "nd",
+      "newName": "WebGLMaterials",
+      "line": 18499,
+      "evidence": "Verified r186 initGLContext/renderer subsystem construction"
+    },
+    {
+      "oldName": "wl",
+      "newName": "WebGLBackground",
+      "line": 14370,
+      "evidence": "Verified r186 initGLContext/renderer subsystem construction"
+    },
+    {
+      "oldName": "Yf",
+      "newName": "WebGLShadowMap",
+      "line": 16939,
+      "evidence": "Verified r186 initGLContext/renderer subsystem construction"
+    },
+    {
+      "oldName": "id",
+      "newName": "WebGLUniformsGroups",
+      "line": 18540,
+      "evidence": "Verified r186 initGLContext/renderer subsystem construction"
+    },
+    {
+      "oldName": "Xl",
+      "newName": "WebGLOutput",
+      "line": 15442,
+      "evidence": "Verified r186 initGLContext/renderer subsystem construction"
+    },
+    {
+      "oldName": "$f",
+      "newName": "WebXRManager",
+      "line": 18219,
+      "evidence": "Verified r186 initGLContext/renderer subsystem construction"
+    },
+    {
+      "oldName": "v",
+      "newName": "contextAlpha",
+      "line": 18673,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "I",
+      "newName": "rendererOutputBufferType",
+      "line": 18678,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "uniqueItems",
+      "newName": "integerFormats",
+      "line": 18679,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "_uniqueItems",
+      "newName": "unsignedTypes",
+      "line": 18680,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "uint32Values",
+      "newName": "uintClearColor",
+      "line": 18681,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "int32Values",
+      "newName": "intClearColor",
+      "line": 18682,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "x",
+      "newName": "objectPosition",
+      "line": 18683,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "D",
+      "newName": "currentRenderList_2",
+      "line": 18684,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "L",
+      "newName": "currentRenderState",
+      "line": 18685,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "T",
+      "newName": "renderListStack",
+      "line": 18686,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "U",
+      "newName": "renderStateStack",
+      "line": 18687,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "F",
+      "newName": "outputPass",
+      "line": 18688,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "G",
+      "newName": "rendererInstance",
+      "line": 18696,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "O",
+      "newName": "isContextLost",
+      "line": 18697,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "H",
+      "newName": "nodesHandler_2",
+      "line": 18698,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "k",
+      "newName": "scratchFramebuffer",
+      "line": 18699,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "V",
+      "newName": "sourceFramebuffer",
+      "line": 18700,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "W",
+      "newName": "destinationFramebuffer",
+      "line": 18701,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "q",
+      "newName": "currentActiveCubeFace_2",
+      "line": 18703,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "J",
+      "newName": "currentActiveMipmapLevel_2",
+      "line": 18704,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "z",
+      "newName": "currentRenderTarget_4",
+      "line": 18705,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "Y",
+      "newName": "currentMaterialId",
+      "line": 18706,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "K",
+      "newName": "currentCamera",
+      "line": 18707,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "X",
+      "newName": "currentViewport",
+      "line": 18708,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "j",
+      "newName": "currentScissor",
+      "line": 18709,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "Z",
+      "newName": "currentScissorTest",
+      "line": 18710,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "$",
+      "newName": "currentClearColor",
+      "line": 18711,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "tt",
+      "newName": "currentClearAlpha",
+      "line": 18712,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "et",
+      "newName": "canvasWidth",
+      "line": 18713,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "nt",
+      "newName": "canvasHeight",
+      "line": 18714,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "it",
+      "newName": "pixelRatio_3",
+      "line": 18715,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "st",
+      "newName": "opaqueSort",
+      "line": 18716,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "rt",
+      "newName": "transparentSort",
+      "line": 18717,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "ot",
+      "newName": "viewport_4",
+      "line": 18718,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "at",
+      "newName": "scissor_2",
+      "line": 18719,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "ht",
+      "newName": "scissorTest_2",
+      "line": 18720,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "ct",
+      "newName": "frustum_9",
+      "line": 18721,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "At",
+      "newName": "clippingEnabled",
+      "line": 18722,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "lt",
+      "newName": "localClippingEnabled_2",
+      "line": 18723,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "ut",
+      "newName": "projectionScreenMatrix",
+      "line": 18724,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "ft",
+      "newName": "scratchVector3",
+      "line": 18725,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "dt",
+      "newName": "scratchVector4",
+      "line": 18726,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "gt",
+      "newName": "emptyScene",
+      "line": 18727,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "pt",
+      "newName": "renderBackground",
+      "line": 18734,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "mt",
+      "newName": "getTargetPixelRatio",
+      "line": 18735,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "vt",
+      "newName": "extensions_15",
+      "line": 18738,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "Et",
+      "newName": "capabilities_2",
+      "line": 18739,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "It",
+      "newName": "glState",
+      "line": 18740,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "Ct",
+      "newName": "renderInfo",
+      "line": 18741,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "_t",
+      "newName": "properties_3",
+      "line": 18742,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "wt",
+      "newName": "textures_23",
+      "line": 18743,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "Bt",
+      "newName": "environments",
+      "line": 18744,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "St",
+      "newName": "attributes_13",
+      "line": 18745,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "Mt",
+      "newName": "geometries_8",
+      "line": 18746,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "yt",
+      "newName": "objects_8",
+      "line": 18747,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "Qt",
+      "newName": "programCache",
+      "line": 18748,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "Dt",
+      "newName": "materials_8",
+      "line": 18749,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "Lt",
+      "newName": "renderLists",
+      "line": 18750,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "Tt",
+      "newName": "renderStates_2",
+      "line": 18751,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "Nt",
+      "newName": "clipping",
+      "line": 18752,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "Rt",
+      "newName": "shadowMap",
+      "line": 18753,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "bt",
+      "newName": "background_3",
+      "line": 18754,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "Ut",
+      "newName": "morphTargets_2",
+      "line": 18755,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "Pt",
+      "newName": "bufferRenderer",
+      "line": 18756,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "Ft",
+      "newName": "indexedBufferRenderer",
+      "line": 18757,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "Gt",
+      "newName": "glUtils",
+      "line": 18758,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "Ot",
+      "newName": "bindingStates_3",
+      "line": 18759,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "Ht",
+      "newName": "uniformGroups",
+      "line": 18760,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "kt",
+      "newName": "gl",
+      "line": 18761,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "Wt",
+      "newName": "getContext",
+      "line": 18762,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "qt",
+      "newName": "initGLContext",
+      "line": 18784,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "_eventTarget",
+      "newName": "xrManager",
+      "line": 18788,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "zt",
+      "newName": "onContextLost",
+      "line": 18789,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "Yt",
+      "newName": "onContextRestore",
+      "line": 18792,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "Kt",
+      "newName": "onContextCreationError",
+      "line": 18801,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "Xt",
+      "newName": "onMaterialDispose",
+      "line": 18804,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "jt",
+      "newName": "prepareMaterial",
+      "line": 18815,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "Zt",
+      "newName": "animationFrameCallback",
+      "line": 19042,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "$t",
+      "newName": "onXrSessionStart",
+      "line": 19043,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "ee",
+      "newName": "onXrSessionEnd",
+      "line": 19046,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "ne",
+      "newName": "animation_3",
+      "line": 19049,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "ie",
+      "newName": "projectObject",
+      "line": 19050,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "se",
+      "newName": "renderScene",
+      "line": 19074,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "oe",
+      "newName": "renderTransmissionPass",
+      "line": 19082,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "ce",
+      "newName": "renderObjects",
+      "line": 19127,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "Ae",
+      "newName": "renderObject",
+      "line": 19140,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "le",
+      "newName": "getProgram",
+      "line": 19143,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "ue",
+      "newName": "getUniformList",
+      "line": 19164,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "fe",
+      "newName": "updateCommonMaterialProperties",
+      "line": 19171,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "de",
+      "newName": "getReadableState",
+      "line": 19175,
+      "evidence": "Reviewed r186 WebGLRenderer lexical state/helper"
+    },
+    {
+      "oldName": "t",
+      "newName": "event_15",
+      "line": 18804,
+      "evidence": "Reviewed r186 onMaterialDispose parameter 0"
+    },
+    {
+      "oldName": "t",
+      "newName": "material_47",
+      "line": 18815,
+      "evidence": "Reviewed r186 prepareMaterial parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "scene_17",
+      "line": 18815,
+      "evidence": "Reviewed r186 prepareMaterial parameter 1"
+    },
+    {
+      "oldName": "n",
+      "newName": "camera_31",
+      "line": 18815,
+      "evidence": "Reviewed r186 prepareMaterial parameter 2"
+    },
+    {
+      "oldName": "i",
+      "newName": "object_57",
+      "line": 18815,
+      "evidence": "Reviewed r186 prepareMaterial parameter 3"
+    },
+    {
+      "oldName": "t",
+      "newName": "opaqueObjects_2",
+      "line": 19082,
+      "evidence": "Reviewed r186 renderTransmissionPass parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "transmissiveObjects_2",
+      "line": 19082,
+      "evidence": "Reviewed r186 renderTransmissionPass parameter 1"
+    },
+    {
+      "oldName": "n",
+      "newName": "scene_18",
+      "line": 19082,
+      "evidence": "Reviewed r186 renderTransmissionPass parameter 2"
+    },
+    {
+      "oldName": "i",
+      "newName": "camera_32",
+      "line": 19082,
+      "evidence": "Reviewed r186 renderTransmissionPass parameter 3"
+    },
+    {
+      "oldName": "t",
+      "newName": "object_58",
+      "line": 19140,
+      "evidence": "Reviewed r186 renderObject parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "scene_19",
+      "line": 19140,
+      "evidence": "Reviewed r186 renderObject parameter 1"
+    },
+    {
+      "oldName": "n",
+      "newName": "camera_33",
+      "line": 19140,
+      "evidence": "Reviewed r186 renderObject parameter 2"
+    },
+    {
+      "oldName": "i",
+      "newName": "geometry_75",
+      "line": 19140,
+      "evidence": "Reviewed r186 renderObject parameter 3"
+    },
+    {
+      "oldName": "s",
+      "newName": "material_48",
+      "line": 19140,
+      "evidence": "Reviewed r186 renderObject parameter 4"
+    },
+    {
+      "oldName": "r",
+      "newName": "group_7",
+      "line": 19140,
+      "evidence": "Reviewed r186 renderObject parameter 5"
+    },
+    {
+      "oldName": "t",
+      "newName": "material_49",
+      "line": 19143,
+      "evidence": "Reviewed r186 getProgram parameter 0"
+    },
+    {
+      "oldName": "e",
+      "newName": "scene_20",
+      "line": 19143,
+      "evidence": "Reviewed r186 getProgram parameter 1"
+    },
+    {
+      "oldName": "n",
+      "newName": "object_59",
+      "line": 19143,
+      "evidence": "Reviewed r186 getProgram parameter 2"
+    },
+    {
+      "oldName": "e",
+      "newName": "target_69",
+      "line": 18805,
+      "evidence": "Direct renderer property read .target"
+    },
+    {
+      "oldName": "e",
+      "newName": "format_16",
+      "line": 18879,
+      "evidence": "Direct renderer property read .format"
+    },
+    {
+      "oldName": "t",
+      "newName": "type_42",
+      "line": 18883,
+      "evidence": "Direct renderer property read .type"
+    },
+    {
+      "oldName": "c",
+      "newName": "index_103",
+      "line": 18981,
+      "evidence": "Direct renderer property read .index"
+    },
+    {
+      "oldName": "u",
+      "newName": "drawRange_3",
+      "line": 18987,
+      "evidence": "Direct renderer property read .drawRange"
+    },
+    {
+      "oldName": "f",
+      "newName": "position_16",
+      "line": 18988,
+      "evidence": "Direct renderer property read .position"
+    },
+    {
+      "oldName": "_",
+      "newName": "lights_5",
+      "line": 18924,
+      "evidence": "Direct renderer property read .lights"
+    },
+    {
+      "oldName": "B",
+      "newName": "currentProgram",
+      "line": 18931,
+      "evidence": "Direct renderer property read .currentProgram"
+    },
+    {
+      "oldName": "D",
+      "newName": "uniforms_16",
+      "line": 18937,
+      "evidence": "Direct renderer property read .uniforms"
+    },
+    {
+      "oldName": "T",
+      "newName": "morphAttributes_8",
+      "line": 18962,
+      "evidence": "Direct renderer property read .morphAttributes"
+    },
+    {
+      "oldName": "i",
+      "newName": "length_11",
+      "line": 18943,
+      "evidence": "Direct renderer property read .length"
+    },
+    {
+      "oldName": "e",
+      "newName": "cameraPosition",
+      "line": 18953,
+      "evidence": "Direct renderer property read .cameraPosition"
+    },
+    {
+      "oldName": "t",
+      "newName": "skeleton_4",
+      "line": 18958,
+      "evidence": "Direct renderer property read .skeleton"
+    },
+    {
+      "oldName": "t",
+      "newName": "lightProbeGrid",
+      "line": 18965,
+      "evidence": "Direct renderer property read .lightProbeGrid"
+    },
+    {
+      "oldName": "t",
+      "newName": "uniformsGroups",
+      "line": 18972,
+      "evidence": "Direct renderer property read .uniformsGroups"
+    },
+    {
+      "oldName": "n",
+      "newName": "length_12",
+      "line": 18973,
+      "evidence": "Direct renderer property read .length"
+    },
+    {
+      "oldName": "t",
+      "newName": "linewidth",
+      "line": 18998,
+      "evidence": "Direct renderer property read .linewidth"
+    },
+    {
+      "oldName": "t",
+      "newName": "_multiDrawStarts",
+      "line": 19003,
+      "evidence": "Direct renderer property read ._multiDrawStarts"
+    },
+    {
+      "oldName": "e",
+      "newName": "_multiDrawCounts",
+      "line": 19004,
+      "evidence": "Direct renderer property read ._multiDrawCounts"
+    },
+    {
+      "oldName": "n",
+      "newName": "_multiDrawCount",
+      "line": 19005,
+      "evidence": "Direct renderer property read ._multiDrawCount"
+    },
+    {
+      "oldName": "r",
+      "newName": "material_50",
+      "line": 19056,
+      "evidence": "Direct renderer property read .material"
+    },
+    {
+      "oldName": "r",
+      "newName": "material_51",
+      "line": 19061,
+      "evidence": "Direct renderer property read .material"
+    },
+    {
+      "oldName": "i",
+      "newName": "groups_7",
+      "line": 19063,
+      "evidence": "Direct renderer property read .groups"
+    },
+    {
+      "oldName": "a",
+      "newName": "length_13",
+      "line": 19064,
+      "evidence": "Direct renderer property read .length"
+    },
+    {
+      "oldName": "o",
+      "newName": "length_14",
+      "line": 19072,
+      "evidence": "Direct renderer property read .length"
+    },
+    {
+      "oldName": "A",
+      "newName": "toneMapping_2",
+      "line": 19106,
+      "evidence": "Direct renderer property read .toneMapping"
+    },
+    {
+      "oldName": "l",
+      "newName": "viewport_5",
+      "line": 19108,
+      "evidence": "Direct renderer property read .viewport"
+    },
+    {
+      "oldName": "r",
+      "newName": "length_15",
+      "line": 19111,
+      "evidence": "Direct renderer property read .length"
+    },
+    {
+      "oldName": "e",
+      "newName": "side",
+      "line": 19119,
+      "evidence": "Direct renderer property read .side"
+    },
+    {
+      "oldName": "r",
+      "newName": "length_16",
+      "line": 19129,
+      "evidence": "Direct renderer property read .length"
+    },
+    {
+      "oldName": "c",
+      "newName": "material_52",
+      "line": 19136,
+      "evidence": "Direct renderer property read .material"
+    },
+    {
+      "oldName": "s",
+      "newName": "lights_6",
+      "line": 19146,
+      "evidence": "Direct renderer property read .lights"
+    },
+    {
+      "oldName": "r",
+      "newName": "shadowsArray_2",
+      "line": 19147,
+      "evidence": "Direct renderer property read .shadowsArray"
+    },
+    {
+      "oldName": "o",
+      "newName": "version_2",
+      "line": 19148,
+      "evidence": "Direct renderer property read .version"
+    },
+    {
+      "oldName": "c",
+      "newName": "programs_2",
+      "line": 19151,
+      "evidence": "Direct renderer property read .programs"
+    },
+    {
+      "oldName": "u",
+      "newName": "uniforms_17",
+      "line": 19159,
+      "evidence": "Direct renderer property read .uniforms"
+    },
+    {
+      "oldName": "s",
+      "newName": "shadowsArray_3",
+      "line": 19194,
+      "evidence": "Direct renderer property read .shadowsArray"
+    },
+    {
+      "oldName": "n",
+      "newName": "opaque",
+      "line": 19196,
+      "evidence": "Direct renderer property read .opaque"
+    },
+    {
+      "oldName": "i",
+      "newName": "transmissive",
+      "line": 19197,
+      "evidence": "Direct renderer property read .transmissive"
+    },
+    {
+      "oldName": "s",
+      "newName": "cameras_3",
+      "line": 19199,
+      "evidence": "Direct renderer property read .cameras"
+    },
+    {
+      "oldName": "r",
+      "newName": "length_17",
+      "line": 19200,
+      "evidence": "Direct renderer property read .length"
+    },
+    {
+      "oldName": "n",
+      "newName": "length_18",
+      "line": 19202,
+      "evidence": "Direct renderer property read .length"
+    },
+    {
+      "oldName": "a",
+      "newName": "texture_38",
+      "line": 19236,
+      "evidence": "Direct renderer property read .texture"
+    },
+    {
+      "oldName": "h",
+      "newName": "__webglFramebuffer",
+      "line": 19238,
+      "evidence": "Direct renderer property read .__webglFramebuffer"
+    },
+    {
+      "oldName": "e",
+      "newName": "depthTexture_4",
+      "line": 19230,
+      "evidence": "Direct renderer property read .depthTexture"
+    },
+    {
+      "oldName": "h",
+      "newName": "format_17",
+      "line": 19262,
+      "evidence": "Direct renderer property read .format"
+    },
+    {
+      "oldName": "c",
+      "newName": "type_43",
+      "line": 19263,
+      "evidence": "Direct renderer property read .type"
+    },
+    {
+      "oldName": "h",
+      "newName": "__webglFramebuffer_2",
+      "line": 19276,
+      "evidence": "Direct renderer property read .__webglFramebuffer"
+    },
+    {
+      "oldName": "c",
+      "newName": "format_18",
+      "line": 19281,
+      "evidence": "Direct renderer property read .format"
+    },
+    {
+      "oldName": "A",
+      "newName": "type_44",
+      "line": 19282,
+      "evidence": "Direct renderer property read .type"
+    }
+  ]
+}

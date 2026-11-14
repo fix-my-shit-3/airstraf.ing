@@ -1,10 +1,10 @@
 const __vite__mapDeps = (i, m = __vite__mapDeps, d = m.f || (m.f = ["assets/c-XjEhBftY.js", "assets/c-DRieNrHJ.js", "assets/c-Cw4QBOSY.js", "assets/c-BjGOj7jP.js", "assets/c-CwMHWVDn.js", "assets/c-D7DrHuA8.js", "assets/c-PsaaRsFW.js", "assets/three-Bi9Yyrpt.js", "assets/c-BJ87Xak5.js", "assets/c-D-fVO02v.js", "assets/c-HBMF4bPX.js", "assets/c-Coxkuiy2.js", "assets/c-Caw4SzGP.js", "assets/c-Dw2xPOlC.js", "assets/c-e0fQXfDh.js", "assets/c-C_iq9rgQ.js", "assets/c-CmJ6BJHY.js", "assets/c-DTYKuKMs.js", "assets/c-Br-l5PAG.js", "assets/c-C1mpvyXQ.js", "assets/c-BE9ZXeD7.js", "assets/c-j2W5q53j.js", "assets/c-qDanEe2E.js", "assets/c-DHGnaUyg.js", "assets/c-B0EPN0fS.js", "assets/c-D6JpfG2D.js", "assets/c-CN8Wxji6.js", "assets/network-juVbujc5.js", "assets/c-DkPZj7-z.js", "assets/c-CGasCRDy.js", "assets/c-DEgsQ2SC.js", "assets/c-Cc7HakJX.js", "assets/c-DlIhmCer.js", "assets/c-D-iNDOV5.js", "assets/c-BOVHeOwB.js", "assets/c-BOtrWAYn.js", "assets/c-ZeT0pbGP.js", "assets/a-hKw0vLf0.css", "assets/c-Bk_hd1Js.js", "assets/c-DSIEVuRr.js", "assets/c-ycaScJyf.js", "assets/c-B0cRM3KE.js", "assets/c-C4hbbDNp.js", "assets/c-BLzjMcqR.js", "assets/c-D_UdFaKB.js", "assets/c-DWXBoQqt.js", "assets/c-BK5Oi6qK.js", "assets/c-ByodlC33.js", "assets/c-DxipjlZ1.js", "assets/c-QnkcwdXX.js", "assets/c-UMCWckcW.js", "assets/c-CvegKie5.js", "assets/c-iTSKxzRq.js", "assets/c-CISf5kK1.js", "assets/c-D8Hcbz4W.js", "assets/c-DeSJF9BH.js", "assets/c-Clm_iQHR.js", "assets/a-Cwxf9BjG.css", "assets/c-4ZchrfCo.js", "assets/a-BPwRzimq.css", "assets/c-BoMyoPFu.js", "assets/c-Cs0N7RUA.js", "assets/c-CHK4kGoZ.js", "assets/c-BHQ9wafF.js", "assets/c-BUv5bABA.js", "assets/c-C3CnH4SD.js", "assets/c-BVzzdleb.js", "assets/c-DMNnOvc5.js", "assets/c-CmTmKexy.js", "assets/c-Bio8cfqx.js", "assets/c-BSF9mkvK.js", "assets/a-JKeYSd5B.css", "assets/c-CtlECazm.js", "assets/c-B_77nlsB.js", "assets/c-DhBqQcrI.js", "assets/a-DdxS7sxR.css", "assets/c-B0UsglWZ.js", "assets/c-BfpixQCL.js", "assets/c-5y3FB1b_.js", "assets/c-KgMAfqqS.js", "assets/c-BUUoyvjq.js", "assets/c-CyXe_qbQ.js", "assets/c-CicEBftc.js", "assets/c-Df2L5mYA.js", "assets/c-BD7xfdQF.js", "assets/c-BGJKc7je.js", "assets/c-0_FeqyJL.js", "assets/c-BQ4urQk-.js", "assets/c-D4yc1F5U.js", "assets/c-DCeNXQjt.js", "assets/c-I0dO6CkD.js", "assets/c-mbyLg-NZ.js", "assets/c-RvlqJkPG.js", "assets/c-Sh56JhVA.js", "assets/c-Dg8SB1pW.js", "assets/c-xV8SHtXB.js", "assets/c-D3BibtnL.js", "assets/c-C-vVEuje.js", "assets/c-PgDuwdrs.js", "assets/c-CZjCXe-Y.js", "assets/c-B_Kt6YP1.js", "assets/c-Bvy6bSPY.js", "assets/c-Bhpy8B88.js", "assets/c-CfAS2_ra.js", "assets/c-DOL7AW-K.js", "assets/c-BdhObI2u.js", "assets/vue-B_D2cjCj.js", "assets/c-CVZ42xuO.js", "assets/a-CdcgdqqD.css", "assets/c-BzggX3WH.js", "assets/c-Bl_2cS9p.js", "assets/a-CkepG4lW.css", "assets/a-YMjZE9Iy.css", "assets/c-BLsVBiFz.js", "assets/c-De6Ngc09.js", "assets/c-CuT1eZWE.js", "assets/a-C1b6jj7P.css", "assets/c-D3rwkFLg.js", "assets/a-BDvyV5-B.css", "assets/c-C_bkFJ1r.js", "assets/a-C2b-Jc_k.css"])) => i.map(item => d[item]);
 import { a as t, i as s, n as e, r as i, t as n } from "./c-BJ87Xak5.js";
-import { $ as r, $n as o, $r as a, $t as h, A as c, Ai as l, An as u, Ar as d, At as f, Bi as p, Br as m, Bt as w, Ci as y, Ct as g, D as v, Di as b, Dn as k, E as M, En as S, Fn as _, Gi as $, Gn as x, In as P, It as A, J as T, Ji as E, K as N, Ki as O, Kn as C, Kt as I, L as j, Li as R, Ln as L, Lr as F, Lt as D, M as B, N as z, Ni as K, O as U, On as q, Or as H, P as G, Pi as V, Q as W, Qn as J, Ri as Y, Rn as X, Rr as Z, Rt as Q, St as tt, T as st, Ti as et, Tn as it, Ui as nt, Un as rt, Vi as ot, Vn as at, Wi as ht, Wn as ct, Wt as lt, X as ut, Xi as dt, Xn as ft, Xt as pt, Y as mt, Z as wt, Zr as yt, _i as gt, _n as vt, _t as bt, a as kt, ai as Mt, ar as St, at as _t, bi as $t, bn as xt, bt as Pt, c as At, ci as Tt, cn as Et, cr as Nt, ct as Ot, d as Ct, di as It, ei as jt, en as Rt, er as Lt, et as Ft, f as Dt, fi as Bt, fn as zt, fr as Kt, ft as Ut, g as qt, gi as Ht, gn as Gt, gt as Vt, hi as Wt, hn as Jt, ht as Yt, i as Xt, ii as Zt, ir as Qt, it as ts, ji as ss, jn as es, jt as is, k as ns, kn as rs, l as os, li as as, m as hs, mi as cs, mn as ls, mr as us, mt as ds, n as fs, ni as ps, nn as ms, nr as ws, nt as ys, o as gs, oi as vs, on as bs, ot as ks, p as Ms, pi as Ss, pn as _s, pt as $s, q as xs, qi as Ps, r as As, ri as Ts, rn as Es, rr as Ns, rt as Os, s as Cs, si as Is, sn as js, sr as Rs, st as Ls, ti as Fs, tn as Ds, tt as Bs, u as zs, ui as Ks, ur as Us, v as qs, vi as Hs, vt as Gs, w as Vs, wr as Ws, wt as Js, x as Ys, xi as Xs, xt as Zs, yt as Qs, z as te, zn as se, zr as ee } from "./c-DRieNrHJ.js";
+import { $ as r, $n as o, $r as a, $t as h, A as c, Ai as l, An as u, Ar as d, At as f, Bi as p, Br as m, Bt as w, Ci as y, Ct as g, D as v, Di as b, Dn as k, E as M, En as S, Fn as _, Gi as $, Gn as x, In as P, It as A, J as T, Ji as E, K as N, Ki as O, Kn as C, Kt as I, L as j, Li as R, Ln as L, Lr as F, Lt as D, M as _GameRenderer, N as z, Ni as K, O as U, On as q, Or as H, P as G, Pi as V, Q as W, Qn as J, Ri as Y, Rn as X, Rr as Z, Rt as Q, St as tt, T as st, Ti as et, Tn as it, Ui as nt, Un as rt, Vi as ot, Vn as at, Wi as ht, Wn as ct, Wt as lt, X as ut, Xi as dt, Xn as ft, Xt as pt, Y as mt, Z as wt, Zr as yt, _i as gt, _n as vt, _t as bt, a as kt, ai as Mt, ar as St, at as _t, bi as $t, bn as xt, bt as Pt, c as At, ci as Tt, cn as Et, cr as Nt, ct as Ot, d as Ct, di as It, ei as jt, en as Rt, er as Lt, et as Ft, f as Dt, fi as Bt, fn as zt, fr as Kt, ft as Ut, g as qt, gi as Ht, gn as Gt, gt as Vt, hi as Wt, hn as Jt, ht as Yt, i as Xt, ii as Zt, ir as Qt, it as ts, ji as ss, jn as es, jt as is, k as ns, kn as rs, l as os, li as as, m as hs, mi as cs, mn as ls, mr as us, mt as ds, n as fs, ni as ps, nn as ms, nr as ws, nt as ys, o as gs, oi as vs, on as bs, ot as ks, p as Ms, pi as Ss, pn as _s, pt as $s, q as xs, qi as Ps, r as As, ri as Ts, rn as Es, rr as Ns, rt as Os, s as Cs, si as Is, sn as js, sr as Rs, st as Ls, ti as Fs, tn as Ds, tt as Bs, u as zs, ui as Ks, ur as Us, v as qs, vi as Hs, vt as Gs, w as Vs, wr as Ws, wt as Js, x as Ys, xi as Xs, xt as Zs, yt as Qs, z as te, zn as se, zr as ee } from "./c-DRieNrHJ.js";
 import { a as ie, c as ne, f as re, i as oe, l as ae, m as he, n as ce, o as le, p as ue, r as de, s as fe, u as pe } from "./c-Cw4QBOSY.js";
 import { B as me, D as we, F as ye, G as ge, H as ve, K as be, M as ke, Q as Me, S as Se, St as _e, T as $e, U as xe, V as Pe, W as Ae, _ as Te, _t as Ee, c as Ne, ct as Oe, dt as Ce, et as Ie, f as je, g as Re, gt as Le, h as Fe, i as De, it as Be, l as ze, m as Ke, mt as Ue, n as qe, nt as He, o as Ge, p as Ve, q as We, r as Je, s as Ye, st as Xe, t as Ze, u as Qe, vt as ti, w as si, wt as ei, y as ii, z as ni } from "./c-CwMHWVDn.js";
 import { t as ri } from "./c-D7DrHuA8.js";
-import { Er as oi, Ft as ai, Mt as hi, Qt as ci, W as li, en as ui, et as di, gr as fi, h as pi, lr as mi, qn as wi, sn as yi, zr as gi } from "./three-Bi9Yyrpt.js";
+import { Er as Triangle, Ft as Matrix4, Mt as MathUtils, Qt as OrthographicCamera, W as Euler, en as PerspectiveCamera, et as Group, gr as Sphere, h as Box3, lr as Scene, qn as wi, sn as Quaternion, zr as Vector3 } from "./three-Bi9Yyrpt.js";
 import { D as vi, a as bi, c as ki, d as Mi, f as Si, h as _i, m as $i, n as xi, t as Pi, v as Ai, w as Ti, y as Ei } from "./c-PsaaRsFW.js";
 import { a as Ni, i as Oi, o as Ci, r as Ii, t as ji } from "./c-D-fVO02v.js";
 import { a as Ri, c as Li, i as Fi, l as Di, n as Bi, o as zi, r as Ki, s as Ui } from "./c-HBMF4bPX.js";
@@ -152,7 +152,7 @@ function Au(t, s, e) {
   const i = Ba(t.weapon);
   return !!i?.fan && t.health > 0 && da(i, s, e);
 }
-var Tu = ($a.interval, $a.below, $a.above, new gi(), new gi(), new gi(), {
+var Tu = ($a.interval, $a.below, $a.above, new Vector3(), new Vector3(), new Vector3(), {
     rise: .15,
     fade: .6,
     border: .8,
@@ -2863,7 +2863,7 @@ function xp(t, s, e) {
       return !0;
   }
 }
-function Pp(t, s = new gi()) {
+function Pp(t, s = new Vector3()) {
   return s.set(t.x, t.y + De - (t.crouching ? qe : 0), t.z);
 }
 function Ap(t, s, e) {
@@ -2884,8 +2884,8 @@ var Ep = {
     },
     mateCooldown: 1.5
   },
-  Np = new gi(),
-  Op = new gi(),
+  Np = new Vector3(),
+  Op = new Vector3(),
   Cp = [["vx", "f32"], ["vy", "f32"], ["vz", "f32"], ["grounded", "bool"], ["jumpHeld", "bool"], ["jumpKey", "bool"], ["airLimit", "f32"], ["airAccel", "f32"], ["groundLimit", "f32"], ["jumpCooldown", "u8"], ["sinceJump", "u16"], ["crouching", "bool"], ["onLadder", "bool"], ["ladderExit", "u32"], ["padInside", "i8"]],
   Ip = [["x", "f32"], ["y", "f32"], ["z", "f32"], ["jumpBuffer", "u8"], ["wallJumps", "u8"], ["crouchSteps", "u8"], ["slideArmed", "bool"], ["slideLeft", "u16"], ["tucked", "bool"], ["spawnHold", "bool"], ["noclip", "u8"], ["noclipTap", "u8"]],
   jp = {
@@ -3058,7 +3058,7 @@ var Wp = class {
     $_5lx(t, s) {
       return this.at(t, Jp) ? s + De - Jp.y : null;
     }
-    shotEye(t, s, e, i = new gi()) {
+    shotEye(t, s, e, i = new Vector3()) {
       const n = ((t, s) => t - (Math.min(255, Math.max(1, s || 1)) - 1) / 64)(t, s);
       return (!this.at(n, i) || i.distanceTo(e) > 3 + this.$_g38(n)) && i.copy(e), i;
     }
@@ -3088,7 +3088,7 @@ var Wp = class {
       return this.head = (this.head + 1) % zp, this.count = Math.min(zp, this.count + 1), this.ring[this.head];
     }
   },
-  Jp = new gi(),
+  Jp = new Vector3(),
   Yp = (t, s, e) => ({
     step: t,
     x: s.x,
@@ -3212,8 +3212,8 @@ var Wp = class {
       const e = Pp(s, this.eyeNow);
       return this.track.eyes.shotEye(Ht(t.seq - 1), t.view, e, this.$_2gd);
     }
-    eyeNow = new gi();
-    $_2gd = new gi();
+    eyeNow = new Vector3();
+    $_2gd = new Vector3();
     $_gkj(t) {
       _p(t), this.shots.quantize();
     }
@@ -3469,8 +3469,8 @@ function km(t, s) {
   const e = Math.max(0, Math.floor(s));
   return e < t.at || t.at <= 0 ? 0 : t.every <= 0 ? t.at : t.at + Math.floor((e - t.at) / t.every) * t.every;
 }
-var Mm = new gi(),
-  Sm = new gi();
+var Mm = new Vector3(),
+  Sm = new Vector3();
 function _m(t, s, e = ln) {
   s.steps++;
   const i = Ua(s.steps * e) * e,
@@ -4026,9 +4026,9 @@ function Rw(t) {
     radius: s?.radius ?? be.radius
   };
 }
-var Lw = new gi(),
-  Fw = new gi(),
-  Dw = new gi(),
+var Lw = new Vector3(),
+  Fw = new Vector3(),
+  Dw = new Vector3(),
   Bw = {
     gap: 0,
     along: 0,
@@ -4513,7 +4513,7 @@ var qw = new Set(["Bomb", "Grenade"]),
       }(n, this.$_2u1, i, this.aim.aimSince >= 0 && t.aim), this.$_7fn = t.fire, this.$_2fh = l, o;
     }
   };
-function Vw(t, s, e = new gi()) {
+function Vw(t, s, e = new Vector3()) {
   const i = 2 * (t.x * s.x + t.y * s.y + t.z * s.z);
   return e.set(t.x - i * s.x, t.y - i * s.y, t.z - i * s.z);
 }
@@ -5200,7 +5200,7 @@ function jy(t) {
 var Ry = t => t.ks?.stage !== Ii.Buy && t.sumo?.stage !== we.Countdown,
   Ly = sy,
   Fy = 2500 / 30,
-  Dy = new gi(),
+  Dy = new Vector3(),
   By = new wi(),
   zy = t => 0,
   Ky = class {
@@ -6158,7 +6158,7 @@ var Ry = t => t.ks?.stage !== Ii.Buy && t.sumo?.stage !== we.Countdown,
       return e ? (t ?? (s ? .5 : 0)) - e : t;
     }
     $_2v5 = null;
-    $_1q0 = new gi();
+    $_1q0 = new Vector3();
     $_41bp(t) {
       Di.forEach((item, index) => {
         t.consume(item) && this.$_4kly("equip", index);
@@ -6194,7 +6194,7 @@ var Ry = t => t.ks?.stage !== Ii.Buy && t.sumo?.stage !== we.Countdown,
     team: "Team Only"
   },
   Hy = t => "team" === t ? "team" : "all",
-  Gy = [["session", Ky], ["shots", Gw], ["own", Zp], ["poses", im], ["input", Mp], ["mouse", lp], ["lock", fp], ["renderer", B], ["view", Es], ["figure", La]];
+  Gy = [["session", Ky], ["shots", Gw], ["own", Zp], ["poses", im], ["input", Mp], ["mouse", lp], ["lock", fp], ["renderer", _GameRenderer], ["view", Es], ["figure", La]];
 function Vy(t) {
   const s = [];
   t.session && s.push(["session", t.session], ["shots", t.session.shots], ["own", t.session.own], ["poses", t.session.remotePoses]), t.input && s.push(["input", t.input], ["mouse", t.input.mouse]), t.renderer && s.push(["renderer", t.renderer], ["view", t.renderer.fp]), ne(s);
@@ -6980,8 +6980,8 @@ var Eg = class {
     room = null;
     $_6di(t, s) {
       this.audio.$_5xx(function (t) {
-        const s = new gi(),
-          e = new gi();
+        const s = new Vector3(),
+          e = new Vector3();
         return {
           blocked(i, n, r, o, a, h) {
             e.set(o - i, a - n, h - r);
@@ -6991,8 +6991,8 @@ var Eg = class {
         };
       }(t));
       const e = s.mapSpawns.length ? s.mapSpawns : Object.values(s.extraSpawns ?? {}).flat(),
-        i = new gi(),
-        n = new gi(),
+        i = new Vector3(),
+        n = new Vector3(),
         r = function (t, s) {
           if (!t.length) return {
             covered: 0,
@@ -7945,8 +7945,8 @@ var sv = "http://www.w3.org/2000/svg",
       }(this.shown, this.$_4i9);
     }
   },
-  nv = new ai(),
-  rv = new gi(0, 1, 0),
+  nv = new Matrix4(),
+  rv = new Vector3(0, 1, 0),
   ov = class {
     view;
     constructor(t, s, e) {
@@ -7960,9 +7960,9 @@ var sv = "http://www.w3.org/2000/svg",
     update(t, s) {
       const e = this.view;
       if (s) {
-        const i = s.clone().add(new gi(0, 1.7, 0));
+        const i = s.clone().add(new Vector3(0, 1.7, 0));
         e.position.distanceTo(s) > 15 && (e.fov -= 10 * t), e.fov = Math.max(e.fov, 24), nv.lookAt(e.position, i, rv);
-        const n = new yi().setFromRotationMatrix(nv);
+        const n = new Quaternion().setFromRotationMatrix(nv);
         e.quaternion.slerp(n, Math.min(1, 12 * t));
       }
       return e.position.y += 1.8 * t, e;
@@ -9105,7 +9105,7 @@ var Gb = class {
       this.voice = null, t?.stop(0);
     }
   },
-  Vb = hi.degToRad,
+  Vb = MathUtils.degToRad,
   Wb = {
     up: .5,
     back: 2.82,
@@ -9116,13 +9116,13 @@ var Gb = class {
     min: Vb(-40),
     max: Vb(55)
   },
-  Yb = new li(0, 0, 0, "YXZ"),
-  Xb = new yi(),
-  Zb = new gi(),
-  Qb = new gi(),
-  tk = new gi(),
-  sk = new yi(),
-  ek = new yi(),
+  Yb = new Euler(0, 0, 0, "YXZ"),
+  Xb = new Quaternion(),
+  Zb = new Vector3(),
+  Qb = new Vector3(),
+  tk = new Vector3(),
+  sk = new Quaternion(),
+  ek = new Quaternion(),
   ik = [[0, 0], [1, 1], [-1, 1], [1, -1], [-1, -1]],
   nk = Math.atan2(Wb.up, Wb.back),
   rk = (t, s) => 1 - Math.exp(-t * Math.max(0, s)),
@@ -9138,10 +9138,10 @@ var Gb = class {
     $_1x0 = Wb.distance;
     $_5vsk = Wb.distance;
     shown = -1;
-    eye = new gi();
+    eye = new Vector3();
     view = {
-      position: new gi(),
-      quaternion: new yi(),
+      position: new Vector3(),
+      quaternion: new Quaternion(),
       fov: 64.6,
       showLocal: !0
     };
@@ -9207,8 +9207,8 @@ var Gb = class {
   ck = [.8, .55, .3],
   lk = 1 / 12;
 function uk(t) {
-  const s = new gi(),
-    e = new gi(),
+  const s = new Vector3(),
+    e = new Vector3(),
     i = s => (127 & t.materialOf(s.faceIndex ?? -1)) === vi.glass,
     n = (n, o, a, h, c, l, u) => {
       let d = 0;
@@ -9531,7 +9531,7 @@ var dk = {
       this.tracked.clear(), this.host.dancing?.(!1);
     }
   },
-  yk = new gi(),
+  yk = new Vector3(),
   gk = {
     bundle: null,
     classselect: [1280, 820],
@@ -9679,19 +9679,19 @@ var Nk = class {
     world;
     balls;
     $_2gq = [];
-    $_tss = new gi();
-    $_2kf = new yi();
-    $_279 = new gi();
-    $_5w9 = new ai();
-    $_5cl = new ai();
+    $_tss = new Vector3();
+    $_2kf = new Quaternion();
+    $_279 = new Vector3();
+    $_5w9 = new Matrix4();
+    $_5cl = new Matrix4();
     constructor(t, s, e) {
       this.renderer = t, this.runtime = s, this.world = e, this.balls = s.balls.map(item => ({
         node: item.node,
         radius: item.radius,
         position: item.center.clone(),
-        velocity: new gi(),
-        spin: new yi(),
-        rest: t.dynamic.get(item.node)?.world.clone() ?? new ai()
+        velocity: new Vector3(),
+        spin: new Quaternion(),
+        rest: t.dynamic.get(item.node)?.world.clone() ?? new Matrix4()
       }));
     }
     update(t, s) {
@@ -9733,25 +9733,25 @@ var Nk = class {
         const s = i.dot(n);
         s < -1 ? t.velocity.addScaledVector(n, .9 * -s) : n.y > .5 && t.velocity.multiplyScalar(Math.max(0, 1 - .6 * e * 4));
       }
-      const r = new gi(t.velocity.z, 0, -t.velocity.x);
-      r.lengthSq() > 1e-6 && t.spin.premultiply(new yi().setFromAxisAngle(r.normalize(), Math.hypot(t.velocity.x, t.velocity.z) * e / t.radius));
-      const o = new gi(),
-        a = new yi(),
-        h = new gi();
-      t.rest.decompose(o, a, h), this.renderer.setDynamic(t.node, new ai().compose(t.position, t.spin.clone().multiply(a), h), !0);
+      const r = new Vector3(t.velocity.z, 0, -t.velocity.x);
+      r.lengthSq() > 1e-6 && t.spin.premultiply(new Quaternion().setFromAxisAngle(r.normalize(), Math.hypot(t.velocity.x, t.velocity.z) * e / t.radius));
+      const o = new Vector3(),
+        a = new Quaternion(),
+        h = new Vector3();
+      t.rest.decompose(o, a, h), this.renderer.setDynamic(t.node, new Matrix4().compose(t.position, t.spin.clone().multiply(a), h), !0);
     }
     $_5n6(t, s, e) {
-      const i = new gi().fromArray(t);
+      const i = new Vector3().fromArray(t);
       for (const n of s) {
-        const t = new gi().fromArray(n).clone().sub(i),
+        const t = new Vector3().fromArray(n).clone().sub(i),
           s = t.length();
         if (s < .001) continue;
         t.divideScalar(s);
         const r = new wi(i, t);
         for (const n of this.balls) {
-          const t = r.intersectSphere(new fi(n.position, n.radius + .05), new gi());
+          const t = r.intersectSphere(new Sphere(n.position, n.radius + .05), new Vector3());
           if (!t || t.distanceTo(i) > s + .2) continue;
-          const o = new gi(e.x, 0, e.z).normalize().add(new gi(0, .8, 0)).multiplyScalar(20 + 30 * Math.random());
+          const o = new Vector3(e.x, 0, e.z).normalize().add(new Vector3(0, .8, 0)).multiplyScalar(20 + 30 * Math.random());
           n.velocity.addScaledVector(o, .2);
         }
       }
@@ -10222,22 +10222,22 @@ var bM = fM.length,
       shiftX: 0,
       shiftY: 0
     };
-    $_7jm = new gi();
-    right = new gi();
-    up = new gi();
+    $_7jm = new Vector3();
+    right = new Vector3();
+    up = new Vector3();
     disposed = !1;
     constructor(t) {
       this.host = t;
       const s = t.camera;
       s.updateMatrixWorld(!0), this.$_7jm.copy(s.position);
-      const e = new gi();
+      const e = new Vector3();
       s.matrixWorld.extractBasis(this.right, this.up, e), e.negate(), this.view = {
         position: s.position.toArray(),
         right: this.right.toArray(),
         up: this.up.toArray(),
         forward: e.toArray(),
         own: t.own.toArray()
-      }, this.$_5e4q = fM.map(item => new gi(...gM(this.view, item)));
+      }, this.$_5e4q = fM.map(item => new Vector3(...gM(this.view, item)));
     }
     $_5e4q;
     get camera() {
@@ -10279,8 +10279,8 @@ var bM = fM.length,
       }
       return i;
     }
-    box = new pi();
-    corner = new gi();
+    box = new Box3();
+    corner = new Vector3();
     ready(t) {
       const s = this.entries.find(item => item.id === t && !item.leaving);
       return !!s?.model && !s.busy;
@@ -10328,7 +10328,7 @@ var bM = fM.length,
     }
     enter(t, s) {
       const e = this.pool.pop(),
-        i = e?.group ?? new di();
+        i = e?.group ?? new Group();
       return e || (i.visible = !1, this.host.scene.add(i)), {
         id: t.id,
         want: t,
@@ -10435,7 +10435,7 @@ var bM = fM.length,
         const o = Math.min(e.slot, fM.length - 1),
           a = fM[o],
           h = this.$_5e4q[o];
-        e.placed ? (e.x += (h.x - e.x) * s, e.z += (h.z - e.z) * s, e.scale += (a.scale - e.scale) * s) : (e.placed = !0, e.x = h.x, e.z = h.z, e.scale = a.scale), e.group.visible = !0, e.group.position.set(e.x, h.y, e.z), e.group.rotation.y = this.host.baseAngle + hi.degToRad(a.turn), e.group.scale.setScalar(e.scale * (e.leaving ? e.pop : vM(e.pop))), i.update(t, null);
+        e.placed ? (e.x += (h.x - e.x) * s, e.z += (h.z - e.z) * s, e.scale += (a.scale - e.scale) * s) : (e.placed = !0, e.x = h.x, e.z = h.z, e.scale = a.scale), e.group.visible = !0, e.group.position.set(e.x, h.y, e.z), e.group.rotation.y = this.host.baseAngle + MathUtils.degToRad(a.turn), e.group.scale.setScalar(e.scale * (e.leaving ? e.pop : vM(e.pop))), i.update(t, null);
       }
       n && this.retire();
     }
@@ -10457,21 +10457,21 @@ var bM = fM.length,
   },
   SM = t => .01 * t,
   _M = {
-    cameraPosition: new gi(.497, 2.27, -2.05),
-    cameraRotation: new yi(.0575660802, -.1218370497, .0070784204, .9908540845),
+    cameraPosition: new Vector3(.497, 2.27, -2.05),
+    cameraRotation: new Quaternion(.0575660802, -.1218370497, .0070784204, .9908540845),
     orthoSize: 1,
-    playerPosition: new gi(-.06, 0, 0),
-    playerRotation: new yi(0, -.0767190829, 0, .9970527887)
+    playerPosition: new Vector3(-.06, 0, 0),
+    playerRotation: new Quaternion(0, -.0767190829, 0, .9970527887)
   },
   $M = {
-    cameraPosition: new gi(-7.92, -2.03, .01),
-    cameraRotation: new yi(.0576456003, -.1335207373, .0063986434, .9893473983),
+    cameraPosition: new Vector3(-7.92, -2.03, .01),
+    cameraRotation: new Quaternion(.0576456003, -.1335207373, .0063986434, .9893473983),
     orthoSize: 1.37,
-    playerPosition: new gi(-8.4867315292, -4.0214481354, 2.1008574963),
-    playerRotation: new yi(0, -.0767190829, 0, .9970527887)
+    playerPosition: new Vector3(-8.4867315292, -4.0214481354, 2.1008574963),
+    playerRotation: new Quaternion(0, -.0767190829, 0, .9970527887)
   },
   xM = "Default",
-  PM = t => new gi(-t.x, t.y, t.z),
+  PM = t => new Vector3(-t.x, t.y, t.z),
   AM = t => 1 + 2 * Math.max(0, t),
   TM = class {
     surface = new ll();
@@ -10482,12 +10482,12 @@ var bM = fM.length,
     $_3x8 = 0;
     $_7nw = 0;
     profile = xM;
-    scene = new mi();
+    scene = new Scene();
     get root() {
       return this.scene;
     }
     camera;
-    holder = new di();
+    holder = new Group();
     model = null;
     weapon = -1;
     host = null;
@@ -10500,9 +10500,9 @@ var bM = fM.length,
     environment = null;
     constructor(t = _M) {
       const s = t.orthoSize;
-      this.camera = new ci(-s, s, s, -s, -3, 56.98), this.scene.add(this.holder);
-      const e = PM(new gi(0, 0, 1).applyQuaternion(t.cameraRotation)),
-        i = PM(new gi(0, 1, 0).applyQuaternion(t.cameraRotation));
+      this.camera = new OrthographicCamera(-s, s, s, -s, -3, 56.98), this.scene.add(this.holder);
+      const e = PM(new Vector3(0, 0, 1).applyQuaternion(t.cameraRotation)),
+        i = PM(new Vector3(0, 1, 0).applyQuaternion(t.cameraRotation));
       this.camera.position.copy(PM(t.cameraPosition)), this.camera.up.copy(i), this.camera.lookAt(this.camera.position.clone().add(e)), this.holder.position.copy(PM(t.playerPosition)), this.baseAngle = -2 * Math.atan2(t.playerRotation.y, t.playerRotation.w), this.holder.rotation.y = this.baseAngle;
       let n = !1;
       const r = {
@@ -11975,12 +11975,12 @@ function b_(t) {
 }
 var k_ = class {
   surface = new ll();
-  scene = new mi();
-  camera = new ui(30, 2, .3, 50);
-  pop = new di();
-  item = new di();
-  parent = new di();
-  $_3ai = new yi(-.0627772957, -.3894733191, -.0326460823, .9183157086);
+  scene = new Scene();
+  camera = new PerspectiveCamera(30, 2, .3, 50);
+  pop = new Group();
+  item = new Group();
+  parent = new Group();
+  $_3ai = new Quaternion(-.0627772957, -.3894733191, -.0326460823, .9183157086);
   weapon = null;
   weapons = [];
   ticket = 0;
@@ -11991,7 +11991,7 @@ var k_ = class {
   }
   constructor() {
     this.camera.rotation.y = Math.PI;
-    const t = new di();
+    const t = new Group();
     t.scale.x = -1, this.scene.add(t), t.add(this.pop), this.pop.position.set(133514e-10, -.35, 15), this.pop.scale.setScalar(1.3), this.pop.add(this.item), this.item.rotation.order = "YXZ", this.item.add(this.parent), this.parent.position.set(0, -1.3, 0), this.$_16pc();
     let s = null;
     this.canvas.addEventListener("pointerdown", pointerEvent => {
@@ -12048,7 +12048,7 @@ var k_ = class {
           if (!i.length) return !1;
           const n = t.nodes[0],
             r = s => {
-              const i = new ai();
+              const i = new Matrix4();
               for (let n = s; n > 0; n = e[n].parent) t.nodes[n].updateMatrix(), i.premultiply(t.nodes[n].matrix);
               return i;
             },
@@ -12057,34 +12057,34 @@ var k_ = class {
             c = h.clone().invert(),
             l = a.map(_item21 => c.clone().multiply(r(_item21))),
             u = t.nodes[o];
-          h.decompose(new gi(), new yi(), u.scale);
+          h.decompose(new Vector3(), new Quaternion(), u.scale);
           const d = s.inspectRotateExtra ?? {
             x: 0,
             y: 0,
             z: 0
           };
-          u.quaternion.setFromEuler(new li((d.x - 130) * f_, (d.y + 90) * f_, d.z * f_, "YXZ")), u.position.set(0, 0, 0), n.add(u), u.updateMatrix();
+          u.quaternion.setFromEuler(new Euler((d.x - 130) * f_, (d.y + 90) * f_, d.z * f_, "YXZ")), u.position.set(0, 0, 0), n.add(u), u.updateMatrix();
           const f = [u];
           a.forEach((_item22, _index4) => {
             const i = t.nodes[_item22];
             i.matrix.multiplyMatrices(u.matrix, l[_index4]), i.matrix.decompose(i.position, i.quaternion, i.scale), n.add(i), f.push(i);
           }), n.updateMatrixWorld(!0);
           const p = n.matrixWorld.clone().invert(),
-            m = new pi(),
-            w = new pi(),
-            y = new ai();
+            m = new Box3(),
+            w = new Box3(),
+            y = new Matrix4();
           for (const v of f) v.traverse(t => {
             const s = t;
             s.isMesh && s.geometry && (s.geometry.computeBoundingBox(), s.geometry.boundingBox && (w.copy(s.geometry.boundingBox).applyMatrix4(y.multiplyMatrices(p, t.matrixWorld)), m.union(w)));
           });
           if (m.isEmpty()) return !0;
           const g = function (t, s = 4.2) {
-            const e = t.getSize(new gi()),
+            const e = t.getSize(new Vector3()),
               i = Math.max(e.x, e.y, e.z),
               n = i > 0 ? s / i : 1;
             return {
               scale: n,
-              offset: t.getCenter(new gi()).multiplyScalar(-n)
+              offset: t.getCenter(new Vector3()).multiplyScalar(-n)
             };
           }(m);
           for (const v of f) v.position.multiplyScalar(g.scale).add(g.offset), v.scale.multiplyScalar(g.scale);
@@ -15000,7 +15000,7 @@ var mP = t => `shopNoticeSeen:${t}`,
       for (const e of ["ShowDailyRewards", "KourLogoPressed"]) t.on(`UIManager.${e}`, s("info"));
     }
   },
-  kP = new gi(0, 1, 0),
+  kP = new Vector3(0, 1, 0),
   MP = class {
     position;
     quaternion;
@@ -15012,9 +15012,9 @@ var mP = t => `shopNoticeSeen:${t}`,
     }
     update(t, s, e) {
       if (t) {
-        const i = new gi(t.x, t.y, t.z),
-          n = new gi(-Math.sin(t.yaw), 0, -Math.cos(t.yaw)),
-          r = new gi(Math.cos(t.yaw), 0, -Math.sin(t.yaw));
+        const i = new Vector3(t.x, t.y, t.z),
+          n = new Vector3(-Math.sin(t.yaw), 0, -Math.cos(t.yaw)),
+          r = new Vector3(Math.cos(t.yaw), 0, -Math.sin(t.yaw));
         let o = i.clone().addScaledVector(kP, 3.35).addScaledVector(n, -2.5).addScaledVector(r, .9);
         const a = i.clone().addScaledVector(kP, 2.5),
           h = o.clone().sub(a),
@@ -15027,7 +15027,7 @@ var mP = t => `shopNoticeSeen:${t}`,
         const l = Math.min(1, Math.max(0, 18 * s));
         this.position.lerp(o, l);
         const u = i.clone().addScaledVector(kP, 3.05).addScaledVector(r, .3).addScaledVector(n, 5),
-          d = new ai().lookAt(this.position, u, kP);
+          d = new Matrix4().lookAt(this.position, u, kP);
         this.quaternion.setFromRotationMatrix(d);
       }
       return {
@@ -15043,8 +15043,8 @@ var mP = t => `shopNoticeSeen:${t}`,
   $P = ["ArrowRight", "Mouse0"],
   xP = ["ArrowLeft", "Mouse1"],
   PP = "course-ghost",
-  AP = new gi(),
-  TP = new li(0, 0, 0, "YXZ"),
+  AP = new Vector3(),
+  TP = new Euler(0, 0, 0, "YXZ"),
   EP = class {
     team;
     events;
@@ -22544,10 +22544,10 @@ var KC = class {
       this.text = "", this.hidden.clear(), this.revealed.clear();
     }
   },
-  UC = new gi(),
-  qC = new gi(),
-  HC = new gi(),
-  GC = new gi(),
+  UC = new Vector3(),
+  qC = new Vector3(),
+  HC = new Vector3(),
+  GC = new Vector3(),
   VC = new Set(),
   WC = ma(!1);
 function JC(t, s, e, i) {
@@ -33367,8 +33367,8 @@ var nz = t => t.prepaid ? 0 : Math.max(0, t.price - t.kp),
   },
   uz = (() => {
     const t = 40,
-      s = new oi(new gi(-40, 0, -40), new gi(t, 0, -40), new gi(t, 0, t)),
-      e = new oi(new gi(-40, 0, -40), new gi(t, 0, t), new gi(-40, 0, t));
+      s = new Triangle(new Vector3(-40, 0, -40), new Vector3(t, 0, -40), new Vector3(t, 0, t)),
+      e = new Triangle(new Vector3(-40, 0, -40), new Vector3(t, 0, t), new Vector3(-40, 0, t));
     return {
       trianglesIn(t, i) {
         !0 !== i(s) && i(e);
@@ -33388,9 +33388,9 @@ function fz(t) {
 }
 var pz = class {
     surface = new ll();
-    scene = new mi();
-    camera = new ui(30, 1, .1, 60);
-    holder = new di();
+    scene = new Scene();
+    camera = new PerspectiveCamera(30, 1, .1, 60);
+    holder = new Group();
     effects;
     ragdolls;
     figure = null;
@@ -33537,9 +33537,9 @@ var pz = class {
   vz = class {
     deps;
     $_23o = null;
-    scene = new mi();
-    camera = new ui(wz.fov, 1, .1, 80);
-    holder = new di();
+    scene = new Scene();
+    camera = new PerspectiveCamera(wz.fov, 1, .1, 80);
+    holder = new Group();
     trails = new Qs();
     figure = null;
     grading = null;
@@ -39270,7 +39270,7 @@ var MH = "spectateMode",
       yaw: 0,
       pitch: 0
     };
-    scratch = new gi();
+    scratch = new Vector3();
     $_10a = !1;
     sentAt = -1 / 0;
     on = !1;
@@ -39301,8 +39301,8 @@ var MH = "spectateMode",
     cooldown: yt.pingCooldown,
     range: yt.pingRange
   },
-  PH = new gi(),
-  AH = new gi(),
+  PH = new Vector3(),
+  AH = new Vector3(),
   TH = class {
     actions;
     view;
@@ -39495,9 +39495,9 @@ function eG(t, s, e, i = 1) {
 function iG(t, s) {
   return s ? `MYSTERY BOX: ${s.toUpperCase()}` : `+ ${t.toUpperCase()}`;
 }
-var nG = new gi(),
-  rG = new gi(),
-  oG = new gi(),
+var nG = new Vector3(),
+  rG = new Vector3(),
+  oG = new Vector3(),
   aG = class {
     layer;
     prefix;
@@ -39721,42 +39721,42 @@ var dG = class {
       this.$_315 = null, this.clock.running && (this.clock.stop(), this.poses.clear(), this.host.setWorldScale(1), this.host.setAudioScale(1), this.veil?.set(0), this.graded && !this.restored && this.$_2bon(0), this.graded = !1);
     }
   },
-  wG = hi.degToRad,
+  wG = MathUtils.degToRad,
   yG = wG(38),
-  gG = new ai(),
-  vG = new gi(),
-  bG = new yi(),
-  kG = new gi(),
-  MG = new gi(),
-  SG = new gi(0, 1, 0),
+  gG = new Matrix4(),
+  vG = new Vector3(),
+  bG = new Quaternion(),
+  kG = new Vector3(),
+  MG = new Vector3(),
+  SG = new Vector3(0, 1, 0),
   _G = t => {
     const s = Math.min(1, Math.max(0, t));
     return s * s * (3 - 2 * s);
   };
-function $G(t, s, e, i, n = new gi()) {
+function $G(t, s, e, i, n = new Vector3()) {
   const r = s + yG * _G(e / 4.4),
     o = Math.hypot(3.4, 1.1);
   return kG.set(Math.sin(r), 0, Math.cos(r)), MG.set(0, 1, 0), n.copy(t).addScaledVector(kG, 3.4 * i / o).addScaledVector(MG, 1.1 * i / o);
 }
 var xG = class {
     startedAt = -1;
-    eye = new gi();
-    $_lg4 = new yi();
+    eye = new Vector3();
+    $_lg4 = new Quaternion();
     $_2oj = 60;
     yaw = 0;
-    focus = new gi();
+    focus = new Vector3();
     arm = -1;
     last = {
-      position: new gi(),
-      quaternion: new yi(),
+      position: new Vector3(),
+      quaternion: new Quaternion(),
       fov: 60,
       showLocal: !0
     };
     $_2fd = !1;
     $_4xro = -1;
     out = {
-      position: new gi(),
-      quaternion: new yi(),
+      position: new Vector3(),
+      quaternion: new Quaternion(),
       fov: 60,
       showLocal: !0
     };
@@ -39764,7 +39764,7 @@ var xG = class {
       return this.startedAt >= 0;
     }
     start(t, s, e, i) {
-      this.startedAt = t, s.getWorldPosition(this.eye), s.getWorldQuaternion(this.$_lg4), this.$_2oj = e, this.yaw = i, this.focus.copy(this.eye).add(new gi(0, -.45, 0)), this.arm = -1, this.$_2fd = !1, this.$_4xro = -1;
+      this.startedAt = t, s.getWorldPosition(this.eye), s.getWorldQuaternion(this.$_lg4), this.$_2oj = e, this.yaw = i, this.focus.copy(this.eye).add(new Vector3(0, -.45, 0)), this.arm = -1, this.$_2fd = !1, this.$_4xro = -1;
     }
     stop() {
       this.startedAt = -1, this.$_4xro = -1, this.$_2fd = !1;
@@ -39910,12 +39910,12 @@ var BG = {
     votes: [...t.votes]
   }),
   qG = [],
-  HG = new gi(),
+  HG = new Vector3(),
   GG = [],
-  VG = new gi(),
-  WG = new gi(),
-  JG = new gi(),
-  YG = new gi();
+  VG = new Vector3(),
+  WG = new Vector3(),
+  JG = new Vector3(),
+  YG = new Vector3();
 function XG() {
   try {
     return "undefined" == typeof localStorage ? null : localStorage;
@@ -40539,7 +40539,7 @@ aV.hasAttribute("data-embed") && ol(aV), l.refresh(), function () {
       }(result))).catch(() => {}), this.$_3cw.$_6nu({
         wantedMix: () => this.joining || this.fade.busy ? null : 1,
         slowMotion: () => !!this.$_689?.active
-      }), this.$_3cw.$_5gwt(), this.renderer = await z(() => new B(this.canvas, {
+      }), this.$_3cw.$_5gwt(), this.renderer = await z(() => new _GameRenderer(this.canvas, {
         lowLatency: this.settings.value.lowLatencyCanvas
       })), Vy({
         renderer: this.renderer
@@ -40618,7 +40618,7 @@ aV.hasAttribute("data-embed") && ol(aV), l.refresh(), function () {
         Do().then(result => {
           lookupMap = jo(result);
         }).catch(() => {});
-        const e = new gi(),
+        const e = new Vector3(),
           i = new Ak(t.root, "above", !0),
           n = t.renderer.culled;
         let r = null;
@@ -40787,7 +40787,7 @@ aV.hasAttribute("data-embed") && ol(aV), l.refresh(), function () {
           t && "object" == typeof t && this.missions.credit(t);
         });
       };
-      const c = new gi();
+      const c = new Vector3();
       this.worldSounds = new BP(this.audio, () => this.settings.value.volume, () => this.renderer.camera.getWorldPosition(c)), this.wallKicks = new eA({
         kick: t => this.renderer.wallKick(t),
         play: (t, s) => this.worldSounds.play(t, s),
@@ -40802,7 +40802,7 @@ aV.hasAttribute("data-embed") && ol(aV), l.refresh(), function () {
         draw: t => this.renderer.explosion(t),
         fxFile: t => this.renderer.$_134(t)
       }, this.worldSounds), this.renderer.$_258 = (t, s, e, i, n) => {
-        const r = this.renderer.camera.getWorldPosition(new gi()).distanceTo(i),
+        const r = this.renderer.camera.getWorldPosition(new Vector3()).distanceTo(i),
           o = r <= 1 ? 1 : Math.max(0, 1 - (r - 1) / (n - 1));
         o > 0 && this.audio.play({
           file: t,
@@ -41954,8 +41954,8 @@ aV.hasAttribute("data-embed") && ol(aV), l.refresh(), function () {
         this.$_2r1(!1), this.$_j4n = !0;
         const t = this.renderer.camera;
         this.session.world?.runtime.defaultCamera || (this.$_6cb = {
-          position: t.getWorldPosition(new gi()),
-          quaternion: t.getWorldQuaternion(new yi()),
+          position: t.getWorldPosition(new Vector3()),
+          quaternion: t.getWorldQuaternion(new Quaternion()),
           fov: t.fov,
           showLocal: !1
         }), this.hud.visible = !1;
@@ -43064,7 +43064,7 @@ aV.hasAttribute("data-embed") && ol(aV), l.refresh(), function () {
           n: void 0
         } : t, s || i, e, s);
         const n = this.session.yaw;
-        if (s && (this.props?.$_5n6(t.from, t.to, new gi(-Math.sin(n), 0, -Math.cos(n))), t.windup || this.$_6nr(t), this.progression.$_6n2(t)), t.weapon && !e) {
+        if (s && (this.props?.$_5n6(t.from, t.to, new Vector3(-Math.sin(n), 0, -Math.cos(n))), t.windup || this.$_6nr(t), this.progression.$_6n2(t)), t.weapon && !e) {
           const e = this.settings.value.volume;
           if (s) this.audio.shot(t.weapon, e);else if (i) this.audio.shot(t.weapon, e, {
             source: t.shooter
@@ -43243,7 +43243,7 @@ aV.hasAttribute("data-embed") && ol(aV), l.refresh(), function () {
   }
   $_3ba(t, s) {
     const e = this.renderer.camera;
-    this.deadCamera = new ov(e.getWorldPosition(new gi()), e.getWorldQuaternion(new yi()), e.fov), this.killerId = t.killerId && t.killerId !== t.victimId ? t.killerId : null, this.hud.visible = !1;
+    this.deadCamera = new ov(e.getWorldPosition(new Vector3()), e.getWorldQuaternion(new Quaternion()), e.fov), this.killerId = t.killerId && t.killerId !== t.victimId ? t.killerId : null, this.hud.visible = !1;
     const i = t.killerId ? this.session.state?.players.get(t.killerId) : void 0,
       n = i?.rank || "",
       r = i?.nick ? SA(i.nick.pfpBackground, i.nick.pfpEffect) : null,
@@ -43266,7 +43266,7 @@ aV.hasAttribute("data-embed") && ol(aV), l.refresh(), function () {
         ...r,
         health: 0
       }, e);
-    i.teamOnly = 1 === n, this.spectator = new EP(s.getWorldPosition(new gi()), s.getWorldQuaternion(new yi()), o ? e.id : null, this.session.local?.team ?? Ci.None, {
+    i.teamOnly = 1 === n, this.spectator = new EP(s.getWorldPosition(new Vector3()), s.getWorldQuaternion(new Quaternion()), o ? e.id : null, this.session.local?.team ?? Ci.None, {
       target: (t, s) => {
         t ? i.spectating(this.nickOf(t), t.team) : s ? i.spectating(wt(this.renderer.courseGhost.name), Ci.None) : i.nobody();
       },
@@ -43284,7 +43284,7 @@ aV.hasAttribute("data-embed") && ol(aV), l.refresh(), function () {
     if (this.spectator) return void (this.spectator.target = t);
     const s = this.renderer.camera,
       e = this.$_60g;
-    this.spectator = new EP(s.getWorldPosition(new gi()), s.getWorldQuaternion(new yi()), t, this.session.local?.team ?? Ci.None, {
+    this.spectator = new EP(s.getWorldPosition(new Vector3()), s.getWorldQuaternion(new Quaternion()), t, this.session.local?.team ?? Ci.None, {
       target: (t, s) => {
         t ? e.spectating(this.nickOf(t), t.team) : s ? e.spectating(wt(this.renderer.courseGhost.name), Ci.None) : e.nobody();
       },
@@ -43368,7 +43368,7 @@ aV.hasAttribute("data-embed") && ol(aV), l.refresh(), function () {
   $_7gb(t) {
     if (!this.deadCamera) return null;
     const s = this.killerId ? this.session.state?.players.get(this.killerId) : void 0;
-    return this.deadCamera.update(t, s && s.health > 0 ? new gi(s.x, s.y, s.z) : null);
+    return this.deadCamera.update(t, s && s.health > 0 ? new Vector3(s.x, s.y, s.z) : null);
   }
   $_6no(t, s, e) {
     if (this.entering) return;
@@ -43381,14 +43381,14 @@ aV.hasAttribute("data-embed") && ol(aV), l.refresh(), function () {
   $_11i(t) {
     const s = this.session.world?.runtime.defaultCamera;
     if (!this.$_32l5 && !this.$_j4n && !this.$_q1b || !s) return null;
-    this.$_8tx -= hi.degToRad(s.speed) * t;
-    const e = new yi().setFromAxisAngle(new gi(0, 1, 0), this.$_8tx),
+    this.$_8tx -= MathUtils.degToRad(s.speed) * t;
+    const e = new Quaternion().setFromAxisAngle(new Vector3(0, 1, 0), this.$_8tx),
       i = s.forward.clone().applyQuaternion(e),
       n = s.up.clone().applyQuaternion(e),
-      r = new ai().lookAt(s.position, s.position.clone().add(i), n);
+      r = new Matrix4().lookAt(s.position, s.position.clone().add(i), n);
     return {
       position: s.position.clone(),
-      quaternion: new yi().setFromRotationMatrix(r),
+      quaternion: new Quaternion().setFromRotationMatrix(r),
       fov: this.settings.value.fov,
       showLocal: !1
     };
@@ -43721,4 +43721,4 @@ aV.hasAttribute("data-embed") && ol(aV), l.refresh(), function () {
 }(aV).start();
 export { jU as $, bv as $i, Ax as $n, mS as $r, hC as $t, EH as A, Qd as Aa, xb as Ai, kT as An, p$ as Ar, zD as At, sq as B, Tu as Ba, Vv as Bi, pP as Bn, IS as Br, gD as Bt, jH as C, sp as Ca, bk as Ci, vE as Cn, $$ as Cr, HB as Ct, sG as D, Mf as Da, Eb as Di, YT as Dn, w$ as Dr, GD as Dt, NH as E, jf as Ea, Tb as Ei, dE as En, m$ as Er, dB as Et, yH as F, wd as Fa, Ov as Fi, JP as Fn, b_ as Fr, CD as Ft, ZU as G, qv as Gi, nP as Gn, fS as Gr, fD as Gt, XU as H, Ou as Ha, zv as Hi, hP as Hn, dS as Hr, kD as Ht, wH as I, yd as Ia, Nv as Ii, VP as In, y_ as Ir, AD as It, FU as J, Dv as Ji, iP as Jn, kS as Jr, QF as Jt, YU as K, Uv as Ki, aP as Kn, PS as Kr, dD as Kt, vH as L, Ku as La, Iv as Li, DP as Ln, qS as Lr, PD as Lt, UH as M, Md as Ma, Pb as Mi, mA as Mn, h$ as Mr, BD as Mt, gH as N, md as Na, pb as Ni, fA as Nn, r$ as Nr, FD as Nt, CH as O, tf as Oa, Bb as Oi, hE as On, u$ as Or, JD as Ot, bH as P, pd as Pa, gb as Pi, WP as Pn, v_ as Pr, ED as Pt, RU as Q, kv as Qi, Dx as Qn, vS as Qr, bF as Qt, rq as R, Uu as Ra, Ev as Ri, uP as Rn, US as Rr, _D as Rt, FH as S, op as Sa, kk as Si, lE as Sn, x$ as Sr, UB as St, WH as T, Ef as Ta, Nb as Ti, mE as Tn, d$ as Tr, fB as Tt, QU as U, Nu as Ua, Hv as Ui, cP as Un, cS as Ur, bD as Ut, VU as V, Cu as Va, Cv as Vi, fP as Vn, CS as Vr, MD as Vt, nq as W, Bv as Wi, rP as Wn, AS as Wr, vD as Wt, BU as X, Tv as Xi, tP as Xn, OS as Xr, sD as Xt, DU as Y, mv as Yi, eP as Yn, wS as Yr, tD as Yt, LU as Z, Mv as Zi, Rx as Zn, bS as Zr, kF as Zt, ZH as _, Cm as _a, Lk as _i, iE as _n, j$ as _r, tz as _t, aG as a, zy as aa, pS as ai, hN as an, Ex as ar, uU as at, GH as b, Zf as ba, Ik as bi, oE as bn, D$ as br, iz as bt, LH as c, $y as ca, RM as ci, qE as cn, vx as cr, QK as ct, IH as d, Rw as da, TM as di, wE as dn, px as dr, KK as dt, Sv as ea, ES as ei, lC as en, Nx as er, hU as et, OH as f, Uw as fa, SM as fi, ZT as fn, ox as fr, oK as ft, XH as g, Im as ga, jk as gi, uE as gn, F$ as gr, ZB as gt, QH as h, Vm as ha, qk as hi, QT as hn, E$ as hr, XB as ht, hG as i, ig as ia, MS as ii, oC as in, Ox as ir, aU as it, tG as j, Sd as ja, $b as ji, SA as jn, f$ as jr, DD as jt, DH as k, sf as ka, zb as ki, FT as kn, l$ as kr, YD as kt, RH as l, Ny as la, jM as li, zE as ln, gx as lr, ZK as lt, iG as m, Wm as ma, Hk as mi, XT as mn, z$ as mr, QB as mt, rV as n, ev as na, NS as ni, nC as nn, Ix as nr, rU as nt, YH as o, Ey as oa, SS as oi, aN as on, Px as or, cU as ot, eG as p, bw as pa, zk as pi, tE as pn, rx as pr, rK as pt, iq as q, Fv as qi, oP as qn, uS as qr, oD as qt, oV as r, tg as ra, yS as ri, iC as rn, Tx as rr, lU as rt, JH as s, Ty as sa, GM as si, cN as sn, xx as sr, sU as st, nV as t, _v as ta, TS as ti, rC as tn, Cx as tr, oU as tt, BH as u, ey as ua, $M as ui, DE as un, wx as ur, tU as ut, KH as v, Hm as va, Rk as vi, yE as vn, L$ as vr, sz as vt, VH as w, Cf as wa, Mk as wi, aE as wn, _$ as wr, GB as wt, qH as x, np as xa, vk as xi, gE as xn, B$ as xr, ez as xt, HH as y, Wf as ya, Fk as yi, fE as yn, N$ as yr, nz as yt, KU as z, Iu as za, Gv as zi, lP as zn, KS as zr, SD as zt };
 
-;(()=>{try{const proof={"file":"airstraf.ing/assets/main-0GITWSWA.js","readableSha256":"194dec42267ad1171864c2af5f8c0e8d186b136e1069b41f3d807237ed591815"};const key="__AIRSTRAF_REPLACEMENTS__";const list=Array.isArray(globalThis[key])?globalThis[key]:(globalThis[key]=[]);if(!list.some(x=>x.file===proof.file))list.push({...proof,executedAt:new Date().toISOString()});}catch{}})();
+;(()=>{try{const proof={"file":"airstraf.ing/assets/main-0GITWSWA.js","readableSha256":"be31657fc9a58c4a137c1d3daef56a8658cda5a130be74764956c1ed2eea4028"};const key="__AIRSTRAF_REPLACEMENTS__";const list=Array.isArray(globalThis[key])?globalThis[key]:(globalThis[key]=[]);if(!list.some(x=>x.file===proof.file))list.push({...proof,executedAt:new Date().toISOString()});}catch{}})();

@@ -1,4 +1,4 @@
-import { Ft as n, J as t, S as e, W as o, _ as r, _r as a, g as s, h as i, qn as c, sn as f, v as u, zr as l } from "./three-Bi9Yyrpt.js";
+import { Ft as Matrix4, J as Float32BufferAttribute, S as CapsuleGeometry, W as Euler, _ as BufferAttribute, _r as SphereGeometry, g as BoxGeometry, h as Box3, qn as c, sn as Quaternion, v as BufferGeometry, zr as Vector3 } from "./three-Bi9Yyrpt.js";
 import { o as d } from "./c-D-fVO02v.js";
 import "./c-HBMF4bPX.js";
 var m = {
@@ -401,17 +401,17 @@ function H(n, t, e) {
   for (let r = 0; r < o; r++) n.setSlotRemoved(T(r), e - t[r] <= 90);
 }
 function J(n) {
-  const e = new u();
-  e.setAttribute("position", new t(n.positions, 3)), n.normals.length === n.positions.length && e.setAttribute("normal", new t(n.normals, 3)), n.uv.length === n.positions.length / 3 * 2 && e.setAttribute("uv", new t(n.uv, 2));
+  const e = new BufferGeometry();
+  e.setAttribute("position", new Float32BufferAttribute(n.positions, 3)), n.normals.length === n.positions.length && e.setAttribute("normal", new Float32BufferAttribute(n.normals, 3)), n.uv.length === n.positions.length / 3 * 2 && e.setAttribute("uv", new Float32BufferAttribute(n.uv, 2));
   const o = n.indices;
-  e.setIndex(Array.isArray(o) ? o : new r(o instanceof Uint16Array || o instanceof Uint32Array ? o : Uint32Array.from(o), 1));
+  e.setIndex(Array.isArray(o) ? o : new BufferAttribute(o instanceof Uint16Array || o instanceof Uint32Array ? o : Uint32Array.from(o), 1));
   for (const [t, r, a] of n.groups) e.addGroup(t, r, a);
   return e.getAttribute("normal") || e.computeVertexNormals(), e;
 }
 function W(t) {
   const lookupMap = new Map(t.nodes.map(node => [node.id, node])),
     _lookupMap = new Map(),
-    r = new n().makeScale(-1, 1, 1);
+    r = new Matrix4().makeScale(-1, 1, 1);
   function a(t) {
     const s = _lookupMap.get(t.id);
     if (s) return s;
@@ -420,7 +420,7 @@ function W(t) {
         matrix: r,
         active: !0
       },
-      u = new n().compose(new l(...t.position), new f(...t.rotation), new l(...t.scale)),
+      u = new Matrix4().compose(new Vector3(...t.position), new Quaternion(...t.rotation), new Vector3(...t.scale)),
       d = {
         matrix: c.matrix.clone().multiply(u),
         active: c.active && t.active
@@ -445,10 +445,10 @@ function q(n, t) {
     };
   return new Set(n.nodes.filter(node => r(node.id)).map(item => item.id));
 }
-var E = new l(),
-  G = new l(),
-  Q = new l(),
-  R = new l();
+var E = new Vector3(),
+  G = new Vector3(),
+  Q = new Vector3(),
+  R = new Vector3();
 function V(n) {
   const t = n.getAttribute("position"),
     e = n.getIndex(),
@@ -509,7 +509,7 @@ function Y(n, o = new Set(), i = new Set(), c = new Map(), f) {
     active: u
   } of W(n)) if (u && 5 !== t.layer && 6 !== t.layer && !p.has(t.id) && (!f || f(t))) for (const i of t.colliders ?? []) {
     let f;
-    if ("box" === i.type) f = new s(...i.size).translate(...i.center);else if ("sphere" === i.type) f = new a(i.radius, 12, 8).translate(...i.center);else if ("capsule" === i.type) f = new e(i.radius, Math.max(0, i.height - 2 * i.radius), 3, 10), 0 === i.direction ? f.rotateZ(Math.PI / 2) : 2 === i.direction && f.rotateX(Math.PI / 2), f.translate(...i.center);else {
+    if ("box" === i.type) f = new BoxGeometry(...i.size).translate(...i.center);else if ("sphere" === i.type) f = new SphereGeometry(i.radius, 12, 8).translate(...i.center);else if ("capsule" === i.type) f = new CapsuleGeometry(i.radius, Math.max(0, i.height - 2 * i.radius), 3, 10), 0 === i.direction ? f.rotateZ(Math.PI / 2) : 2 === i.direction && f.rotateX(Math.PI / 2), f.translate(...i.center);else {
       if (!i.mesh || !n.meshes[i.mesh]) continue;
       f = J(n.meshes[i.mesh]);
     }
@@ -674,8 +674,8 @@ function Y(n, o = new Set(), i = new Set(), c = new Map(), f) {
     b = new Uint8Array(l.length / 3);
     for (let t = 0; t < n.deadly.length; t++) if (n.deadly[t]) for (let n = 0; n < 3; n++) d[3 * t + n] = 1, b[3 * t + n] = 1;
   }
-  const y = new u();
-  y.setAttribute("position", new t(l, 3)), y.setAttribute("surface", new t(d, 1)), y.setAttribute("material", new r(Uint8Array.from(m), 1)), b && (y.setAttribute("death", new r(b, 1)), y.setAttribute("turned", new r(Uint8Array.from(h), 1)));
+  const y = new BufferGeometry();
+  y.setAttribute("position", new Float32BufferAttribute(l, 3)), y.setAttribute("surface", new Float32BufferAttribute(d, 1)), y.setAttribute("material", new BufferAttribute(Uint8Array.from(m), 1)), b && (y.setAttribute("death", new BufferAttribute(b, 1)), y.setAttribute("turned", new BufferAttribute(Uint8Array.from(h), 1)));
   const v = f ? null : function (n, t) {
     if (!t || n.getIndex()) return null;
     const e = n.getAttribute("position");
@@ -692,8 +692,8 @@ function Y(n, o = new Set(), i = new Set(), c = new Map(), f) {
 var nn = /^spawnPoint(?: \(\d+\))?$/i;
 function tn(n) {
   return W(n).filter(item => item.active && (n.spawns?.length ? n.spawns.includes(item.node.id) : nn.test(item.node.name))).map(item => {
-    const t = new l().setFromMatrixPosition(item.matrix),
-      e = new l(0, 0, 1).transformDirection(item.matrix);
+    const t = new Vector3().setFromMatrixPosition(item.matrix),
+      e = new Vector3(0, 0, 1).transformDirection(item.matrix);
     return {
       x: t.x,
       y: t.y + .15,
@@ -820,14 +820,14 @@ var en = [{
     }
   };
 function ln(n, t) {
-  const e = [new l(1, 0, 0).transformDirection(t), new l(0, 1, 0).transformDirection(t), new l(0, 0, 1).transformDirection(t)],
-    o = [new l().setFromMatrixColumn(t, 0).length(), new l().setFromMatrixColumn(t, 1).length(), new l().setFromMatrixColumn(t, 2).length()],
-    r = new l().fromArray(n.center ?? [0, 0, 0]).applyMatrix4(t);
+  const e = [new Vector3(1, 0, 0).transformDirection(t), new Vector3(0, 1, 0).transformDirection(t), new Vector3(0, 0, 1).transformDirection(t)],
+    o = [new Vector3().setFromMatrixColumn(t, 0).length(), new Vector3().setFromMatrixColumn(t, 1).length(), new Vector3().setFromMatrixColumn(t, 2).length()],
+    r = new Vector3().fromArray(n.center ?? [0, 0, 0]).applyMatrix4(t);
   if ("box" === n.type && n.size) return {
     kind: "box",
     center: r,
     axes: e,
-    half: new l(Math.abs(n.size[0]) * o[0] / 2, Math.abs(n.size[1]) * o[1] / 2, Math.abs(n.size[2]) * o[2] / 2),
+    half: new Vector3(Math.abs(n.size[0]) * o[0] / 2, Math.abs(n.size[1]) * o[1] / 2, Math.abs(n.size[2]) * o[2] / 2),
     radius: 0,
     direction: 1
   };
@@ -835,7 +835,7 @@ function ln(n, t) {
     kind: "sphere",
     center: r,
     axes: e,
-    half: new l(),
+    half: new Vector3(),
     radius: (n.radius ?? .5) * Math.max(...o),
     direction: 1
   };
@@ -844,7 +844,7 @@ function ln(n, t) {
       a = [0, 1, 2].filter(item => item !== t).map(item => o[item]),
       s = (n.radius ?? .5) * Math.max(...a),
       i = Math.max((n.height ?? 1) * o[t], 2 * s),
-      c = new l();
+      c = new Vector3();
     return c.setComponent(t, i / 2 - s), {
       kind: "capsule",
       center: r,
@@ -857,7 +857,7 @@ function ln(n, t) {
   return null;
 }
 function dn(n, t) {
-  const e = new l().subVectors(t, n.center),
+  const e = new Vector3().subVectors(t, n.center),
     o = [e.dot(n.axes[0]), e.dot(n.axes[1]), e.dot(n.axes[2])];
   if ("box" === n.kind) {
     let t = 0;
@@ -875,25 +875,25 @@ function dn(n, t) {
 function mn(n, t, e) {
   if ("box" === t.kind) {
     const o = n.origin.clone().sub(t.center),
-      r = new c(new l(o.dot(t.axes[0]), o.dot(t.axes[1]), o.dot(t.axes[2])), new l(n.direction.dot(t.axes[0]), n.direction.dot(t.axes[1]), n.direction.dot(t.axes[2]))),
-      a = r.intersectBox(new i(t.half.clone().negate(), t.half.clone()), new l()),
+      r = new c(new Vector3(o.dot(t.axes[0]), o.dot(t.axes[1]), o.dot(t.axes[2])), new Vector3(n.direction.dot(t.axes[0]), n.direction.dot(t.axes[1]), n.direction.dot(t.axes[2]))),
+      a = r.intersectBox(new Box3(t.half.clone().negate(), t.half.clone()), new Vector3()),
       s = a ? a.distanceTo(r.origin) : null;
     return null !== s && s <= e ? s : null;
   }
-  const o = new l();
+  const o = new Vector3();
   for (let r = 0; r <= e; r += .05) if (dn(t, n.at(r, o)) <= 0) return r;
   return null;
 }
 function pn(n, t, e, o, r = .7, a = 2.8) {
-  for (const s of a >= 2.8 ? wn : hn(a)) if (dn(n, new l(t, e + s, o)) <= r) return !0;
+  for (const s of a >= 2.8 ? wn : hn(a)) if (dn(n, new Vector3(t, e + s, o)) <= r) return !0;
   return !1;
 }
 var wn = [.7, 1.4, 2.1],
   hn = n => [.7, Math.max(.7, n / 2), Math.max(.7, n - .7)];
 function bn(n, t, e, o, r, a) {
-  const s = new l(0, 1, 0).transformDirection(r),
+  const s = new Vector3(0, 1, 0).transformDirection(r),
     i = q(n, new Set([o])),
-    c = new l();
+    c = new Vector3();
   let f = 0,
     u = 1 / 0,
     d = -1 / 0;
@@ -928,7 +928,7 @@ function bn(n, t, e, o, r, a) {
 function Mn(n, t, e) {
   const o = q(n, new Set([e])),
     r = [],
-    a = new l();
+    a = new Vector3();
   for (const s of n.nodes) {
     const e = s.mesh ? n.meshes[s.mesh] : void 0,
       i = t.get(s.id)?.matrix;
@@ -955,7 +955,7 @@ function vn(n, t) {
     "Lava" === g.tag && g.node && uniqueItems.add(g.node);
     const i = g.scripts?.HardpointArea;
     if (i) {
-      const o = new l().setFromMatrixPosition(t.matrix),
+      const o = new Vector3().setFromMatrixPosition(t.matrix),
         a = i.boxRotation ?? {
           x: 0,
           y: 0,
@@ -968,9 +968,9 @@ function vn(n, t) {
         name: g.name,
         node: g.node ?? "",
         center: o,
-        half: new l(i.detectionBoxSize.x / 2, i.detectionBoxSize.y / 2, i.detectionBoxSize.z / 2),
-        axes: [new l(1, 0, 0).transformDirection(s), new l(0, 1, 0).transformDirection(s), new l(0, 0, 1).transformDirection(s)],
-        waypoint: f ? new l().setFromMatrixPosition(f.matrix) : null
+        half: new Vector3(i.detectionBoxSize.x / 2, i.detectionBoxSize.y / 2, i.detectionBoxSize.z / 2),
+        axes: [new Vector3(1, 0, 0).transformDirection(s), new Vector3(0, 1, 0).transformDirection(s), new Vector3(0, 0, 1).transformDirection(s)],
+        waypoint: f ? new Vector3().setFromMatrixPosition(f.matrix) : null
       });
     }
     for (const n of g.colliders) {
@@ -981,8 +981,8 @@ function vn(n, t) {
         i = g.spawn ? lookupMap.get(g.spawn) : void 0;
       let c;
       if (i) {
-        const n = new l().setFromMatrixPosition(i.matrix),
-          t = new l(0, 0, 1).transformDirection(i.matrix);
+        const n = new Vector3().setFromMatrixPosition(i.matrix),
+          t = new Vector3(0, 0, 1).transformDirection(i.matrix);
         c = {
           x: n.x,
           y: n.y,
@@ -1015,8 +1015,8 @@ function vn(n, t) {
   const f = (t?.managers.MapInfo?.[0]?.data?.spawnPoints ?? []).flatMap(item => {
       const t = item?.node ? lookupMap.get(item.node) : void 0;
       if (!t) return [];
-      const o = new l().setFromMatrixPosition(t.matrix),
-        r = new l(0, 0, 1).transformDirection(t.matrix);
+      const o = new Vector3().setFromMatrixPosition(t.matrix),
+        r = new Vector3(0, 0, 1).transformDirection(t.matrix);
       return [{
         x: o.x,
         y: o.y,
@@ -1050,7 +1050,7 @@ function vn(n, t) {
       a = o && r ? ln(r, o.matrix) : null;
     if (!o || !a || !g.active) continue;
     const s = t.gfx?.node ?? null,
-      i = new l().setFromMatrixPosition(o.matrix);
+      i = new Vector3().setFromMatrixPosition(o.matrix);
     m.push({
       name: g.name,
       node: g.node,
@@ -1080,8 +1080,8 @@ function vn(n, t) {
     const n = g.scripts?.CourseStart,
       t = n && g.node ? lookupMap.get(g.node) : void 0;
     if (!t || "string" != typeof n?.track) continue;
-    const o = new l().setFromMatrixPosition(t.matrix),
-      r = new l(0, 0, 1).transformDirection(t.matrix);
+    const o = new Vector3().setFromMatrixPosition(t.matrix),
+      r = new Vector3(0, 0, 1).transformDirection(t.matrix);
     h.push({
       track: n.track,
       x: o.x,
@@ -1112,8 +1112,8 @@ function vn(n, t) {
     }
     const o = yn.find(item => g.scripts?.[item]);
     if (!o) continue;
-    const r = new l().setFromMatrixPosition(n.matrix),
-      a = new l(0, 0, 1).transformDirection(n.matrix);
+    const r = new Vector3().setFromMatrixPosition(n.matrix),
+      a = new Vector3(0, 0, 1).transformDirection(n.matrix);
     M.push({
       script: o,
       data: g.scripts?.[o] ?? {},
@@ -1135,9 +1135,9 @@ function vn(n, t) {
     k = v?.node ? lookupMap.get(v.node) : void 0,
     x = (t?.objects ?? []).find(item => item.node === v?.node),
     A = k ? {
-      position: new l().setFromMatrixPosition(k.matrix),
-      forward: new l(0, 0, 1).transformDirection(k.matrix),
-      up: new l(0, 1, 0).transformDirection(k.matrix),
+      position: new Vector3().setFromMatrixPosition(k.matrix),
+      forward: new Vector3(0, 0, 1).transformDirection(k.matrix),
+      up: new Vector3(0, 1, 0).transformDirection(k.matrix),
       speed: Number(x?.scripts?.RotateAllTime?.speed ?? 0)
     } : null;
   return {
@@ -1198,7 +1198,7 @@ function An(n) {
 }
 function gn(t, e, r) {
   const a = Math.PI / 180;
-  return new n().makeRotationFromEuler(new o(t * a, -e * a, -r * a, "YXZ"));
+  return new Matrix4().makeRotationFromEuler(new Euler(t * a, -e * a, -r * a, "YXZ"));
 }
 var In = null;
 function Sn(n) {
