@@ -1,5 +1,38 @@
 [
   {
+    "file": "airstraf.ing/assets/c-4ZchrfCo.js",
+    "renames": [
+      {
+        "oldName": "e",
+        "newName": "item",
+        "line": 1,
+        "rule": "direct .find callback: first array element",
+        "pass": "additional"
+      },
+      {
+        "oldName": "n",
+        "newName": "item",
+        "line": 1,
+        "rule": "direct .filter callback: first array element",
+        "pass": "additional"
+      },
+      {
+        "oldName": "e",
+        "newName": "item",
+        "line": 1,
+        "rule": "direct .map callback: first array element",
+        "pass": "additional"
+      },
+      {
+        "oldName": "l",
+        "newName": "item",
+        "line": 1,
+        "rule": "direct .find callback: first array element",
+        "pass": "additional"
+      }
+    ]
+  },
+  {
     "file": "airstraf.ing/assets/c-B0EPN0fS.js",
     "renames": [
       {
@@ -97,6 +130,678 @@
         "newName": "_lookupMap",
         "line": 2,
         "rule": "constructor"
+      },
+      {
+        "oldName": "t",
+        "newName": "uint32Values",
+        "line": 2,
+        "rule": "constructor: new Uint32Array(...)",
+        "pass": "additional"
+      },
+      {
+        "oldName": "s",
+        "newName": "dataView",
+        "line": 2,
+        "rule": "constructor: new DataView(...)",
+        "pass": "additional"
+      },
+      {
+        "oldName": "n",
+        "newName": "uint8Values",
+        "line": 2,
+        "rule": "constructor: new Uint8Array(...)",
+        "pass": "additional"
+      },
+      {
+        "oldName": "i",
+        "newName": "uint8Values",
+        "line": 2,
+        "rule": "constructor: new Uint8Array(...)",
+        "pass": "additional"
+      },
+      {
+        "oldName": "n",
+        "newName": "uint8Values",
+        "line": 2,
+        "rule": "constructor: new Uint8Array(...)",
+        "pass": "additional"
+      },
+      {
+        "oldName": "i",
+        "newName": "uint8Values",
+        "line": 2,
+        "rule": "constructor: new Uint8Array(...)",
+        "pass": "additional"
+      },
+      {
+        "oldName": "i",
+        "newName": "uint8Values",
+        "line": 2,
+        "rule": "constructor: new Uint8Array(...)",
+        "pass": "additional"
+      },
+      {
+        "oldName": "i",
+        "newName": "int16Values",
+        "line": 2,
+        "rule": "constructor: new Int16Array(...)",
+        "pass": "additional"
+      },
+      {
+        "oldName": "r",
+        "newName": "float32Values",
+        "line": 2,
+        "rule": "constructor: new Float32Array(...)",
+        "pass": "additional"
+      },
+      {
+        "oldName": "i",
+        "newName": "uint8Values",
+        "line": 2,
+        "rule": "constructor: new Uint8Array(...)",
+        "pass": "additional"
+      },
+      {
+        "oldName": "n",
+        "newName": "dataView",
+        "line": 2,
+        "rule": "constructor: new DataView(...)",
+        "pass": "additional"
+      },
+      {
+        "oldName": "c",
+        "newName": "float32Values",
+        "line": 2,
+        "rule": "constructor: new Float32Array(...)",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "_float32Values",
+        "line": 2,
+        "rule": "constructor: new Float32Array(...)",
+        "pass": "additional"
+      },
+      {
+        "oldName": "i",
+        "newName": "int16Values",
+        "line": 2,
+        "rule": "constructor: new Int16Array(...)",
+        "pass": "additional"
+      },
+      {
+        "oldName": "o",
+        "newName": "float32Values",
+        "line": 2,
+        "rule": "constructor: new Float32Array(...)",
+        "pass": "additional"
+      },
+      {
+        "oldName": "a",
+        "newName": "float32Values",
+        "line": 2,
+        "rule": "constructor: new Float32Array(...)",
+        "pass": "additional"
+      },
+      {
+        "oldName": "i",
+        "newName": "item",
+        "line": 1,
+        "rule": "direct .map callback: first array element",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "track",
+        "line": 2,
+        "rule": "direct .forEach callback: first array element of .tracks",
+        "pass": "additional"
+      },
+      {
+        "oldName": "n",
+        "newName": "index",
+        "line": 2,
+        "rule": "direct .forEach callback: array index",
+        "pass": "additional"
+      },
+      {
+        "oldName": "n",
+        "newName": "layer",
+        "line": 2,
+        "rule": "direct .forEach callback: first array element of .layers",
+        "pass": "additional"
+      },
+      {
+        "oldName": "s",
+        "newName": "index",
+        "line": 2,
+        "rule": "direct .forEach callback: array index",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "item",
+        "line": 2,
+        "rule": "direct .forEach callback: first array element",
+        "pass": "additional"
+      },
+      {
+        "oldName": "n",
+        "newName": "_index",
+        "line": 2,
+        "rule": "direct .forEach callback: array index",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "layer",
+        "line": 2,
+        "rule": "direct .forEach callback: first array element of .layers",
+        "pass": "additional"
+      },
+      {
+        "oldName": "n",
+        "newName": "index",
+        "line": 2,
+        "rule": "direct .forEach callback: array index",
+        "pass": "additional"
+      },
+      {
+        "oldName": "n",
+        "newName": "state",
+        "line": 2,
+        "rule": "direct .findIndex callback: first array element of .states",
+        "pass": "additional"
+      },
+      {
+        "oldName": "n",
+        "newName": "layer",
+        "line": 2,
+        "rule": "direct .findIndex callback: first array element of .layers",
+        "pass": "additional"
+      },
+      {
+        "oldName": "s",
+        "newName": "index",
+        "line": 2,
+        "rule": "direct .findIndex callback: array index",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "item",
+        "line": 2,
+        "rule": "direct .find callback: first array element of .tree",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "item",
+        "line": 2,
+        "rule": "direct .map callback: first array element",
+        "pass": "additional"
+      },
+      {
+        "oldName": "s",
+        "newName": "index",
+        "line": 2,
+        "rule": "direct .map callback: array index",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "accumulator",
+        "line": 2,
+        "rule": ".reduce accumulator",
+        "pass": "additional"
+      },
+      {
+        "oldName": "n",
+        "newName": "item",
+        "line": 2,
+        "rule": ".reduce current element",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "result",
+        "line": 2,
+        "rule": ".then resolved value",
+        "pass": "additional"
+      },
+      {
+        "oldName": "n",
+        "newName": "item",
+        "line": 2,
+        "rule": "direct .map callback: first array element of .streams",
+        "pass": "additional"
+      },
+      {
+        "oldName": "n",
+        "newName": "track",
+        "line": 2,
+        "rule": "direct .map callback: first array element of .tracks",
+        "pass": "additional"
+      },
+      {
+        "oldName": "s",
+        "newName": "index",
+        "line": 2,
+        "rule": "direct .map callback: array index",
+        "pass": "additional"
+      },
+      {
+        "oldName": "a",
+        "newName": "index",
+        "line": 2,
+        "rule": "direct .forEach callback: array index",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "state",
+        "line": 2,
+        "rule": "direct .some callback: first array element of .states",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "state",
+        "line": 2,
+        "rule": "direct .find callback: first array element of .states",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "item",
+        "line": 2,
+        "rule": "direct .find callback: first array element of .tree",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "track",
+        "line": 2,
+        "rule": "direct .filter callback: first array element of .tracks",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "track",
+        "line": 2,
+        "rule": "direct .filter callback: first array element of .tracks",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "item",
+        "line": 2,
+        "rule": "direct .map callback: first array element of .tree",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "item",
+        "line": 2,
+        "rule": "direct .map callback: first array element of .machines",
+        "pass": "additional"
+      },
+      {
+        "oldName": "n",
+        "newName": "index",
+        "line": 2,
+        "rule": "direct .map callback: array index",
+        "pass": "additional"
+      },
+      {
+        "oldName": "s",
+        "newName": "item",
+        "line": 2,
+        "rule": "direct .forEach callback: first array element",
+        "pass": "additional"
+      },
+      {
+        "oldName": "e",
+        "newName": "index",
+        "line": 2,
+        "rule": "direct .forEach callback: array index",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "_item",
+        "line": 2,
+        "rule": "direct .forEach callback: first array element",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "item",
+        "line": 2,
+        "rule": "direct .filter callback: first array element",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "item",
+        "line": 2,
+        "rule": "direct .map callback: first array element",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "item",
+        "line": 2,
+        "rule": "direct .findIndex callback: first array element of .machines",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "state",
+        "line": 2,
+        "rule": "direct .some callback: first array element of .states",
+        "pass": "additional"
+      },
+      {
+        "oldName": "n",
+        "newName": "result",
+        "line": 2,
+        "rule": ".then resolved value",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "result",
+        "line": 2,
+        "rule": ".then resolved value",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "item",
+        "line": 2,
+        "rule": "direct .map callback: first array element of .bindPoses",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "result",
+        "line": 2,
+        "rule": ".then resolved value",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "result",
+        "line": 2,
+        "rule": ".then resolved value",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "result",
+        "line": 2,
+        "rule": ".then resolved value",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "result",
+        "line": 2,
+        "rule": ".then resolved value",
+        "pass": "additional"
+      },
+      {
+        "oldName": "s",
+        "newName": "result",
+        "line": 2,
+        "rule": ".then resolved value",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "accumulator",
+        "line": 2,
+        "rule": ".reduce accumulator",
+        "pass": "additional"
+      },
+      {
+        "oldName": "n",
+        "newName": "item",
+        "line": 2,
+        "rule": ".reduce current element",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "result",
+        "line": 2,
+        "rule": ".then resolved value",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "result",
+        "line": 2,
+        "rule": ".then resolved value",
+        "pass": "additional"
+      },
+      {
+        "oldName": "s",
+        "newName": "result",
+        "line": 2,
+        "rule": ".then resolved value",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "result",
+        "line": 2,
+        "rule": ".then resolved value",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "item",
+        "line": 2,
+        "rule": "direct .map callback: first array element",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "result",
+        "line": 2,
+        "rule": ".then resolved value",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "item",
+        "line": 2,
+        "rule": "direct .filter callback: first array element",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "state",
+        "line": 2,
+        "rule": "direct .find callback: first array element of .states",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "state",
+        "line": 2,
+        "rule": "direct .some callback: first array element of .states",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "item",
+        "line": 2,
+        "rule": "direct .map callback: first array element of .machines",
+        "pass": "additional"
+      },
+      {
+        "oldName": "n",
+        "newName": "index",
+        "line": 2,
+        "rule": "direct .map callback: array index",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "item",
+        "line": 2,
+        "rule": "direct .map callback: first array element of .machines",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "state",
+        "line": 2,
+        "rule": "direct .map callback: first array element of .states",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "_item2",
+        "line": 2,
+        "rule": "direct .map callback: first array element of .tree",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "clip",
+        "line": 2,
+        "rule": "direct .filter callback: first array element of .clips",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "item",
+        "line": 2,
+        "rule": "direct .map callback: first array element",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "item",
+        "line": 2,
+        "rule": "direct .map callback: first array element of .renderers",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "item",
+        "line": 2,
+        "rule": "direct .filter callback: first array element",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "item",
+        "line": 2,
+        "rule": "direct .map callback: first array element of .animators",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "item",
+        "line": 2,
+        "rule": "direct .filter callback: first array element",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "state",
+        "line": 2,
+        "rule": "direct .some callback: first array element of .states",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "state",
+        "line": 2,
+        "rule": "direct .find callback: first array element of .states",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "item",
+        "line": 2,
+        "rule": "direct .map callback: first array element of .machines",
+        "pass": "additional"
+      },
+      {
+        "oldName": "n",
+        "newName": "index",
+        "line": 2,
+        "rule": "direct .map callback: array index",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "item",
+        "line": 2,
+        "rule": "direct .flatMap callback: first array element",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "item",
+        "line": 2,
+        "rule": "direct .filter callback: first array element",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "item",
+        "line": 2,
+        "rule": "direct .map callback: first array element",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "item",
+        "line": 2,
+        "rule": "direct .map callback: first array element",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "item",
+        "line": 2,
+        "rule": "direct .map callback: first array element",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "state",
+        "line": 2,
+        "rule": "direct .some callback: first array element of .states",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "state",
+        "line": 2,
+        "rule": "direct .find callback: first array element of .states",
+        "pass": "additional"
+      },
+      {
+        "oldName": "t",
+        "newName": "track",
+        "line": 2,
+        "rule": "direct .map callback: first array element of .tracks",
+        "pass": "additional"
+      },
+      {
+        "oldName": "l",
+        "newName": "flooredValue",
+        "line": 2,
+        "rule": "Math.floor(...)",
+        "pass": "additional"
       }
     ]
   },

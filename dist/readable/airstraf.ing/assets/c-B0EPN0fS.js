@@ -1,4 +1,4 @@
-const __vite__mapDeps = (i, m = __vite__mapDeps, d = m.f || (m.f = ["assets/meshopt_decoder-rMrdvjGn.js", "assets/c-BJ87Xak5.js", "assets/c-Do-pPzOP.js", "assets/three-Bi9Yyrpt.js", "assets/c-D6JpfG2D.js", "assets/c-C1mpvyXQ.js", "assets/c-BE9ZXeD7.js"])) => i.map(i => d[i]);
+const __vite__mapDeps = (i, m = __vite__mapDeps, d = m.f || (m.f = ["assets/meshopt_decoder-rMrdvjGn.js", "assets/c-BJ87Xak5.js", "assets/c-Do-pPzOP.js", "assets/three-Bi9Yyrpt.js", "assets/c-D6JpfG2D.js", "assets/c-C1mpvyXQ.js", "assets/c-BE9ZXeD7.js"])) => i.map(item => d[item]);
 import { $n as t, Ct as n, Et as s, Ft as e, It as i, Kt as r, Lt as o, T as a, Tt as c, W as h, Yt as f, _ as l, et as u, hr as w, m as d, mr as p, nn as m, qt as y, v, w as M } from "./three-Bi9Yyrpt.js";
 import { a as A } from "./c-Caw4SzGP.js";
 import { u as $ } from "./c-e0fQXfDh.js";
@@ -8,13 +8,13 @@ import { a as b, d as k, f as E, o as I, u as P } from "./c-D6JpfG2D.js";
 import { _ as x, h as _, m as D } from "./c-j2W5q53j.js";
 import { At as U, Dt as j, Nt as R, Ot as F, Pt as N, S as O, bt as L, c as C, kt as z, m as W, mt as V, pt as B, u as K, ut as H, v as q } from "./c-DHGnaUyg.js";
 var J = (() => {
-  const t = new Uint32Array(256);
+  const uint32Values = new Uint32Array(256);
   for (let n = 0; n < 256; n++) {
     let s = n;
     for (let t = 0; t < 8; t++) s = 1 & s ? 3988292384 ^ s >>> 1 : s >>> 1;
-    t[n] = s >>> 0;
+    uint32Values[n] = s >>> 0;
   }
-  return t;
+  return uint32Values;
 })();
 function Z(t) {
   const n = new TextEncoder().encode(t);
@@ -23,10 +23,10 @@ function Z(t) {
   return (4294967295 ^ s) >>> 0;
 }
 function G(t, n) {
-  const s = new DataView(t),
+  const dataView = new DataView(t),
     e = String.fromCharCode(...new Uint8Array(t, 0, 4));
   if (e !== n) throw new Error(`Expected ${n}, got ${e}`);
-  const i = s.getUint32(4, !0);
+  const i = dataView.getUint32(4, !0);
   return {
     header: JSON.parse(new TextDecoder().decode(new Uint8Array(t, 8, i))),
     body: 8 + i
@@ -98,10 +98,10 @@ var Y = class {
     $_75e(t) {
       if (t === this.$_7i1z) return;
       if (this.$_7i1z = t, !t) return void (this.skip = null);
-      const n = new Uint8Array(this.$_20q.length);
+      const uint8Values = new Uint8Array(this.$_20q.length);
       let s = !1;
-      for (let e = 0; e < n.length; e++) t.has(this.$_20q[e]) && (n[e] = 1, s = !0);
-      this.skip = s ? n : null;
+      for (let e = 0; e < uint8Values.length; e++) t.has(this.$_20q[e]) && (uint8Values[e] = 1, s = !0);
+      this.skip = s ? uint8Values : null;
     }
     constructor(t, n, s) {
       this.controller = t, this.target = s;
@@ -111,18 +111,18 @@ var Y = class {
         const t = n.get(r);
         if (!t) continue;
         const e = new Int32Array(t.tracks.length).fill(-1),
-          i = new Uint8Array(t.tracks.length),
+          uint8Values = new Uint8Array(t.tracks.length),
           o = new Int32Array(t.tracks.length).fill(-1);
-        t.tracks.forEach((t, n) => {
-          const r = s.resolve(t.path);
-          if (void 0 !== r) if (t.kind) {
-            const s = "position" === t.kind ? 0 : "rotation" === t.kind ? 1 : 2;
-            e[n] = this.slot(r, s), i[n] = s;
-          } else t.property && !t.pptr && (i[n] = 3, o[n] = this.$_yxo(r, t.typeID, t.property));
+        t.tracks.forEach((track, index) => {
+          const r = s.resolve(track.path);
+          if (void 0 !== r) if (track.kind) {
+            const s = "position" === track.kind ? 0 : "rotation" === track.kind ? 1 : 2;
+            e[index] = this.slot(r, s), uint8Values[index] = s;
+          } else track.property && !track.pptr && (uint8Values[index] = 3, o[index] = this.$_yxo(r, track.typeID, track.property));
         }), this.clips.set(r, {
           clip: t,
           slots: e,
-          kinds: i,
+          kinds: uint8Values,
           floats: o
         });
       }
@@ -135,24 +135,24 @@ var Y = class {
           n = 0 === this.$_595[r] ? t.t : 1 === this.$_595[r] ? t.r : t.s;
         this.defaults.values.set([n[0], n[1], n[2], n[3] ?? 0], 4 * r);
       }
-      t.layers.forEach((n, s) => {
-        const i = t.machines[n.machine],
+      t.layers.forEach((layer, index) => {
+        const i = t.machines[layer.machine],
           uniqueItems = new Set(),
           o = [];
         for (const t of i.states) {
-          const n = new Uint8Array(e);
+          const uint8Values = new Uint8Array(e);
           for (const s of t.tree) {
             const t = s.clip ? this.clips.get(s.clip) : void 0;
             if (t) {
               this.$_1fe.set(s, t);
-              for (const s of t.slots) s >= 0 && (n[s] = 1, uniqueItems.add(s));
+              for (const s of t.slots) s >= 0 && (uint8Values[s] = 1, uniqueItems.add(s));
             }
           }
-          o.push(n);
+          o.push(uint8Values);
         }
         const a = new Float32Array(e).fill(1);
-        if (n.mask) {
-          const lookupMap = new Map(n.mask);
+        if (layer.mask) {
+          const lookupMap = new Map(layer.mask);
           for (let n = 0; n < e; n++) {
             const s = this.$_36i?.(this.$_20q[n]);
             a[n] = void 0 !== s ? lookupMap.get(s) ?? 0 : 1;
@@ -160,8 +160,8 @@ var Y = class {
         }
         const c = Int32Array.from(uniqueItems),
           h = new Int32Array(e).fill(-1);
-        c.forEach((t, n) => h[t] = n), this.layers.push({
-          weight: 0 === s ? 1 : n.weight,
+        c.forEach((item, _index) => h[item] = _index), this.layers.push({
+          weight: 0 === index ? 1 : layer.weight,
           current: {
             state: i.default,
             time: 0,
@@ -178,9 +178,9 @@ var Y = class {
     $_36i;
     restart() {
       for (const t of this.controller.params) this.params.set(t.name, Number(t.default));
-      this.controller.layers.forEach((t, n) => {
-        const s = this.layers[n];
-        s && (s.weight = 0 === n ? 1 : t.weight, s.current.state = this.controller.machines[t.machine].default, s.current.time = s.current.prevTime = 0, s.next = null);
+      this.controller.layers.forEach((layer, index) => {
+        const s = this.layers[index];
+        s && (s.weight = 0 === index ? 1 : layer.weight, s.current.state = this.controller.machines[layer.machine].default, s.current.time = s.current.prevTime = 0, s.next = null);
       }), this.speed = 1, this.enabled = !0;
     }
     slot(t, n) {
@@ -219,7 +219,7 @@ var Y = class {
     }
     $_306(t, n = 0) {
       const s = this.controller.layers[n];
-      return s ? this.controller.machines[s.machine].states.findIndex(n => n.name === t || n.fullPath === t) : -1;
+      return s ? this.controller.machines[s.machine].states.findIndex(state => state.name === t || state.fullPath === t) : -1;
     }
     hasState(t, n = 0) {
       return this.$_306(t, n) >= 0;
@@ -252,7 +252,7 @@ var Y = class {
     }
     play(t, n = 0, s = 0) {
       if (-1 === n) {
-        const n = this.controller.layers.findIndex((n, s) => this.hasState(t, s));
+        const n = this.controller.layers.findIndex((layer, index) => this.hasState(t, index));
         return n >= 0 && this.play(t, n, s);
       }
       const e = this.$_306(t, n);
@@ -302,7 +302,7 @@ var Y = class {
       if (!s) return !1;
       let e = this.loops.get(s);
       if (void 0 === e) {
-        const t = s.tree.find(t => t.clip),
+        const t = s.tree.find(item => item.clip),
           n = t ? this.$_1fe.get(t)?.clip : void 0;
         e = n ? n.loop : s.loop ?? !1, this.loops.set(s, e);
       }
@@ -335,21 +335,21 @@ var Y = class {
           const n = this.params.get(e.param ?? "") ?? 0,
             i = this.params.get(e.paramY ?? "") ?? 0,
             r = e.positions ?? [],
-            o = r.map((t, s) => {
+            o = r.map((item, index) => {
               let e = 1;
               for (let o = 0; o < r.length; o++) {
-                if (s === o) continue;
+                if (index === o) continue;
                 const a = r[o],
-                  c = a[0] - t[0],
-                  h = a[1] - t[1],
+                  c = a[0] - item[0],
+                  h = a[1] - item[1],
                   f = c * c + h * h;
                 if (f < tt) continue;
-                const l = 1 - ((n - t[0]) * c + (i - t[1]) * h) / f;
+                const l = 1 - ((n - item[0]) * c + (i - item[1]) * h) / f;
                 e = Math.min(e, Math.max(0, l));
               }
               return e;
             }),
-            a = o.reduce((t, n) => t + n, 0) || 1;
+            a = o.reduce((accumulator, item) => accumulator + item, 0) || 1;
           for (let c = 0; c < e.children.length; c++) this.visit(t, e.children[c], s * o[c] / a);
         }
       }
@@ -693,9 +693,9 @@ function vt(t) {
 async function Mt(t, n, s) {
   const e = await fetch(t, s).catch(() => null);
   if (!e?.ok) return null;
-  let i = new Uint8Array(await e.arrayBuffer());
+  let uint8Values = new Uint8Array(await e.arrayBuffer());
   var r;
-  return (r = i).byteLength > 2 && 31 === r[0] && 139 === r[1] && (i = await async function (t) {
+  return (r = uint8Values).byteLength > 2 && 31 === r[0] && 139 === r[1] && (uint8Values = await async function (t) {
     if ("undefined" == typeof DecompressionStream) try {
       return S(t);
     } catch {
@@ -707,14 +707,14 @@ async function Mt(t, n, s) {
     } catch {
       return null;
     }
-  }(i)), i && n(i) ? i : null;
+  }(uint8Values)), uint8Values && n(uint8Values) ? uint8Values : null;
 }
 var At = null;
 function $t() {
   return At ??= T(async () => {
     const {
       MeshoptDecoder: t
-    } = await import("./meshopt_decoder-rMrdvjGn.js").then(t => t.t);
+    } = await import("./meshopt_decoder-rMrdvjGn.js").then(result => result.t);
     return {
       MeshoptDecoder: t
     };
@@ -757,15 +757,15 @@ async function bt(t, n) {
               parsedValue = JSON.parse(new TextDecoder().decode(t.subarray(8, 8 + n)));
             dt("kmsz", parsedValue);
             const e = 8 + n,
-              i = new Uint8Array(parsedValue.size);
-            i.set(t.subarray(e, e + parsedValue.head));
+              uint8Values = new Uint8Array(parsedValue.size);
+            uint8Values.set(t.subarray(e, e + parsedValue.head));
             let r = e + parsedValue.head + yt(parsedValue.head);
             return {
-              out: i,
-              streams: parsedValue.streams.map(n => {
-                const s = t.subarray(r, r + n.len);
-                return r += n.len + yt(n.len), {
-                  s: n,
+              out: uint8Values,
+              streams: parsedValue.streams.map(item => {
+                const s = t.subarray(r, r + item.len);
+                return r += item.len + yt(item.len), {
+                  s: item,
                   src: s
                 };
               })
@@ -776,14 +776,14 @@ async function bt(t, n) {
             src: e
           }) => {
             "raw" === t.m ? s.set(e, t.at) : "i" === t.m ? s.set(await n.decodeGltfBufferAsync(t.n, t.s, e, "INDICES"), t.at) : "v" === t.m ? s.set(await n.decodeGltfBufferAsync(t.n, t.s, e, "ATTRIBUTES", t.f), t.at) : function (t, n, s, e) {
-              const i = new Int16Array(e.buffer, e.byteOffset, 4 * s),
-                r = new Float32Array(t.buffer, t.byteOffset + n, 3 * s);
+              const int16Values = new Int16Array(e.buffer, e.byteOffset, 4 * s),
+                float32Values = new Float32Array(t.buffer, t.byteOffset + n, 3 * s);
               for (let o = 0; o < s; o++) {
-                const t = i[4 * o] / 32767,
-                  n = i[4 * o + 1] / 32767,
-                  s = i[4 * o + 2] / 32767,
+                const t = int16Values[4 * o] / 32767,
+                  n = int16Values[4 * o + 1] / 32767,
+                  s = int16Values[4 * o + 2] / 32767,
                   e = Math.hypot(t, n, s) || 1;
-                r[3 * o] = t / e, r[3 * o + 1] = n / e, r[3 * o + 2] = s / e;
+                float32Values[3 * o] = t / e, float32Values[3 * o + 1] = n / e, float32Values[3 * o + 2] = s / e;
               }
             }(s, t.at, t.n, await n.decodeGltfBufferAsync(t.n, 8, e, "ATTRIBUTES", "OCTAHEDRAL"));
           })), s.buffer;
@@ -819,29 +819,29 @@ async function Et(t, n) {
                 parsedValue = JSON.parse(new TextDecoder().decode(t.subarray(8, 8 + n)));
               dt("kclz", parsedValue);
               const e = 8 + n,
-                i = new Uint8Array(parsedValue.size);
-              i.set(t.subarray(e, e + parsedValue.head));
+                uint8Values = new Uint8Array(parsedValue.size);
+              uint8Values.set(t.subarray(e, e + parsedValue.head));
               const {
                 header: r,
                 body: o
               } = function (t) {
-                const n = new DataView(t.buffer, t.byteOffset, t.byteLength);
-                if (t.byteLength < 8 || 1347175243 !== n.getUint32(0, !0)) throw new Error("not KCLP");
-                const s = n.getUint32(4, !0);
+                const dataView = new DataView(t.buffer, t.byteOffset, t.byteLength);
+                if (t.byteLength < 8 || 1347175243 !== dataView.getUint32(0, !0)) throw new Error("not KCLP");
+                const s = dataView.getUint32(4, !0);
                 return {
                   header: JSON.parse(new TextDecoder().decode(t.subarray(8, 8 + s))),
                   body: 8 + s
                 };
-              }(i);
+              }(uint8Values);
               let a = e + parsedValue.head + pt(parsedValue.head);
               return {
-                out: i,
-                streams: parsedValue.tracks.map((n, s) => {
-                  const e = t.subarray(a, a + n.len);
-                  return a += n.len + pt(n.len), {
-                    s: n,
+                out: uint8Values,
+                streams: parsedValue.tracks.map((track, index) => {
+                  const e = t.subarray(a, a + track.len);
+                  return a += track.len + pt(track.len), {
+                    s: track,
                     src: e,
-                    t: r.tracks[s]
+                    t: r.tracks[index]
                   };
                 }),
                 frames: r.frames,
@@ -857,19 +857,19 @@ async function Et(t, n) {
             s: t,
             src: n,
             t: e
-          }, a) => function (t, n, s, e, i, r, o) {
+          }, index) => function (t, n, s, e, i, r, o) {
             const a = n + 4 * i.offset,
-              c = new Float32Array(t.buffer, t.byteOffset + a, s * i.width);
+              float32Values = new Float32Array(t.buffer, t.byteOffset + a, s * i.width);
             if ("c" === e.m) {
-              const t = new Float32Array(new Uint8Array(r).buffer, 0, i.width);
-              for (let n = 0; n < s; n++) c.set(t, n * i.width);
+              const _float32Values = new Float32Array(new Uint8Array(r).buffer, 0, i.width);
+              for (let n = 0; n < s; n++) float32Values.set(_float32Values, n * i.width);
             } else "q" === e.m ? function (t, n, s, e) {
-              const i = new Int16Array(t.buffer, t.byteOffset, 4 * n);
+              const int16Values = new Int16Array(t.buffer, t.byteOffset, 4 * n);
               for (let r = 0; r < n; r++) {
-                let t = i[4 * r] / 32767,
-                  n = i[4 * r + 1] / 32767,
-                  o = i[4 * r + 2] / 32767,
-                  a = i[4 * r + 3] / 32767;
+                let t = int16Values[4 * r] / 32767,
+                  n = int16Values[4 * r + 1] / 32767,
+                  o = int16Values[4 * r + 2] / 32767,
+                  a = int16Values[4 * r + 3] / 32767;
                 const c = Math.hypot(t, n, o, a) || 1;
                 t /= c, n /= c, o /= c, a /= c;
                 let h = 1;
@@ -879,8 +879,8 @@ async function Et(t, n) {
                 }
                 e[4 * r] = t * h, e[4 * r + 1] = n * h, e[4 * r + 2] = o * h, e[4 * r + 3] = a * h;
               }
-            }(o, s, 1 === e.f, c) : t.set(o.subarray(0, s * i.width * 4), a);
-          }(s, r, i, t, e, n, o[a])), s.buffer;
+            }(o, s, 1 === e.f, float32Values) : t.set(o.subarray(0, s * i.width * 4), a);
+          }(s, r, i, t, e, n, o[index])), s.buffer;
         }(s, await $t());
       } catch (e) {
         gt(`rig clip ${n}.kclz`, e);
@@ -965,18 +965,18 @@ function Ot(t, n, s, e, i) {
   r && o && s.set(r, function (t, n, s) {
     const e = t.layers[0]?.machine ?? 0,
       i = t.machines[e];
-    if (!i || i.states.some(t => t.name === Ft)) return t;
-    const r = i.states.find(t => "Shoot" === t.name),
+    if (!i || i.states.some(state => state.name === Ft)) return t;
+    const r = i.states.find(state => "Shoot" === state.name),
       o = r?.tree.find(t => t.clip)?.clip,
       a = o ? n.get(o) : void 0;
     if (!r || !o || !a) return t;
     const c = `${o}:aim`,
       h = i.states[i.default],
-      f = h && h !== r ? h.tree.find(t => t.clip)?.clip : void 0,
+      f = h && h !== r ? h.tree.find(item => item.clip)?.clip : void 0,
       l = f ? n.get(f) : void 0;
     n.has(c) || n.set(c, function (t, n, s) {
       if (!n) {
-        const n = t.tracks.filter(t => !(0 === t.path && "rotation" === t.kind));
+        const n = t.tracks.filter(track => !(0 === track.path && "rotation" === track.kind));
         return {
           ...t,
           name: `${t.name}_Aim`,
@@ -985,21 +985,21 @@ function Ot(t, n, s, e, i) {
       }
       const e = t => 0 === t.path || n.has(t.path >>> 0),
         i = t => s?.tracks.find(n => n.path === t.path && n.kind === t.kind && n.width === t.width),
-        r = t.tracks.filter(t => !(s && e(t) && "rotation" === t.kind && !i(t))),
-        o = new Float32Array(t.samples);
+        r = t.tracks.filter(track => !(s && e(track) && "rotation" === track.kind && !i(track))),
+        float32Values = new Float32Array(t.samples);
       for (const a of r) {
         if (!e(a)) continue;
         const n = "rotation" === a.kind ? 0 : "position" === a.kind ? 1 : a.width;
         if (n >= a.width) continue;
         const r = i(a),
           c = r ? s.samples.subarray(r.offset + (s.frames - 1) * r.width, r.offset + s.frames * r.width) : t.samples.subarray(a.offset, a.offset + a.width);
-        for (let s = 0; s < t.frames; s++) for (let t = n; t < a.width; t++) o[a.offset + s * a.width + t] = c[t];
+        for (let s = 0; s < t.frames; s++) for (let t = n; t < a.width; t++) float32Values[a.offset + s * a.width + t] = c[t];
       }
       return {
         ...t,
         name: `${t.name}_Aim`,
         tracks: r,
-        samples: o
+        samples: float32Values
       };
     }(a, s, l));
     const u = {
@@ -1007,38 +1007,38 @@ function Ot(t, n, s, e, i) {
       name: Ft,
       fullPath: `${t.layers[0]?.name ?? "Base Layer"}.${Ft}`,
       transitions: [],
-      tree: r.tree.map(t => t.clip === o ? {
-        ...t,
+      tree: r.tree.map(item => item.clip === o ? {
+        ...item,
         clip: c
-      } : t)
+      } : item)
     };
     return {
       ...t,
       clips: [...t.clips, c],
-      machines: t.machines.map((t, n) => n === e ? {
-        ...t,
-        states: [...t.states, u]
-      } : t)
+      machines: t.machines.map((item, index) => index === e ? {
+        ...item,
+        states: [...item.states, u]
+      } : item)
     };
   }(o, e, i && function (t) {
     const uniqueItems = new Set();
-    return t.forEach((s, e) => {
-      if ("Armature" !== s.name || /(^|\/)Hands(\/|$)/.test(s.path)) return;
-      uniqueItems.add(Z(s.path));
-      const i = t[s.parent];
-      i && "" !== i.path && uniqueItems.add(Z(i.path)), t.forEach(t => {
-        t.parent === e && uniqueItems.add(Z(t.path));
+    return t.forEach((item, index) => {
+      if ("Armature" !== item.name || /(^|\/)Hands(\/|$)/.test(item.path)) return;
+      uniqueItems.add(Z(item.path));
+      const i = t[item.parent];
+      i && "" !== i.path && uniqueItems.add(Z(i.path)), t.forEach(_item => {
+        _item.parent === index && uniqueItems.add(Z(_item.path));
       });
     }), uniqueItems;
   }(i)));
 }
 var Lt = "Style Dance",
-  Ct = A.filter(t => t.custom && t.rigClip).map(t => ({
-    name: t.animationClip,
-    clip: t.rigClip
+  Ct = A.filter(item => item.custom && item.rigClip).map(item => ({
+    name: item.animationClip,
+    clip: item.rigClip
   }));
 function zt(t) {
-  return t.machines.findIndex(t => t.states.some(t => t.name === Lt));
+  return t.machines.findIndex(item => item.states.some(state => state.name === Lt));
 }
 var Wt = null;
 var Vt = "/assets/extracted/rig/",
@@ -1049,14 +1049,14 @@ var Vt = "/assets/extracted/rig/",
   Jt = new Map();
 function Zt(t) {
   let n = Bt.get(t);
-  return n || (n = g(Vt + t).then(async n => {
-    if (!n.ok) throw new Error(`Missing ${t}`);
-    return await n.json();
+  return n || (n = g(Vt + t).then(async result => {
+    if (!result.ok) throw new Error(`Missing ${t}`);
+    return await result.json();
   }), Bt.set(t, n)), n;
 }
 function Gt(t) {
   let n = Kt.get(t);
-  return n || (n = bt(Vt, t).then(t => {
+  return n || (n = bt(Vt, t).then(result => {
     const n = D(),
       s = function (t) {
         const {
@@ -1072,29 +1072,29 @@ function Gt(t) {
         return i.getAttribute("normal") || i.computeVertexNormals(), i.computeBoundingSphere(), {
           geometry: i,
           name: n.name,
-          bindPoses: n.bindPoses.map(t => new e().fromArray(t))
+          bindPoses: n.bindPoses.map(item => new e().fromArray(item))
         };
-      }(t);
+      }(result);
     return _("rig:mesh", n), s;
   }), Kt.set(t, n)), n;
 }
 function Qt(t) {
   let n = Ht.get(t);
-  return n || (n = Et(Vt, t).then(t => {
+  return n || (n = Et(Vt, t).then(result => {
     const n = D(),
-      s = X(t);
+      s = X(result);
     return _("rig:clip", n), s;
   }), Ht.set(t, n)), n;
 }
 var Xt = null,
   Yt = null;
 function tn() {
-  return Yt ??= g(`${Vt}tex/tints.json`).then(t => t.ok ? t.json() : {}).catch(() => ({}));
+  return Yt ??= g(`${Vt}tex/tints.json`).then(result => result.ok ? result.json() : {}).catch(() => ({}));
 }
 var nn = null;
 function sn(t) {
   let n = qt.get(t);
-  return n || (n = Promise.all([I(`${Vt}tex`, t), nn ??= g(`${Vt}tex/settings.json`).then(t => t.ok ? t.json() : {}).catch(() => ({}))]).then(([n, s]) => {
+  return n || (n = Promise.all([I(`${Vt}tex`, t), nn ??= g(`${Vt}tex/settings.json`).then(result => result.ok ? result.json() : {}).catch(() => ({}))]).then(([n, s]) => {
     n.colorSpace = K, b(n) || (n.flipY = !0);
     const e = n.image;
     return ct(n, t.startsWith("../") ? lt(e?.width ?? 0, e?.height ?? 0) : s[t] ?? ht);
@@ -1104,19 +1104,19 @@ function en(t, n, s) {
   const e = () => {
     t.get(n) === s && t.delete(n);
   };
-  return s.then(t => t ? void 0 : e(), e), s;
+  return s.then(result => result ? void 0 : e(), e), s;
 }
 var rn = new Map(),
   on = 0,
   an = new Map(),
   cn = new Map(),
   hn = !1,
-  fn = (t, n) => (an.set(t, on), n.then(s => {
-    s && rn.get(t) === n && cn.set(t, s);
+  fn = (t, n) => (an.set(t, on), n.then(result => {
+    result && rn.get(t) === n && cn.set(t, result);
   }), n);
 function ln(t) {
   const n = t.mipmaps;
-  if (t.isCompressedTexture && n?.length) return n.reduce((t, n) => t + (n.data?.byteLength ?? 0), 0);
+  if (t.isCompressedTexture && n?.length) return n.reduce((accumulator, item) => accumulator + (item.data?.byteLength ?? 0), 0);
   const s = t.image;
   return Math.round((s?.width ?? 0) * (s?.height ?? 0) * 4 * (4 / 3));
 }
@@ -1127,7 +1127,7 @@ function un(t) {
   for (const [i, r] of [...cn]) uniqueItems.has(r) || (cn.delete(i), rn.delete(i), an.delete(i), _uniqueItems.add(r));
   let e = 0;
   for (const i of _uniqueItems) e += ln(i), i.dispose();
-  return _uniqueItems.size && hn && T(() => import("./c-Do-pPzOP.js").then(t => t.forgetSkins(_uniqueItems)), __vite__mapDeps([2, 3, 1, 4, 5, 6])), on++, {
+  return _uniqueItems.size && hn && T(() => import("./c-Do-pPzOP.js").then(result => result.forgetSkins(_uniqueItems)), __vite__mapDeps([2, 3, 1, 4, 5, 6])), on++, {
     textures: _uniqueItems.size,
     bytes: e
   };
@@ -1142,25 +1142,25 @@ function wn(t, n = "first") {
     const a = `${t}${i}`,
       c = () => {
         let n = rn.get(a);
-        return n && an.set(a, on), n || (n = E(`${Vt}weapon-skins/${t}.png`).then(t => (t.colorSpace = K, t.flipY = !0, e && (t.userData.halfSize = e), ct(t, ht))).catch(() => null), rn.set(a, n), fn(a, n), en(rn, a, n)), n;
+        return n && an.set(a, on), n || (n = E(`${Vt}weapon-skins/${t}.png`).then(result => (result.colorSpace = K, result.flipY = !0, e && (result.userData.halfSize = e), ct(result, ht))).catch(() => null), rn.set(a, n), fn(a, n), en(rn, a, n)), n;
       };
-    s && (hn = !0), o = s ? T(() => import("./c-Do-pPzOP.js").then(s => s.compressedSkin(`${Vt}weapon-skins`, t, n)), __vite__mapDeps([2, 3, 1, 4, 5, 6])).catch(() => null).then(t => t ? (t.colorSpace = K, ct(t, ht)) : c()) : c(), rn.set(r, o), fn(r, o), en(rn, r, o);
+    s && (hn = !0), o = s ? T(() => import("./c-Do-pPzOP.js").then(result => result.compressedSkin(`${Vt}weapon-skins`, t, n)), __vite__mapDeps([2, 3, 1, 4, 5, 6])).catch(() => null).then(result => result ? (result.colorSpace = K, ct(result, ht)) : c()) : c(), rn.set(r, o), fn(r, o), en(rn, r, o);
   }
   return o;
 }
 var dn = new Map();
 async function pn(t) {
   return async function (t, n) {
-    return !Ct.length || zt(t) < 0 ? t : (Wt ??= Promise.all(Ct.map(t => n(t.clip).then(() => t.clip, () => (console.warn(`Custom emote "${t.name}": clip ${t.clip} missing (npm run assets:custom)`), null)))).then(t => new Set(t.filter(t => !!t))), function (t, n, s = Ct) {
+    return !Ct.length || zt(t) < 0 ? t : (Wt ??= Promise.all(Ct.map(item => n(item.clip).then(() => item.clip, () => (console.warn(`Custom emote "${item.name}": clip ${item.clip} missing (npm run assets:custom)`), null)))).then(result => new Set(result.filter(item => !!item))), function (t, n, s = Ct) {
       const e = zt(t);
       if (e < 0) return t;
       const i = t.machines[e],
-        r = i.states.find(t => t.name === Lt),
+        r = i.states.find(state => state.name === Lt),
         o = r.fullPath.slice(0, r.fullPath.length - r.name.length),
         a = [...t.clips],
         c = [];
       for (const h of s) {
-        if (!n.has(h.clip) || i.states.some(t => t.name === h.name)) continue;
+        if (!n.has(h.clip) || i.states.some(state => state.name === h.name)) continue;
         a.includes(h.clip) || a.push(h.clip);
         const t = r.tree[0];
         c.push({
@@ -1179,10 +1179,10 @@ async function pn(t) {
       return c.length ? {
         ...t,
         clips: a,
-        machines: t.machines.map((t, n) => n === e ? {
-          ...t,
-          states: [...t.states, ...c]
-        } : t)
+        machines: t.machines.map((item, index) => index === e ? {
+          ...item,
+          states: [...item.states, ...c]
+        } : item)
       } : t;
     }(t, await Wt));
   }(await async function (t) {
@@ -1194,13 +1194,13 @@ async function pn(t) {
       n = {
         ...t,
         clips: t.clips.map(e),
-        machines: t.machines.map(t => ({
-          ...t,
-          states: t.states.map(t => ({
-            ...t,
-            tree: t.tree.map(t => ({
-              ...t,
-              clip: e(t.clip)
+        machines: t.machines.map(item => ({
+          ...item,
+          states: item.states.map(state => ({
+            ...state,
+            tree: state.tree.map(_item2 => ({
+              ..._item2,
+              clip: e(_item2.clip)
             }))
           }))
         }))
@@ -1214,8 +1214,8 @@ function yn(t) {
   let n = mn.get(t);
   return n || (n = (async () => {
     const n = await pn(t),
-      s = [...new Set(n.clips.filter(t => !!t))],
-      e = await Promise.all(s.map(async t => [t, await Qt(t)]));
+      s = [...new Set(n.clips.filter(clip => !!clip))],
+      e = await Promise.all(s.map(async item => [item, await Qt(item)]));
     return {
       controller: n,
       clips: new Map(e)
@@ -1231,8 +1231,8 @@ function Mn(t) {
   let n = dn.get(t);
   return n || (n = (async () => {
     const n = await Zt(t),
-      uniqueItems = new Set(n.renderers.map(t => t.mesh).filter(t => !!t)),
-      _uniqueItems2 = new Set(n.animators.map(t => t.controller).filter(t => !!t)),
+      uniqueItems = new Set(n.renderers.map(item => item.mesh).filter(item => !!item)),
+      _uniqueItems2 = new Set(n.animators.map(item => item.controller).filter(item => !!item)),
       lookupMap = new Map();
     for (const t of _uniqueItems2) lookupMap.set(t, await pn(t));
     await async function (t, n, s, e) {
@@ -1249,8 +1249,8 @@ function Mn(t) {
         const o = [...t.clips],
           a = [];
         for (const c of s) {
-          if (r.states.some(t => t.name === c)) continue;
-          const n = i.states.find(t => t.name === c);
+          if (r.states.some(state => state.name === c)) continue;
+          const n = i.states.find(state => state.name === c);
           if (n) {
             a.push({
               ...n,
@@ -1263,25 +1263,25 @@ function Mn(t) {
         return a.length ? {
           ...t,
           clips: o,
-          machines: t.machines.map((t, n) => n === e ? {
-            ...t,
-            states: [...t.states, ...a]
-          } : t)
+          machines: t.machines.map((item, index) => index === e ? {
+            ...item,
+            states: [...item.states, ...a]
+          } : item)
         } : t;
       }(o, a, i.states));
     }(n.weaponIndex, n.animators, lookupMap, vn);
     const _uniqueItems3 = new Set();
     for (const t of lookupMap.values()) for (const n of t.clips) n && _uniqueItems3.add(n);
-    const _uniqueItems4 = new Set(Object.values(n.materials).flatMap(t => [t.texture, t.patternMask]).filter(t => !!t)),
-      [a, c, h] = await Promise.all([Promise.all([...uniqueItems].map(async t => [t, await Gt(t)])), Promise.all([..._uniqueItems3].map(async t => [t, await Qt(t)])), Promise.all([..._uniqueItems4].map(async t => [t, await sn(t)]))]),
+    const _uniqueItems4 = new Set(Object.values(n.materials).flatMap(item => [item.texture, item.patternMask]).filter(item => !!item)),
+      [a, c, h] = await Promise.all([Promise.all([...uniqueItems].map(async item => [item, await Gt(item)])), Promise.all([..._uniqueItems3].map(async item => [item, await Qt(item)])), Promise.all([..._uniqueItems4].map(async item => [item, await sn(item)]))]),
       _lookupMap = new Map(c),
       l = "Knife" === n.weaponClass ? n.animators[0]?.controller : null,
       u = l ? lookupMap.get(l) : void 0;
     return l && u && lookupMap.set(l, function (t, n) {
       const s = t.layers[0]?.machine ?? 0,
         e = t.machines[s];
-      if (!e || e.states.some(t => t.name === xt.state)) return t;
-      const i = e.states.find(t => t.name === xt.source),
+      if (!e || e.states.some(state => state.name === xt.state)) return t;
+      const i = e.states.find(state => state.name === xt.source),
         r = i?.tree.find(t => t.clip)?.clip,
         o = r ? n.get(r) : void 0;
       if (!i || !r || !o) return t;
@@ -1292,22 +1292,22 @@ function Mn(t) {
           e = Math.max(2, Math.round(s * n) + 1),
           i = t.frames - 1;
         let r = 0;
-        const o = t.tracks.map(t => {
+        const o = t.tracks.map(track => {
             const n = {
-              ...t,
+              ...track,
               offset: r
             };
-            return r += e * Dt(t), n;
+            return r += e * Dt(track), n;
           }),
-          a = new Float32Array(r),
+          float32Values = new Float32Array(r),
           c = t.samples,
           h = xt.amplify;
         for (let f = 0; f < e; f++) {
           const n = _t(f / (e - 1) * s, t.duration),
             r = i > 0 ? Math.min(i, n / Math.max(1e-6, t.duration) * i) : 0,
-            l = Math.floor(r),
-            u = Math.min(i, l + 1),
-            w = r - l,
+            flooredValue = Math.floor(r),
+            u = Math.min(i, flooredValue + 1),
+            w = r - flooredValue,
             d = i > 0 ? r / i : 0;
           t.tracks.forEach((t, n) => {
             const s = Dt(t),
@@ -1317,16 +1317,16 @@ function Mn(t) {
                 s = 0,
                 r = 0,
                 o = 0;
-              const f = t.offset + 4 * l,
+              const f = t.offset + 4 * flooredValue,
                 p = t.offset + 4 * u,
                 m = c[f] * c[p] + c[f + 1] * c[p + 1] + c[f + 2] * c[p + 2] + c[f + 3] * c[p + 3] < 0 ? -1 : 1;
               n = c[f] * (1 - w) + c[p] * w * m, s = c[f + 1] * (1 - w) + c[p + 1] * w * m, r = c[f + 2] * (1 - w) + c[p + 2] * w * m, o = c[f + 3] * (1 - w) + c[p + 3] * w * m;
               const y = Math.hypot(n, s, r, o) || 1;
-              jt(c, t.offset, t.offset + 4 * i, d, Ut), Rt(Ut, n / y, s / y, r / y, o / y, h, a, e);
+              jt(c, t.offset, t.offset + 4 * i, d, Ut), Rt(Ut, n / y, s / y, r / y, o / y, h, float32Values, e);
             } else for (let r = 0; r < s; r++) {
               const n = c[t.offset + r] + (c[t.offset + i * s + r] - c[t.offset + r]) * d,
-                o = c[t.offset + l * s + r] * (1 - w) + c[t.offset + u * s + r] * w;
-              a[e + r] = t.kind ? n + (o - n) * h : o;
+                o = c[t.offset + flooredValue * s + r] * (1 - w) + c[t.offset + u * s + r] * w;
+              float32Values[e + r] = t.kind ? n + (o - n) * h : o;
             }
           });
         }
@@ -1338,7 +1338,7 @@ function Mn(t) {
           loop: !1,
           tracks: o,
           events: [],
-          samples: a
+          samples: float32Values
         };
       }(o));
       const c = {

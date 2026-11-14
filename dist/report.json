@@ -1,7 +1,8 @@
 {
   "inputJsFiles": 75,
   "successfullyMapped": 75,
-  "totalIdentifiersRenamed": 564,
+  "totalIdentifiersRenamed": 664,
+  "additionalIdentifiersRenamed": 100,
   "files": [
     {
       "file": "airstraf.ing/assets/c-0_FeqyJL.js",
@@ -9,6 +10,7 @@
       "bytes": 165,
       "mappings": 76,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -16,7 +18,8 @@
       "status": "mapped",
       "bytes": 620,
       "mappings": 292,
-      "identifiersRenamed": 0,
+      "identifiersRenamed": 4,
+      "additionalIdentifiersRenamed": 4,
       "dynamicScopeDetected": false
     },
     {
@@ -24,7 +27,8 @@
       "status": "mapped",
       "bytes": 38400,
       "mappings": 19224,
-      "identifiersRenamed": 16,
+      "identifiersRenamed": 112,
+      "additionalIdentifiersRenamed": 96,
       "dynamicScopeDetected": false
     },
     {
@@ -33,6 +37,7 @@
       "bytes": 3014,
       "mappings": 1454,
       "identifiersRenamed": 1,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -41,6 +46,7 @@
       "bytes": 2043,
       "mappings": 1010,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -49,6 +55,7 @@
       "bytes": 1192,
       "mappings": 463,
       "identifiersRenamed": 2,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -57,6 +64,7 @@
       "bytes": 84,
       "mappings": 37,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -65,6 +73,7 @@
       "bytes": 3716,
       "mappings": 693,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -73,6 +82,7 @@
       "bytes": 898,
       "mappings": 443,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -81,6 +91,7 @@
       "bytes": 20887,
       "mappings": 8795,
       "identifiersRenamed": 3,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -89,6 +100,7 @@
       "bytes": 21914,
       "mappings": 7922,
       "identifiersRenamed": 3,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -97,6 +109,7 @@
       "bytes": 1976,
       "mappings": 886,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -105,6 +118,7 @@
       "bytes": 2820,
       "mappings": 1085,
       "identifiersRenamed": 2,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -113,6 +127,7 @@
       "bytes": 1111,
       "mappings": 491,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -121,6 +136,7 @@
       "bytes": 9546,
       "mappings": 3846,
       "identifiersRenamed": 3,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -129,6 +145,7 @@
       "bytes": 732,
       "mappings": 400,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -137,6 +154,7 @@
       "bytes": 13892,
       "mappings": 5193,
       "identifiersRenamed": 3,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -145,6 +163,7 @@
       "bytes": 264,
       "mappings": 106,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -153,6 +172,7 @@
       "bytes": 2104,
       "mappings": 1097,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -161,6 +181,7 @@
       "bytes": 1080,
       "mappings": 453,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -169,6 +190,7 @@
       "bytes": 3081,
       "mappings": 1317,
       "identifiersRenamed": 3,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -177,6 +199,7 @@
       "bytes": 24823,
       "mappings": 3619,
       "identifiersRenamed": 4,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -185,6 +208,7 @@
       "bytes": 337,
       "mappings": 179,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -193,6 +217,7 @@
       "bytes": 1539,
       "mappings": 630,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -201,6 +226,7 @@
       "bytes": 2304,
       "mappings": 1008,
       "identifiersRenamed": 2,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -209,6 +235,7 @@
       "bytes": 18823,
       "mappings": 1693,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -217,6 +244,7 @@
       "bytes": 3977,
       "mappings": 1620,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -225,6 +253,7 @@
       "bytes": 594,
       "mappings": 282,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -233,6 +262,7 @@
       "bytes": 243740,
       "mappings": 62946,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -241,6 +271,7 @@
       "bytes": 9479,
       "mappings": 3638,
       "identifiersRenamed": 6,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -249,6 +280,7 @@
       "bytes": 1554,
       "mappings": 625,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -257,6 +289,7 @@
       "bytes": 743,
       "mappings": 356,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -265,6 +298,7 @@
       "bytes": 330291,
       "mappings": 85376,
       "identifiersRenamed": 36,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -273,6 +307,7 @@
       "bytes": 3978,
       "mappings": 1187,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -281,6 +316,7 @@
       "bytes": 62,
       "mappings": 34,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -289,6 +325,7 @@
       "bytes": 1456,
       "mappings": 501,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -297,6 +334,7 @@
       "bytes": 607,
       "mappings": 332,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -305,6 +343,7 @@
       "bytes": 55064,
       "mappings": 21320,
       "identifiersRenamed": 14,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -313,6 +352,7 @@
       "bytes": 33530,
       "mappings": 7486,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -321,6 +361,7 @@
       "bytes": 1132,
       "mappings": 480,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -329,6 +370,7 @@
       "bytes": 544,
       "mappings": 329,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -337,6 +379,7 @@
       "bytes": 5107,
       "mappings": 2216,
       "identifiersRenamed": 3,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -345,6 +388,7 @@
       "bytes": 64546,
       "mappings": 19148,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -353,6 +397,7 @@
       "bytes": 136,
       "mappings": 55,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -361,6 +406,7 @@
       "bytes": 19542,
       "mappings": 8278,
       "identifiersRenamed": 11,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -369,6 +415,7 @@
       "bytes": 4065,
       "mappings": 1777,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -377,6 +424,7 @@
       "bytes": 67982,
       "mappings": 15739,
       "identifiersRenamed": 3,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -385,6 +433,7 @@
       "bytes": 1985,
       "mappings": 881,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -393,6 +442,7 @@
       "bytes": 741511,
       "mappings": 297678,
       "identifiersRenamed": 91,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -401,6 +451,7 @@
       "bytes": 28688,
       "mappings": 10608,
       "identifiersRenamed": 12,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -409,6 +460,7 @@
       "bytes": 4658,
       "mappings": 2428,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -417,6 +469,7 @@
       "bytes": 868,
       "mappings": 426,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -425,6 +478,7 @@
       "bytes": 178,
       "mappings": 68,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -433,6 +487,7 @@
       "bytes": 3694,
       "mappings": 1361,
       "identifiersRenamed": 8,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -441,6 +496,7 @@
       "bytes": 2096,
       "mappings": 937,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -449,6 +505,7 @@
       "bytes": 6524,
       "mappings": 2023,
       "identifiersRenamed": 1,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -457,6 +514,7 @@
       "bytes": 11779,
       "mappings": 2521,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -465,6 +523,7 @@
       "bytes": 14126,
       "mappings": 6374,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -473,6 +532,7 @@
       "bytes": 24014,
       "mappings": 10504,
       "identifiersRenamed": 6,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -481,6 +541,7 @@
       "bytes": 4406,
       "mappings": 950,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -489,6 +550,7 @@
       "bytes": 5831,
       "mappings": 1964,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -497,6 +559,7 @@
       "bytes": 28189,
       "mappings": 15036,
       "identifiersRenamed": 15,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -505,6 +568,7 @@
       "bytes": 6577,
       "mappings": 3326,
       "identifiersRenamed": 8,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -513,6 +577,7 @@
       "bytes": 44040,
       "mappings": 14094,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -521,6 +586,7 @@
       "bytes": 16585,
       "mappings": 6370,
       "identifiersRenamed": 3,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -529,6 +595,7 @@
       "bytes": 981,
       "mappings": 519,
       "identifiersRenamed": 2,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -537,6 +604,7 @@
       "bytes": 1246,
       "mappings": 639,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -545,6 +613,7 @@
       "bytes": 5730,
       "mappings": 2719,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -553,6 +622,7 @@
       "bytes": 592,
       "mappings": 242,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -561,6 +631,7 @@
       "bytes": 63333,
       "mappings": 21713,
       "identifiersRenamed": 1,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -569,6 +640,7 @@
       "bytes": 1001,
       "mappings": 299,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -577,6 +649,7 @@
       "bytes": 1075217,
       "mappings": 433905,
       "identifiersRenamed": 256,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -585,6 +658,7 @@
       "bytes": 213143,
       "mappings": 88572,
       "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": true
     },
     {
@@ -593,6 +667,7 @@
       "bytes": 924392,
       "mappings": 294961,
       "identifiersRenamed": 45,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
     {
@@ -601,6 +676,7 @@
       "bytes": 3119,
       "mappings": 447,
       "identifiersRenamed": 1,
+      "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     }
   ]
