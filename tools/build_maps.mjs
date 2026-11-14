@@ -405,35 +405,69 @@ function main() {
   fs.rmSync(OUT, { recursive: true, force: true });
   fs.mkdirSync(OUT, { recursive: true });
   const files = list(SRC).filter((p) => /\.(?:js|cjs|mjs)$/i.test(p)).sort();
-  let extraBudget = 100;
-  const records = files.map((file) => {
+  // Keep the original 100 additional renames in place, before assigning
+  // the new batch to main gameplay source first, then other JS modules.
+  const priorAllocation = new Map([
+    ["airstraf.ing/assets/c-4ZchrfCo.js", 4],
+    ["airstraf.ing/assets/c-B0EPN0fS.js", 96]
+  ]);
+  const PRIOR_COUNT = 100;
+  const NEW_BATCH_TARGET = 200;
+  const fileRole = (file) => {
+    const rel = slash(path.relative(SRC, file));
+    return priorAllocation.has(rel) ? 0 :
+      rel === "airstraf.ing/assets/main-0GITWSWA.js" ? 1 : 2;
+  };
+  const executionOrder = [...files].sort((a, b) =>
+    fileRole(a) - fileRole(b) || a.localeCompare(b));
+  let oldRenamed = 0;
+  let newRemaining = NEW_BATCH_TARGET;
+  const records = executionOrder.map((file) => {
+    const rel = slash(path.relative(SRC, file));
+    const oldQuota = priorAllocation.get(rel);
     try {
-      const result = buildOne(file, extraBudget);
-      extraBudget -= result.additionalIdentifiersRenamed || 0;
+      const result = buildOne(file, oldQuota ?? newRemaining);
+      const renamed = result.additionalIdentifiersRenamed || 0;
+      if (oldQuota !== undefined) {
+        if (renamed !== oldQuota) throw new Error(
+          "Existing rename baseline changed in " + rel +
+          ": expected " + oldQuota + ", got " + renamed);
+        oldRenamed += renamed;
+      } else {
+        newRemaining -= renamed;
+        for (const entry of result.renames || []) {
+          if (entry.pass === "additional") entry.pass = "batch-200";
+        }
+      }
       return result;
+    } catch (err) {
+      return { file: rel, status: "skipped",
+        reason: "Generation failed: " + (err.stack || err.message) };
     }
-    catch (err) { return {
-      file: slash(path.relative(SRC, file)), status: "skipped",
-      reason: "Generation failed: " + (err.stack || err.message)
-    }; }
   });
+  records.sort((a,b)=>a.file.localeCompare(b.file));
+  const newBatchRenamed = NEW_BATCH_TARGET - newRemaining;
   fs.writeFileSync(path.join(OUT, "report.json"),
     JSON.stringify({ inputJsFiles: files.length,
       successfullyMapped: records.filter((x) => x.status === "mapped").length,
       totalIdentifiersRenamed: records.reduce((n,x) => n + (x.identifiersRenamed || 0), 0),
-      additionalIdentifiersRenamed: 100 - extraBudget,
+      additionalIdentifiersRenamed: oldRenamed + newBatchRenamed,
+      previouslyCompletedRenames: oldRenamed,
+      newBatchIdentifiersRenamed: newBatchRenamed,
       files: records.map(({ renames, ...r }) => r)
     }, null, 2) + "\n");
   fs.writeFileSync(path.join(OUT, "renames.json"),
     JSON.stringify(records.filter((r) => r.renames?.length)
       .map((r) => ({ file: r.file, renames: r.renames })), null, 2) + "\n");
   console.log("JS source files: " + files.length);
-  console.log("Additional evidence-backed renames: " + (100 - extraBudget) + "/100");
+  console.log("Previously completed additional renames: " + oldRenamed + "/" + PRIOR_COUNT);
+  console.log("New evidence-backed renames: " + newBatchRenamed + "/" + NEW_BATCH_TARGET);
   for (const rec of records) {
     console.log("  " + rec.status + ": " + rec.file +
       (rec.status === "mapped" ? " (" + rec.identifiersRenamed + " renames)" : " — " + rec.reason));
   }
-  if (extraBudget !== 0) throw new Error("Insufficient supported additional renames: " + (100 - extraBudget) + "/100");
+  if (oldRenamed !== PRIOR_COUNT || newRemaining !== 0) throw new Error(
+    "Incorrect rename totals: prior=" + oldRenamed + ", new=" + newBatchRenamed);
   if (records.some((r) => r.status !== "mapped")) throw new Error("A source file could not be mapped");
 }
 main();
