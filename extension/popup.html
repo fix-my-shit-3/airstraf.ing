@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>airstraf.ing replacement</title><link rel="stylesheet" href="popup.css"></head>
+<body>
+<header><span class="eyebrow">FIREFOX / LIVE REPLACEMENT</span><h1>airstraf<span>.ing</span></h1><p id="state" role="status">Connecting to extension…</p></header>
+<section class="counts" aria-label="Replacement counts"><div><strong id="ready">—</strong><span>Available files</span></div><div><strong id="replaced">—</strong><span>Replaced in tab</span></div><div><strong id="skipped">—</strong><span>Skipped in tab</span></div></section>
+<p class="hint" id="tab-note">Counts cover observed responses in the current tab since navigation.</p>
+<dl><dt>Add-on</dt><dd id="version">—</dd><dt>Loaded commit</dt><dd id="revision">Bundled files</dd><dt>Last checked</dt><dd id="checked">Never</dd><dt>Last downloaded</dt><dd id="updated">Never</dd><dt>Automatic check</dt><dd>Every 15 minutes</dd></dl>
+<p id="update-status" role="status"></p><p id="error" role="alert" hidden></p>
+<button id="download" class="primary">↓ Download latest</button><button id="reload">Reload game without cache</button>
+<details><summary>Recent files <span id="file-count"></span></summary><ul id="files"></ul></details>
+<details><summary>Console verification</summary><p>After reloading the game, run this in its Web Console. Rows confirm replacement scripts reached their execution marker.</p><pre>console.table(globalThis.__AIRSTRAF_REPLACEMENTS__ ?? [])</pre><p>No rows? Check skipped files above, allow the game to finish loading, and verify this is the main page's console.</p></details>
+<footer>Updates replace game files. Add-on interface updates require loading the newest add-on package.</footer>
+<script src="popup.js"></script></body></html>
