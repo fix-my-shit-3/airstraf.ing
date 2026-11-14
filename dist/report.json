@@ -1,8 +1,10 @@
 {
   "inputJsFiles": 75,
   "successfullyMapped": 75,
-  "totalIdentifiersRenamed": 664,
-  "additionalIdentifiersRenamed": 100,
+  "totalIdentifiersRenamed": 864,
+  "additionalIdentifiersRenamed": 300,
+  "previouslyCompletedRenames": 100,
+  "newBatchIdentifiersRenamed": 200,
   "files": [
     {
       "file": "airstraf.ing/assets/c-0_FeqyJL.js",
@@ -23,21 +25,21 @@
       "dynamicScopeDetected": false
     },
     {
-      "file": "airstraf.ing/assets/c-B0EPN0fS.js",
-      "status": "mapped",
-      "bytes": 38400,
-      "mappings": 19224,
-      "identifiersRenamed": 112,
-      "additionalIdentifiersRenamed": 96,
-      "dynamicScopeDetected": false
-    },
-    {
       "file": "airstraf.ing/assets/c-B0cRM3KE.js",
       "status": "mapped",
       "bytes": 3014,
       "mappings": 1454,
       "identifiersRenamed": 1,
       "additionalIdentifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-B0EPN0fS.js",
+      "status": "mapped",
+      "bytes": 38400,
+      "mappings": 19224,
+      "identifiersRenamed": 112,
+      "additionalIdentifiersRenamed": 96,
       "dynamicScopeDetected": false
     },
     {
@@ -86,6 +88,24 @@
       "dynamicScopeDetected": false
     },
     {
+      "file": "airstraf.ing/assets/c-BjGOj7jP.js",
+      "status": "mapped",
+      "bytes": 732,
+      "mappings": 400,
+      "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-Bk_hd1Js.js",
+      "status": "mapped",
+      "bytes": 13892,
+      "mappings": 5193,
+      "identifiersRenamed": 3,
+      "additionalIdentifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
       "file": "airstraf.ing/assets/c-BK5Oi6qK.js",
       "status": "mapped",
       "bytes": 20887,
@@ -104,10 +124,10 @@
       "dynamicScopeDetected": false
     },
     {
-      "file": "airstraf.ing/assets/c-BOVHeOwB.js",
+      "file": "airstraf.ing/assets/c-BoMyoPFu.js",
       "status": "mapped",
-      "bytes": 1976,
-      "mappings": 886,
+      "bytes": 264,
+      "mappings": 106,
       "identifiersRenamed": 0,
       "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
@@ -118,6 +138,24 @@
       "bytes": 2820,
       "mappings": 1085,
       "identifiersRenamed": 2,
+      "additionalIdentifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-BOVHeOwB.js",
+      "status": "mapped",
+      "bytes": 1976,
+      "mappings": 886,
+      "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-Br-l5PAG.js",
+      "status": "mapped",
+      "bytes": 2104,
+      "mappings": 1097,
+      "identifiersRenamed": 0,
       "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
@@ -140,42 +178,6 @@
       "dynamicScopeDetected": false
     },
     {
-      "file": "airstraf.ing/assets/c-BjGOj7jP.js",
-      "status": "mapped",
-      "bytes": 732,
-      "mappings": 400,
-      "identifiersRenamed": 0,
-      "additionalIdentifiersRenamed": 0,
-      "dynamicScopeDetected": false
-    },
-    {
-      "file": "airstraf.ing/assets/c-Bk_hd1Js.js",
-      "status": "mapped",
-      "bytes": 13892,
-      "mappings": 5193,
-      "identifiersRenamed": 3,
-      "additionalIdentifiersRenamed": 0,
-      "dynamicScopeDetected": false
-    },
-    {
-      "file": "airstraf.ing/assets/c-BoMyoPFu.js",
-      "status": "mapped",
-      "bytes": 264,
-      "mappings": 106,
-      "identifiersRenamed": 0,
-      "additionalIdentifiersRenamed": 0,
-      "dynamicScopeDetected": false
-    },
-    {
-      "file": "airstraf.ing/assets/c-Br-l5PAG.js",
-      "status": "mapped",
-      "bytes": 2104,
-      "mappings": 1097,
-      "identifiersRenamed": 0,
-      "additionalIdentifiersRenamed": 0,
-      "dynamicScopeDetected": false
-    },
-    {
       "file": "airstraf.ing/assets/c-BvgEF_dl.js",
       "status": "mapped",
       "bytes": 1080,
@@ -194,6 +196,15 @@
       "dynamicScopeDetected": false
     },
     {
+      "file": "airstraf.ing/assets/c-C_iq9rgQ.js",
+      "status": "mapped",
+      "bytes": 594,
+      "mappings": 282,
+      "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
       "file": "airstraf.ing/assets/c-C1mpvyXQ.js",
       "status": "mapped",
       "bytes": 24823,
@@ -207,51 +218,6 @@
       "status": "mapped",
       "bytes": 337,
       "mappings": 179,
-      "identifiersRenamed": 0,
-      "additionalIdentifiersRenamed": 0,
-      "dynamicScopeDetected": false
-    },
-    {
-      "file": "airstraf.ing/assets/c-CGasCRDy.js",
-      "status": "mapped",
-      "bytes": 1539,
-      "mappings": 630,
-      "identifiersRenamed": 0,
-      "additionalIdentifiersRenamed": 0,
-      "dynamicScopeDetected": false
-    },
-    {
-      "file": "airstraf.ing/assets/c-CHK4kGoZ.js",
-      "status": "mapped",
-      "bytes": 2304,
-      "mappings": 1008,
-      "identifiersRenamed": 2,
-      "additionalIdentifiersRenamed": 0,
-      "dynamicScopeDetected": false
-    },
-    {
-      "file": "airstraf.ing/assets/c-CISf5kK1.js",
-      "status": "mapped",
-      "bytes": 18823,
-      "mappings": 1693,
-      "identifiersRenamed": 0,
-      "additionalIdentifiersRenamed": 0,
-      "dynamicScopeDetected": false
-    },
-    {
-      "file": "airstraf.ing/assets/c-CN8Wxji6.js",
-      "status": "mapped",
-      "bytes": 3977,
-      "mappings": 1620,
-      "identifiersRenamed": 0,
-      "additionalIdentifiersRenamed": 0,
-      "dynamicScopeDetected": false
-    },
-    {
-      "file": "airstraf.ing/assets/c-C_iq9rgQ.js",
-      "status": "mapped",
-      "bytes": 594,
-      "mappings": 282,
       "identifiersRenamed": 0,
       "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
@@ -284,6 +250,33 @@
       "dynamicScopeDetected": false
     },
     {
+      "file": "airstraf.ing/assets/c-CGasCRDy.js",
+      "status": "mapped",
+      "bytes": 1539,
+      "mappings": 630,
+      "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-CHK4kGoZ.js",
+      "status": "mapped",
+      "bytes": 2304,
+      "mappings": 1008,
+      "identifiersRenamed": 2,
+      "additionalIdentifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-CISf5kK1.js",
+      "status": "mapped",
+      "bytes": 18823,
+      "mappings": 1693,
+      "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
       "file": "airstraf.ing/assets/c-Clm_iQHR.js",
       "status": "mapped",
       "bytes": 743,
@@ -298,6 +291,15 @@
       "bytes": 330291,
       "mappings": 85376,
       "identifiersRenamed": 36,
+      "additionalIdentifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-CN8Wxji6.js",
+      "status": "mapped",
+      "bytes": 3977,
+      "mappings": 1620,
+      "identifiersRenamed": 0,
       "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
@@ -351,6 +353,15 @@
       "status": "mapped",
       "bytes": 33530,
       "mappings": 7486,
+      "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-D_UdFaKB.js",
+      "status": "mapped",
+      "bytes": 178,
+      "mappings": 68,
       "identifiersRenamed": 0,
       "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
@@ -419,11 +430,47 @@
       "dynamicScopeDetected": false
     },
     {
+      "file": "airstraf.ing/assets/c-DeSJF9BH.js",
+      "status": "mapped",
+      "bytes": 3694,
+      "mappings": 1361,
+      "identifiersRenamed": 8,
+      "additionalIdentifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-Df2L5mYA.js",
+      "status": "mapped",
+      "bytes": 2096,
+      "mappings": 937,
+      "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
       "file": "airstraf.ing/assets/c-DHGnaUyg.js",
       "status": "mapped",
       "bytes": 67982,
       "mappings": 15739,
       "identifiersRenamed": 3,
+      "additionalIdentifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-DkPZj7-z.js",
+      "status": "mapped",
+      "bytes": 6524,
+      "mappings": 2023,
+      "identifiersRenamed": 1,
+      "additionalIdentifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-DlIhmCer.js",
+      "status": "mapped",
+      "bytes": 11779,
+      "mappings": 2521,
+      "identifiersRenamed": 0,
       "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
@@ -464,64 +511,19 @@
       "dynamicScopeDetected": false
     },
     {
-      "file": "airstraf.ing/assets/c-DWXBoQqt.js",
-      "status": "mapped",
-      "bytes": 868,
-      "mappings": 426,
-      "identifiersRenamed": 0,
-      "additionalIdentifiersRenamed": 0,
-      "dynamicScopeDetected": false
-    },
-    {
-      "file": "airstraf.ing/assets/c-D_UdFaKB.js",
-      "status": "mapped",
-      "bytes": 178,
-      "mappings": 68,
-      "identifiersRenamed": 0,
-      "additionalIdentifiersRenamed": 0,
-      "dynamicScopeDetected": false
-    },
-    {
-      "file": "airstraf.ing/assets/c-DeSJF9BH.js",
-      "status": "mapped",
-      "bytes": 3694,
-      "mappings": 1361,
-      "identifiersRenamed": 8,
-      "additionalIdentifiersRenamed": 0,
-      "dynamicScopeDetected": false
-    },
-    {
-      "file": "airstraf.ing/assets/c-Df2L5mYA.js",
-      "status": "mapped",
-      "bytes": 2096,
-      "mappings": 937,
-      "identifiersRenamed": 0,
-      "additionalIdentifiersRenamed": 0,
-      "dynamicScopeDetected": false
-    },
-    {
-      "file": "airstraf.ing/assets/c-DkPZj7-z.js",
-      "status": "mapped",
-      "bytes": 6524,
-      "mappings": 2023,
-      "identifiersRenamed": 1,
-      "additionalIdentifiersRenamed": 0,
-      "dynamicScopeDetected": false
-    },
-    {
-      "file": "airstraf.ing/assets/c-DlIhmCer.js",
-      "status": "mapped",
-      "bytes": 11779,
-      "mappings": 2521,
-      "identifiersRenamed": 0,
-      "additionalIdentifiersRenamed": 0,
-      "dynamicScopeDetected": false
-    },
-    {
       "file": "airstraf.ing/assets/c-Dw2xPOlC.js",
       "status": "mapped",
       "bytes": 14126,
       "mappings": 6374,
+      "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-DWXBoQqt.js",
+      "status": "mapped",
+      "bytes": 868,
+      "mappings": 426,
       "identifiersRenamed": 0,
       "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
@@ -532,6 +534,15 @@
       "bytes": 24014,
       "mappings": 10504,
       "identifiersRenamed": 6,
+      "additionalIdentifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-e0fQXfDh.js",
+      "status": "mapped",
+      "bytes": 981,
+      "mappings": 519,
+      "identifiersRenamed": 2,
       "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
     },
@@ -554,51 +565,6 @@
       "dynamicScopeDetected": false
     },
     {
-      "file": "airstraf.ing/assets/c-PsaaRsFW.js",
-      "status": "mapped",
-      "bytes": 28189,
-      "mappings": 15036,
-      "identifiersRenamed": 15,
-      "additionalIdentifiersRenamed": 0,
-      "dynamicScopeDetected": false
-    },
-    {
-      "file": "airstraf.ing/assets/c-QnkcwdXX.js",
-      "status": "mapped",
-      "bytes": 6577,
-      "mappings": 3326,
-      "identifiersRenamed": 8,
-      "additionalIdentifiersRenamed": 0,
-      "dynamicScopeDetected": false
-    },
-    {
-      "file": "airstraf.ing/assets/c-UMCWckcW.js",
-      "status": "mapped",
-      "bytes": 44040,
-      "mappings": 14094,
-      "identifiersRenamed": 0,
-      "additionalIdentifiersRenamed": 0,
-      "dynamicScopeDetected": false
-    },
-    {
-      "file": "airstraf.ing/assets/c-ZeT0pbGP.js",
-      "status": "mapped",
-      "bytes": 16585,
-      "mappings": 6370,
-      "identifiersRenamed": 3,
-      "additionalIdentifiersRenamed": 0,
-      "dynamicScopeDetected": false
-    },
-    {
-      "file": "airstraf.ing/assets/c-e0fQXfDh.js",
-      "status": "mapped",
-      "bytes": 981,
-      "mappings": 519,
-      "identifiersRenamed": 2,
-      "additionalIdentifiersRenamed": 0,
-      "dynamicScopeDetected": false
-    },
-    {
       "file": "airstraf.ing/assets/c-iTSKxzRq.js",
       "status": "mapped",
       "bytes": 1246,
@@ -617,10 +583,37 @@
       "dynamicScopeDetected": false
     },
     {
+      "file": "airstraf.ing/assets/c-PsaaRsFW.js",
+      "status": "mapped",
+      "bytes": 28189,
+      "mappings": 15036,
+      "identifiersRenamed": 15,
+      "additionalIdentifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
       "file": "airstraf.ing/assets/c-qDanEe2E.js",
       "status": "mapped",
       "bytes": 592,
       "mappings": 242,
+      "identifiersRenamed": 0,
+      "additionalIdentifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-QnkcwdXX.js",
+      "status": "mapped",
+      "bytes": 6577,
+      "mappings": 3326,
+      "identifiersRenamed": 8,
+      "additionalIdentifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
+      "file": "airstraf.ing/assets/c-UMCWckcW.js",
+      "status": "mapped",
+      "bytes": 44040,
+      "mappings": 14094,
       "identifiersRenamed": 0,
       "additionalIdentifiersRenamed": 0,
       "dynamicScopeDetected": false
@@ -644,12 +637,21 @@
       "dynamicScopeDetected": false
     },
     {
+      "file": "airstraf.ing/assets/c-ZeT0pbGP.js",
+      "status": "mapped",
+      "bytes": 16585,
+      "mappings": 6370,
+      "identifiersRenamed": 3,
+      "additionalIdentifiersRenamed": 0,
+      "dynamicScopeDetected": false
+    },
+    {
       "file": "airstraf.ing/assets/main-0GITWSWA.js",
       "status": "mapped",
       "bytes": 1075217,
       "mappings": 433905,
-      "identifiersRenamed": 256,
-      "additionalIdentifiersRenamed": 0,
+      "identifiersRenamed": 456,
+      "additionalIdentifiersRenamed": 200,
       "dynamicScopeDetected": false
     },
     {

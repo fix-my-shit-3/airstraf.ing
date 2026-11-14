@@ -1,4 +1,4 @@
-const __vite__mapDeps = (i, m = __vite__mapDeps, d = m.f || (m.f = ["assets/c-XjEhBftY.js", "assets/c-DRieNrHJ.js", "assets/c-Cw4QBOSY.js", "assets/c-BjGOj7jP.js", "assets/c-CwMHWVDn.js", "assets/c-D7DrHuA8.js", "assets/c-PsaaRsFW.js", "assets/three-Bi9Yyrpt.js", "assets/c-BJ87Xak5.js", "assets/c-D-fVO02v.js", "assets/c-HBMF4bPX.js", "assets/c-Coxkuiy2.js", "assets/c-Caw4SzGP.js", "assets/c-Dw2xPOlC.js", "assets/c-e0fQXfDh.js", "assets/c-C_iq9rgQ.js", "assets/c-CmJ6BJHY.js", "assets/c-DTYKuKMs.js", "assets/c-Br-l5PAG.js", "assets/c-C1mpvyXQ.js", "assets/c-BE9ZXeD7.js", "assets/c-j2W5q53j.js", "assets/c-qDanEe2E.js", "assets/c-DHGnaUyg.js", "assets/c-B0EPN0fS.js", "assets/c-D6JpfG2D.js", "assets/c-CN8Wxji6.js", "assets/network-juVbujc5.js", "assets/c-DkPZj7-z.js", "assets/c-CGasCRDy.js", "assets/c-DEgsQ2SC.js", "assets/c-Cc7HakJX.js", "assets/c-DlIhmCer.js", "assets/c-D-iNDOV5.js", "assets/c-BOVHeOwB.js", "assets/c-BOtrWAYn.js", "assets/c-ZeT0pbGP.js", "assets/a-hKw0vLf0.css", "assets/c-Bk_hd1Js.js", "assets/c-DSIEVuRr.js", "assets/c-ycaScJyf.js", "assets/c-B0cRM3KE.js", "assets/c-C4hbbDNp.js", "assets/c-BLzjMcqR.js", "assets/c-D_UdFaKB.js", "assets/c-DWXBoQqt.js", "assets/c-BK5Oi6qK.js", "assets/c-ByodlC33.js", "assets/c-DxipjlZ1.js", "assets/c-QnkcwdXX.js", "assets/c-UMCWckcW.js", "assets/c-CvegKie5.js", "assets/c-iTSKxzRq.js", "assets/c-CISf5kK1.js", "assets/c-D8Hcbz4W.js", "assets/c-DeSJF9BH.js", "assets/c-Clm_iQHR.js", "assets/a-Cwxf9BjG.css", "assets/c-4ZchrfCo.js", "assets/a-BPwRzimq.css", "assets/c-BoMyoPFu.js", "assets/c-Cs0N7RUA.js", "assets/c-CHK4kGoZ.js", "assets/c-BHQ9wafF.js", "assets/c-BUv5bABA.js", "assets/c-C3CnH4SD.js", "assets/c-BVzzdleb.js", "assets/c-DMNnOvc5.js", "assets/c-CmTmKexy.js", "assets/c-Bio8cfqx.js", "assets/c-BSF9mkvK.js", "assets/a-JKeYSd5B.css", "assets/c-CtlECazm.js", "assets/c-B_77nlsB.js", "assets/c-DhBqQcrI.js", "assets/a-DdxS7sxR.css", "assets/c-B0UsglWZ.js", "assets/c-BfpixQCL.js", "assets/c-5y3FB1b_.js", "assets/c-KgMAfqqS.js", "assets/c-BUUoyvjq.js", "assets/c-CyXe_qbQ.js", "assets/c-CicEBftc.js", "assets/c-Df2L5mYA.js", "assets/c-BD7xfdQF.js", "assets/c-BGJKc7je.js", "assets/c-0_FeqyJL.js", "assets/c-BQ4urQk-.js", "assets/c-D4yc1F5U.js", "assets/c-DCeNXQjt.js", "assets/c-I0dO6CkD.js", "assets/c-mbyLg-NZ.js", "assets/c-RvlqJkPG.js", "assets/c-Sh56JhVA.js", "assets/c-Dg8SB1pW.js", "assets/c-xV8SHtXB.js", "assets/c-D3BibtnL.js", "assets/c-C-vVEuje.js", "assets/c-PgDuwdrs.js", "assets/c-CZjCXe-Y.js", "assets/c-B_Kt6YP1.js", "assets/c-Bvy6bSPY.js", "assets/c-Bhpy8B88.js", "assets/c-CfAS2_ra.js", "assets/c-DOL7AW-K.js", "assets/c-BdhObI2u.js", "assets/vue-B_D2cjCj.js", "assets/c-CVZ42xuO.js", "assets/a-CdcgdqqD.css", "assets/c-BzggX3WH.js", "assets/c-Bl_2cS9p.js", "assets/a-CkepG4lW.css", "assets/a-YMjZE9Iy.css", "assets/c-BLsVBiFz.js", "assets/c-De6Ngc09.js", "assets/c-CuT1eZWE.js", "assets/a-C1b6jj7P.css", "assets/c-D3rwkFLg.js", "assets/a-BDvyV5-B.css", "assets/c-C_bkFJ1r.js", "assets/a-C2b-Jc_k.css"])) => i.map(i => d[i]);
+const __vite__mapDeps = (i, m = __vite__mapDeps, d = m.f || (m.f = ["assets/c-XjEhBftY.js", "assets/c-DRieNrHJ.js", "assets/c-Cw4QBOSY.js", "assets/c-BjGOj7jP.js", "assets/c-CwMHWVDn.js", "assets/c-D7DrHuA8.js", "assets/c-PsaaRsFW.js", "assets/three-Bi9Yyrpt.js", "assets/c-BJ87Xak5.js", "assets/c-D-fVO02v.js", "assets/c-HBMF4bPX.js", "assets/c-Coxkuiy2.js", "assets/c-Caw4SzGP.js", "assets/c-Dw2xPOlC.js", "assets/c-e0fQXfDh.js", "assets/c-C_iq9rgQ.js", "assets/c-CmJ6BJHY.js", "assets/c-DTYKuKMs.js", "assets/c-Br-l5PAG.js", "assets/c-C1mpvyXQ.js", "assets/c-BE9ZXeD7.js", "assets/c-j2W5q53j.js", "assets/c-qDanEe2E.js", "assets/c-DHGnaUyg.js", "assets/c-B0EPN0fS.js", "assets/c-D6JpfG2D.js", "assets/c-CN8Wxji6.js", "assets/network-juVbujc5.js", "assets/c-DkPZj7-z.js", "assets/c-CGasCRDy.js", "assets/c-DEgsQ2SC.js", "assets/c-Cc7HakJX.js", "assets/c-DlIhmCer.js", "assets/c-D-iNDOV5.js", "assets/c-BOVHeOwB.js", "assets/c-BOtrWAYn.js", "assets/c-ZeT0pbGP.js", "assets/a-hKw0vLf0.css", "assets/c-Bk_hd1Js.js", "assets/c-DSIEVuRr.js", "assets/c-ycaScJyf.js", "assets/c-B0cRM3KE.js", "assets/c-C4hbbDNp.js", "assets/c-BLzjMcqR.js", "assets/c-D_UdFaKB.js", "assets/c-DWXBoQqt.js", "assets/c-BK5Oi6qK.js", "assets/c-ByodlC33.js", "assets/c-DxipjlZ1.js", "assets/c-QnkcwdXX.js", "assets/c-UMCWckcW.js", "assets/c-CvegKie5.js", "assets/c-iTSKxzRq.js", "assets/c-CISf5kK1.js", "assets/c-D8Hcbz4W.js", "assets/c-DeSJF9BH.js", "assets/c-Clm_iQHR.js", "assets/a-Cwxf9BjG.css", "assets/c-4ZchrfCo.js", "assets/a-BPwRzimq.css", "assets/c-BoMyoPFu.js", "assets/c-Cs0N7RUA.js", "assets/c-CHK4kGoZ.js", "assets/c-BHQ9wafF.js", "assets/c-BUv5bABA.js", "assets/c-C3CnH4SD.js", "assets/c-BVzzdleb.js", "assets/c-DMNnOvc5.js", "assets/c-CmTmKexy.js", "assets/c-Bio8cfqx.js", "assets/c-BSF9mkvK.js", "assets/a-JKeYSd5B.css", "assets/c-CtlECazm.js", "assets/c-B_77nlsB.js", "assets/c-DhBqQcrI.js", "assets/a-DdxS7sxR.css", "assets/c-B0UsglWZ.js", "assets/c-BfpixQCL.js", "assets/c-5y3FB1b_.js", "assets/c-KgMAfqqS.js", "assets/c-BUUoyvjq.js", "assets/c-CyXe_qbQ.js", "assets/c-CicEBftc.js", "assets/c-Df2L5mYA.js", "assets/c-BD7xfdQF.js", "assets/c-BGJKc7je.js", "assets/c-0_FeqyJL.js", "assets/c-BQ4urQk-.js", "assets/c-D4yc1F5U.js", "assets/c-DCeNXQjt.js", "assets/c-I0dO6CkD.js", "assets/c-mbyLg-NZ.js", "assets/c-RvlqJkPG.js", "assets/c-Sh56JhVA.js", "assets/c-Dg8SB1pW.js", "assets/c-xV8SHtXB.js", "assets/c-D3BibtnL.js", "assets/c-C-vVEuje.js", "assets/c-PgDuwdrs.js", "assets/c-CZjCXe-Y.js", "assets/c-B_Kt6YP1.js", "assets/c-Bvy6bSPY.js", "assets/c-Bhpy8B88.js", "assets/c-CfAS2_ra.js", "assets/c-DOL7AW-K.js", "assets/c-BdhObI2u.js", "assets/vue-B_D2cjCj.js", "assets/c-CVZ42xuO.js", "assets/a-CdcgdqqD.css", "assets/c-BzggX3WH.js", "assets/c-Bl_2cS9p.js", "assets/a-CkepG4lW.css", "assets/a-YMjZE9Iy.css", "assets/c-BLsVBiFz.js", "assets/c-De6Ngc09.js", "assets/c-CuT1eZWE.js", "assets/a-C1b6jj7P.css", "assets/c-D3rwkFLg.js", "assets/a-BDvyV5-B.css", "assets/c-C_bkFJ1r.js", "assets/a-C2b-Jc_k.css"])) => i.map(item => d[item]);
 import { a as t, i as s, n as e, r as i, t as n } from "./c-BJ87Xak5.js";
 import { $ as r, $n as o, $r as a, $t as h, A as c, Ai as l, An as u, Ar as d, At as f, Bi as p, Br as m, Bt as w, Ci as y, Ct as g, D as v, Di as b, Dn as k, E as M, En as S, Fn as _, Gi as $, Gn as x, In as P, It as A, J as T, Ji as E, K as N, Ki as O, Kn as C, Kt as I, L as j, Li as R, Ln as L, Lr as F, Lt as D, M as B, N as z, Ni as K, O as U, On as q, Or as H, P as G, Pi as V, Q as W, Qn as J, Ri as Y, Rn as X, Rr as Z, Rt as Q, St as tt, T as st, Ti as et, Tn as it, Ui as nt, Un as rt, Vi as ot, Vn as at, Wi as ht, Wn as ct, Wt as lt, X as ut, Xi as dt, Xn as ft, Xt as pt, Y as mt, Z as wt, Zr as yt, _i as gt, _n as vt, _t as bt, a as kt, ai as Mt, ar as St, at as _t, bi as $t, bn as xt, bt as Pt, c as At, ci as Tt, cn as Et, cr as Nt, ct as Ot, d as Ct, di as It, ei as jt, en as Rt, er as Lt, et as Ft, f as Dt, fi as Bt, fn as zt, fr as Kt, ft as Ut, g as qt, gi as Ht, gn as Gt, gt as Vt, hi as Wt, hn as Jt, ht as Yt, i as Xt, ii as Zt, ir as Qt, it as ts, ji as ss, jn as es, jt as is, k as ns, kn as rs, l as os, li as as, m as hs, mi as cs, mn as ls, mr as us, mt as ds, n as fs, ni as ps, nn as ms, nr as ws, nt as ys, o as gs, oi as vs, on as bs, ot as ks, p as Ms, pi as Ss, pn as _s, pt as $s, q as xs, qi as Ps, r as As, ri as Ts, rn as Es, rr as Ns, rt as Os, s as Cs, si as Is, sn as js, sr as Rs, st as Ls, ti as Fs, tn as Ds, tt as Bs, u as zs, ui as Ks, ur as Us, v as qs, vi as Hs, vt as Gs, w as Vs, wr as Ws, wt as Js, x as Ys, xi as Xs, xt as Zs, yt as Qs, z as te, zn as se, zr as ee } from "./c-DRieNrHJ.js";
 import { a as ie, c as ne, f as re, i as oe, l as ae, m as he, n as ce, o as le, p as ue, r as de, s as fe, u as pe } from "./c-Cw4QBOSY.js";
@@ -64,8 +64,8 @@ import { n as cu, t as lu } from "./c-BGJKc7je.js";
 import { n as uu, t as du } from "./c-CfAS2_ra.js";
 import { t as fu } from "./c-DLYyjYgG.js";
 function pu() {
-  const t = new Uint32Array(1);
-  return crypto.getRandomValues(t), t[0] / 4294967296;
+  const uint32Values = new Uint32Array(1);
+  return crypto.getRandomValues(uint32Values), uint32Values[0] / 4294967296;
 }
 var mu = (t, s) => `profileCosmetic_${t}_${s}`,
   wu = (t, s, e) => t.getInt(mu(s, e)) > 0,
@@ -76,7 +76,7 @@ var mu = (t, s) => `profileCosmetic_${t}_${s}`,
     const t = [];
     for (const [s, e] of [["characterSkin", Yi], ["weaponSkin", Vi]]) for (const i of e) {
       if (i.price <= 0 || To(i.rarity)) continue;
-      if (e.find(t => t.name === i.name)?.index !== i.index) continue;
+      if (e.find(item => item.name === i.name)?.index !== i.index) continue;
       const n = Io(s, i.index);
       yo.has(n) || t.push({
         key: n,
@@ -85,10 +85,10 @@ var mu = (t, s) => `profileCosmetic_${t}_${s}`,
     }
     return t;
   })(),
-  ku = new Map([...Yi.map(t => [Io("characterSkin", t.index), t.name]), ...Vi.map(t => [Io("weaponSkin", t.index), t.name])]),
+  ku = new Map([...Yi.map(item => [Io("characterSkin", item.index), item.name]), ...Vi.map(item => [Io("weaponSkin", item.index), item.name])]),
   Mu = t => ku.get(t) ?? null;
 function Su(t, s = pu) {
-  const e = bu.filter(s => t.getInt(s.key) <= 0);
+  const e = bu.filter(item => t.getInt(item.key) <= 0);
   if (!e.length) return null;
   const i = e[Math.min(e.length - 1, Math.floor(s() * e.length))];
   return t.setInt(i.key, 1), i;
@@ -135,7 +135,7 @@ function _u(t, s, e = pu) {
   });
 }
 function $u(t, s) {
-  const e = void 0 === (i = t.forWeapon) ? null : Object.values(je).find(t => t.index === i)?.name ?? null;
+  const e = void 0 === (i = t.forWeapon) ? null : Object.values(je).find(item => item.index === i)?.name ?? null;
   var i;
   return `${e ? `${e} skin` : "characterSkin" === t.kind ? "Character skin" : "Item"} removed: +${(t => Math.round(t).toLocaleString("en-US"))(s)} KP refunded (${t.name})`;
 }
@@ -317,11 +317,11 @@ var Cu = class {
       const i = ++this.ticket;
       this.playing = !0;
       const n = performance.now();
-      this.audio.load(e).then(e => {
-        if (!e || i !== this.ticket || "running" !== s.state) return;
+      this.audio.load(e).then(result => {
+        if (!result || i !== this.ticket || "running" !== s.state) return;
         const r = t > 0 ? (t + (performance.now() - n) / 1e3) * this.rate : 0;
-        if (!this.loop && r >= e.duration) return void (this.playing = !1);
-        const o = this.audio.start(e, {
+        if (!this.loop && r >= result.duration) return void (this.playing = !1);
+        const o = this.audio.start(result, {
           volume: this.volume * this.master(),
           rate: Math.max(1e-4, this.rate),
           loop: this.loop,
@@ -408,7 +408,7 @@ var zu = new Xa(8),
     }
     message(t) {
       if (this.account) {
-        const s = this.account.entries().find(s => s.id === t);
+        const s = this.account.entries().find(item => item.id === t);
         return s ? Bu(s) : null;
       }
       const s = this.prefs.getString(`message${t}data`);
@@ -452,7 +452,7 @@ var zu = new Xa(8),
       return Math.max(0, (t.sent.getTime() + t.days * Lu - s.getTime()) / Lu);
     }
     $_1tep() {
-      return this.messages().some(s => null !== s.type && s.type !== Ni.None && !s.claimed && !t.expired(s));
+      return this.messages().some(item => null !== item.type && item.type !== Ni.None && !item.claimed && !t.expired(item));
     }
     $_3j7(t) {
       this.account || this.prefs.setInt(`message${t}claimed`, 1);
@@ -482,10 +482,10 @@ var zu = new Xa(8),
     }
   };
 function Uu(t) {
-  const s = Math.floor(t),
-    e = Math.floor(24 * (t - s));
+  const flooredValue = Math.floor(t),
+    _flooredValue = Math.floor(24 * (t - flooredValue));
   let i = "";
-  return s >= 7 && (i += `${Math.floor(s / 7)}w `), s % 7 > 0 && (i += s % 7 + "d "), e > 0 && (i += `${e}h `), i.trim();
+  return flooredValue >= 7 && (i += `${Math.floor(flooredValue / 7)}w `), flooredValue % 7 > 0 && (i += flooredValue % 7 + "d "), _flooredValue > 0 && (i += `${_flooredValue}h `), i.trim();
 }
 var qu = {
     kills: Oi.GetKills,
@@ -506,14 +506,14 @@ function Gu(t, s) {
     iconPath: i
   };
   if ("class" === e) {
-    const s = Ze.find(s => s.index === Number(t.arg));
+    const s = Ze.find(item => item.index === Number(t.arg));
     if (s) return {
       icon: null,
       iconPath: `characters/icons/${s.icon}`
     };
   }
   if ("mode" === e) {
-    const s = "course" === uo(t)?.sub ? ss.find(s => s.id === t.arg)?.mode : t.arg,
+    const s = "course" === uo(t)?.sub ? ss.find(item => item.id === t.arg)?.mode : t.arg,
       e = i || s || "",
       n = $e(e);
     if (n) return {
@@ -527,7 +527,7 @@ function Gu(t, s) {
     };
   }
   const n = qu[e] ?? Oi.WinGames,
-    r = s.find(t => t?.type === n);
+    r = s.find(item => item?.type === n);
   return {
     icon: r?.icon ?? null,
     iconPath: r?.iconPath ?? ""
@@ -543,7 +543,7 @@ function Wu(t, s) {
   return {
     title: Mo(e, {
       class: t => {
-        return s.classes[(e = t) ?? -1] ?? Ze.find(t => t.index === e)?.name ?? "";
+        return s.classes[(e = t) ?? -1] ?? Ze.find(item => item.index === e)?.name ?? "";
         var e;
       },
       mode: t => Ne[t]?.name ?? t
@@ -584,7 +584,7 @@ var Ju = class {
     }
   },
   Yu = /^[A-Za-z0-9_-]{43}$/;
-Or[Math.min(...Object.values(kr).flatMap(t => Object.values(t))) - 1];
+Or[Math.min(...Object.values(kr).flatMap(item => Object.values(item))) - 1];
 var Xu = (t, s) => `secret_${t}_${s}_found`;
 function Zu(t) {
   const s = {};
@@ -739,17 +739,17 @@ var cd = t => Math.trunc(t).toLocaleString("en-US"),
     }
     daily() {
       const t = this.day;
-      return Xr(t).map(s => this.view(s, t));
+      return Xr(t).map(item => this.view(item, t));
     }
     weekly() {
       const t = this.week;
-      return Kr(t).map(s => this.view(s, t));
+      return Kr(t).map(item => this.view(item, t));
     }
     special() {
-      return Vr().map(t => this.view(t));
+      return Vr().map(item => this.view(item));
     }
     map(t) {
-      return zr(t).map(t => this.view(t));
+      return zr(t).map(item => this.view(item));
     }
     maps() {
       return bo();
@@ -757,7 +757,7 @@ var cd = t => Math.trunc(t).toLocaleString("en-US"),
     $_3xp(t) {
       const s = zr(t);
       return {
-        done: s.filter(t => this.stored(t, 0).done).length,
+        done: s.filter(item => this.stored(item, 0).done).length,
         total: s.length
       };
     }
@@ -765,12 +765,12 @@ var cd = t => Math.trunc(t).toLocaleString("en-US"),
       return mo();
     }
     classList(t) {
-      return ko(t).map(t => this.view(t));
+      return ko(t).map(item => this.view(item));
     }
     classProgress(t) {
       const s = ko(t);
       return {
-        done: s.filter(t => this.stored(t, 0).done).length,
+        done: s.filter(item => this.stored(item, 0).done).length,
         total: s.length
       };
     }
@@ -791,13 +791,13 @@ var cd = t => Math.trunc(t).toLocaleString("en-US"),
       return s.done && !s.claimed && !!Hr(t);
     }
     $_6to() {
-      return mo().filter(t => this.$_5ne(t)).length;
+      return mo().filter(item => this.$_5ne(item)).length;
     }
     $_5gn0(t) {
       return this.$_1tgp(this.classList(t)) + (this.$_30a(t) ? 1 : 0);
     }
     $_3ym() {
-      return mo().reduce((t, s) => t + this.$_5gn0(s), 0);
+      return mo().reduce((accumulator, item) => accumulator + this.$_5gn0(item), 0);
     }
     setState(t, s) {
       if (this.account) {
@@ -824,7 +824,7 @@ var cd = t => Math.trunc(t).toLocaleString("en-US"),
       return s.done && !s.claimed;
     }
     $_1z7() {
-      return bo().filter(t => this.$_2yq(t)).length;
+      return bo().filter(item => this.$_2yq(item)).length;
     }
     silverLetters() {
       return this.account ? this.account.snapshot()?.silverLetters ?? 0 : 0;
@@ -853,22 +853,22 @@ var cd = t => Math.trunc(t).toLocaleString("en-US"),
     }
     nearest(t, s) {
       const uniqueItems = new Set();
-      return lo(t, this.day, this.week).map((t, s) => ({
-        v: this.view(t.def, t.period),
-        order: s
-      })).filter(t => !t.v.done && "special" !== t.v.def.scope && "class" !== t.v.def.scope).sort((t, s) => Qr(s.v.def, s.v.progress) - Qr(t.v.def, t.v.progress) || t.order - s.order).filter(t => {
-        const s = `${t.v.def.counter}|${t.v.def.arg ?? ""}`;
+      return lo(t, this.day, this.week).map((item, index) => ({
+        v: this.view(item.def, item.period),
+        order: index
+      })).filter(item => !item.v.done && "special" !== item.v.def.scope && "class" !== item.v.def.scope).sort((leftItem, rightItem) => Qr(rightItem.v.def, rightItem.v.progress) - Qr(leftItem.v.def, leftItem.v.progress) || leftItem.order - rightItem.order).filter(item => {
+        const s = `${item.v.def.counter}|${item.v.def.arg ?? ""}`;
         return !uniqueItems.has(s) && (uniqueItems.add(s), !0);
-      }).slice(0, s).map(t => t.v);
+      }).slice(0, s).map(item => item.v);
     }
     $_1tgp(t) {
-      return t.filter(t => t.done && !t.claimed && !t.waiting).length;
+      return t.filter(item => item.done && !item.claimed && !item.waiting).length;
     }
     $_2ud(t) {
       return this.$_1tgp(this.map(t)) + (this.$_4wm(t) ? 1 : 0);
     }
     $_49p() {
-      return bo().reduce((t, s) => t + this.$_2ud(s), 0);
+      return bo().reduce((accumulator, item) => accumulator + this.$_2ud(item), 0);
     }
     $_1s9() {
       return this.$_1tgp(this.daily());
@@ -903,7 +903,7 @@ var cd = t => Math.trunc(t).toLocaleString("en-US"),
           xp: 0,
           items: []
         },
-        s = [...this.daily(), ...this.weekly(), ...bo().flatMap(t => this.map(t)), ...this.special(), ...mo().flatMap(t => this.classList(t))];
+        s = [...this.daily(), ...this.weekly(), ...bo().flatMap(item => this.map(item)), ...this.special(), ...mo().flatMap(item => this.classList(item))];
       for (const e of s) {
         if (!e.done || e.claimed) continue;
         const s = this.$_5y6c(e.def);
@@ -912,10 +912,10 @@ var cd = t => Math.trunc(t).toLocaleString("en-US"),
       for (const e of bo()) {
         if (!this.$_4wm(e)) continue;
         const s = this.$_58b(e);
-        t.count++, t.kp += s.kp, t.items.push(...s.skins.map(t => ({
+        t.count++, t.kp += s.kp, t.items.push(...s.skins.map(item => ({
           kind: "skin",
-          id: t.id,
-          name: t.name
+          id: item.id,
+          name: item.name
         })));
       }
       if (this.$_360()) {
@@ -937,7 +937,7 @@ var cd = t => Math.trunc(t).toLocaleString("en-US"),
         return s && this.$_6ci(s), this.hooks.changed(), !!s;
       }
       const s = this.$_58b(t);
-      return this.verified?.markSet("map", t), this.hooks.giveCoins(s.kp), this.hooks.purchased(), this.hooks.reward(dd(t, s.kp, s.skins.map(t => t.name), s.letter), !0), this.hooks.changed(), !0;
+      return this.verified?.markSet("map", t), this.hooks.giveCoins(s.kp), this.hooks.purchased(), this.hooks.reward(dd(t, s.kp, s.skins.map(item => item.name), s.letter), !0), this.hooks.changed(), !0;
     }
     $_58b(t) {
       this.guest.setInt(rd("map", t), 1);
@@ -997,7 +997,7 @@ var cd = t => Math.trunc(t).toLocaleString("en-US"),
       t.reward && (this.hooks.purchased(), this.hooks.reward(`Challenge reward: ${ud(t.reward.kind, t.reward.name ?? t.reward.id)}`, !1, t.reward)), t.kp > 0 && this.hooks.giveCoins(t.kp);
     }
     $_6ci(t) {
-      this.hooks.reward("map" === t.kind ? dd(t.key, t.kp, (t.skins ?? []).map(t => t.name), !1, (t.maps ?? 0) > 0 && (t.maps ?? 0) % po.goldMaps === 0) : fd(t.effectName ?? t.effect ?? null, t.kp, !0), !0, "week" === t.kind && t.effect ? {
+      this.hooks.reward("map" === t.kind ? dd(t.key, t.kp, (t.skins ?? []).map(item => item.name), !1, (t.maps ?? 0) > 0 && (t.maps ?? 0) % po.goldMaps === 0) : fd(t.effectName ?? t.effect ?? null, t.kp, !0), !0, "week" === t.kind && t.effect ? {
         kind: "profile_effect",
         id: t.effect
       } : void 0), this.hooks.purchased(), t.kp > 0 && this.hooks.giveCoins(t.kp);
@@ -1060,7 +1060,7 @@ var cd = t => Math.trunc(t).toLocaleString("en-US"),
         s.total > 0 && s.done === s.total && this.guest.setInt(nd("map", t), 1);
       }
       const s = String(this.week);
-      !this.setState("week", s).done && this.weekly().every(t => t.done) && this.guest.setInt(nd("week", s), 1);
+      !this.setState("week", s).done && this.weekly().every(item => item.done) && this.guest.setInt(nd("week", s), 1);
     }
     $_3bi(t) {
       t && this.account && this.hooks.changed();
@@ -1134,7 +1134,7 @@ function ud(t, s) {
 }
 function dd(t, s, e, i, n = !1) {
   const r = [i && "a silver", n && "a gold"].filter(Boolean);
-  return `All ${o = t, Ge.find(t => t.id === o)?.name ?? o} challenges completed! +${cd(s)} KP` + (e.length ? ` and ${1 === e.length ? "the skin" : "the skins"} ${e.join(", ")}` : "") + (r.length ? ` - you unlocked ${r.join(" and ")} letter for your name!` : "");
+  return `All ${o = t, Ge.find(item => item.id === o)?.name ?? o} challenges completed! +${cd(s)} KP` + (e.length ? ` and ${1 === e.length ? "the skin" : "the skins"} ${e.join(", ")}` : "") + (r.length ? ` - you unlocked ${r.join(" and ")} letter for your name!` : "");
   var o;
 }
 function fd(t, s, e = !1) {
@@ -1301,15 +1301,15 @@ var Sd = class {
     this.ui = t;
   }
   load() {
-    return this.loaded ??= this.ui.owner("lobby", "AlltimeUIManager").then(t => {
-      this.sprites = t?.mapSprites ?? [];
+    return this.loaded ??= this.ui.owner("lobby", "AlltimeUIManager").then(result => {
+      this.sprites = result?.mapSprites ?? [];
     }).catch(() => {}), this.loaded;
   }
   $_51s(t) {
-    return kd(this.sprites, Ge.find(s => s.id === t));
+    return kd(this.sprites, Ge.find(item => item.id === t));
   }
   $_3z8(t, s = {}) {
-    return t.map(t => kd(this.sprites, Ge.find(s => s.name === t)) ?? s[t] ?? null);
+    return t.map(item => kd(this.sprites, Ge.find(_item => _item.name === item)) ?? s[item] ?? null);
   }
 };
 function _d(t, s) {
@@ -1363,7 +1363,7 @@ var Rd = new Set(),
       this.create = t, Rd.add(this);
     }
     ready() {
-      return this.pending ??= this.create().then(t => this.value = t, t => {
+      return this.pending ??= this.create().then(result => this.value = result, t => {
         throw this.pending = null, Id(t), t;
       });
     }
@@ -1390,7 +1390,7 @@ var Rd = new Set(),
   },
   Dd = class extends Fd {
     constructor(...t) {
-      super(() => lh(() => import("./c-XjEhBftY.js").then(s => new s.ShopController(...t)), __vite__mapDeps([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75])));
+      super(() => lh(() => import("./c-XjEhBftY.js").then(result => new result.ShopController(...t)), __vite__mapDeps([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75])));
     }
     $_29x() {
       this.current?.$_29x();
@@ -1416,7 +1416,7 @@ var Rd = new Set(),
   },
   Bd = class extends Fd {
     constructor(...t) {
-      super(() => lh(() => import("./c-B0UsglWZ.js").then(s => new s.ClassSelectController(...t)), __vite__mapDeps([76, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 70, 77, 66, 68, 61, 62, 63, 64, 69, 60, 71, 78])));
+      super(() => lh(() => import("./c-B0UsglWZ.js").then(result => new result.ClassSelectController(...t)), __vite__mapDeps([76, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 70, 77, 66, 68, 61, 62, 63, 64, 69, 60, 71, 78])));
     }
     $_wzi() {
       return this.current?.$_wzi() ?? null;
@@ -1427,12 +1427,12 @@ var Rd = new Set(),
   },
   zd = class extends Fd {
     constructor(...t) {
-      super(() => lh(() => import("./c-KgMAfqqS.js").then(s => new s.SettingsController(...t)), __vite__mapDeps([79, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 47, 44, 62, 49, 48, 50, 42, 51, 64, 70, 80, 65, 81, 55, 56])));
+      super(() => lh(() => import("./c-KgMAfqqS.js").then(result => new result.SettingsController(...t)), __vite__mapDeps([79, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 47, 44, 62, 49, 48, 50, 42, 51, 64, 70, 80, 65, 81, 55, 56])));
     }
   },
   Kd = class extends Fd {
     constructor(...t) {
-      super(() => lh(() => import("./c-CicEBftc.js").then(s => new s.ProfileController(...t)), __vite__mapDeps([82, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 83, 70, 84, 85, 86, 87])));
+      super(() => lh(() => import("./c-CicEBftc.js").then(result => new result.ProfileController(...t)), __vite__mapDeps([82, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 83, 70, 84, 85, 86, 87])));
     }
     $_6xe() {
       this.current?.$_6xe();
@@ -1443,12 +1443,12 @@ var Rd = new Set(),
   },
   Ud = class extends Fd {
     constructor(...t) {
-      super(() => lh(() => import("./c-D4yc1F5U.js").then(s => new s.ServerFinderController(...t)), __vite__mapDeps([88, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 83, 89, 47, 43, 86, 90, 52, 91, 73])));
+      super(() => lh(() => import("./c-D4yc1F5U.js").then(result => new result.ServerFinderController(...t)), __vite__mapDeps([88, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 83, 89, 47, 43, 86, 90, 52, 91, 73])));
     }
   },
   qd = class extends Fd {
     constructor(...t) {
-      super(() => lh(() => import("./c-RvlqJkPG.js").then(s => new s.LeaderboardsController(...t)), __vite__mapDeps([92, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 48, 70, 84, 85, 86, 78, 93, 87])));
+      super(() => lh(() => import("./c-RvlqJkPG.js").then(result => new result.LeaderboardsController(...t)), __vite__mapDeps([92, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 48, 70, 84, 85, 86, 78, 93, 87])));
     }
     $_4ho9(t) {
       this.later(s => s.$_4ho9(t));
@@ -1456,7 +1456,7 @@ var Rd = new Set(),
   },
   Hd = class extends Fd {
     constructor(...t) {
-      super(() => lh(() => import("./c-Dg8SB1pW.js").then(s => new s.MissionsController(...t)), __vite__mapDeps([94, 4, 5, 6, 7, 8, 9, 10, 95, 1, 2, 3, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 49, 48, 96, 39, 40, 41, 42, 43, 44, 45, 46, 47, 50, 51, 52, 53, 54, 55, 56, 57, 72, 73])));
+      super(() => lh(() => import("./c-Dg8SB1pW.js").then(result => new result.MissionsController(...t)), __vite__mapDeps([94, 4, 5, 6, 7, 8, 9, 10, 95, 1, 2, 3, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 49, 48, 96, 39, 40, 41, 42, 43, 44, 45, 46, 47, 50, 51, 52, 53, 54, 55, 56, 57, 72, 73])));
     }
     redraw() {
       this.current?.redraw();
@@ -1467,17 +1467,17 @@ var Rd = new Set(),
   },
   Gd = class extends Fd {
     constructor(...t) {
-      super(() => lh(() => import("./c-C-vVEuje.js").then(s => new s.GameModeSelectController(...t)), __vite__mapDeps([97, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 41, 42])));
+      super(() => lh(() => import("./c-C-vVEuje.js").then(result => new result.GameModeSelectController(...t)), __vite__mapDeps([97, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 41, 42])));
     }
   },
   Vd = class extends Fd {
     constructor(...t) {
-      super(() => lh(() => import("./c-PgDuwdrs.js").then(s => new s.PfpSelectController(...t)), __vite__mapDeps([98, 39, 4, 5, 6, 7, 8, 9, 10, 17, 18, 40, 41, 1, 2, 3, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 64, 70, 66])));
+      super(() => lh(() => import("./c-PgDuwdrs.js").then(result => new result.PfpSelectController(...t)), __vite__mapDeps([98, 39, 4, 5, 6, 7, 8, 9, 10, 17, 18, 40, 41, 1, 2, 3, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 64, 70, 66])));
     }
   },
   Wd = class extends Fd {
     constructor(...t) {
-      super(() => lh(() => import("./c-CZjCXe-Y.js").then(s => new s.InboxController(...t)), __vite__mapDeps([99, 9, 10, 83])));
+      super(() => lh(() => import("./c-CZjCXe-Y.js").then(result => new result.InboxController(...t)), __vite__mapDeps([99, 9, 10, 83])));
     }
     redraw() {
       this.current?.redraw();
@@ -1485,7 +1485,7 @@ var Rd = new Set(),
   },
   Jd = class extends Ld {
     constructor(...t) {
-      super(() => lh(() => import("./c-B_Kt6YP1.js").then(s => new s.LoginPanel(...t)), __vite__mapDeps([100, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 43, 64, 42, 47])));
+      super(() => lh(() => import("./c-B_Kt6YP1.js").then(result => new result.LoginPanel(...t)), __vite__mapDeps([100, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 43, 64, 42, 47])));
     }
     get isOpen() {
       return this.current?.isOpen ?? !1;
@@ -1499,7 +1499,7 @@ var Rd = new Set(),
   },
   Yd = class extends Ld {
     constructor(...t) {
-      super(() => lh(() => import("./c-Bvy6bSPY.js").then(s => new s.NameStylePanel(...t)), __vite__mapDeps([101, 95, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 45, 64, 42, 47])));
+      super(() => lh(() => import("./c-Bvy6bSPY.js").then(result => new result.NameStylePanel(...t)), __vite__mapDeps([101, 95, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 45, 64, 42, 47])));
     }
     get visible() {
       return this.current?.visible ?? !1;
@@ -1513,7 +1513,7 @@ var Rd = new Set(),
   },
   Xd = class extends Fd {
     constructor(...t) {
-      super(() => lh(() => import("./c-Bhpy8B88.js").then(s => new s.SocialPanelController(...t)), __vite__mapDeps([102, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 47, 43, 48, 70, 84, 85, 86, 103, 93, 81, 44, 55, 56])));
+      super(() => lh(() => import("./c-Bhpy8B88.js").then(result => new result.SocialPanelController(...t)), __vite__mapDeps([102, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 47, 43, 48, 70, 84, 85, 86, 103, 93, 81, 44, 55, 56])));
     }
     $_4tb() {
       this.current?.$_4tb();
@@ -1524,7 +1524,7 @@ var Rd = new Set(),
   },
   Zd = class extends Ld {
     constructor(...t) {
-      super(() => lh(() => import("./c-DOL7AW-K.js").then(s => new s.GiftPanel(...t)), __vite__mapDeps([104, 26, 64, 42, 20, 47, 70])));
+      super(() => lh(() => import("./c-DOL7AW-K.js").then(result => new result.GiftPanel(...t)), __vite__mapDeps([104, 26, 64, 42, 20, 47, 70])));
     }
     get visible() {
       return this.current?.visible ?? !1;
@@ -1907,7 +1907,7 @@ var af = [0, 8, 1e3 / 60, 1e3 / 30],
 function bf(t, s) {
   for (const [i, n] of vf) if (i === t && n === s || i === s && n === t) return !1;
   const e = gf[t];
-  return gf[s].some(t => e.includes(t));
+  return gf[s].some(item => e.includes(item));
 }
 var kf = {
   [Ri.Respawn]: "Death Screen"
@@ -1925,7 +1925,7 @@ function Pf(t) {
   return s ? s[1] : "";
 }
 var Af = t => !!Pf(t) && t.endsWith("@hold"),
-  Tf = Object.fromEntries(Object.values(Ri).map(t => [t, ""]));
+  Tf = Object.fromEntries(Object.values(Ri).map(item => [item, ""]));
 function Ef(t, s) {
   const e = s[t];
   return "string" == typeof e ? e : Tf[t] ?? "";
@@ -2012,7 +2012,7 @@ function Rf(t, s) {
   };
   const n = t;
   for (const r of Object.keys(n)) {
-    const t = s.find(t => t === r);
+    const t = s.find(item => item === r);
     if (!t) {
       i.push({
         key: `padBinds.${r.slice(0, 40)}`,
@@ -2029,7 +2029,7 @@ function Rf(t, s) {
   for (const r of s) {
     const t = Ef(r, e);
     if (!t) continue;
-    const o = s.find(i => i !== r && s.indexOf(i) < s.indexOf(r) && Ef(i, e) === t);
+    const o = s.find(item => item !== r && s.indexOf(item) < s.indexOf(r) && Ef(item, e) === t);
     o && bf(r, o) && (e[r] = "", Object.prototype.hasOwnProperty.call(n, r) && i.push({
       key: `padBinds.${r}`,
       reason: `button used by ${o}`
@@ -2168,7 +2168,7 @@ var Xf = {
   "<Keyboard>/ctrl": "Control"
 };
 function Zf(t) {
-  return t ? Xf[t] ? Xf[t] : t.replace(/^<\w+>\//, "").replace(/([a-z])([A-Z])/g, "$1 $2").replace(/^numpad(\d)$/, "numpad $1").split(" ").map(t => t[0].toUpperCase() + t.slice(1)).join(" ") : "";
+  return t ? Xf[t] ? Xf[t] : t.replace(/^<\w+>\//, "").replace(/([a-z])([A-Z])/g, "$1 $2").replace(/^numpad(\d)$/, "numpad $1").split(" ").map(item => item[0].toUpperCase() + item.slice(1)).join(" ") : "";
 }
 function Qf(t, s) {
   const e = [...Ki[t]],
@@ -2187,22 +2187,22 @@ var ep = {
   [Ri.MoveRight]: "leftStick/right"
 };
 function ip(t, s = {}) {
-  return Object.fromEntries(Object.keys(Ki).map(e => {
-    if (Li.includes(e)) return [e, []];
-    const i = Qf(e, t).filter(tp).flatMap(Yf),
-      n = ep[e] ?? function (t) {
+  return Object.fromEntries(Object.keys(Ki).map(item => {
+    if (Li.includes(item)) return [item, []];
+    const i = Qf(item, t).filter(tp).flatMap(Yf),
+      n = ep[item] ?? function (t) {
         const s = Pf(t);
         return s ? s + (Af(t) ? xf : "") : "";
-      }(Ef(e, s));
-    return n && i.push($f(n)), [e, [...new Set(i)]];
+      }(Ef(item, s));
+    return n && i.push($f(n)), [item, [...new Set(i)]];
   }));
 }
 function np() {
-  return Bi.filter(t => !zi.includes(t) && !Li.includes(t));
+  return Bi.filter(item => !zi.includes(item) && !Li.includes(item));
 }
 var rp = (t, s) => {
   const e = Yf(t);
-  return Yf(s).some(t => e.includes(t));
+  return Yf(s).some(item => e.includes(item));
 };
 function op(t, s, e, i) {
   const n = {
@@ -2215,22 +2215,22 @@ function op(t, s, e, i) {
     o = sp(s, t)[e],
     a = [];
   if (i) {
-    for (const e of Ui) if (bf(e, s) && Qf(e, t).some(t => tp(t) && rp(t, i))) return {
+    for (const e of Ui) if (bf(e, s) && Qf(e, t).some(item => tp(item) && rp(item, i))) return {
       overrides: t,
       moved: a,
       blockedBy: e
     };
     let h = !1;
-    const c = (e, i) => !Ui.some(s => bf(s, e) && Qf(s, t).some(t => tp(t) && rp(t, i))) && !np().some(t => t !== s && t !== e && bf(t, e) && sp(t, n).some(t => t && rp(t, i)));
-    for (const t of np()) [0, 1].forEach(l => {
-      if (t === s && l === e) return;
+    const c = (e, i) => !Ui.some(item => bf(item, e) && Qf(item, t).some(_item2 => tp(_item2) && rp(_item2, i))) && !np().some(item => item !== s && item !== e && bf(item, e) && sp(item, n).some(_item3 => _item3 && rp(_item3, i)));
+    for (const t of np()) [0, 1].forEach(item => {
+      if (t === s && item === e) return;
       if (t !== s && !bf(t, s)) return;
-      const u = sp(t, n)[l];
+      const u = sp(t, n)[item];
       if (!u || !rp(u, i)) return;
       const d = t !== s && !h && o && !rp(o, i) && c(t, o) ? o : "";
-      d && (h = !0), r(t, l, d), a.push({
+      d && (h = !0), r(t, item, d), a.push({
         action: t,
-        slot: l,
+        slot: item,
         to: d
       });
     });
@@ -2276,7 +2276,7 @@ var ap = "Touch:",
         if (e < 8) return 0;
         const i = Array.from({
           length: e
-        }, (s, e) => t[e]).sort((t, s) => t - s)[e >> 1];
+        }, (s, e) => t[e]).sort((leftItem, rightItem) => leftItem - rightItem)[e >> 1];
         return i > 0 ? 1e3 / i : 0;
       }(this.gaps, this.$_1x6);
     }
@@ -2547,9 +2547,9 @@ var Mp = class {
       const i = t => {
         this.believes(t) && this.keys.delete(t.code);
       };
-      document.addEventListener("keyup", i), addEventListener("keyup", i, !0), document.addEventListener("pointerrawupdate", this.$_3yj), document.addEventListener("pointermove", this.onPointerMove), document.addEventListener("mousemove", this.onMouseMove), document.addEventListener("mousedown", this.onMouseDown), document.addEventListener("mousedown", t => {
-        if (this.$_1nv || !this.believes(t)) return;
-        const s = bp[t.button];
+      document.addEventListener("keyup", i), addEventListener("keyup", i, !0), document.addEventListener("pointerrawupdate", this.$_3yj), document.addEventListener("pointermove", this.onPointerMove), document.addEventListener("mousemove", this.onMouseMove), document.addEventListener("mousedown", this.onMouseDown), document.addEventListener("mousedown", event => {
+        if (this.$_1nv || !this.believes(event)) return;
+        const s = bp[event.button];
         if (s) for (const e of this.$_og3) if (e(s)) return;
       });
       const n = t => {
@@ -2561,10 +2561,10 @@ var Mp = class {
         n(event), this.$_wlk(event) && event.preventDefault();
       }), addEventListener("mouseup", n, !0), document.addEventListener("auxclick", event => {
         this.$_wlk(event) && event.preventDefault();
-      }), document.addEventListener("wheel", t => {
-        if (!this.locked || this.$_1nv || !this.believes(t)) return;
-        const s = zf(t.deltaY);
-        s && this.$_3ej(s) ? this.pulse(s, t) : this.wheel += this.$_3hz.event(t.deltaY, t.deltaMode, t.timeStamp);
+      }), document.addEventListener("wheel", event => {
+        if (!this.locked || this.$_1nv || !this.believes(event)) return;
+        const s = zf(event.deltaY);
+        s && this.$_3ej(s) ? this.pulse(s, event) : this.wheel += this.$_3hz.event(event.deltaY, event.deltaMode, event.timeStamp);
       }, {
         passive: !0
       }), t.addEventListener("contextmenu", event => event.preventDefault()), document.addEventListener("pointerlockchange", () => {
@@ -2699,7 +2699,7 @@ var Mp = class {
       this.keys.clear(), this.buttons.clear(), this.pressed.clear(), this.pulses.clear(), this.wheel = 0, this.$_3hz.reset();
     }
     $_4gh(t, s = {}) {
-      this.bindings = this.$_1nv ? Object.fromEntries(Object.keys(Ki).map(t => [t, [hp(t)]])) : ip(t, s);
+      this.bindings = this.$_1nv ? Object.fromEntries(Object.keys(Ki).map(item => [item, [hp(item)]])) : ip(t, s);
     }
     $_353() {
       return new Promise(t => {
@@ -2813,7 +2813,7 @@ var Mp = class {
       return this.bindings[t].includes(s);
     }
     down(t) {
-      return !this.suspended() && this.bindings[t].some(t => this.keys.has(t));
+      return !this.suspended() && this.bindings[t].some(item => this.keys.has(item));
     }
     $_gul(t) {
       return performance.now() - this.$_5ql < 1e3 * t;
@@ -3114,7 +3114,7 @@ var Wp = class {
     }
     push(t, s) {
       const e = this.newest;
-      e && t <= e.step && (this.samples = this.samples.filter(s => s.step < t));
+      e && t <= e.step && (this.samples = this.samples.filter(item => item.step < t));
       const i = (this.newest?.shift ?? 0) + (s.lifted ?? 0);
       this.samples.push(Yp(t, s, i)), this.samples.length > 12 && this.samples.splice(0, this.samples.length - 12), this.eyes.push(t, s);
     }
@@ -3122,8 +3122,8 @@ var Wp = class {
       this.samples = [Yp(t, s, this.newest?.shift ?? 0)], this.correction.x = this.correction.y = this.correction.z = 0, this.eyes.reset(t, s);
     }
     rebase(t, s) {
-      const e = this.samples.find(s => s.step === t);
-      this.samples = this.samples.filter(s => s.step < t), this.samples.push(Yp(t, s, e?.shift ?? this.newest?.shift ?? 0)), this.eyes.rebase(t, s);
+      const e = this.samples.find(item => item.step === t);
+      this.samples = this.samples.filter(item => item.step < t), this.samples.push(Yp(t, s, e?.shift ?? this.newest?.shift ?? 0)), this.eyes.rebase(t, s);
     }
     $_6qu(t, s) {
       return this.eyes.at(t, s);
@@ -3227,9 +3227,9 @@ var Wp = class {
       }(i, e), this.shots.$_5ts(i);
     }
     reconcile(t, s, e, i, n, r, o, a, h) {
-      this.pending = this.pending.filter(s => s.seq > t.lastSeq);
+      this.pending = this.pending.filter(item => item.seq > t.lastSeq);
       const c = $(t);
-      if (this.body && this.body.size !== c && (this.body.size = c), !h && !this.$_6q1 && this.body && t.health > 0 && this.records.matches(t, s, o.length) && this.pending.every(t => this.records.get(t.seq)?.allowFire === r)) return this.shots.acknowledge(t.lastSeq), this.stats.skipped++, !1;
+      if (this.body && this.body.size !== c && (this.body.size = c), !h && !this.$_6q1 && this.body && t.health > 0 && this.records.matches(t, s, o.length) && this.pending.every(item => this.records.get(item.seq)?.allowFire === r)) return this.shots.acknowledge(t.lastSeq), this.stats.skipped++, !1;
       this.stats.replays++;
       const l = this.track.at(a),
         u = t.own,
@@ -3550,14 +3550,14 @@ var Tm = [],
       if (!this.flying.length) return Tm;
       const e = [],
         i = this.bodies ? [...this.bodies(t)] : Em;
-      for (let n = (t => Wt(t))(t); n > 0; n--) this.flying = this.flying.filter(t => {
+      for (let n = (t => Wt(t))(t); n > 0; n--) this.flying = this.flying.filter(item => {
         const {
           from: n,
           to: r,
           wall: o
-        } = _m(this.world, t);
+        } = _m(this.world, item);
         let a = o;
-        return (i.some(t => void 0 === t.scale && xm(n, r, t)) || !a && i.some(t => void 0 !== t.scale && xm(n, r, t))) && (a = r), !a && Pm(t) && (a = r), !a || (s && Am(s, a), e.push(a), !1);
+        return (i.some(_item4 => void 0 === _item4.scale && xm(n, r, _item4)) || !a && i.some(_item5 => void 0 !== _item5.scale && xm(n, r, _item5))) && (a = r), !a && Pm(item) && (a = r), !a || (s && Am(s, a), e.push(a), !1);
       });
       return e;
     }
@@ -3819,7 +3819,7 @@ var uw = "party:",
 function fw(t) {
   if ("string" != typeof t) return "";
   const s = t.trim().replace(new RegExp(`^${uw}`, "i"), "").replace(/[\s-]/g, "").toUpperCase();
-  return 6 === s.length && [...s].every(t => "ABCDEFGHJKLMNPQRSTUVWXYZ23456789".includes(t)) ? s : "";
+  return 6 === s.length && [...s].every(item => "ABCDEFGHJKLMNPQRSTUVWXYZ23456789".includes(item)) ? s : "";
 }
 function pw(t, s) {
   if (!dw.includes(t)) return "This mode cannot be played as a party.";
@@ -3854,13 +3854,13 @@ var mw = yh({
   }, "PartyState"),
   yw = "party";
 function gw(t, s) {
-  const e = t.filter(t => t.id !== s && (!t.ready || t.away));
+  const e = t.filter(item => item.id !== s && (!item.ready || item.away));
   if (!e.length) return null;
   if (e.length > 1) return `Waiting for ${e.length} players to be ready.`;
   const i = e[0].name.replace(/<[^>]*>/g, "").trim() || "a player";
   return e[0].away ? `${i} is reconnecting.` : `Waiting for ${i} to be ready.`;
 }
-var vw = (t, s) => t.filter(t => !t.away && (t.id === s || t.ready)).length,
+var vw = (t, s) => t.filter(item => !item.away && (item.id === s || item.ready)).length,
   bw = ["/p ", "/party "],
   kw = "protocol",
   Mw = "build";
@@ -3886,10 +3886,10 @@ function $w() {
       o = Symbol.metadata ?? Symbol.for("Symbol.metadata");
     for (let a = 0; a < e.length; a++) {
       const t = e[a][o],
-        s = t ? Object.keys(t).filter(t => /^\d+$/.test(t)).map(Number).sort((t, s) => t - s).map(s => {
-          const e = t[s],
+        s = t ? Object.keys(t).filter(item => /^\d+$/.test(item)).map(Number).sort((leftItem, rightItem) => leftItem - rightItem).map(item => {
+          const e = t[item],
             i = "number" == typeof e?.tag ? `@${e.tag}` : "";
-          return `${s}:${String(e?.name)}:${n(e?.type)}${i}`;
+          return `${item}:${String(e?.name)}:${n(e?.type)}${i}`;
         }) : [];
       r.push(`#${a}{${s.join(";")}}`);
     }
@@ -3931,8 +3931,8 @@ function Nw(t, eventTarget, e) {
     };
     eventTarget.aborted ? o() : eventTarget.addEventListener("abort", o, {
       once: !0
-    }), t.then(t => {
-      eventTarget.removeEventListener("abort", o), r ? e?.(t) : (r = !0, i(t));
+    }), t.then(result => {
+      eventTarget.removeEventListener("abort", o), r ? e?.(result) : (r = !0, i(result));
     }, t => {
       eventTarget.removeEventListener("abort", o), r || (r = !0, n(eventTarget.aborted ? new hw() : t));
     });
@@ -3961,7 +3961,7 @@ var Ow = 1e3 / 30,
       return s;
     }
     $_1c4(t, s = []) {
-      const e = this.queue.findIndex(s => s.n === t);
+      const e = this.queue.findIndex(item => item.n === t);
       if (e >= 0) for (const i of this.queue.splice(0, e + 1)) s.push(i.shot);
       return s;
     }
@@ -4222,10 +4222,10 @@ var qw = new Set(["Bomb", "Grenade"]),
       const n = t.own;
       this.state.tapUntil = n?.fireTap ?? 0, this.state.strike = n?.strike ?? 0, this.alive = t.health > 0, this.slots.length = 0;
       for (const r of t.slots ?? []) this.slots.push(r);
-      this.slot = t.slot, this.switchCounter = n?.switchSeq ?? 0, this.stash.clear(), this.slots.forEach((t, s) => {
-        const e = n?.bagAmmo?.[s] ?? -32768,
-          i = n?.bagReserve?.[s] ?? -32768;
-        !t || -32768 === e && -32768 === i || this.stash.set(t, {
+      this.slot = t.slot, this.switchCounter = n?.switchSeq ?? 0, this.stash.clear(), this.slots.forEach((item, index) => {
+        const e = n?.bagAmmo?.[index] ?? -32768,
+          i = n?.bagReserve?.[index] ?? -32768;
+        !item || -32768 === e && -32768 === i || this.stash.set(item, {
           ammo: -32768 === e ? void 0 : e,
           reserve: -32768 === i ? void 0 : i
         });
@@ -4423,12 +4423,12 @@ var qw = new Set(["Bomb", "Grenade"]),
               if ("Shotgun" === t.kind && t.pellets) {
                 const n = [];
                 for (let r = 0; r < t.pellets; r++) n.push(r === t.pellets - 1 ? s.clone() : Aa(s, e, i));
-                return n.map(t => t.normalize());
+                return n.map(item => item.normalize());
               }
               return [Aa(s, e, i).normalize()];
             }(i, v, g, this.cosmetic),
             _ = "Shotgun" === i.kind && i.pellets ? i.pellets : 0,
-            $ = S.map((t, s) => !!k || 0 === g || _ > 0 && s === _ - 1);
+            $ = S.map((item, index) => !!k || 0 === g || _ > 0 && index === _ - 1);
           if (function (t, s, e, i = hn.gravity) {
             if ("Flamethrower" === s.kind) return function (t, s, e, i) {
               const n = Pe.thrust,
@@ -4538,10 +4538,10 @@ var Jw = new wi(),
         this.url = URL.createObjectURL(new Blob(["\nlet timer = 0;\nlet once = 0;\nonmessage = (e) => {\n  if (e.data && typeof e.data === 'object') {\n    clearTimeout(once);\n    once = setTimeout(() => postMessage(1), e.data.once);\n    return;\n  }\n  clearInterval(timer);\n  if (e.data > 0) timer = setInterval(() => postMessage(0), e.data);\n};\n"], {
           type: "text/javascript"
         }));
-        const t = new Worker(this.url);
-        t.onmessage = () => this.wake(), t.onerror = () => {
+        const worker = new Worker(this.url);
+        worker.onmessage = () => this.wake(), worker.onerror = () => {
           this.stop(), this.fallback = window.setInterval(this.wake, this.intervalMs);
-        }, t.postMessage(this.intervalMs), this.worker = t;
+        }, worker.postMessage(this.intervalMs), this.worker = worker;
       } catch {
         this.fallback = window.setInterval(this.wake, this.intervalMs);
       }
@@ -4796,8 +4796,8 @@ var ry = {
     frame(t) {
       if (!(this.clock.lastServerTime() > 0)) return void (this.target = null);
       const s = this.clock.smoothedRtt(),
-        e = Math.round(this.clock.serverNow() - t - s / 2);
-      this.$_778 = s, this.$_mhs = e + t + s / 2, this.target = e;
+        roundedValue = Math.round(this.clock.serverNow() - t - s / 2);
+      this.$_778 = s, this.$_mhs = roundedValue + t + s / 2, this.target = roundedValue;
     }
     release() {
       this.target = null;
@@ -5018,10 +5018,10 @@ var fy = class {
     observe(t, s, e) {
       if (this.newest = s, this.enabled) {
         if (this.dying.size) for (const [t, e] of this.dying) s - e > gy && this.dying.delete(t);
-        if (t.forEach(t => {
-          const i = t.health > 0,
-            n = this.alive.get(t.id);
-          n !== i && this.alive.set(t.id, i), t.id !== e && i && !1 === n && this.$_2kb.set(t.id, s);
+        if (t.forEach(item => {
+          const i = item.health > 0,
+            n = this.alive.get(item.id);
+          n !== i && this.alive.set(item.id, i), item.id !== e && i && !1 === n && this.$_2kb.set(item.id, s);
         }), this.alive.size > t.size) for (const s of [...this.alive.keys()]) t.has(s) || (this.alive.delete(s), this.dying.delete(s), this.$_2kb.delete(s));
       }
     }
@@ -5086,7 +5086,7 @@ function Ty(t, s = _y) {
       return !0;
     }
     const i = [...e];
-    return i.length === s.length && i.every((t, e) => t === s[e]);
+    return i.length === s.length && i.every((item, index) => item === s[index]);
   }(e, r.badges)) return r.text;
   const o = J(i, e, s);
   return n.set(e, {
@@ -5156,7 +5156,7 @@ var Ny = (t, s = _y) => x(t.id, Ty(t, s)),
   Cy = function (t = Ze, s = Object.keys(je)) {
     const e = [s.join(","), Tr];
     for (const i of t) for (let t = 0; t < 3; t++) {
-      const s = s => br(i, t, s, 1 / 0, () => !0).map(t => `${t.weapon}${t.locked ? "!" : ""}${t.classWeapon ? `@${t.unlocksAt}` : ""}`).join(",");
+      const s = s => br(i, t, s, 1 / 0, () => !0).map(item => `${item.weapon}${item.locked ? "!" : ""}${item.classWeapon ? `@${item.unlocksAt}` : ""}`).join(",");
       e.push(`${i.id}/${t}:${s(0)}|${s(Number.MAX_SAFE_INTEGER)}`);
     }
     return function (t) {
@@ -5904,13 +5904,13 @@ var Ry = t => t.ks?.stage !== Ii.Buy && t.sumo?.stage !== we.Countdown,
       const t = this.room?.state,
         s = this.room?.sessionId,
         e = this.drawnTime();
-      return t ? [...t.players.values()].filter(t => t.id !== s && t.health > 0 && !t.away && !this.culled?.(t.id) && this.$_1ka(t)).map(t => {
-        const s = this.$_59t(t);
+      return t ? [...t.players.values()].filter(item => item.id !== s && item.health > 0 && !item.away && !this.culled?.(item.id) && this.$_1ka(item)).map(item => {
+        const s = this.$_59t(item);
         return {
-          id: t.id,
+          id: item.id,
           ...s,
-          crouching: this.remotePoses.crouching(t.id, e) ?? t.crouching,
-          pose: this.remotePoses.pose(t.id, e, s.pitch, s.yaw)
+          crouching: this.remotePoses.crouching(item.id, e) ?? item.crouching,
+          pose: this.remotePoses.pose(item.id, e, s.pitch, s.yaw)
         };
       }) : [];
     }
@@ -5947,28 +5947,28 @@ var Ry = t => t.ks?.stage !== Ii.Buy && t.sumo?.stage !== we.Countdown,
             const h = function (t, s, e, i, n, r) {
               let o = null,
                 a = r;
-              return Jw.set(i, n), t.barrels.forEach((t, e) => {
-                if (s.time - (s.barrelTimes[e] ?? -100) <= 90) return;
-                if (Jw.distanceSqToPoint(t.root) > 16) return;
-                const r = Tt(i, n, t, a);
+              return Jw.set(i, n), t.barrels.forEach((item, index) => {
+                if (s.time - (s.barrelTimes[index] ?? -100) <= 90) return;
+                if (Jw.distanceSqToPoint(item.root) > 16) return;
+                const r = Tt(i, n, item, a);
                 null !== r && r < a && (a = r, o = {
                   distance: r,
-                  barrel: e,
+                  barrel: index,
                   pot: -1
                 });
-              }), t.destructibles.forEach((t, s) => {
-                if (e.has(s) || Jw.distanceSqToPoint(t.volume.center) > 25) return;
-                const i = Ai(Jw, t.volume, a);
+              }), t.destructibles.forEach((item, index) => {
+                if (e.has(index) || Jw.distanceSqToPoint(item.volume.center) > 25) return;
+                const i = Ai(Jw, item.volume, a);
                 null !== i && i < a && (a = i, o = {
                   distance: i,
                   barrel: -1,
-                  pot: s
+                  pot: index
                 });
               }), o;
             }(i, s, uniqueItems, t, e, r);
             return h ? (o = h.barrel, a = h.pot, h.distance) : null;
           };
-          return t.dirs.map((i, n) => {
+          return t.dirs.map((item, index) => {
             const c = function (t, s, e, i, n) {
                 const r = [];
                 let o = s.clone(),
@@ -5994,7 +5994,7 @@ var Ry = t => t.ks?.stage !== Ii.Buy && t.sumo?.stage !== we.Countdown,
                   h -= e, o = d.clone().addScaledVector(i, .002), a = Vw(a, i).normalize();
                 }
                 return r;
-              }(s.world, t.origin, i, r, h),
+              }(s.world, t.origin, item, r, h),
               l = c[0],
               u = c[c.length - 1],
               d = !u.reflected && !u.normal && (o >= 0 || a >= 0);
@@ -6011,7 +6011,7 @@ var Ry = t => t.ks?.stage !== Ii.Buy && t.sumo?.stage !== we.Countdown,
             return {
               from: l.from.clone(),
               dir: l.dir.clone(),
-              exact: t.exact[n] ?? !1,
+              exact: t.exact[index] ?? !1,
               to: l.to.clone(),
               distance: l.length,
               normal: l.normal ? l.normal.clone() : null,
@@ -6024,9 +6024,9 @@ var Ry = t => t.ks?.stage !== Ii.Buy && t.sumo?.stage !== we.Countdown,
           });
         }
         const o = Ba(t.weapon)?.cone ? 0 : Le(t.weapon);
-        return t.dirs.map((r, a) => {
+        return t.dirs.map((item, index) => {
           const h = t.origin.clone(),
-            c = bs(s.world, h, r, t.range, o);
+            c = bs(s.world, h, item, t.range, o);
           let l = c.distance,
             u = c.normal,
             d = c.walls,
@@ -6034,7 +6034,7 @@ var Ry = t => t.ks?.stage !== Ii.Buy && t.sumo?.stage !== we.Countdown,
             p = l;
           for (const t of e) {
             const s = ia(t.pose, !!t.crouching, t.yaw ?? 0, Ww),
-              e = as(h, r, p, t.x, t.y, t.z, s);
+              e = as(h, item, p, t.x, t.y, t.z, s);
             e && e.distance < p && (p = e.distance, f = {
               id: t.id,
               part: e.part
@@ -6044,24 +6044,24 @@ var Ry = t => t.ks?.stage !== Ii.Buy && t.sumo?.stage !== we.Countdown,
           let m = -1,
             w = -1;
           if (i) {
-            const t = new wi(h, r);
-            i.barrels.forEach((e, i) => {
-              if (s.time - (s.barrelTimes[i] ?? -100) <= 90) return;
-              if (t.distanceSqToPoint(e.root) > 16) return;
-              const n = Tt(h, r, e, l);
-              null !== n && n < l && (l = n, m = i, p > n && (f = null), u = null);
-            }), i.destructibles.forEach((s, e) => {
-              if (uniqueItems.has(e) || t.distanceSqToPoint(s.volume.center) > 25) return;
-              const i = Ai(t, s.volume, l);
-              null !== i && i < l && (l = i, w = e, m = -1, p > i && (f = null), u = null);
+            const t = new wi(h, item);
+            i.barrels.forEach((_item6, _index2) => {
+              if (s.time - (s.barrelTimes[_index2] ?? -100) <= 90) return;
+              if (t.distanceSqToPoint(_item6.root) > 16) return;
+              const n = Tt(h, item, _item6, l);
+              null !== n && n < l && (l = n, m = _index2, p > n && (f = null), u = null);
+            }), i.destructibles.forEach((_item7, _index3) => {
+              if (uniqueItems.has(_index3) || t.distanceSqToPoint(_item7.volume.center) > 25) return;
+              const i = Ai(t, _item7.volume, l);
+              null !== i && i < l && (l = i, w = _index3, m = -1, p > i && (f = null), u = null);
             });
           }
-          d.length && d[d.length - 1].exit > l && (d = d.filter(t => t.exit <= l));
-          const y = h.clone().addScaledVector(r, l),
-            g = t.exact[a] ?? !1;
+          d.length && d[d.length - 1].exit > l && (d = d.filter(_item8 => _item8.exit <= l));
+          const y = h.clone().addScaledVector(item, l),
+            g = t.exact[index] ?? !1;
           return {
             from: h,
-            dir: r.clone(),
+            dir: item.clone(),
             exact: g,
             to: y,
             distance: l,
@@ -6160,8 +6160,8 @@ var Ry = t => t.ks?.stage !== Ii.Buy && t.sumo?.stage !== we.Countdown,
     $_2v5 = null;
     $_1q0 = new gi();
     $_41bp(t) {
-      Di.forEach((s, e) => {
-        t.consume(s) && this.$_4kly("equip", e);
+      Di.forEach((item, index) => {
+        t.consume(item) && this.$_4kly("equip", index);
       }), t.consume(Ri.InventoryNext) && this.$_4kly("cycle", 1);
       const s = t.consumeWheel();
       s && this.$_4kly("cycle", s > 0 ? -1 : 1, !0);
@@ -6235,10 +6235,10 @@ var Wy = class {
         s = Math.max(0, Math.min(1, 1 * this.volume()));
       if (!t || s <= 0) return;
       const e = performance.now();
-      this.audio.load(Jy).then(i => {
-        if (!i || "running" !== t.state || performance.now() - e > 400) return;
+      this.audio.load(Jy).then(result => {
+        if (!result || "running" !== t.state || performance.now() - e > 400) return;
         this.stop();
-        const n = this.audio.start(i, {
+        const n = this.audio.start(result, {
           volume: s,
           priority: Iu.reserved,
           ended: () => {
@@ -6432,10 +6432,10 @@ var wg = "custom-burn-crackle.m4a",
       const s = this.audio.ctx;
       if (!s) return;
       const e = ++this.ticket;
-      this.audio.load(wg).then(i => {
-        if (!i || e !== this.ticket || "running" !== s.state) return;
+      this.audio.load(wg).then(result => {
+        if (!result || e !== this.ticket || "running" !== s.state) return;
         this.level = t;
-        const n = this.audio.start(i, {
+        const n = this.audio.start(result, {
           volume: t,
           key: "burn",
           loop: !0,
@@ -6620,8 +6620,8 @@ var wg = "custom-burn-crackle.m4a",
           c = h(3e3),
           l = h(500),
           u = Math.min(i >> 1, Math.round(.05 * e)),
-          d = new Float32Array(i + u),
-          f = new Float32Array(i + u);
+          float32Values = new Float32Array(i + u),
+          _float32Values = new Float32Array(i + u);
         let p = 0,
           m = 0,
           w = 0,
@@ -6629,16 +6629,16 @@ var wg = "custom-burn-crackle.m4a",
           g = 0;
         for (let M = 0; M < i + u; M++) {
           const t = a();
-          p = .997 * (p + .02 * t), m += c * (t - m), w += l * (t - w), d[M] = p, f[M] = m - w, y = Math.max(y, Math.abs(p)), g = Math.max(g, Math.abs(f[M]));
+          p = .997 * (p + .02 * t), m += c * (t - m), w += l * (t - w), float32Values[M] = p, _float32Values[M] = m - w, y = Math.max(y, Math.abs(p)), g = Math.max(g, Math.abs(_float32Values[M]));
         }
         const v = y > 0 ? .6 / y : 0,
           b = g > 0 ? .4 / g : 0;
         let k = 0;
         for (let M = 0; M < i; M++) {
-          let t = d[M] * v + f[M] * b;
+          let t = float32Values[M] * v + _float32Values[M] * b;
           if (M < u) {
             const s = M / u;
-            t = t * s + (d[i + M] * v + f[i + M] * b) * (1 - s);
+            t = t * s + (float32Values[i + M] * v + _float32Values[i + M] * b) * (1 - s);
           }
           r[M] = t * (.75 + .25 * Math.sin(2 * Math.PI * 2 * M / i)), k = Math.max(k, Math.abs(r[M]));
         }
@@ -6729,14 +6729,14 @@ var wg = "custom-burn-crackle.m4a",
       return o.volume = e, o.key = n, o.at = i, o.pan = void 0, o.reverb = i ? void 0 : .7, o.priority = Iu.world(i ? e : 1), o.loop = r, o.open = r, o.loopEnd = r ? gg.stepSeconds : void 0, o.offset = r ? this.clock % gg.stepSeconds : 0, o.ended = r ? s.ended : void 0, this.audio.start(t, o);
     }
     stop() {
-      this.sources.forEach(t => {
-        t.loop?.stop(.02), t.rush?.stop(.02);
+      this.sources.forEach(item => {
+        item.loop?.stop(.02), item.rush?.stop(.02);
       }), this.sources.clear(), this.$_q7b = null, this.$_3f1 = -1 / 0;
     }
     stats() {
       let t = 0;
-      return this.sources.forEach(s => {
-        s.loop?.playing && s.level > 0 && t++;
+      return this.sources.forEach(item => {
+        item.loop?.playing && item.level > 0 && t++;
       }), {
         sources: this.sources.size,
         loops: t
@@ -6765,11 +6765,11 @@ var wg = "custom-burn-crackle.m4a",
     start(t) {
       const s = this.source,
         e = ++this.ticket;
-      this.loading = e, this.audio.load(s.file).then(i => {
-        e === this.ticket && (this.loading = 0, i && "running" === this.audio.ctx?.state && (this.level = t, this.voice = this.audio.start(i, {
+      this.loading = e, this.audio.load(s.file).then(result => {
+        e === this.ticket && (this.loading = 0, result && "running" === this.audio.ctx?.state && (this.level = t, this.voice = this.audio.start(result, {
           volume: t,
           loop: !0,
-          loopEnd: s.length > 0 && s.length < i.duration ? s.length : i.duration,
+          loopEnd: s.length > 0 && s.length < result.duration ? s.length : result.duration,
           fadeIn: 1.2,
           priority: Iu.reserved,
           ended: () => {
@@ -6813,14 +6813,14 @@ var wg = "custom-burn-crackle.m4a",
       if (!s || e <= 0) return;
       const i = ++this.ticket,
         n = performance.now();
-      this.audio.load(xg).then(r => {
-        if (!r || i !== this.ticket || "running" !== s.state) return;
+      this.audio.load(xg).then(result => {
+        if (!result || i !== this.ticket || "running" !== s.state) return;
         const o = function (t, s) {
           const e = Math.min(3, t, s);
           return e >= .15 ? Math.max(0, t - e) : null;
-        }(r.duration, t - (performance.now() - n) / 1e3);
+        }(result.duration, t - (performance.now() - n) / 1e3);
         if (null === o) return;
-        const a = this.audio.start(r, {
+        const a = this.audio.start(result, {
           volume: e,
           offset: o,
           priority: Iu.reserved,
@@ -7098,7 +7098,7 @@ var zg = class {
       if (this.send.disconnect(), this.room = !1, !t || !t.length || s <= 0 || !e.createConvolver || !e.createBuffer) return void (this.$_3f8 && (this.$_3f8.buffer = null));
       this.$_3f8 && this.wet || (this.$_3f8 = e.createConvolver(), this.$_3f8.normalize = !1, this.wet = e.createGain(), this.$_3f8.connect(this.wet).connect(this.input));
       const i = e.createBuffer(t.length, t[0].length, e.sampleRate ?? 48e3);
-      t.forEach((t, s) => i.copyToChannel(t, s)), this.$_3f8.buffer = i, this.wet.gain.value = s, this.send.connect(this.$_3f8), this.room = !0;
+      t.forEach((item, index) => i.copyToChannel(item, index)), this.$_3f8.buffer = i, this.wet.gain.value = s, this.send.connect(this.$_3f8), this.room = !0;
     }
     get $_7ohv() {
       return this.room;
@@ -7306,24 +7306,24 @@ var zg = class {
         const e = Math.max(1, Math.ceil((t.predelay + 1.1 * t.decay) * s)),
           i = [];
         for (let n = 0; n < 2; n++) {
-          const r = new Float32Array(e),
+          const float32Values = new Float32Array(e),
             o = mg(586 + 7919 * n),
-            a = Math.floor(t.predelay * s);
+            flooredValue = Math.floor(t.predelay * s);
           let h = 0;
-          for (let i = a; i < e; i++) {
-            const e = (i - a) / s,
+          for (let i = flooredValue; i < e; i++) {
+            const e = (i - flooredValue) / s,
               n = 12e3 + (t.damp - 12e3) * Math.min(1, e / t.decay);
-            h += (1 - Math.exp(-2 * Math.PI * n / s)) * (o() - h), r[i] = h * Math.exp(-6.91 * e / t.decay);
+            h += (1 - Math.exp(-2 * Math.PI * n / s)) * (o() - h), float32Values[i] = h * Math.exp(-6.91 * e / t.decay);
           }
           for (const [i, u] of t.early) {
-            const t = Math.floor((i + .0013 * n) * s);
-            t < e && (r[t] += u * (n ? -1 : 1));
+            const _flooredValue2 = Math.floor((i + .0013 * n) * s);
+            _flooredValue2 < e && (float32Values[_flooredValue2] += u * (n ? -1 : 1));
           }
           let c = 0;
-          for (let t = 0; t < e; t++) c += r[t] * r[t];
+          for (let t = 0; t < e; t++) c += float32Values[t] * float32Values[t];
           const l = c > 0 ? 1 / Math.sqrt(c) : 0;
-          for (let t = 0; t < e; t++) r[t] *= l;
-          i.push(r);
+          for (let t = 0; t < e; t++) float32Values[t] *= l;
+          i.push(float32Values);
         }
         return i;
       }(s, t.sampleRate) : null, s?.wet ?? 0);
@@ -7404,9 +7404,9 @@ var zg = class {
           const t = await Bg(n(i), e);
           return t && (Dg.aacBroken = !0), t;
         }
-      }(`/assets/extracted/${s}/`, t, t => e.decodeAudioData(t)).catch(() => null).then(e => {
-        const i = e ? void 0 : Ee[t];
-        return i ? this.buffer(i, s) : (!e && n.tries < 5 && (n.retryAt = this.clock() + 4e3), e);
+      }(`/assets/extracted/${s}/`, t, t => e.decodeAudioData(t)).catch(() => null).then(result => {
+        const i = result ? void 0 : Ee[t];
+        return i ? this.buffer(i, s) : (!result && n.tries < 5 && (n.retryAt = this.clock() + 4e3), result);
       }), this.buffers.set(t, n), n.clip;
     }
     $_1mx(t, s = "shot") {
@@ -7433,7 +7433,7 @@ var zg = class {
       const a = "load" === s ? n.loadDelay : "reload" === s ? n.reloadDelay : n.aftershotDelay,
         h = "aftershots" === s ? n.aftershotVolume : 1,
         c = performance.now();
-      if (await Promise.all(r.map(t => this.buffer(t.file, "audio"))), i) for (const l of i.passes ?? [0]) {
+      if (await Promise.all(r.map(item => this.buffer(item.file, "audio"))), i) for (const l of i.passes ?? [0]) {
         let t = a;
         for (const s of r) {
           const n = l + i.at(t) - i.elapsed;
@@ -7683,7 +7683,7 @@ var zg = class {
         }(0, je[t], s);
       if (!r.length) return;
       const o = performance.now();
-      await Promise.all(r.map(t => this.buffer(t.file, "audio")));
+      await Promise.all(r.map(item => this.buffer(item.file, "audio")));
       for (const a of r) {
         if (await Xg(a.at - (performance.now() - o) / 1e3), i !== this.$_3zs || n !== this.$_azx || "running" !== this.context.state) return;
         const t = await this.buffer(a.file, "audio");
@@ -7724,7 +7724,7 @@ var zg = class {
         d = ++this.$_azx;
       this.reloading = !0;
       const f = performance.now() - 1e3 * i;
-      await Promise.all([l, u].map(t => t ? this.buffer(t.file, "audio") : null));
+      await Promise.all([l, u].map(item => item ? this.buffer(item.file, "audio") : null));
       const p = async t => (await Xg(Math.max(0, t - (performance.now() - f) / 1e3)), d === this.$_azx && "running" === this.context?.state);
       for (let m = 0; m < c; m++) {
         if (!(await p(h.first + m * h.per))) return;
@@ -7825,15 +7825,15 @@ var sv = "http://www.w3.org/2000/svg",
       if (!(this.el && this.enabled && s && t)) return this.hide();
       const e = Zg.radius;
       t.segments !== this.segments ? this.build(t.segments, e) : e !== this.radius && this.place(e);
-      const i = Math.round(t.fill / Zg.step);
-      if (i === this.shown) return;
-      this.shown < 0 && (this.el.style.display = ""), this.shown = i;
+      const roundedValue = Math.round(t.fill / Zg.step);
+      if (roundedValue === this.shown) return;
+      this.shown < 0 && (this.el.style.display = ""), this.shown = roundedValue;
       const n = function (t, s) {
           const e = Math.max(1, Math.floor(s));
           return Array.from({
             length: e
           }, (s, i) => Qg(t * e - i));
-        }(i * Zg.step, this.segments),
+        }(roundedValue * Zg.step, this.segments),
         r = this.written;
       for (let o = 0; o < this.fills.length; o++) r[o] !== n[o] && (r[o] = n[o], this.fills[o].style.strokeDashoffset = "" + this.lengths[o] * (1 - n[o]));
     }
@@ -7871,13 +7871,13 @@ var sv = "http://www.w3.org/2000/svg",
           }, (t, s) => [r - s * o - a / 2, r - (s + 1) * o + a / 2]);
         }(this.segments),
         e = s.length;
-      this.tracks.forEach((i, n) => {
-        const [r, o] = s[n % e];
-        i.setAttribute("d", tv(0, t, r, o));
-      }), this.lengths = s.map(([s, e]) => 2 * Math.PI * t * Math.abs(e - s) / 360), this.fills.forEach((e, i) => {
-        const [n, r] = s[i],
-          o = this.lengths[i];
-        e.setAttribute("d", tv(0, t, n, r)), e.style.strokeDasharray = `${o} ${o}`;
+      this.tracks.forEach((track, index) => {
+        const [r, o] = s[index % e];
+        track.setAttribute("d", tv(0, t, r, o));
+      }), this.lengths = s.map(([s, e]) => 2 * Math.PI * t * Math.abs(e - s) / 360), this.fills.forEach((item, index) => {
+        const [n, r] = s[index],
+          o = this.lengths[index];
+        item.setAttribute("d", tv(0, t, n, r)), item.style.strokeDasharray = `${o} ${o}`;
       }), this.shown = -2, this.written.length = 0;
     }
   },
@@ -8109,8 +8109,8 @@ function Mv(t, s) {
 }
 function Sv(t) {
   return new Promise((s, e) => {
-    const i = new Image();
-    i.onload = () => s(i), i.onerror = () => e(new Error("INVALID URL!")), i.src = t;
+    const image = new Image();
+    image.onload = () => s(image), image.onerror = () => e(new Error("INVALID URL!")), image.src = t;
   });
 }
 async function _v(t, s) {
@@ -8150,7 +8150,7 @@ function Pv(t) {
   return "string" == typeof t && $v.test(t);
 }
 function Av(t, s) {
-  return !!Pv(s) && (pv().set(t, s).catch(t => console.warn("custom image not stored:", t)), !0);
+  return !!Pv(s) && (pv().set(t, s).catch(error => console.warn("custom image not stored:", error)), !0);
 }
 function Tv(t) {
   pv().delete(t);
@@ -8280,9 +8280,9 @@ function zv(t) {
 }
 function Kv(t, s, e) {
   const i = Math.abs(s) % 2;
-  let n = Math.round(t);
-  for (Math.abs(n) % 2 !== i && (n += t >= n ? 1 : -1); n < e;) n += 2;
-  return n;
+  let roundedValue = Math.round(t);
+  for (Math.abs(roundedValue) % 2 !== i && (roundedValue += t >= roundedValue ? 1 : -1); roundedValue < e;) roundedValue += 2;
+  return roundedValue;
 }
 function Uv(t, s, e, i = null) {
   const n = function (t, s) {
@@ -8372,19 +8372,19 @@ function sb(t) {
   return s;
 }
 function eb(t, s) {
-  return Jv(s) < 0 ? [...t] : t.includes(s) ? t.filter(t => t !== s) : t.length >= 8 ? [...t] : [...t, s];
+  return Jv(s) < 0 ? [...t] : t.includes(s) ? t.filter(item => item !== s) : t.length >= 8 ? [...t] : [...t, s];
 }
 function ib(t, s = []) {
   const e = [],
-    i = s.filter(s => t.includes(s)).slice(0, 8);
+    i = s.filter(item => t.includes(item)).slice(0, 8);
   i.length && e.push(i);
-  for (let n = 0; n < Qv(t.length); n++) t.length && e.push(tb(t.length, n).map(s => t[s]));
+  for (let n = 0; n < Qv(t.length); n++) t.length && e.push(tb(t.length, n).map(item => t[item]));
   return e.length || e.push([]), e;
 }
 var nb = t => !!t && /^<(Keyboard|Mouse)>\//.test(t),
   rb = (t, s) => {
     const e = Yf(t);
-    return Yf(s).some(t => e.includes(t));
+    return Yf(s).some(item => e.includes(item));
   };
 function ob(t, s) {
   if (s >= 4) return {
@@ -8406,7 +8406,7 @@ function ob(t, s) {
       const s = t[r];
       s && s[1] && s[1] === e(r, 1) && i(r, 1) !== s[1] && (s[0] || s[1] !== i(r, 0) || (s[0] = s[1]), s[1] = i(r, 1));
     }
-    const n = (e, i) => Ui.some(s => bf(s, e) && Qf(s, t).some(t => nb(t) && rb(t, i))) || s.some(s => s !== e && bf(s, e) && sp(s, t).some(t => t && rb(t, i)));
+    const n = (e, i) => Ui.some(item => bf(item, e) && Qf(item, t).some(_item9 => nb(_item9) && rb(_item9, i))) || s.some(item => item !== e && bf(item, e) && sp(item, t).some(_item0 => _item0 && rb(_item0, i)));
     for (const r of s) {
       const s = t[r],
         o = i(r, 0);
@@ -8425,7 +8425,7 @@ function ob(t, s) {
 function ab(t, s) {
   if (t[s]) return;
   const e = Ki[s][0];
-  np().some(i => i !== s && bf(i, s) && sp(i, t).some(t => t && rb(t, e))) && (t[s] = ["", ""]);
+  np().some(item => item !== s && bf(item, s) && sp(item, t).some(_item1 => _item1 && rb(_item1, e))) && (t[s] = ["", ""]);
 }
 var hb = ["renderWeapon"],
   cb = t => hb.includes(t),
@@ -8521,7 +8521,7 @@ function bb(t, s = 4) {
   };
   const n = np();
   for (const c of Object.keys(t)) {
-    const s = n.find(t => t === c);
+    const s = n.find(item => item === c);
     if (!s) {
       e.push({
         key: `keybinds.${c.slice(0, 40)}`,
@@ -8530,7 +8530,7 @@ function bb(t, s = 4) {
       continue;
     }
     const r = t[c];
-    if (!Array.isArray(r) || 2 !== r.length || r.some(t => "string" != typeof t)) {
+    if (!Array.isArray(r) || 2 !== r.length || r.some(item => "string" != typeof item)) {
       e.push({
         key: `keybinds.${s}`,
         reason: "not two key paths"
@@ -8538,10 +8538,10 @@ function bb(t, s = 4) {
       continue;
     }
     const o = ["", ""];
-    [0, 1].forEach(t => {
-      const i = r[t];
-      i && (vb.test(i) && Yf(i).length ? o[t] = i : e.push({
-        key: `keybinds.${s}[${t}]`,
+    [0, 1].forEach(item => {
+      const i = r[item];
+      i && (vb.test(i) && Yf(i).length ? o[item] = i : e.push({
+        key: `keybinds.${s}[${item}]`,
         reason: "not a key"
       }));
     }), i[s] = o;
@@ -8554,19 +8554,19 @@ function bb(t, s = 4) {
   const lookupMap = new Map(),
     o = (t, s) => lookupMap.set(t, [...(lookupMap.get(t) ?? []), s]);
   for (const c of Ui) for (const t of Ki[c]) for (const s of Yf(t)) o(s, c);
-  const a = (t, s) => [0, 1].forEach(n => {
+  const a = (t, s) => [0, 1].forEach(item => {
       const a = sp(t, i),
-        h = a[n];
+        h = a[item];
       if (!h) return;
       const c = Yf(h),
-        l = c.flatMap(t => lookupMap.get(t) ?? []).find(s => s !== t && bf(s, t)),
-        u = 1 === n && a[0] && Yf(a[0]).some(t => c.includes(t));
-      if (void 0 !== l || u) a[n] = "", i[t] = a, s && e.push({
-        key: `keybinds.${t}[${n}]`,
+        l = c.flatMap(_item10 => lookupMap.get(_item10) ?? []).find(_item11 => _item11 !== t && bf(_item11, t)),
+        u = 1 === item && a[0] && Yf(a[0]).some(_item12 => c.includes(_item12));
+      if (void 0 !== l || u) a[item] = "", i[t] = a, s && e.push({
+        key: `keybinds.${t}[${item}]`,
         reason: `key used by ${l ?? t}`
       });else for (const s of c) o(s, t);
     }),
-    h = n.filter(t => wb(i, t));
+    h = n.filter(item => wb(i, item));
   for (const c of h) a(c, !0);
   for (const c of n) h.includes(c) || a(c, !1);
   return {
@@ -8641,8 +8641,8 @@ function kb(t, s, e = {}) {
   }(t, i.values), function (t, s) {
     const e = t.graphicsDefaults,
       i = "number" == typeof e && Number.isFinite(e) ? e : 1,
-      n = lb.filter(t => fb(s, t));
-    if (i < 2 && n.length && n.every(t => s[t] === ub[t])) for (const [r, o] of Object.entries(db)) fb(s, r) && (s[r] = o);
+      n = lb.filter(item => fb(s, item));
+    if (i < 2 && n.length && n.every(item => s[item] === ub[item])) for (const [r, o] of Object.entries(db)) fb(s, r) && (s[r] = o);
     n.length && (s.graphicsDefaults = Math.max(i, 2));
   }(t, i.values), i.values.keybinds) {
     const s = Mb(t);
@@ -8856,7 +8856,7 @@ var Ab = class {
       for (const [s, e] of Object.entries(t)) this.set(s, e);
     }
     reset(t = []) {
-      const s = Object.fromEntries(t.map(t => [t, this.data[t]]));
+      const s = Object.fromEntries(t.map(item => [item, this.data[item]]));
       this.data = {
         ...structuredClone(_b),
         ...s
@@ -8885,7 +8885,7 @@ function Ib(t, s = new Date()) {
       format: Eb,
       version: 1,
       exportedAt: s.toISOString(),
-      settings: structuredClone(Object.fromEntries(Object.keys(_b).map(s => [s, t.settings[s]]))),
+      settings: structuredClone(Object.fromEntries(Object.keys(_b).map(item => [item, t.settings[item]]))),
       selection: {
         mode: t.selection.mode,
         modes: [...t.selection.modes],
@@ -18316,11 +18316,11 @@ var PT = class {
         const s = /^data:(image\/(?:png|jpeg|webp));base64,([A-Za-z0-9+/]+={0,2})$/.exec(t);
         if (!s) return null;
         const e = atob(s[2]),
-          i = new Uint8Array(new ArrayBuffer(e.length));
-        for (let n = 0; n < e.length; n++) i[n] = e.charCodeAt(n);
+          uint8Values = new Uint8Array(new ArrayBuffer(e.length));
+        for (let n = 0; n < e.length; n++) uint8Values[n] = e.charCodeAt(n);
         return {
           type: s[1],
-          bytes: i
+          bytes: uint8Values
         };
       }(s);
       if (!e || e.bytes.length > 1048576) return !1;
@@ -19788,13 +19788,13 @@ var rN = t => {
   NN = [0, 0, 0, 0],
   ON = t => Math.max(-1, Math.min(1, (t - 128) / 127)),
   CN = (() => {
-    const t = new Uint32Array(256);
+    const uint32Values = new Uint32Array(256);
     for (let s = 0; s < 256; s++) {
       let e = s;
       for (let t = 0; t < 8; t++) e = 1 & e ? 3988292384 ^ e >>> 1 : e >>> 1;
-      t[s] = e >>> 0;
+      uint32Values[s] = e >>> 0;
     }
-    return t;
+    return uint32Values;
   })();
 function IN(t, s = 0) {
   let e = ~s >>> 0;
@@ -20003,16 +20003,16 @@ function JN(t) {
   };
 }
 function YN(t) {
-  const s = new DataView(t.buffer);
-  return Number.parseFloat((244e-6 * s.getInt16(0, !0)).toFixed(6));
+  const dataView = new DataView(t.buffer);
+  return Number.parseFloat((244e-6 * dataView.getInt16(0, !0)).toFixed(6));
 }
 function XN(t) {
-  const s = new DataView(t.buffer);
-  return Number.parseFloat((.06103 * s.getInt16(0, !0)).toFixed(6));
+  const dataView = new DataView(t.buffer);
+  return Number.parseFloat((.06103 * dataView.getInt16(0, !0)).toFixed(6));
 }
 function ZN(t) {
-  const s = new DataView(t.buffer);
-  return Number.parseFloat((1694e-7 * s.getInt16(0, !0)).toFixed(6));
+  const dataView = new DataView(t.buffer);
+  return Number.parseFloat((1694e-7 * dataView.getInt16(0, !0)).toFixed(6));
 }
 function QN(t) {
   const s = t.slice(15, 26),
@@ -20256,8 +20256,8 @@ var wO = class extends EventTarget {
               a = t => {
                 const e = t;
                 if (33 !== e.reportId) return;
-                const r = new Uint8Array(e.data.buffer);
-                for (const [i, n] of Object.entries(s)) if (r[Number(i) - 1] !== n) return;
+                const uint8Values = new Uint8Array(e.data.buffer);
+                for (const [i, n] of Object.entries(s)) if (uint8Values[Number(i) - 1] !== n) return;
                 eventTarget.removeEventListener("inputreport", a), clearTimeout(o), setTimeout(n, 50);
               };
             eventTarget.addEventListener("inputreport", a), (async () => {
@@ -20305,8 +20305,8 @@ var wO = class extends EventTarget {
     }
     async rumble(t, s, e) {
       const i = (t, s, e) => Math.min(Math.max(t, s), e),
-        n = new Uint8Array(9);
-      n[0] = 0;
+        uint8Values = new Uint8Array(9);
+      uint8Values[0] = 0;
       let r = i(t, 40.875885, 626.286133),
         o = i(s, 81.75177, 1252.572266);
       o = 4 * (Math.round(32 * Math.log2(.1 * o)) - 96), r = Math.round(32 * Math.log2(.1 * r)) - 64;
@@ -20315,9 +20315,9 @@ var wO = class extends EventTarget {
       h = 0 === a ? 0 : a < .117 ? (32 * Math.log2(1e3 * a) - 96) / (5 - a ** 2) - 1 : a < .23 ? 32 * Math.log2(1e3 * a) - 96 - 92 : 2 * (32 * Math.log2(1e3 * a) - 96) - 246;
       let c = .5 * Math.round(h);
       const l = c % 2;
-      l > 0 && --c, c >>= 1, c += 64, l > 0 && (c |= 32768), n[1] = 255 & o, n[2] = h + (o >>> 8 & 255), n[3] = r + (c >>> 8 & 255), n[4] += 255 & c;
-      for (let u = 0; u < 4; u++) n[5 + u] = n[1 + u];
-      await this.device.sendReport(16, new Uint8Array(n));
+      l > 0 && --c, c >>= 1, c += 64, l > 0 && (c |= 32768), uint8Values[1] = 255 & o, uint8Values[2] = h + (o >>> 8 & 255), uint8Values[3] = r + (c >>> 8 & 255), uint8Values[4] += 255 & c;
+      for (let u = 0; u < 4; u++) uint8Values[5 + u] = uint8Values[1 + u];
+      await this.device.sendReport(16, new Uint8Array(uint8Values));
     }
     async $_3pa(t, s, e, i) {
       const n = (t, s, e) => Math.min(Math.max(t, s), e),
@@ -20725,11 +20725,11 @@ var NO = class {
     async kick() {
       if (this.$_56o = null, this.basic || !(this.reports > 0)) try {
         "ds4" === this.model.kind ? await this.hid.receiveFeatureReport(2) : await this.hid.sendReport(49, function (t) {
-          const s = new Uint8Array(77);
-          s[0] = (15 & t) << 4, s[1] = 16;
-          const e = new Uint8Array([162, 49]),
-            i = IN(s.subarray(0, 73), IN(e));
-          return new DataView(s.buffer).setUint32(73, i, !0), s;
+          const uint8Values = new Uint8Array(77);
+          uint8Values[0] = (15 & t) << 4, uint8Values[1] = 16;
+          const _uint8Values = new Uint8Array([162, 49]),
+            i = IN(uint8Values.subarray(0, 73), IN(_uint8Values));
+          return new DataView(uint8Values.buffer).setUint32(73, i, !0), uint8Values;
         }(this.seq++));
       } catch {}
     }
@@ -21591,10 +21591,10 @@ function iC(t, s = 1) {
       const s = Fv(t);
       return !s.shotgunOwn && s.shotgunOutline === t.outline && "#000000" === s.scopeColor && 1 === s.scopeOpacity;
     }(e),
-    r = new Uint8Array(n ? 21 : 13);
-  if (r[0] = n ? 2 : 1, tC(r, 1, e.color), r[4] = Math.round(100 * e.opacity), r[5] = e.length, r[6] = e.thickness, r[7] = e.gap + 10, r[8] = (e.outline ? 1 : 0) | (e.dot ? 2 : 0), r[9] = e.dotSize, r[10] = i >> 8 & 255, r[11] = 255 & i, !n) return r[12] = XO(r, 12), "KX1-" + ZO(r);
+    uint8Values = new Uint8Array(n ? 21 : 13);
+  if (uint8Values[0] = n ? 2 : 1, tC(uint8Values, 1, e.color), uint8Values[4] = Math.round(100 * e.opacity), uint8Values[5] = e.length, uint8Values[6] = e.thickness, uint8Values[7] = e.gap + 10, uint8Values[8] = (e.outline ? 1 : 0) | (e.dot ? 2 : 0), uint8Values[9] = e.dotSize, uint8Values[10] = i >> 8 & 255, uint8Values[11] = 255 & i, !n) return uint8Values[12] = XO(uint8Values, 12), "KX1-" + ZO(uint8Values);
   const o = Fv(e);
-  return r[12] = (o.shotgunOwn ? 1 : 0) | (o.shotgunOutline ? 2 : 0), tC(r, 13, o.shotgunColor), tC(r, 16, o.scopeColor), r[19] = Math.round(100 * o.scopeOpacity), r[20] = XO(r, 20), "KX2-" + ZO(r);
+  return uint8Values[12] = (o.shotgunOwn ? 1 : 0) | (o.shotgunOutline ? 2 : 0), tC(uint8Values, 13, o.shotgunColor), tC(uint8Values, 16, o.scopeColor), uint8Values[19] = Math.round(100 * o.scopeOpacity), uint8Values[20] = XO(uint8Values, 20), "KX2-" + ZO(uint8Values);
 }
 function nC(t) {
   const s = String(t ?? "").trim().replace(/\s+/g, "");
@@ -21992,10 +21992,10 @@ function SC(t = bC()) {
   const s = MC(t);
   if (s) return s;
   const e = function () {
-    const t = new Uint8Array(32);
-    globalThis.crypto.getRandomValues(t);
+    const uint8Values = new Uint8Array(32);
+    globalThis.crypto.getRandomValues(uint8Values);
     let s = "";
-    for (const e of t) s += String.fromCharCode(e);
+    for (const e of uint8Values) s += String.fromCharCode(e);
     return btoa(s).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
   }();
   try {
@@ -22272,8 +22272,8 @@ var CC = "kour-boot-art",
       try {
         localStorage.setItem(CC, i.file);
       } catch {}
-      const n = new Image();
-      n.decoding = "async", n.src = i.file, n.decode().then(() => {
+      const image = new Image();
+      image.decoding = "async", image.src = i.file, image.decode().then(() => {
         if (this.done) return;
         element.style.backgroundImage = `url("${i.file}")`;
         const _element10 = t.querySelector(".boot__credit");
@@ -23067,7 +23067,7 @@ function yI(t, s, e, i, n, r) {
   l && Object.defineProperty(l, i.name, u), d = !0;
 }
 function gI(t, s, e) {
-  for (var i = arguments.length > 2, n = 0; n < s.length; n++) e = i ? s[n].call(t, e) : s[n].call(t);
+  for (var i = arguments.length > 2, index = 0; index < s.length; index++) e = i ? s[index].call(t, e) : s[index].call(t);
   return i ? e : void 0;
 }
 function vI(t) {
@@ -23222,18 +23222,18 @@ function xI(t, s) {
   return o;
 }
 function PI() {
-  for (var t = [], s = 0; s < arguments.length; s++) t = t.concat(xI(arguments[s]));
+  for (var t = [], index = 0; index < arguments.length; index++) t = t.concat(xI(arguments[index]));
   return t;
 }
 function AI() {
-  for (var t = 0, s = 0, e = arguments.length; s < e; s++) t += arguments[s].length;
+  for (var t = 0, index = 0, e = arguments.length; index < e; index++) t += arguments[index].length;
   var i = Array(t),
     n = 0;
-  for (s = 0; s < e; s++) for (var r = arguments[s], o = 0, a = r.length; o < a; o++, n++) i[n] = r[o];
+  for (index = 0; index < e; index++) for (var r = arguments[index], _index = 0, a = r.length; _index < a; _index++, n++) i[n] = r[_index];
   return i;
 }
 function TI(t, s, e) {
-  if (e || 2 === arguments.length) for (var i, n = 0, r = s.length; n < r; n++) !i && n in s || (i || (i = Array.prototype.slice.call(s, 0, n)), i[n] = s[n]);
+  if (e || 2 === arguments.length) for (var i, index = 0, r = s.length; index < r; index++) !i && index in s || (i || (i = Array.prototype.slice.call(s, 0, index)), i[index] = s[index]);
   return t.concat(i || Array.prototype.slice.call(s));
 }
 function EI(t) {
@@ -23323,7 +23323,7 @@ function II(t, s) {
 function jI(t) {
   if (t && t.__esModule) return t;
   var s = {};
-  if (null != t) for (var e = tI(t), i = 0; i < e.length; i++) "default" !== e[i] && ZC(s, t, e[i]);
+  if (null != t) for (var e = tI(t), index = 0; index < e.length; index++) "default" !== e[index] && ZC(s, t, e[index]);
   return QC(s, t), s;
 }
 function RI(t) {
@@ -24022,11 +24022,11 @@ var JI,
         e || i ? (a = e ? "HEAD" : "GET", Object.entries(s).filter(([t, s]) => void 0 !== s).map(([t, s]) => [t, Array.isArray(s) ? `{${s.join(",")}}` : `${s}`]).forEach(([t, s]) => {
           url.searchParams.append(t, s);
         })) : (a = "POST", c = s);
-        const l = new Headers(this.headers);
-        return r && l.set("Prefer", `count=${r}`), new n.default({
+        const headers = new Headers(this.headers);
+        return r && headers.set("Prefer", `count=${r}`), new n.default({
           method: a,
           url: url,
-          headers: l,
+          headers: headers,
           schema: this.schemaName,
           body: c,
           fetch: null !== (o = this.fetch) && void 0 !== o ? o : fetch
@@ -24155,9 +24155,9 @@ var Sj,
       return t.constructor === ArrayBuffer ? s(this._binaryDecode(t)) : s("string" == typeof t ? JSON.parse(t) : {});
     }
     _binaryDecode(t) {
-      const s = new DataView(t),
-        e = new TextDecoder();
-      return this._decodeBroadcast(t, s, e);
+      const dataView = new DataView(t),
+        textDecoder = new TextDecoder();
+      return this._decodeBroadcast(t, dataView, textDecoder);
     }
     _decodeBroadcast(t, s, e) {
       const i = s.getUint8(1),
@@ -25053,10 +25053,10 @@ var Kj = class t {
     _workerObjectUrl(t) {
       let s;
       if (t) s = t;else {
-        const t = new Blob(['\n  addEventListener("message", (e) => {\n    if (e.data.event === "start") {\n      setInterval(() => postMessage({ event: "keepAlive" }), e.data.interval);\n    }\n  });'], {
+        const blob = new Blob(['\n  addEventListener("message", (e) => {\n    if (e.data.event === "start") {\n      setInterval(() => postMessage({ event: "keepAlive" }), e.data.interval);\n    }\n  });'], {
           type: "application/javascript"
         });
-        s = URL.createObjectURL(t);
+        s = URL.createObjectURL(blob);
       }
       return s;
     }
@@ -26706,7 +26706,7 @@ function bL(t) {
 }
 async function kL(t, s, e = !1) {
   const i = function () {
-    const t = new Uint32Array(56);
+    const uint32Values = new Uint32Array(56);
     if ("undefined" == typeof crypto) {
       const t = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._~",
         s = 66;
@@ -26714,7 +26714,7 @@ async function kL(t, s, e = !1) {
       for (let i = 0; i < 56; i++) e += t.charAt(Math.floor(Math.random() * s));
       return e;
     }
-    return crypto.getRandomValues(t), Array.from(t, bL).join("");
+    return crypto.getRandomValues(uint32Values), Array.from(uint32Values, bL).join("");
   }();
   let n = i;
   e && (n += "/PASSWORD_RECOVERY"), await mL(t, `${s}-code-verifier`, n);
@@ -26723,8 +26723,8 @@ async function kL(t, s, e = !1) {
     const s = await async function (t) {
       const s = new TextEncoder().encode(t),
         e = await crypto.subtle.digest("SHA-256", s),
-        i = new Uint8Array(e);
-      return Array.from(i).map(t => String.fromCharCode(t)).join("");
+        uint8Values = new Uint8Array(e);
+      return Array.from(uint8Values).map(t => String.fromCharCode(t)).join("");
     }(t);
     return btoa(s).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
   }(i);
